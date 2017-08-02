@@ -1,70 +1,70 @@
 1
 00:00:01,000 --> 00:00:03,000
-Our focus throughout this whole course
+Trọng tâm của chúng ta trong khóa học này
 
 2
 00:00:03,000 --> 00:00:05,000
-is we're going to give you a strong foundation
+là tôi sẽ cung cấp cho bạn những nền tảng vững chắc
 
 3
 00:00:05,000 --> 00:00:06,000
-in the Java Language.
+về ngôn ngữ Java.
 
 4
 00:00:06,000 --> 00:00:08,000
-To teach you what you need to work effectively
+Để dạy bạn những thứ bạn cần để làm việc hiệu quả
 
 5
 00:00:08,000 --> 00:00:09,000
-with the Java programming language.
+với ngôn ngữ Java.
 
 6
 00:00:09,000 --> 00:00:11,000
-I'm going to do that as a very Hands-on approach.
+Tôi sẽ dạy khóa này theo hướng thực hành.
 
 7
 00:00:11,000 --> 00:00:13,000
-We're going to be writing lots of code as we go through.
+Chúng ta sẽ viết khá nhiều code trong quá trình học.
 
 8
 00:00:13,000 --> 00:00:15,000
-And seeing what happens when we
+Và xem thử chuyện gì sẽ xảy ra khi ta
 
 9
 00:00:15,000 --> 00:00:16,000
-write and change that code.
+viết và thay đổi những đoạn code đó.
 
 10
 00:00:16,000 --> 00:00:18,000
-And our focus is really here on this again
+Và như đã nói trọng tâm của chúng ta là về
 
 11
 00:00:18,000 --> 00:00:19,000
-the idea of the language, right?
+ý tưởng của ngôn ngữ,
 
 12
 00:00:19,000 --> 00:00:22,000
-The Java syntax, the language constructs, the concepts
+Cú pháp Java, cấu tạo ngôn ngữ, những định nghĩa
 
 13
 00:00:22,000 --> 00:00:23,000
-and how to use all those things
+và cách sử dụng chúng
 
 14
 00:00:23,000 --> 00:00:26,000
-together to program effectively.
+với nhau một cách hiệu quả.
 
 15
 00:00:26,000 --> 00:00:27,000
-And what we're really trying to do here
+Và những gì chúng ta sẽ làm
 
 16
 00:00:27,000 --> 00:00:29,000
-is give you the language skills you need to work effectively
+là cung cấp cho bạn những kỹ năng cần thiết để làm việc hiệu quả
 
 17
 00:00:29,000 --> 00:00:31,000
-in any Java-based environments.
+trong bất kỳ môi trường Java nào.
 
 18
 00:00:31,000 --> 00:00:34,000
