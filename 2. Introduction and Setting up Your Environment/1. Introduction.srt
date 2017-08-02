@@ -1,8 +1,8 @@
 1
 00:00:02,000 --> 00:00:06,000
-Welcome to the Pluralsight Course Java Fundamentals: The Java Language.
+Chào mừng bạn đến với khóa học Java Fundamentals: The Java Language.
 
 2
 00:00:06,000 --> 00:59:00,000
-This is our first module: Introduction and Setting up Your Environment.  My Name is Jim Wilson.
+Trong chương đầu tiên này: Giới thiệu và chuẩn bị môi trường. Tôi là Jim Wilson.
 
