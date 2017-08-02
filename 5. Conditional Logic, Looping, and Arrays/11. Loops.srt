@@ -1,0 +1,524 @@
+1
+00:00:02,000 --> 00:00:06,000
+Let's take a look now at the three basic ways to write loops in Java.
+
+2
+00:00:06,000 --> 00:00:13,000
+First is a while loop, then a do-while loop and then the for loop.
+
+3
+00:00:13,000 --> 00:00:15,000
+The while loop is really the simplest way to write a loop.
+
+4
+00:00:15,000 --> 00:00:18,000
+It allows you to just repeatedly execute some statement
+
+5
+00:00:18,000 --> 00:00:21,000
+as long as the condition is true.
+
+6
+00:00:21,000 --> 00:00:23,000
+The while is structured so the condition is checked at the
+
+7
+00:00:23,000 --> 00:00:27,000
+start of the loop, so basically use the while keyword.
+
+8
+00:00:27,000 --> 00:00:30,000
+We have our condition, and then we have the statement
+
+9
+00:00:30,000 --> 00:00:32,000
+we want to repeatedly execute.
+
+10
+00:00:32,000 --> 00:00:34,000
+Now because the condition is checked at the start
+
+11
+00:00:34,000 --> 00:00:38,000
+of the loop, it's possible that the statement never executes.
+
+12
+00:00:38,000 --> 00:00:39,000
+Let's look at an example.
+
+13
+00:00:39,000 --> 00:00:42,000
+Let's write a simple bit of code that we'll use to do a
+
+14
+00:00:42,000 --> 00:00:43,000
+factorial function.
+
+15
+00:00:43,000 --> 00:00:46,000
+Factorial's just you multiply a number times each number
+
+16
+00:00:46,000 --> 00:00:47,000
+below it, right?
+
+17
+00:00:47,000 --> 00:00:50,000
+So five times four times three times two times one,
+
+18
+00:00:50,000 --> 00:00:51,000
+that sort of thing.
+
+19
+00:00:51,000 --> 00:00:53,000
+So we set it up with our while and we want to say that
+
+20
+00:00:53,000 --> 00:00:56,000
+our value, kval, is greater than one.
+
+21
+00:00:56,000 --> 00:00:59,000
+So kval starts out at five and we're going to keep inside
+
+22
+00:00:59,000 --> 00:01:03,000
+this loop as long as kval is greater than one and then say
+
+23
+00:01:03,000 --> 00:01:07,000
+our factorial is equal to itself times kval.
+
+24
+00:01:07,000 --> 00:01:10,000
+So the first time into this loop, our factorial is one.
+
+25
+00:01:10,000 --> 00:01:13,000
+kval is five, so factorial becomes five, right?
+
+26
+00:01:13,000 --> 00:01:15,000
+Five times one.
+
+27
+00:01:15,000 --> 00:01:19,000
+Then we reduce kval by one, kval minus equals one,
+
+28
+00:01:19,000 --> 00:01:21,000
+making kval four now.
+
+29
+00:01:21,000 --> 00:01:23,000
+It goes back up to the while statement,
+
+30
+00:01:23,000 --> 00:01:25,000
+so now it checks four is greater than one.
+
+31
+00:01:25,000 --> 00:01:28,000
+Do the factorial times kval, so now that's five times four
+
+32
+00:01:28,000 --> 00:01:32,000
+is 20, kval becomes three, we go back to the loop, right?
+
+33
+00:01:32,000 --> 00:01:34,000
+Three's still greater than one.
+
+34
+00:01:34,000 --> 00:01:37,000
+Factorial is 20 times three, which is 60.
+
+35
+00:01:37,000 --> 00:01:41,000
+kval becomes two, two's still greater than one.
+
+36
+00:01:41,000 --> 00:01:44,000
+Factorial then is 60 times two, 120.
+
+37
+00:01:44,000 --> 00:01:47,000
+kval now decrements down to one, then we check our
+
+38
+00:01:47,000 --> 00:01:49,000
+while loop, one is not greater than one, so it falls
+
+39
+00:01:49,000 --> 00:01:52,000
+through and then it would print out the value 120.
+
+40
+00:01:52,000 --> 00:01:55,000
+Notice we're using a block statement here in our while loop.
+
+41
+00:01:55,000 --> 00:01:57,000
+The while loop itself will only execute one statement unless
+
+42
+00:01:57,000 --> 00:01:59,000
+you put it in a block.
+
+43
+00:01:59,000 --> 00:02:01,000
+To give you an example of that, there's a way we can
+
+44
+00:02:01,000 --> 00:02:04,000
+actually write this same code to do the work without
+
+45
+00:02:04,000 --> 00:02:06,000
+using a block statement.
+
+46
+00:02:06,000 --> 00:02:09,000
+If we set this up, again kval is five, factorial is one.
+
+47
+00:02:09,000 --> 00:02:13,000
+We do our loop, kval greater than one and then the statement
+
+48
+00:02:13,000 --> 00:02:18,000
+we execute is simply factorial times equals kval minus minus
+
+49
+00:02:18,000 --> 00:02:20,000
+the decrement operator.
+
+50
+00:02:20,000 --> 00:02:22,000
+In this case we're now performing the exact same work,
+
+51
+00:02:22,000 --> 00:02:24,000
+but we didn't have to use a block statement because
+
+52
+00:02:24,000 --> 00:02:26,000
+now we can just go ahead and print it out.
+
+53
+00:02:26,000 --> 00:02:28,000
+So repeatedly execute that factorial times kval
+
+54
+00:02:28,000 --> 00:02:34,000
+minus minus, until kval gets down to one.
+
+55
+00:02:34,000 --> 00:02:37,000
+Another form of loop is a do while loop.
+
+56
+00:02:37,000 --> 00:02:39,000
+The do while loop repeatedly executes a statement
+
+57
+00:02:39,000 --> 00:02:42,000
+as long as the condition is true, but unlike the while
+
+58
+00:02:42,000 --> 00:02:46,000
+loop, it checks the condition at the end of the loop.
+
+59
+00:02:46,000 --> 00:02:48,000
+So we look at the layout for it.
+
+60
+00:02:48,000 --> 00:02:51,000
+We have the do keyword, the statement we want to execute,
+
+61
+00:02:51,000 --> 00:02:55,000
+the while keyword, and then the condition.
+
+62
+00:02:55,000 --> 00:02:59,000
+Now because it checks the condition at the end of the loop,
+
+63
+00:02:59,000 --> 00:03:04,000
+the body of the do while always executes at least once.
+
+64
+00:03:04,000 --> 00:03:06,000
+So let's see some code here.
+
+65
+00:03:06,000 --> 00:03:08,000
+If I set this up and I have some integer value
+
+66
+00:03:08,000 --> 00:03:11,000
+iVal, set to five.
+
+67
+00:03:11,000 --> 00:03:13,000
+Put my do in place, now I'm going to execute multiple
+
+68
+00:03:13,000 --> 00:03:16,000
+statements so I'm going to set up a block.
+
+69
+00:03:16,000 --> 00:03:19,000
+Then inside of here I'm going to go ahead and print out
+
+70
+00:03:19,000 --> 00:03:22,000
+iVal, you'll notice now, most time up until now, we've
+
+71
+00:03:22,000 --> 00:03:24,000
+called Print Line, println, in this case we call it just
+
+72
+00:03:24,000 --> 00:03:28,000
+print, and what that does is when we print the value out,
+
+73
+00:03:28,000 --> 00:03:31,000
+it prints it and doesn't go to a new line.
+
+74
+00:03:31,000 --> 00:03:36,000
+So now if I print out, after that, star two equals, it'll
+
+75
+00:03:36,000 --> 00:03:39,000
+actually put that on the same line.
+
+76
+00:03:39,000 --> 00:03:43,000
+So now I go ahead and calculate iVal times equals two,
+
+77
+00:03:43,000 --> 00:03:46,000
+which now makes iVal 10.
+
+78
+00:03:46,000 --> 00:03:50,000
+When I print line that, now I get 10 displayed.
+
+79
+00:03:50,000 --> 00:03:52,000
+The next thing I print will be on a new line,
+
+80
+00:03:52,000 --> 00:03:55,000
+so I'll go ahead and close my loop here.
+
+81
+00:03:55,000 --> 00:03:57,000
+Now I can just kind of walk through this loop over and over again.
+
+82
+00:03:57,000 --> 00:03:59,000
+The last thing I need to do of course is include the
+
+83
+00:03:59,000 --> 00:04:01,000
+condition, so I'm going to stay in this loop as long as
+
+84
+00:04:01,000 --> 00:04:05,000
+iVal is less than 100, so we know currently iVal is 10,
+
+85
+00:04:05,000 --> 00:04:07,000
+so the next pass through the loop, it's going to print out
+
+86
+00:04:07,000 --> 00:04:12,000
+10 times two equals twenty, so iVal's now 20, so less than 100.
+
+87
+00:04:12,000 --> 00:04:16,000
+20 times two is 40, 40 is still less than 100.
+
+88
+00:04:16,000 --> 00:04:20,000
+40 times two is 80, 80 is still less than 100.
+
+89
+00:04:20,000 --> 00:04:25,000
+Now 80 times two equals 160, but now iVal is now not less
+
+90
+00:04:25,000 --> 00:04:30,000
+than 100, it's greater than 100, 160, so our code ends.
+
+91
+00:04:30,000 --> 00:04:32,000
+Now the key difference here from the while loop is that
+
+92
+00:04:32,000 --> 00:04:34,000
+it will always execute at least once, right?
+
+93
+00:04:34,000 --> 00:04:38,000
+So if I initialize iVal, instead of being five, do something
+
+94
+00:04:38,000 --> 00:04:43,000
+like 150, it will still go through the loop one time,
+
+95
+00:04:43,000 --> 00:04:49,000
+printing out 150 * 2 = 300
+
+96
+00:04:49,000 --> 00:04:51,000
+The last of the basic loops we're going to look at here is
+
+97
+00:04:51,000 --> 00:04:54,000
+the for loop, just like the others it repeatedly executes
+
+98
+00:04:54,000 --> 00:04:58,000
+a statement as long as a condition is true and the
+
+99
+00:04:58,000 --> 00:05:00,000
+condition is checked at the start of the loop, right?
+
+100
+00:05:00,000 --> 00:05:03,000
+Very much like the while loop and really what it is is the
+
+101
+00:05:03,000 --> 00:05:07,000
+for loop is where the convenience layout for a while loop.
+
+102
+00:05:07,000 --> 00:05:11,000
+Let's look at a very common while loop behavior.
+
+103
+00:05:11,000 --> 00:05:13,000
+So if we want to set up a while loop the first thing we do
+
+104
+00:05:13,000 --> 00:05:17,000
+is initialize some value, in this case it's iVal, then that
+
+105
+00:05:17,000 --> 00:05:19,000
+while loop we would check the condition, in this case
+
+106
+00:05:19,000 --> 00:05:21,000
+iVal less than 100.
+
+107
+00:05:21,000 --> 00:05:24,000
+We would then do some work inside that loop
+
+108
+00:05:24,000 --> 00:05:26,000
+like print something out.
+
+109
+00:05:26,000 --> 00:05:29,000
+And then we would update our loop control variable.
+
+110
+00:05:29,000 --> 00:05:32,000
+All right, we would actually, in this case, times equals two
+
+111
+00:05:32,000 --> 00:05:35,000
+that's something we do very, very frequently so the for
+
+112
+00:05:35,000 --> 00:05:39,000
+loop provides a simplified notation for this scenario.
+
+113
+00:05:39,000 --> 00:05:43,000
+We use the for loop, the for keyword, then within the
+
+114
+00:05:43,000 --> 00:05:47,000
+parenthesis, we initialize things, we have our condition for
+
+115
+00:05:47,000 --> 00:05:51,000
+being in the loop and we have a place to update the
+
+116
+00:05:51,000 --> 00:05:56,000
+loop control and then of course that executes our statement.
+
+117
+00:05:56,000 --> 00:05:59,000
+So to see an example of that we start out with our for
+
+118
+00:05:59,000 --> 00:06:03,000
+keyword, in the parenthesis we do the initialization
+
+119
+00:06:03,000 --> 00:06:05,000
+iVal equals one.
+
+120
+00:06:05,000 --> 00:06:09,000
+We have our condition, iVal less than 100.
+
+121
+00:06:09,000 --> 00:06:11,000
+Notice that each of these sections are separated by a
+
+122
+00:06:11,000 --> 00:06:13,000
+semicolon, and then we have our update,
+
+123
+00:06:13,000 --> 00:06:17,000
+iVal times equals two, and then in the body of the loop,
+
+124
+00:06:17,000 --> 00:06:20,000
+we print out iVal.
+
+125
+00:06:20,000 --> 00:06:24,000
+So this while loop and the for loop both do the exact same thing.
+
+126
+00:06:24,000 --> 00:06:26,000
+The for look just makes that standard behavior of
+
+127
+00:06:26,000 --> 00:06:30,000
+initialization, condition, and update a bit more simplified.
+
+128
+00:06:30,000 --> 00:06:32,000
+Just as all the loops, if you want to actually execute
+
+129
+00:06:32,000 --> 00:06:35,000
+multiple statements, you can put it in a block.
+
+130
+00:06:35,000 --> 00:06:38,000
+So just here for notation we can have an opening bracket
+
+131
+00:06:38,000 --> 00:59:00,000
+and a closing bracket and we can put as many statements inside there as we need to.
+

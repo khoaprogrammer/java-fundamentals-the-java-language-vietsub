@@ -1,0 +1,452 @@
+1
+00:00:02,000 --> 00:00:04,000
+Often times in our programs, we'll have fields
+
+2
+00:00:04,000 --> 00:00:07,000
+that we don't allow to be set once they've been initialized.
+
+3
+00:00:07,000 --> 00:00:10,000
+That's where final fields come in.
+
+4
+00:00:10,000 --> 00:00:12,000
+Now, there are two kinds of final fields.
+
+5
+00:00:12,000 --> 00:00:15,000
+A simple final field must be set
+
+6
+00:00:15,000 --> 00:00:18,000
+during the creation of an object instance.
+
+7
+00:00:18,000 --> 00:00:21,000
+That means it must be set using either a field initializer,
+
+8
+00:00:21,000 --> 00:00:24,000
+an initialization block, or a constructor.
+
+9
+00:00:24,000 --> 00:00:26,000
+Let's look at some code that uses that.
+
+10
+00:00:26,000 --> 00:00:28,000
+Remember we have our passenger class.
+
+11
+00:00:28,000 --> 00:00:30,000
+Remember our passenger class,
+
+12
+00:00:30,000 --> 00:00:32,000
+we had this idea that a passenger could be created
+
+13
+00:00:32,000 --> 00:00:35,000
+with a number of free bags that they received.
+
+14
+00:00:35,000 --> 00:00:38,000
+And we set that, of course, inside of our constructor.
+
+15
+00:00:38,000 --> 00:00:40,000
+Now, we may define in our business model,
+
+16
+00:00:40,000 --> 00:00:42,000
+the fact that it's a number of free bags
+
+17
+00:00:42,000 --> 00:00:44,000
+is considered an aspect of the passenger.
+
+18
+00:00:44,000 --> 00:00:46,000
+So, it can only be set
+
+19
+00:00:46,000 --> 00:00:48,000
+during the creation of that passenger.
+
+20
+00:00:48,000 --> 00:00:52,000
+So, we can do that by taking our free bags declaration
+
+21
+00:00:52,000 --> 00:00:54,000
+and simply including the word final there.
+
+22
+00:00:54,000 --> 00:00:56,000
+By including that word final,
+
+23
+00:00:56,000 --> 00:00:58,000
+any attempt to set free bags
+
+24
+00:00:58,000 --> 00:01:00,000
+after it's been set in the constructor
+
+25
+00:01:00,000 --> 00:01:02,000
+would actually result in a compile error.
+
+26
+00:01:02,000 --> 00:01:03,000
+So compiler enforces that rule
+
+27
+00:01:03,000 --> 00:01:06,000
+that it can't be assigned once it's been set.
+
+28
+00:01:06,000 --> 00:01:09,000
+Now, there's also what's known as a static final field.
+
+29
+00:01:09,000 --> 00:01:14,000
+Static final fields create, basically, named constants.
+
+30
+00:01:14,000 --> 00:01:16,000
+A static final field cannot be changed
+
+31
+00:01:16,000 --> 00:01:18,000
+in any object instance.
+
+32
+00:01:18,000 --> 00:01:21,000
+Its value is actually tied to the class itself.
+
+33
+00:01:21,000 --> 00:01:23,000
+So, we look at that in code.
+
+34
+00:01:23,000 --> 00:01:25,000
+Look at our flight class.
+
+35
+00:01:25,000 --> 00:01:27,000
+Remember that our flight class has this concept
+
+36
+00:01:27,000 --> 00:01:29,000
+of the number of seats on a flight.
+
+37
+00:01:29,000 --> 00:01:31,000
+So an instance of our flight class
+
+38
+00:01:31,000 --> 00:01:33,000
+can set the number of seats.
+
+39
+00:01:33,000 --> 00:01:35,000
+So we simply have a setter to do that.
+
+40
+00:01:35,000 --> 00:01:38,000
+But, let's say that the Federal Aviation Administration,
+
+41
+00:01:38,000 --> 00:01:39,000
+right, that's the organization in the United States
+
+42
+00:01:39,000 --> 00:01:41,000
+that sets the rules for planes.
+
+43
+00:01:41,000 --> 00:01:42,000
+Let's say that they set a rule
+
+44
+00:01:42,000 --> 00:01:43,000
+that there's a maximum number of seats
+
+45
+00:01:43,000 --> 00:01:45,000
+that a flight is allowed to have.
+
+46
+00:01:45,000 --> 00:01:47,000
+And we'll say that that's 550.
+
+47
+00:01:47,000 --> 00:01:51,000
+So, we can declare a static final field called
+
+48
+00:01:51,000 --> 00:01:54,000
+MAX_FAA_SEATS
+
+49
+00:01:54,000 --> 00:01:56,000
+that has a value of 550.
+
+50
+00:01:56,000 --> 00:01:58,000
+Now, the convention is,
+
+51
+00:01:58,000 --> 00:02:00,000
+that whenever you have a static final,
+
+52
+00:02:00,000 --> 00:02:03,000
+you use all caps for the name of the field.
+
+53
+00:02:03,000 --> 00:02:05,000
+And what we can do here is down inside of our set seats,
+
+54
+00:02:05,000 --> 00:02:08,000
+we can actually use that MAX_FAA_SEATS
+
+55
+00:02:08,000 --> 00:02:10,000
+just like it's a value.
+
+56
+00:02:10,000 --> 00:02:12,000
+All right, so inside of here let's say we make some room
+
+57
+00:02:12,000 --> 00:02:14,000
+and we can actually put a check in to say well,
+
+58
+00:02:14,000 --> 00:02:17,000
+if seats is less than or equal to MAX_FAA_SEATS, we set it.
+
+59
+00:02:17,000 --> 00:02:20,000
+Otherwise, we handle the error.
+
+60
+00:02:20,000 --> 00:02:23,000
+The key here is that, no object instance can create this.
+
+61
+00:02:23,000 --> 00:02:26,000
+MAX_FAA_SEATS will have a value of 550
+
+62
+00:02:26,000 --> 00:02:28,000
+in all flight instances.
+
+63
+00:02:28,000 --> 00:02:30,000
+We use this most commonly
+
+64
+00:02:30,000 --> 00:02:33,000
+when we're trying to avoid what we often call magic numbers.
+
+65
+00:02:33,000 --> 00:02:35,000
+Where we don't like to put literal numbers
+
+66
+00:02:35,000 --> 00:02:36,000
+inside of our code.
+
+67
+00:02:36,000 --> 00:02:37,000
+Because when we look at this code,
+
+68
+00:02:37,000 --> 00:02:39,000
+we know that the reason we're checking the value of seats
+
+69
+00:02:39,000 --> 00:02:41,000
+is that the FAA has a rule on the max.
+
+70
+00:02:41,000 --> 00:02:42,000
+If we just dropped a 550 in there,
+
+71
+00:02:42,000 --> 00:02:45,000
+that wouldn't necessarily make sense.
+
+72
+00:02:45,000 --> 00:02:47,000
+Now, we often have times where we want to limit
+
+73
+00:02:47,000 --> 00:02:51,000
+a type to a finite number of values
+
+74
+00:02:51,000 --> 00:02:53,000
+And that's where the enumeration types come in.
+
+75
+00:02:53,000 --> 00:02:55,000
+Enumeration types allow us to define a type
+
+76
+00:02:55,000 --> 00:02:58,000
+that has a list of valid values.
+
+77
+00:02:58,000 --> 00:03:01,000
+We declare those using the enum keyword.
+
+78
+00:03:01,000 --> 00:03:03,000
+So let's go ahead and declare an enum for the
+
+79
+00:03:03,000 --> 00:03:06,000
+jobs that the flight crew is allowed to have.
+
+80
+00:03:06,000 --> 00:03:07,000
+So you notice we use the word enum there
+
+81
+00:03:07,000 --> 00:03:09,000
+instead of the word class.
+
+82
+00:03:09,000 --> 00:03:10,000
+And then inside there we can simply
+
+83
+00:03:10,000 --> 00:03:13,000
+provide a comma separated list of the valid values.
+
+84
+00:03:13,000 --> 00:03:16,000
+Let's say the flight crew jobs could be a Pilot,
+
+85
+00:03:16,000 --> 00:03:18,000
+a CoPilot,
+
+86
+00:03:18,000 --> 00:03:21,000
+a FlightAttendant, or an AirMarshal.
+
+87
+00:03:21,000 --> 00:03:24,000
+So now we can use FlightCrewJob as a type.
+
+88
+00:03:24,000 --> 00:03:26,000
+So, let's say we introduce a new class here
+
+89
+00:03:26,000 --> 00:03:27,000
+called CrewMember.
+
+90
+00:03:27,000 --> 00:03:31,000
+Crew members have a job of type FlightCrewJob,
+
+91
+00:03:31,000 --> 00:03:32,000
+so we can go ahead and set that
+
+92
+00:03:32,000 --> 00:03:35,000
+as part of the constructor of CrewMember.
+
+93
+00:03:35,000 --> 00:03:38,000
+As well as we have a setter to change the job
+
+94
+00:03:38,000 --> 00:03:39,000
+of a crew member.
+
+95
+00:03:39,000 --> 00:03:42,000
+So now if we go off and create an instance of CrewMember,
+
+96
+00:03:42,000 --> 00:03:44,000
+called Judy, one of our new crew members,
+
+97
+00:03:44,000 --> 00:03:46,000
+we can give her a job,
+
+98
+00:03:46,000 --> 00:03:47,000
+so we'll say she's a copilot.
+
+99
+00:03:47,000 --> 00:03:48,000
+So, notice the way we do this
+
+100
+00:03:48,000 --> 00:03:51,000
+is we use the name of the enumeration
+
+101
+00:03:51,000 --> 00:03:53,000
+dot one of the values.
+
+102
+00:03:53,000 --> 00:03:55,000
+So, we've created Judy to be a copilot.
+
+103
+00:03:55,000 --> 00:03:56,000
+Let's say some time goes by
+
+104
+00:03:56,000 --> 00:03:58,000
+and Judy get a promotion.
+
+105
+00:03:58,000 --> 00:04:00,000
+Well, we can now make Judy the pilot.
+
+106
+00:04:00,000 --> 00:04:02,000
+So we can set that Judy.setJob,
+
+107
+00:04:02,000 --> 00:04:05,000
+again we use the enumeration name FlightCrewJob
+
+108
+00:04:05,000 --> 00:04:07,000
+dot and the value, Pilot.
+
+109
+00:04:07,000 --> 00:04:10,000
+Enumerations are most commonly used in this way.
+
+110
+00:04:10,000 --> 00:04:12,000
+Defining this finite list of values.
+
+111
+00:04:12,000 --> 00:04:14,000
+But, enumeration types actually
+
+112
+00:04:14,000 --> 00:04:17,000
+have a number of much more advanced capabilities beyond this
+
+113
+00:04:17,000 --> 00:59:00,000
+that we'll talk about later in the course.
+

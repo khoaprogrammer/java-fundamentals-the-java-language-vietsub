@@ -1,0 +1,132 @@
+1
+00:00:02,000 --> 00:00:03,000
+To wrap up, the key to remember here
+
+2
+00:00:03,000 --> 00:00:05,000
+is that when we talk about Java
+
+3
+00:00:05,000 --> 00:00:07,000
+Java actually comes as both a language
+
+4
+00:00:07,000 --> 00:00:09,000
+and a Runtime Environment.
+
+5
+00:00:09,000 --> 00:00:11,000
+You know there may be some variations
+
+6
+00:00:11,000 --> 00:00:13,000
+in those individual Runtime Environments.
+
+7
+00:00:13,000 --> 00:00:15,000
+But the cool thing is that the
+
+8
+00:00:15,000 --> 00:00:17,000
+language is pretty consistent.
+
+9
+00:00:17,000 --> 00:00:20,000
+By knowing the Java Language well
+
+10
+00:00:20,000 --> 00:00:21,000
+you've got the ability to work
+
+11
+00:00:21,000 --> 00:00:25,000
+across a wide range of platforms.
+
+12
+00:00:25,000 --> 00:00:28,000
+Now in terms of installations, End-users only require
+
+13
+00:00:28,000 --> 00:00:32,000
+the JRE that Java Runtime Environment.
+
+14
+00:00:32,000 --> 00:00:35,000
+As Developers we want the JDK as well.
+
+15
+00:00:35,000 --> 00:00:36,000
+Remember that the JDK installation
+
+16
+00:00:36,000 --> 00:00:39,000
+installs the JRE for you
+
+17
+00:00:39,000 --> 00:00:40,000
+so you can go ahead and run the
+
+18
+00:00:40,000 --> 00:00:42,000
+applications that you're creating.
+
+19
+00:00:42,000 --> 00:00:45,000
+All although the JDK is all we actually need
+
+20
+00:00:45,000 --> 00:00:48,000
+to create our applications.
+
+21
+00:00:48,000 --> 00:00:50,000
+We probably want to use an IDE of some sort.
+
+22
+00:00:50,000 --> 00:00:52,000
+There's a whole bunch of ones out there.
+
+23
+00:00:52,000 --> 00:00:54,000
+Again you pick the one you like best.
+
+24
+00:00:54,000 --> 00:00:56,000
+Out of the two I showed you
+
+25
+00:00:56,000 --> 00:00:58,000
+One is NetBeans which is the one that Oracle provides.
+
+26
+00:00:58,000 --> 00:01:00,000
+The other one when I showed you IntelliJ
+
+27
+00:01:00,000 --> 00:01:02,000
+is again very popular as well.
+
+28
+00:01:02,000 --> 00:01:04,000
+And there's no magic to it.
+
+29
+00:01:04,000 --> 00:01:05,000
+It really comes to down to,
+
+30
+00:01:05,000 --> 00:01:08,000
+you just pick the one you like best.
+
+31
+00:01:08,000 --> 00:01:10,000
+And with that, we have everything we need
+
+32
+00:01:10,000 --> 00:01:11,000
+to set up our Environments.
+
+33
+00:01:11,000 --> 00:59:00,000
+So in the next module we'll start Coding.
+

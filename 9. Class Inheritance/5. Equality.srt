@@ -1,0 +1,460 @@
+1
+00:00:01,000 --> 00:00:04,000
+Let's look at the issue of equality. When we have two
+
+2
+00:00:04,000 --> 00:00:08,000
+references to objects, what does it mean when we ask
+
+3
+00:00:08,000 --> 00:00:12,000
+are they equal? And the answer to that is actually,
+
+4
+00:00:12,000 --> 00:00:16,000
+well, it depends. I'll show you what I mean. Let's have
+
+5
+00:00:16,000 --> 00:00:18,000
+some code here. Let's first create an instance of the
+
+6
+00:00:18,000 --> 00:00:22,000
+Flight class, we'll give it a flightNumber of 175 and
+
+7
+00:00:22,000 --> 00:00:26,000
+assign it to the reference f1. Then we'll create another
+
+8
+00:00:26,000 --> 00:00:28,000
+instance of the Flight class, give that one a flightNumber
+
+9
+00:00:28,000 --> 00:00:31,000
+of 175 as well, in this case we assign it to the
+
+10
+00:00:31,000 --> 00:00:37,000
+reference f2. So f1 and f2 point to two separate instances
+
+11
+00:00:37,000 --> 00:00:41,000
+of the Flight class, both with a flight number of 175.
+
+12
+00:00:41,000 --> 00:00:46,000
+So if write the code to say, if(f1 == f2) using the
+
+13
+00:00:46,000 --> 00:00:49,000
+equivalence operator, equals equals, the comparison
+
+14
+00:00:49,000 --> 00:00:53,000
+there will resolve to false, because the equals equals
+
+15
+00:00:53,000 --> 00:00:56,000
+operator performs what's called a reference equals test.
+
+16
+00:00:56,000 --> 00:00:59,000
+In other words, do both of these references point to the
+
+17
+00:00:59,000 --> 00:01:02,000
+exact same object instance. So when you use this equals
+
+18
+00:01:02,000 --> 00:01:05,000
+equals operator, it only resolves to true with reference
+
+19
+00:01:05,000 --> 00:01:08,000
+types if they're both pointing to the same object.
+
+20
+00:01:08,000 --> 00:01:11,000
+Remember that we've been talking about the Object class,
+
+21
+00:01:11,000 --> 00:01:14,000
+and we mentioned that the Object class has an equals
+
+22
+00:01:14,000 --> 00:01:17,000
+method on there. So maybe that's the answer to how we
+
+23
+00:01:17,000 --> 00:01:20,000
+compare these to see if they're equal. So we'll do an
+
+24
+00:01:20,000 --> 00:01:26,000
+if(f1.equals(f2)). If we run this code, what we'll get is
+
+25
+00:01:26,000 --> 00:01:31,000
+false again. The default implementation of the equals
+
+26
+00:01:31,000 --> 00:01:33,000
+method, in other words the one that we get from the
+
+27
+00:01:33,000 --> 00:01:36,000
+Object class, also performs a reference equals test.
+
+28
+00:01:36,000 --> 00:01:39,000
+In other words, it does the same thing as the equals equals
+
+29
+00:01:39,000 --> 00:01:44,000
+operator. It only resolves as true if both references point
+
+30
+00:01:44,000 --> 00:01:48,000
+to the exact same object instance. But the good news is
+
+31
+00:01:48,000 --> 00:01:51,000
+that, because our Flight class, like all classes, inherits
+
+32
+00:01:51,000 --> 00:01:54,000
+from the Object class, we can override the equals
+
+33
+00:01:54,000 --> 00:01:58,000
+method. So let's bring up our Flight class here. Remember
+
+34
+00:01:58,000 --> 00:02:02,000
+that our Flight class provides two different ways to
+
+35
+00:02:02,000 --> 00:02:06,000
+identify a flight. A flight can have a flightNumber, or
+
+36
+00:02:06,000 --> 00:02:10,000
+it can have a flightClass. We don't set both of those,
+
+37
+00:02:10,000 --> 00:02:12,000
+we only set one or the other. And so the way it would
+
+38
+00:02:12,000 --> 00:02:15,000
+work is that we would have a flightNumber with no
+
+39
+00:02:15,000 --> 00:02:19,000
+flightClass, or a flightClass with no flightNumber.
+
+40
+00:02:19,000 --> 00:02:21,000
+So we're going to say that we're going to consider
+
+41
+00:02:21,000 --> 00:02:24,000
+two flights to be equal if their identifying information
+
+42
+00:02:24,000 --> 00:02:26,000
+is the same - they both have the same flightNumber,
+
+43
+00:02:26,000 --> 00:02:28,000
+without a flightClass, or they both have the same
+
+44
+00:02:28,000 --> 00:02:31,000
+flightClass without a flightNumber. So what we're going
+
+45
+00:02:31,000 --> 00:02:34,000
+to do is override the equals method. Now the equals
+
+46
+00:02:34,000 --> 00:02:38,000
+method returns back a Boolean, so I have a Boolean
+
+47
+00:02:38,000 --> 00:02:41,000
+return type, our equals method name, and if we look at
+
+48
+00:02:41,000 --> 00:02:44,000
+the definition of equals in the Object class, the equals
+
+49
+00:02:44,000 --> 00:02:48,000
+method has one parameter, which is an Object.
+
+50
+00:02:48,000 --> 00:02:49,000
+Now what we're going to do here is we're going to mark
+
+51
+00:02:49,000 --> 00:02:52,000
+this with the override annotation, just so the compiler
+
+52
+00:02:52,000 --> 00:02:54,000
+will double-check us and make sure we've gotten our
+
+53
+00:02:54,000 --> 00:02:56,000
+signature correct for the equals method. So now when we
+
+54
+00:02:56,000 --> 00:03:00,000
+call f1.equals(f2),
+
+55
+00:03:00,000 --> 00:03:04,000
+f2 will be passed into that parameter o.
+
+56
+00:03:04,000 --> 00:03:07,000
+Now remember that because o is declared as an Object,
+
+57
+00:03:07,000 --> 00:03:10,000
+it will only have access to members that are known by
+
+58
+00:03:10,000 --> 00:03:13,000
+Object. It won't have access to the Flight members.
+
+59
+00:03:13,000 --> 00:03:17,000
+So what we need to do is take that o, cast it to a Flight,
+
+60
+00:03:17,000 --> 00:03:20,000
+and put it into a reference of type Flight. So that'll be
+
+61
+00:03:20,000 --> 00:03:24,000
+our other variable here. So now other will have access to
+
+62
+00:03:24,000 --> 00:03:28,000
+the flight information from f2. So what we're going to do
+
+63
+00:03:28,000 --> 00:03:29,000
+here then is have the test is that, well, if the
+
+64
+00:03:29,000 --> 00:03:32,000
+flightNumber for the current instance, which is f1
+
+65
+00:03:32,000 --> 00:03:35,000
+matches the flightNumber from the one passed in,
+
+66
+00:03:35,000 --> 00:03:40,000
+which is f2, and the flightClass from both of those match,
+
+67
+00:03:40,000 --> 00:03:43,000
+we're going to consider them equal. So the idea is that,
+
+68
+00:03:43,000 --> 00:03:45,000
+if the flightNumber was set, they'll both have the same
+
+69
+00:03:45,000 --> 00:03:48,000
+flightNumber. The flightClass will have the default value,
+
+70
+00:03:48,000 --> 00:03:50,000
+which is the null character. If the flightClass was set,
+
+71
+00:03:50,000 --> 00:03:53,000
+they'll both have the same flightClass, the flightNumber
+
+72
+00:03:53,000 --> 00:03:56,000
+will have the default value, which will just be a zero.
+
+73
+00:03:56,000 --> 00:04:00,000
+So we're just going to return back that value, so that now
+
+74
+00:04:00,000 --> 00:04:03,000
+when we call equals we are now comparing the two Flight
+
+75
+00:04:03,000 --> 00:04:08,000
+instances based on their identifying information. Now, this
+
+76
+00:04:08,000 --> 00:04:12,000
+is how we've defined equals in this particular situation.
+
+77
+00:04:12,000 --> 00:04:14,000
+In your individual programs, you're going to have to
+
+78
+00:04:14,000 --> 00:04:17,000
+identify what equals means. Because we might have decided
+
+79
+00:04:17,000 --> 00:04:20,000
+that, for two flights to be equal, not only does their
+
+80
+00:04:20,000 --> 00:04:22,000
+identifying information have to be the same, but maybe
+
+81
+00:04:22,000 --> 00:04:24,000
+the number of checked bags also has to be the same.
+
+82
+00:04:24,000 --> 00:04:27,000
+It's up to us as we define our problem space, and the
+
+83
+00:04:27,000 --> 00:04:30,000
+problem we're trying to resolve. So now, relying on this
+
+84
+00:04:30,000 --> 00:04:33,000
+idea that as long as the identifying information is the
+
+85
+00:04:33,000 --> 00:04:36,000
+same in our equals, if we go back now and look at the code,
+
+86
+00:04:36,000 --> 00:04:41,000
+first the if(f1 == f2), that's still going to resolve to
+
+87
+00:04:41,000 --> 00:04:44,000
+false, because that's still a reference equals. It's only
+
+88
+00:04:44,000 --> 00:04:48,000
+true if both f1 and f2 point to the exact same object.
+
+89
+00:04:48,000 --> 00:04:53,000
+But now our if(f1.equals(f2)),
+
+90
+00:04:53,000 --> 00:04:55,000
+that now resolves to true,
+
+91
+00:04:55,000 --> 00:04:59,000
+because f1 and f2 have the same flightNumber.
+
+92
+00:04:59,000 --> 00:05:02,000
+But now let's look at another situation. What if we go off
+
+93
+00:05:02,000 --> 00:05:06,000
+and create an instance of Passenger, and then we say
+
+94
+00:05:06,000 --> 00:05:11,000
+if(f1.equals(p))?
+
+95
+00:05:11,000 --> 00:05:13,000
+Since equals accepts an Object as its
+
+96
+00:05:13,000 --> 00:05:18,000
+parameter type, it's valid for p to be passed into that
+
+97
+00:05:18,000 --> 00:05:21,000
+parameter o. But what's going to happen now when we try
+
+98
+00:05:21,000 --> 00:05:24,000
+to cast o into a Flight? It's going to go ahead and create
+
+99
+00:05:24,000 --> 00:05:26,000
+an error. So one of the things that we have to do is make
+
+100
+00:05:26,000 --> 00:05:30,000
+sure that in our equals method, we don't try to compare
+
+101
+00:05:30,000 --> 00:05:33,000
+against any type we can't validly be compared to. Well,
+
+102
+00:05:33,000 --> 00:05:37,000
+we know that we can take that o and check to see if it's
+
+103
+00:05:37,000 --> 00:05:41,000
+an instance of the Flight class. What we want to do here
+
+104
+00:05:41,000 --> 00:05:44,000
+is say that, if it's not an instance of the Flight class,
+
+105
+00:05:44,000 --> 00:05:46,000
+we just want to get out of here. So what we'll do is just
+
+106
+00:05:46,000 --> 00:05:49,000
+go ahead and wrap that instanceof comparison in the
+
+107
+00:05:49,000 --> 00:05:53,000
+not operator, and then if o is not an instance of Flight,
+
+108
+00:05:53,000 --> 00:05:56,000
+we're just going to go ahead and return false. So our
+
+109
+00:05:56,000 --> 00:05:58,000
+comparisons that compare two Flight instances won't be
+
+110
+00:05:58,000 --> 00:06:01,000
+changed, but this situation where we're trying to compare
+
+111
+00:06:01,000 --> 00:06:04,000
+a Passenger, who can't really be compared with a Flight,
+
+112
+00:06:04,000 --> 00:06:08,000
+that will now return false. The key thing to understand here
+
+113
+00:06:08,000 --> 00:06:11,000
+is that we need to override equals to provide our definition
+
+114
+00:06:11,000 --> 00:06:15,000
+of equal, and the specific definition of equal is going to
+
+115
+00:06:15,000 --> 00:59:00,000
+be specific to your problem space.
+

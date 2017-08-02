@@ -1,0 +1,52 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to this module on creating a simple app.
+
+2
+00:00:04,000 --> 00:00:09,000
+My name is Jim Wilson.
+
+3
+00:00:09,000 --> 00:00:12,000
+In this module, first we're going to look at creating
+
+4
+00:00:12,000 --> 00:00:13,000
+your very first IntelliJ project.
+
+5
+00:00:13,000 --> 00:00:15,000
+In other words, how we create a simple
+
+6
+00:00:15,000 --> 00:00:18,000
+application using IntelliJ.
+
+7
+00:00:18,000 --> 00:00:20,000
+We'll then look at running our Java programs
+
+8
+00:00:20,000 --> 00:00:23,000
+from the command line.
+
+9
+00:00:23,000 --> 00:00:25,000
+We'll take a look at the syntax of Java
+
+10
+00:00:25,000 --> 00:00:28,000
+statements and comments.
+
+11
+00:00:28,000 --> 00:00:32,000
+We'll introduce the concept of Java packages.
+
+12
+00:00:32,000 --> 00:00:34,000
+And then, we'll walk through creating and running
+
+13
+00:00:34,000 --> 00:59:00,000
+a project using the NetBeans IDE.
+

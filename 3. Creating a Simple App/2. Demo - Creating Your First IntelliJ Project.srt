@@ -1,0 +1,564 @@
+1
+00:00:02,000 --> 00:00:04,000
+Let's go ahead now and create our very first Java project.
+
+2
+00:00:04,000 --> 00:00:05,000
+And, we'll go ahead and just use
+
+3
+00:00:05,000 --> 00:00:11,000
+the IntelliJ IDE to do this one.
+
+4
+00:00:11,000 --> 00:00:13,000
+I have a shortcut to IntelliJ on my Desktop,
+
+5
+00:00:13,000 --> 00:00:15,000
+so let's go ahead and double-click that guy to start up.
+
+6
+00:00:15,000 --> 00:00:17,000
+So once IntelliJ starts up here, okay,
+
+7
+00:00:17,000 --> 00:00:19,000
+it takes you to this initial window,
+
+8
+00:00:19,000 --> 00:00:20,000
+and what I want to do is create a new project.
+
+9
+00:00:20,000 --> 00:00:23,000
+So, I'll click on that.
+
+10
+00:00:23,000 --> 00:00:26,000
+Now, it takes me into the Wizard to create the project.
+
+11
+00:00:26,000 --> 00:00:28,000
+Now, one of the first things we have to do
+
+12
+00:00:28,000 --> 00:00:30,000
+is, of course, choose we want to have a Java project,
+
+13
+00:00:30,000 --> 00:00:33,000
+because we were, IntelliJ worked for a variety of things.
+
+14
+00:00:33,000 --> 00:00:36,000
+And, we also have to associate the JDK version
+
+15
+00:00:36,000 --> 00:00:37,000
+we want to use.
+
+16
+00:00:37,000 --> 00:00:39,000
+Now, you only have to do this step once.
+
+17
+00:00:39,000 --> 00:00:41,000
+What we do here is where it says Project SDK,
+
+18
+00:00:41,000 --> 00:00:42,000
+and you'll notice that there are none now.
+
+19
+00:00:42,000 --> 00:00:44,000
+There's none to choose, all right.
+
+20
+00:00:44,000 --> 00:00:45,000
+So, what we're going to do is click on this New
+
+21
+00:00:45,000 --> 00:00:48,000
+button here on the right,
+
+22
+00:00:48,000 --> 00:00:50,000
+we're going to choose to set up a project in SDK,
+
+23
+00:00:50,000 --> 00:00:52,000
+which is the JDK,
+
+24
+00:00:52,000 --> 00:00:53,000
+and what we're going to do now is navigate to
+
+25
+00:00:53,000 --> 00:00:55,000
+where we installed the JDK.
+
+26
+00:00:55,000 --> 00:00:58,000
+All right, it's for me, it's on Program Files,
+
+27
+00:00:58,000 --> 00:01:00,000
+scroll down, Java,
+
+28
+00:01:00,000 --> 00:01:03,000
+and then, make sure you choose JDK, not the JRE.
+
+29
+00:01:03,000 --> 00:01:06,000
+All right, you want the JDK, say OK.
+
+30
+00:01:06,000 --> 00:01:07,000
+And now that we've done that,
+
+31
+00:01:07,000 --> 00:01:09,000
+we can create projects with that JDK.
+
+32
+00:01:09,000 --> 00:01:11,000
+So now, one thing that's just a little bit of a challenge
+
+33
+00:01:11,000 --> 00:01:14,000
+is that this Wizard screen doesn't render well
+
+34
+00:01:14,000 --> 00:01:16,000
+on the resolution that we record at.
+
+35
+00:01:16,000 --> 00:01:19,000
+So, I'm just going to pull that up here just a little bit.
+
+36
+00:01:19,000 --> 00:01:21,000
+Notice that, the buttons across the bottom.
+
+37
+00:01:21,000 --> 00:01:22,000
+All right, so what I'm going to do is click
+
+38
+00:01:22,000 --> 00:01:24,000
+the Next button to move onto the next step of the Wizard.
+
+39
+00:01:24,000 --> 00:01:27,000
+So, I click on the Next button.
+
+40
+00:01:27,000 --> 00:01:29,000
+So now, it says what template do you want to use,
+
+41
+00:01:29,000 --> 00:01:30,000
+or do you want to use a template at all?
+
+42
+00:01:30,000 --> 00:01:31,000
+We're going to say, yeah, go ahead
+
+43
+00:01:31,000 --> 00:01:32,000
+and create it from a template.
+
+44
+00:01:32,000 --> 00:01:34,000
+And what that does is just creates
+
+45
+00:01:34,000 --> 00:01:35,000
+some initial file layouts for us.
+
+46
+00:01:35,000 --> 00:01:37,000
+Sets things up, so we can go ahead and get started easily.
+
+47
+00:01:37,000 --> 00:01:39,000
+And, we're just going to create a regular command line
+
+48
+00:01:39,000 --> 00:01:41,000
+application, which is just the most basic kind
+
+49
+00:01:41,000 --> 00:01:43,000
+of Java application, okay?
+
+50
+00:01:43,000 --> 00:01:45,000
+If I pull this dialog up, okay,
+
+51
+00:01:45,000 --> 00:01:46,000
+I'm going to click that Next button
+
+52
+00:01:46,000 --> 00:01:50,000
+down there at the bottom.
+
+53
+00:01:50,000 --> 00:01:52,000
+So now, we go ahead and want to name things.
+
+54
+00:01:52,000 --> 00:01:54,000
+So, kind of in the lifelong tradition
+
+55
+00:01:54,000 --> 00:01:57,000
+of programming and programming courses,
+
+56
+00:01:57,000 --> 00:01:59,000
+we're going to create a Hello World app.
+
+57
+00:01:59,000 --> 00:02:02,000
+Let's just go ahead and call this project name Hello World.
+
+58
+00:02:02,000 --> 00:02:03,000
+So, I've named the project Hello World.
+
+59
+00:02:03,000 --> 00:02:04,000
+I'm going to go ahead here and where it says,
+
+60
+00:02:04,000 --> 00:02:06,000
+Base Package, I'm going to go ahead
+
+61
+00:02:06,000 --> 00:02:07,000
+and delete that away for now.
+
+62
+00:02:07,000 --> 00:02:10,000
+We'll come back to that a little bit later.
+
+63
+00:02:10,000 --> 00:02:12,000
+And, I'm just specifying where I want it to go.
+
+64
+00:02:12,000 --> 00:02:13,000
+So, I was going to put it into a folder
+
+65
+00:02:13,000 --> 00:02:15,000
+under my Demo folder for this module,
+
+66
+00:02:15,000 --> 00:02:17,000
+called Hello World.
+
+67
+00:02:17,000 --> 00:02:18,000
+If I pull this guy up,
+
+68
+00:02:18,000 --> 00:02:19,000
+notice down at that bottom, now there's actually a Finish
+
+69
+00:02:19,000 --> 00:02:21,000
+button, so that's what I'm going to select this time
+
+70
+00:02:21,000 --> 00:02:25,000
+is the Finish button.
+
+71
+00:02:25,000 --> 00:02:27,000
+So as it starts up, it brings me into the project.
+
+72
+00:02:27,000 --> 00:02:29,000
+One of the features of IntelliJ is it actually has
+
+73
+00:02:29,000 --> 00:02:31,000
+kind of the Tip of the Day.
+
+74
+00:02:31,000 --> 00:02:33,000
+Just kind of show you different fact about working
+
+75
+00:02:33,000 --> 00:02:34,000
+in their environment, and so forth.
+
+76
+00:02:34,000 --> 00:02:36,000
+I'm going to close that up.
+
+77
+00:02:36,000 --> 00:02:38,000
+You notice here it's generated a source code file for me.
+
+78
+00:02:38,000 --> 00:02:41,000
+And up on the left here, I've got my Project Explorer.
+
+79
+00:02:41,000 --> 00:02:42,000
+It just kind of shows me the hierarchy
+
+80
+00:02:42,000 --> 00:02:43,000
+of the files it's created.
+
+81
+00:02:43,000 --> 00:02:46,000
+If I expand Hello World in this Source folder here,
+
+82
+00:02:46,000 --> 00:02:48,000
+there's the Main, and that's the Class file
+
+83
+00:02:48,000 --> 00:02:50,000
+that goes with the Class I've created.
+
+84
+00:02:50,000 --> 00:02:51,000
+I'm going to talk a whole bunch more about Classes
+
+85
+00:02:51,000 --> 00:02:53,000
+later in the course.
+
+86
+00:02:53,000 --> 00:02:56,000
+This is basically just becomes the start of our application.
+
+87
+00:02:56,000 --> 00:02:58,000
+Now, IntelliJ always creates this initial Class
+
+88
+00:02:58,000 --> 00:03:00,000
+as Class Name Main.
+
+89
+00:03:00,000 --> 00:03:02,000
+That Class Name doesn't actually matter.
+
+90
+00:03:02,000 --> 00:03:05,000
+We'll talk a lot more about Class names a little bit later.
+
+91
+00:03:05,000 --> 00:03:07,000
+What does matter is inside of your, there's what's called
+
+92
+00:03:07,000 --> 00:03:08,000
+a Method, right?
+
+93
+00:03:08,000 --> 00:03:10,000
+That's where our code runs.
+
+94
+00:03:10,000 --> 00:03:13,000
+And for Java applications, the startup of your application
+
+95
+00:03:13,000 --> 00:03:17,000
+must be in a Class that has a member called Main,
+
+96
+00:03:17,000 --> 00:03:18,000
+that looks just like this.
+
+97
+00:03:18,000 --> 00:03:20,000
+So, it has to be public.
+
+98
+00:03:20,000 --> 00:03:21,000
+I mean, just publically accessible.
+
+99
+00:03:21,000 --> 00:03:23,000
+We'll talk more about that modifier later.
+
+100
+00:03:23,000 --> 00:03:25,000
+The modifier's static, void.
+
+101
+00:03:25,000 --> 00:03:27,000
+It has to be called Main and it has to look just like this.
+
+102
+00:03:27,000 --> 00:03:31,000
+So whenever you run your code in Java,
+
+103
+00:03:31,000 --> 00:03:33,000
+it's going to look for this as an entry point.
+
+104
+00:03:33,000 --> 00:03:34,000
+All right, so what I'm going to do is delete
+
+105
+00:03:34,000 --> 00:03:36,000
+this line away here,
+
+106
+00:03:36,000 --> 00:03:39,000
+and we'll do the classic Hello World application.
+
+107
+00:03:39,000 --> 00:03:41,000
+So, I'm going to use an object here,
+
+108
+00:03:41,000 --> 00:03:43,000
+which I've called System.
+
+109
+00:03:43,000 --> 00:03:47,000
+And, I'm going to use something called Out and Print Line.
+
+110
+00:03:47,000 --> 00:03:49,000
+All right, and this is just a mechanism in Java
+
+111
+00:03:49,000 --> 00:03:52,000
+we use to print things out to the console.
+
+112
+00:03:52,000 --> 00:03:54,000
+Then, we're going to say, Hello World.
+
+113
+00:03:54,000 --> 00:03:55,000
+So, we have that there.
+
+114
+00:03:55,000 --> 00:03:57,000
+So, this is kind of the most fundamental application
+
+115
+00:03:57,000 --> 00:03:58,000
+we can build, all right?
+
+116
+00:03:58,000 --> 00:04:01,000
+Now, the way we run this in IntelliJ is that we go
+
+117
+00:04:01,000 --> 00:04:03,000
+up here to the Run menu, click on that,
+
+118
+00:04:03,000 --> 00:04:06,000
+and we choose Run.
+
+119
+00:04:06,000 --> 00:04:09,000
+When we do that, we'll see that IntelliJ
+
+120
+00:04:09,000 --> 00:04:11,000
+will go ahead and compile our code for us,
+
+121
+00:04:11,000 --> 00:04:12,000
+and then, down here at the bottom, it shows
+
+122
+00:04:12,000 --> 00:04:14,000
+a Console window, and actually shows
+
+123
+00:04:14,000 --> 00:04:15,000
+the output of our application.
+
+124
+00:04:15,000 --> 00:04:18,000
+So in this case, it says, Hello World.
+
+125
+00:04:18,000 --> 00:04:20,000
+Now, our focus here is on Java,
+
+126
+00:04:20,000 --> 00:04:22,000
+not on the development environment.
+
+127
+00:04:22,000 --> 00:04:23,000
+But, just to show you a couple things
+
+128
+00:04:23,000 --> 00:04:24,000
+that makes it easier.
+
+129
+00:04:24,000 --> 00:04:26,000
+We saw how to run it from the menu.
+
+130
+00:04:26,000 --> 00:04:28,000
+Once we have this window down here,
+
+131
+00:04:28,000 --> 00:04:29,000
+if say, we want to change something,
+
+132
+00:04:29,000 --> 00:04:31,000
+(mumbles) say, Hello World,
+
+133
+00:04:31,000 --> 00:04:32,000
+we'll just say again.
+
+134
+00:04:32,000 --> 00:04:34,000
+If I want to go ahead and rerun the code, I can go
+
+135
+00:04:34,000 --> 00:04:35,000
+down here on the bottom where I have this
+
+136
+00:04:35,000 --> 00:04:37,000
+little green arrow, click on that.
+
+137
+00:04:37,000 --> 00:04:39,000
+And, we'll just run the code over again.
+
+138
+00:04:39,000 --> 00:04:40,000
+Compile it and run it for us.
+
+139
+00:04:40,000 --> 00:04:44,000
+And now, we see Hello World again.
+
+140
+00:04:44,000 --> 00:04:47,000
+So, we've successfully run our very first Java
+
+141
+00:04:47,000 --> 00:59:00,000
+Hello World program.
+

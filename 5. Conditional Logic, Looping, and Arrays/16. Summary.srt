@@ -1,0 +1,112 @@
+1
+00:00:02,000 --> 00:00:04,000
+We covered a ton of stuff in this module.
+
+2
+00:00:04,000 --> 00:00:05,000
+Let's take a look at some of the highlights.
+
+3
+00:00:05,000 --> 00:00:07,000
+Remember that we used the if else statement to provide
+
+4
+00:00:07,000 --> 00:00:10,000
+conditional logic in our applications, that relied on things
+
+5
+00:00:10,000 --> 00:00:13,000
+like relational operators and logical operators and remember
+
+6
+00:00:13,000 --> 00:00:16,000
+that we can chain if else's together if we need to work
+
+7
+00:00:16,000 --> 00:00:18,000
+through multiple possibilities.
+
+8
+00:00:18,000 --> 00:00:20,000
+We rely on block statements a lot.
+
+9
+00:00:20,000 --> 00:00:22,000
+They use brackets to group statements together,
+
+10
+00:00:22,000 --> 00:00:24,000
+so they're really key for working with things like the if
+
+11
+00:00:24,000 --> 00:00:26,000
+statement or the loops.
+
+12
+00:00:26,000 --> 00:00:28,000
+Remember, though, that any variable declared inside of a
+
+13
+00:00:28,000 --> 00:00:32,000
+block is not visible outside of that block.
+
+14
+00:00:32,000 --> 00:00:34,000
+Both the while and the do while loops execute as long as
+
+15
+00:00:34,000 --> 00:00:36,000
+a condition is true.
+
+16
+00:00:36,000 --> 00:00:38,000
+The difference is when they test a condition.
+
+17
+00:00:38,000 --> 00:00:41,000
+While checks at the beginning, do while checks at the end,
+
+18
+00:00:41,000 --> 00:00:44,000
+as a result do while loops always execute their body at
+
+19
+00:00:44,000 --> 00:00:46,000
+least once.
+
+20
+00:00:46,000 --> 00:00:49,000
+The for loop provides a simplified notation for dealing with
+
+21
+00:00:49,000 --> 00:00:51,000
+loop initialization and control.
+
+22
+00:00:51,000 --> 00:00:54,000
+The for each statement goes even further because it
+
+23
+00:00:54,000 --> 00:00:56,000
+handles all the details of executing the body of the loop
+
+24
+00:00:56,000 --> 00:00:59,000
+once for each member of an array.
+
+25
+00:00:59,000 --> 00:01:02,000
+And then finally the switch statement is really useful for
+
+26
+00:01:02,000 --> 00:01:06,000
+those scenarios where you want to test against multiple possible matches.
+
+27
+00:01:06,000 --> 00:01:08,000
+Remember though that, of the primitive types we've talked
+
+28
+00:01:08,000 --> 00:59:00,000
+about, it can only be used with char and integer types.
+

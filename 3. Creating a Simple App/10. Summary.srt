@@ -1,0 +1,172 @@
+1
+00:00:02,000 --> 00:00:04,000
+To wrap up, remember that we use
+
+2
+00:00:04,000 --> 00:00:05,000
+the Java command to execute our
+
+3
+00:00:05,000 --> 00:00:08,000
+Java programs from the command line.
+
+4
+00:00:08,000 --> 00:00:09,000
+All right, the key thing there is that
+
+5
+00:00:09,000 --> 00:00:12,000
+it allows us to run our Java programs
+
+6
+00:00:12,000 --> 00:00:13,000
+without having to have a full IDE, right?
+
+7
+00:00:13,000 --> 00:00:17,000
+That's actually our Java execution environment.
+
+8
+00:00:17,000 --> 00:00:19,000
+When you run the program, we specify
+
+9
+00:00:19,000 --> 00:00:23,000
+the Class name, including its full package name.
+
+10
+00:00:23,000 --> 00:00:24,000
+In other words, we're not running a file.
+
+11
+00:00:24,000 --> 00:00:26,000
+We're actually running the Class.
+
+12
+00:00:26,000 --> 00:00:29,000
+On Windows in order to access the Java command,
+
+13
+00:00:29,000 --> 00:00:31,000
+what you want to do is make sure that you have
+
+14
+00:00:31,000 --> 00:00:36,000
+your JRE's Bin folder in your Path Environment Variable.
+
+15
+00:00:36,000 --> 00:00:38,000
+As we saw, programs are made up of statements, right?
+
+16
+00:00:38,000 --> 00:00:40,000
+Statements and with semicolons.
+
+17
+00:00:40,000 --> 00:00:42,000
+And, the parts of a statement are separated
+
+18
+00:00:42,000 --> 00:00:44,000
+by zero or more whitespaces, right?
+
+19
+00:00:44,000 --> 00:00:46,000
+That gives us a lot of flexibility in how we want
+
+20
+00:00:46,000 --> 00:00:48,000
+to format our source code.
+
+21
+00:00:48,000 --> 00:00:50,000
+As we saw, though, in some of the examples,
+
+22
+00:00:50,000 --> 00:00:51,000
+that can get really ugly,
+
+23
+00:00:51,000 --> 00:00:53,000
+especially if you start using too many new lines.
+
+24
+00:00:53,000 --> 00:00:55,000
+You want to be careful about how much
+
+25
+00:00:55,000 --> 00:00:56,000
+whitespace you use.
+
+26
+00:00:56,000 --> 00:01:00,000
+But, use enough to keep things clear and easy to read.
+
+27
+00:01:00,000 --> 00:01:01,000
+Comments are a useful tool
+
+28
+00:01:01,000 --> 00:01:03,000
+for adding notes to our source code,
+
+29
+00:01:03,000 --> 00:01:05,000
+as well as hiding statements that we don't
+
+30
+00:01:05,000 --> 00:01:06,000
+want being seen by the compiler.
+
+31
+00:01:06,000 --> 00:01:08,000
+For example, if we just want to take some code
+
+32
+00:01:08,000 --> 00:01:09,000
+out to test something, or maybe preserve
+
+33
+00:01:09,000 --> 00:01:12,000
+some code for later.
+
+34
+00:01:12,000 --> 00:01:15,000
+And as we saw, packages provide organization, right?
+
+35
+00:01:15,000 --> 00:01:19,000
+They help us assure uniqueness in our class names,
+
+36
+00:01:19,000 --> 00:01:21,000
+and we also saw that most IDEs
+
+37
+00:01:21,000 --> 00:01:25,000
+will actually tie the source code file structure
+
+38
+00:01:25,000 --> 00:01:27,000
+to the package name, so that each part
+
+39
+00:01:27,000 --> 00:01:30,000
+of the package name is a separate sub-folder.
+
+40
+00:01:30,000 --> 00:01:32,000
+As I mentioned earlier, packages are a really
+
+41
+00:01:32,000 --> 00:01:34,000
+important part of Java.
+
+42
+00:01:34,000 --> 00:01:35,000
+And, we're going to talk a whole bunch more
+
+43
+00:01:35,000 --> 00:59:00,000
+about those later. In fact, they get their own module.
+

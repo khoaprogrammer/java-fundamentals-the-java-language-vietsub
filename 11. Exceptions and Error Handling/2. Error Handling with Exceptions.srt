@@ -1,0 +1,864 @@
+1
+00:00:01,000 --> 00:00:04,000
+A critical aspect of building a successful application is
+
+2
+00:00:04,000 --> 00:00:06,000
+good error handling.
+
+3
+00:00:06,000 --> 00:00:08,000
+If you build a program that doesn't have good error
+
+4
+00:00:08,000 --> 00:00:10,000
+handling, it doesn't matter how cool it is.
+
+5
+00:00:10,000 --> 00:00:12,000
+If it crashes all the time, no one's going to want
+
+6
+00:00:12,000 --> 00:00:13,000
+to use it.
+
+7
+00:00:13,000 --> 00:00:17,000
+So, we need to make sure that handling errors appropriately
+
+8
+00:00:17,000 --> 00:00:21,000
+is really kind of implicit in our application development.
+
+9
+00:00:21,000 --> 00:00:23,000
+Now, traditional mechanisms would use things like
+
+10
+00:00:23,000 --> 00:00:25,000
+error code that had to be checked, or flags that had to be
+
+11
+00:00:25,000 --> 00:00:28,000
+checked, and that's really intrusive, right?
+
+12
+00:00:28,000 --> 00:00:30,000
+Having to put if statements all over the place to deal with
+
+13
+00:00:30,000 --> 00:00:33,000
+potential errors really going to close up your code,
+
+14
+00:00:33,000 --> 00:00:36,000
+it's really kind of awkward, and very often, as developers,
+
+15
+00:00:36,000 --> 00:00:38,000
+we just kind of never get around to doing it.
+
+16
+00:00:38,000 --> 00:00:41,000
+So, we need a way that makes it really easy
+
+17
+00:00:41,000 --> 00:00:42,000
+to manage errors.
+
+18
+00:00:42,000 --> 00:00:44,000
+And that's where exceptions come in.
+
+19
+00:00:44,000 --> 00:00:48,000
+Exceptions provide a non-intrusive way to signal errors.
+
+20
+00:00:48,000 --> 00:00:51,000
+So, with exceptions, rather than actually having to check
+
+21
+00:00:51,000 --> 00:00:54,000
+for errors all of the time, we can write our code so that
+
+22
+00:00:54,000 --> 00:00:58,000
+we expect things to go well, but if an error occurs,
+
+23
+00:00:58,000 --> 00:01:00,000
+an exception is, what we call, thrown.
+
+24
+00:01:00,000 --> 00:01:03,000
+So when an exception's thrown, we can handle it.
+
+25
+00:01:03,000 --> 00:01:07,000
+And that's where try/catch/finally statements come in,
+
+26
+00:01:07,000 --> 00:01:10,000
+is that try/catch/finally provides a structured way for us
+
+27
+00:01:10,000 --> 00:01:12,000
+to handle exceptions.
+
+28
+00:01:12,000 --> 00:01:15,000
+The try portion of the statement contains all of
+
+29
+00:01:15,000 --> 00:01:18,000
+the normal code, it's the thing we expect to go well.
+
+30
+00:01:18,000 --> 00:01:21,000
+And, if all goes well, the try block will simply run
+
+31
+00:01:21,000 --> 00:01:24,000
+to completion, and nothing special will happen.
+
+32
+00:01:24,000 --> 00:01:26,000
+But, if there is an exception, control is then handed off
+
+33
+00:01:26,000 --> 00:01:30,000
+from the try block into a catch block.
+
+34
+00:01:30,000 --> 00:01:32,000
+So, our error code is all inside of a catch block,
+
+35
+00:01:32,000 --> 00:01:35,000
+and a catch block is only called in the event of
+
+36
+00:01:35,000 --> 00:01:37,000
+an exception being thrown.
+
+37
+00:01:37,000 --> 00:01:40,000
+And then, we have what's called a finally block,
+
+38
+00:01:40,000 --> 00:01:41,000
+and finally block is for those scenarios
+
+39
+00:01:41,000 --> 00:01:43,000
+where you need clean-up.
+
+40
+00:01:43,000 --> 00:01:47,000
+The finally block runs after your try block finishes or
+
+41
+00:01:47,000 --> 00:01:49,000
+after a catch block finishes.
+
+42
+00:01:49,000 --> 00:01:51,000
+So, if there's anything you want to have done after
+
+43
+00:01:51,000 --> 00:01:54,000
+the process is over, you put that in a finally block,
+
+44
+00:01:54,000 --> 00:01:56,000
+because it's assured to run, whether the try block finishes
+
+45
+00:01:56,000 --> 00:01:59,000
+completely, or the catch block had to step in
+
+46
+00:01:59,000 --> 00:02:00,000
+and deal with an error.
+
+47
+00:02:00,000 --> 00:02:02,000
+So, let's see what this looks like.
+
+48
+00:02:02,000 --> 00:02:04,000
+Let's look at a really simple case here.
+
+49
+00:02:04,000 --> 00:02:06,000
+So, I have a couple of integers declared here:
+
+50
+00:02:06,000 --> 00:02:09,000
+i has a value of 12, and j has a value of five.
+
+51
+00:02:09,000 --> 00:02:12,000
+And, all we want to do, is we're going to take the value
+
+52
+00:02:12,000 --> 00:02:15,000
+of j, subtract two from it, then divide that into i.
+
+53
+00:02:15,000 --> 00:02:17,000
+We'll store that in result, and simply print it out.
+
+54
+00:02:17,000 --> 00:02:20,000
+Alright, so in a real simple case we have here,
+
+55
+00:02:20,000 --> 00:02:23,000
+if j has a value of five, and subtract two from it, right,
+
+56
+00:02:23,000 --> 00:02:24,000
+of course, I have three.
+
+57
+00:02:24,000 --> 00:02:28,000
+So I divide 12 by three, I'll print out the value, four.
+
+58
+00:02:28,000 --> 00:02:30,000
+Right, very simple.
+
+59
+00:02:30,000 --> 00:02:32,000
+Now, let's make a really small change here.
+
+60
+00:02:32,000 --> 00:02:36,000
+Let's change j from a value of five to a value of two.
+
+61
+00:02:36,000 --> 00:02:39,000
+Well now, if I subtract two from two, I end up with
+
+62
+00:02:39,000 --> 00:02:41,000
+a value of zero.
+
+63
+00:02:41,000 --> 00:02:43,000
+It's not legal to divide by zero.
+
+64
+00:02:43,000 --> 00:02:45,000
+So, we're having in this code is that as soon as
+
+65
+00:02:45,000 --> 00:02:47,000
+I try to divide by zero, the program would just crash.
+
+66
+00:02:47,000 --> 00:02:50,000
+What we want to do is code our programs up so we can recover
+
+67
+00:02:50,000 --> 00:02:52,000
+from scenarios like this, and that's where
+
+68
+00:02:52,000 --> 00:02:53,000
+exceptions come in.
+
+69
+00:02:53,000 --> 00:02:56,000
+We can wrap this code up so that we can handle the exception
+
+70
+00:02:56,000 --> 00:02:58,000
+that occurs when we try to divide by zero.
+
+71
+00:02:58,000 --> 00:03:00,000
+So, we take our core code here, which is where we do
+
+72
+00:03:00,000 --> 00:03:04,000
+the math, and print it out, we wrap that in our try block,
+
+73
+00:03:04,000 --> 00:03:06,000
+and then, we add a catch block to it.
+
+74
+00:03:06,000 --> 00:03:10,000
+And, notice that the catch block receives an exception.
+
+75
+00:03:10,000 --> 00:03:13,000
+In the case of an error, that variable e will receive
+
+76
+00:03:13,000 --> 00:03:15,000
+a reference to the exception that describes
+
+77
+00:03:15,000 --> 00:03:16,000
+the error that occurred.
+
+78
+00:03:16,000 --> 00:03:19,000
+We can do a number of things with the exception.
+
+79
+00:03:19,000 --> 00:03:21,000
+The simplest thing we can do is we print out a message
+
+80
+00:03:21,000 --> 00:03:23,000
+that goes with it.
+
+81
+00:03:23,000 --> 00:03:25,000
+The getMessage method gives us back the appropriate message
+
+82
+00:03:25,000 --> 00:03:28,000
+for that exception, and, if we want to, we can even print
+
+83
+00:03:28,000 --> 00:03:33,000
+out a stack trace, showing exactly what went wrong.
+
+84
+00:03:33,000 --> 00:03:36,000
+Now, our program will continue running just fine from here.
+
+85
+00:03:36,000 --> 00:03:38,000
+But, if we didn't handle this exception when that
+
+86
+00:03:38,000 --> 00:03:41,000
+divide by zero happens, again, we would have crashed.
+
+87
+00:03:41,000 --> 00:03:42,000
+And, the user would have just been left
+
+88
+00:03:42,000 --> 00:03:43,000
+kind of wondering what happens.
+
+89
+00:03:43,000 --> 00:03:45,000
+But, in this case, because we have proper
+
+90
+00:03:45,000 --> 00:03:47,000
+error handling in place, when we try to take that zero
+
+91
+00:03:47,000 --> 00:03:51,000
+and divide it into i, that raises an exception,
+
+92
+00:03:51,000 --> 00:03:54,000
+so control was immediately passed from where
+
+93
+00:03:54,000 --> 00:03:56,000
+we try to do the arithmetic that failed,
+
+94
+00:03:56,000 --> 00:03:58,000
+to our exception block, and then,
+
+95
+00:03:58,000 --> 00:04:00,000
+we can simply print out the value of that exception,
+
+96
+00:04:00,000 --> 00:04:04,000
+the message for it, which says, Error, divide by zero.
+
+97
+00:04:04,000 --> 00:04:06,000
+And then, we would see the stack trace underneath of it.
+
+98
+00:04:06,000 --> 00:04:09,000
+So, that's really kind of our simplest try/catch scenario.
+
+99
+00:04:09,000 --> 00:04:12,000
+Let's look at a little bit more involved one.
+
+100
+00:04:12,000 --> 00:04:13,000
+Let's say we have a text file that has
+
+101
+00:04:13,000 --> 00:04:16,000
+a series of numbers inside of it, and we want to
+
+102
+00:04:16,000 --> 00:04:18,000
+go through and just total them up.
+
+103
+00:04:18,000 --> 00:04:20,000
+So, this text file, Numbers.txt, has the set of numbers
+
+104
+00:04:20,000 --> 00:04:22,000
+we want to get them add up.
+
+105
+00:04:22,000 --> 00:04:24,000
+Let's write some code to do that.
+
+106
+00:04:24,000 --> 00:04:25,000
+So, we're going to take advantage of one of the built-in
+
+107
+00:04:25,000 --> 00:04:28,000
+Java classes called BufferedReader.
+
+108
+00:04:28,000 --> 00:04:30,000
+And, BufferedReader provides an efficient way
+
+109
+00:04:30,000 --> 00:04:32,000
+to read content.
+
+110
+00:04:32,000 --> 00:04:33,000
+We'll also have a variable called total that'll hold
+
+111
+00:04:33,000 --> 00:04:36,000
+the total of the numbers that we add up.
+
+112
+00:04:36,000 --> 00:04:37,000
+So, go ahead and create an instance of our
+
+113
+00:04:37,000 --> 00:04:39,000
+BufferedReader, and notice your BufferedReader
+
+114
+00:04:39,000 --> 00:04:41,000
+uses a FileReader.
+
+115
+00:04:41,000 --> 00:04:43,000
+A FileReader is a built-in class that takes care of
+
+116
+00:04:43,000 --> 00:04:46,000
+the details of reading content from a file.
+
+117
+00:04:46,000 --> 00:04:49,000
+BufferedReader is something that adds some buffering
+
+118
+00:04:49,000 --> 00:04:51,000
+on top of that to make reading from a file more efficient.
+
+119
+00:04:51,000 --> 00:04:53,000
+It also provides some helper methods.
+
+120
+00:04:53,000 --> 00:04:55,000
+Another thing to notice here is that, when we identify
+
+121
+00:04:55,000 --> 00:04:59,000
+the name of the file, notice we're putting \\ in there,
+
+122
+00:04:59,000 --> 00:05:01,000
+in Java, back-slash is used to identify special
+
+123
+00:05:01,000 --> 00:05:06,000
+characters, so \\ says, No, I really want a \.
+
+124
+00:05:06,000 --> 00:05:07,000
+Now, when this is done, we have an instance of
+
+125
+00:05:07,000 --> 00:05:10,000
+our BufferedReader, with a reference to it assigned
+
+126
+00:05:10,000 --> 00:05:13,000
+into the variable reader, and then from there,
+
+127
+00:05:13,000 --> 00:05:15,000
+we going to declare a local variable called line.
+
+128
+00:05:15,000 --> 00:05:17,000
+It will hold a string.
+
+129
+00:05:17,000 --> 00:05:19,000
+And then, we'll put a while statement in place here that
+
+130
+00:05:19,000 --> 00:05:21,000
+actually reads from the BufferedReader.
+
+131
+00:05:21,000 --> 00:05:23,000
+So, a couple interesting things are going on here.
+
+132
+00:05:23,000 --> 00:05:27,000
+Notice that we're actually assigning to line directly inside
+
+133
+00:05:27,000 --> 00:05:28,000
+the while statement, right?
+
+134
+00:05:28,000 --> 00:05:32,000
+So, reader.readLine is defined to say, they will return back
+
+135
+00:05:32,000 --> 00:05:34,000
+a null when you hit the end of file.
+
+136
+00:05:34,000 --> 00:05:36,000
+So, we take whatever we get back from readLine,
+
+137
+00:05:36,000 --> 00:05:40,000
+assign that into line, and then we check line against null.
+
+138
+00:05:40,000 --> 00:05:42,000
+So, as long as line does not contain the value null,
+
+139
+00:05:42,000 --> 00:05:44,000
+we know we still have content.
+
+140
+00:05:44,000 --> 00:05:47,000
+So, here we're just going to say, total plus-equals,
+
+141
+00:05:47,000 --> 00:05:50,000
+and then we use of the primitive type wrapper classes,
+
+142
+00:05:50,000 --> 00:05:53,000
+Integer, and call its valueOf method to convert the string
+
+143
+00:05:53,000 --> 00:05:55,000
+contained in line into a number, right?
+
+144
+00:05:55,000 --> 00:05:57,000
+So, for the first line in our file, we would then be adding
+
+145
+00:05:57,000 --> 00:06:00,000
+in the number five into our total.
+
+146
+00:06:00,000 --> 00:06:01,000
+When the while loop completes, we'll go ahead
+
+147
+00:06:01,000 --> 00:06:03,000
+and print out our content.
+
+148
+00:06:03,000 --> 00:06:05,000
+And so, that's our core effort, that's what we're doing now.
+
+149
+00:06:05,000 --> 00:06:08,000
+We're reading from a file, getting each line from it,
+
+150
+00:06:08,000 --> 00:06:10,000
+converting it into its integer value, adding it to a total,
+
+151
+00:06:10,000 --> 00:06:12,000
+and printing it out.
+
+152
+00:06:12,000 --> 00:06:14,000
+Now, there's a lot of things that could go wrong here.
+
+153
+00:06:14,000 --> 00:06:17,000
+Maybe the file doesn't exist, maybe just some kind of
+
+154
+00:06:17,000 --> 00:06:20,000
+system error occurs when we try to read from the file,
+
+155
+00:06:20,000 --> 00:06:22,000
+maybe there's bad data in the file, someone put the letters
+
+156
+00:06:22,000 --> 00:06:25,000
+X, Y, Z in there instead of numbers, so that could go wrong.
+
+157
+00:06:25,000 --> 00:06:27,000
+So, there're a lot of things that could happen here.
+
+158
+00:06:27,000 --> 00:06:30,000
+So, we certainly want to wrap this into a try block.
+
+159
+00:06:30,000 --> 00:06:32,000
+We'll go ahead and put our catch block in here as well,
+
+160
+00:06:32,000 --> 00:06:35,000
+handle the exception, and we'll print out the error message.
+
+161
+00:06:35,000 --> 00:06:37,000
+But now, something to note here.
+
+162
+00:06:37,000 --> 00:06:39,000
+We've explicitly opened our file.
+
+163
+00:06:39,000 --> 00:06:41,000
+When you open up a file, you need to make sure
+
+164
+00:06:41,000 --> 00:06:43,000
+you close it when you're done.
+
+165
+00:06:43,000 --> 00:06:45,000
+And, we want to close the file whether the try block
+
+166
+00:06:45,000 --> 00:06:49,000
+completes without any problems, or, if an error occurs,
+
+167
+00:06:49,000 --> 00:06:51,000
+and we have to go to the catch block.
+
+168
+00:06:51,000 --> 00:06:53,000
+So, that's where finally comes it.
+
+169
+00:06:53,000 --> 00:06:55,000
+We put a finally here at the end, and we're going to
+
+170
+00:06:55,000 --> 00:06:58,000
+put inside of there is, reader.close.
+
+171
+00:06:58,000 --> 00:07:00,000
+So, we'll be sure to close the file whether we have
+
+172
+00:07:00,000 --> 00:07:02,000
+a problem or if everything completes fine.
+
+173
+00:07:02,000 --> 00:07:03,000
+Now, something to note here.
+
+174
+00:07:03,000 --> 00:07:06,000
+Notice that, when we declared BufferedReader,
+
+175
+00:07:06,000 --> 00:07:09,000
+we declared that before the try block, rather than declaring
+
+176
+00:07:09,000 --> 00:07:11,000
+it inside the try block.
+
+177
+00:07:11,000 --> 00:07:14,000
+The reason we did that is because we need to have access
+
+178
+00:07:14,000 --> 00:07:17,000
+to the variable reader down in our finally block.
+
+179
+00:07:17,000 --> 00:07:20,000
+Had we declared reader inside of the try block,
+
+180
+00:07:20,000 --> 00:07:22,000
+we wouldn't be able to see it in the finally block.
+
+181
+00:07:22,000 --> 00:07:23,000
+So, remember we talked about, earlier in the course, that,
+
+182
+00:07:23,000 --> 00:07:26,000
+when a variable is declared inside of a block,
+
+183
+00:07:26,000 --> 00:07:28,000
+it's not visible outside of that block.
+
+184
+00:07:28,000 --> 00:07:31,000
+So, that's why we declared that before the try block.
+
+185
+00:07:31,000 --> 00:07:32,000
+Now, another thing to note.
+
+186
+00:07:32,000 --> 00:07:34,000
+As we mentioned, there can be different kinds
+
+187
+00:07:34,000 --> 00:07:35,000
+of errors here.
+
+188
+00:07:35,000 --> 00:07:37,000
+So, if we run into a problem reading the file, if there's
+
+189
+00:07:37,000 --> 00:07:40,000
+bad data there or some error occurs in the process of
+
+190
+00:07:40,000 --> 00:07:43,000
+reading the file, our reader would still have a valid
+
+191
+00:07:43,000 --> 00:07:45,000
+reference to BufferedReader.
+
+192
+00:07:45,000 --> 00:07:49,000
+But, what if the file we identified there, Numbers.txt,
+
+193
+00:07:49,000 --> 00:07:50,000
+if it didn't exist?
+
+194
+00:07:50,000 --> 00:07:53,000
+Well, an instance of BufferedReader would have never been
+
+195
+00:07:53,000 --> 00:07:55,000
+created there, for reader would still be null.
+
+196
+00:07:55,000 --> 00:07:57,000
+So, one of the things we generally want to do inside of a
+
+197
+00:07:57,000 --> 00:08:00,000
+finally block is, any time we're going to clean up
+
+198
+00:08:00,000 --> 00:08:03,000
+a resource, make sure it actually has a valid reference.
+
+199
+00:08:03,000 --> 00:08:06,000
+So, we check reader, and make sure it's not equal to null
+
+200
+00:08:06,000 --> 00:08:07,000
+before we close it.
+
+201
+00:08:07,000 --> 00:08:09,000
+Now, another thing we have to think about.
+
+202
+00:08:09,000 --> 00:08:13,000
+The method reader.close is defined that it itself can
+
+203
+00:08:13,000 --> 00:08:14,000
+throw an exception.
+
+204
+00:08:14,000 --> 00:08:16,000
+Something could go wrong in the process of trying
+
+205
+00:08:16,000 --> 00:08:18,000
+to close that file.
+
+206
+00:08:18,000 --> 00:08:21,000
+So, we actually need to protect the close of the try/catch.
+
+207
+00:08:21,000 --> 00:08:24,000
+So, we can go ahead and wrap that up with a try block,
+
+208
+00:08:24,000 --> 00:08:26,000
+and then have a catch which will print out
+
+209
+00:08:26,000 --> 00:08:28,000
+that error message.
+
+210
+00:08:28,000 --> 00:08:30,000
+Now, chances are you're not going to run into a problem
+
+211
+00:08:30,000 --> 00:08:32,000
+closing the file, but it could have happened.
+
+212
+00:08:32,000 --> 00:08:35,000
+So, you see here that, this idea of try, catch and finally
+
+213
+00:08:35,000 --> 00:08:37,000
+can actually become pretty sophisticated, taking care of
+
+214
+00:08:37,000 --> 00:08:40,000
+a lot of different scenarios for us, but still allowing us
+
+215
+00:08:40,000 --> 00:08:42,000
+to keep our code very structured in how we deal
+
+216
+00:08:42,000 --> 00:59:00,000
+with each aspect of it.
+

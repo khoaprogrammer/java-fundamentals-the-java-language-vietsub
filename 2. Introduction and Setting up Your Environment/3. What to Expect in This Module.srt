@@ -1,0 +1,76 @@
+1
+00:00:01,000 --> 00:00:04,000
+The goal of this first Module is to give us the information
+
+2
+00:00:04,000 --> 00:00:06,000
+we need to start working with and learning
+
+3
+00:00:06,000 --> 00:00:07,000
+the Java programming language.
+
+4
+00:00:07,000 --> 00:00:09,000
+So first we want to look at
+
+5
+00:00:09,000 --> 00:00:11,000
+is just take a brief overview of what Java is.
+
+6
+00:00:11,000 --> 00:00:14,000
+What are the parts of it, what is it made up of.
+
+7
+00:00:14,000 --> 00:00:17,000
+Then I'll talk about the JRE vs. JDK.
+
+8
+00:00:17,000 --> 00:00:18,000
+Two terms people throw around pretty freely
+
+9
+00:00:18,000 --> 00:00:19,000
+in a Java world.
+
+10
+00:00:19,000 --> 00:00:21,000
+We want to understand what those are and what they mean.
+
+11
+00:00:21,000 --> 00:00:23,000
+We're going to look at the details of actually
+
+12
+00:00:23,000 --> 00:00:26,000
+setting up you Java development environment.
+
+13
+00:00:26,000 --> 00:00:28,000
+And then looking at your Java
+
+14
+00:00:28,000 --> 00:00:30,000
+Integrative Development Environment.
+
+15
+00:00:30,000 --> 00:00:32,000
+The tools we use to build Java programs.
+
+16
+00:00:32,000 --> 00:00:35,000
+We're not going to kind of endorse or focus on any
+
+17
+00:00:35,000 --> 00:00:38,000
+Java, or any specific Java ID in this course.
+
+18
+00:00:38,000 --> 00:00:40,000
+We just want to talk about what the options are out there
+
+19
+00:00:40,000 --> 00:59:00,000
+and help you to choose which one's right for you.
+

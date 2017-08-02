@@ -1,0 +1,368 @@
+1
+00:00:01,000 --> 00:00:03,000
+Let's take a quick look now at using
+
+2
+00:00:03,000 --> 00:00:08,000
+comments in our code.
+
+3
+00:00:08,000 --> 00:00:10,000
+Here I am back in the program we wrote earlier.
+
+4
+00:00:10,000 --> 00:00:12,000
+And, let's just take this line we write out
+
+5
+00:00:12,000 --> 00:00:14,000
+Hello World again, let's copy that
+
+6
+00:00:14,000 --> 00:00:16,000
+and put it back in a couple more times.
+
+7
+00:00:16,000 --> 00:00:20,000
+Let's just say Hello World one, two, and three.
+
+8
+00:00:20,000 --> 00:00:22,000
+Now, if we go to run our program down here,
+
+9
+00:00:22,000 --> 00:00:24,000
+we'll see that all three of those lines get written
+
+10
+00:00:24,000 --> 00:00:27,000
+out for Hello World one, two, and three.
+
+11
+00:00:27,000 --> 00:00:29,000
+So, using comments, we can add information
+
+12
+00:00:29,000 --> 00:00:31,000
+into our source code.
+
+13
+00:00:31,000 --> 00:00:33,000
+First, I'll use a line comment,
+
+14
+00:00:33,000 --> 00:00:35,000
+so I'll just do a Slash, Slash.
+
+15
+00:00:35,000 --> 00:00:37,000
+I'll say, this is a comment.
+
+16
+00:00:37,000 --> 00:00:41,000
+And, this comment only exists until I get to the new line.
+
+17
+00:00:41,000 --> 00:00:43,000
+All right, you notice that even the IDE is using
+
+18
+00:00:43,000 --> 00:00:46,000
+a different color text just to make the comments stand out.
+
+19
+00:00:46,000 --> 00:00:48,000
+However, if I run this, it's had no impact
+
+20
+00:00:48,000 --> 00:00:51,000
+on what our program does.
+
+21
+00:00:51,000 --> 00:00:55,000
+All right, it still says Hello World one, two and three.
+
+22
+00:00:55,000 --> 00:00:57,000
+All right, but if I go down to the next line here
+
+23
+00:00:57,000 --> 00:00:59,000
+and put a double slash in front of that,
+
+24
+00:00:59,000 --> 00:01:02,000
+all right, that line is now ignored by the compiler.
+
+25
+00:01:02,000 --> 00:01:06,000
+Right, so if I go ahead and run this,
+
+26
+00:01:06,000 --> 00:01:09,000
+I get Hello World one, Hello World three.
+
+27
+00:01:09,000 --> 00:01:11,000
+All right, so it allows again to just kind of have this
+
+28
+00:01:11,000 --> 00:01:14,000
+comment only exists for a single line.
+
+29
+00:01:14,000 --> 00:01:15,000
+All right, and of course, these comments can
+
+30
+00:01:15,000 --> 00:01:17,000
+also be on a line by themselves.
+
+31
+00:01:17,000 --> 00:01:19,000
+If I had a line here, I would just type something like,
+
+32
+00:01:19,000 --> 00:01:22,000
+this is a standalone comment.
+
+33
+00:01:22,000 --> 00:01:26,000
+All right, and go ahead and run this guy again.
+
+34
+00:01:26,000 --> 00:01:28,000
+All right, and no change in the output,
+
+35
+00:01:28,000 --> 00:01:32,000
+because again, the comment lasts until the end of the line.
+
+36
+00:01:32,000 --> 00:01:34,000
+All right, now block comments actually
+
+37
+00:01:34,000 --> 00:01:36,000
+have distinct starting and ending points, right?
+
+38
+00:01:36,000 --> 00:01:41,000
+So, if before this message here, if I put a slash, star,
+
+39
+00:01:41,000 --> 00:01:43,000
+that comment exists until the star, slash.
+
+40
+00:01:43,000 --> 00:01:46,000
+Right, so I can say, this is the first line of the comment,
+
+41
+00:01:46,000 --> 00:01:48,000
+all right, and I can even add another line and say,
+
+42
+00:01:48,000 --> 00:01:50,000
+this is the second line of the comment.
+
+43
+00:01:50,000 --> 00:01:53,000
+And, I can have as many of these lines here as I want to
+
+44
+00:01:53,000 --> 00:01:55,000
+because a comment doesn't end until it gets
+
+45
+00:01:55,000 --> 00:01:56,000
+to the star, slash.
+
+46
+00:01:56,000 --> 00:01:59,000
+Using that same technique, block comments can start
+
+47
+00:01:59,000 --> 00:02:01,000
+and end in the middle of the same line, all right?
+
+48
+00:02:01,000 --> 00:02:02,000
+So if I just wanted to change this text here,
+
+49
+00:02:02,000 --> 00:02:06,000
+but not delete it, so I do a slash, star,
+
+50
+00:02:06,000 --> 00:02:09,000
+and I put a star, slash at the end.
+
+51
+00:02:09,000 --> 00:02:13,000
+And now, I put in here, this is different text,
+
+52
+00:02:13,000 --> 00:02:16,000
+everything between the slash, star and star, slash
+
+53
+00:02:16,000 --> 00:02:19,000
+is ignored, but then once we hit the end of the block
+
+54
+00:02:19,000 --> 00:02:21,000
+comment, compiler looks at it again.
+
+55
+00:02:21,000 --> 00:02:24,000
+Or, I should say the compiler sees the text again.
+
+56
+00:02:24,000 --> 00:02:27,000
+All right, so if I go over here and I run this now,
+
+57
+00:02:27,000 --> 00:02:28,000
+I get my Hello World one, but then,
+
+58
+00:02:28,000 --> 00:02:31,000
+I get the, this is different text.
+
+59
+00:02:31,000 --> 00:02:34,000
+All right, and so the really key thing is that
+
+60
+00:02:34,000 --> 00:02:36,000
+the slash, slash comment just exists
+
+61
+00:02:36,000 --> 00:02:38,000
+until the very end of the line.
+
+62
+00:02:38,000 --> 00:02:40,000
+The block comments have distinct starting
+
+63
+00:02:40,000 --> 00:02:41,000
+and ending points.
+
+64
+00:02:41,000 --> 00:02:43,000
+One thing to be aware of block comments
+
+65
+00:02:43,000 --> 00:02:45,000
+is that you cannot nest them, all right.
+
+66
+00:02:45,000 --> 00:02:47,000
+So, I got a block comment here at the top
+
+67
+00:02:47,000 --> 00:02:48,000
+but this is the first line of the comment,
+
+68
+00:02:48,000 --> 00:02:51,000
+this is the second line of the comment.
+
+69
+00:02:51,000 --> 00:02:54,000
+If I put a slash, star in here,
+
+70
+00:02:54,000 --> 00:02:57,000
+you notice that at that second star, slash,
+
+71
+00:02:57,000 --> 00:03:00,000
+the one at the bottom now shows up as an error,
+
+72
+00:03:00,000 --> 00:03:02,000
+because the compiler doesn't have a distinct
+
+73
+00:03:02,000 --> 00:03:04,000
+idea of for every starting block comment,
+
+74
+00:03:04,000 --> 00:03:05,000
+there is an ending block.
+
+75
+00:03:05,000 --> 00:03:07,000
+Basically, as soon as it sees the very first encounter
+
+76
+00:03:07,000 --> 00:03:10,000
+of star, slash, all the comments are ended.
+
+77
+00:03:10,000 --> 00:03:12,000
+So, you cannot nest block comments.
+
+78
+00:03:12,000 --> 00:03:15,000
+Now, it is okay to put line comments
+
+79
+00:03:15,000 --> 00:03:16,000
+inside of a block comment.
+
+80
+00:03:16,000 --> 00:03:21,000
+So, if I put a slash, slash line comment in here,
+
+81
+00:03:21,000 --> 00:03:23,000
+all right, that's not an error.
+
+82
+00:03:23,000 --> 00:03:25,000
+You wouldn't intentionally do that really,
+
+83
+00:03:25,000 --> 00:03:27,000
+because you're already in the comment block,
+
+84
+00:03:27,000 --> 00:03:28,000
+so why put a line comment in there?
+
+85
+00:03:28,000 --> 00:03:31,000
+But, if you happen to have an existing line comment
+
+86
+00:03:31,000 --> 00:03:34,000
+and you wrap it in a block comment, that's still safe.
+
+87
+00:03:34,000 --> 00:03:36,000
+The bottom line here is that comments allow us
+
+88
+00:03:36,000 --> 00:03:38,000
+to put text inside of our source code
+
+89
+00:03:38,000 --> 00:03:40,000
+that we don't want to be seen by the compiler,
+
+90
+00:03:40,000 --> 00:03:42,000
+all right, whether it's notes to ourselves
+
+91
+00:03:42,000 --> 00:03:45,000
+or another human being, or we just want certain
+
+92
+00:03:45,000 --> 00:59:00,000
+source code to be ignored for some period of time.
+

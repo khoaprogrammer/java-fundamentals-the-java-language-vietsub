@@ -1,0 +1,128 @@
+1
+00:00:02,000 --> 00:00:06,000
+To wrap up, remember that variables are strongly typed in Java.
+
+2
+00:00:06,000 --> 00:00:08,000
+And the foundation of the Java type system
+
+3
+00:00:08,000 --> 00:00:10,000
+are the primitive types.
+
+4
+00:00:10,000 --> 00:00:12,000
+We saw that there were four categories of those.
+
+5
+00:00:12,000 --> 00:00:15,000
+Integers, floating point, character, and Boolean.
+
+6
+00:00:15,000 --> 00:00:17,000
+But then within the integer and floating point types,
+
+7
+00:00:17,000 --> 00:00:19,000
+there are even types of varying sizes.
+
+8
+00:00:19,000 --> 00:00:23,000
+So integers could be as small as a byte with only 8 bits,
+
+9
+00:00:23,000 --> 00:00:25,000
+or as large as a long with 64 bits.
+
+10
+00:00:25,000 --> 00:00:28,000
+Similarly floating points had float with 32 bits
+
+11
+00:00:28,000 --> 00:00:31,000
+and double with 64 bits.
+
+12
+00:00:31,000 --> 00:00:34,000
+We have a really rich list of math operators.
+
+13
+00:00:34,000 --> 00:00:36,000
+Anything from the basic operations,
+
+14
+00:00:36,000 --> 00:00:38,000
+like add, subtract, multiply, and divide,
+
+15
+00:00:38,000 --> 00:00:40,000
+to the postfix and prefix operators,
+
+16
+00:00:40,000 --> 00:00:42,000
+which allow us increment and decrement values,
+
+17
+00:00:42,000 --> 00:00:44,000
+to the compound assignment operators
+
+18
+00:00:44,000 --> 00:00:46,000
+that allow us to apply an operation to the value
+
+19
+00:00:46,000 --> 00:00:49,000
+in a variable and store that result
+
+20
+00:00:49,000 --> 00:00:51,000
+back into the same variable.
+
+21
+00:00:51,000 --> 00:00:53,000
+We learned too that our math operators follow
+
+22
+00:00:53,000 --> 00:00:56,000
+a well-defined order of precedence.
+
+23
+00:00:56,000 --> 00:00:58,000
+Remember that you can actually affect an order of precedence
+
+24
+00:00:58,000 --> 00:01:01,000
+by using parenthesis.
+
+25
+00:01:01,000 --> 00:01:03,000
+And then when it comes to type conversions,
+
+26
+00:01:03,000 --> 00:01:05,000
+we often have to move between different types
+
+27
+00:01:05,000 --> 00:01:07,000
+because as our programs, as they get more complexity,
+
+28
+00:01:07,000 --> 00:01:10,000
+will likely involve multiple data types.
+
+29
+00:01:10,000 --> 00:01:13,000
+The compiler can handle type conversions that are widening,
+
+30
+00:01:13,000 --> 00:01:17,000
+moving from one type to another that can hold larger values.
+
+31
+00:01:17,000 --> 00:01:21,000
+But you can also use casting to explicitly perform those type conversions
+
+32
+00:01:21,000 --> 00:59:00,000
+that the compiler can't perform automatically.
+

@@ -1,0 +1,444 @@
+1
+00:00:02,000 --> 00:00:03,000
+Operations in our applications
+
+2
+00:00:03,000 --> 00:00:06,000
+will commonly involve multiple data types.
+
+3
+00:00:06,000 --> 00:00:07,000
+Because of that,
+
+4
+00:00:07,000 --> 00:00:09,000
+we have to deal with type conversions.
+
+5
+00:00:09,000 --> 00:00:12,000
+Now there are implicit type conversions
+
+6
+00:00:12,000 --> 00:00:13,000
+and those are type conversions
+
+7
+00:00:13,000 --> 00:00:16,000
+that are performed automatically by the compiler.
+
+8
+00:00:16,000 --> 00:00:17,000
+To see a simple example of that,
+
+9
+00:00:17,000 --> 00:00:18,000
+we look at something like here
+
+10
+00:00:18,000 --> 00:00:20,000
+we have an integer iVal
+
+11
+00:00:20,000 --> 00:00:22,000
+that we have assigned the value of 50.
+
+12
+00:00:22,000 --> 00:00:25,000
+If I then saw long lval = iVal,
+
+13
+00:00:25,000 --> 00:00:28,000
+the compiler has to convert that 32 bit integer iVal
+
+14
+00:00:28,000 --> 00:00:33,000
+into a 64 bit integer as its stored into lval.
+
+15
+00:00:33,000 --> 00:00:35,000
+There are also explicit type conversions
+
+16
+00:00:35,000 --> 00:00:36,000
+and these are conversions
+
+17
+00:00:36,000 --> 00:00:39,000
+that I explicitly perform in my code.
+
+18
+00:00:39,000 --> 00:00:42,000
+I do that using a cast operator.
+
+19
+00:00:42,000 --> 00:00:45,000
+See here if I had that long lval = 50,
+
+20
+00:00:45,000 --> 00:00:47,000
+so I'm now assigning 64 bit integer
+
+21
+00:00:47,000 --> 00:00:48,000
+the value of 50,
+
+22
+00:00:48,000 --> 00:00:52,000
+if I want to assign that into this iVal,
+
+23
+00:00:52,000 --> 00:00:54,000
+a 32 bit integer,
+
+24
+00:00:54,000 --> 00:00:55,000
+I have to explicitly cast it.
+
+25
+00:00:55,000 --> 00:00:56,000
+I have to tell the compiler
+
+26
+00:00:56,000 --> 00:00:58,000
+that I want to go from that 64 bit integer
+
+27
+00:00:58,000 --> 00:01:00,000
+into a 32 bit integer.
+
+28
+00:01:00,000 --> 00:01:03,000
+And I do that by using type you want to convert to,
+
+29
+00:01:03,000 --> 00:01:04,000
+in this case int,
+
+30
+00:01:04,000 --> 00:01:06,000
+putting it inside the parenthesis,
+
+31
+00:01:06,000 --> 00:01:08,000
+and putting it next to the value I want to cast.
+
+32
+00:01:08,000 --> 00:01:10,000
+So this says, the int parenthesis says,
+
+33
+00:01:10,000 --> 00:01:18,000
+to take the lval and cast it down to a 32 bit integer.
+
+34
+00:01:18,000 --> 00:01:20,000
+If we looked at these implicit type conversions,
+
+35
+00:01:20,000 --> 00:01:23,000
+these are generally what we would call widening conversions
+
+36
+00:01:23,000 --> 00:01:24,000
+and these can be done automatically
+
+37
+00:01:24,000 --> 00:01:27,000
+because we're moving to a wider data type.
+
+38
+00:01:27,000 --> 00:01:29,000
+So if I have a 32 bit integer
+
+39
+00:01:29,000 --> 00:01:31,000
+and I want to move to a 64 bit integer,
+
+40
+00:01:31,000 --> 00:01:33,000
+that's wider, right?
+
+41
+00:01:33,000 --> 00:01:35,000
+So the values can be safely moved
+
+42
+00:01:35,000 --> 00:01:37,000
+so those can be done implicitly.
+
+43
+00:01:37,000 --> 00:01:38,000
+The compiler has to make decisions
+
+44
+00:01:38,000 --> 00:01:39,000
+about how to make these conversions.
+
+45
+00:01:39,000 --> 00:01:41,000
+The rules are pretty straight forward.
+
+46
+00:01:41,000 --> 00:01:46,000
+If I have an expression with multiple integer sizes in it,
+
+47
+00:01:46,000 --> 00:01:49,000
+if we have a short and a long,
+
+48
+00:01:49,000 --> 00:01:50,000
+whatever the largest integer size is
+
+49
+00:01:50,000 --> 00:01:52,000
+is what we convert it to.
+
+50
+00:01:52,000 --> 00:01:54,000
+So if I do an operation with a short and a long,
+
+51
+00:01:54,000 --> 00:01:58,000
+the short will be implicitly cast into a long.
+
+52
+00:01:58,000 --> 00:02:01,000
+By performing an operation with mixed floating point sizes,
+
+53
+00:02:01,000 --> 00:02:02,000
+so I have a float and a double,
+
+54
+00:02:02,000 --> 00:02:05,000
+they'll always go to the double.
+
+55
+00:02:05,000 --> 00:02:07,000
+The double is the largest floating point size.
+
+56
+00:02:07,000 --> 00:02:10,000
+If I have an operation that uses integer types
+
+57
+00:02:10,000 --> 00:02:12,000
+and floating point types,
+
+58
+00:02:12,000 --> 00:02:14,000
+the compiler will cast to whatever the largest
+
+59
+00:02:14,000 --> 00:02:17,000
+floating point in the equation is.
+
+60
+00:02:17,000 --> 00:02:19,000
+So if I do an operation with a long and a float,
+
+61
+00:02:19,000 --> 00:02:22,000
+the long will be cast into a float.
+
+62
+00:02:22,000 --> 00:02:23,000
+If I do an operation with a long and a double,
+
+63
+00:02:23,000 --> 00:02:30,000
+the long will then be cast to a double.
+
+64
+00:02:30,000 --> 00:02:31,000
+Explicit type conversions are the ones
+
+65
+00:02:31,000 --> 00:02:34,000
+that we explicitly perform in our code
+
+66
+00:02:34,000 --> 00:02:36,000
+when using this cast operation.
+
+67
+00:02:36,000 --> 00:02:37,000
+When we do that,
+
+68
+00:02:37,000 --> 00:02:39,000
+we're taking responsibility for whatever happens
+
+69
+00:02:39,000 --> 00:02:41,000
+as a result of that type conversion.
+
+70
+00:02:41,000 --> 00:02:42,000
+Because of that,
+
+71
+00:02:42,000 --> 00:02:45,000
+we can perform both widening conversions
+
+72
+00:02:45,000 --> 00:02:46,000
+and narrowing.
+
+73
+00:02:46,000 --> 00:02:49,000
+So widening going from a 32 bit to say a 64 bit,
+
+74
+00:02:49,000 --> 00:02:52,000
+narrowing, going from a 64 bit down to a 32 bit.
+
+75
+00:02:52,000 --> 00:02:54,000
+We just want to be aware
+
+76
+00:02:54,000 --> 00:02:56,000
+that we know what could potentially happen.
+
+77
+00:02:56,000 --> 00:02:57,000
+If we do an explicit cast
+
+78
+00:02:57,000 --> 00:03:00,000
+from a floating point to an integer,
+
+79
+00:03:00,000 --> 00:03:02,000
+well floating points can have fractial portions,
+
+80
+00:03:02,000 --> 00:03:03,000
+integers can't.
+
+81
+00:03:03,000 --> 00:03:05,000
+So any fractional portion would be dropped
+
+82
+00:03:05,000 --> 00:03:09,000
+when I cast that float down to an integer.
+
+83
+00:03:09,000 --> 00:03:10,000
+You want to be careful
+
+84
+00:03:10,000 --> 00:03:11,000
+when performing a narrowing conversion.
+
+85
+00:03:11,000 --> 00:03:13,000
+If I have a 64 bit integer,
+
+86
+00:03:13,000 --> 00:03:16,000
+it has the ability to hold values that are too large
+
+87
+00:03:16,000 --> 00:03:18,000
+to fit into a 32 bit integer.
+
+88
+00:03:18,000 --> 00:03:20,000
+So if I cast that 64 bit to a 32 bit,
+
+89
+00:03:20,000 --> 00:03:22,000
+the program will actually do it,
+
+90
+00:03:22,000 --> 00:03:24,000
+but if the value is too large to fit into a 32 bit,
+
+91
+00:03:24,000 --> 00:03:27,000
+you'll get some odd results from that.
+
+92
+00:03:27,000 --> 00:03:28,000
+So you want to make sure that
+
+93
+00:03:28,000 --> 00:03:29,000
+when you're doing a narrowing cast,
+
+94
+00:03:29,000 --> 00:03:33,000
+that you know that what you're doing is safe.
+
+95
+00:03:33,000 --> 00:03:34,000
+And the last one is just
+
+96
+00:03:34,000 --> 00:03:36,000
+that you want to be careful when converting
+
+97
+00:03:36,000 --> 00:03:38,000
+from an integer to a floating point
+
+98
+00:03:38,000 --> 00:03:39,000
+because if you have an integer
+
+99
+00:03:39,000 --> 00:03:41,000
+with a large number of significant digits,
+
+100
+00:03:41,000 --> 00:03:43,000
+because of the way floating points are stored,
+
+101
+00:03:43,000 --> 00:03:46,000
+you could lose some of those significant digits.
+
+102
+00:03:46,000 --> 00:03:49,000
+The deep details of how these type conversions occur
+
+103
+00:03:49,000 --> 00:03:51,000
+are beyond the scope of this course,
+
+104
+00:03:51,000 --> 00:03:53,000
+but if you'd like to understand them in more detail.
+
+105
+00:03:53,000 --> 00:03:55,000
+I've got that URL on the screen for you
+
+106
+00:03:55,000 --> 00:03:57,000
+that actually points to the Java documentation
+
+107
+00:03:57,000 --> 00:03:59,000
+and talks about those details.
+
+108
+00:03:59,000 --> 00:04:00,000
+You check that out,
+
+109
+00:04:00,000 --> 00:04:02,000
+you'll particularly want to look at the sections
+
+110
+00:04:02,000 --> 00:04:04,000
+on widening primitive conversion
+
+111
+00:04:04,000 --> 00:59:00,000
+and narrowing primitive conversion.
+

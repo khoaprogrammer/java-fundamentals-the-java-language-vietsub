@@ -1,0 +1,352 @@
+1
+00:00:01,000 --> 00:00:04,000
+We talked about constructors briefly in the last module
+
+2
+00:00:04,000 --> 00:00:06,000
+and from that we know that a constructor is
+
+3
+00:00:06,000 --> 00:00:09,000
+executable code that is used during the creation
+
+4
+00:00:09,000 --> 00:00:12,000
+of an object to set up that initial state.
+
+5
+00:00:12,000 --> 00:00:14,000
+Remember that we worked with our flight class
+
+6
+00:00:14,000 --> 00:00:17,000
+in our last module, we saw that the flight class
+
+7
+00:00:17,000 --> 00:00:19,000
+had a constructor in it.
+
+8
+00:00:19,000 --> 00:00:22,000
+One thing that's interesting to note is that a constructor
+
+9
+00:00:22,000 --> 00:00:25,000
+is not a method, it is an executable code,
+
+10
+00:00:25,000 --> 00:00:26,000
+but it's not a method.
+
+11
+00:00:26,000 --> 00:00:29,000
+You'll notice that constructors don't have return type.
+
+12
+00:00:29,000 --> 00:00:32,000
+It's just a code that we want to run during the construction
+
+13
+00:00:32,000 --> 00:00:37,000
+of our object and every class has at least one constructor.
+
+14
+00:00:37,000 --> 00:00:40,000
+It's interesting to note, if we look at our flight class,
+
+15
+00:00:40,000 --> 00:00:42,000
+what's going on inside of our constructor
+
+16
+00:00:42,000 --> 00:00:43,000
+isn't really necessary.
+
+17
+00:00:43,000 --> 00:00:45,000
+We see setting "passengers equal to zero",
+
+18
+00:00:45,000 --> 00:00:47,000
+that's not necessary because we know that ints
+
+19
+00:00:47,000 --> 00:00:50,000
+are automatically set to zero when your field
+
+20
+00:00:50,000 --> 00:00:54,000
+is in a class and "seats equals 150", we could've actually
+
+21
+00:00:54,000 --> 00:00:56,000
+put that up in the declaration of seats.
+
+22
+00:00:56,000 --> 00:00:59,000
+We didn't really need to have an explicit constructor here.
+
+23
+00:00:59,000 --> 00:01:01,000
+What happens in a case where we don't really need
+
+24
+00:01:01,000 --> 00:01:04,000
+to have an explicit constructor?
+
+25
+00:01:04,000 --> 00:01:06,000
+Let's take a look here at how to deal with that.
+
+26
+00:01:06,000 --> 00:01:08,000
+Let's use another class, we're going to call that
+
+27
+00:01:08,000 --> 00:01:10,000
+passenger class and our passenger class
+
+28
+00:01:10,000 --> 00:01:12,000
+is going to have three fields.
+
+29
+00:01:12,000 --> 00:01:14,000
+These are all related to "check in bags", that we got
+
+30
+00:01:14,000 --> 00:01:17,000
+on the flight, so we have the "checks bags" field,
+
+31
+00:01:17,000 --> 00:01:19,000
+which is how many bags the passengers checked.
+
+32
+00:01:19,000 --> 00:01:21,000
+"Free bags" indicates how many bags they are allowed
+
+33
+00:01:21,000 --> 00:01:23,000
+to have for free.
+
+34
+00:01:23,000 --> 00:01:26,000
+The "per bag fee" is what is the cost of each bag beyond
+
+35
+00:01:26,000 --> 00:01:28,000
+the number of free bags.
+
+36
+00:01:28,000 --> 00:01:30,000
+Let's assume that we've provided accessors and mutators
+
+37
+00:01:30,000 --> 00:01:32,000
+for checked bags and free bags so that we can
+
+38
+00:01:32,000 --> 00:01:34,000
+interact with that data.
+
+39
+00:01:34,000 --> 00:01:36,000
+As we can see, this class does not have
+
+40
+00:01:36,000 --> 00:01:39,000
+a constructor, yet, if I write code, to go and create
+
+41
+00:01:39,000 --> 00:01:44,000
+a new passenger and assign it to "Bob", that code will run.
+
+42
+00:01:44,000 --> 00:01:45,000
+Well, how is that possible if we said
+
+43
+00:01:45,000 --> 00:01:46,000
+that every class has to have
+
+44
+00:01:46,000 --> 00:01:47,000
+at least one constructor?
+
+45
+00:01:47,000 --> 00:01:50,000
+It turns out that if you don't have an explicit constructor,
+
+46
+00:01:50,000 --> 00:01:53,000
+Java actually provides one, you wouldn't see it
+
+47
+00:01:53,000 --> 00:01:55,000
+in your source code, but when the class is built,
+
+48
+00:01:55,000 --> 00:01:58,000
+Java generates a constructor that doesn't do anything.
+
+49
+00:01:58,000 --> 00:02:00,000
+Therefore, it makes it possible to create an instance
+
+50
+00:02:00,000 --> 00:02:03,000
+of your class without explicitly writing a constructor.
+
+51
+00:02:03,000 --> 00:02:05,000
+There is nothing special about that class,
+
+52
+00:02:05,000 --> 00:02:06,000
+it will behave normally so you can interact
+
+53
+00:02:06,000 --> 00:02:08,000
+with all of its methods and so forth.
+
+54
+00:02:08,000 --> 00:02:11,000
+But, classes can actually have multiple constructors.
+
+55
+00:02:11,000 --> 00:02:15,000
+The parameter list has to differ for each constructor,
+
+56
+00:02:15,000 --> 00:02:17,000
+that's an idea we call the signature.
+
+57
+00:02:17,000 --> 00:02:19,000
+We'll talk more about how signatures work later
+
+58
+00:02:19,000 --> 00:02:21,000
+in the course when we talk about methods in more detail.
+
+59
+00:02:21,000 --> 00:02:23,000
+The key thing is that, just the numbering types
+
+60
+00:02:23,000 --> 00:02:27,000
+of parameters have to differ across various constructors.
+
+61
+00:02:27,000 --> 00:02:31,000
+Let's say that we want to be able to create passengers
+
+62
+00:02:31,000 --> 00:02:34,000
+and as part of the creation, indicate how many free bags
+
+63
+00:02:34,000 --> 00:02:35,000
+they're allowed to have.
+
+64
+00:02:35,000 --> 00:02:37,000
+All that constructor would do is accept the parameters
+
+65
+00:02:37,000 --> 00:02:41,000
+that number free bags then assign that to the field.
+
+66
+00:02:41,000 --> 00:02:43,000
+What that allows us to do is write code like this
+
+67
+00:02:43,000 --> 00:02:46,000
+where our passenger Jane equals new passenger two,
+
+68
+00:02:46,000 --> 00:02:49,000
+that calls our constructor that accepts the integer
+
+69
+00:02:49,000 --> 00:02:52,000
+and sets the number of free bags for Jane to do.
+
+70
+00:02:52,000 --> 00:02:54,000
+Of course, we can then set the number
+
+71
+00:02:54,000 --> 00:02:55,000
+of checked bags for her from there.
+
+72
+00:02:55,000 --> 00:02:58,000
+The thing is that once we introduce this new constructor
+
+73
+00:02:58,000 --> 00:03:02,000
+that accepts the integer free bags, the line above there
+
+74
+00:03:02,000 --> 00:03:04,000
+where we create Bob as a passenger
+
+75
+00:03:04,000 --> 00:03:06,000
+would no longer compile.
+
+76
+00:03:06,000 --> 00:03:10,000
+What happens is that, once you write any constructors,
+
+77
+00:03:10,000 --> 00:03:12,000
+you're now responsible for all the constructors.
+
+78
+00:03:12,000 --> 00:03:15,000
+That constructor that was created by Java
+
+79
+00:03:15,000 --> 00:03:18,000
+is no longer there, the point is that Java doesn't assume
+
+80
+00:03:18,000 --> 00:03:20,000
+that your class needs a constructor with no arguments.
+
+81
+00:03:20,000 --> 00:03:23,000
+Once you write any constructors, you're now responsible
+
+82
+00:03:23,000 --> 00:03:26,000
+for all the constructors, so if we still want to allow
+
+83
+00:03:26,000 --> 00:03:29,000
+users of our class to create instances that don't provide
+
+84
+00:03:29,000 --> 00:03:32,000
+any arguments, we're responsible to go ahead and write
+
+85
+00:03:32,000 --> 00:03:34,000
+a constructor that doesn't take any arguments.
+
+86
+00:03:34,000 --> 00:03:37,000
+Doesn't have to do anything, but just by putting it there,
+
+87
+00:03:37,000 --> 00:03:39,000
+we're saying that that code that creates an instance
+
+88
+00:03:39,000 --> 00:59:00,000
+without providing the parameters is now valid again.
+

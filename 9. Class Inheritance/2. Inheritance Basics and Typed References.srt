@@ -1,0 +1,332 @@
+1
+00:00:01,000 --> 00:00:04,000
+As an object-oriented language, Java allows one class
+
+2
+00:00:04,000 --> 00:00:06,000
+to inherit from another class, also known as
+
+3
+00:00:06,000 --> 00:00:09,000
+having a class derived from another class.
+
+4
+00:00:09,000 --> 00:00:12,000
+The way we do that is, when we're declaring a new class
+
+5
+00:00:12,000 --> 00:00:15,000
+we use the extends keyword and identify what class
+
+6
+00:00:15,000 --> 00:00:18,000
+we are extending or we are inheriting from.
+
+7
+00:00:18,000 --> 00:00:21,000
+What happens is that that derived class has
+
+8
+00:00:21,000 --> 00:00:23,000
+the characteristics of the base class,
+
+9
+00:00:23,000 --> 00:00:27,000
+and then can add its own specializations to create
+
+10
+00:00:27,000 --> 00:00:30,000
+more capabilities. To see what this looks like,
+
+11
+00:00:30,000 --> 00:00:32,000
+say we have a class here, we're going to call it our
+
+12
+00:00:32,000 --> 00:00:36,000
+CargoFlight class. What we want it to do is have all
+
+13
+00:00:36,000 --> 00:00:38,000
+the same basic characteristics as our Flight class,
+
+14
+00:00:38,000 --> 00:00:42,000
+so we simply say extends, and then Flight.
+
+15
+00:00:42,000 --> 00:00:44,000
+And so now the CargoFlight class will have those
+
+16
+00:00:44,000 --> 00:00:46,000
+characteristics that come from the Flight class, then can,
+
+17
+00:00:46,000 --> 00:00:49,000
+of course, add its own. So as a CargoFlight, one of
+
+18
+00:00:49,000 --> 00:00:51,000
+the things we want to keep track of is how much
+
+19
+00:00:51,000 --> 00:00:52,000
+cargo space we have.
+
+20
+00:00:52,000 --> 00:00:54,000
+So we'll say our CargoFlights have a thousand cubic feet
+
+21
+00:00:54,000 --> 00:00:57,000
+of cargo space. Of course, we want to keep track of
+
+22
+00:00:57,000 --> 00:00:59,000
+how much of that we're using, so we'll just go ahead and add
+
+23
+00:00:59,000 --> 00:01:03,000
+some methods to this. So we'll say that we'll have a method
+
+24
+00:01:03,000 --> 00:01:05,000
+to make sure that we have enough space for whatever the
+
+25
+00:01:05,000 --> 00:01:08,000
+size is of what we're trying to add, so we just make sure
+
+26
+00:01:08,000 --> 00:01:10,000
+that if we add that to how much space we've already used,
+
+27
+00:01:10,000 --> 00:01:13,000
+make sure it doesn't exceed our maxCargoSpace.
+
+28
+00:01:13,000 --> 00:01:16,000
+We'll have a method for handling when we do try to exceed
+
+29
+00:01:16,000 --> 00:01:18,000
+that, in this case we'll just display a message saying
+
+30
+00:01:18,000 --> 00:01:21,000
+there's not enough space. And then, of course, we'll have
+
+31
+00:01:21,000 --> 00:01:24,000
+a method here that says add1Package, and that method
+
+32
+00:01:24,000 --> 00:01:27,000
+will accept the dimensions of the package, the height,
+
+33
+00:01:27,000 --> 00:01:30,000
+the width, and the depth of that package.
+
+34
+00:01:30,000 --> 00:01:33,000
+So what we need to do then, inside this method,
+
+35
+00:01:33,000 --> 00:01:34,000
+is that when we receive a package, we'll calculate the
+
+36
+00:01:34,000 --> 00:01:37,000
+total size, simply multiply the height times the width
+
+37
+00:01:37,000 --> 00:01:42,000
+times the depth, and then we'll call our hasCargoSpace,
+
+38
+00:01:42,000 --> 00:01:44,000
+then if that returns true, we'll go ahead and add the size
+
+39
+00:01:44,000 --> 00:01:46,000
+of that package to how much space has been used,
+
+40
+00:01:46,000 --> 00:01:49,000
+otherwise we'll go ahead and handle the situation of
+
+41
+00:01:49,000 --> 00:01:50,000
+not having enough space, which again just prints out a
+
+42
+00:01:50,000 --> 00:01:54,000
+message. To use this, we can go out here and just declare
+
+43
+00:01:54,000 --> 00:01:57,000
+a CargoFlight reference, and new up a CargoFlight,
+
+44
+00:01:57,000 --> 00:02:01,000
+then we can of course add a package to it, and in this case
+
+45
+00:02:01,000 --> 00:02:04,000
+we're adding a package with a height of one foot, a width of
+
+46
+00:02:04,000 --> 00:02:07,000
+two-and-a-half feet, and a depth of three feet, giving us
+
+47
+00:02:07,000 --> 00:02:11,000
+a total size of 7-1/2 cubic feet. We add that into our
+
+48
+00:02:11,000 --> 00:02:15,000
+CargoFlight. Remember that since our CargoFlight extends
+
+49
+00:02:15,000 --> 00:02:18,000
+Flight, it's going to have access to the characteristics of
+
+50
+00:02:18,000 --> 00:02:21,000
+the Flight class, so our Flight class has this
+
+51
+00:02:21,000 --> 00:02:25,000
+addOnePassenger method, so with a CargoFlight,
+
+52
+00:02:25,000 --> 00:02:27,000
+we can go ahead and new up an instance of Passenger,
+
+53
+00:02:27,000 --> 00:02:32,000
+in this case, Jane, and still add one passenger, Jane,
+
+54
+00:02:32,000 --> 00:02:35,000
+to the CargoFlight. So we've got these extended capabilities
+
+55
+00:02:35,000 --> 00:02:38,000
+as well as the base class capabilities. As we work with a
+
+56
+00:02:38,000 --> 00:02:42,000
+derived class, instances of that derived class can be
+
+57
+00:02:42,000 --> 00:02:45,000
+assigned to references of the base class type.
+
+58
+00:02:45,000 --> 00:02:48,000
+So if we take a look at some code for that,
+
+59
+00:02:48,000 --> 00:02:49,000
+remember that we still have our CargoFlight here that
+
+60
+00:02:49,000 --> 00:02:52,000
+extends the Flight class, well we can go ahead and
+
+61
+00:02:52,000 --> 00:02:57,000
+create a reference of type Flight f, and then new up a
+
+62
+00:02:57,000 --> 00:03:01,000
+CargoFlight and assign it to that reference. What that means
+
+63
+00:03:01,000 --> 00:03:05,000
+is that as a Flight reference, it can use the Flight
+
+64
+00:03:05,000 --> 00:03:07,000
+capabilities, so we can new up a Passenger, and of course
+
+65
+00:03:07,000 --> 00:03:11,000
+add1Passenger.Jane to that Flight. The thing is that
+
+66
+00:03:11,000 --> 00:03:16,000
+we only have access to capabilities that are visible
+
+67
+00:03:16,000 --> 00:03:20,000
+to the Flight class. So if we try to do f.add1Package,
+
+68
+00:03:20,000 --> 00:03:24,000
+even though CargoFlight knows how to add1Package,
+
+69
+00:03:24,000 --> 00:03:28,000
+a Flight doesn't. So that wouldn't be a valid call, because
+
+70
+00:03:28,000 --> 00:03:30,000
+we can only access methods that are visible to the
+
+71
+00:03:30,000 --> 00:03:33,000
+reference type. The value of this capability, though,
+
+72
+00:03:33,000 --> 00:03:37,000
+it allows us to perform Flight-based actions without
+
+73
+00:03:37,000 --> 00:03:40,000
+being concerned about the specific type of the instance.
+
+74
+00:03:40,000 --> 00:03:42,000
+So if we think about a situation like this, say we create
+
+75
+00:03:42,000 --> 00:03:45,000
+an array of Flights, we'll call it Squadron and make some
+
+76
+00:03:45,000 --> 00:03:48,000
+room for five Flights, we could have the first member
+
+77
+00:03:48,000 --> 00:03:51,000
+of that be an instance of the Flight class, the next member
+
+78
+00:03:51,000 --> 00:03:54,000
+a member of the CargoFlight class, and keep mixing that up
+
+79
+00:03:54,000 --> 00:03:57,000
+so we have another CargoFlight, a Flight, and another
+
+80
+00:03:57,000 --> 00:04:00,000
+CargoFlight. And again we can loop through this doing
+
+81
+00:04:00,000 --> 00:04:04,000
+all the Flight-based stuff. For the CargoFlight ones
+
+82
+00:04:04,000 --> 00:04:06,000
+we may want to do some extended things for CargoFlights,
+
+83
+00:04:06,000 --> 00:59:00,000
+but it allows us to very easily group these actions.
+

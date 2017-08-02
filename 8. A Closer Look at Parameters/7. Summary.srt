@@ -1,0 +1,104 @@
+1
+00:00:01,000 --> 00:00:04,000
+The key things you want to remember from this module.
+
+2
+00:00:04,000 --> 00:00:06,000
+Remember that parameters are immutable.
+
+3
+00:00:06,000 --> 00:00:09,000
+What that means is that any change made to a parameter
+
+4
+00:00:09,000 --> 00:00:12,000
+within a method are not reflected once you exit that method.
+
+5
+00:00:12,000 --> 00:00:14,000
+It doesn't matter whether it's a Primitive Type
+
+6
+00:00:14,000 --> 00:00:16,000
+or a reference to a Class.
+
+7
+00:00:16,000 --> 00:00:19,000
+But you can make changes to members of a class.
+
+8
+00:00:19,000 --> 00:00:20,000
+Because remember that the parameter's
+
+9
+00:00:20,000 --> 00:00:22,000
+actually pointing off to that object instance.
+
+10
+00:00:22,000 --> 00:00:25,000
+So those individual members can be changed.
+
+11
+00:00:25,000 --> 00:00:27,000
+A constructor or method can actually
+
+12
+00:00:27,000 --> 00:00:29,000
+have multiple versions of it.
+
+13
+00:00:29,000 --> 00:00:31,000
+In other words, you can have differing parameter lists.
+
+14
+00:00:31,000 --> 00:00:32,000
+We call that Overloading.
+
+15
+00:00:32,000 --> 00:00:34,000
+Remember though that each one
+
+16
+00:00:34,000 --> 00:00:35,000
+needs to have a unique signature.
+
+17
+00:00:35,000 --> 00:00:37,000
+That signature is made up of its name, the number
+
+18
+00:00:37,000 --> 00:00:40,000
+of parameters and the type of each parameter.
+
+19
+00:00:40,000 --> 00:00:42,000
+And finally, remember that methods can be declared
+
+20
+00:00:42,000 --> 00:00:45,000
+to accept a varying number of parameter values.
+
+21
+00:00:45,000 --> 00:00:47,000
+Basically you process it just like it's an array,
+
+22
+00:00:47,000 --> 00:00:49,000
+because it actually is an array.
+
+23
+00:00:49,000 --> 00:00:51,000
+It's just the Java environment is taking care of
+
+24
+00:00:51,000 --> 00:00:53,000
+creating the array instance for you.
+
+25
+00:00:53,000 --> 00:00:55,000
+The one key restriction is, that can only be done with
+
+26
+00:00:55,000 --> 00:59:00,000
+the last parameter received by that method or constructor.
+

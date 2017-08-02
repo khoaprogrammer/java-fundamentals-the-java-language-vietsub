@@ -1,0 +1,260 @@
+1
+00:00:02,000 --> 00:00:04,000
+Java includes some special reference variables
+
+2
+00:00:04,000 --> 00:00:06,000
+that are important for us to understand.
+
+3
+00:00:06,000 --> 00:00:09,000
+Now one of these is the this reference.
+
+4
+00:00:09,000 --> 00:00:11,000
+And the this reference allows you to refer
+
+5
+00:00:11,000 --> 00:00:13,000
+to the current object.
+
+6
+00:00:13,000 --> 00:00:15,000
+So it's useful for any time you want to be very explicit
+
+7
+00:00:15,000 --> 00:00:19,000
+and indicate that you're referring to the current object.
+
+8
+00:00:19,000 --> 00:00:21,000
+And it's also used forward cases where an object may need
+
+9
+00:00:21,000 --> 00:00:25,000
+to pass references to itself to other methods.
+
+10
+00:00:25,000 --> 00:00:27,000
+We'll see this used a lot throughout the course
+
+11
+00:00:27,000 --> 00:00:29,000
+but let's look at a simple example.
+
+12
+00:00:29,000 --> 00:00:31,000
+Remember that we have our Flight class
+
+13
+00:00:31,000 --> 00:00:34,000
+and we had that method we just wrote called hasRoom.
+
+14
+00:00:34,000 --> 00:00:38,000
+Now the hasRoom method uses data from the current instance
+
+15
+00:00:38,000 --> 00:00:41,000
+and it also uses data from an instance passed in f2.
+
+16
+00:00:41,000 --> 00:00:46,000
+So we have our f2.passengers which refers to the passengers
+
+17
+00:00:46,000 --> 00:00:47,000
+of the instance passed in.
+
+18
+00:00:47,000 --> 00:00:50,000
+And then our passengers refers
+
+19
+00:00:50,000 --> 00:00:51,000
+to the current instances passengers
+
+20
+00:00:51,000 --> 00:00:54,000
+And this is completely valid the way we have this written.
+
+21
+00:00:54,000 --> 00:00:56,000
+But if we wanted to make it more explicit,
+
+22
+00:00:56,000 --> 00:00:59,000
+that we were referring to the current instance passengers
+
+23
+00:00:59,000 --> 00:01:03,000
+what we could do is we could actually put this in front of
+
+24
+00:01:03,000 --> 00:01:05,000
+the passengers on the left saying that
+
+25
+00:01:05,000 --> 00:01:09,000
+we're referring to this one inside of the current instance.
+
+26
+00:01:09,000 --> 00:01:11,000
+So it allows us to get rid of that ambiguity
+
+27
+00:01:11,000 --> 00:01:13,000
+and make our code more clear.
+
+28
+00:01:13,000 --> 00:01:16,000
+There are other cases that maybe we had a local variable
+
+29
+00:01:16,000 --> 00:01:18,000
+or something that maybe had a name collision
+
+30
+00:01:18,000 --> 00:01:20,000
+with a member field.
+
+31
+00:01:20,000 --> 00:01:22,000
+We could also use this to disambiguate that.
+
+32
+00:01:22,000 --> 00:01:25,000
+We'll see an example of that shortly, later in this module.
+
+33
+00:01:25,000 --> 00:01:28,000
+Another special reference is the null reference,
+
+34
+00:01:28,000 --> 00:01:29,000
+and this is a literal.
+
+35
+00:01:29,000 --> 00:01:33,000
+And null refers to an uncreated object and you can assign it
+
+36
+00:01:33,000 --> 00:01:36,000
+to any reference variable and you want to really just use it
+
+37
+00:01:36,000 --> 00:01:38,000
+to say that "Hey, this reference variable isn't pointing
+
+38
+00:01:38,000 --> 00:01:39,000
+"to anything yet."
+
+39
+00:01:39,000 --> 00:01:41,000
+So we take a look at some code here.
+
+40
+00:01:41,000 --> 00:01:43,000
+Remember that we wrote that code earlier
+
+41
+00:01:43,000 --> 00:01:47,000
+where we declared our two flights: lax1, lax2.
+
+42
+00:01:47,000 --> 00:01:50,000
+And then we're going to have our other Flight lax3
+
+43
+00:01:50,000 --> 00:01:53,000
+that if there was room we would assign
+
+44
+00:01:53,000 --> 00:01:57,000
+a new Flight instance to with combined passengers
+
+45
+00:01:57,000 --> 00:02:00,000
+of lax1 and lax2.
+
+46
+00:02:00,000 --> 00:02:03,000
+Well this code as it's written kind of creates a problem.
+
+47
+00:02:03,000 --> 00:02:07,000
+Notice that our Flight lax3, well, if there wasn't room
+
+48
+00:02:07,000 --> 00:02:09,000
+to combine them lax3 could end up
+
+49
+00:02:09,000 --> 00:02:11,000
+potentially set to nothing.
+
+50
+00:02:11,000 --> 00:02:14,000
+All right, we learned earlier that local variables
+
+51
+00:02:14,000 --> 00:02:18,000
+cannot be uninitialized so we need to initialize lax3
+
+52
+00:02:18,000 --> 00:02:21,000
+to something and we want to initialize it to no object.
+
+53
+00:02:21,000 --> 00:02:23,000
+So that's where null comes in.
+
+54
+00:02:23,000 --> 00:02:25,000
+So we can do here is that simply say
+
+55
+00:02:25,000 --> 00:02:28,000
+Flight lax3 equals null.
+
+56
+00:02:28,000 --> 00:02:31,000
+So now it's initialized to .2 no object at all.
+
+57
+00:02:31,000 --> 00:02:34,000
+So let's say that later on our program we do some work
+
+58
+00:02:34,000 --> 00:02:37,000
+and we want to know if lax3 was actually
+
+59
+00:02:37,000 --> 00:02:39,000
+assigned a flight or not.
+
+60
+00:02:39,000 --> 00:02:41,000
+Well we can actually compare lax3 to null.
+
+61
+00:02:41,000 --> 00:02:44,000
+So we're saying well if lax3 is not equal null.
+
+62
+00:02:44,000 --> 00:02:47,000
+In other words is lax3 no longer pointing to nothing.
+
+63
+00:02:47,000 --> 00:02:48,000
+Does it point to something?
+
+64
+00:02:48,000 --> 00:02:51,000
+Well and if it does, we know the flights were combined
+
+65
+00:02:51,000 --> 00:59:00,000
+so we could print that value out.
+

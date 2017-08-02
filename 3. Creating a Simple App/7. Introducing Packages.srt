@@ -1,0 +1,648 @@
+1
+00:00:02,000 --> 00:00:04,000
+Let's talk briefly about Java packages.
+
+2
+00:00:04,000 --> 00:00:07,000
+Now, packages are a very important concept in Java
+
+3
+00:00:07,000 --> 00:00:09,000
+and we actually talk a great deal more about them
+
+4
+00:00:09,000 --> 00:00:12,000
+later when we have a whole module dedicated to them.
+
+5
+00:00:12,000 --> 00:00:13,000
+We want to look at just a couple simple things
+
+6
+00:00:13,000 --> 00:00:16,000
+about packages right now to get us started.
+
+7
+00:00:16,000 --> 00:00:17,000
+Now, if we look at our source code,
+
+8
+00:00:17,000 --> 00:00:19,000
+all our source code we've written up until now
+
+9
+00:00:19,000 --> 00:00:21,000
+has just kind of our Class definitions,
+
+10
+00:00:21,000 --> 00:00:23,000
+and that's kind of by itself.
+
+11
+00:00:23,000 --> 00:00:26,000
+But if you look at most source code out there,
+
+12
+00:00:26,000 --> 00:00:28,000
+you'll see that at the top of each source code file,
+
+13
+00:00:28,000 --> 00:00:32,000
+you'll see the word package, followed by some name.
+
+14
+00:00:32,000 --> 00:00:34,000
+And, what this does when we add this package concept,
+
+15
+00:00:34,000 --> 00:00:39,000
+it provides organization within a Java program.
+
+16
+00:00:39,000 --> 00:00:41,000
+Now again, there's a lot of aspects of that,
+
+17
+00:00:41,000 --> 00:00:42,000
+but we want to look at just two basic
+
+18
+00:00:42,000 --> 00:00:44,000
+aspects of that to get us started.
+
+19
+00:00:44,000 --> 00:00:47,000
+One is that these package names follow
+
+20
+00:00:47,000 --> 00:00:50,000
+a standard naming convention, and they
+
+21
+00:00:50,000 --> 00:00:56,000
+actually affect our source code file structure.
+
+22
+00:00:56,000 --> 00:00:58,000
+Now in terms of the naming convention,
+
+23
+00:00:58,000 --> 00:01:01,000
+one very simple rule is that package names
+
+24
+00:01:01,000 --> 00:01:02,000
+are all lowercase.
+
+25
+00:01:02,000 --> 00:01:04,000
+All right, that's just a convention (mumbles)
+
+26
+00:01:04,000 --> 00:01:05,000
+actually allow it not to be all lowercase,
+
+27
+00:01:05,000 --> 00:01:07,000
+but that is the convention that package names
+
+28
+00:01:07,000 --> 00:01:10,000
+are all lowercase.
+
+29
+00:01:10,000 --> 00:01:11,000
+And, one of the things we're trying to do
+
+30
+00:01:11,000 --> 00:01:14,000
+with package names is create a sense of uniqueness.
+
+31
+00:01:14,000 --> 00:01:17,000
+So, one aspect of uniqueness is on the global scale,
+
+32
+00:01:17,000 --> 00:01:19,000
+throughout the entire world.
+
+33
+00:01:19,000 --> 00:01:21,000
+So, in order to assure package name uniqueness
+
+34
+00:01:21,000 --> 00:01:24,000
+on a global scale, what we generally do is use
+
+35
+00:01:24,000 --> 00:01:27,000
+the reversed domain name, all right?
+
+36
+00:01:27,000 --> 00:01:28,000
+So for an example of that,
+
+37
+00:01:28,000 --> 00:01:30,000
+Pluralsight owns Pluralsight dot com, right,
+
+38
+00:01:30,000 --> 00:01:32,000
+and there's actually an authority out there
+
+39
+00:01:32,000 --> 00:01:33,000
+that makes sure that no one else
+
+40
+00:01:33,000 --> 00:01:35,000
+buys the name Pluralsight dot com.
+
+41
+00:01:35,000 --> 00:01:38,000
+So, what we do is that we start all of our package
+
+42
+00:01:38,000 --> 00:01:39,000
+names using that domain name, right?
+
+43
+00:01:39,000 --> 00:01:43,000
+So, any package created by Pluralsight would actually
+
+44
+00:01:43,000 --> 00:01:46,000
+use the name com dot Pluralsight.
+
+45
+00:01:46,000 --> 00:01:47,000
+Right, again, it's reversed.
+
+46
+00:01:47,000 --> 00:01:50,000
+So, the top level of its com, and then, Pluralsight.
+
+47
+00:01:50,000 --> 00:01:52,000
+So, that now assures that as long as everything
+
+48
+00:01:52,000 --> 00:01:55,000
+we do at Pluralsight starts with that naming structure,
+
+49
+00:01:55,000 --> 00:01:57,000
+no one else will name a package like that.
+
+50
+00:01:57,000 --> 00:02:00,000
+And again, there's nothing that enforces this rule,
+
+51
+00:02:00,000 --> 00:02:02,000
+it's just a convention we all follow to keep things
+
+52
+00:02:02,000 --> 00:02:04,000
+form colliding with one another.
+
+53
+00:02:04,000 --> 00:02:05,000
+And then, what we want to do is that
+
+54
+00:02:05,000 --> 00:02:08,000
+we add further qualifiers beyond that to assure
+
+55
+00:02:08,000 --> 00:02:10,000
+uniqueness within an organization, right,
+
+56
+00:02:10,000 --> 00:02:13,000
+in the case of a company or some group.
+
+57
+00:02:13,000 --> 00:02:14,000
+If we're creating packages that belong to
+
+58
+00:02:14,000 --> 00:02:16,000
+com dot Pluralsight, each of our individual
+
+59
+00:02:16,000 --> 00:02:19,000
+packages would have another part to it
+
+60
+00:02:19,000 --> 00:02:20,000
+that just identifies some project.
+
+61
+00:02:20,000 --> 00:02:23,000
+So in this case, it's My Project.
+
+62
+00:02:23,000 --> 00:02:24,000
+And, that's kind of the simplest way
+
+63
+00:02:24,000 --> 00:02:25,000
+to assure uniqueness, right,
+
+64
+00:02:25,000 --> 00:02:27,000
+is that each project can have its own
+
+65
+00:02:27,000 --> 00:02:29,000
+kind of last node part to that, or last part
+
+66
+00:02:29,000 --> 00:02:31,000
+of the package name and it stays unique.
+
+67
+00:02:31,000 --> 00:02:34,000
+As organizations get larger, you may have to get
+
+68
+00:02:34,000 --> 00:02:36,000
+a little bit more sophisticated about your package names.
+
+69
+00:02:36,000 --> 00:02:38,000
+All right, because if you have multiple development
+
+70
+00:02:38,000 --> 00:02:42,000
+groups within an organization, if you only have these
+
+71
+00:02:42,000 --> 00:02:45,000
+three parts, right, the top level, com dot Pluralsight
+
+72
+00:02:45,000 --> 00:02:47,000
+and then that last part, all the groups would have to
+
+73
+00:02:47,000 --> 00:02:49,000
+coordinate to make sure they didn't collide
+
+74
+00:02:49,000 --> 00:02:50,000
+with one another.
+
+75
+00:02:50,000 --> 00:02:53,000
+So, what often happens is that as you get into larger
+
+76
+00:02:53,000 --> 00:02:56,000
+organizations, you'll add another standardized part to it.
+
+77
+00:02:56,000 --> 00:02:59,000
+So, maybe you have com dot Pluralsight,
+
+78
+00:02:59,000 --> 00:03:01,000
+but if Pluralsight had their own development group
+
+79
+00:03:01,000 --> 00:03:03,000
+for the Accounting Department, you might
+
+80
+00:03:03,000 --> 00:03:05,000
+agree that, well, everything created by the development
+
+81
+00:03:05,000 --> 00:03:07,000
+group in the Accounting Department
+
+82
+00:03:07,000 --> 00:03:10,000
+is com dot Pluralsight dot accounting.
+
+83
+00:03:10,000 --> 00:03:11,000
+And then, say if there was another group
+
+84
+00:03:11,000 --> 00:03:13,000
+inside of Pluralsight, and say that was
+
+85
+00:03:13,000 --> 00:03:15,000
+the group that took care of course management.
+
+86
+00:03:15,000 --> 00:03:16,000
+If that was their own development group,
+
+87
+00:03:16,000 --> 00:03:19,000
+they would then agree that all the packages they
+
+88
+00:03:19,000 --> 00:03:22,000
+create are com dot Pluralsight dot course management.
+
+89
+00:03:22,000 --> 00:03:24,000
+And then, there's no concern about colliding
+
+90
+00:03:24,000 --> 00:03:27,000
+because when they name their individual projects,
+
+91
+00:03:27,000 --> 00:03:29,000
+even if they named them both My Project,
+
+92
+00:03:29,000 --> 00:03:31,000
+there is no package name collision
+
+93
+00:03:31,000 --> 00:03:32,000
+because the earlier project was qualified
+
+94
+00:03:32,000 --> 00:03:36,000
+by their group, created the uniqueness.
+
+95
+00:03:36,000 --> 00:03:37,000
+And again, these are all conventions.
+
+96
+00:03:37,000 --> 00:03:38,000
+There's nothing enforcing all this.
+
+97
+00:03:38,000 --> 00:03:40,000
+But, these are rules that we follow
+
+98
+00:03:40,000 --> 00:03:46,000
+to make sure our package names don't collide.
+
+99
+00:03:46,000 --> 00:03:49,000
+Now as we put members into a package,
+
+100
+00:03:49,000 --> 00:03:51,000
+those members, of course, become part of that package.
+
+101
+00:03:51,000 --> 00:03:53,000
+All right, and that package becomes part
+
+102
+00:03:53,000 --> 00:03:54,000
+of the member's name.
+
+103
+00:03:54,000 --> 00:03:57,000
+And so, if we just build a Class called Main,
+
+104
+00:03:57,000 --> 00:04:01,000
+well, the name of that Class is just Main.
+
+105
+00:04:01,000 --> 00:04:05,000
+But now, once we put that Class inside of a package,
+
+106
+00:04:05,000 --> 00:04:07,000
+all right, the package name become part
+
+107
+00:04:07,000 --> 00:04:09,000
+of the overall Class name.
+
+108
+00:04:09,000 --> 00:04:12,000
+So, the Class is no longer known as just Main.
+
+109
+00:04:12,000 --> 00:04:14,000
+The Class is now known as
+
+110
+00:04:14,000 --> 00:04:17,000
+com dot Pluralsight dot My Project dot Main.
+
+111
+00:04:17,000 --> 00:04:20,000
+All right, and that becomes a unique name.
+
+112
+00:04:20,000 --> 00:04:22,000
+And, because we all follow these naming conventions,
+
+113
+00:04:22,000 --> 00:04:24,000
+we now know that anyone else in the world can
+
+114
+00:04:24,000 --> 00:04:27,000
+create a Class called Main, but because it's qualified
+
+115
+00:04:27,000 --> 00:04:28,000
+by a package that follows a convention.
+
+116
+00:04:28,000 --> 00:04:30,000
+The Class name itself is actually unique
+
+117
+00:04:30,000 --> 00:04:36,000
+when qualified fully by the package.
+
+118
+00:04:36,000 --> 00:04:38,000
+Now, one of the most significant things that affects us
+
+119
+00:04:38,000 --> 00:04:41,000
+about packages at this early point
+
+120
+00:04:41,000 --> 00:04:43,000
+in talking about Java is that it turns out these
+
+121
+00:04:43,000 --> 00:04:47,000
+package names actually affect the source file structure.
+
+122
+00:04:47,000 --> 00:04:49,000
+Now, what's interesting is that
+
+123
+00:04:49,000 --> 00:04:53,000
+Java itself requires no correlation between your
+
+124
+00:04:53,000 --> 00:04:55,000
+package names and your source code file structure.
+
+125
+00:04:55,000 --> 00:04:57,000
+In other words, it doesn't care how the packages are named.
+
+126
+00:04:57,000 --> 00:05:00,000
+It doesn't force you to position or structure your
+
+127
+00:05:00,000 --> 00:05:02,000
+source files in any given way.
+
+128
+00:05:02,000 --> 00:05:04,000
+That's Java itself.
+
+129
+00:05:04,000 --> 00:05:08,000
+The things is, most IDEs do require your
+
+130
+00:05:08,000 --> 00:05:10,000
+sub-folder structure to match up to
+
+131
+00:05:10,000 --> 00:05:12,000
+the parts of the package name.
+
+132
+00:05:12,000 --> 00:05:14,000
+So, the things is that even though Java doesn't
+
+133
+00:05:14,000 --> 00:05:17,000
+require it, we kind of can almost ignore that
+
+134
+00:05:17,000 --> 00:05:19,000
+because in practice, most tools that you work
+
+135
+00:05:19,000 --> 00:05:22,000
+with are going to require that your source file
+
+136
+00:05:22,000 --> 00:05:25,000
+structure match up to your package names.
+
+137
+00:05:25,000 --> 00:05:26,000
+So, what does that look like?
+
+138
+00:05:26,000 --> 00:05:28,000
+Well, if we build a Class, as we have earlier,
+
+139
+00:05:28,000 --> 00:05:30,000
+where we didn't put it inside of a package,
+
+140
+00:05:30,000 --> 00:05:32,000
+well, the way the IDE expects it to go is that
+
+141
+00:05:32,000 --> 00:05:34,000
+you've got your source code folder,
+
+142
+00:05:34,000 --> 00:05:37,000
+and then your Java Class file just goes
+
+143
+00:05:37,000 --> 00:05:38,000
+right inside that same source code folder.
+
+144
+00:05:38,000 --> 00:05:40,000
+That's exactly what it expects.
+
+145
+00:05:40,000 --> 00:05:44,000
+But, if we now have a package definition
+
+146
+00:05:44,000 --> 00:05:45,000
+in our source code fie,
+
+147
+00:05:45,000 --> 00:05:47,000
+the presence of that package name
+
+148
+00:05:47,000 --> 00:05:52,000
+now enforces structural rules on the way
+
+149
+00:05:52,000 --> 00:05:54,000
+the IDE expects the source code to be laid out.
+
+150
+00:05:54,000 --> 00:05:57,000
+And basically, is that each of the parts of that package,
+
+151
+00:05:57,000 --> 00:05:59,000
+need to be there, I should say,
+
+152
+00:05:59,000 --> 00:06:01,000
+each of the parts of that package name
+
+153
+00:06:01,000 --> 00:06:02,000
+need to be their own sub-folder.
+
+154
+00:06:02,000 --> 00:06:08,000
+So, under source, the IDE expects a com sub-folder
+
+155
+00:06:08,000 --> 00:06:11,000
+to match the first part of the package name.
+
+156
+00:06:11,000 --> 00:06:15,000
+Then under that, expects a Pluralsight sub-folder,
+
+157
+00:06:15,000 --> 00:06:18,000
+and then, an example sub-folder.
+
+158
+00:06:18,000 --> 00:06:20,000
+And then finally, our Main dot Java is expected
+
+159
+00:06:20,000 --> 00:06:22,000
+to be inside of there.
+
+160
+00:06:22,000 --> 00:06:24,000
+All right, so as you have different package names,
+
+161
+00:06:24,000 --> 00:06:26,000
+this hierarchy is going to have to match up to all of those.
+
+162
+00:06:26,000 --> 00:59:00,000
+Okay, this is true in IntelliJ, it's true in NetBeans, it's true in most IDEs.
+

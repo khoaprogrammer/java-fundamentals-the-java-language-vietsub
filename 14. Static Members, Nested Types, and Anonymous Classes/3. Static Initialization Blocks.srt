@@ -1,0 +1,608 @@
+1
+00:00:02,000 --> 00:00:03,000
+There are times in our applications
+
+2
+00:00:03,000 --> 00:00:06,000
+where we need to do some kind of work to prepare a class
+
+3
+00:00:06,000 --> 00:00:08,000
+before we use it, and that's where
+
+4
+00:00:08,000 --> 00:00:10,000
+static initialization blocks come in.
+
+5
+00:00:10,000 --> 00:00:12,000
+Static initialization blocks perform basically
+
+6
+00:00:12,000 --> 00:00:15,000
+one-time type initialization.
+
+7
+00:00:15,000 --> 00:00:17,000
+The neat thing about them is that
+
+8
+00:00:17,000 --> 00:00:22,000
+they execute automatically before your types first use.
+
+9
+00:00:22,000 --> 00:00:23,000
+Now remember, we've talked about initialization blocks
+
+10
+00:00:23,000 --> 00:00:26,000
+earlier in the course, but those were instance
+
+11
+00:00:26,000 --> 00:00:27,000
+initialization blocks.
+
+12
+00:00:27,000 --> 00:00:30,000
+Remember that the instance initialization blocks
+
+13
+00:00:30,000 --> 00:00:32,000
+automatically executed before any of your constructors.
+
+14
+00:00:32,000 --> 00:00:35,000
+Well static initialization blocks execute
+
+15
+00:00:35,000 --> 00:00:38,000
+before you actually even start using the type.
+
+16
+00:00:38,000 --> 00:00:41,000
+You can kind of think of those as type initializers.
+
+17
+00:00:41,000 --> 00:00:44,000
+Now basically, there are statements enclosed in brackets,
+
+18
+00:00:44,000 --> 00:00:47,000
+outside of any method or constructor,
+
+19
+00:00:47,000 --> 00:00:50,000
+but you have to mark it of course with the keyword static.
+
+20
+00:00:50,000 --> 00:00:54,000
+Now being static, they cannot access any instance members.
+
+21
+00:00:54,000 --> 00:00:56,000
+They can only access static members.
+
+22
+00:00:56,000 --> 00:00:59,000
+And because they're called automatically,
+
+23
+00:00:59,000 --> 00:01:02,000
+you have to handle any checked exceptions within
+
+24
+00:01:02,000 --> 00:01:04,000
+the initialization block.
+
+25
+00:01:04,000 --> 00:01:06,000
+There's no concept of a throws keyword on here.
+
+26
+00:01:06,000 --> 00:01:07,000
+You have to make sure you take care of everything
+
+27
+00:01:07,000 --> 00:01:09,000
+within the initialization block itself.
+
+28
+00:01:09,000 --> 00:01:12,000
+So let's see an example of using this in an application.
+
+29
+00:01:12,000 --> 00:01:17,000
+Now let's imagine that we have a file listing crew members
+
+30
+00:01:17,000 --> 00:01:18,000
+that are available to do some work.
+
+31
+00:01:18,000 --> 00:01:21,000
+If you'll look at this you'll notice that the first column
+
+32
+00:01:21,000 --> 00:01:24,000
+is the person's job, like a pilot or a copilot
+
+33
+00:01:24,000 --> 00:01:26,000
+and each of these values corresponds
+
+34
+00:01:26,000 --> 00:01:28,000
+to the enumeration we created earlier in the course,
+
+35
+00:01:28,000 --> 00:01:30,000
+which is our flight crew jobs.
+
+36
+00:01:30,000 --> 00:01:32,000
+And then after the job we have a comma
+
+37
+00:01:32,000 --> 00:01:34,000
+and then the person's name.
+
+38
+00:01:34,000 --> 00:01:36,000
+What we want to do with these values,
+
+39
+00:01:36,000 --> 00:01:37,000
+is we want to be able in our code
+
+40
+00:01:37,000 --> 00:01:39,000
+to be able to declare variables like crew member
+
+41
+00:01:39,000 --> 00:01:42,000
+and we'll have a class that we'll call crew manager
+
+42
+00:01:42,000 --> 00:01:44,000
+where we can call a static method on it, find available,
+
+43
+00:01:44,000 --> 00:01:47,000
+where we identify the job that we need to fill
+
+44
+00:01:47,000 --> 00:01:49,000
+and the crew manager find available method
+
+45
+00:01:49,000 --> 00:01:53,000
+will return back a crew member who can fill in that job
+
+46
+00:01:53,000 --> 00:01:55,000
+that's not already reassigned to another job.
+
+47
+00:01:55,000 --> 00:01:56,000
+So let's look at our crew manager class.
+
+48
+00:01:56,000 --> 00:01:58,000
+Now the idea of find available is pretty simple.
+
+49
+00:01:58,000 --> 00:02:00,000
+Alright, as we lay out a crew manager class,
+
+50
+00:02:00,000 --> 00:02:03,000
+of course, we'll need to have a constant
+
+51
+00:02:03,000 --> 00:02:05,000
+for the file name we want to load from.
+
+52
+00:02:05,000 --> 00:02:07,000
+We'll need to have the array of crew members
+
+53
+00:02:07,000 --> 00:02:09,000
+that we'll call pool and then we can go ahead
+
+54
+00:02:09,000 --> 00:02:11,000
+and have our find available method.
+
+55
+00:02:11,000 --> 00:02:13,000
+Again, accepts the job as a parameter
+
+56
+00:02:13,000 --> 00:02:16,000
+and the implementation is pretty straight forward.
+
+57
+00:02:16,000 --> 00:02:17,000
+Basically, we'll have to have a variable to hold
+
+58
+00:02:17,000 --> 00:02:18,000
+the matching crew member.
+
+59
+00:02:18,000 --> 00:02:21,000
+We'll add a loop through that pool of crew members
+
+60
+00:02:21,000 --> 00:02:23,000
+and then inside there we basically just want to check.
+
+61
+00:02:23,000 --> 00:02:26,000
+As long as there's a valid spot in the pool,
+
+62
+00:02:26,000 --> 00:02:28,000
+if the job matches, then we know we want that person,
+
+63
+00:02:28,000 --> 00:02:31,000
+so we'll store reference to them from the pool.
+
+64
+00:02:31,000 --> 00:02:32,000
+We'll remove them from the pool
+
+65
+00:02:32,000 --> 00:02:34,000
+so we don't assign them to two different jobs
+
+66
+00:02:34,000 --> 00:02:36,000
+and then from there we break out
+
+67
+00:02:36,000 --> 00:02:38,000
+and return back to that crew member.
+
+68
+00:02:38,000 --> 00:02:40,000
+The question is though is that how does pool
+
+69
+00:02:40,000 --> 00:02:43,000
+get initialized from the file?
+
+70
+00:02:43,000 --> 00:02:45,000
+Now we could go write another static method
+
+71
+00:02:45,000 --> 00:02:47,000
+called initialize or something like that,
+
+72
+00:02:47,000 --> 00:02:50,000
+that loaded up to file contents,
+
+73
+00:02:50,000 --> 00:02:53,000
+but in complex applications, you can't always be sure
+
+74
+00:02:53,000 --> 00:02:54,000
+kind of what order of things are going to happen.
+
+75
+00:02:54,000 --> 00:02:57,000
+It would be nice to be able to know that
+
+76
+00:02:57,000 --> 00:03:00,000
+that pool field would automatically get loaded
+
+77
+00:03:00,000 --> 00:03:02,000
+prior to our first use.
+
+78
+00:03:02,000 --> 00:03:05,000
+And that's where static initialization blocks come in.
+
+79
+00:03:05,000 --> 00:03:06,000
+So if we take a look at that.
+
+80
+00:03:06,000 --> 00:03:07,000
+Let's add a little bit more room here
+
+81
+00:03:07,000 --> 00:03:10,000
+to add some code to our crew manager class.
+
+82
+00:03:10,000 --> 00:03:11,000
+And what we'll do then is that we'll add
+
+83
+00:03:11,000 --> 00:03:13,000
+our static initialization block.
+
+84
+00:03:13,000 --> 00:03:14,000
+Remember that it's just the brackets
+
+85
+00:03:14,000 --> 00:03:18,000
+marked by the word static outside of any method.
+
+86
+00:03:18,000 --> 00:03:19,000
+So we've got that there.
+
+87
+00:03:19,000 --> 00:03:20,000
+So what we want to do is read from the file,
+
+88
+00:03:20,000 --> 00:03:22,000
+so we'll go ahead and create our reader.
+
+89
+00:03:22,000 --> 00:03:24,000
+We'll need to of course have a variable to read
+
+90
+00:03:24,000 --> 00:03:26,000
+a line from the file and index to track our way
+
+91
+00:03:26,000 --> 00:03:28,000
+through the array.
+
+92
+00:03:28,000 --> 00:03:30,000
+We'll want to allocate some space in the array
+
+93
+00:03:30,000 --> 00:03:32,000
+and then from there we just start reading through
+
+94
+00:03:32,000 --> 00:03:33,000
+the file.
+
+95
+00:03:33,000 --> 00:03:35,000
+So we read through the file.
+
+96
+00:03:35,000 --> 00:03:38,000
+We go ahead and read the line and split it into its parts.
+
+97
+00:03:38,000 --> 00:03:40,000
+The first part is a string representing the job.
+
+98
+00:03:40,000 --> 00:03:42,000
+The second part is their name.
+
+99
+00:03:42,000 --> 00:03:44,000
+We then want to map that string
+
+100
+00:03:44,000 --> 00:03:47,000
+into our flight crew job enumeration.
+
+101
+00:03:47,000 --> 00:03:48,000
+Now remember that earlier in the course
+
+102
+00:03:48,000 --> 00:03:52,000
+we talked about mapping strings to enumeration values
+
+103
+00:03:52,000 --> 00:03:54,000
+and we did it with a series of explicit if statements
+
+104
+00:03:54,000 --> 00:03:56,000
+and that gave us a lot of flexibility
+
+105
+00:03:56,000 --> 00:03:58,000
+because we were actually completely independent
+
+106
+00:03:58,000 --> 00:04:01,000
+of string case or anything like that.
+
+107
+00:04:01,000 --> 00:04:04,000
+If we have a scenario where we know that the string value
+
+108
+00:04:04,000 --> 00:04:07,000
+coming in matches the case in capitalization
+
+109
+00:04:07,000 --> 00:04:11,000
+of our enumeration values, we can use the enumerations
+
+110
+00:04:11,000 --> 00:04:12,000
+value of method.
+
+111
+00:04:12,000 --> 00:04:15,000
+So for example, pilot is always capital P
+
+112
+00:04:15,000 --> 00:04:16,000
+in our enumeration.
+
+113
+00:04:16,000 --> 00:04:17,000
+So if we know our string is coming in
+
+114
+00:04:17,000 --> 00:04:20,000
+with the pilot capital P, we can use value of.
+
+115
+00:04:20,000 --> 00:04:22,000
+Copilot is capital C, capital P.
+
+116
+00:04:22,000 --> 00:04:25,000
+So as long as the strings match that capitalization,
+
+117
+00:04:25,000 --> 00:04:27,000
+rather than reading that explicit if,
+
+118
+00:04:27,000 --> 00:04:29,000
+we can use this value of method.
+
+119
+00:04:29,000 --> 00:04:31,000
+So I'll go ahead and map that into a job
+
+120
+00:04:31,000 --> 00:04:33,000
+from the string value that's in the file.
+
+121
+00:04:33,000 --> 00:04:35,000
+So we'll go ahead and create an instance of crew member
+
+122
+00:04:35,000 --> 00:04:38,000
+based on that job, put them in the array,
+
+123
+00:04:38,000 --> 00:04:43,000
+set their name from the value inside the file,
+
+124
+00:04:43,000 --> 00:04:46,000
+and then index through the array.
+
+125
+00:04:46,000 --> 00:04:48,000
+So that takes care of actually reading in the contents.
+
+126
+00:04:48,000 --> 00:04:50,000
+But remember though that we talked about this earlier
+
+127
+00:04:50,000 --> 00:04:52,000
+that when we interact with a file,
+
+128
+00:04:52,000 --> 00:04:54,000
+there are IO exceptions that can occur.
+
+129
+00:04:54,000 --> 00:04:55,000
+That's a checked exception.
+
+130
+00:04:55,000 --> 00:04:58,000
+Inside of our static initialization blocks
+
+131
+00:04:58,000 --> 00:05:00,000
+we have to handle all checked exceptions.
+
+132
+00:05:00,000 --> 00:05:01,000
+We want to make sure that we go ahead
+
+133
+00:05:01,000 --> 00:05:04,000
+and wrap this up with a try catch that handles
+
+134
+00:05:04,000 --> 00:05:06,000
+that IO exception.
+
+135
+00:05:06,000 --> 00:05:10,000
+So with this, our crew manager class is all set to go.
+
+136
+00:05:10,000 --> 00:05:14,000
+And the magic here is that, that static initialization block
+
+137
+00:05:14,000 --> 00:05:18,000
+is automatically called for prior to the first use.
+
+138
+00:05:18,000 --> 00:05:20,000
+So what we can do then is when we're ready
+
+139
+00:05:20,000 --> 00:05:24,000
+to use this class, whenever we call the crew manager class
+
+140
+00:05:24,000 --> 00:05:26,000
+for the very first time, our find available,
+
+141
+00:05:26,000 --> 00:05:29,000
+the system will automatically run that code
+
+142
+00:05:29,000 --> 00:05:31,000
+that's inside of the static initialization block
+
+143
+00:05:31,000 --> 00:05:33,000
+and load up the array for us.
+
+144
+00:05:33,000 --> 00:05:36,000
+Each time after that, that we use it,
+
+145
+00:05:36,000 --> 00:05:39,000
+the array is already loaded so we can go ahead and find
+
+146
+00:05:39,000 --> 00:05:40,000
+the next person who matches a job
+
+147
+00:05:40,000 --> 00:05:42,000
+and the next person.
+
+148
+00:05:42,000 --> 00:05:43,000
+So these static initialization blocks
+
+149
+00:05:43,000 --> 00:05:45,000
+are this really powerful capability
+
+150
+00:05:45,000 --> 00:05:48,000
+that takes care of initializing our classes
+
+151
+00:05:48,000 --> 00:05:51,000
+prior to their first use with no special calls
+
+152
+00:05:51,000 --> 00:59:00,000
+on the part of the user.
+

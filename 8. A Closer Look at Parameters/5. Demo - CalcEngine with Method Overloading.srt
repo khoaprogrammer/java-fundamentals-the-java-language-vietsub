@@ -1,0 +1,760 @@
+1
+00:00:02,000 --> 00:00:04,000
+In this demo, we'll take a look at how we can use
+
+2
+00:00:04,000 --> 00:00:08,000
+method overloading to improve our CalcEngine program.
+
+3
+00:00:08,000 --> 00:00:11,000
+Here we are in our Math Equation class, and you'll
+
+4
+00:00:11,000 --> 00:00:13,000
+recall that we created this with three constructors.
+
+5
+00:00:13,000 --> 00:00:15,000
+One that accepts no parameters,
+
+6
+00:00:15,000 --> 00:00:17,000
+one that accepts just the op code, and one that
+
+7
+00:00:17,000 --> 00:00:20,000
+accepts the op code and both values we want to operate on.
+
+8
+00:00:20,000 --> 00:00:23,000
+Now, the way this works is that if when you create
+
+9
+00:00:23,000 --> 00:00:25,000
+the math equation, if you know the op code and both values
+
+10
+00:00:25,000 --> 00:00:28,000
+when you create it, things are nice and easy to use.
+
+11
+00:00:28,000 --> 00:00:31,000
+But, if you only know the op code at the time you create it,
+
+12
+00:00:31,000 --> 00:00:34,000
+and then later when you're ready to execute, you then
+
+13
+00:00:34,000 --> 00:00:36,000
+have the values, we're a little bit cumbersome to use.
+
+14
+00:00:36,000 --> 00:00:38,000
+Because you have to create, with the constructor
+
+15
+00:00:38,000 --> 00:00:40,000
+that accepts the op code, and then you have to call
+
+16
+00:00:40,000 --> 00:00:43,000
+Set Left Value, the left value set up, right.
+
+17
+00:00:43,000 --> 00:00:45,000
+Call Set Right Value to set up the right val.
+
+18
+00:00:45,000 --> 00:00:47,000
+Then we scroll down here a little bit.
+
+19
+00:00:47,000 --> 00:00:49,000
+Then finally you call execute.
+
+20
+00:00:49,000 --> 00:00:51,000
+Well it seems very likely that there'll be a lot of
+
+21
+00:00:51,000 --> 00:00:53,000
+situations where we might create an instance of
+
+22
+00:00:53,000 --> 00:00:55,000
+our math equation with a particular op code
+
+23
+00:00:55,000 --> 00:00:57,000
+and then when it's time to execute
+
+24
+00:00:57,000 --> 00:00:59,000
+we'd have both of the values we want.
+
+25
+00:00:59,000 --> 00:01:00,000
+It would be nice to be able to go ahead and
+
+26
+00:01:00,000 --> 00:01:04,000
+just pass in those two values as part of the execute.
+
+27
+00:01:04,000 --> 00:01:06,000
+Alright, so this is a great opportunity
+
+28
+00:01:06,000 --> 00:01:08,000
+to provide an overload of our execute method.
+
+29
+00:01:08,000 --> 00:01:10,000
+So, we have the one currently that takes no parameters.
+
+30
+00:01:10,000 --> 00:01:14,000
+Let's add an execute method that accepts two parameters,
+
+31
+00:01:14,000 --> 00:01:16,000
+the left val and the right val.
+
+32
+00:01:16,000 --> 00:01:17,000
+So that's going to be really easy for us to do here.
+
+33
+00:01:17,000 --> 00:01:20,000
+We're just going to declare public, void, execute,
+
+34
+00:01:20,000 --> 00:01:22,000
+and then we're simply going to have parameters
+
+35
+00:01:22,000 --> 00:01:24,000
+for the left val and the right val.
+
+36
+00:01:24,000 --> 00:01:25,000
+So you have both those parameters.
+
+37
+00:01:25,000 --> 00:01:27,000
+Let's go ahead and put the body of it here.
+
+38
+00:01:27,000 --> 00:01:29,000
+And all we need to do inside of here is set
+
+39
+00:01:29,000 --> 00:01:33,000
+the field left val to the value of the parameter left val.
+
+40
+00:01:33,000 --> 00:01:35,000
+Do the same thing for the right val.
+
+41
+00:01:35,000 --> 00:01:38,000
+And then call the other execute implementation.
+
+42
+00:01:38,000 --> 00:01:42,000
+So, now, in this scenario where we have
+
+43
+00:01:42,000 --> 00:01:45,000
+the op code at construction time, but the two values
+
+44
+00:01:45,000 --> 00:01:47,000
+at the time we're ready to execute,
+
+45
+00:01:47,000 --> 00:01:49,000
+we can do that kind of all in one step.
+
+46
+00:01:49,000 --> 00:01:51,000
+So, let's go over to our main program here.
+
+47
+00:01:51,000 --> 00:01:53,000
+And we've got the existing code that we worked with before.
+
+48
+00:01:53,000 --> 00:01:56,000
+What I want to do first of all before we do the actual work,
+
+49
+00:01:56,000 --> 00:01:58,000
+I'm just going to put a couple of print statements in here,
+
+50
+00:01:58,000 --> 00:02:00,000
+just to print out the message in the output window,
+
+51
+00:02:00,000 --> 00:02:02,000
+so we can differentiate what we've done with the array
+
+52
+00:02:02,000 --> 00:02:04,000
+previously with the new work we're doing with the overloads.
+
+53
+00:02:04,000 --> 00:02:06,000
+Let's go ahead and declare a reference
+
+54
+00:02:06,000 --> 00:02:08,000
+to our Math Equation class,
+
+55
+00:02:08,000 --> 00:02:10,000
+we'll call this one Equation Overload.
+
+56
+00:02:10,000 --> 00:02:11,000
+And what we'll do is just new open instance
+
+57
+00:02:11,000 --> 00:02:14,000
+of the math equation with the dividing op code.
+
+58
+00:02:14,000 --> 00:02:16,000
+So, we've got that there.
+
+59
+00:02:16,000 --> 00:02:17,000
+Now, before we use that, let's just go ahead
+
+60
+00:02:17,000 --> 00:02:19,000
+and declare a couple of doubles up here.
+
+61
+00:02:19,000 --> 00:02:23,000
+So we have a variable called Left Double set to 9.0
+
+62
+00:02:23,000 --> 00:02:25,000
+and a variable called Right Double set to 4.0.
+
+63
+00:02:25,000 --> 00:02:27,000
+What you want to do here is that go ahead
+
+64
+00:02:27,000 --> 00:02:30,000
+and perform the actual calculation.
+
+65
+00:02:30,000 --> 00:02:32,000
+Right, now as I said before what we'd have to do
+
+66
+00:02:32,000 --> 00:02:34,000
+is call Set Left Value and Set Right Value each time.
+
+67
+00:02:34,000 --> 00:02:36,000
+Now it gets really easy.
+
+68
+00:02:36,000 --> 00:02:38,000
+We'll just say Equation Overload.
+
+69
+00:02:38,000 --> 00:02:40,000
+We'll say dot execute.
+
+70
+00:02:40,000 --> 00:02:43,000
+And what we're going to do is pass in the two values,
+
+71
+00:02:43,000 --> 00:02:45,000
+Left Double and Right Double.
+
+72
+00:02:45,000 --> 00:02:48,000
+From there we can just go ahead and print the values out.
+
+73
+00:02:48,000 --> 00:02:51,000
+So we simply call execute, passing in the values.
+
+74
+00:02:51,000 --> 00:02:55,000
+Go ahead and just get the result back as we print it out.
+
+75
+00:02:55,000 --> 00:02:57,000
+Alright, so f we run this, it's going to work
+
+76
+00:02:57,000 --> 00:02:59,000
+just like we would expect it.
+
+77
+00:02:59,000 --> 00:03:02,000
+And we see there in our output window under Using Overloads,
+
+78
+00:03:02,000 --> 00:03:04,000
+we see a result of 2.25,
+
+79
+00:03:04,000 --> 00:03:05,000
+so that works just as we had expected.
+
+80
+00:03:05,000 --> 00:03:08,000
+But now what happens if, instead of using doubles here,
+
+81
+00:03:08,000 --> 00:03:11,000
+I declare a couple of integers instead?
+
+82
+00:03:11,000 --> 00:03:14,000
+So they're just basically the same values
+
+83
+00:03:14,000 --> 00:03:16,000
+that I had before with the doubles.
+
+84
+00:03:16,000 --> 00:03:19,000
+So if I copy these lines that we used with the doubles,
+
+85
+00:03:19,000 --> 00:03:22,000
+and what I want to do here is where I have
+
+86
+00:03:22,000 --> 00:03:23,000
+Left Double and Right Double.
+
+87
+00:03:23,000 --> 00:03:25,000
+Let's switch that to Left Int and Right Int.
+
+88
+00:03:25,000 --> 00:03:28,000
+So, now the question is, will that work?
+
+89
+00:03:28,000 --> 00:03:31,000
+Since I've declared my execute method to accept doubles,
+
+90
+00:03:31,000 --> 00:03:33,000
+I'm passing an int, is that going to work?
+
+91
+00:03:33,000 --> 00:03:35,000
+So let's go ahead and run it, see what happens.
+
+92
+00:03:35,000 --> 00:03:37,000
+And we see that it does work.
+
+93
+00:03:37,000 --> 00:03:40,000
+Our result with the integers is also 2.25.
+
+94
+00:03:40,000 --> 00:03:42,000
+And the reason being is that,
+
+95
+00:03:42,000 --> 00:03:45,000
+that's what we call a widening conversion.
+
+96
+00:03:45,000 --> 00:03:47,000
+Remember, earlier in the course, we talked about
+
+97
+00:03:47,000 --> 00:03:48,000
+calculations, how there were some
+
+98
+00:03:48,000 --> 00:03:50,000
+automatic type conversions that can occur.
+
+99
+00:03:50,000 --> 00:03:53,000
+Since a double is wider than an int, other words
+
+100
+00:03:53,000 --> 00:03:55,000
+a double can hold anything that's inside of an int,
+
+101
+00:03:55,000 --> 00:03:57,000
+the system can go ahead and infer that conversion
+
+102
+00:03:57,000 --> 00:04:00,000
+and go ahead and call the method that accepts doubles,
+
+103
+00:04:00,000 --> 00:04:02,000
+even though we're passing in ints.
+
+104
+00:04:02,000 --> 00:04:04,000
+Now there is one thing that's kind of curious, though.
+
+105
+00:04:04,000 --> 00:04:07,000
+Let me just run this again real quick.
+
+106
+00:04:07,000 --> 00:04:09,000
+Our result of dividing the integer nine by
+
+107
+00:04:09,000 --> 00:04:12,000
+the integer four is being printed out as 2.25.
+
+108
+00:04:12,000 --> 00:04:15,000
+We remember that in our integer arithmetic
+
+109
+00:04:15,000 --> 00:04:17,000
+that we learned earlier in the course,
+
+110
+00:04:17,000 --> 00:04:18,000
+that should actually just be two.
+
+111
+00:04:18,000 --> 00:04:20,000
+When you divide two integer values,
+
+112
+00:04:20,000 --> 00:04:22,000
+you don't get a decimal point.
+
+113
+00:04:22,000 --> 00:04:23,000
+You only get the whole portion of that.
+
+114
+00:04:23,000 --> 00:04:25,000
+So, to make our Math Equation class more effective,
+
+115
+00:04:25,000 --> 00:04:27,000
+what we should really do is provide another
+
+116
+00:04:27,000 --> 00:04:29,000
+overload of Execute that accepts two integers.
+
+117
+00:04:29,000 --> 00:04:32,000
+So, we go over here, and want to again copy this one
+
+118
+00:04:32,000 --> 00:04:35,000
+that we have here now that accepts the doubles.
+
+119
+00:04:35,000 --> 00:04:37,000
+And we'll go ahead and paste that in again.
+
+120
+00:04:37,000 --> 00:04:39,000
+And what I want to do here is convert
+
+121
+00:04:39,000 --> 00:04:41,000
+each of these doubles to be ints.
+
+122
+00:04:41,000 --> 00:04:44,000
+So we now have an overload that accepts integers.
+
+123
+00:04:44,000 --> 00:04:46,000
+But now if we were to run this right now,
+
+124
+00:04:46,000 --> 00:04:48,000
+nothing would be any different.
+
+125
+00:04:48,000 --> 00:04:50,000
+Because even though we're passing integers in
+
+126
+00:04:50,000 --> 00:04:52,000
+at the parameter level, when we make the assignments
+
+127
+00:04:52,000 --> 00:04:54,000
+to the fields they're going to convert
+
+128
+00:04:54,000 --> 00:04:56,000
+to doubles again anyway.
+
+129
+00:04:56,000 --> 00:04:59,000
+Well, what happens when you do division with integer values?
+
+130
+00:04:59,000 --> 00:05:01,000
+Right, you get a truncated value.
+
+131
+00:05:01,000 --> 00:05:04,000
+So, what we can do here is that after we call execute,
+
+132
+00:05:04,000 --> 00:05:07,000
+the value that's going to be the result would be 2.25.
+
+133
+00:05:07,000 --> 00:05:12,000
+Well, if we could truncate that, then our Math Equation
+
+134
+00:05:12,000 --> 00:05:15,000
+class would provide the right answer for integer division.
+
+135
+00:05:15,000 --> 00:05:19,000
+What I can do here, is I can take my current field results.
+
+136
+00:05:19,000 --> 00:05:22,000
+I'm going to assign it the value of results.
+
+137
+00:05:22,000 --> 00:05:26,000
+But, what I'm going to do here is cast it to an int.
+
+138
+00:05:26,000 --> 00:05:31,000
+And what that does is it takes that double value of 2.25,
+
+139
+00:05:31,000 --> 00:05:35,000
+by casting it to an int, it gets truncated becoming two,
+
+140
+00:05:35,000 --> 00:05:39,000
+that two then gets assigned back into result as 2.0.
+
+141
+00:05:39,000 --> 00:05:42,000
+Because again, result's a double.
+
+142
+00:05:42,000 --> 00:05:45,000
+Now what should happen when I go back to my program here,
+
+143
+00:05:45,000 --> 00:05:48,000
+now when I run this second call to execute
+
+144
+00:05:48,000 --> 00:05:50,000
+that passes in integers, I should get
+
+145
+00:05:50,000 --> 00:05:52,000
+a proper answer for integer.
+
+146
+00:05:52,000 --> 00:05:55,000
+And you notice now the result is two.
+
+147
+00:05:55,000 --> 00:05:57,000
+Now it displays as 2.0 because
+
+148
+00:05:57,000 --> 00:05:59,000
+it's being stored as a double.
+
+149
+00:05:59,000 --> 00:06:01,000
+But it's giving us the right behavior
+
+150
+00:06:01,000 --> 00:06:03,000
+for dividing two integers.
+
+151
+00:06:03,000 --> 00:06:05,000
+So, let's go one step further, now.
+
+152
+00:06:05,000 --> 00:06:07,000
+So, I'm going to go ahead and copy these same three lines
+
+153
+00:06:07,000 --> 00:06:09,000
+here again, where I passed the integers in.
+
+154
+00:06:09,000 --> 00:06:11,000
+So I copy that.
+
+155
+00:06:11,000 --> 00:06:13,000
+And I'm going to go ahead and paste that in.
+
+156
+00:06:13,000 --> 00:06:16,000
+So, now on this third call, what I want to do, is I'm going
+
+157
+00:06:16,000 --> 00:06:18,000
+to go ahead and cast this first one to a double.
+
+158
+00:06:18,000 --> 00:06:22,000
+Now, what happens there is I'm now calling execute
+
+159
+00:06:22,000 --> 00:06:25,000
+with a double as one parameter
+
+160
+00:06:25,000 --> 00:06:28,000
+and an int as another parameter.
+
+161
+00:06:28,000 --> 00:06:29,000
+Well which one's it going to select?
+
+162
+00:06:29,000 --> 00:06:31,000
+Right, if I go back to my Math Equation class,
+
+163
+00:06:31,000 --> 00:06:33,000
+if I look at my executes.
+
+164
+00:06:33,000 --> 00:06:36,000
+Well, I can't pass a double into an int.
+
+165
+00:06:36,000 --> 00:06:38,000
+Because that would be a narrowing conversion,
+
+166
+00:06:38,000 --> 00:06:40,000
+that's not legal.
+
+167
+00:06:40,000 --> 00:06:42,000
+But, I do know I can pass an int into a double.
+
+168
+00:06:42,000 --> 00:06:45,000
+So the system will actually choose the one that accepts
+
+169
+00:06:45,000 --> 00:06:46,000
+two doubles, because that's the only one
+
+170
+00:06:46,000 --> 00:06:48,000
+that can accept all the parameters.
+
+171
+00:06:48,000 --> 00:06:50,000
+Alright, so now if I go ahead and run this,
+
+172
+00:06:50,000 --> 00:06:53,000
+we see we get 2.25 for that last one.
+
+173
+00:06:53,000 --> 00:06:55,000
+The system had to pick the best overload
+
+174
+00:06:55,000 --> 00:06:57,000
+of all those that were available.
+
+175
+00:06:57,000 --> 00:06:58,000
+The one for which there was a valid way
+
+176
+00:06:58,000 --> 00:07:00,000
+to pass all the parameters.
+
+177
+00:07:00,000 --> 00:07:03,000
+In practice, the mechanism that Java uses
+
+178
+00:07:03,000 --> 00:07:06,000
+to resolve method overloads is pretty intuitive.
+
+179
+00:07:06,000 --> 00:07:08,000
+In most cases, it's going to pick the one that you expect.
+
+180
+00:07:08,000 --> 00:07:11,000
+But the implementation of how that is resolved
+
+181
+00:07:11,000 --> 00:07:13,000
+is actually quite complex because there is a lot of,
+
+182
+00:07:13,000 --> 00:07:15,000
+kind of, nuances to what can go on.
+
+183
+00:07:15,000 --> 00:07:18,000
+If you're interested in all the details of exactly how
+
+184
+00:07:18,000 --> 00:07:21,000
+the system chooses a particular overload, I've put a URL
+
+185
+00:07:21,000 --> 00:07:24,000
+on the screen that references the specifications
+
+186
+00:07:24,000 --> 00:07:26,000
+for Java on exactly how that works.
+
+187
+00:07:26,000 --> 00:07:27,000
+It's really kind of interesting,
+
+188
+00:07:27,000 --> 00:07:28,000
+and it's actually quite complex.
+
+189
+00:07:28,000 --> 00:07:30,000
+But if you're interested in learning more about it,
+
+190
+00:07:30,000 --> 00:59:00,000
+I encourage you to check out that URL.
+

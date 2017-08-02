@@ -1,0 +1,852 @@
+1
+00:00:02,000 --> 00:00:05,000
+In this demo, we'll add exceptions to our CalcEngine app.
+
+2
+00:00:05,000 --> 00:00:07,000
+We'll create a custom exception class, which will then throw
+
+3
+00:00:07,000 --> 00:00:10,000
+in cases where we find we have invalid data, and then,
+
+4
+00:00:10,000 --> 00:00:12,000
+of course, we'll add a try/catch block to our app
+
+5
+00:00:12,000 --> 00:00:15,000
+to handle those exceptions.
+
+6
+00:00:15,000 --> 00:00:18,000
+Here we are in the source code for our CalcEngine app,
+
+7
+00:00:18,000 --> 00:00:20,000
+and the app's exactly as we left it at the end
+
+8
+00:00:20,000 --> 00:00:21,000
+of the last module, except I've added
+
+9
+00:00:21,000 --> 00:00:24,000
+three statements for us to process.
+
+10
+00:00:24,000 --> 00:00:26,000
+Remember that each statement we process is supposed
+
+11
+00:00:26,000 --> 00:00:29,000
+to have three parts: a command, and then the two numbers
+
+12
+00:00:29,000 --> 00:00:30,000
+we want to operate on.
+
+13
+00:00:30,000 --> 00:00:32,000
+Well, each of these three statements I've added
+
+14
+00:00:32,000 --> 00:00:33,000
+have a different problem.
+
+15
+00:00:33,000 --> 00:00:35,000
+The first statement contains only two parts, the command
+
+16
+00:00:35,000 --> 00:00:38,000
+and a single numeric value instead of having two values.
+
+17
+00:00:38,000 --> 00:00:42,000
+The second statement has non-numeric data, the xx.
+
+18
+00:00:42,000 --> 00:00:43,000
+And then, the third statement I added has
+
+19
+00:00:43,000 --> 00:00:46,000
+an invalid command, addX.
+
+20
+00:00:46,000 --> 00:00:47,000
+So, what we want to do is update the app so that we can
+
+21
+00:00:47,000 --> 00:00:50,000
+properly handle this invalid data.
+
+22
+00:00:50,000 --> 00:00:52,000
+So, the first thing we'll do is,
+
+23
+00:00:52,000 --> 00:00:54,000
+add our own custom exception class.
+
+24
+00:00:54,000 --> 00:00:55,000
+So, I'm going to create a class, just like I always do,
+
+25
+00:00:55,000 --> 00:01:01,000
+because, remember, exception classes are just classes.
+
+26
+00:01:01,000 --> 00:01:05,000
+And, let's call this the InvalidStatementException.
+
+27
+00:01:05,000 --> 00:01:07,000
+And we'll say, OK.
+
+28
+00:01:07,000 --> 00:01:09,000
+Now, remember that, all of our exception classes
+
+29
+00:01:09,000 --> 00:01:12,000
+will generally extend the class, Exception,
+
+30
+00:01:12,000 --> 00:01:14,000
+so let's go ahead and do that.
+
+31
+00:01:14,000 --> 00:01:17,000
+And, as I mentioned in the previous clip, in most cases,
+
+32
+00:01:17,000 --> 00:01:20,000
+any custom exceptions really only have constructors
+
+33
+00:01:20,000 --> 00:01:21,000
+inside of them, right?
+
+34
+00:01:21,000 --> 00:01:24,000
+So, let's go ahead and add a public constructor for this.
+
+35
+00:01:24,000 --> 00:01:26,000
+And this constructor will take two arguments:
+
+36
+00:01:26,000 --> 00:01:28,000
+the reason that the statement is invalid,
+
+37
+00:01:28,000 --> 00:01:30,000
+and the statement itself.
+
+38
+00:01:30,000 --> 00:01:33,000
+So, they'll both be string parameters, and then,
+
+39
+00:01:33,000 --> 00:01:35,000
+all we need to do here is go ahead and call
+
+40
+00:01:35,000 --> 00:01:37,000
+our super-class constructor.
+
+41
+00:01:37,000 --> 00:01:38,000
+So, say super.
+
+42
+00:01:38,000 --> 00:01:41,000
+And when the super-class constructor accepts a string,
+
+43
+00:01:41,000 --> 00:01:43,000
+which is a message, so what we'll do is we'll take
+
+44
+00:01:43,000 --> 00:01:46,000
+these two parts, the reason and the statement,
+
+45
+00:01:46,000 --> 00:01:48,000
+and combine them into a single message.
+
+46
+00:01:48,000 --> 00:01:50,000
+So, that's our first constructor.
+
+47
+00:01:50,000 --> 00:01:51,000
+Now, remember we said that normally there are
+
+48
+00:01:51,000 --> 00:01:54,000
+two constructors, one that accepts the information
+
+49
+00:01:54,000 --> 00:01:56,000
+that we need, which we have here, and also one that
+
+50
+00:01:56,000 --> 00:01:59,000
+let's us associate another exception with it.
+
+51
+00:01:59,000 --> 00:02:00,000
+So, what I'm going to do here is grab this first
+
+52
+00:02:00,000 --> 00:02:05,000
+constructor, just copy that, I'll paste it in,
+
+53
+00:02:05,000 --> 00:02:07,000
+and what I'm going to do on this second constructor here
+
+54
+00:02:07,000 --> 00:02:11,000
+is add in a throwable cause.
+
+55
+00:02:11,000 --> 00:02:12,000
+So, we've got the cause there, and all we're going to do is
+
+56
+00:02:12,000 --> 00:02:16,000
+pass that to our base class constructor.
+
+57
+00:02:16,000 --> 00:02:18,000
+And, we now have a custom exception, because, remember
+
+58
+00:02:18,000 --> 00:02:21,000
+that all the real work of being an exception we're inheriting
+
+59
+00:02:21,000 --> 00:02:22,000
+from the base class, right?
+
+60
+00:02:22,000 --> 00:02:26,000
+So, we're really ready now to have our own custom exception.
+
+61
+00:02:26,000 --> 00:02:28,000
+So now, what we need to do is add in
+
+62
+00:02:28,000 --> 00:02:30,000
+the appropriate error checks into our code, alright?
+
+63
+00:02:30,000 --> 00:02:33,000
+So, let's go to our CalculateHelper class here,
+
+64
+00:02:33,000 --> 00:02:35,000
+and here we are inside the process method.
+
+65
+00:02:35,000 --> 00:02:36,000
+Remember, the job of the process method is to take
+
+66
+00:02:36,000 --> 00:02:40,000
+that string statement, break it into its parts,
+
+67
+00:02:40,000 --> 00:02:42,000
+and then, do the right work under the covers.
+
+68
+00:02:42,000 --> 00:02:44,000
+So, remember that we said, there are three things
+
+69
+00:02:44,000 --> 00:02:45,000
+we're going to start checking for.
+
+70
+00:02:45,000 --> 00:02:49,000
+The first one was to make sure that we have enough parts
+
+71
+00:02:49,000 --> 00:02:50,000
+to the incoming statement.
+
+72
+00:02:50,000 --> 00:02:52,000
+So, the right place to check for that is right here
+
+73
+00:02:52,000 --> 00:02:55,000
+after we call split, because when we call split,
+
+74
+00:02:55,000 --> 00:02:57,000
+we get back an array with all the parts, right?
+
+75
+00:02:57,000 --> 00:02:59,000
+So, what we want to do is make sure that array
+
+76
+00:02:59,000 --> 00:03:00,000
+has exactly three members in it.
+
+77
+00:03:00,000 --> 00:03:02,000
+So, let's put an if statement in place.
+
+78
+00:03:02,000 --> 00:03:04,000
+We'll just check to see that the parts.length
+
+79
+00:03:04,000 --> 00:03:06,000
+is equal to three, or I should say,
+
+80
+00:03:06,000 --> 00:03:09,000
+if the parts.length is not equal to three.
+
+81
+00:03:09,000 --> 00:03:11,000
+And then, if it's not equal to three, what we're going
+
+82
+00:03:11,000 --> 00:03:13,000
+to do is throw an instance of our exception,
+
+83
+00:03:13,000 --> 00:03:16,000
+so we want to say, throw, we're going to new up
+
+84
+00:03:16,000 --> 00:03:18,000
+an instance of our exception, and remember,
+
+85
+00:03:18,000 --> 00:03:21,000
+our exception is the InvalidStatementException,
+
+86
+00:03:21,000 --> 00:03:22,000
+and, remember that, we want to pass this one
+
+87
+00:03:22,000 --> 00:03:26,000
+two parameters: the reason that something is wrong,
+
+88
+00:03:26,000 --> 00:03:28,000
+and then the statement itself.
+
+89
+00:03:28,000 --> 00:03:31,000
+So, the reason we'll say is, Incorrect number of fields.
+
+90
+00:03:31,000 --> 00:03:33,000
+And then, we'll pass our statement in.
+
+91
+00:03:33,000 --> 00:03:35,000
+And so now, we're throwing an exception there.
+
+92
+00:03:35,000 --> 00:03:38,000
+So, that takes care of the not having enough parts to it.
+
+93
+00:03:38,000 --> 00:03:41,000
+Now, the next issue was that of non-numeric data.
+
+94
+00:03:41,000 --> 00:03:43,000
+Now, the way we're going to find out we have
+
+95
+00:03:43,000 --> 00:03:45,000
+non-numeric data is that, when we call these parseDouble
+
+96
+00:03:45,000 --> 00:03:48,000
+methods, they'll actually throw a NumberFormatException
+
+97
+00:03:48,000 --> 00:03:50,000
+if that data is not numeric.
+
+98
+00:03:50,000 --> 00:03:51,000
+So, we'll do in this case here where we actually
+
+99
+00:03:51,000 --> 00:03:54,000
+convert the strings into doubles, let's wrap that in
+
+100
+00:03:54,000 --> 00:03:59,000
+a try/catch block to handle NumberFormatException.
+
+101
+00:03:59,000 --> 00:04:01,000
+So, we've got that there, so let's go ahead and complete
+
+102
+00:04:01,000 --> 00:04:03,000
+our catch block, and again we'll throw our
+
+103
+00:04:03,000 --> 00:04:06,000
+InvalidStatementException, this time our reason will be,
+
+104
+00:04:06,000 --> 00:04:08,000
+Non-numeric data.
+
+105
+00:04:08,000 --> 00:04:11,000
+So we've got our reason and the statement, but this time,
+
+106
+00:04:11,000 --> 00:04:12,000
+we want to add a third parameter,
+
+107
+00:04:12,000 --> 00:04:14,000
+which is the original exception, alright?
+
+108
+00:04:14,000 --> 00:04:16,000
+So, we don't want to lose the fact that this was actually
+
+109
+00:04:16,000 --> 00:04:18,000
+triggered by another exception.
+
+110
+00:04:18,000 --> 00:04:20,000
+So, we've got that there, so that takes care of
+
+111
+00:04:20,000 --> 00:04:22,000
+our non-numeric data situation.
+
+112
+00:04:22,000 --> 00:04:25,000
+The last thing we need to check for is an invalid command.
+
+113
+00:04:25,000 --> 00:04:26,000
+Remember, the command is set by this
+
+114
+00:04:26,000 --> 00:04:28,000
+setCommandFromString method.
+
+115
+00:04:28,000 --> 00:04:30,000
+Let's scroll down and look at that.
+
+116
+00:04:30,000 --> 00:04:33,000
+Remember that setCommandFromString actually
+
+117
+00:04:33,000 --> 00:04:36,000
+takes that string value, goes through and tries to compare
+
+118
+00:04:36,000 --> 00:04:38,000
+it with each one of the enumerations, and when it finds it,
+
+119
+00:04:38,000 --> 00:04:42,000
+it sets the appropriate enumeration to our command field.
+
+120
+00:04:42,000 --> 00:04:44,000
+So, if we leave setCommandFromString, and the command
+
+121
+00:04:44,000 --> 00:04:47,000
+field is still null, we know it was an invalid command.
+
+122
+00:04:47,000 --> 00:04:50,000
+So, what we'll do is, we'll scroll up here, right after
+
+123
+00:04:50,000 --> 00:04:52,000
+we get back from setCommandFromString, we'll check and see
+
+124
+00:04:52,000 --> 00:04:56,000
+if that command field is null.
+
+125
+00:04:56,000 --> 00:04:57,000
+And if it is, we'll again throw our
+
+126
+00:04:57,000 --> 00:05:00,000
+InvalidStatementException, with the reason being,
+
+127
+00:05:00,000 --> 00:05:03,000
+Invalid command.
+
+128
+00:05:03,000 --> 00:05:04,000
+So, now we have all of our error checking inside of our
+
+129
+00:05:04,000 --> 00:05:07,000
+process method, and we raised all of these exceptions,
+
+130
+00:05:07,000 --> 00:05:10,000
+but you notice that each one of these throws is
+
+131
+00:05:10,000 --> 00:05:12,000
+underlined in red by my IDE.
+
+132
+00:05:12,000 --> 00:05:14,000
+Well, the reason is, it's complaining that I haven't
+
+133
+00:05:14,000 --> 00:05:16,000
+handled this exception.
+
+134
+00:05:16,000 --> 00:05:18,000
+Now, of course, I could put a try/catch block to handle
+
+135
+00:05:18,000 --> 00:05:20,000
+these exceptions, but, obviously, I don't want to do that,
+
+136
+00:05:20,000 --> 00:05:23,000
+because I want the caller to get the exception.
+
+137
+00:05:23,000 --> 00:05:25,000
+So, what I need to do, then, is go up here to my method
+
+138
+00:05:25,000 --> 00:05:28,000
+declaration, and add a throws clause for
+
+139
+00:05:28,000 --> 00:05:32,000
+InvalidStatementException because, remember, our custom
+
+140
+00:05:32,000 --> 00:05:34,000
+exceptions are checked exceptions, right?
+
+141
+00:05:34,000 --> 00:05:37,000
+So now, we've indicated that we throw that exception.
+
+142
+00:05:37,000 --> 00:05:41,000
+So now, if we go back to our main program, you'll notice
+
+143
+00:05:41,000 --> 00:05:43,000
+that where we call process is now underlined in red,
+
+144
+00:05:43,000 --> 00:05:46,000
+because we're not handling the exception, right?
+
+145
+00:05:46,000 --> 00:05:47,000
+The method declares that it throws it,
+
+146
+00:05:47,000 --> 00:05:49,000
+so we have to handle it.
+
+147
+00:05:49,000 --> 00:05:51,000
+So, we'll wrap this is a try/catch block.
+
+148
+00:05:51,000 --> 00:05:53,000
+And, what I'm going to do is put the try/catch block inside
+
+149
+00:05:53,000 --> 00:05:55,000
+the for statement, because I want to make sure that,
+
+150
+00:05:55,000 --> 00:05:57,000
+if I get an error on one statement,
+
+151
+00:05:57,000 --> 00:05:59,000
+I still process the next statement.
+
+152
+00:05:59,000 --> 00:06:02,000
+If I put the entire for loop inside the try block,
+
+153
+00:06:02,000 --> 00:06:04,000
+as soon as there was any error, it would jump out
+
+154
+00:06:04,000 --> 00:06:05,000
+of the try block and into the catch, and I wouldn't
+
+155
+00:06:05,000 --> 00:06:07,000
+process anything else.
+
+156
+00:06:07,000 --> 00:06:09,000
+So, let's put a try block right in here, so we'll wrap
+
+157
+00:06:09,000 --> 00:06:13,000
+the body of our for in the try, then we'll catch
+
+158
+00:06:13,000 --> 00:06:16,000
+the InvalidStatementException, so we've got that there,
+
+159
+00:06:16,000 --> 00:06:18,000
+and, of course, put our catch block in place.
+
+160
+00:06:18,000 --> 00:06:19,000
+Let me just scroll a little bit so we can see
+
+161
+00:06:19,000 --> 00:06:21,000
+a little better.
+
+162
+00:06:21,000 --> 00:06:23,000
+And, what I want to do, of course, is print out
+
+163
+00:06:23,000 --> 00:06:24,000
+the error message.
+
+164
+00:06:24,000 --> 00:06:26,000
+And, the way I get to the error message is,
+
+165
+00:06:26,000 --> 00:06:29,000
+I just go to the exception and I call its getMessage method.
+
+166
+00:06:29,000 --> 00:06:33,000
+And then, I'll write out the message for that exception.
+
+167
+00:06:33,000 --> 00:06:35,000
+And that message for our exception was set when we called
+
+168
+00:06:35,000 --> 00:06:37,000
+the base class constructor.
+
+169
+00:06:37,000 --> 00:06:40,000
+Now, remember that, in some cases, we'll have not only
+
+170
+00:06:40,000 --> 00:06:42,000
+our exception, but another exception.
+
+171
+00:06:42,000 --> 00:06:44,000
+What we want to do is look inside of this exception,
+
+172
+00:06:44,000 --> 00:06:46,000
+and see if there's another exception
+
+173
+00:06:46,000 --> 00:06:47,000
+that was a cause inside of there.
+
+174
+00:06:47,000 --> 00:06:50,000
+So, I'm going to put an if statement here again.
+
+175
+00:06:50,000 --> 00:06:54,000
+I'm going to say, e.gotCause, and that checks to see if
+
+176
+00:06:54,000 --> 00:06:55,000
+there's a cause associated with this,
+
+177
+00:06:55,000 --> 00:06:57,000
+which is the other exception.
+
+178
+00:06:57,000 --> 00:07:00,000
+Okay, well, if the cause comes back as non-null,
+
+179
+00:07:00,000 --> 00:07:02,000
+that means that we know that there was a cause.
+
+180
+00:07:02,000 --> 00:07:04,000
+So, if the cause comes back as nun-null, that means that
+
+181
+00:07:04,000 --> 00:07:06,000
+there's another exception here.
+
+182
+00:07:06,000 --> 00:07:07,000
+So, what I'm going to do in this case is,
+
+183
+00:07:07,000 --> 00:07:10,000
+write out the message from that exception.
+
+184
+00:07:10,000 --> 00:07:12,000
+So, I call e.getCause to get the original exception,
+
+185
+00:07:12,000 --> 00:07:15,000
+and then call getMessage on that one.
+
+186
+00:07:15,000 --> 00:07:17,000
+And, so now, when I go through here, any time we get an
+
+187
+00:07:17,000 --> 00:07:19,000
+InvalidStatementException, we'll write out the message
+
+188
+00:07:19,000 --> 00:07:21,000
+for that InvalidStatementException.
+
+189
+00:07:21,000 --> 00:07:23,000
+If there was another exception inside of it,
+
+190
+00:07:23,000 --> 00:07:25,000
+we'll write out that message as well.
+
+191
+00:07:25,000 --> 00:07:26,000
+So, let's go ahead and run this guy
+
+192
+00:07:26,000 --> 00:07:30,000
+and see what it looks like now.
+
+193
+00:07:30,000 --> 00:07:31,000
+Alright, so we ran to completion.
+
+194
+00:07:31,000 --> 00:07:32,000
+I'm going to make this window a little larger
+
+195
+00:07:32,000 --> 00:07:34,000
+so we can see everything.
+
+196
+00:07:34,000 --> 00:07:36,000
+And, you notice here, everything worked that we expected.
+
+197
+00:07:36,000 --> 00:07:39,000
+Alright, the first statement had an invalid number
+
+198
+00:07:39,000 --> 00:07:41,000
+of fields, because it only had two fields inside of it,
+
+199
+00:07:41,000 --> 00:07:44,000
+the add and 1.0, so we see that there.
+
+200
+00:07:44,000 --> 00:07:48,000
+The next one had non-numeric data, right, the xx,
+
+201
+00:07:48,000 --> 00:07:50,000
+so notice we write out our message, Non-numeric data,
+
+202
+00:07:50,000 --> 00:07:52,000
+and show the statement, then even we show the original
+
+203
+00:07:52,000 --> 00:07:55,000
+exception, which pinpoints the fact that it was the xx.
+
+204
+00:07:55,000 --> 00:07:58,000
+So, that xx came from the NumberFormatException
+
+205
+00:07:58,000 --> 00:08:00,000
+that was raised.
+
+206
+00:08:00,000 --> 00:08:02,000
+And then, our last error on this one had that addX,
+
+207
+00:08:02,000 --> 00:08:03,000
+which was an Invalid command,
+
+208
+00:08:03,000 --> 00:08:05,000
+which it wrote out appropriately.
+
+209
+00:08:05,000 --> 00:08:08,000
+And then, for the next four, which are all actually correct,
+
+210
+00:08:08,000 --> 00:08:10,000
+those processed just fine.
+
+211
+00:08:10,000 --> 00:08:13,000
+So, we've now used a custom exception to signal our error,
+
+212
+00:08:13,000 --> 00:08:15,000
+provide the caller with adequate information,
+
+213
+00:08:15,000 --> 00:59:00,000
+so they could then handle in their try/catch block.
+

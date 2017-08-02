@@ -1,0 +1,396 @@
+1
+00:00:01,000 --> 00:00:04,000
+Now that we have the primitive wrapper classes,
+
+2
+00:00:04,000 --> 00:00:05,000
+we can take advantage of the capabilities
+
+3
+00:00:05,000 --> 00:00:06,000
+that all classes have
+
+4
+00:00:06,000 --> 00:00:09,000
+when working with our primitive types.
+
+5
+00:00:09,000 --> 00:00:11,000
+For example, we can now treat the primitive types
+
+6
+00:00:11,000 --> 00:00:13,000
+as object.
+
+7
+00:00:13,000 --> 00:00:14,000
+So, if we have a situation where
+
+8
+00:00:14,000 --> 00:00:16,000
+we have maybe an object array
+
+9
+00:00:16,000 --> 00:00:19,000
+or any other type that expects object references,
+
+10
+00:00:19,000 --> 00:00:21,000
+in addition to putting in things like a reference
+
+11
+00:00:21,000 --> 00:00:24,000
+to a flight class or a passenger class,
+
+12
+00:00:24,000 --> 00:00:27,000
+we could even drop in a value like 100.
+
+13
+00:00:27,000 --> 00:00:29,000
+Right and what happens in this case is that
+
+14
+00:00:29,000 --> 00:00:32,000
+Java will go ahead and get a reference to an instance
+
+15
+00:00:32,000 --> 00:00:35,000
+of the integer wrapper class, with a value of 100
+
+16
+00:00:35,000 --> 00:00:39,000
+and assign that reference into stuff sub two.
+
+17
+00:00:39,000 --> 00:00:41,000
+We also have the benefit of null references.
+
+18
+00:00:41,000 --> 00:00:45,000
+So we have a distinct idea of a value not being set.
+
+19
+00:00:45,000 --> 00:00:47,000
+Let's take a look at our flight class here.
+
+20
+00:00:47,000 --> 00:00:49,000
+Our flight class, as you'll recall,
+
+21
+00:00:49,000 --> 00:00:51,000
+has an int for flightNumber
+
+22
+00:00:51,000 --> 00:00:53,000
+and a char for flightClass.
+
+23
+00:00:53,000 --> 00:00:54,000
+So, inside of our two string method,
+
+24
+00:00:54,000 --> 00:00:57,000
+we said well, if flightNumber is greater than zero,
+
+25
+00:00:57,000 --> 00:00:59,000
+we go ahead and return back a string
+
+26
+00:00:59,000 --> 00:01:01,000
+containing the flight number.
+
+27
+00:01:01,000 --> 00:01:03,000
+Of course, the idea there is that we're saying that,
+
+28
+00:01:03,000 --> 00:01:05,000
+well, if the flight number is greater than zero,
+
+29
+00:01:05,000 --> 00:01:07,000
+we know it's been set, but we make the assumption
+
+30
+00:01:07,000 --> 00:01:08,000
+that if it's not greater than zero,
+
+31
+00:01:08,000 --> 00:01:10,000
+it must not have been set.
+
+32
+00:01:10,000 --> 00:01:12,000
+Even though it's potentially possible
+
+33
+00:01:12,000 --> 00:01:14,000
+to have a flight with a flight number of zero.
+
+34
+00:01:14,000 --> 00:01:15,000
+Then we also make the assumption that well,
+
+35
+00:01:15,000 --> 00:01:17,000
+if flight number is not greater than zero,
+
+36
+00:01:17,000 --> 00:01:19,000
+well you must have set flight class
+
+37
+00:01:19,000 --> 00:01:21,000
+because we don't really have a distinct way of knowing
+
+38
+00:01:21,000 --> 00:01:23,000
+that the values haven't been set.
+
+39
+00:01:23,000 --> 00:01:26,000
+But if we now convert our int and our char
+
+40
+00:01:26,000 --> 00:01:28,000
+to the wrapper class equivalent,
+
+41
+00:01:28,000 --> 00:01:33,000
+so we take flightNumber and we make that an integer instead
+
+42
+00:01:33,000 --> 00:01:37,000
+we take our flightClass and make that a character instead,
+
+43
+00:01:37,000 --> 00:01:39,000
+now we go inside of our two string method.
+
+44
+00:01:39,000 --> 00:01:42,000
+We want to check and see if flightNumber has been set,
+
+45
+00:01:42,000 --> 00:01:44,000
+rather than check and see if it's greater than zero,
+
+46
+00:01:44,000 --> 00:01:46,000
+we can check to see if it's not equal to null.
+
+47
+00:01:46,000 --> 00:01:48,000
+If it's not equal to null, we know it's been set,
+
+48
+00:01:48,000 --> 00:01:50,000
+no matter what value inside of there.
+
+49
+00:01:50,000 --> 00:01:52,000
+When it comes to checking the flightCass,
+
+50
+00:01:52,000 --> 00:01:54,000
+rather than just assuming that,
+
+51
+00:01:54,000 --> 00:01:55,000
+well flightNumber wasn't set,
+
+52
+00:01:55,000 --> 00:01:56,000
+they might've set flightClass,
+
+53
+00:01:56,000 --> 00:01:59,000
+we can actually check and see if flightClass
+
+54
+00:01:59,000 --> 00:02:00,000
+is not equal to null.
+
+55
+00:02:00,000 --> 00:02:02,000
+So that gives us, instead of just two states,
+
+56
+00:02:02,000 --> 00:02:03,000
+you've set one or the other.
+
+57
+00:02:03,000 --> 00:02:05,000
+We have three states.
+
+58
+00:02:05,000 --> 00:02:07,000
+You could've set one, you could've set the other,
+
+59
+00:02:07,000 --> 00:02:11,000
+or, maybe, you didn't set anything at all.
+
+60
+00:02:11,000 --> 00:02:13,000
+So, we're getting that benefit that we've had,
+
+61
+00:02:13,000 --> 00:02:14,000
+with our classes all along,
+
+62
+00:02:14,000 --> 00:02:17,000
+now with our primitive values.
+
+63
+00:02:17,000 --> 00:02:18,000
+Now, as we mentioned, the wrapper classes
+
+64
+00:02:18,000 --> 00:02:21,000
+provide members as well.
+
+65
+00:02:21,000 --> 00:02:23,000
+Let's take a look at just a few of those.
+
+66
+00:02:23,000 --> 00:02:26,000
+So, I have here on screen, a list of just a few
+
+67
+00:02:26,000 --> 00:02:27,000
+of the members in each of the classes.
+
+68
+00:02:27,000 --> 00:02:29,000
+If you look at the integer classes,
+
+69
+00:02:29,000 --> 00:02:31,000
+Byte, Short, Integer and Long,
+
+70
+00:02:31,000 --> 00:02:32,000
+you see that we have things like
+
+71
+00:02:32,000 --> 00:02:34,000
+MIN_VALUE and MAX_VALUE,
+
+72
+00:02:34,000 --> 00:02:36,000
+which are fields that tell us the bottom range
+
+73
+00:02:36,000 --> 00:02:38,000
+and the top range of that each type.
+
+74
+00:02:38,000 --> 00:02:40,000
+A method like bitCount that lets us see
+
+75
+00:02:40,000 --> 00:02:42,000
+the individual bit values in an instance.
+
+76
+00:02:42,000 --> 00:02:44,000
+Or things like toBinaryString that lets us
+
+77
+00:02:44,000 --> 00:02:45,000
+get a string back with the
+
+78
+00:02:45,000 --> 00:02:48,000
+binary representation of an instance.
+
+79
+00:02:48,000 --> 00:02:50,000
+On our floating points, we have MIN_VALUE
+
+80
+00:02:50,000 --> 00:02:53,000
+and MAX_VALUE again for bottom in range, top in range.
+
+81
+00:02:53,000 --> 00:02:56,000
+But notice it introduces concepts like infinite
+
+82
+00:02:56,000 --> 00:02:57,000
+or not a number.
+
+83
+00:02:57,000 --> 00:02:59,000
+Or in Character.
+
+84
+00:02:59,000 --> 00:03:00,000
+Once again we have a minimum value and
+
+85
+00:03:00,000 --> 00:03:01,000
+a maximum value,
+
+86
+00:03:01,000 --> 00:03:02,000
+but then we also have things like
+
+87
+00:03:02,000 --> 00:03:06,000
+isDigit and isLetter to see what kind of character
+
+88
+00:03:06,000 --> 00:03:07,000
+is inside of a given instance.
+
+89
+00:03:07,000 --> 00:03:10,000
+And then on Boolean, we even have fields for representing
+
+90
+00:03:10,000 --> 00:03:14,000
+a reference to a true instance or a false instance.
+
+91
+00:03:14,000 --> 00:03:15,000
+Now, these members I have on screen here
+
+92
+00:03:15,000 --> 00:03:17,000
+are just a tiny, tiny sampling.
+
+93
+00:03:17,000 --> 00:03:18,000
+To see the complete list of members,
+
+94
+00:03:18,000 --> 00:03:20,000
+over there on the right-hand column,
+
+95
+00:03:20,000 --> 00:03:22,000
+I have a shortcut link to the documentation
+
+96
+00:03:22,000 --> 00:03:24,000
+on each individual class.
+
+97
+00:03:24,000 --> 00:03:25,000
+Check those out when you have a chance,
+
+98
+00:03:25,000 --> 00:03:27,000
+and you'll see that there's actually a lot going on
+
+99
+00:03:27,000 --> 00:59:00,000
+with each of these individual wrapper classes.
+

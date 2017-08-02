@@ -1,0 +1,252 @@
+1
+00:00:01,000 --> 00:00:04,000
+Looking at that method we created in the last clip,
+
+2
+00:00:04,000 --> 00:00:07,000
+basically we call in to the method, the method runs
+
+3
+00:00:07,000 --> 00:00:09,000
+until it's done and then it exits.
+
+4
+00:00:09,000 --> 00:00:13,000
+Well there are actually three reasons a method will exit.
+
+5
+00:00:13,000 --> 00:00:15,000
+One is that it reaches the end of the method
+
+6
+00:00:15,000 --> 00:00:18,000
+which is the case in our showSum method here.
+
+7
+00:00:18,000 --> 00:00:20,000
+You can also put a return statement in
+
+8
+00:00:20,000 --> 00:00:22,000
+to indicate that you want to exit.
+
+9
+00:00:22,000 --> 00:00:25,000
+And there's a third scenario which is when an error occurs.
+
+10
+00:00:25,000 --> 00:00:27,000
+And then we're going to talk a lot more about the way
+
+11
+00:00:27,000 --> 00:00:28,000
+the error situation is handled
+
+12
+00:00:28,000 --> 00:00:30,000
+when we get to the module and exceptions.
+
+13
+00:00:30,000 --> 00:00:33,000
+For now we're going to focus on these first two scenarios
+
+14
+00:00:33,000 --> 00:00:36,000
+reaching the end of the method or having a return statement.
+
+15
+00:00:36,000 --> 00:00:39,000
+So when a method is done, it returns back
+
+16
+00:00:39,000 --> 00:00:41,000
+to where it was called from.
+
+17
+00:00:41,000 --> 00:00:43,000
+So in the case of our little showSum function here,
+
+18
+00:00:43,000 --> 00:00:46,000
+if we have our code where we created the class instance
+
+19
+00:00:46,000 --> 00:00:48,000
+and then we called showSum.
+
+20
+00:00:48,000 --> 00:00:51,000
+If we have another instruction after that that printed out
+
+21
+00:00:51,000 --> 00:00:53,000
+a message like "I am back", what's going to happen
+
+22
+00:00:53,000 --> 00:00:57,000
+is that when we call m.showSum, that's going to pass control
+
+23
+00:00:57,000 --> 00:01:00,000
+into our showSum method, it will do its work
+
+24
+00:01:00,000 --> 00:01:03,000
+which is print out that 8.9 three times.
+
+25
+00:01:03,000 --> 00:01:06,000
+And the control is getting passed back up to the caller
+
+26
+00:01:06,000 --> 00:01:09,000
+which will pass control to that print line "I am back",
+
+27
+00:01:09,000 --> 00:01:11,000
+which then prints that message out.
+
+28
+00:01:11,000 --> 00:01:14,000
+Now if we wanted to, we could put a return statement here
+
+29
+00:01:14,000 --> 00:01:16,000
+at the end and would actually work exactly the same.
+
+30
+00:01:16,000 --> 00:01:19,000
+In that case we'll be exiting because it hit the return
+
+31
+00:01:19,000 --> 00:01:20,000
+instead of the end of the method.
+
+32
+00:01:20,000 --> 00:01:22,000
+In this scenario it doesn't change anything
+
+33
+00:01:22,000 --> 00:01:24,000
+but the return statement does not have to go
+
+34
+00:01:24,000 --> 00:01:26,000
+at the end of the method.
+
+35
+00:01:26,000 --> 00:01:28,000
+Imagine if we have a suddenly different call here,
+
+36
+00:01:28,000 --> 00:01:30,000
+is that when we call showSum, instead of passing three
+
+37
+00:01:30,000 --> 00:01:33,000
+as the last parameter, we pass the zero.
+
+38
+00:01:33,000 --> 00:01:35,000
+Well what would happen in that case?
+
+39
+00:01:35,000 --> 00:01:38,000
+Is we'd call in the showSum, we would do the work,
+
+40
+00:01:38,000 --> 00:01:39,000
+they add the numbers together
+
+41
+00:01:39,000 --> 00:01:41,000
+and then our print statement wouldn't do anything.
+
+42
+00:01:41,000 --> 00:01:44,000
+Basically our showSum method would actually have
+
+43
+00:01:44,000 --> 00:01:46,000
+no real results.
+
+44
+00:01:46,000 --> 00:01:48,000
+Now in this case we're just doing something very simple,
+
+45
+00:01:48,000 --> 00:01:51,000
+adding, but in many methods you may be doing a lot of work
+
+46
+00:01:51,000 --> 00:01:52,000
+that you end up not using.
+
+47
+00:01:52,000 --> 00:01:54,000
+So it's often used, want to check your parameters
+
+48
+00:01:54,000 --> 00:01:57,000
+at the very beginning of a method and if a certain criteria
+
+49
+00:01:57,000 --> 00:01:59,000
+aren't met you just go ahead and exit.
+
+50
+00:01:59,000 --> 00:02:01,000
+So if we actually go ahead and make a little more room
+
+51
+00:02:01,000 --> 00:02:04,000
+in our method here, what we might do at the very beginning
+
+52
+00:02:04,000 --> 00:02:07,000
+is say, well, if count is less than one, well we know
+
+53
+00:02:07,000 --> 00:02:09,000
+we're not going to do anything
+
+54
+00:02:09,000 --> 00:02:11,000
+so we're just going to go ahead and return.
+
+55
+00:02:11,000 --> 00:02:14,000
+So in this case what happened is we call showSum,
+
+56
+00:02:14,000 --> 00:02:16,000
+control is passed in to showSum.
+
+57
+00:02:16,000 --> 00:02:19,000
+We check count which is zero, so we simply exit back out
+
+58
+00:02:19,000 --> 00:02:21,000
+and print our "I am back".
+
+59
+00:02:21,000 --> 00:02:23,000
+Where we end up not doing all that work that we weren't
+
+60
+00:02:23,000 --> 00:02:25,000
+going to use anyway.
+
+61
+00:02:25,000 --> 00:02:26,000
+So the return statements can be placed
+
+62
+00:02:26,000 --> 00:02:28,000
+anywhere inside your method that makes sense for the work
+
+63
+00:02:28,000 --> 00:59:00,000
+that you're doing.
+

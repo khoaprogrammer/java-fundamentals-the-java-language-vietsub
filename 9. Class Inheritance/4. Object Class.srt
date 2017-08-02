@@ -1,0 +1,460 @@
+1
+00:00:01,000 --> 00:00:04,000
+One of the built-in classes that Java provides is the Object
+
+2
+00:00:04,000 --> 00:00:08,000
+class. The Object class is the root of the Java class
+
+3
+00:00:08,000 --> 00:00:12,000
+hierarchy. What that means is that every class in Java,
+
+4
+00:00:12,000 --> 00:00:15,000
+whether it's a built-in class, or one you create, has the
+
+5
+00:00:15,000 --> 00:00:20,000
+characteristics of the Object class. What that means is that
+
+6
+00:00:20,000 --> 00:00:23,000
+using the Object class, we can declare references that can
+
+7
+00:00:23,000 --> 00:00:27,000
+point to any class type. So it can be variables, fields,
+
+8
+00:00:27,000 --> 00:00:31,000
+parameters, and because arrays are classes, objects
+
+9
+00:00:31,000 --> 00:00:34,000
+can even point to arrays. So it's really this kind of
+
+10
+00:00:34,000 --> 00:00:37,000
+universal reference type. But it's more than that.
+
+11
+00:00:37,000 --> 00:00:40,000
+The Object class actually has methods that are defined
+
+12
+00:00:40,000 --> 00:00:42,000
+on it. So that means that there are specific characteristics
+
+13
+00:00:42,000 --> 00:00:46,000
+and capabilities that are common to all classes. So if we
+
+14
+00:00:46,000 --> 00:00:50,000
+look at the idea of inheriting from the object class,
+
+15
+00:00:50,000 --> 00:00:54,000
+every class inherits either directly or indirectly from the
+
+16
+00:00:54,000 --> 00:00:57,000
+Object class. Let's look at some of the classes we've
+
+17
+00:00:57,000 --> 00:01:01,000
+written throughout this course. We have our Flight class.
+
+18
+00:01:01,000 --> 00:01:03,000
+If we were diagramming this, we might just kind of draw
+
+19
+00:01:03,000 --> 00:01:06,000
+a box representing the Flight class. Then of course we have
+
+20
+00:01:06,000 --> 00:01:10,000
+our CargoFlight class, so we'll draw a box for that.
+
+21
+00:01:10,000 --> 00:01:11,000
+Now remember that when we declared the CargoFlight
+
+22
+00:01:11,000 --> 00:01:15,000
+class we said that it extends the Flight class. So the way
+
+23
+00:01:15,000 --> 00:01:18,000
+we diagram that is we draw an arrow up to Flight, saying
+
+24
+00:01:18,000 --> 00:01:22,000
+that CargoFlight inherits from the Flight class. Now,
+
+25
+00:01:22,000 --> 00:01:24,000
+looking at the Flight class, there's nothing about it
+
+26
+00:01:24,000 --> 00:01:27,000
+extending anything, but what's implied in that class
+
+27
+00:01:27,000 --> 00:01:31,000
+declaration is that
+
+28
+00:01:31,000 --> 00:01:35,000
+class Flight extends the Object class.
+
+29
+00:01:35,000 --> 00:01:38,000
+So by not saying what it extends, it implicitly extends the
+
+30
+00:01:38,000 --> 00:01:42,000
+Object class. So to diagram that, we would have the Object
+
+31
+00:01:42,000 --> 00:01:46,000
+class, and Flight inherits from that. You could actually
+
+32
+00:01:46,000 --> 00:01:49,000
+write extends Object after Flight class, it just wouldn't
+
+33
+00:01:49,000 --> 00:01:52,000
+change anything. Having nothing there has the same
+
+34
+00:01:52,000 --> 00:01:56,000
+effect. So if we look at our Passenger class, we don't say
+
+35
+00:01:56,000 --> 00:02:00,000
+it extends anything, but when we diagram it it still extends
+
+36
+00:02:00,000 --> 00:02:03,000
+object. So what we see here is that, whether classes are
+
+37
+00:02:03,000 --> 00:02:07,000
+related to one another or not, they always extend the
+
+38
+00:02:07,000 --> 00:02:10,000
+Object class, meaning that we can treat any class as an
+
+39
+00:02:10,000 --> 00:02:13,000
+Object. So to put that into practice let's declare an array
+
+40
+00:02:13,000 --> 00:02:17,000
+we'll call stuff, it's type is Object, and we've created
+
+41
+00:02:17,000 --> 00:02:21,000
+three spots in it. So maybe the first element holds a
+
+42
+00:02:21,000 --> 00:02:24,000
+reference to an instance of Flight, the next one holds a
+
+43
+00:02:24,000 --> 00:02:27,000
+reference to a Passenger instance, and we could even add
+
+44
+00:02:27,000 --> 00:02:30,000
+another one that's a CargoFlight. To see what it's like to
+
+45
+00:02:30,000 --> 00:02:32,000
+work with Object references, let's go here and declare
+
+46
+00:02:32,000 --> 00:02:36,000
+Object o, to point to an instance of Passenger. Once we do
+
+47
+00:02:36,000 --> 00:02:40,000
+that, that same variable o can also be used to point to
+
+48
+00:02:40,000 --> 00:02:43,000
+an array of Flights. Now to be very clear, on the left we
+
+49
+00:02:43,000 --> 00:02:45,000
+made an Object array that's pointing to lots of different
+
+50
+00:02:45,000 --> 00:02:48,000
+class types. On the right here, we're simply saying that
+
+51
+00:02:48,000 --> 00:02:53,000
+because arrays are classes, we can assign an array to a
+
+52
+00:02:53,000 --> 00:02:56,000
+variable of type Object. Now we wouldn't have access to
+
+53
+00:02:56,000 --> 00:02:59,000
+any of the array characteristics of it but we can hold the
+
+54
+00:02:59,000 --> 00:03:02,000
+reference. We can now take that same o and point it to
+
+55
+00:03:02,000 --> 00:03:05,000
+an instance of CargoFlight. But again, to reinforce that
+
+56
+00:03:05,000 --> 00:03:09,000
+idea, remember that when we have a reference of a given
+
+57
+00:03:09,000 --> 00:03:13,000
+type, we can only access the capabilities that are visible
+
+58
+00:03:13,000 --> 00:03:16,000
+to that reference. So if I was to try and take o and call
+
+59
+00:03:16,000 --> 00:03:20,000
+add1Package, a method that's specific to CargoFlight,
+
+60
+00:03:20,000 --> 00:03:23,000
+that's not going to work, because the reference o doesn't
+
+61
+00:03:23,000 --> 00:03:27,000
+know anything about this idea of add1Package. Now,
+
+62
+00:03:27,000 --> 00:03:29,000
+does that mean that the object we created, CargoFlight,
+
+63
+00:03:29,000 --> 00:03:33,000
+is any less CargoFlight because the reference o can't get to
+
+64
+00:03:33,000 --> 00:03:36,000
+the CargoFlight capabilities? Of course the answer is no.
+
+65
+00:03:36,000 --> 00:03:39,000
+Let's see what this means in terms of what's happening here.
+
+66
+00:03:39,000 --> 00:03:43,000
+Remember that we declared our reference o of type Object,
+
+67
+00:03:43,000 --> 00:03:46,000
+we newed up a CargoFlight, and of course o then holds a
+
+68
+00:03:46,000 --> 00:03:50,000
+reference to CargoFlight. So even though o only knows about
+
+69
+00:03:50,000 --> 00:03:52,000
+Object capabilities, it's still pointing to a CargoFlight
+
+70
+00:03:52,000 --> 00:03:56,000
+object. So we should be able to get back to those
+
+71
+00:03:56,000 --> 00:03:59,000
+CargoFlight capabilities. So we can actually do that.
+
+72
+00:03:59,000 --> 00:04:02,000
+So we can declare a variable, we'll call it cf, and assign
+
+73
+00:04:02,000 --> 00:04:06,000
+it what's in o. Now if we tried to use this code as it is
+
+74
+00:04:06,000 --> 00:04:08,000
+here, we would actually get an error, because the compiler
+
+75
+00:04:08,000 --> 00:04:11,000
+would look at that and say, wait a minute, o can point to
+
+76
+00:04:11,000 --> 00:04:13,000
+many different types. There's no way for the compiler to
+
+77
+00:04:13,000 --> 00:04:17,000
+know that there will actually be a CargoFlight in there.
+
+78
+00:04:17,000 --> 00:04:20,000
+So what we can do is add an explicit cast that says
+
+79
+00:04:20,000 --> 00:04:23,000
+"I know there's a CargoFlight in there." And we want to
+
+80
+00:04:23,000 --> 00:04:25,000
+make sure that's true, because if it wasn't true we'd
+
+81
+00:04:25,000 --> 00:04:28,000
+actually get an error at run time. So what happens
+
+82
+00:04:28,000 --> 00:04:32,000
+when we make this assignment, we've got our reference cf,
+
+83
+00:04:32,000 --> 00:04:36,000
+but cf understands CargoFlight, and it ends up pointing to
+
+84
+00:04:36,000 --> 00:04:40,000
+that same object that was in o, CargoFlight. So now using cf
+
+85
+00:04:40,000 --> 00:04:44,000
+we can call add1Package. And again, to reinforce this point
+
+86
+00:04:44,000 --> 00:04:47,000
+here, we want to make sure when we made that assignment
+
+87
+00:04:47,000 --> 00:04:51,000
+that there really was a CargoFlight in o. If there's any
+
+88
+00:04:51,000 --> 00:04:55,000
+about that, we can verify it in code. We can wrap this in
+
+89
+00:04:55,000 --> 00:04:59,000
+a condition that says if(o instanceof CargoFlight).
+
+90
+00:04:59,000 --> 00:05:01,000
+What that'll do at runtime is it will actually look at the
+
+91
+00:05:01,000 --> 00:05:04,000
+object pointed to by o and make sure it actually is
+
+92
+00:05:04,000 --> 00:05:07,000
+a CargoFlight. If it wasn't, we wouldn't have run the code
+
+93
+00:05:07,000 --> 00:05:12,000
+in there that assigned it to the CargoFlight cf. Now looking
+
+94
+00:05:12,000 --> 00:05:15,000
+at our Object class, the Object class is not just for
+
+95
+00:05:15,000 --> 00:05:18,000
+references, it actually has characteristics, it actually has
+
+96
+00:05:18,000 --> 00:05:20,000
+methods that are built-in. Now we're not going to go into
+
+97
+00:05:20,000 --> 00:05:22,000
+all these in detail right now, but I just want to make you
+
+98
+00:05:22,000 --> 00:05:24,000
+aware of them. One of the built-in methods for the Object
+
+99
+00:05:24,000 --> 00:05:28,000
+class is the clone method. That allows an Object to create
+
+100
+00:05:28,000 --> 00:05:31,000
+a duplicate of itself. There's some caveats to working with
+
+101
+00:05:31,000 --> 00:05:33,000
+that that we're going to talk about later on in the course.
+
+102
+00:05:33,000 --> 00:05:36,000
+Another method that's available to the Object class, and
+
+103
+00:05:36,000 --> 00:05:39,000
+therefore to all classes, is hashCode. It returns back a
+
+104
+00:05:39,000 --> 00:05:42,000
+hash code that's useful for working with things like hash
+
+105
+00:05:42,000 --> 00:05:44,000
+tables and other types that rely on hash tables.
+
+106
+00:05:44,000 --> 00:05:47,000
+The getClass method returns back type information about
+
+107
+00:05:47,000 --> 00:05:50,000
+an instance. The finalize method is part of resource
+
+108
+00:05:50,000 --> 00:05:53,000
+cleanup. In most cases you won't do very much with the
+
+109
+00:05:53,000 --> 00:05:56,000
+finalize method. Then we have the toString method that
+
+110
+00:05:56,000 --> 00:05:58,000
+returns back a string of characters representing the
+
+111
+00:05:58,000 --> 00:06:00,000
+current instance. We're actually going to talk about that
+
+112
+00:06:00,000 --> 00:06:02,000
+one more in the next module. And the last one is the
+
+113
+00:06:02,000 --> 00:06:05,000
+equals method, which is used to compare one Object
+
+114
+00:06:05,000 --> 00:06:07,000
+instance to another. We're actually going to talk about
+
+115
+00:06:07,000 --> 00:59:00,000
+that one in the next clip.
+

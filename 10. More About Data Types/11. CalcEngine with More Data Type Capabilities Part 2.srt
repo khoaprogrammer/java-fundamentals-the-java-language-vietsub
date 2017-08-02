@@ -1,0 +1,528 @@
+1
+00:00:02,000 --> 00:00:04,000
+So let's look at how we can update our calculate helper
+
+2
+00:00:04,000 --> 00:00:06,000
+to have an appropriate toString method,
+
+3
+00:00:06,000 --> 00:00:08,000
+so we can actually see the right results coming out
+
+4
+00:00:08,000 --> 00:00:10,000
+from each helper instance.
+
+5
+00:00:10,000 --> 00:00:12,000
+So let's get this bottom window out of the way.
+
+6
+00:00:12,000 --> 00:00:14,000
+Let's head back to calculate helper.
+
+7
+00:00:14,000 --> 00:00:16,000
+Scroll down here towards the bottom.
+
+8
+00:00:16,000 --> 00:00:19,000
+And what we'll do is we'll go ahead and override
+
+9
+00:00:19,000 --> 00:00:20,000
+the toString method.
+
+10
+00:00:20,000 --> 00:00:23,000
+So, that's a public string.
+
+11
+00:00:23,000 --> 00:00:24,000
+So we have that there.
+
+12
+00:00:24,000 --> 00:00:27,000
+Let's go ahead and mark it as an override.
+
+13
+00:00:27,000 --> 00:00:29,000
+All right, scroll down here so we can see a little better.
+
+14
+00:00:29,000 --> 00:00:31,000
+So, now what we want to do in here remember is we want to
+
+15
+00:00:31,000 --> 00:00:34,000
+write out something like this.
+
+16
+00:00:34,000 --> 00:00:37,000
+So that's a output that we want to produce.
+
+17
+00:00:37,000 --> 00:00:38,000
+So now, one of the things we'll need to do
+
+18
+00:00:38,000 --> 00:00:40,000
+is identify the appropriate symbol.
+
+19
+00:00:40,000 --> 00:00:43,000
+Is it a plus sign, or a slash for dividing,
+
+20
+00:00:43,000 --> 00:00:45,000
+or a minus sign.
+
+21
+00:00:45,000 --> 00:00:46,000
+So what we'll want to do here is go
+
+22
+00:00:46,000 --> 00:00:47,000
+and declare a local variable.
+
+23
+00:00:47,000 --> 00:00:51,000
+We'll call it symbol and make it a type char.
+
+24
+00:00:51,000 --> 00:00:52,000
+and I've just initialized it to a space
+
+25
+00:00:52,000 --> 00:00:54,000
+because variables have to be initialized.
+
+26
+00:00:54,000 --> 00:00:57,000
+And what we'll do here is again use our switch statement
+
+27
+00:00:57,000 --> 00:01:00,000
+to test the values of our command field.
+
+28
+00:01:00,000 --> 00:01:02,000
+All right, so we'll first do a case for add.
+
+29
+00:01:02,000 --> 00:01:04,000
+And of course, what we want to do here
+
+30
+00:01:04,000 --> 00:01:05,000
+is set our symbol to the plus sign.
+
+31
+00:01:05,000 --> 00:01:07,000
+So, we'll do that.
+
+32
+00:01:07,000 --> 00:01:08,000
+Now one thing to note here
+
+33
+00:01:08,000 --> 00:01:09,000
+is that we're putting this literal
+
+34
+00:01:09,000 --> 00:01:11,000
+right in the middle of our code.
+
+35
+00:01:11,000 --> 00:01:12,000
+And this would actually be a pretty cool place
+
+36
+00:01:12,000 --> 00:01:14,000
+to use a named constant.
+
+37
+00:01:14,000 --> 00:01:15,000
+So we could actually say something like,
+
+38
+00:01:15,000 --> 00:01:18,000
+add symbol as opposed to just a char to the plus.
+
+39
+00:01:18,000 --> 00:01:21,000
+So, why don't we go ahead and declare named constants
+
+40
+00:01:21,000 --> 00:01:23,000
+for each of the four operation symbols.
+
+41
+00:01:23,000 --> 00:01:25,000
+So, let's scroll up to the top of the class.
+
+42
+00:01:25,000 --> 00:01:29,000
+What we'll do up here is we'll make them private.
+
+43
+00:01:29,000 --> 00:01:30,000
+And remember that we can use file
+
+44
+00:01:30,000 --> 00:01:32,000
+because once a field's assigned, it can't be changed,
+
+45
+00:01:32,000 --> 00:01:33,000
+but for named constants,
+
+46
+00:01:33,000 --> 00:01:36,000
+we like to go ahead and make them static.
+
+47
+00:01:36,000 --> 00:01:38,000
+That way no class instance can set them at all.
+
+48
+00:01:38,000 --> 00:01:41,000
+The values are the same for every instance of the class.
+
+49
+00:01:41,000 --> 00:01:45,000
+So we make this guy a char and we'll call it ADD_SYMBOL.
+
+50
+00:01:45,000 --> 00:01:48,000
+Remember, named constants are all capitalized.
+
+51
+00:01:48,000 --> 00:01:50,000
+And we'll simply set it to the character plus.
+
+52
+00:01:50,000 --> 00:01:52,000
+So that's our add symbol.
+
+53
+00:01:52,000 --> 00:01:54,000
+Let's go ahead and do the same thing for subtract,
+
+54
+00:01:54,000 --> 00:01:56,000
+multiply and divide.
+
+55
+00:01:56,000 --> 00:01:58,000
+So we now have the symbols for all four operations.
+
+56
+00:01:58,000 --> 00:02:01,000
+Let's scroll back down here to our toString method
+
+57
+00:02:01,000 --> 00:02:04,000
+and we'll change this from that literal plus character,
+
+58
+00:02:04,000 --> 00:02:06,000
+to ADD_SYMBOL.
+
+59
+00:02:06,000 --> 00:02:07,000
+All right, so that's much more readable,
+
+60
+00:02:07,000 --> 00:02:09,000
+just kind of really showing what we're trying to do here.
+
+61
+00:02:09,000 --> 00:02:11,000
+Let's go ahead and put a break in there.
+
+62
+00:02:11,000 --> 00:02:14,000
+And then what we'll do is do that same thing
+
+63
+00:02:14,000 --> 00:02:16,000
+for the other three operations.
+
+64
+00:02:16,000 --> 00:02:19,000
+And so now we can set the symbol for all four operations.
+
+65
+00:02:19,000 --> 00:02:21,000
+Add, subtract, multiply and divide.
+
+66
+00:02:21,000 --> 00:02:22,000
+Let's get these extra spaces out of here.
+
+67
+00:02:22,000 --> 00:02:24,000
+Clean that up a little bit.
+
+68
+00:02:24,000 --> 00:02:26,000
+And so now we have everything we need
+
+69
+00:02:26,000 --> 00:02:27,000
+to build the output string.
+
+70
+00:02:27,000 --> 00:02:30,000
+We know the two values, the results, and what symbol to use.
+
+71
+00:02:30,000 --> 00:02:32,000
+So, let's add a little space down here
+
+72
+00:02:32,000 --> 00:02:33,000
+at the bottom so we can work.
+
+73
+00:02:33,000 --> 00:02:35,000
+So the most efficient way to build that output string
+
+74
+00:02:35,000 --> 00:02:37,000
+is to use the StringBuilder class.
+
+75
+00:02:37,000 --> 00:02:39,000
+So, let's declare a local variable type StringBuilder.
+
+76
+00:02:39,000 --> 00:02:41,000
+We'll call it sb.
+
+77
+00:02:41,000 --> 00:02:43,000
+And we'll open a new instance of StringBuilder.
+
+78
+00:02:43,000 --> 00:02:45,000
+And remember we talked about things perform best
+
+79
+00:02:45,000 --> 00:02:47,000
+if we pre-allocate the size.
+
+80
+00:02:47,000 --> 00:02:49,000
+Let's make room for, say 20 characters inside of there.
+
+81
+00:02:49,000 --> 00:02:51,000
+So, we've got that guy in place.
+
+82
+00:02:51,000 --> 00:02:52,000
+And now we need to start adding
+
+83
+00:02:52,000 --> 00:02:55,000
+the values into the StringBuilder.
+
+84
+00:02:55,000 --> 00:02:56,000
+All right, so we'll want to go ahead
+
+85
+00:02:56,000 --> 00:02:57,000
+and add the left value in.
+
+86
+00:02:57,000 --> 00:02:59,000
+So, we'll say sb.append.
+
+87
+00:02:59,000 --> 00:03:02,000
+Put leftValue in there.
+
+88
+00:03:02,000 --> 00:03:04,000
+So that puts that value in.
+
+89
+00:03:04,000 --> 00:03:05,000
+Let's put a space after that.
+
+90
+00:03:05,000 --> 00:03:07,000
+All right, next we want to get the symbol.
+
+91
+00:03:07,000 --> 00:03:09,000
+So we'll use our symbol variable.
+
+92
+00:03:09,000 --> 00:03:10,000
+So we've got that there.
+
+93
+00:03:10,000 --> 00:03:12,000
+Let's me just scroll down a little bit so we can see better.
+
+94
+00:03:12,000 --> 00:03:15,000
+We'll put another space after the symbol.
+
+95
+00:03:15,000 --> 00:03:17,000
+Then we need our right value
+
+96
+00:03:17,000 --> 00:03:19,000
+and then we can append a space equals space
+
+97
+00:03:19,000 --> 00:03:21,000
+followed by the result.
+
+98
+00:03:21,000 --> 00:03:23,000
+And with that, now we have our complete string built,
+
+99
+00:03:23,000 --> 00:03:25,000
+but it's inside of the StringBuilder.
+
+100
+00:03:25,000 --> 00:03:27,000
+Remember the way we get the string back,
+
+101
+00:03:27,000 --> 00:03:30,000
+is by simply calling toString on the StringBuilder instance.
+
+102
+00:03:30,000 --> 00:03:32,000
+So that's what will return back.
+
+103
+00:03:32,000 --> 00:03:34,000
+sb.toString.
+
+104
+00:03:34,000 --> 00:03:35,000
+And that gives us a complete implementation
+
+105
+00:03:35,000 --> 00:03:37,000
+of our toString method.
+
+106
+00:03:37,000 --> 00:03:40,000
+Now, one thing to note, we're using this StringBuilder here,
+
+107
+00:03:40,000 --> 00:03:42,000
+which is a really efficient way to build this string up.
+
+108
+00:03:42,000 --> 00:03:44,000
+There's another mechanism that you can use
+
+109
+00:03:44,000 --> 00:03:46,000
+that I mentioned briefly inside the module,
+
+110
+00:03:46,000 --> 00:03:49,000
+which is the string class has a method called format.
+
+111
+00:03:49,000 --> 00:03:51,000
+I've got the URL onscreen for where you can find
+
+112
+00:03:51,000 --> 00:03:53,000
+the documentation on the format method.
+
+113
+00:03:53,000 --> 00:03:55,000
+When you have a chance, you might want to check that out.
+
+114
+00:03:55,000 --> 00:03:56,000
+It's just an alternate way
+
+115
+00:03:56,000 --> 00:03:58,000
+you could've actually built this output string.
+
+116
+00:03:58,000 --> 00:04:00,000
+Ok, but we've got our implementation here complete.
+
+117
+00:04:00,000 --> 00:04:03,000
+So let's head back to our main now.
+
+118
+00:04:03,000 --> 00:04:04,000
+Now we haven't changed anything in main
+
+119
+00:04:04,000 --> 00:04:06,000
+and remember, what we're doing is that after we've processed
+
+120
+00:04:06,000 --> 00:04:09,000
+each instance of helper, we're just writing out helper.
+
+121
+00:04:09,000 --> 00:04:11,000
+And we know that that'll actually call our toString method.
+
+122
+00:04:11,000 --> 00:04:13,000
+All right, so let's go ahead and run this now.
+
+123
+00:04:13,000 --> 00:04:15,000
+And there you see in our output window
+
+124
+00:04:15,000 --> 00:04:17,000
+we've now got the appropriate output.
+
+125
+00:04:17,000 --> 00:04:18,000
+So our input string,
+
+126
+00:04:18,000 --> 00:04:21,000
+like divide space 100.0 space 50.0
+
+127
+00:04:21,000 --> 00:04:24,000
+now writes out, 100.0
+
+128
+00:04:24,000 --> 00:04:26,000
+space slash space 50.0
+
+129
+00:04:26,000 --> 00:04:28,000
+space equals space 2.0.
+
+130
+00:04:28,000 --> 00:04:31,000
+And the same thing for each of the four operations.
+
+131
+00:04:31,000 --> 00:04:34,000
+So by using these things we've talked about throughout this module,
+
+132
+00:04:34,000 --> 00:59:00,000
+we've been able to add some really nice functionality to our program.
+

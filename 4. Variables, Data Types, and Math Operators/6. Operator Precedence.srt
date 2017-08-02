@@ -1,0 +1,52 @@
+1
+00:00:02,000 --> 00:00:05,000
+The operators are evaluated in a well-defined order.
+
+2
+00:00:05,000 --> 00:00:06,000
+If we look at them,
+
+3
+00:00:06,000 --> 00:00:10,000
+basically the postfix operators are evaluated first,
+
+4
+00:00:10,000 --> 00:00:12,000
+then prefix operators,
+
+5
+00:00:12,000 --> 00:00:15,000
+then the multiplicative operations,
+
+6
+00:00:15,000 --> 00:00:18,000
+multiplication, division, and modulus,
+
+7
+00:00:18,000 --> 00:00:20,000
+and then finally the additive operations,
+
+8
+00:00:20,000 --> 00:00:22,000
+plus and minus.
+
+9
+00:00:22,000 --> 00:00:24,000
+Operators of equal precedence are evaluated
+
+10
+00:00:24,000 --> 00:00:28,000
+from the left side of the equation moving right.
+
+11
+00:00:28,000 --> 00:00:31,000
+And you can override precedence by using parenthesis.
+
+12
+00:00:31,000 --> 00:00:32,000
+And if you have nested parenthesis,
+
+13
+00:00:32,000 --> 00:59:00,000
+those parenthesis are evaluated from the inside out.
+

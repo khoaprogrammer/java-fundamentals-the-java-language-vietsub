@@ -1,0 +1,748 @@
+1
+00:00:02,000 --> 00:00:05,000
+In Java, when you call a method and you pass parameters
+
+2
+00:00:05,000 --> 00:00:08,000
+into it, those parameter values are actually copied
+
+3
+00:00:08,000 --> 00:00:10,000
+down into the parameter.
+
+4
+00:00:10,000 --> 00:00:13,000
+This is something we call "passing by value"
+
+5
+00:00:13,000 --> 00:00:16,000
+What that means is that, because a copy is actually
+
+6
+00:00:16,000 --> 00:00:19,000
+passed down there, any changes you make
+
+7
+00:00:19,000 --> 00:00:22,000
+to the value of the parameter inside the method
+
+8
+00:00:22,000 --> 00:00:25,000
+are not visible outside of the method itself.
+
+9
+00:00:25,000 --> 00:00:27,000
+Let's see how that affects us when we're working
+
+10
+00:00:27,000 --> 00:00:28,000
+with Primitive Types.
+
+11
+00:00:28,000 --> 00:00:29,000
+So let's imagine we have a
+
+12
+00:00:29,000 --> 00:00:31,000
+method here we're going to call Swap.
+
+13
+00:00:31,000 --> 00:00:34,000
+Swap accepts two integer parameters, I and J.
+
+14
+00:00:34,000 --> 00:00:36,000
+Then we'll set up some code to call it,
+
+15
+00:00:36,000 --> 00:00:39,000
+so in our coded calls, we'll first have
+
+16
+00:00:39,000 --> 00:00:40,000
+a variable declared called val1,
+
+17
+00:00:40,000 --> 00:00:42,000
+that we set to 10, which of course allocates out
+
+18
+00:00:42,000 --> 00:00:44,000
+some memory with a value of 10 inside of it.
+
+19
+00:00:44,000 --> 00:00:47,000
+Do another one val2, set to 20.
+
+20
+00:00:47,000 --> 00:00:49,000
+Which again allocates memory with a value 20 in it.
+
+21
+00:00:49,000 --> 00:00:52,000
+Of course if we print those values out,
+
+22
+00:00:52,000 --> 00:00:54,000
+the value of val1 will be 10 and
+
+23
+00:00:54,000 --> 00:00:56,000
+the value of val2 will be 20.
+
+24
+00:00:56,000 --> 00:00:58,000
+So, now if we call that method Swap,
+
+25
+00:00:58,000 --> 00:01:01,000
+passing in val1 and val2, when control get passed
+
+26
+00:01:01,000 --> 00:01:05,000
+down to the Swap method, memory for the parameter I
+
+27
+00:01:05,000 --> 00:01:08,000
+is allocated, and the value of val1 is copied
+
+28
+00:01:08,000 --> 00:01:11,000
+down into that memory for I.
+
+29
+00:01:11,000 --> 00:01:14,000
+Same thing for J, the value for val2 gets copied
+
+30
+00:01:14,000 --> 00:01:18,000
+down into the memory allocated for J.
+
+31
+00:01:18,000 --> 00:01:20,000
+So now, if inside a Swap, we do something like
+
+32
+00:01:20,000 --> 00:01:23,000
+allocate a local variable called K
+
+33
+00:01:23,000 --> 00:01:25,000
+that assigns the value of I, well K will then
+
+34
+00:01:25,000 --> 00:01:28,000
+get the value of 10, right, the value currently held in I.
+
+35
+00:01:28,000 --> 00:01:32,000
+If we then say I equals J, that means take the value
+
+36
+00:01:32,000 --> 00:01:35,000
+that's in J, 20, put that into I, so I becomes 20.
+
+37
+00:01:35,000 --> 00:01:40,000
+We then say, J equals K, the value that's in K ,10,
+
+38
+00:01:40,000 --> 00:01:42,000
+goes into J, which now becomes 10.
+
+39
+00:01:42,000 --> 00:01:45,000
+So, down inside the method Swap, if we print these
+
+40
+00:01:45,000 --> 00:01:47,000
+values out, the value printed out for I will be 20,
+
+41
+00:01:47,000 --> 00:01:50,000
+the value that's currently there.
+
+42
+00:01:50,000 --> 00:01:52,000
+Same thing is we print out J, the value printout is 10,
+
+43
+00:01:52,000 --> 00:01:54,000
+the value that is currently there.
+
+44
+00:01:54,000 --> 00:01:56,000
+Notice that all the changes that occur within the method
+
+45
+00:01:56,000 --> 00:01:59,000
+are occurring inside the copies associated with the
+
+46
+00:01:59,000 --> 00:02:02,000
+parameters, not the original values.
+
+47
+00:02:02,000 --> 00:02:04,000
+Alright, so when we exit out of this method, and
+
+48
+00:02:04,000 --> 00:02:07,000
+pass control back, all those copies are cleaned up.
+
+49
+00:02:07,000 --> 00:02:10,000
+So val1 and val2 still have their original values.
+
+50
+00:02:10,000 --> 00:02:15,000
+So if print this out, val1 still has 10, val2 still has 20.
+
+51
+00:02:15,000 --> 00:02:19,000
+Because again, things were passed into the method as copies.
+
+52
+00:02:19,000 --> 00:02:22,000
+Now, what about classes, we know classes behave
+
+53
+00:02:22,000 --> 00:02:24,000
+a little bit differently than Primitive Types, because
+
+54
+00:02:24,000 --> 00:02:27,000
+remember that classes work with references.
+
+55
+00:02:27,000 --> 00:02:29,000
+Right, so, let's say with have a class here that
+
+56
+00:02:29,000 --> 00:02:31,000
+we've been working with, Flight.
+
+57
+00:02:31,000 --> 00:02:33,000
+And let's just focus in on its field flight number.
+
+58
+00:02:33,000 --> 00:02:35,000
+And we'll assume we've got an accessor
+
+59
+00:02:35,000 --> 00:02:37,000
+and mutator set up for that.
+
+60
+00:02:37,000 --> 00:02:39,000
+And we've got that constructor that accepts a flight
+
+61
+00:02:39,000 --> 00:02:42,000
+number and of course sets the field with it.
+
+62
+00:02:42,000 --> 00:02:43,000
+Now we're not going to worry about any of the
+
+63
+00:02:43,000 --> 00:02:45,000
+other members in flight right now.
+
+64
+00:02:45,000 --> 00:02:47,000
+Okay, so really focus on flight and flight number here.
+
+65
+00:02:47,000 --> 00:02:50,000
+So, now, let's again say we have a method called Swap,
+
+66
+00:02:50,000 --> 00:02:54,000
+but now our method Swap accepts flight references.
+
+67
+00:02:54,000 --> 00:02:57,000
+Right, a flight, first one's I, second on is J.
+
+68
+00:02:57,000 --> 00:03:00,000
+So, now if we want to call it from our code,
+
+69
+00:03:00,000 --> 00:03:02,000
+we will allocate out a val1, which is a new flight
+
+70
+00:03:02,000 --> 00:03:05,000
+with the flight number set to 10.
+
+71
+00:03:05,000 --> 00:03:06,000
+Alright, so what's that going to do?
+
+72
+00:03:06,000 --> 00:03:09,000
+Well, it's going to allocate out memory.
+
+73
+00:03:09,000 --> 00:03:11,000
+That's our variable, but then we remember that we allocate
+
+74
+00:03:11,000 --> 00:03:14,000
+out the class instance itself separately, and then
+
+75
+00:03:14,000 --> 00:03:17,000
+assign a reference into the variable.
+
+76
+00:03:17,000 --> 00:03:20,000
+So we have another flight instance here, val2.
+
+77
+00:03:20,000 --> 00:03:22,000
+Where it again allocates out the place to hold the
+
+78
+00:03:22,000 --> 00:03:26,000
+reference, the actual flight object itself,
+
+79
+00:03:26,000 --> 00:03:28,000
+and then associates that reference.
+
+80
+00:03:28,000 --> 00:03:32,000
+So now, val1 and val 2 are not the flights themselves,
+
+81
+00:03:32,000 --> 00:03:34,000
+they're references to the flights.
+
+82
+00:03:34,000 --> 00:03:36,000
+So, of course, if I print those out,
+
+83
+00:03:36,000 --> 00:03:37,000
+things are what we expect.
+
+84
+00:03:37,000 --> 00:03:40,000
+Where val1's flight number is 10, val2 flight number is 20.
+
+85
+00:03:40,000 --> 00:03:43,000
+But now when we call in the swap,
+
+86
+00:03:43,000 --> 00:03:47,000
+we pass val1 and val2, what's going to happen is actually
+
+87
+00:03:47,000 --> 00:03:50,000
+the same as what happened with our Primitive Types.
+
+88
+00:03:50,000 --> 00:03:52,000
+We're going to have that memory called I that's allocated.
+
+89
+00:03:52,000 --> 00:03:55,000
+We're going to copy what's in val1.
+
+90
+00:03:55,000 --> 00:03:57,000
+Well, what's in val1 is the reference.
+
+91
+00:03:57,000 --> 00:04:00,000
+Alright, so it's going to point to that same object,
+
+92
+00:04:00,000 --> 00:04:01,000
+flight number.
+
+93
+00:04:01,000 --> 00:04:03,000
+For val2, we'll copy that into J,
+
+94
+00:04:03,000 --> 00:04:05,000
+again we're copying the reference,
+
+95
+00:04:05,000 --> 00:04:07,000
+which points to the other flight with flight number 20.
+
+96
+00:04:07,000 --> 00:04:10,000
+If we look at our code now, if we do the same sort of thing.
+
+97
+00:04:10,000 --> 00:04:13,000
+If we allocate a local variable called K
+
+98
+00:04:13,000 --> 00:04:15,000
+and we assign what's inside of I.
+
+99
+00:04:15,000 --> 00:04:17,000
+Well, what's inside of I is a reference to that
+
+100
+00:04:17,000 --> 00:04:20,000
+first flight object, the one with value 10.
+
+101
+00:04:20,000 --> 00:04:22,000
+If we then say I equals J, well I now stops pointing
+
+102
+00:04:22,000 --> 00:04:24,000
+at the original flight, and points to the same one that
+
+103
+00:04:24,000 --> 00:04:27,000
+J points to, the one with the flight number of 20.
+
+104
+00:04:27,000 --> 00:04:30,000
+We say J equals K, well J stops pointing to the one with 20,
+
+105
+00:04:30,000 --> 00:04:32,000
+points to the one that K points to,
+
+106
+00:04:32,000 --> 00:04:34,000
+which is the one with 10.
+
+107
+00:04:34,000 --> 00:04:37,000
+So inside of our method here, we print out the flight
+
+108
+00:04:37,000 --> 00:04:40,000
+number of the one pointed to by I, right, that's 20.
+
+109
+00:04:40,000 --> 00:04:43,000
+The one pointed to by J is 10.
+
+110
+00:04:43,000 --> 00:04:46,000
+But notice that we're swapping the references around.
+
+111
+00:04:46,000 --> 00:04:49,000
+We still haven't affected the original val1 and val2.
+
+112
+00:04:49,000 --> 00:04:51,000
+Alright, so when we exit out of Swap,
+
+113
+00:04:51,000 --> 00:04:54,000
+val1 still points to the one with the flight number of 10.
+
+114
+00:04:54,000 --> 00:04:57,000
+Val2 still points to the one with flight number of 20.
+
+115
+00:04:57,000 --> 00:05:00,000
+So we print those out, nothing has changed.
+
+116
+00:05:00,000 --> 00:05:02,000
+Val1 is 10, val2 has 20.
+
+117
+00:05:02,000 --> 00:05:05,000
+So, we're copying these values into the parameters,
+
+118
+00:05:05,000 --> 00:05:08,000
+causing us not to be able to change them inside the methods.
+
+119
+00:05:08,000 --> 00:05:12,000
+So that tells us that, changes to the values of parameters
+
+120
+00:05:12,000 --> 00:05:15,000
+inside of a method, don't affect the original values.
+
+121
+00:05:15,000 --> 00:05:17,000
+It doesn't matter whether it's a Primitive Type
+
+122
+00:05:17,000 --> 00:05:19,000
+or a class instance.
+
+123
+00:05:19,000 --> 00:05:22,000
+But what's important to realize is that,
+
+124
+00:05:22,000 --> 00:05:25,000
+although we can't change the actual parameters themselves,
+
+125
+00:05:25,000 --> 00:05:29,000
+we pass classes in, any changes we make
+
+126
+00:05:29,000 --> 00:05:32,000
+to the members of classes inside of a method, do stick.
+
+127
+00:05:32,000 --> 00:05:35,000
+Those do take hold. Those are visible outside of the method.
+
+128
+00:05:35,000 --> 00:05:38,000
+Let's take a look at why.
+
+129
+00:05:38,000 --> 00:05:41,000
+If we look here, that same thing we were doing before.
+
+130
+00:05:41,000 --> 00:05:43,000
+We're going to create an instance of our flight class.
+
+131
+00:05:43,000 --> 00:05:44,000
+With a value of 10.
+
+132
+00:05:44,000 --> 00:05:46,000
+Right, sets up things just like before.
+
+133
+00:05:46,000 --> 00:05:48,000
+Where val1 is a reference, pointing into an instance
+
+134
+00:05:48,000 --> 00:05:50,000
+of flight with a flight number of 10.
+
+135
+00:05:50,000 --> 00:05:52,000
+Val2 points to another one, right so,
+
+136
+00:05:52,000 --> 00:05:54,000
+val2 is reference pointing to an instance with
+
+137
+00:05:54,000 --> 00:05:56,000
+a flight number of 20.
+
+138
+00:05:56,000 --> 00:05:58,000
+We print them out, everything's the same as before.
+
+139
+00:05:58,000 --> 00:06:00,000
+Val1 is 10. Val2 is 20.
+
+140
+00:06:00,000 --> 00:06:02,000
+Our method this time, we're going to change
+
+141
+00:06:02,000 --> 00:06:04,000
+its name to Swap Numbers.
+
+142
+00:06:04,000 --> 00:06:06,000
+And what we want to do inside of here is swap the flight
+
+143
+00:06:06,000 --> 00:06:09,000
+numbers between the flight instances.
+
+144
+00:06:09,000 --> 00:06:12,000
+Alright, so when we call into this guy, again we're still
+
+145
+00:06:12,000 --> 00:06:15,000
+copying the values of the parameters.
+
+146
+00:06:15,000 --> 00:06:17,000
+So I still gets a copy of the reference
+
+147
+00:06:17,000 --> 00:06:19,000
+that was inside of val1.
+
+148
+00:06:19,000 --> 00:06:23,000
+J still gets a copy of the reference that's inside of val2.
+
+149
+00:06:23,000 --> 00:06:26,000
+But now in our code here, we're going to change the members.
+
+150
+00:06:26,000 --> 00:06:30,000
+So if I have an integer called K this time,
+
+151
+00:06:30,000 --> 00:06:33,000
+and we call I Get Flight Number
+
+152
+00:06:33,000 --> 00:06:35,000
+Well that takes the reference out by I
+
+153
+00:06:35,000 --> 00:06:38,000
+goes up to the object instance that it points to.
+
+154
+00:06:38,000 --> 00:06:41,000
+And that gets back the number 10.
+
+155
+00:06:41,000 --> 00:06:43,000
+And puts that inside of K.
+
+156
+00:06:43,000 --> 00:06:46,000
+So now if I say, I dot Set Flight Number,
+
+157
+00:06:46,000 --> 00:06:50,000
+and I pass as a parameter J dot Get Flight Number,
+
+158
+00:06:50,000 --> 00:06:52,000
+well, let's look at that from the inside out.
+
+159
+00:06:52,000 --> 00:06:54,000
+When we call J dot Get Flight Number, that takes
+
+160
+00:06:54,000 --> 00:06:57,000
+the reference that's stored in J, follows it up to the
+
+161
+00:06:57,000 --> 00:07:00,000
+object instance, gets that number that's in there,
+
+162
+00:07:00,000 --> 00:07:03,000
+which is 20, and then we work to the outside.
+
+163
+00:07:03,000 --> 00:07:05,000
+I dot Set Flight Number takes the reference
+
+164
+00:07:05,000 --> 00:07:08,000
+that's held in I, goes up to the object instance it
+
+165
+00:07:08,000 --> 00:07:11,000
+points to, the one currently with 10, but when we
+
+166
+00:07:11,000 --> 00:07:14,000
+call Set Flight Number, it becomes 20.
+
+167
+00:07:14,000 --> 00:07:16,000
+So you see that we didn't change the parameter, right.
+
+168
+00:07:16,000 --> 00:07:18,000
+The parameter is still a copy.
+
+169
+00:07:18,000 --> 00:07:20,000
+But because we're following the reference that's in
+
+170
+00:07:20,000 --> 00:07:22,000
+the parameter, we can change the
+
+171
+00:07:22,000 --> 00:07:24,000
+object that it's pointing to.
+
+172
+00:07:24,000 --> 00:07:28,000
+So if we now say that j.setflightnumber of K.
+
+173
+00:07:28,000 --> 00:07:30,000
+Well, we get the value that's in K, which is 10.
+
+174
+00:07:30,000 --> 00:07:33,000
+We take the reference that's stored in J,
+
+175
+00:07:33,000 --> 00:07:35,000
+follow it up to the object that it points to,
+
+176
+00:07:35,000 --> 00:07:38,000
+and we set its flight number, it now becomes 10.
+
+177
+00:07:38,000 --> 00:07:41,000
+Alright, so inside of the method if we print these out,
+
+178
+00:07:41,000 --> 00:07:43,000
+things are changed as they've always been.
+
+179
+00:07:43,000 --> 00:07:45,000
+The flight number of the flight instance pointed to by
+
+180
+00:07:45,000 --> 00:07:48,000
+I is 20, the one pointed to by J is 10.
+
+181
+00:07:48,000 --> 00:07:51,000
+But the key is because we followed the references in
+
+182
+00:07:51,000 --> 00:07:54,000
+and changed the actual objects, as we exit out of here,
+
+183
+00:07:54,000 --> 00:07:58,000
+even up where we called the method, those changes now stick.
+
+184
+00:07:58,000 --> 00:08:02,000
+So the flight pointed to by val1 has the value 20.
+
+185
+00:08:02,000 --> 00:08:05,000
+The change that occurred down inside the method.
+
+186
+00:08:05,000 --> 00:08:08,000
+The flight pointed to by val2 also has the change,
+
+187
+00:08:08,000 --> 00:59:00,000
+the value of 10, the changes occurred down inside the method.
+

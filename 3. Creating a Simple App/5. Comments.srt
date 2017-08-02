@@ -1,0 +1,220 @@
+1
+00:00:02,000 --> 00:00:04,000
+Java, like most programming languages,
+
+2
+00:00:04,000 --> 00:00:06,000
+has the ability to include comments, all right?
+
+3
+00:00:06,000 --> 00:00:08,000
+And, comments are basically text inside of your
+
+4
+00:00:08,000 --> 00:00:11,000
+source code that the compiler doesn't see.
+
+5
+00:00:11,000 --> 00:00:12,000
+All right, and there are really kind of just
+
+6
+00:00:12,000 --> 00:00:14,000
+two general uses for comments.
+
+7
+00:00:14,000 --> 00:00:17,000
+One is that it allows you to add human-readable notes
+
+8
+00:00:17,000 --> 00:00:18,000
+to your source code.
+
+9
+00:00:18,000 --> 00:00:20,000
+It allows you to type things in the source code,
+
+10
+00:00:20,000 --> 00:00:22,000
+so that when you look at it later or someone else
+
+11
+00:00:22,000 --> 00:00:24,000
+looks at it, you're just leaving notes
+
+12
+00:00:24,000 --> 00:00:26,000
+to understand what you were doing there.
+
+13
+00:00:26,000 --> 00:00:29,000
+It's also useful for hiding source code without deleting it.
+
+14
+00:00:29,000 --> 00:00:31,000
+Maybe you're testing things out, so you want to just
+
+15
+00:00:31,000 --> 00:00:34,000
+kind of take some things away and type some new stuff,
+
+16
+00:00:34,000 --> 00:00:36,000
+or there's something you don't want to do anymore,
+
+17
+00:00:36,000 --> 00:00:38,000
+but you think you might want to do it again in the future.
+
+18
+00:00:38,000 --> 00:00:40,000
+So, comments allow you to take that stuff out so that
+
+19
+00:00:40,000 --> 00:00:43,000
+the contents in your source code, but the compiler
+
+20
+00:00:43,000 --> 00:00:45,000
+doesn't compile it.
+
+21
+00:00:45,000 --> 00:00:48,000
+There are three types of comments in Java.
+
+22
+00:00:48,000 --> 00:00:50,000
+One, which is called line comments.
+
+23
+00:00:50,000 --> 00:00:52,000
+If you basically put a double slash,
+
+24
+00:00:52,000 --> 00:00:54,000
+basically the compiler ignores everything
+
+25
+00:00:54,000 --> 00:00:57,000
+until the end of the line.
+
+26
+00:00:57,000 --> 00:00:58,000
+And, when I say by the end of the line,
+
+27
+00:00:58,000 --> 00:01:00,000
+it's actually until you hit the Enter key,
+
+28
+00:01:00,000 --> 00:01:01,000
+the new line character.
+
+29
+00:01:01,000 --> 00:01:03,000
+It's not like other statements where it relies
+
+30
+00:01:03,000 --> 00:01:04,000
+on the semicolon, all right.
+
+31
+00:01:04,000 --> 00:01:05,000
+So, the compiler just skips everything
+
+32
+00:01:05,000 --> 00:01:09,000
+until the next new line.
+
+33
+00:01:09,000 --> 00:01:10,000
+(mumbles) called block comments,
+
+34
+00:01:10,000 --> 00:01:13,000
+where you use a slash, star to begin the comment,
+
+35
+00:01:13,000 --> 00:01:16,000
+and a star, slash to end it.
+
+36
+00:01:16,000 --> 00:01:20,000
+So, compiler skips everything between those notations.
+
+37
+00:01:20,000 --> 00:01:21,000
+They can be, happen in the middle of a line,
+
+38
+00:01:21,000 --> 00:01:25,000
+or they can span multiple lines.
+
+39
+00:01:25,000 --> 00:01:27,000
+And the last kind is a special kind of comment
+
+40
+00:01:27,000 --> 00:01:28,000
+called a JavaDoc comment,
+
+41
+00:01:28,000 --> 00:01:31,000
+which starts out slash, star, star,
+
+42
+00:01:31,000 --> 00:01:33,000
+and it ends star, slash.
+
+43
+00:01:33,000 --> 00:01:35,000
+There's a utility called JavaDoc
+
+44
+00:01:35,000 --> 00:01:38,000
+that allows you to generate documentation
+
+45
+00:01:38,000 --> 00:01:40,000
+using this special comment format.
+
+46
+00:01:40,000 --> 00:01:42,000
+That allows you basically to write your code
+
+47
+00:01:42,000 --> 00:01:45,000
+documentation right inside of your source code.
+
+48
+00:01:45,000 --> 00:01:47,000
+And then, when you run the JavaDoc utility,
+
+49
+00:01:47,000 --> 00:01:50,000
+if you follow the appropriate structure in your comments,
+
+50
+00:01:50,000 --> 00:01:52,000
+that utility will generate documentation
+
+51
+00:01:52,000 --> 00:01:55,000
+right from the source code file.
+
+52
+00:01:55,000 --> 00:01:57,000
+The details of JavaDoc are outside the scope
+
+53
+00:01:57,000 --> 00:01:59,000
+of this course, but I've got that URL
+
+54
+00:01:59,000 --> 00:02:01,000
+up there on the screen for you if you want
+
+55
+00:02:01,000 --> 00:59:00,000
+to dig into JavaDoc and learn more about it.
+

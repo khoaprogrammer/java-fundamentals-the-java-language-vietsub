@@ -1,0 +1,676 @@
+1
+00:00:02,000 --> 00:00:04,000
+So far, we've been looking at how exceptions work within
+
+2
+00:00:04,000 --> 00:00:06,000
+a specific block of code.
+
+3
+00:00:06,000 --> 00:00:08,000
+Let's look now how they work when we call down
+
+4
+00:00:08,000 --> 00:00:09,000
+from multiple methods.
+
+5
+00:00:09,000 --> 00:00:11,000
+Let's say we have a method here, we'll call it methodA,
+
+6
+00:00:11,000 --> 00:00:14,000
+and methodA does some work, and, as we know,
+
+7
+00:00:14,000 --> 00:00:16,000
+whenever we use methods in a computer program,
+
+8
+00:00:16,000 --> 00:00:18,000
+it works with a stack, alright?
+
+9
+00:00:18,000 --> 00:00:20,000
+So, methodA gets a spot on the stack,
+
+10
+00:00:20,000 --> 00:00:22,000
+and it takes up some space on that stack.
+
+11
+00:00:22,000 --> 00:00:25,000
+Let's say, methodA calls methodB, and let's go ahead
+
+12
+00:00:25,000 --> 00:00:28,000
+and wrap up that call to methodB in a try/catch block.
+
+13
+00:00:28,000 --> 00:00:29,000
+So now, of course, we're going to have methodB's
+
+14
+00:00:29,000 --> 00:00:31,000
+implementation, which does some work.
+
+15
+00:00:31,000 --> 00:00:33,000
+So, again, it's going to get a spot on the stack
+
+16
+00:00:33,000 --> 00:00:35,000
+and take up some space there.
+
+17
+00:00:35,000 --> 00:00:38,000
+So then, methodB calls methodC, right, methodC again
+
+18
+00:00:38,000 --> 00:00:40,000
+does some work, gets a spot on the stack,
+
+19
+00:00:40,000 --> 00:00:44,000
+takes up some space, again, D does the same thing.
+
+20
+00:00:44,000 --> 00:00:46,000
+So, let's say now we're down here inside of D,
+
+21
+00:00:46,000 --> 00:00:49,000
+and D does something that throws an exception, alright?
+
+22
+00:00:49,000 --> 00:00:52,000
+So, now that exception occurs, and now something
+
+23
+00:00:52,000 --> 00:00:54,000
+has to try to handle that exception.
+
+24
+00:00:54,000 --> 00:00:56,000
+So, what happens is, the system starts trying to see
+
+25
+00:00:56,000 --> 00:00:57,000
+if it can be handled.
+
+26
+00:00:57,000 --> 00:01:01,000
+Since methodD doesn't handle it, it went to start looking
+
+27
+00:01:01,000 --> 00:01:04,000
+up the call stack to find some code that can actually
+
+28
+00:01:04,000 --> 00:01:06,000
+handle this exception.
+
+29
+00:01:06,000 --> 00:01:07,000
+Well, remember here in methodA,
+
+30
+00:01:07,000 --> 00:01:09,000
+we put that try/catch in place.
+
+31
+00:01:09,000 --> 00:01:12,000
+Well, that catch puts a marker on the stack.
+
+32
+00:01:12,000 --> 00:01:15,000
+So, what happens now is that Java looks up the call stack,
+
+33
+00:01:15,000 --> 00:01:16,000
+and when it finds that marker, it says,
+
+34
+00:01:16,000 --> 00:01:18,000
+Oh, you can handle this exception.
+
+35
+00:01:18,000 --> 00:01:21,000
+The call stack is cleaned up, and then, control is passed
+
+36
+00:01:21,000 --> 00:01:23,000
+to that catch block.
+
+37
+00:01:23,000 --> 00:01:26,000
+So, that means then, of course, that exceptions propagate up
+
+38
+00:01:26,000 --> 00:01:29,000
+the call stack, meaning that they can actually
+
+39
+00:01:29,000 --> 00:01:31,000
+cross method boundaries.
+
+40
+00:01:31,000 --> 00:01:35,000
+So, the question is that, how could methodA know
+
+41
+00:01:35,000 --> 00:01:37,000
+it had to be responsible to catch an exception
+
+42
+00:01:37,000 --> 00:01:39,000
+that occurred all the way down in methodD?
+
+43
+00:01:39,000 --> 00:01:43,000
+Well, in Java, the exceptions that a method throws
+
+44
+00:01:43,000 --> 00:01:45,000
+are actually part of that method's contract, just like
+
+45
+00:01:45,000 --> 00:01:47,000
+its return type would be, or the list of parameters
+
+46
+00:01:47,000 --> 00:01:49,000
+it accepts.
+
+47
+00:01:49,000 --> 00:01:51,000
+So, in Java, a method is responsible for
+
+48
+00:01:51,000 --> 00:01:54,000
+any checked exceptions that might occur.
+
+49
+00:01:54,000 --> 00:01:56,000
+And, it basically has two choices for dealing with them.
+
+50
+00:01:56,000 --> 00:01:59,000
+One is, it can catch the exception,
+
+51
+00:01:59,000 --> 00:02:01,000
+but it doesn't have to catch the exception.
+
+52
+00:02:01,000 --> 00:02:03,000
+But, if it doesn't catch the exception,
+
+53
+00:02:03,000 --> 00:02:07,000
+then it must document that that exception might occur.
+
+54
+00:02:07,000 --> 00:02:09,000
+The way that's documented is that a method can have
+
+55
+00:02:09,000 --> 00:02:13,000
+a throws clause on it, and that throws clause needs to list
+
+56
+00:02:13,000 --> 00:02:15,000
+any checked exceptions that might occur within that method
+
+57
+00:02:15,000 --> 00:02:17,000
+that it doesn't handle.
+
+58
+00:02:17,000 --> 00:02:19,000
+Let's look at some code and get a sense of how that works.
+
+59
+00:02:19,000 --> 00:02:21,000
+So, let's think about our Flight class.
+
+60
+00:02:21,000 --> 00:02:22,000
+Let's say we want to add some functionality
+
+61
+00:02:22,000 --> 00:02:25,000
+to our Flight class that allows passengers
+
+62
+00:02:25,000 --> 00:02:27,000
+to be added from a text file.
+
+63
+00:02:27,000 --> 00:02:29,000
+So, the format of our text file will be that,
+
+64
+00:02:29,000 --> 00:02:32,000
+the first thing on each line is the number of people
+
+65
+00:02:32,000 --> 00:02:35,000
+in a given party, a space, and then a name associated
+
+66
+00:02:35,000 --> 00:02:36,000
+with that party.
+
+67
+00:02:36,000 --> 00:02:39,000
+So, we'll have our Flight class here, and remember,
+
+68
+00:02:39,000 --> 00:02:41,000
+we have our passenger's field.
+
+69
+00:02:41,000 --> 00:02:45,000
+I'm going to add a method on here called, addPassengers.
+
+70
+00:02:45,000 --> 00:02:47,000
+This implementation of addPassengers accepts
+
+71
+00:02:47,000 --> 00:02:49,000
+a string parameter which is the filename to read
+
+72
+00:02:49,000 --> 00:02:51,000
+the passenger information from.
+
+73
+00:02:51,000 --> 00:02:53,000
+So, whoever calls this method is going to pass in
+
+74
+00:02:53,000 --> 00:02:55,000
+the name of the file they want us to read
+
+75
+00:02:55,000 --> 00:02:57,000
+the passenger information from.
+
+76
+00:02:57,000 --> 00:02:59,000
+The code we use to deal with this passenger information
+
+77
+00:02:59,000 --> 00:03:01,000
+is going to be very similar to the code we used earlier
+
+78
+00:03:01,000 --> 00:03:04,000
+to total up the numbers from inside of a file.
+
+79
+00:03:04,000 --> 00:03:06,000
+So, we're going to need a BufferedReader, so go ahead
+
+80
+00:03:06,000 --> 00:03:08,000
+and create an instance of that BufferedReader, that wraps
+
+81
+00:03:08,000 --> 00:03:12,000
+a FileReader that uses the filename that was passed in.
+
+82
+00:03:12,000 --> 00:03:14,000
+We need a variable to hold each line that's read in,
+
+83
+00:03:14,000 --> 00:03:17,000
+and all we have to do is, read in each line.
+
+84
+00:03:17,000 --> 00:03:19,000
+Now since there's two values on each line,
+
+85
+00:03:19,000 --> 00:03:21,000
+and we want the number of people in the party,
+
+86
+00:03:21,000 --> 00:03:24,000
+we're going to use the split method on the string
+
+87
+00:03:24,000 --> 00:03:26,000
+to go ahead and get that first field, and then we use
+
+88
+00:03:26,000 --> 00:03:29,000
+our integer.valueOf to convert that initial value
+
+89
+00:03:29,000 --> 00:03:31,000
+from a string into an integer, and simply add it
+
+90
+00:03:31,000 --> 00:03:33,000
+to our number of passengers.
+
+91
+00:03:33,000 --> 00:03:35,000
+Now, we know from the work we did earlier,
+
+92
+00:03:35,000 --> 00:03:38,000
+totaling up values inside of a file, that exceptions
+
+93
+00:03:38,000 --> 00:03:40,000
+can be thrown in this code.
+
+94
+00:03:40,000 --> 00:03:42,000
+Now, in this case, we don't want to catch them.
+
+95
+00:03:42,000 --> 00:03:44,000
+We certainly could catch them here,
+
+96
+00:03:44,000 --> 00:03:46,000
+but it probably makes sense that those exceptions
+
+97
+00:03:46,000 --> 00:03:48,000
+propagate up to the caller, because that filename
+
+98
+00:03:48,000 --> 00:03:49,000
+came from the caller.
+
+99
+00:03:49,000 --> 00:03:51,000
+So, if there's anything wrong with it,
+
+100
+00:03:51,000 --> 00:03:53,000
+they might know what to do with it based on the exception.
+
+101
+00:03:53,000 --> 00:03:55,000
+So, rather than catch the exception here,
+
+102
+00:03:55,000 --> 00:03:57,000
+we're going to document that it gets thrown.
+
+103
+00:03:57,000 --> 00:04:00,000
+So, on our method declaration here, we're going to add
+
+104
+00:04:00,000 --> 00:04:04,000
+a throws clause, and we say, throws IOException.
+
+105
+00:04:04,000 --> 00:04:08,000
+Now, the reason we know that we throw an IOException
+
+106
+00:04:08,000 --> 00:04:11,000
+is because, if we were to look, the FileReader constructor
+
+107
+00:04:11,000 --> 00:04:14,000
+is documented to throw a FileNotFoundException,
+
+108
+00:04:14,000 --> 00:04:16,000
+and the BufferedReader readLine method has
+
+109
+00:04:16,000 --> 00:04:19,000
+a throws that says it throws an IOException.
+
+110
+00:04:19,000 --> 00:04:21,000
+And, since a FileNotFoundException is also
+
+111
+00:04:21,000 --> 00:04:25,000
+an IOException, we can simply say, throws IOException.
+
+112
+00:04:25,000 --> 00:04:27,000
+And again, the key thing here is that, if we didn't catch it
+
+113
+00:04:27,000 --> 00:04:29,000
+and we didn't put the throws on, the compiler would
+
+114
+00:04:29,000 --> 00:04:31,000
+actually complain that we weren't dealing
+
+115
+00:04:31,000 --> 00:04:32,000
+with the exception.
+
+116
+00:04:32,000 --> 00:04:34,000
+So, by saying that we throw it,
+
+117
+00:04:34,000 --> 00:04:36,000
+that's our responsibility in dealing with it.
+
+118
+00:04:36,000 --> 00:04:38,000
+Now, we have another thing we have to think about.
+
+119
+00:04:38,000 --> 00:04:40,000
+We process this file, but we've opened it up,
+
+120
+00:04:40,000 --> 00:04:42,000
+there's nothing to close it.
+
+121
+00:04:42,000 --> 00:04:44,000
+Now, we want to make sure that file gets closed
+
+122
+00:04:44,000 --> 00:04:46,000
+whether we succeed or not.
+
+123
+00:04:46,000 --> 00:04:48,000
+But, we don't want to actually handle any errors.
+
+124
+00:04:48,000 --> 00:04:51,000
+But, we can still use try to make sure the file gets closed.
+
+125
+00:04:51,000 --> 00:04:54,000
+We can wrap this code up in a try,
+
+126
+00:04:54,000 --> 00:04:58,000
+and then, put the finally afterwards which closes the file.
+
+127
+00:04:58,000 --> 00:05:00,000
+Now this way, if we go through and process everything
+
+128
+00:05:00,000 --> 00:05:04,000
+and we succeed, then, the finally will run and it'll close.
+
+129
+00:05:04,000 --> 00:05:06,000
+Also, if we go and process things and an exception occurs,
+
+130
+00:05:06,000 --> 00:05:08,000
+the finally will still run, close the file,
+
+131
+00:05:08,000 --> 00:05:11,000
+and then, let the exception call up the call stack.
+
+132
+00:05:11,000 --> 00:05:14,000
+Now, since exceptions are part of a method's contract,
+
+133
+00:05:14,000 --> 00:05:17,000
+how does that work when one class overrides
+
+134
+00:05:17,000 --> 00:05:18,000
+a method from another class?
+
+135
+00:05:18,000 --> 00:05:21,000
+Well, when you override a method, the throws clause
+
+136
+00:05:21,000 --> 00:05:24,000
+of the overriding method must be compatible
+
+137
+00:05:24,000 --> 00:05:28,000
+with the throws clause of the method being overridden.
+
+138
+00:05:28,000 --> 00:05:30,000
+So, say, for example, we have our CargoFlight class
+
+139
+00:05:30,000 --> 00:05:33,000
+that extends Flight, and it wants to override that
+
+140
+00:05:33,000 --> 00:05:36,000
+new addPassengers function we just put in there.
+
+141
+00:05:36,000 --> 00:05:39,000
+Well, it need to be compatible with the throws clause
+
+142
+00:05:39,000 --> 00:05:42,000
+of Flight's implementation of addPassengers.
+
+143
+00:05:42,000 --> 00:05:44,000
+Now, there are three ways to be compatible.
+
+144
+00:05:44,000 --> 00:05:47,000
+One is to simply not throw the exceptions, and so our method
+
+145
+00:05:47,000 --> 00:05:49,000
+as it's written right now with addPassengers
+
+146
+00:05:49,000 --> 00:05:52,000
+is considered compatible, because we're not generating
+
+147
+00:05:52,000 --> 00:05:56,000
+any exception that wasn't already defined in the base class.
+
+148
+00:05:56,000 --> 00:05:59,000
+And, we can also have a throws clause that throws
+
+149
+00:05:59,000 --> 00:06:02,000
+the same exception, so if we say on the end here,
+
+150
+00:06:02,000 --> 00:06:05,000
+throws IOException, that's compatible as well, because it's
+
+151
+00:06:05,000 --> 00:06:08,000
+the same thing as the base class said.
+
+152
+00:06:08,000 --> 00:06:13,000
+But, we can also indicate that we throw a derived exception,
+
+153
+00:06:13,000 --> 00:06:16,000
+so, for example, FileNotFoundException derives from
+
+154
+00:06:16,000 --> 00:06:19,000
+IOException, therefore it's okay for us to say,
+
+155
+00:06:19,000 --> 00:06:22,000
+throws FileNotFoundException.
+
+156
+00:06:22,000 --> 00:06:26,000
+Alright, and the reason this makes sense is because
+
+157
+00:06:26,000 --> 00:06:28,000
+we have to be compatible with our base class, right?
+
+158
+00:06:28,000 --> 00:06:31,000
+Because, remember that, somewhere there might be code
+
+159
+00:06:31,000 --> 00:06:33,000
+that has a reference to an instance of
+
+160
+00:06:33,000 --> 00:06:36,000
+our CargoFlight class, but might be using
+
+161
+00:06:36,000 --> 00:06:37,000
+a variable declared as Flight, right?
+
+162
+00:06:37,000 --> 00:06:40,000
+So, that code would only know about the capabilities
+
+163
+00:06:40,000 --> 00:06:43,000
+of addPassengers as implemented in Flight.
+
+164
+00:06:43,000 --> 00:06:45,000
+So, any try/catch they put in place there,
+
+165
+00:06:45,000 --> 00:06:47,000
+they're going to catch the exceptions that are defined on
+
+166
+00:06:47,000 --> 00:06:49,000
+Flight's implementation of addPassengers.
+
+167
+00:06:49,000 --> 00:06:52,000
+We want to make sure that our derived class
+
+168
+00:06:52,000 --> 00:06:54,000
+doesn't start throwing exceptions that the user of our class
+
+169
+00:06:54,000 --> 00:59:00,000
+didn't know they were responsible to handle.
+

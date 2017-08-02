@@ -1,0 +1,68 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to the next module of the Pluralsight
+
+2
+00:00:04,000 --> 00:00:06,000
+Java Fundamentals course in the Java language.
+
+3
+00:00:06,000 --> 00:00:08,000
+In this module, we're going to take a look
+
+4
+00:00:08,000 --> 00:00:11,000
+at creating abstract relationships with interfaces.
+
+5
+00:00:11,000 --> 00:00:12,000
+My name is Jim Wilson.
+
+6
+00:00:12,000 --> 00:00:14,000
+Throughout this module, we'll look
+
+7
+00:00:14,000 --> 00:00:16,000
+at a number of issues related to interfaces.
+
+8
+00:00:16,000 --> 00:00:19,000
+We'll start by just defining what an interface is.
+
+9
+00:00:19,000 --> 00:00:21,000
+We'll then look at implementing an interface,
+
+10
+00:00:21,000 --> 00:00:22,000
+and we'll do that by taking a look
+
+11
+00:00:22,000 --> 00:00:25,000
+at some of the interfaces that are provided by Java.
+
+12
+00:00:25,000 --> 00:00:27,000
+We'll then look at how we can have a single class
+
+13
+00:00:27,000 --> 00:00:30,000
+that implements multiple interfaces.
+
+14
+00:00:30,000 --> 00:00:32,000
+We'll then take a look at declaring our own interface.
+
+15
+00:00:32,000 --> 00:00:34,000
+We will do that by adding some features
+
+16
+00:00:34,000 --> 00:00:36,000
+to our calc engine app that we've been working
+
+17
+00:00:36,000 --> 00:59:00,000
+on throughout the course.
+

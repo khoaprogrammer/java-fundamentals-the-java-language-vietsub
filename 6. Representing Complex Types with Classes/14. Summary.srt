@@ -1,0 +1,140 @@
+1
+00:00:02,000 --> 00:00:06,000
+In this module, we started introducing the object-oriented aspects of Java.
+
+2
+00:00:06,000 --> 00:00:09,000
+That means that we started talking about classes
+
+3
+00:00:09,000 --> 00:00:11,000
+because classes are the way we describe our object.
+
+4
+00:00:11,000 --> 00:00:13,000
+There's a template for creating an object.
+
+5
+00:00:13,000 --> 00:00:16,000
+That we use the class keyword to declare them,
+
+6
+00:00:16,000 --> 00:00:18,000
+we use the new keyword to create instances of them.
+
+7
+00:00:18,000 --> 00:00:21,000
+Remember that classes create reference types,
+
+8
+00:00:21,000 --> 00:00:24,000
+meaning that if we have a variable that's a type of a class,
+
+9
+00:00:24,000 --> 00:00:26,000
+the variable doesn't actually hold the class instance
+
+10
+00:00:26,000 --> 00:00:29,000
+itself, it holds a reference to the class instance.
+
+11
+00:00:29,000 --> 00:00:31,000
+That's really important because when we assign between
+
+12
+00:00:31,000 --> 00:00:34,000
+two variables, we don't copy the object,
+
+13
+00:00:34,000 --> 00:00:36,000
+we copy the reference causing the two variables
+
+14
+00:00:36,000 --> 00:00:38,000
+to point to the same object instance.
+
+15
+00:00:38,000 --> 00:00:41,000
+Really important difference from primitive types.
+
+16
+00:00:41,000 --> 00:00:43,000
+Encapsulation is an important part
+
+17
+00:00:43,000 --> 00:00:44,000
+of object-oriented programming, we don't want to have
+
+18
+00:00:44,000 --> 00:00:47,000
+our details exposed to the users of our objects.
+
+19
+00:00:47,000 --> 00:00:51,000
+We use access modifiers to control encapsulation.
+
+20
+00:00:51,000 --> 00:00:53,000
+We use methods to manipulate the state
+
+21
+00:00:53,000 --> 00:00:55,000
+and perform operations on our objects.
+
+22
+00:00:55,000 --> 00:00:57,000
+If we want to exit a method early or if our method
+
+23
+00:00:57,000 --> 00:01:01,000
+has a return type we use the return keyword to control that.
+
+24
+00:01:01,000 --> 00:01:03,000
+And objects have not just operations
+
+25
+00:01:03,000 --> 00:01:06,000
+but they also have state where we use fields to store
+
+26
+00:01:06,000 --> 00:01:07,000
+the object state.
+
+27
+00:01:07,000 --> 00:01:10,000
+Fields are generally considered a kind of low level detail
+
+28
+00:01:10,000 --> 00:01:12,000
+of our objects, so we generally don't want to expose
+
+29
+00:01:12,000 --> 00:01:14,000
+those directly to users of the objects.
+
+30
+00:01:14,000 --> 00:01:17,000
+So we normally do or at least most commonly do
+
+31
+00:01:17,000 --> 00:01:20,000
+is use accessors and mutators to control interaction
+
+32
+00:01:20,000 --> 00:01:21,000
+with our fields.
+
+33
+00:01:21,000 --> 00:01:23,000
+Basically we use methods so that if we can change
+
+34
+00:01:23,000 --> 00:01:26,000
+the implementation detail of the data without affecting
+
+35
+00:01:26,000 --> 00:59:00,000
+the usage of our class.
+

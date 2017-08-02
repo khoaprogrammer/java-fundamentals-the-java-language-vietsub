@@ -1,0 +1,188 @@
+1
+00:00:02,000 --> 00:00:05,000
+The if else statement allows us to conditionally execute
+
+2
+00:00:05,000 --> 00:00:08,000
+another statement, so rather than just returning a value,
+
+3
+00:00:08,000 --> 00:00:11,000
+we can execute an actual statement.
+
+4
+00:00:11,000 --> 00:00:14,000
+Basically we start out with just the keyword if, followed by
+
+5
+00:00:14,000 --> 00:00:17,000
+parenthesis, and inside of those parenthesis, we add our
+
+6
+00:00:17,000 --> 00:00:20,000
+condition and then following that we add the statement we
+
+7
+00:00:20,000 --> 00:00:23,000
+want to execute if that condition is true.
+
+8
+00:00:23,000 --> 00:00:26,000
+If the condition was false we would just skip over that statement.
+
+9
+00:00:26,000 --> 00:00:28,000
+All right so to see that in action, I have some code here
+
+10
+00:00:28,000 --> 00:00:29,000
+where I have two variables.
+
+11
+00:00:29,000 --> 00:00:32,000
+v1 is 10, v2 is four.
+
+12
+00:00:32,000 --> 00:00:37,000
+I say if v2 is greater than v2, print out "v1 is bigger".
+
+13
+00:00:37,000 --> 00:00:39,000
+So basically it just evaluates that condition as long as
+
+14
+00:00:39,000 --> 00:00:41,000
+it's true, which in this case it is,
+
+15
+00:00:41,000 --> 00:00:43,000
+it prints out "v1 is bigger".
+
+16
+00:00:43,000 --> 00:00:46,000
+If statements can optionally have an else clause added
+
+17
+00:00:46,000 --> 00:00:47,000
+to them, which says, "What do you want to do if the
+
+18
+00:00:47,000 --> 00:00:50,000
+"condition is false?"
+
+19
+00:00:50,000 --> 00:00:53,000
+So if we put else, followed by whatever you want that
+
+20
+00:00:53,000 --> 00:00:55,000
+action to be on the false side.
+
+21
+00:00:55,000 --> 00:00:58,000
+So our code here, we're just going to say else, print out
+
+22
+00:00:58,000 --> 00:01:01,000
+"v1 is not bigger".
+
+23
+00:01:01,000 --> 00:01:05,000
+Oftentimes you'll have more than simply, if this condition
+
+24
+00:01:05,000 --> 00:01:06,000
+is true or it's false.
+
+25
+00:01:06,000 --> 00:01:09,000
+You may have multiple things you need to evaluate, so you
+
+26
+00:01:09,000 --> 00:01:12,000
+can actually chain if else statements together and when you
+
+27
+00:01:12,000 --> 00:01:17,000
+do that, the system will just keep evaluating them until one is true.
+
+28
+00:01:17,000 --> 00:01:19,000
+So we set that up with our regular if statement just like we
+
+29
+00:01:19,000 --> 00:01:23,000
+did before, followed by the else, but after the else we can
+
+30
+00:01:23,000 --> 00:01:26,000
+put another if and another condition, and if that condition
+
+31
+00:01:26,000 --> 00:01:29,000
+is true we have it's true statement.
+
+32
+00:01:29,000 --> 00:01:31,000
+And we can repeat this as many times as we want, all right?
+
+33
+00:01:31,000 --> 00:01:34,000
+We can have 20 or 30 of these in a row if we wanted to.
+
+34
+00:01:34,000 --> 00:01:36,000
+That probably wouldn't be good coding practice but it's
+
+35
+00:01:36,000 --> 00:01:39,000
+completely legal and you can optionally have just an else
+
+36
+00:01:39,000 --> 00:01:42,000
+at the end to say, "Well if none of those were true, what
+
+37
+00:01:42,000 --> 00:01:44,000
+"should I do in that case?"
+
+38
+00:01:44,000 --> 00:01:48,000
+So to see that in code, here we have our v1 is 10, v2 is 40.
+
+39
+00:01:48,000 --> 00:01:52,000
+We say, "Well if v1 is greater than v2,
+
+40
+00:01:52,000 --> 00:01:57,000
+"print out 'v1 is bigger' else if v1 is less than v2,
+
+41
+00:01:57,000 --> 00:02:01,000
+"print out 'v2 is bigger' and if neither of those are true,
+
+42
+00:02:01,000 --> 00:02:04,000
+"then print out 'v1 and v2 are equal'."
+
+43
+00:02:04,000 --> 00:02:07,000
+So in this case the system would first evaluate the
+
+44
+00:02:07,000 --> 00:02:09,000
+"is v1 greater than v2?"
+
+45
+00:02:09,000 --> 00:02:12,000
+It's not so it jumps on to that next condition,
+
+46
+00:02:12,000 --> 00:02:13,000
+"is v1 less than v2?"
+
+47
+00:02:13,000 --> 00:59:00,000
+Oh, it is, go ahead and print out "v2 is bigger".
+

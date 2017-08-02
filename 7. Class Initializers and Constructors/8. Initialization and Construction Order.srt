@@ -1,0 +1,192 @@
+1
+00:00:02,000 --> 00:00:04,000
+Throughout this module, we talked about a number
+
+2
+00:00:04,000 --> 00:00:06,000
+of different ways we can set our field values
+
+3
+00:00:06,000 --> 00:00:08,000
+as part of the creation of our objects.
+
+4
+00:00:08,000 --> 00:00:11,000
+We have to understand is the order that those values
+
+5
+00:00:11,000 --> 00:00:13,000
+get set are the order that these operations occur,
+
+6
+00:00:13,000 --> 00:00:16,000
+as you would expect, object creation occurs in a predictable
+
+7
+00:00:16,000 --> 00:00:18,000
+pattern, or a predictable path.
+
+8
+00:00:18,000 --> 00:00:22,000
+Let's imagine we have this class here, we'll call our
+
+9
+00:00:22,000 --> 00:00:25,000
+"Over Initialize Class", we'll put a field in here,
+
+10
+00:00:25,000 --> 00:00:26,000
+called "the field".
+
+11
+00:00:26,000 --> 00:00:28,000
+Let's go and get it together.
+
+12
+00:00:28,000 --> 00:00:30,000
+One of the first ways we learned about how we can
+
+13
+00:00:30,000 --> 00:00:33,000
+initialize a field is through field initializer.
+
+14
+00:00:33,000 --> 00:00:35,000
+That is actually the first step in the creation
+
+15
+00:00:35,000 --> 00:00:40,000
+of an object, if we take our field here called "the field",
+
+16
+00:00:40,000 --> 00:00:43,000
+set it equal to one, by then in a program,
+
+17
+00:00:43,000 --> 00:00:46,000
+create an instance of this class and then print out the
+
+18
+00:00:46,000 --> 00:00:50,000
+value of the field, I'll print out the value one.
+
+19
+00:00:50,000 --> 00:00:55,000
+The next phase is to run the initialization blocks.
+
+20
+00:00:55,000 --> 00:00:58,000
+If we take the same class and now we add in
+
+21
+00:00:58,000 --> 00:01:00,000
+initialization block that sets the value of the field
+
+22
+00:01:00,000 --> 00:01:03,000
+to two, even though we still have a field
+
+23
+00:01:03,000 --> 00:01:05,000
+initializer that sets it to one,
+
+24
+00:01:05,000 --> 00:01:08,000
+when we run the code that prints this out,
+
+25
+00:01:08,000 --> 00:01:10,000
+it's now going to print out two.
+
+26
+00:01:10,000 --> 00:01:13,000
+Because the initialization block ran after the field
+
+27
+00:01:13,000 --> 00:01:14,000
+initializers ran.
+
+28
+00:01:14,000 --> 00:01:17,000
+That would overwrite that value.
+
+29
+00:01:17,000 --> 00:01:20,000
+The final phase is construction.
+
+30
+00:01:20,000 --> 00:01:21,000
+Again, we take our same class
+
+31
+00:01:21,000 --> 00:01:25,000
+and now we add a constructor that sets the field to three,
+
+32
+00:01:25,000 --> 00:01:27,000
+when we run the code to print this out,
+
+33
+00:01:27,000 --> 00:01:30,000
+it will now print out the value three.
+
+34
+00:01:30,000 --> 00:01:32,000
+Now, looking at this, you obviously wouldn't want to do
+
+35
+00:01:32,000 --> 00:01:36,000
+what we do here, we actually set a field to something
+
+36
+00:01:36,000 --> 00:01:38,000
+in a field initializer, then change it
+
+37
+00:01:38,000 --> 00:01:41,000
+in an initialization block, then change it in a constructor.
+
+38
+00:01:41,000 --> 00:01:42,000
+You're not going to do that, but as your classes
+
+39
+00:01:42,000 --> 00:01:45,000
+get more sophisticated, you'll find that your fields
+
+40
+00:01:45,000 --> 00:01:47,000
+start to depend on the values of one another.
+
+41
+00:01:47,000 --> 00:01:50,000
+It's important to understand this order
+
+42
+00:01:50,000 --> 00:01:52,000
+as you use the fields and set up the fields
+
+43
+00:01:52,000 --> 00:01:54,000
+inside your class.
+
+44
+00:01:54,000 --> 00:01:56,000
+The most common mistake I see people make
+
+45
+00:01:56,000 --> 00:01:59,000
+is that they'll do work in an initialization block
+
+46
+00:01:59,000 --> 00:02:02,000
+that gets invalidated by works that occurs later in a constructor.
+
+47
+00:02:02,000 --> 00:02:03,000
+So, just keep this order in mind
+
+48
+00:02:03,000 --> 00:59:00,000
+as you're setting up your classes.
+

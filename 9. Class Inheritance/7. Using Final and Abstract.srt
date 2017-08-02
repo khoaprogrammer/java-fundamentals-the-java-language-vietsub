@@ -1,0 +1,416 @@
+1
+00:00:02,000 --> 00:00:03,000
+As we've seen, Java makes it
+
+2
+00:00:03,000 --> 00:00:06,000
+very easy to extend classes and override methods. In fact,
+
+3
+00:00:06,000 --> 00:00:09,000
+by default, all classes can be extended, and when you
+
+4
+00:00:09,000 --> 00:00:12,000
+inherit from a class, you have the option of using the
+
+5
+00:00:12,000 --> 00:00:15,000
+methods as they were written in the base class, or
+
+6
+00:00:15,000 --> 00:00:17,000
+overriding them. But sometimes that may not be what you
+
+7
+00:00:17,000 --> 00:00:20,000
+want. Maybe you want to put more controls on that.
+
+8
+00:00:20,000 --> 00:00:23,000
+It turns out that a class can change these defaults. It can
+
+9
+00:00:23,000 --> 00:00:26,000
+control whether it's allowed to be extended, and how
+
+10
+00:00:26,000 --> 00:00:30,000
+overriding methods works. One way it does that is using
+
+11
+00:00:30,000 --> 00:00:33,000
+what's called final. Final allows us to prevent inheriting
+
+12
+00:00:33,000 --> 00:00:37,000
+of an entire class, or the overriding of certain methods.
+
+13
+00:00:37,000 --> 00:00:39,000
+Let's take a look.
+
+14
+00:00:39,000 --> 00:00:41,000
+Let's say we have our class here, our
+
+15
+00:00:41,000 --> 00:00:43,000
+Passenger class we've seen before. And let's say we've
+
+16
+00:00:43,000 --> 00:00:46,000
+decided that, you know, we don't want to allow any
+
+17
+00:00:46,000 --> 00:00:48,000
+specialization of the passenger class. We don't want to
+
+18
+00:00:48,000 --> 00:00:51,000
+allow anyone to extend this class. Well, all we have to
+
+19
+00:00:51,000 --> 00:00:55,000
+do is take the Passenger class and mark it as final.
+
+20
+00:00:55,000 --> 00:00:58,000
+By marking it as final, simply put, you cannot inherit
+
+21
+00:00:58,000 --> 00:01:02,000
+from it any more. You're not allowed to extend that class.
+
+22
+00:01:02,000 --> 00:01:04,000
+One thing to note, though, is that the order of public and
+
+23
+00:01:04,000 --> 00:01:07,000
+final here doesn't matter. If we want to we can switch the
+
+24
+00:01:07,000 --> 00:01:10,000
+order of those, it still has the exact same effect. So
+
+25
+00:01:10,000 --> 00:01:12,000
+marking classes as final is a very simple thing. It
+
+26
+00:01:12,000 --> 00:01:16,000
+simply blocks extending that class. But very commonly
+
+27
+00:01:16,000 --> 00:01:20,000
+what we want to do is allow a class to be inherited from,
+
+28
+00:01:20,000 --> 00:01:22,000
+but have certain methods we do not want to allow them to
+
+29
+00:01:22,000 --> 00:01:26,000
+change. Let's take a look at our CargoFlight class here.
+
+30
+00:01:26,000 --> 00:01:28,000
+Say we want to go ahead and allow people to inherit
+
+31
+00:01:28,000 --> 00:01:32,000
+from CargoFlight and specialize CargoFlight, but we want
+
+32
+00:01:32,000 --> 00:01:34,000
+to make sure that they don't change the way that adding
+
+33
+00:01:34,000 --> 00:01:37,000
+a package works. So what we can do is take our add1Package
+
+34
+00:01:37,000 --> 00:01:42,000
+method and just mark that method as final. By marking the
+
+35
+00:01:42,000 --> 00:01:45,000
+method as final, now you can inherit from CargoFlight, but
+
+36
+00:01:45,000 --> 00:01:49,000
+you cannot override add1Package. You can go ahead and
+
+37
+00:01:49,000 --> 00:01:51,000
+override other methods that might be in the class if you
+
+38
+00:01:51,000 --> 00:01:54,000
+have access to them, but in the case of CargoFlight,
+
+39
+00:01:54,000 --> 00:01:57,000
+there are no other methods that you can override because
+
+40
+00:01:57,000 --> 00:02:01,000
+add1Package is final, and hasCargoSpace and handleNoSpace
+
+41
+00:02:01,000 --> 00:02:04,000
+are both private, so a deriving class couldn't change those.
+
+42
+00:02:04,000 --> 00:02:06,000
+Now, methods that are inherited from Flight could be
+
+43
+00:02:06,000 --> 00:02:10,000
+overridden. So we're just very selectively blocking what
+
+44
+00:02:10,000 --> 00:02:13,000
+can be overridden. In the case of final, you'll generally
+
+45
+00:02:13,000 --> 00:02:16,000
+either mark the class as final, or an individual method
+
+46
+00:02:16,000 --> 00:02:19,000
+as final. Once a class is final, there's no reason to mark
+
+47
+00:02:19,000 --> 00:02:22,000
+individual methods as final, because you can't override
+
+48
+00:02:22,000 --> 00:02:25,000
+anything if you can't inherit from it. So final is a method
+
+49
+00:02:25,000 --> 00:02:29,000
+or class situation. Now there may be another situation
+
+50
+00:02:29,000 --> 00:02:32,000
+where, instead of trying to prevent inheritance, you want
+
+51
+00:02:32,000 --> 00:02:36,000
+to go ahead and require inheritance. That's where abstract
+
+52
+00:02:36,000 --> 00:02:40,000
+comes in. Abstract allows you to require that a class be
+
+53
+00:02:40,000 --> 00:02:44,000
+inherited, and require that a particular method be
+
+54
+00:02:44,000 --> 00:02:48,000
+overridden. Let's see what that looks like. Let's create a
+
+55
+00:02:48,000 --> 00:02:51,000
+new class here. We'll call it Pilot. So we'll have our
+
+56
+00:02:51,000 --> 00:02:54,000
+Pilot class, and we'll go ahead and, a pilot can fly a
+
+57
+00:02:54,000 --> 00:02:57,000
+flight, so we'll have a currentFlight field. And we'll add
+
+58
+00:02:57,000 --> 00:02:59,000
+a method called fly that accepts that flight. And what we'll
+
+59
+00:02:59,000 --> 00:03:04,000
+say is well, if the pilot can accept that flight, we'll go
+
+60
+00:03:04,000 --> 00:03:06,000
+ahead and assign the flight to currentFlight. If they
+
+61
+00:03:06,000 --> 00:03:09,000
+can't, we'll go ahead and just handle that case if they
+
+62
+00:03:09,000 --> 00:03:12,000
+can't accept it. For handleCantAccept, we'll just do what
+
+63
+00:03:12,000 --> 00:03:15,000
+we've been kind of doing, simply printing out a message.
+
+64
+00:03:15,000 --> 00:03:17,000
+But when it comes down to the idea of whether the pilot
+
+65
+00:03:17,000 --> 00:03:20,000
+can accept the flight or not, that's going to depend on
+
+66
+00:03:20,000 --> 00:03:24,000
+what kind of pilot it is. And we want to leave that to the
+
+67
+00:03:24,000 --> 00:03:26,000
+classes that inherit from pilot. So what we'll do is we'll
+
+68
+00:03:26,000 --> 00:03:28,000
+go ahead and mark something as public and we're going
+
+69
+00:03:28,000 --> 00:03:31,000
+to say now, abstract. And then we provide our standard
+
+70
+00:03:31,000 --> 00:03:35,000
+method signature. And so it's a public method called
+
+71
+00:03:35,000 --> 00:03:38,000
+canAccept, returns a Boolean. But by saying it's abstract
+
+72
+00:03:38,000 --> 00:03:40,000
+we're saying that we're not going to provide an
+
+73
+00:03:40,000 --> 00:03:43,000
+implementation. Now since we're not going to provide an
+
+74
+00:03:43,000 --> 00:03:45,000
+implementation, what we do is that, rather than providing
+
+75
+00:03:45,000 --> 00:03:48,000
+a method body, we just put a semicolon at the end.
+
+76
+00:03:48,000 --> 00:03:51,000
+So we're just simply saying that, the class Pilot has a
+
+77
+00:03:51,000 --> 00:03:53,000
+method called canAccept. We don't know what the
+
+78
+00:03:53,000 --> 00:03:57,000
+implementation of that method is, but it has that method.
+
+79
+00:03:57,000 --> 00:03:59,000
+What that allows us to do is to use canAccept in other
+
+80
+00:03:59,000 --> 00:04:03,000
+methods in the class, like in this case the fly method.
+
+81
+00:04:03,000 --> 00:04:07,000
+Now once you mark a method as abstract, that means the
+
+82
+00:04:07,000 --> 00:04:10,000
+entire class must be abstract, so we'll go ahead and mark
+
+83
+00:04:10,000 --> 00:04:14,000
+the class as abstract as well. So when it comes to abstract,
+
+84
+00:04:14,000 --> 00:04:16,000
+if you have an abstract method you have to mark the class
+
+85
+00:04:16,000 --> 00:04:20,000
+as abstract. It's possible to mark a class as abstract and
+
+86
+00:04:20,000 --> 00:04:24,000
+have no abstract methods, but that's not very common.
+
+87
+00:04:24,000 --> 00:04:27,000
+Normally you'll have one or more abstract methods in any
+
+88
+00:04:27,000 --> 00:04:31,000
+abstract class. So now the way we work this, let's go ahead
+
+89
+00:04:31,000 --> 00:04:35,000
+and define a Pilot we'll call our CargoOnlyPilot that
+
+90
+00:04:35,000 --> 00:04:38,000
+extends our Pilot class. Because it extends our Pilot class,
+
+91
+00:04:38,000 --> 00:04:41,000
+it has to provide an implementation for canAccept. So we'll
+
+92
+00:04:41,000 --> 00:04:44,000
+go ahead and set that up, we'll go ahead and use the
+
+93
+00:04:44,000 --> 00:04:47,000
+override annotation, and what we'll say inside of here is
+
+94
+00:04:47,000 --> 00:04:51,000
+that a CargoOnlyPilot is not allowed to have passengers.
+
+95
+00:04:51,000 --> 00:04:53,000
+So we'll take the flight, call getPassengers, and we only
+
+96
+00:04:53,000 --> 00:04:57,000
+return true for canAccept if there are no passengers at all.
+
+97
+00:04:57,000 --> 00:05:02,000
+Then we have another class called FullLicensePilot, and
+
+98
+00:05:02,000 --> 00:05:04,000
+he's kind of our super pilot, he's allowed to fly any
+
+99
+00:05:04,000 --> 00:05:07,000
+flight. So we'll override canAccept for him, go ahead and
+
+100
+00:05:07,000 --> 00:05:10,000
+mark it with the override annotation, and he's simply
+
+101
+00:05:10,000 --> 00:05:12,000
+going to return true all the time, saying he's allowed to
+
+102
+00:05:12,000 --> 00:05:16,000
+fly any flight. So it allowed us to define basic
+
+103
+00:05:16,000 --> 00:05:19,000
+characteristics and behaviors in the Pilot class, but then
+
+104
+00:05:19,000 --> 00:59:00,000
+require specific specializations in any derived class.
+

@@ -1,0 +1,212 @@
+1
+00:00:01,000 --> 00:00:02,000
+To wrap up, here are the key things
+
+2
+00:00:02,000 --> 00:00:04,000
+you want to remember.
+
+3
+00:00:04,000 --> 00:00:06,000
+Remember that static methods and fields
+
+4
+00:00:06,000 --> 00:00:08,000
+are shared class-wide.
+
+5
+00:00:08,000 --> 00:00:10,000
+You can access them using the class name
+
+6
+00:00:10,000 --> 00:00:13,000
+and they're not associated with any individual instance
+
+7
+00:00:13,000 --> 00:00:15,000
+of your class.
+
+8
+00:00:15,000 --> 00:00:18,000
+Static initialization blocks allow you to provide one-time
+
+9
+00:00:18,000 --> 00:00:20,000
+type initialization.
+
+10
+00:00:20,000 --> 00:00:21,000
+It allows you to have a block of code
+
+11
+00:00:21,000 --> 00:00:25,000
+that's automatically run before the first time you use
+
+12
+00:00:25,000 --> 00:00:26,000
+that type.
+
+13
+00:00:26,000 --> 00:00:30,000
+A nested type is a type declared within another type.
+
+14
+00:00:30,000 --> 00:00:32,000
+Now they can be used to provide just structure and scoping
+
+15
+00:00:32,000 --> 00:00:35,000
+and that's true if you have a class that's marked as static
+
+16
+00:00:35,000 --> 00:00:38,000
+or anytime you're using interfaces with nesting.
+
+17
+00:00:38,000 --> 00:00:40,000
+Or you can use inner classes.
+
+18
+00:00:40,000 --> 00:00:42,000
+Inner classes occur when you have one class
+
+19
+00:00:42,000 --> 00:00:43,000
+inside of another and that nested class
+
+20
+00:00:43,000 --> 00:00:45,000
+is not marked as static.
+
+21
+00:00:45,000 --> 00:00:48,000
+In that case, whenever you create an instance
+
+22
+00:00:48,000 --> 00:00:50,000
+of the nested class, that instance
+
+23
+00:00:50,000 --> 00:00:53,000
+is automatically associated with the instance
+
+24
+00:00:53,000 --> 00:00:57,000
+of the enclosing class from which it was created.
+
+25
+00:00:57,000 --> 00:00:59,000
+So you get a lot of power with that automatic association.
+
+26
+00:00:59,000 --> 00:01:01,000
+And then we have anonymous classes
+
+27
+00:01:01,000 --> 00:01:04,000
+that are actually declared as part of their creation.
+
+28
+00:01:04,000 --> 00:01:06,000
+Remember that anonymous classes are considered
+
+29
+00:01:06,000 --> 00:01:09,000
+inner classes so they can actually access the members
+
+30
+00:01:09,000 --> 00:01:11,000
+of the enclosing type and they're useful
+
+31
+00:01:11,000 --> 00:01:13,000
+for those situations where you want to implement
+
+32
+00:01:13,000 --> 00:01:16,000
+some interface or you want to go ahead and extend a class
+
+33
+00:01:16,000 --> 00:01:19,000
+for a very specific situation, so you don't need to go off
+
+34
+00:01:19,000 --> 00:01:23,000
+and declare a class explicitly, just go ahead
+
+35
+00:01:23,000 --> 00:01:26,000
+and create it right there in place when you need it.
+
+36
+00:01:26,000 --> 00:01:29,000
+And that brings us to the end of our course Java Fundamentals
+
+37
+00:01:29,000 --> 00:01:31,000
+the Java language.
+
+38
+00:01:31,000 --> 00:01:32,000
+So whether you're planning to go off
+
+39
+00:01:32,000 --> 00:01:35,000
+and work on servers, clients or devices,
+
+40
+00:01:35,000 --> 00:01:37,000
+you're now armed with the knowledge of the Java language that
+
+41
+00:01:37,000 --> 00:01:40,000
+you need to start building your killer app.
+
+42
+00:01:40,000 --> 00:01:42,000
+To continue developing your Java skills,
+
+43
+00:01:42,000 --> 00:01:45,000
+I encourage you to take a look at the Pluralsight skills pad for Java.
+
+44
+00:01:45,000 --> 00:01:48,000
+It contains a great progression of courses that will build your skills
+
+45
+00:01:48,000 --> 00:01:49,000
+as a Java developer.
+
+46
+00:01:49,000 --> 00:01:52,000
+In fact there's a good chance you arrived at this course
+
+47
+00:01:52,000 --> 00:01:54,000
+from the Java Skill Path.
+
+48
+00:01:54,000 --> 00:01:56,000
+If you haven't already checked out the Java Skill Path
+
+49
+00:01:56,000 --> 00:02:00,000
+I encourage you to go over and take a look at this courses contained there.
+
+50
+00:02:00,000 --> 00:02:04,000
+And finally. Thank you for joining me throughout our discussion on Java Language.
+
+51
+00:02:04,000 --> 00:02:06,000
+I wish you the very best as you begin applying your
+
+52
+00:02:06,000 --> 00:02:10,000
+new Java language skills and as you continue learning and developing your skills
+
+53
+00:02:10,000 --> 00:59:00,000
+as a Java developer.
+

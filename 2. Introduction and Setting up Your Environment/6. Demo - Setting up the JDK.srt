@@ -1,0 +1,228 @@
+1
+00:00:01,000 --> 00:00:04,000
+Let's go and install the JDK onto our machine.
+
+2
+00:00:04,000 --> 00:00:06,000
+Now that URL I have on screen
+
+3
+00:00:06,000 --> 00:00:09,000
+the bit.ly/psjdkdownload is set to point to
+
+4
+00:00:09,000 --> 00:00:13,000
+whatever the current version of the JDK is.
+
+5
+00:00:13,000 --> 00:00:15,000
+As I'm recording this, the current version is JDK8.
+
+6
+00:00:15,000 --> 00:00:17,000
+So that's the one I'll install.
+
+7
+00:00:17,000 --> 00:00:18,000
+If you watch this course into the future
+
+8
+00:00:18,000 --> 00:00:20,000
+and another version JDK 9 or 10 comes out,
+
+9
+00:00:20,000 --> 00:00:22,000
+that same URL you see will take you
+
+10
+00:00:22,000 --> 00:00:29,000
+to the appropriate place to download that current version.
+
+11
+00:00:29,000 --> 00:00:30,000
+So here we are in our browser.
+
+12
+00:00:30,000 --> 00:00:36,000
+So let's go ahead and put in that URL.
+
+13
+00:00:36,000 --> 00:00:39,000
+We'll hit enter.
+
+14
+00:00:39,000 --> 00:00:42,000
+So here we are at the current download page.
+
+15
+00:00:42,000 --> 00:00:43,000
+Or I should say, here we are at the page
+
+16
+00:00:43,000 --> 00:00:46,000
+where you can get the current Java downloads.
+
+17
+00:00:46,000 --> 00:00:49,000
+You notice here on the left we got one here for the JDK.
+
+18
+00:00:49,000 --> 00:00:50,000
+Also called the Java Platforms.
+
+19
+00:00:50,000 --> 00:00:55,000
+We'll go ahead and click on that.
+
+20
+00:00:55,000 --> 00:00:57,000
+Here we are on the JDK download page.
+
+21
+00:00:57,000 --> 00:00:59,000
+So go ahead and scroll down here a little bit
+
+22
+00:00:59,000 --> 00:01:00,000
+until you see that--
+
+23
+00:01:00,000 --> 00:01:02,000
+here's all the various versions you can download.
+
+24
+00:01:02,000 --> 00:01:03,000
+And basically you just download the version
+
+25
+00:01:03,000 --> 00:01:05,000
+for whatever platform you're using, right?
+
+26
+00:01:05,000 --> 00:01:06,000
+If you're on Linux you get that one of course.
+
+27
+00:01:06,000 --> 00:01:09,000
+If I was on my Mac right now I'd get the Mac one.
+
+28
+00:01:09,000 --> 00:01:12,000
+But in this case I'm currently on a 64 bit Windows machine.
+
+29
+00:01:12,000 --> 00:01:14,000
+So I want to install that version, right?
+
+30
+00:01:14,000 --> 00:01:15,000
+Windows 64.
+
+31
+00:01:15,000 --> 00:01:17,000
+One thing you want to make sure you remember to do
+
+32
+00:01:17,000 --> 00:01:19,000
+is accept this license, alright?
+
+33
+00:01:19,000 --> 00:01:20,000
+If you don't accept the license
+
+34
+00:01:20,000 --> 00:01:22,000
+it won't allow you to do the download.
+
+35
+00:01:22,000 --> 00:01:24,000
+When we're ready we just go ahead
+
+36
+00:01:24,000 --> 00:01:27,000
+and click on this to download the File.
+
+37
+00:01:27,000 --> 00:01:28,000
+So my download's completed.
+
+38
+00:01:28,000 --> 00:01:30,000
+So I'm going to go ahead and run the installer.
+
+39
+00:01:30,000 --> 00:01:33,000
+I'm just going to go ahead and double click on this guy.
+
+40
+00:01:33,000 --> 00:01:35,000
+And now here we are inside the installer, right?
+
+41
+00:01:35,000 --> 00:01:36,000
+So I'm just going to get in and let the
+
+42
+00:01:36,000 --> 00:01:38,000
+installer get started here.
+
+43
+00:01:38,000 --> 00:01:39,000
+Oh, good.
+
+44
+00:01:39,000 --> 00:01:41,000
+Say, yep good, install everything.
+
+45
+00:01:41,000 --> 00:01:42,000
+And you'll notice that one of the things it has here
+
+46
+00:01:42,000 --> 00:01:44,000
+is that the JRE or the Java Runtime.
+
+47
+00:01:44,000 --> 00:01:46,000
+So it actually puts that in for us.
+
+48
+00:01:46,000 --> 00:01:51,000
+So we're going to say yep, and go ahead and do that.
+
+49
+00:01:51,000 --> 00:01:54,000
+You notice here, it prompts us again
+
+50
+00:01:54,000 --> 00:01:56,000
+for a Destination Folder.
+
+51
+00:01:56,000 --> 00:01:57,000
+And this is the folder where
+
+52
+00:01:57,000 --> 00:01:58,000
+the Java Runtime is going to go.
+
+53
+00:01:58,000 --> 00:02:00,000
+I'm going to go ahead, and just accept the default for that.
+
+54
+00:02:00,000 --> 00:02:05,000
+So I'll say Next.
+
+55
+00:02:05,000 --> 00:02:07,000
+And with that we're done.
+
+56
+00:02:07,000 --> 00:02:08,000
+We now have the JDK along with the JRE
+
+57
+00:02:08,000 --> 00:59:00,000
+installed on our computer.
+

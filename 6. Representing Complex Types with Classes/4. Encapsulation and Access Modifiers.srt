@@ -1,0 +1,148 @@
+1
+00:00:01,000 --> 00:00:04,000
+Since Java is an object-oriented language, we want to use
+
+2
+00:00:04,000 --> 00:00:07,000
+good object-oriented techniques when we build our programs.
+
+3
+00:00:07,000 --> 00:00:09,000
+Remember that one of the things we talked about is that
+
+4
+00:00:09,000 --> 00:00:12,000
+when you consume an object or when you use an object,
+
+5
+00:00:12,000 --> 00:00:15,000
+you want to be able to think about the "what"
+
+6
+00:00:15,000 --> 00:00:18,000
+of what you're doing not the "how" of what you're doing.
+
+7
+00:00:18,000 --> 00:00:21,000
+Because one important idea in there is that as we build
+
+8
+00:00:21,000 --> 00:00:24,000
+our objects the internal representation of those objects
+
+9
+00:00:24,000 --> 00:00:25,000
+should generally be hidden.
+
+10
+00:00:25,000 --> 00:00:27,000
+The user of an object shouldn't have to know a whole lot
+
+11
+00:00:27,000 --> 00:00:30,000
+about the way that object is built.
+
+12
+00:00:30,000 --> 00:00:33,000
+So the idea of hiding this internal representation
+
+13
+00:00:33,000 --> 00:00:35,000
+is an idea we call encapsulation.
+
+14
+00:00:35,000 --> 00:00:39,000
+In Java, the way we achieve encapsulation is by using
+
+15
+00:00:39,000 --> 00:00:43,000
+access modifiers.
+
+16
+00:00:43,000 --> 00:00:46,000
+Let's talk about some of the most basic access modifiers.
+
+17
+00:00:46,000 --> 00:00:48,000
+Now the most basic access modifier at all is to have
+
+18
+00:00:48,000 --> 00:00:51,000
+no access modifier and, in fact, that's what
+
+19
+00:00:51,000 --> 00:00:52,000
+we've been doing up until now.
+
+20
+00:00:52,000 --> 00:00:56,000
+If a class or a class member does not have an access modifier
+
+21
+00:00:56,000 --> 00:00:58,000
+on it that's considered what we call "package private",
+
+22
+00:00:58,000 --> 00:01:01,000
+only usable within its own package.
+
+23
+00:01:01,000 --> 00:01:03,000
+We'll talk more about that one later in the course
+
+24
+00:01:03,000 --> 00:01:06,000
+when we spend more time on packages.
+
+25
+00:01:06,000 --> 00:01:09,000
+Now one of the ones we commonly see is the public access
+
+26
+00:01:09,000 --> 00:01:11,000
+modifier and if a class or a class member is
+
+27
+00:01:11,000 --> 00:01:14,000
+marked as public, that means it can just be used anywhere,
+
+28
+00:01:14,000 --> 00:01:16,000
+anywhere in the program.
+
+29
+00:01:16,000 --> 00:01:18,000
+And the last one we're going to talk about for now
+
+30
+00:01:18,000 --> 00:01:19,000
+is one called private.
+
+31
+00:01:19,000 --> 00:01:23,000
+If a class member is marked as private, it's only accessible
+
+32
+00:01:23,000 --> 00:01:25,000
+from within the class where it's declared.
+
+33
+00:01:25,000 --> 00:01:28,000
+Now top level classes, the kind of classes
+
+34
+00:01:28,000 --> 00:01:30,000
+that we're working with right now, cannot use the
+
+35
+00:01:30,000 --> 00:01:32,000
+private access modifier.
+
+36
+00:01:32,000 --> 00:01:34,000
+Little later in the course we'll talk about some scenarios
+
+37
+00:01:34,000 --> 00:59:00,000
+with nested classes where we can use the private access modifier.
+

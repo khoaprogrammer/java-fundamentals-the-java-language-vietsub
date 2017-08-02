@@ -1,0 +1,536 @@
+1
+00:00:02,000 --> 00:00:03,000
+At a few points during the course we've mentioned
+
+2
+00:00:03,000 --> 00:00:06,000
+nested types briefly and I've always said that's something
+
+3
+00:00:06,000 --> 00:00:07,000
+we would talk about later.
+
+4
+00:00:07,000 --> 00:00:09,000
+Well later is now.
+
+5
+00:00:09,000 --> 00:00:12,000
+Now a nested type is simply a case where you have a type
+
+6
+00:00:12,000 --> 00:00:15,000
+that's declared within another type.
+
+7
+00:00:15,000 --> 00:00:17,000
+So you can have classes that are declared
+
+8
+00:00:17,000 --> 00:00:19,000
+within the other classes or within an interface.
+
+9
+00:00:19,000 --> 00:00:21,000
+You can also have interfaces that are declared
+
+10
+00:00:21,000 --> 00:00:24,000
+within classes or a different interface.
+
+11
+00:00:24,000 --> 00:00:26,000
+When you nest one type inside of another,
+
+12
+00:00:26,000 --> 00:00:30,000
+the nested type is actually a member of its enclosing type.
+
+13
+00:00:30,000 --> 00:00:32,000
+So what that means is that the nested type
+
+14
+00:00:32,000 --> 00:00:35,000
+actually has visibility of private members
+
+15
+00:00:35,000 --> 00:00:38,000
+of its enclosing type.
+
+16
+00:00:38,000 --> 00:00:41,000
+Also as a member, it can have all the member
+
+17
+00:00:41,000 --> 00:00:42,000
+access modifiers.
+
+18
+00:00:42,000 --> 00:00:45,000
+Alright, so a nested class can of course be public
+
+19
+00:00:45,000 --> 00:00:48,000
+or packaged private just as a top of a class
+
+20
+00:00:48,000 --> 00:00:52,000
+but you can also have a nested class that is protected,
+
+21
+00:00:52,000 --> 00:00:54,000
+being that it would only be accessible by classes
+
+22
+00:00:54,000 --> 00:00:56,000
+that inherit from its enclosing class.
+
+23
+00:00:56,000 --> 00:00:58,000
+Or it can even be private.
+
+24
+00:00:58,000 --> 00:01:00,000
+So you can have a class that's only visible
+
+25
+00:01:00,000 --> 00:01:02,000
+to the class in which it's contained.
+
+26
+00:01:02,000 --> 00:01:04,000
+When we work with nested types,
+
+27
+00:01:04,000 --> 00:01:06,000
+there's generally two ways we work with them.
+
+28
+00:01:06,000 --> 00:01:10,000
+In one case we only use them for structure and scoping.
+
+29
+00:01:10,000 --> 00:01:13,000
+In this case, there's no special relationship
+
+30
+00:01:13,000 --> 00:01:15,000
+between instances of the nested class
+
+31
+00:01:15,000 --> 00:01:17,000
+and instances of the enclosing class.
+
+32
+00:01:17,000 --> 00:01:19,000
+It's really because you want to make the type
+
+33
+00:01:19,000 --> 00:01:20,000
+only usable in certain scenarios
+
+34
+00:01:20,000 --> 00:01:23,000
+or you want to structure its naming
+
+35
+00:01:23,000 --> 00:01:25,000
+relative to another class.
+
+36
+00:01:25,000 --> 00:01:27,000
+So this happens when you have what's called
+
+37
+00:01:27,000 --> 00:01:30,000
+a static nested class or if you put a class
+
+38
+00:01:30,000 --> 00:01:32,000
+inside of an interface
+
+39
+00:01:32,000 --> 00:01:35,000
+or if you have a nested interface.
+
+40
+00:01:35,000 --> 00:01:37,000
+See what this looks like.
+
+41
+00:01:37,000 --> 00:01:39,000
+Remember we have our passenger class here
+
+42
+00:01:39,000 --> 00:01:41,000
+and one of the things we did with passenger
+
+43
+00:01:41,000 --> 00:01:42,000
+is we had a rewards program.
+
+44
+00:01:42,000 --> 00:01:45,000
+Now the rewards program relied on two values.
+
+45
+00:01:45,000 --> 00:01:47,000
+What the person's level was in the rewards program
+
+46
+00:01:47,000 --> 00:01:50,000
+and how long they'd been a member of the program.
+
+47
+00:01:50,000 --> 00:01:52,000
+And this is the case where it takes two values
+
+48
+00:01:52,000 --> 00:01:54,000
+to represent a single concept
+
+49
+00:01:54,000 --> 00:01:56,000
+and oftentimes when we have that scenario,
+
+50
+00:01:56,000 --> 00:01:59,000
+we go ahead and wrap that up in a class.
+
+51
+00:01:59,000 --> 00:02:01,000
+So we could go off and create a rewards program class.
+
+52
+00:02:01,000 --> 00:02:04,000
+But this is rewards program as it applies to a passenger.
+
+53
+00:02:04,000 --> 00:02:07,000
+What if we had a different rewards program
+
+54
+00:02:07,000 --> 00:02:08,000
+as it applied to crew members?
+
+55
+00:02:08,000 --> 00:02:10,000
+Well we could start naming one like
+
+56
+00:02:10,000 --> 00:02:11,000
+passenger rewards program,
+
+57
+00:02:11,000 --> 00:02:14,000
+another one crew member rewards program,
+
+58
+00:02:14,000 --> 00:02:17,000
+or we could have a reward program class
+
+59
+00:02:17,000 --> 00:02:18,000
+that we nest inside of passenger.
+
+60
+00:02:18,000 --> 00:02:19,000
+So let's go ahead and do that.
+
+61
+00:02:19,000 --> 00:02:21,000
+So we'll wrap up those two values
+
+62
+00:02:21,000 --> 00:02:23,000
+inside of our reward program class.
+
+63
+00:02:23,000 --> 00:02:26,000
+So reward program is the nested class,
+
+64
+00:02:26,000 --> 00:02:28,000
+passenger is the enclosing class.
+
+65
+00:02:28,000 --> 00:02:30,000
+The reward program is marked as static,
+
+66
+00:02:30,000 --> 00:02:33,000
+which means we're using it for structure and scoping.
+
+67
+00:02:33,000 --> 00:02:35,000
+As a class, you can do all the things classes are allowed to do.
+
+68
+00:02:35,000 --> 00:02:37,000
+So we could have methods inside of it.
+
+69
+00:02:37,000 --> 00:02:39,000
+So we have a getter and a setter for member level
+
+70
+00:02:39,000 --> 00:02:41,000
+and a getter and a setter for member days.
+
+71
+00:02:41,000 --> 00:02:43,000
+Now all we've done at this point
+
+72
+00:02:43,000 --> 00:02:45,000
+is declare the reward program class.
+
+73
+00:02:45,000 --> 00:02:47,000
+There's no instance of it yet.
+
+74
+00:02:47,000 --> 00:02:49,000
+So what we're going to do inside of our passenger class,
+
+75
+00:02:49,000 --> 00:02:51,000
+we'll add a field to type of reward program
+
+76
+00:02:51,000 --> 00:02:52,000
+that we'll call reward program.
+
+77
+00:02:52,000 --> 00:02:55,000
+Now it's still a reference type so we need to go ahead
+
+78
+00:02:55,000 --> 00:02:58,000
+and new it up, so we'll new up an instance of it.
+
+79
+00:02:58,000 --> 00:03:00,000
+Now we've marked reward program as private
+
+80
+00:03:00,000 --> 00:03:04,000
+in terms of the field, but notice our reward program class
+
+81
+00:03:04,000 --> 00:03:05,000
+is public.
+
+82
+00:03:05,000 --> 00:03:08,000
+So you can't access the field directly,
+
+83
+00:03:08,000 --> 00:03:11,000
+so we'll go ahead and put a getter around that as well.
+
+84
+00:03:11,000 --> 00:03:13,000
+Okay, so now we have our reward program class
+
+85
+00:03:13,000 --> 00:03:15,000
+that's nested inside of our passenger class.
+
+86
+00:03:15,000 --> 00:03:18,000
+Let's see how this effects our code when we use it.
+
+87
+00:03:18,000 --> 00:03:20,000
+So let's go over here and we'll go ahead create an instance
+
+88
+00:03:20,000 --> 00:03:22,000
+of a passenger and we'll call him Steve.
+
+89
+00:03:22,000 --> 00:03:23,000
+If we want to go ahead and set up
+
+90
+00:03:23,000 --> 00:03:25,000
+his reward program information,
+
+91
+00:03:25,000 --> 00:03:27,000
+it's just like working with any other field
+
+92
+00:03:27,000 --> 00:03:28,000
+that's based on a class.
+
+93
+00:03:28,000 --> 00:03:30,000
+We have our Steve variable.
+
+94
+00:03:30,000 --> 00:03:32,000
+We call get reward programs
+
+95
+00:03:32,000 --> 00:03:33,000
+and actually get a reference to his
+
+96
+00:03:33,000 --> 00:03:34,000
+reward program information
+
+97
+00:03:34,000 --> 00:03:36,000
+and then we just call methods on it.
+
+98
+00:03:36,000 --> 00:03:37,000
+So we can set his level to three
+
+99
+00:03:37,000 --> 00:03:40,000
+and we'll go ahead and set his member days to 180.
+
+100
+00:03:40,000 --> 00:03:42,000
+So really there is nothing different there.
+
+101
+00:03:42,000 --> 00:03:45,000
+But now remember we said that we declared reward program
+
+102
+00:03:45,000 --> 00:03:47,000
+as a public nested class.
+
+103
+00:03:47,000 --> 00:03:50,000
+So it's usable outside of the passenger class.
+
+104
+00:03:50,000 --> 00:03:53,000
+So we can actually create variables and instances
+
+105
+00:03:53,000 --> 00:03:56,000
+of that reward program outside of the passenger class.
+
+106
+00:03:56,000 --> 00:03:59,000
+Let's go ahead and create a variable here called platinum.
+
+107
+00:03:59,000 --> 00:04:01,000
+But you notice the name of the class.
+
+108
+00:04:01,000 --> 00:04:04,000
+The class's name is passenger dot reward program.
+
+109
+00:04:04,000 --> 00:04:07,000
+Alright, the enclosing class dot the nested class.
+
+110
+00:04:07,000 --> 00:04:10,000
+And when we new it up, we use the class name.
+
+111
+00:04:10,000 --> 00:04:11,000
+So we go ahead and new up an instance
+
+112
+00:04:11,000 --> 00:04:13,000
+of passenger dot reward program.
+
+113
+00:04:13,000 --> 00:04:15,000
+So you see how we've got a structured name here.
+
+114
+00:04:15,000 --> 00:04:17,000
+So the reward program name is qualified
+
+115
+00:04:17,000 --> 00:04:19,000
+by the passenger class.
+
+116
+00:04:19,000 --> 00:04:22,000
+If we had a different reward program for crew members,
+
+117
+00:04:22,000 --> 00:04:24,000
+we can nest that inside of the crew member class,
+
+118
+00:04:24,000 --> 00:04:27,000
+then its name would be qualified by the crew member class.
+
+119
+00:04:27,000 --> 00:04:29,000
+So we can go ahead and use this platinum variable,
+
+120
+00:04:29,000 --> 00:04:31,000
+and so we'll go ahead and set the level to three.
+
+121
+00:04:31,000 --> 00:04:34,000
+So we're saying now that this variable platinum
+
+122
+00:04:34,000 --> 00:04:37,000
+represents a reward program at the platinum level.
+
+123
+00:04:37,000 --> 00:04:38,000
+So we can use all of this stuff just as we do
+
+124
+00:04:38,000 --> 00:04:40,000
+any other bit of our code.
+
+125
+00:04:40,000 --> 00:04:42,000
+So if I want to do a test I can say hey Steve
+
+126
+00:04:42,000 --> 00:04:44,000
+get the reward program, what's its level.
+
+127
+00:04:44,000 --> 00:04:47,000
+Well if its level equals the level in platinum,
+
+128
+00:04:47,000 --> 00:04:50,000
+then we know that Steve is platinum.
+
+129
+00:04:50,000 --> 00:04:53,000
+So again, this is a case of using nested classes
+
+130
+00:04:53,000 --> 00:04:56,000
+as a mechanism for providing structure and scoping.
+
+131
+00:04:56,000 --> 00:04:59,000
+A reward program is a nested class that's marked
+
+132
+00:04:59,000 --> 00:05:03,000
+as static so its name was scoped within the passenger class.
+
+133
+00:05:03,000 --> 00:05:05,000
+In the next clip we'll see how things differ
+
+134
+00:05:05,000 --> 00:59:00,000
+if we nest a class and do not mark it as static.
+

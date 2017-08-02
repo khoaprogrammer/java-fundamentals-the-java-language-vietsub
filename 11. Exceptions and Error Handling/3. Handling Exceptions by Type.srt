@@ -1,0 +1,624 @@
+1
+00:00:01,000 --> 00:00:03,000
+As we introduced in the last clip,
+
+2
+00:00:03,000 --> 00:00:06,000
+errors are represented by exceptions.
+
+3
+00:00:06,000 --> 00:00:09,000
+Well, each exception is actually an object.
+
+4
+00:00:09,000 --> 00:00:12,000
+So, each exception type is described with a class.
+
+5
+00:00:12,000 --> 00:00:15,000
+Now, as with all classes, the root of the class hierarchy
+
+6
+00:00:15,000 --> 00:00:18,000
+for exceptions is the Object class.
+
+7
+00:00:18,000 --> 00:00:20,000
+When an exception occurs, it is thrown,
+
+8
+00:00:20,000 --> 00:00:22,000
+and, of course, you use catch to handle it.
+
+9
+00:00:22,000 --> 00:00:25,000
+Well, in order for a class to be able to be thrown,
+
+10
+00:00:25,000 --> 00:00:28,000
+it has to inherit from the base class, Throwable.
+
+11
+00:00:28,000 --> 00:00:29,000
+Now, one of the classes it inherits from Throwable
+
+12
+00:00:29,000 --> 00:00:31,000
+is the class, Error.
+
+13
+00:00:31,000 --> 00:00:33,000
+And there are a number of classes that, in turn,
+
+14
+00:00:33,000 --> 00:00:37,000
+inherit from Error, but any error that occurs,
+
+15
+00:00:37,000 --> 00:00:39,000
+that inherits from this class Error, is generally one
+
+16
+00:00:39,000 --> 00:00:41,000
+we don't have to think about too much in our code,
+
+17
+00:00:41,000 --> 00:00:44,000
+because it generally represents some kind of problem
+
+18
+00:00:44,000 --> 00:00:47,000
+directly inside the Java virtual machine.
+
+19
+00:00:47,000 --> 00:00:49,000
+So, because of that, we don't really handle those
+
+20
+00:00:49,000 --> 00:00:50,000
+very often.
+
+21
+00:00:50,000 --> 00:00:52,000
+An example of one of these might be like a linkage error.
+
+22
+00:00:52,000 --> 00:00:55,000
+A linkage error occurs when you try to load a class,
+
+23
+00:00:55,000 --> 00:00:59,000
+and it's not able to load that class up for some reason.
+
+24
+00:00:59,000 --> 00:01:01,000
+Now, the errors we tend to interact with much more
+
+25
+00:01:01,000 --> 00:01:03,000
+inherit from a class, Exception.
+
+26
+00:01:03,000 --> 00:01:05,000
+Now, one key class that inherits from Exception
+
+27
+00:01:05,000 --> 00:01:08,000
+is the class, RuntimeException.
+
+28
+00:01:08,000 --> 00:01:10,000
+And, there are many other classes that, in turn,
+
+29
+00:01:10,000 --> 00:01:12,000
+inherit from RuntimeException.
+
+30
+00:01:12,000 --> 00:01:15,000
+Generally speaking, those classes that inherit from
+
+31
+00:01:15,000 --> 00:01:19,000
+RuntimeException represent errors in your program,
+
+32
+00:01:19,000 --> 00:01:21,000
+not always but very commonly.
+
+33
+00:01:21,000 --> 00:01:23,000
+An example of one of those might be
+
+34
+00:01:23,000 --> 00:01:27,000
+a null pointer exception, right, so you're trying to use
+
+35
+00:01:27,000 --> 00:01:30,000
+a reference variable that you never assigned to, right?
+
+36
+00:01:30,000 --> 00:01:32,000
+So, that's kind of a programming error.
+
+37
+00:01:32,000 --> 00:01:34,000
+We'll see, though, that there are times that you do want
+
+38
+00:01:34,000 --> 00:01:36,000
+to handle certain runtime exceptions.
+
+39
+00:01:36,000 --> 00:01:39,000
+Now, the area where we work most commonly
+
+40
+00:01:39,000 --> 00:01:41,000
+are the classes that inherit more directly
+
+41
+00:01:41,000 --> 00:01:43,000
+from the Exception class.
+
+42
+00:01:43,000 --> 00:01:45,000
+And these are things we want to actually watch out for
+
+43
+00:01:45,000 --> 00:01:46,000
+in our programs.
+
+44
+00:01:46,000 --> 00:01:48,000
+An example here might be something like an IOException,
+
+45
+00:01:48,000 --> 00:01:50,000
+where you're trying to interact with a file
+
+46
+00:01:50,000 --> 00:01:52,000
+and you're not able to, something like that.
+
+47
+00:01:52,000 --> 00:01:55,000
+Now, these exceptions on this side here are so important
+
+48
+00:01:55,000 --> 00:01:58,000
+that we actually handle them correctly, they're considered
+
+49
+00:01:58,000 --> 00:01:59,000
+checked exceptions.
+
+50
+00:01:59,000 --> 00:02:03,000
+A checked exception means that the compiler actually looks
+
+51
+00:02:03,000 --> 00:02:06,000
+and anytime one of these exceptions is thrown,
+
+52
+00:02:06,000 --> 00:02:08,000
+the compiler looks to see if you actually handled it.
+
+53
+00:02:08,000 --> 00:02:11,000
+If you do not handle a checked exception,
+
+54
+00:02:11,000 --> 00:02:12,000
+the compiler will raise an error, in other words,
+
+55
+00:02:12,000 --> 00:02:13,000
+it won't let you build your program.
+
+56
+00:02:13,000 --> 00:02:17,000
+So, you have to handle all checked exceptions.
+
+57
+00:02:17,000 --> 00:02:19,000
+Now, the exceptions here under RuntimeException
+
+58
+00:02:19,000 --> 00:02:22,000
+are considered, unchecked exceptions, meaning that,
+
+59
+00:02:22,000 --> 00:02:25,000
+you can handle them but the compiler doesn't require that you do.
+
+60
+00:02:25,000 --> 00:02:27,000
+So, even if the compiler knows that it's possible
+
+61
+00:02:27,000 --> 00:02:29,000
+for that exception to be thrown, if you don't handle it,
+
+62
+00:02:29,000 --> 00:02:32,000
+it's not going to raise an error.
+
+63
+00:02:32,000 --> 00:02:34,000
+The way you can tell a unchecked exception from a
+
+64
+00:02:34,000 --> 00:02:37,000
+checked exception: any exception class that inherits from
+
+65
+00:02:37,000 --> 00:02:41,000
+RuntimeException is considered an unchecked exception.
+
+66
+00:02:41,000 --> 00:02:43,000
+Any class that inherits from Exception
+
+67
+00:02:43,000 --> 00:02:48,000
+but not RuntimeException is considered a checked exception.
+
+68
+00:02:48,000 --> 00:02:50,000
+Now, the virtual machine-related errors, those are treated
+
+69
+00:02:50,000 --> 00:02:53,000
+as unchecked exceptions, in other words, the compiler
+
+70
+00:02:53,000 --> 00:02:55,000
+does not require that you handle those.
+
+71
+00:02:55,000 --> 00:02:58,000
+Now, with exceptions being typed, what that means is that,
+
+72
+00:02:58,000 --> 00:03:03,000
+in our code, we can actually handle exceptions by type.
+
+73
+00:03:03,000 --> 00:03:06,000
+So, when we have our try statement, we can have
+
+74
+00:03:06,000 --> 00:03:08,000
+multiple catch blocks, which each catch block
+
+75
+00:03:08,000 --> 00:03:11,000
+handling a different kind of exception.
+
+76
+00:03:11,000 --> 00:03:13,000
+When an exception occurs, Java environment
+
+77
+00:03:13,000 --> 00:03:16,000
+will start testing your catch blocks starting at the top
+
+78
+00:03:16,000 --> 00:03:18,000
+and walking down each one.
+
+79
+00:03:18,000 --> 00:03:21,000
+The first catch block that it encounters that is assignable
+
+80
+00:03:21,000 --> 00:03:23,000
+for this exception is used.
+
+81
+00:03:23,000 --> 00:03:25,000
+And what we mean by assignable is that the catch block
+
+82
+00:03:25,000 --> 00:03:26,000
+handles an exception that is either
+
+83
+00:03:26,000 --> 00:03:28,000
+the type of the exception thrown,
+
+84
+00:03:28,000 --> 00:03:31,000
+or the base class of the type of exception thrown.
+
+85
+00:03:31,000 --> 00:03:34,000
+Now, because a base class can satisfy the catch statement,
+
+86
+00:03:34,000 --> 00:03:36,000
+we want to make sure our catch blocks start with
+
+87
+00:03:36,000 --> 00:03:39,000
+the most specific exception types first,
+
+88
+00:03:39,000 --> 00:03:42,000
+and get more general as we go down.
+
+89
+00:03:42,000 --> 00:03:44,000
+Now, to see this in action, let's take a look at the code
+
+90
+00:03:44,000 --> 00:03:45,000
+we wrote in the last clip.
+
+91
+00:03:45,000 --> 00:03:47,000
+Now remember that, what we do here is that we're reading
+
+92
+00:03:47,000 --> 00:03:50,000
+data from a file, and then we're simply totaling it up.
+
+93
+00:03:50,000 --> 00:03:52,000
+But in order to do that, we have to open the file,
+
+94
+00:03:52,000 --> 00:03:55,000
+we have to read each line in the file, we have to convert
+
+95
+00:03:55,000 --> 00:03:58,000
+each line from a string into a numeric value.
+
+96
+00:03:58,000 --> 00:04:00,000
+And so, there's a number of things that can go on there.
+
+97
+00:04:00,000 --> 00:04:02,000
+Let's focus in on the catch statement itself here,
+
+98
+00:04:02,000 --> 00:04:03,000
+so let's go ahead and just kind of move the const,
+
+99
+00:04:03,000 --> 00:04:05,000
+the try and the finally out of our way
+
+100
+00:04:05,000 --> 00:04:06,000
+so we can see the catch statement.
+
+101
+00:04:06,000 --> 00:04:08,000
+Now, right here, we catch exception,
+
+102
+00:04:08,000 --> 00:04:10,000
+but that's a very general handling.
+
+103
+00:04:10,000 --> 00:04:12,000
+Remember we said, that one of the things that might happen
+
+104
+00:04:12,000 --> 00:04:14,000
+is that, if there's bad data in the file,
+
+105
+00:04:14,000 --> 00:04:16,000
+and we try to convert it to a number,
+
+106
+00:04:16,000 --> 00:04:17,000
+that could throw an exception.
+
+107
+00:04:17,000 --> 00:04:19,000
+That actually throws a NumberFormatException.
+
+108
+00:04:19,000 --> 00:04:21,000
+So, we'll say we want to handle that guy.
+
+109
+00:04:21,000 --> 00:04:24,000
+So, I'm going to add a catch in for NumberFormatException.
+
+110
+00:04:24,000 --> 00:04:26,000
+Now, of course, the problem here is that, because
+
+111
+00:04:26,000 --> 00:04:28,000
+NumberFormatException inherits from Exception,
+
+112
+00:04:28,000 --> 00:04:32,000
+we'll never reach the catch block for NumberFormatException.
+
+113
+00:04:32,000 --> 00:04:34,000
+Now, there are times in my code where I handle
+
+114
+00:04:34,000 --> 00:04:36,000
+Exception directly, but that's not very common.
+
+115
+00:04:36,000 --> 00:04:38,000
+So, let's go and just get that guy out of the way there.
+
+116
+00:04:38,000 --> 00:04:40,000
+So, now we have our NumberFormatException.
+
+117
+00:04:40,000 --> 00:04:42,000
+So, if that happens, we will catch it, but, of course,
+
+118
+00:04:42,000 --> 00:04:44,000
+we won't catch any other exceptions.
+
+119
+00:04:44,000 --> 00:04:45,000
+Alright, so let's go ahead and just move that up
+
+120
+00:04:45,000 --> 00:04:47,000
+a little bit, we've got some room here now
+
+121
+00:04:47,000 --> 00:04:49,000
+to handle some other exceptions.
+
+122
+00:04:49,000 --> 00:04:51,000
+But, let's look at the tree hierarchy of the exceptions
+
+123
+00:04:51,000 --> 00:04:52,000
+that might happen here.
+
+124
+00:04:52,000 --> 00:04:55,000
+Now, we're now looking at the NumberFormatException.
+
+125
+00:04:55,000 --> 00:04:57,000
+Now, that's going to inherit up through some other classes
+
+126
+00:04:57,000 --> 00:04:59,000
+up to RuntimeException, which, of course,
+
+127
+00:04:59,000 --> 00:05:02,000
+inherits from Exception.
+
+128
+00:05:02,000 --> 00:05:04,000
+Now, notice that NumberFormatException inherits from
+
+129
+00:05:04,000 --> 00:05:07,000
+RuntimeException, mean that it is an unchecked exception.
+
+130
+00:05:07,000 --> 00:05:10,000
+So, the compiler doesn't require that I handle this one.
+
+131
+00:05:10,000 --> 00:05:12,000
+But, even though the compiler doesn't require it,
+
+132
+00:05:12,000 --> 00:05:14,000
+I know it might actually happen in my code,
+
+133
+00:05:14,000 --> 00:05:16,000
+so I'm going to go ahead and catch it anyway.
+
+134
+00:05:16,000 --> 00:05:18,000
+Now, other exceptions might happen, or things like
+
+135
+00:05:18,000 --> 00:05:21,000
+IOException, where I have a problem interacting with a file,
+
+136
+00:05:21,000 --> 00:05:24,000
+and there might even be a FileNotFoundException,
+
+137
+00:05:24,000 --> 00:05:27,000
+if I try to open a file that doesn't exist.
+
+138
+00:05:27,000 --> 00:05:29,000
+So, to deal with these exceptions, I can add in
+
+139
+00:05:29,000 --> 00:05:32,000
+a catch block for the IOException, I'll just write out
+
+140
+00:05:32,000 --> 00:05:35,000
+the error message there, and that would satisfy any problems
+
+141
+00:05:35,000 --> 00:05:37,000
+interacting with the file, as well as
+
+142
+00:05:37,000 --> 00:05:39,000
+the inability to open the file.
+
+143
+00:05:39,000 --> 00:05:41,000
+But, you know, not finding a file is
+
+144
+00:05:41,000 --> 00:05:44,000
+a pretty specific issue, much more so that just some kind of
+
+145
+00:05:44,000 --> 00:05:47,000
+general error interacting with the file.
+
+146
+00:05:47,000 --> 00:05:48,000
+So, in this case, I want to go ahead and handle
+
+147
+00:05:48,000 --> 00:05:51,000
+FileNotFoundException in addition to IOException.
+
+148
+00:05:51,000 --> 00:05:54,000
+Now, the important thing is that I put that before the
+
+149
+00:05:54,000 --> 00:05:57,000
+IOException, so, in that case, when I encounter
+
+150
+00:05:57,000 --> 00:05:59,000
+a file not found, I can just write out the fact that,
+
+151
+00:05:59,000 --> 00:06:02,000
+Hey, you know, that file wasn't there, as opposed to
+
+152
+00:06:02,000 --> 00:06:04,000
+a general file issue message.
+
+153
+00:06:04,000 --> 00:06:06,000
+And so, as we set up our exception handling, again the key
+
+154
+00:06:06,000 --> 00:06:09,000
+thing is to understand that the, use a type hierarchy as we
+
+155
+00:06:09,000 --> 00:06:11,000
+do this, and you want to handle your most specific
+
+156
+00:06:11,000 --> 00:59:00,000
+exceptions first, getting more general from there.
+

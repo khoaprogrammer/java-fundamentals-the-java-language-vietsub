@@ -1,0 +1,172 @@
+1
+00:00:01,000 --> 00:00:04,000
+Some of the key things we want to remember from this module.
+
+2
+00:00:04,000 --> 00:00:05,000
+Keep in mind that we want to make sure
+
+3
+00:00:05,000 --> 00:00:07,000
+that our objects are always created initially
+
+4
+00:00:07,000 --> 00:00:09,000
+in some useful state, we don't want to allow the user
+
+5
+00:00:09,000 --> 00:00:12,000
+to open an object and have it in an erroneous state.
+
+6
+00:00:12,000 --> 00:00:15,000
+They might not be able to do something meaningful with it,
+
+7
+00:00:15,000 --> 00:00:17,000
+but it should at least not be error-based
+
+8
+00:00:17,000 --> 00:00:19,000
+when they first create it.
+
+9
+00:00:19,000 --> 00:00:21,000
+In terms of how we can initialize our objects,
+
+10
+00:00:21,000 --> 00:00:23,000
+we saw there is a number of ways, the simplest way
+
+11
+00:00:23,000 --> 00:00:26,000
+is field initializers that allow us to just associate
+
+12
+00:00:26,000 --> 00:00:29,000
+a value with a field as part of its declaration.
+
+13
+00:00:29,000 --> 00:00:32,000
+As we associate code with our object creation,
+
+14
+00:00:32,000 --> 00:00:33,000
+then we have constructors, and every class
+
+15
+00:00:33,000 --> 00:00:35,000
+has at least one constructor.
+
+16
+00:00:35,000 --> 00:00:38,000
+If we don't provide a constructor, Java will provide one
+
+17
+00:00:38,000 --> 00:00:40,000
+that has no arguments on it.
+
+18
+00:00:40,000 --> 00:00:42,000
+We can provide multiple constructors, and remember that
+
+19
+00:00:42,000 --> 00:00:45,000
+once we provide one constructor, we're now responsible
+
+20
+00:00:45,000 --> 00:00:47,000
+to provide all of them.
+
+21
+00:00:47,000 --> 00:00:50,000
+If we provide a constructor that has arguments,
+
+22
+00:00:50,000 --> 00:00:52,000
+if we still want to allow people to create
+
+23
+00:00:52,000 --> 00:00:53,000
+an instance of our object using constructor
+
+24
+00:00:53,000 --> 00:00:55,000
+with no arguments, we then have to provide
+
+25
+00:00:55,000 --> 00:00:57,000
+that constructor as well.
+
+26
+00:00:57,000 --> 00:00:59,000
+We can chain our constructors together which allows us
+
+27
+00:00:59,000 --> 00:01:02,000
+to unify coding constructors so that we can pass
+
+28
+00:01:02,000 --> 00:01:05,000
+parameters from one constructor back to another
+
+29
+00:01:05,000 --> 00:01:07,000
+constructor to use that code.
+
+30
+00:01:07,000 --> 00:01:09,000
+Remember that when we do chain constructors together,
+
+31
+00:01:09,000 --> 00:01:12,000
+the call from one constructor to another has to be the
+
+32
+00:01:12,000 --> 00:01:14,000
+first line of that constructor.
+
+33
+00:01:14,000 --> 00:01:16,000
+To have code which gets executed no matter
+
+34
+00:01:16,000 --> 00:01:18,000
+which constructor is called, we have initialization blocks.
+
+35
+00:01:18,000 --> 00:01:20,000
+Remember that syntax in that is kind of weird,
+
+36
+00:01:20,000 --> 00:01:22,000
+it's just a set of brackets with code inside of it,
+
+37
+00:01:22,000 --> 00:01:25,000
+not part of any constructor or method.
+
+38
+00:01:25,000 --> 00:01:28,000
+Given all these different ways to initialize our objects
+
+39
+00:01:28,000 --> 00:01:30,000
+and get them constructed up, we want to make sure
+
+40
+00:01:30,000 --> 00:01:32,000
+we always keep the order in mind.
+
+41
+00:01:32,000 --> 00:01:34,000
+Remember that field initializers are first,
+
+42
+00:01:34,000 --> 00:01:35,000
+then initialization blocks
+
+43
+00:01:35,000 --> 00:59:00,000
+and then finally, our constructors.
+

@@ -1,0 +1,128 @@
+1
+00:00:01,000 --> 00:00:04,000
+Java primitive types are stored by value.
+
+2
+00:00:04,000 --> 00:00:05,000
+And that's important to understand
+
+3
+00:00:05,000 --> 00:00:07,000
+because it affects the behavior of applications
+
+4
+00:00:07,000 --> 00:00:12,000
+when we assign values from one variable to another.
+
+5
+00:00:12,000 --> 00:00:13,000
+Let's take a look here.
+
+6
+00:00:13,000 --> 00:00:16,000
+If I declare an integral variable called firstValue
+
+7
+00:00:16,000 --> 00:00:18,000
+and I assign the value 100 to it,
+
+8
+00:00:18,000 --> 00:00:19,000
+what's actually happening under the covers
+
+9
+00:00:19,000 --> 00:00:23,000
+is that an area of memory is being allocated.
+
+10
+00:00:23,000 --> 00:00:25,000
+It's named firstValue.
+
+11
+00:00:25,000 --> 00:00:30,000
+And the value 100 is stored inside that memory.
+
+12
+00:00:30,000 --> 00:00:31,000
+So now if I declare another variable,
+
+13
+00:00:31,000 --> 00:00:32,000
+in this case otherValue
+
+14
+00:00:32,000 --> 00:00:35,000
+and I assign firstValue to it,
+
+15
+00:00:35,000 --> 00:00:37,000
+again I'm allocating an area of storage.
+
+16
+00:00:37,000 --> 00:00:38,000
+I'm giving it a name,
+
+17
+00:00:38,000 --> 00:00:39,000
+otherValue.
+
+18
+00:00:39,000 --> 00:00:41,000
+And when I make the assignment,
+
+19
+00:00:41,000 --> 00:00:44,000
+the value 100 is being copied from firstValue
+
+20
+00:00:44,000 --> 00:00:47,000
+into other value.
+
+21
+00:00:47,000 --> 00:00:48,000
+And what that means is that
+
+22
+00:00:48,000 --> 00:00:51,000
+there's a distinctly separate copy of that value 100
+
+23
+00:00:51,000 --> 00:00:54,000
+being moved over into other value.
+
+24
+00:00:54,000 --> 00:00:55,000
+What that allows me to do, then,
+
+25
+00:00:55,000 --> 00:00:58,000
+is that if I make modifications to firstValue,
+
+26
+00:00:58,000 --> 00:01:00,000
+for example, assign the value of 50 to it,
+
+27
+00:01:00,000 --> 00:01:04,000
+that 50 replaces what's in firstValue,
+
+28
+00:01:04,000 --> 00:01:06,000
+but it leaves the variable called otherValue
+
+29
+00:01:06,000 --> 00:01:08,000
+completely untouched.
+
+30
+00:01:08,000 --> 00:01:10,000
+And that's what I mean by being stored by value.
+
+31
+00:01:10,000 --> 00:01:13,000
+So each primitive type variable
+
+32
+00:01:13,000 --> 00:59:00,000
+has its own separate copy of the data.
+

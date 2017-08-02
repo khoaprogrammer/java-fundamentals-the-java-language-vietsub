@@ -1,0 +1,616 @@
+1
+00:00:02,000 --> 00:00:03,000
+In this demo, we're going to use what we've learned in
+
+2
+00:00:03,000 --> 00:00:06,000
+this module to see if we can make our CalcEngine program
+
+3
+00:00:06,000 --> 00:00:10,000
+a little bit easier to manage and maintain.
+
+4
+00:00:10,000 --> 00:00:12,000
+Here we are inside of our CalcEngine program, and what I
+
+5
+00:00:12,000 --> 00:00:15,000
+want to focus on is this MathEquation class. If we take a
+
+6
+00:00:15,000 --> 00:00:18,000
+look at this class, it has a number of distinct
+
+7
+00:00:18,000 --> 00:00:22,000
+responsibilities. Some that are common to all operations,
+
+8
+00:00:22,000 --> 00:00:24,000
+and some things that are specific to an individual
+
+9
+00:00:24,000 --> 00:00:27,000
+operation. If we look here, first of all it declares all the
+
+10
+00:00:27,000 --> 00:00:30,000
+fields necessary to do the work. Then it has to have
+
+11
+00:00:30,000 --> 00:00:34,000
+getters and setters for all those fields. Then it has the
+
+12
+00:00:34,000 --> 00:00:36,000
+variety of constructors. Then if we scroll down here
+
+13
+00:00:36,000 --> 00:00:39,000
+towards the bottom, we get to this execute method
+
+14
+00:00:39,000 --> 00:00:42,000
+which actually is doing a number of different things.
+
+15
+00:00:42,000 --> 00:00:45,000
+And what I've found, when you see code like this, where
+
+16
+00:00:45,000 --> 00:00:49,000
+you've got a big condition like this, and there's individual
+
+17
+00:00:49,000 --> 00:00:52,000
+tasks inside of there, as a program gets more complex
+
+18
+00:00:52,000 --> 00:00:55,000
+and you start to work inside this method, this is a place
+
+19
+00:00:55,000 --> 00:00:58,000
+where, very often, enhancing or modifying the program
+
+20
+00:00:58,000 --> 00:01:00,000
+will introduce errors. Because we've got a bunch of kind of
+
+21
+00:01:00,000 --> 00:01:03,000
+loosely related code kind of clumped together. This is a
+
+22
+00:01:03,000 --> 00:01:05,000
+great opportunity for us to use the class inheritance
+
+23
+00:01:05,000 --> 00:01:08,000
+features of Java, and have a better division of
+
+24
+00:01:08,000 --> 00:01:11,000
+responsibilities. So what I want to do is go here and
+
+25
+00:01:11,000 --> 00:01:14,000
+go ahead and add a new class. We're going to call this
+
+26
+00:01:14,000 --> 00:01:17,000
+class CalculateBase. Just going to go ahead and new this
+
+27
+00:01:17,000 --> 00:01:21,000
+guy up, and as I mentioned we'll call this class
+
+28
+00:01:21,000 --> 00:01:24,000
+CalculateBase and based on its name you can tell that
+
+29
+00:01:24,000 --> 00:01:26,000
+it's probably going to be a base class. So other classes
+
+30
+00:01:26,000 --> 00:01:28,000
+are going to inherit from it. That's not a requirement,
+
+31
+00:01:28,000 --> 00:01:30,000
+it's just something I tend to do when I know a class is
+
+32
+00:01:30,000 --> 00:01:33,000
+going to be used only as a base class. This class will
+
+33
+00:01:33,000 --> 00:01:37,000
+actually act as a common point of inheritance from all
+
+34
+00:01:37,000 --> 00:01:40,000
+of our separate operations. So the thing that's going to
+
+35
+00:01:40,000 --> 00:01:42,000
+be common to all of these operations is the series of
+
+36
+00:01:42,000 --> 00:01:46,000
+fields we need to declare, leftVal, rightVal, and result.
+
+37
+00:01:46,000 --> 00:01:48,000
+In addition to that, we're going to have getters and setters
+
+38
+00:01:48,000 --> 00:01:52,000
+for each of those fields. So that takes care of the fields.
+
+39
+00:01:52,000 --> 00:01:55,000
+And now we need some constructors. And we'll of course
+
+40
+00:01:55,000 --> 00:01:57,000
+want our no-argument constructor, so we'll just say
+
+41
+00:01:57,000 --> 00:02:02,000
+public calculateBase and then give it an empty body.
+
+42
+00:02:02,000 --> 00:02:03,000
+Let's go ahead and create our other constructor. We'll
+
+43
+00:02:03,000 --> 00:02:06,000
+call this one publicCalculateBase, and in this one we want
+
+44
+00:02:06,000 --> 00:02:10,000
+to get our leftVal and our rightVal. And of course inside of
+
+45
+00:02:10,000 --> 00:02:13,000
+here, we're going to go ahead and set those into the fields.
+
+46
+00:02:13,000 --> 00:02:17,000
+So now we have all of our value management, the ability
+
+47
+00:02:17,000 --> 00:02:20,000
+to store the values we need, store the result, get and set
+
+48
+00:02:20,000 --> 00:02:24,000
+those values and result, and then construct the instance of
+
+49
+00:02:24,000 --> 00:02:27,000
+calculateBase. The next thing we want to do is have this
+
+50
+00:02:27,000 --> 00:02:30,000
+idea of performing an actual operation, actually do a
+
+51
+00:02:30,000 --> 00:02:34,000
+calculate. But the way we actually calculate will be
+
+52
+00:02:34,000 --> 00:02:37,000
+different for each class that inherits from this. So what
+
+53
+00:02:37,000 --> 00:02:38,000
+we're going to do is go ahead and create a void method
+
+54
+00:02:38,000 --> 00:02:43,000
+called calculate, but because there's no single definition
+
+55
+00:02:43,000 --> 00:02:45,000
+of calculate, we're going to go ahead and make this one
+
+56
+00:02:45,000 --> 00:02:48,000
+abstract. And of course as an abstract method it has an
+
+57
+00:02:48,000 --> 00:02:51,000
+empty body, and because there's an abstract method,
+
+58
+00:02:51,000 --> 00:02:54,000
+we need to go ahead and make the class abstract as well.
+
+59
+00:02:54,000 --> 00:02:58,000
+So that gives us our base class for all of our operations.
+
+60
+00:02:58,000 --> 00:03:01,000
+Now let's go ahead and create a class that inherits from
+
+61
+00:03:01,000 --> 00:03:04,000
+calculate base that does the individual operation.
+
+62
+00:03:04,000 --> 00:03:09,000
+Let's start with Adder. So again, we'll add a new class,
+
+63
+00:03:09,000 --> 00:03:14,000
+we'll call it Adder. So it will extend calculateBase.
+
+64
+00:03:14,000 --> 00:03:18,000
+So inside of here we want to have the constructors
+
+65
+00:03:18,000 --> 00:03:21,000
+we need, so again we'll have the no-argument constructor.
+
+66
+00:03:21,000 --> 00:03:23,000
+And then we'll have the constructor that accepts left and
+
+67
+00:03:23,000 --> 00:03:27,000
+right values. And inside of here, we're just going to call
+
+68
+00:03:27,000 --> 00:03:30,000
+up to our base class constructor that accepts those same
+
+69
+00:03:30,000 --> 00:03:34,000
+values. So with that simple bit of code we've now taken
+
+70
+00:03:34,000 --> 00:03:37,000
+care of kind of linking this derived class to the base class
+
+71
+00:03:37,000 --> 00:03:40,000
+and passing the values we need into the base class.
+
+72
+00:03:40,000 --> 00:03:43,000
+So now the last thing to do here is just go ahead and
+
+73
+00:03:43,000 --> 00:03:46,000
+implement calculate for this implementation. So we'll
+
+74
+00:03:46,000 --> 00:03:49,000
+go ahead and call it public void calculate, so we have our
+
+75
+00:03:49,000 --> 00:03:52,000
+method there. Let's go ahead and put the override annotation
+
+76
+00:03:52,000 --> 00:03:56,000
+on here. So now inside of here, we'll go ahead and implement
+
+77
+00:03:56,000 --> 00:03:59,000
+the way an Adder does its calculate, and all we're going
+
+78
+00:03:59,000 --> 00:04:01,000
+to do is add the two values together. So we'll declare a
+
+79
+00:04:01,000 --> 00:04:04,000
+local variable here. So now we've got to perform this
+
+80
+00:04:04,000 --> 00:04:08,000
+operation. If I try to use leftVal and rightVal directly,
+
+81
+00:04:08,000 --> 00:04:09,000
+it's not going to work because those are marked as
+
+82
+00:04:09,000 --> 00:04:12,000
+private inside the base class. What we can do though
+
+83
+00:04:12,000 --> 00:04:14,000
+is go ahead and use the getters. So we'll say
+
+84
+00:04:14,000 --> 00:04:19,000
+getLeftVal, and we'll add that to getRightVal.
+
+85
+00:04:19,000 --> 00:04:22,000
+Inside of here we'll go ahead and store that in the result,
+
+86
+00:04:22,000 --> 00:04:26,000
+so we'll simply call our setResult and pass in value.
+
+87
+00:04:26,000 --> 00:04:29,000
+And that's our complete Adder implementation. And you see
+
+88
+00:04:29,000 --> 00:04:31,000
+what we've done here is that the Adder class is very focused
+
+89
+00:04:31,000 --> 00:04:35,000
+on a very specific capability, adding values together.
+
+90
+00:04:35,000 --> 00:04:37,000
+If we go ahead and create a Subtractor it's going to be
+
+91
+00:04:37,000 --> 00:04:40,000
+very much the same, so we'll go ahead and add that class in.
+
+92
+00:04:40,000 --> 00:04:45,000
+Again, we'll call it Subtractor.
+
+93
+00:04:45,000 --> 00:04:49,000
+So Subtractor will again extend CalculateBase. We'll have
+
+94
+00:04:49,000 --> 00:04:52,000
+those same constructors we had before. We have the
+
+95
+00:04:52,000 --> 00:04:54,000
+no-argument constructor and then one to accept the
+
+96
+00:04:54,000 --> 00:04:57,000
+left and right value. Again we're going to go ahead and
+
+97
+00:04:57,000 --> 00:05:00,000
+override calculate, and then inside of here we're simply
+
+98
+00:05:00,000 --> 00:05:03,000
+going to subtract one value from the other and store it
+
+99
+00:05:03,000 --> 00:05:07,000
+back in result. And then we're going to do that same thing
+
+100
+00:05:07,000 --> 00:05:10,000
+with a Divider and a Multiplier. So we now have the four
+
+101
+00:05:10,000 --> 00:05:14,000
+operations - the Adder we created earlier, Subtractor,
+
+102
+00:05:14,000 --> 00:05:16,000
+and then if I look at Divider, it looks just like the other
+
+103
+00:05:16,000 --> 00:05:20,000
+classes except calculate does division. And Multiplier,
+
+104
+00:05:20,000 --> 00:05:22,000
+it looks just like the other classes except calculate
+
+105
+00:05:22,000 --> 00:05:25,000
+does multiplication. So we now have our four classes
+
+106
+00:05:25,000 --> 00:05:28,000
+that inherit from CalculateBase. Let's go to our main method
+
+107
+00:05:28,000 --> 00:05:32,000
+now and let's go ahead and use these classes. I just want to
+
+108
+00:05:32,000 --> 00:05:34,000
+scroll down here to the end. The first thing we'll do is
+
+109
+00:05:34,000 --> 00:05:36,000
+just go ahead and print out a little message in the output
+
+110
+00:05:36,000 --> 00:05:38,000
+window so we can see where the results for our new code
+
+111
+00:05:38,000 --> 00:05:41,000
+starts. So we simply print out that message using
+
+112
+00:05:41,000 --> 00:05:44,000
+inheritance. And then here, we'll go ahead and do the work
+
+113
+00:05:44,000 --> 00:05:47,000
+that we can do using our new classes. So remember that all
+
+114
+00:05:47,000 --> 00:05:49,000
+of our classes inherit from CalculateBase. Let's go ahead
+
+115
+00:05:49,000 --> 00:05:53,000
+and declare an array of type CalculateBase. So we have our
+
+116
+00:05:53,000 --> 00:05:56,000
+array, its name is calculators. Let's go ahead and use the
+
+117
+00:05:56,000 --> 00:05:59,000
+bracket-style initialization syntax. So what we'll do inside
+
+118
+00:05:59,000 --> 00:06:02,000
+of here is just new up each one of our classes. So first
+
+119
+00:06:02,000 --> 00:06:08,000
+I'll new up a Divider that accepts 100 and 50, then put
+
+120
+00:06:08,000 --> 00:06:12,000
+a comma. Now let's go ahead and new up an Adder, and
+
+121
+00:06:12,000 --> 00:06:14,000
+we'll go ahead and new up a Subtractor and a Multiplier
+
+122
+00:06:14,000 --> 00:06:17,000
+as well. So now we have all four operations in here.
+
+123
+00:06:17,000 --> 00:06:19,000
+Just going to go ahead move this divider over so it lines
+
+124
+00:06:19,000 --> 00:06:22,000
+up with the rest of them. So our CalculateBase can do
+
+125
+00:06:22,000 --> 00:06:24,000
+all four operations, and we're using the same values
+
+126
+00:06:24,000 --> 00:06:27,000
+here we used earlier when we were using our MathEquation
+
+127
+00:06:27,000 --> 00:06:31,000
+class. So now with that set up, what we can do now is
+
+128
+00:06:31,000 --> 00:06:33,000
+we can now loop through that array. Let's go ahead
+
+129
+00:06:33,000 --> 00:06:35,000
+and do a for loop. We'll declare
+
+130
+00:06:35,000 --> 00:06:38,000
+a variable calculateBase called calculator that's going to
+
+131
+00:06:38,000 --> 00:06:42,000
+loop through our calculators. Then inside of here. all
+
+132
+00:06:42,000 --> 00:06:44,000
+we're going to do is for each calculator, call its
+
+133
+00:06:44,000 --> 00:06:47,000
+calculate method, and then we'll print out the result
+
+134
+00:06:47,000 --> 00:06:50,000
+for each one. And so now we have new, complete
+
+135
+00:06:50,000 --> 00:06:53,000
+functionality using the four basic operations. So if I
+
+136
+00:06:53,000 --> 00:06:56,000
+go ahead and run this now, our program completes,
+
+137
+00:06:56,000 --> 00:06:58,000
+let's just enlarge this output window a little bit so we
+
+138
+00:06:58,000 --> 00:07:02,000
+can see. And we see we have our four results here.
+
+139
+00:07:02,000 --> 00:07:07,000
+Dividing 100 by 50 gives us 2. Adding 25 and 92 gives us
+
+140
+00:07:07,000 --> 00:07:11,000
+117. 225 minus 17 gives us 208.
+
+141
+00:07:11,000 --> 00:07:15,000
+And multiplying 11 by 3 gives us 33.
+
+142
+00:07:15,000 --> 00:07:16,000
+So everything works just as expected.
+
+143
+00:07:16,000 --> 00:07:19,000
+And everything works just as it did before. The key
+
+144
+00:07:19,000 --> 00:07:22,000
+difference here is this idea of manageability and
+
+145
+00:07:22,000 --> 00:07:26,000
+maintainability. Kind of localization of responsibility.
+
+146
+00:07:26,000 --> 00:07:28,000
+If I go into my MathEquation, again this execute method
+
+147
+00:07:28,000 --> 00:07:31,000
+is reasonably complex given the simple things that we're
+
+148
+00:07:31,000 --> 00:07:34,000
+doing, and it's this kind of code that easily breaks when
+
+149
+00:07:34,000 --> 00:07:37,000
+you're enhancing a program or changing a program.
+
+150
+00:07:37,000 --> 00:07:40,000
+If we compare that execute method to the Adder class's
+
+151
+00:07:40,000 --> 00:07:44,000
+calculate, which is two very simple lines, you see that
+
+152
+00:07:44,000 --> 00:07:46,000
+changing behaviors are going to be much simpler in
+
+153
+00:07:46,000 --> 00:07:49,000
+this environment as a result of having used inheritance
+
+154
+00:07:49,000 --> 00:59:00,000
+and then specialization in the derived classes.
+

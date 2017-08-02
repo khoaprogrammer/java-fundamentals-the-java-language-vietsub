@@ -1,0 +1,256 @@
+1
+00:00:02,000 --> 00:00:05,000
+Let's take a look at how the access modifiers affect
+
+2
+00:00:05,000 --> 00:00:07,000
+the uses of our class and its class members.
+
+3
+00:00:07,000 --> 00:00:10,000
+Now I have here basically the same class
+
+4
+00:00:10,000 --> 00:00:11,000
+we looked at earlier.
+
+5
+00:00:11,000 --> 00:00:13,000
+We have our class Flight, it has some fields declared
+
+6
+00:00:13,000 --> 00:00:15,000
+at the top, passengers and seats.
+
+7
+00:00:15,000 --> 00:00:17,000
+It has a constructor.
+
+8
+00:00:17,000 --> 00:00:20,000
+It then has a method add1Passenger and I've also added
+
+9
+00:00:20,000 --> 00:00:24,000
+another method to this called handleTooMany
+
+10
+00:00:24,000 --> 00:00:26,000
+that gets called from add1Passenger.
+
+11
+00:00:26,000 --> 00:00:28,000
+The idea being that when we call out 1Passenger
+
+12
+00:00:28,000 --> 00:00:30,000
+if there's not enough seats add1Passenger
+
+13
+00:00:30,000 --> 00:00:33,000
+will call handleTooMany to do whatever we want
+
+14
+00:00:33,000 --> 00:00:36,000
+to have happen when have too many passengers.
+
+15
+00:00:36,000 --> 00:00:39,000
+So now let's take this and we'll go ahead and add
+
+16
+00:00:39,000 --> 00:00:42,000
+a public access modifier to class Flight.
+
+17
+00:00:42,000 --> 00:00:45,000
+Now what that means, of course, is that we're now
+
+18
+00:00:45,000 --> 00:00:47,000
+allowed to access class Flight from anywhere.
+
+19
+00:00:47,000 --> 00:00:49,000
+So we can go out there and declare our variable
+
+20
+00:00:49,000 --> 00:00:52,000
+called flight1 of type Flight.
+
+21
+00:00:52,000 --> 00:00:54,000
+I'm going to go ahead and mark the constructor as
+
+22
+00:00:54,000 --> 00:00:56,000
+public as well which means I'm also allowed to now
+
+23
+00:00:56,000 --> 00:00:59,000
+create instances of this class.
+
+24
+00:00:59,000 --> 00:01:01,000
+We'll talk more about constructors shortly but the key
+
+25
+00:01:01,000 --> 00:01:03,000
+thing here is that we are allowed to create instances
+
+26
+00:01:03,000 --> 00:01:04,000
+of the Flight class.
+
+27
+00:01:04,000 --> 00:01:07,000
+Now let's take our two fields, passengers and seats,
+
+28
+00:01:07,000 --> 00:01:09,000
+and we'll mark those as private.
+
+29
+00:01:09,000 --> 00:01:12,000
+Now as private they're accessible from within the class.
+
+30
+00:01:12,000 --> 00:01:15,000
+So inside of our constructor we're allowed to access them.
+
+31
+00:01:15,000 --> 00:01:17,000
+Inside that method add1Passenger we're allowed
+
+32
+00:01:17,000 --> 00:01:19,000
+to access them, that's fine.
+
+33
+00:01:19,000 --> 00:01:22,000
+But if from outside the class, we tried to do something
+
+34
+00:01:22,000 --> 00:01:26,000
+like we did earlier like print out the value of passengers,
+
+35
+00:01:26,000 --> 00:01:27,000
+that's no longer allowed.
+
+36
+00:01:27,000 --> 00:01:29,000
+That would actually be a compile time error.
+
+37
+00:01:29,000 --> 00:01:32,000
+We wouldn't be allowed to have that code in our
+
+38
+00:01:32,000 --> 00:01:34,000
+program accessing it from outside of the class.
+
+39
+00:01:34,000 --> 00:01:36,000
+Now looking at our methods, let's say we mark
+
+40
+00:01:36,000 --> 00:01:41,000
+add1Passenger as public and handleTooMany as private.
+
+41
+00:01:41,000 --> 00:01:45,000
+Well, from outside the class I'm free to call add1Passenger.
+
+42
+00:01:45,000 --> 00:01:47,000
+That calls into add1Passenger.
+
+43
+00:01:47,000 --> 00:01:49,000
+Add1Passenger if it checks the number of seats,
+
+44
+00:01:49,000 --> 00:01:52,000
+if they're already full it actually would call down to
+
+45
+00:01:52,000 --> 00:01:55,000
+handleTooMany and that would be just fine because
+
+46
+00:01:55,000 --> 00:01:57,000
+we're accessing the handleTooMany from with the inside
+
+47
+00:01:57,000 --> 00:01:59,000
+of our Flight class.
+
+48
+00:01:59,000 --> 00:02:03,000
+But if from the outside we tried to call handleTooMany,
+
+49
+00:02:03,000 --> 00:02:05,000
+again, that would be a compile time error.
+
+50
+00:02:05,000 --> 00:02:09,000
+We're not allowed to access it from outside of the class.
+
+51
+00:02:09,000 --> 00:02:11,000
+Now one thing to note, now that our class is marked
+
+52
+00:02:11,000 --> 00:02:15,000
+as public, remember that earlier I mentioned that the class
+
+53
+00:02:15,000 --> 00:02:19,000
+file for class normally has the same name as the class.
+
+54
+00:02:19,000 --> 00:02:22,000
+Well once we mark this class as public, that becomes
+
+55
+00:02:22,000 --> 00:02:25,000
+a requirement; public classes have to be inside
+
+56
+00:02:25,000 --> 00:02:27,000
+of a source file with the same name.
+
+57
+00:02:27,000 --> 00:02:30,000
+So a public class called Flight has to be in a source file
+
+58
+00:02:30,000 --> 00:02:32,000
+called Flight.java.
+
+59
+00:02:32,000 --> 00:02:36,000
+Now if it's not marked as public, that requirement is not in place.
+
+60
+00:02:36,000 --> 00:02:38,000
+Are you allowed to name the file whatever you want.
+
+61
+00:02:38,000 --> 00:02:40,000
+You always want to be careful about choosing the name
+
+62
+00:02:40,000 --> 00:02:42,000
+the class file something different than the class.
+
+63
+00:02:42,000 --> 00:02:44,000
+There are legitimate reasons to do so.
+
+64
+00:02:44,000 --> 00:59:00,000
+But just consider that carefully.
+

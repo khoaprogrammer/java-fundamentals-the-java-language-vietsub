@@ -1,0 +1,636 @@
+1
+00:00:01,000 --> 00:00:03,000
+In this demo, we'll be using interfaces
+
+2
+00:00:03,000 --> 00:00:05,000
+to dynamically extend the capabilities
+
+3
+00:00:05,000 --> 00:00:06,000
+of our CalcEngine app.
+
+4
+00:00:06,000 --> 00:00:08,000
+As you'll recall, earlier in the course,
+
+5
+00:00:08,000 --> 00:00:10,000
+we add the ability of our CalcEngine app
+
+6
+00:00:10,000 --> 00:00:11,000
+where we could type in things like this,
+
+7
+00:00:11,000 --> 00:00:14,000
+where we say, "add 1.0 2.0,"
+
+8
+00:00:14,000 --> 00:00:16,000
+and the CalcEngine app would then
+
+9
+00:00:16,000 --> 00:00:18,000
+do the calculation and then write back the result
+
+10
+00:00:18,000 --> 00:00:20,000
+in a more traditional format,
+
+11
+00:00:20,000 --> 00:00:22,000
+"1.0 + 2.0 = 3.0."
+
+12
+00:00:22,000 --> 00:00:24,000
+What we want to do now
+
+13
+00:00:24,000 --> 00:00:26,000
+is make this more dynamic.
+
+14
+00:00:26,000 --> 00:00:28,000
+Currently, the way the app is written
+
+15
+00:00:28,000 --> 00:00:30,000
+is that the code that actually does all the work
+
+16
+00:00:30,000 --> 00:00:33,000
+to take things apart and produce results
+
+17
+00:00:33,000 --> 00:00:35,000
+is tied to a very particular class.
+
+18
+00:00:35,000 --> 00:00:38,000
+What we want to do now is make that more abstract.
+
+19
+00:00:38,000 --> 00:00:41,000
+With the core work, behave in terms of an interface
+
+20
+00:00:41,000 --> 00:00:43,000
+and have specific calculation abilities
+
+21
+00:00:43,000 --> 00:00:46,000
+implement that interface so we can easily
+
+22
+00:00:46,000 --> 00:00:50,000
+plug in new abilities into our CalcEngine app.
+
+23
+00:00:50,000 --> 00:00:52,000
+Here we are in our CalcEngine app,
+
+24
+00:00:52,000 --> 00:00:54,000
+and we're picking up our code where we left off
+
+25
+00:00:54,000 --> 00:00:56,000
+at the end of the last module.
+
+26
+00:00:56,000 --> 00:00:57,000
+What I've done, though, is that all the code
+
+27
+00:00:57,000 --> 00:00:59,000
+that was in our main function
+
+28
+00:00:59,000 --> 00:01:01,000
+is now in this function that is called useCalculateHelper.
+
+29
+00:01:01,000 --> 00:01:03,000
+And I've put in a call to that
+
+30
+00:01:03,000 --> 00:01:04,000
+function but commented it out.
+
+31
+00:01:04,000 --> 00:01:06,000
+Then what I've done is I've stripped it down
+
+32
+00:01:06,000 --> 00:01:08,000
+so we have just one statement,
+
+33
+00:01:08,000 --> 00:01:10,000
+you see the "add 25 and 92,"
+
+34
+00:01:10,000 --> 00:01:13,000
+and then a simple for loop to walk through
+
+35
+00:01:13,000 --> 00:01:15,000
+that array of statements.
+
+36
+00:01:15,000 --> 00:01:16,000
+So what I want to do now is, again,
+
+37
+00:01:16,000 --> 00:01:17,000
+take that functionality that we have
+
+38
+00:01:17,000 --> 00:01:19,000
+in CalculateHelper but make it more
+
+39
+00:01:19,000 --> 00:01:21,000
+dynamic by using interfaces.
+
+40
+00:01:21,000 --> 00:01:23,000
+Now, if we look at our CalculateHelper class,
+
+41
+00:01:23,000 --> 00:01:25,000
+go inside of here, basically when
+
+42
+00:01:25,000 --> 00:01:26,000
+we process a statement,
+
+43
+00:01:26,000 --> 00:01:28,000
+we do a few fundamental things.
+
+44
+00:01:28,000 --> 00:01:30,000
+We, first of all, we split it apart
+
+45
+00:01:30,000 --> 00:01:32,000
+based on a particular character,
+
+46
+00:01:32,000 --> 00:01:34,000
+which is the space character,
+
+47
+00:01:34,000 --> 00:01:35,000
+and then once we split it apart,
+
+48
+00:01:35,000 --> 00:01:37,000
+we have to identify the command we'll execute.
+
+49
+00:01:37,000 --> 00:01:40,000
+If I scroll down here, currently the list
+
+50
+00:01:40,000 --> 00:01:43,000
+of commands we support is hardcoded, right?
+
+51
+00:01:43,000 --> 00:01:44,000
+Add, subtract, multiply and divide,
+
+52
+00:01:44,000 --> 00:01:46,000
+so we've got to work through that list.
+
+53
+00:01:46,000 --> 00:01:48,000
+And then what I want do do is,
+
+54
+00:01:48,000 --> 00:01:50,000
+do the operation, but our operation
+
+55
+00:01:50,000 --> 00:01:54,000
+is done in terms of a base class, CalculateBase,
+
+56
+00:01:54,000 --> 00:01:56,000
+and then we produce output.
+
+57
+00:01:56,000 --> 00:01:57,000
+And the output relies on having
+
+58
+00:01:57,000 --> 00:01:59,000
+a symbol for each operation.
+
+59
+00:01:59,000 --> 00:02:00,000
+If we go up top here, you see that
+
+60
+00:02:00,000 --> 00:02:02,000
+each symbol is hardcoded, a plus sign,
+
+61
+00:02:02,000 --> 00:02:05,000
+a minus sign, an asterisk, and a slash for divide.
+
+62
+00:02:05,000 --> 00:02:08,000
+What we want to do now is take these ideas
+
+63
+00:02:08,000 --> 00:02:11,000
+and implement them more generically using an interface.
+
+64
+00:02:11,000 --> 00:02:13,000
+So let's go ahead and create an interface now
+
+65
+00:02:13,000 --> 00:02:16,000
+that represents the parts of doing this work.
+
+66
+00:02:16,000 --> 00:02:18,000
+So we go out here, im going to go ahead
+
+67
+00:02:18,000 --> 00:02:20,000
+and add an interface, so I add an interface,
+
+68
+00:02:20,000 --> 00:02:22,000
+in IntelliJ very similar to a class,
+
+69
+00:02:22,000 --> 00:02:26,000
+just do a right-click and New.
+
+70
+00:02:26,000 --> 00:02:27,000
+And the way it is in IntelliJ is
+
+71
+00:02:27,000 --> 00:02:29,000
+I still have the New Class dialogue,
+
+72
+00:02:29,000 --> 00:02:32,000
+but we change this from Class to say Interface.
+
+73
+00:02:32,000 --> 00:02:33,000
+But we'll see that we can
+
+74
+00:02:33,000 --> 00:02:34,000
+actually just type it in very easily.
+
+75
+00:02:34,000 --> 00:02:37,000
+And we'll call our interface MathProcessing.
+
+76
+00:02:37,000 --> 00:02:39,000
+So go ahead and create that.
+
+77
+00:02:39,000 --> 00:02:40,000
+And you can see the declaration is very simple,
+
+78
+00:02:40,000 --> 00:02:42,000
+it looks very much like a class,
+
+79
+00:02:42,000 --> 00:02:44,000
+it just says interface instead of class.
+
+80
+00:02:44,000 --> 00:02:46,000
+So we want the interface to represent
+
+81
+00:02:46,000 --> 00:02:47,000
+the parts of what we need to do.
+
+82
+00:02:47,000 --> 00:02:49,000
+Let's go ahead and add those in there.
+
+83
+00:02:49,000 --> 00:02:51,000
+So first thing we'll do is we'll add
+
+84
+00:02:51,000 --> 00:02:54,000
+a constant called SEPARATOR that has a value of space,
+
+85
+00:02:54,000 --> 00:02:56,000
+that's the character we use to split statements apart.
+
+86
+00:02:56,000 --> 00:02:59,000
+And then we want to model what we need to know
+
+87
+00:02:59,000 --> 00:03:01,000
+for anything that implements operations
+
+88
+00:03:01,000 --> 00:03:03,000
+that do these calculations.
+
+89
+00:03:03,000 --> 00:03:05,000
+Well, one thing that we need is a keyword,
+
+90
+00:03:05,000 --> 00:03:08,000
+so let's add a method called getKeyword.
+
+91
+00:03:08,000 --> 00:03:10,000
+So that would give back a keyword
+
+92
+00:03:10,000 --> 00:03:13,000
+that a particular implementation knows how to handle.
+
+93
+00:03:13,000 --> 00:03:14,000
+So, for example, it might be something like add,
+
+94
+00:03:14,000 --> 00:03:17,000
+if there's implementation that knows how to do adding.
+
+95
+00:03:17,000 --> 00:03:19,000
+The next thing we need to know from any implementation
+
+96
+00:03:19,000 --> 00:03:21,000
+is what symbol it wants to use in the output.
+
+97
+00:03:21,000 --> 00:03:23,000
+So we'll have another method
+
+98
+00:03:23,000 --> 00:03:26,000
+called getSymbol that's of type character.
+
+99
+00:03:26,000 --> 00:03:28,000
+For something that did addition,
+
+100
+00:03:28,000 --> 00:03:30,000
+that would be the plus sign.
+
+101
+00:03:30,000 --> 00:03:32,000
+And the last thing we need to do
+
+102
+00:03:32,000 --> 00:03:33,000
+is actually perform the operation,
+
+103
+00:03:33,000 --> 00:03:35,000
+so let's create a method called doCalculation
+
+104
+00:03:35,000 --> 00:03:38,000
+that returns a double, and accepts two values,
+
+105
+00:03:38,000 --> 00:03:41,000
+a leftVal and a rightVal that are both doubles.
+
+106
+00:03:41,000 --> 00:03:42,000
+So that's our entire interface.
+
+107
+00:03:42,000 --> 00:03:44,000
+Again, there's no implementations,
+
+108
+00:03:44,000 --> 00:03:45,000
+it's just a contract, right,
+
+109
+00:03:45,000 --> 00:03:47,000
+classes that implement this
+
+110
+00:03:47,000 --> 00:03:49,000
+will conform to the MathProcessing contract
+
+111
+00:03:49,000 --> 00:03:50,000
+which means they have to identify
+
+112
+00:03:50,000 --> 00:03:52,000
+the keywords they know how to work on,
+
+113
+00:03:52,000 --> 00:03:53,000
+return back a symbol that will be used
+
+114
+00:03:53,000 --> 00:03:55,000
+to produce the output, and then
+
+115
+00:03:55,000 --> 00:03:58,000
+do the calculation that goes with that keyword.
+
+116
+00:03:58,000 --> 00:04:00,000
+So what we can do is go ahead and use
+
+117
+00:04:00,000 --> 00:04:03,000
+our existing Adder class to implement this interface.
+
+118
+00:04:03,000 --> 00:04:04,000
+So I go over here to my Adder class.
+
+119
+00:04:04,000 --> 00:04:06,000
+I'm going to go ahead and have it
+
+120
+00:04:06,000 --> 00:04:07,000
+here implement MathProcessing.
+
+121
+00:04:07,000 --> 00:04:09,000
+And of course we have to go ahead
+
+122
+00:04:09,000 --> 00:04:10,000
+and provide the methods for that,
+
+123
+00:04:10,000 --> 00:04:12,000
+so I'm going to let the IDE do that for me
+
+124
+00:04:12,000 --> 00:04:13,000
+by saying Implement Methods.
+
+125
+00:04:13,000 --> 00:04:15,000
+I want to implement all the methods for that interface.
+
+126
+00:04:15,000 --> 00:04:17,000
+So we'll say OK.
+
+127
+00:04:17,000 --> 00:04:19,000
+And so that now provides those methods.
+
+128
+00:04:19,000 --> 00:04:22,000
+So we just have to do the work associated with each method.
+
+129
+00:04:22,000 --> 00:04:25,000
+Well my Adder, the keyword it handles is add,
+
+130
+00:04:25,000 --> 00:04:27,000
+so I'll return back the word add.
+
+131
+00:04:27,000 --> 00:04:29,000
+The symbol that it uses is plus sign.
+
+132
+00:04:29,000 --> 00:04:31,000
+And then we have to do the work.
+
+133
+00:04:31,000 --> 00:04:34,000
+Our Adder is written in terms of
+
+134
+00:04:34,000 --> 00:04:37,000
+this Calculate base class, so we'll do the addition
+
+135
+00:04:37,000 --> 00:04:40,000
+using the Calculate base class way of doing that.
+
+136
+00:04:40,000 --> 00:04:41,000
+All right, so first thing we'll do
+
+137
+00:04:41,000 --> 00:04:43,000
+is we'll set our left value,
+
+138
+00:04:43,000 --> 00:04:44,000
+then we'll set our right value,
+
+139
+00:04:44,000 --> 00:04:46,000
+then we'll call our calculate method,
+
+140
+00:04:46,000 --> 00:04:48,000
+and then finally we're going
+
+141
+00:04:48,000 --> 00:04:50,000
+to return back the result.
+
+142
+00:04:50,000 --> 00:04:52,000
+Scroll so you can see everything.
+
+143
+00:04:52,000 --> 00:04:53,000
+So you can see now, that's everything
+
+144
+00:04:53,000 --> 00:04:56,000
+Adder has to do to conform to this interface.
+
+145
+00:04:56,000 --> 00:04:58,000
+Now, just one thing to note, if I scroll up here,
+
+146
+00:04:58,000 --> 00:05:01,000
+Adder extends CalculateBase,
+
+147
+00:05:01,000 --> 00:05:03,000
+so we could have had CalculateBase
+
+148
+00:05:03,000 --> 00:05:05,000
+implement the MathProcessing interface
+
+149
+00:05:05,000 --> 00:05:08,000
+if we wanted all four classes that inherit from it
+
+150
+00:05:08,000 --> 00:05:10,000
+to implement the interface.
+
+151
+00:05:10,000 --> 00:05:11,000
+But basically, just had CalculateBase
+
+152
+00:05:11,000 --> 00:05:13,000
+say it implements MathProcessing,
+
+153
+00:05:13,000 --> 00:05:15,000
+make all the interface methods abstract
+
+154
+00:05:15,000 --> 00:05:18,000
+in a derived class would then implement it themselves.
+
+155
+00:05:18,000 --> 00:05:19,000
+We're going to focus in here now
+
+156
+00:05:19,000 --> 00:05:21,000
+just on having Adder do it.
+
+157
+00:05:21,000 --> 00:05:24,000
+So this gives us now a class that implements that interface.
+
+158
+00:05:24,000 --> 00:05:26,000
+In the next clip, let's do a code
+
+159
+00:05:26,000 --> 00:59:00,000
+we need to write to now use this interface.
+

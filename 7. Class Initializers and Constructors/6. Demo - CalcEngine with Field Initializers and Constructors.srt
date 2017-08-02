@@ -1,0 +1,552 @@
+1
+00:00:02,000 --> 00:00:04,000
+Let's take a look now how we can use
+
+2
+00:00:04,000 --> 00:00:06,000
+field initializers and constructors to improve
+
+3
+00:00:06,000 --> 00:00:09,000
+our CalcEngine app.
+
+4
+00:00:09,000 --> 00:00:11,000
+Before we start changing anything in our class,
+
+5
+00:00:11,000 --> 00:00:13,000
+let's imagine what it's like for someone who is using
+
+6
+00:00:13,000 --> 00:00:16,000
+our math equation class for the first time.
+
+7
+00:00:16,000 --> 00:00:18,000
+Whenever you start working with a new class
+
+8
+00:00:18,000 --> 00:00:21,000
+or class library, something you'll often do is
+
+9
+00:00:21,000 --> 00:00:23,000
+kind of write the simplest thing you can
+
+10
+00:00:23,000 --> 00:00:24,000
+and see what happens.
+
+11
+00:00:24,000 --> 00:00:26,000
+Let's imagine what that would be like with our class.
+
+12
+00:00:26,000 --> 00:00:29,000
+I will declare a variable called Test Equation
+
+13
+00:00:29,000 --> 00:00:31,000
+of type math equation.
+
+14
+00:00:31,000 --> 00:00:33,000
+We'll go ahead and new up math equation and of course,
+
+15
+00:00:33,000 --> 00:00:36,000
+what's the simplest thing we can do with our math equation?
+
+16
+00:00:36,000 --> 00:00:39,000
+We can go to our test equation and call execute.
+
+17
+00:00:39,000 --> 00:00:40,000
+Then what you would do from there
+
+18
+00:00:40,000 --> 00:00:43,000
+is just print out the result.
+
+19
+00:00:43,000 --> 00:00:45,000
+With that, we see the simplest thing you can do here.
+
+20
+00:00:45,000 --> 00:00:48,000
+Let's comment out all other code for just one second,
+
+21
+00:00:48,000 --> 00:00:51,000
+we're going to take this area of code and comment that out.
+
+22
+00:00:51,000 --> 00:00:53,000
+Let's go and run this now and see what the experience
+
+23
+00:00:53,000 --> 00:00:54,000
+will be like for someone who had just come
+
+24
+00:00:54,000 --> 00:00:57,000
+to explore our class.
+
+25
+00:00:57,000 --> 00:01:00,000
+You see what happens here, it's that they see a message
+
+26
+00:01:00,000 --> 00:01:02,000
+that says "Invalid opCode", right away they've had
+
+27
+00:01:02,000 --> 00:01:05,000
+this negative experience because what's happening is that
+
+28
+00:01:05,000 --> 00:01:08,000
+we're allowing them to create our class in a way where
+
+29
+00:01:08,000 --> 00:01:12,000
+our class has an invalid initial state.
+
+30
+00:01:12,000 --> 00:01:13,000
+Basically what's happening is that if I go
+
+31
+00:01:13,000 --> 00:01:17,000
+into the math equation class, the value of opCode
+
+32
+00:01:17,000 --> 00:01:20,000
+is at the null character, the all zeroes character.
+
+33
+00:01:20,000 --> 00:01:24,000
+If we go down here, to our execute method, since it's not
+
+34
+00:01:24,000 --> 00:01:28,000
+one of the valid opCodes, we right away print
+
+35
+00:01:28,000 --> 00:01:30,000
+an error message.
+
+36
+00:01:30,000 --> 00:01:32,000
+I think one of the best ways to deal with this
+
+37
+00:01:32,000 --> 00:01:35,000
+is actually allow the object to be initially created
+
+38
+00:01:35,000 --> 00:01:37,000
+in a valid state.
+
+39
+00:01:37,000 --> 00:01:39,000
+There is a couple of ways we can do this.
+
+40
+00:01:39,000 --> 00:01:41,000
+One way to do that is just set the opCode
+
+41
+00:01:41,000 --> 00:01:44,000
+to something that's valid, like an "a", that way
+
+42
+00:01:44,000 --> 00:01:46,000
+when they run it, what we'll do is we'll add
+
+43
+00:01:46,000 --> 00:01:48,000
+two zeroes together, and it will print out zero,
+
+44
+00:01:48,000 --> 00:01:50,000
+it won't do something useful, but it won't give them
+
+45
+00:01:50,000 --> 00:01:52,000
+a negative experience.
+
+46
+00:01:52,000 --> 00:01:56,000
+Now, when we run that code, it just prints out zero.
+
+47
+00:01:56,000 --> 00:01:58,000
+That's a reasonable experience for someone
+
+48
+00:01:58,000 --> 00:01:59,000
+who is exploring our class.
+
+49
+00:01:59,000 --> 00:02:02,000
+We want to make sure that our classes are being created
+
+50
+00:02:02,000 --> 00:02:05,000
+in some kind of reasonable state.
+
+51
+00:02:05,000 --> 00:02:07,000
+Let's head back here on the Main, let's go
+
+52
+00:02:07,000 --> 00:02:10,000
+and comment out that test code and let's bring back
+
+53
+00:02:10,000 --> 00:02:15,000
+our original code, uncomment that stuff.
+
+54
+00:02:15,000 --> 00:02:16,000
+Now, remember what happens here is that
+
+55
+00:02:16,000 --> 00:02:20,000
+the way we do it, we create this array for math equations
+
+56
+00:02:20,000 --> 00:02:22,000
+and then we go through them, we call to create
+
+57
+00:02:22,000 --> 00:02:25,000
+a math equation in each one of the array instances.
+
+58
+00:02:25,000 --> 00:02:27,000
+Remember that we've got this create method down here.
+
+59
+00:02:27,000 --> 00:02:30,000
+But the thing that's kind of ugly about this
+
+60
+00:02:30,000 --> 00:02:34,000
+is that the application has had to handle all the details
+
+61
+00:02:34,000 --> 00:02:37,000
+of setting each value, setting the opCode,
+
+62
+00:02:37,000 --> 00:02:38,000
+we don't want to have to do that.
+
+63
+00:02:38,000 --> 00:02:40,000
+If that's something that goes on frequently,
+
+64
+00:02:40,000 --> 00:02:42,000
+that's a perfect chance for a constructor.
+
+65
+00:02:42,000 --> 00:02:45,000
+Let's go back to our class here.
+
+66
+00:02:45,000 --> 00:02:48,000
+Let's take a look at some constructors that we could write.
+
+67
+00:02:48,000 --> 00:02:50,000
+Now, one very reasonable constructor, I think,
+
+68
+00:02:50,000 --> 00:02:52,000
+is to have one that accepts just an opCode,
+
+69
+00:02:52,000 --> 00:02:54,000
+it would make a lot of sense if I'm going to create
+
+70
+00:02:54,000 --> 00:02:56,000
+an equation and I know what kind of operation
+
+71
+00:02:56,000 --> 00:02:59,000
+I'm going to perform on it, but I don't know the values yet.
+
+72
+00:02:59,000 --> 00:03:02,000
+Let's go and create that constructor.
+
+73
+00:03:02,000 --> 00:03:04,000
+Make a public math equation, I'm going to give it a
+
+74
+00:03:04,000 --> 00:03:08,000
+single argument, a "char" opCode, then all we're going to do
+
+75
+00:03:08,000 --> 00:03:12,000
+inside of here is assign that parameter to our field opCode.
+
+76
+00:03:12,000 --> 00:03:15,000
+Now we support the ability to create into this math equation
+
+77
+00:03:15,000 --> 00:03:17,000
+with a specific opCode.
+
+78
+00:03:17,000 --> 00:03:19,000
+The thing is that it doesn't solve our current problem,
+
+79
+00:03:19,000 --> 00:03:21,000
+because we know that we want to create instances
+
+80
+00:03:21,000 --> 00:03:23,000
+that have the opCode and both values.
+
+81
+00:03:23,000 --> 00:03:26,000
+Let's go and create another constructor.
+
+82
+00:03:26,000 --> 00:03:29,000
+In this constructor, we'll accept the opCode
+
+83
+00:03:29,000 --> 00:03:32,000
+as well as left and right values.
+
+84
+00:03:32,000 --> 00:03:35,000
+Once we have that all set up, now,
+
+85
+00:03:35,000 --> 00:03:37,000
+inside of here, let's first look at storing the left
+
+86
+00:03:37,000 --> 00:03:38,000
+and right values.
+
+87
+00:03:38,000 --> 00:03:40,000
+We're just going to assign each of those
+
+88
+00:03:40,000 --> 00:03:42,000
+to the appropriate field.
+
+89
+00:03:42,000 --> 00:03:44,000
+So, we have that in place, we could do the same thing
+
+90
+00:03:44,000 --> 00:03:46,000
+with opCode, but since we already have
+
+91
+00:03:46,000 --> 00:03:49,000
+the constructor that accepts opCode, that's a perfect time
+
+92
+00:03:49,000 --> 00:03:51,000
+to go and chain up to that constructor.
+
+93
+00:03:51,000 --> 00:03:55,000
+We'll say this, and pass in the opCode we've received.
+
+94
+00:03:55,000 --> 00:03:57,000
+That way, we just call up to the other constructor
+
+95
+00:03:57,000 --> 00:03:59,000
+that already knows how to do that.
+
+96
+00:03:59,000 --> 00:04:02,000
+Before we go any further, let's just go and run our program
+
+97
+00:04:02,000 --> 00:04:05,000
+and make sure everything is OK.
+
+98
+00:04:05,000 --> 00:04:06,000
+If you look at what's happened here,
+
+99
+00:04:06,000 --> 00:04:09,000
+we've broken the existing code, you see,
+
+100
+00:04:09,000 --> 00:04:12,000
+we're back here in Main and right there we actually
+
+101
+00:04:12,000 --> 00:04:13,000
+tried to create just math equation,
+
+102
+00:04:13,000 --> 00:04:15,000
+we're not able to anymore because remember that we were
+
+103
+00:04:15,000 --> 00:04:18,000
+getting a default constructor before when we didn't provide
+
+104
+00:04:18,000 --> 00:04:20,000
+any constructors.
+
+105
+00:04:20,000 --> 00:04:23,000
+Once we provided a constructor, we're now responsible
+
+106
+00:04:23,000 --> 00:04:25,000
+to provide all the constructors.
+
+107
+00:04:25,000 --> 00:04:28,000
+What we want to do is head back to our math equation class
+
+108
+00:04:28,000 --> 00:04:29,000
+and go and create that constructor
+
+109
+00:04:29,000 --> 00:04:32,000
+that doesn't take any arguments.
+
+110
+00:04:32,000 --> 00:04:34,000
+With that, we should be able to run our code now.
+
+111
+00:04:34,000 --> 00:04:36,000
+Let's go and run it.
+
+112
+00:04:36,000 --> 00:04:39,000
+Now the code works again, we've now kept our old code
+
+113
+00:04:39,000 --> 00:04:42,000
+working and that's something we want to do.
+
+114
+00:04:42,000 --> 00:04:44,000
+Now let's look at how we can improve the code.
+
+115
+00:04:44,000 --> 00:04:45,000
+Now that we actually have a constructor
+
+116
+00:04:45,000 --> 00:04:48,000
+that accepts the opCode and both values,
+
+117
+00:04:48,000 --> 00:04:51,000
+if we go back to our Main up here, we shouldn't need
+
+118
+00:04:51,000 --> 00:04:53,000
+this create method anymore, we should be able to do
+
+119
+00:04:53,000 --> 00:04:55,000
+all that with constructors.
+
+120
+00:04:55,000 --> 00:04:58,000
+I head up here, each of these places where I called "create"
+
+121
+00:04:58,000 --> 00:05:02,000
+I can instead call the constructor, I can simply new up
+
+122
+00:05:02,000 --> 00:05:06,000
+math equation and when I new it up, I make sure
+
+123
+00:05:06,000 --> 00:05:08,000
+the parameter order matches, so in our constructor
+
+124
+00:05:08,000 --> 00:05:11,000
+we have the opCode first, then the values.
+
+125
+00:05:11,000 --> 00:05:16,000
+We'll cut that away, put that in the beginning.
+
+126
+00:05:16,000 --> 00:05:19,000
+Now, we're using the constructor to create that zero
+
+127
+00:05:19,000 --> 00:05:21,000
+instance of the array.
+
+128
+00:05:21,000 --> 00:05:25,000
+Going to do the same thing for the other three elements.
+
+129
+00:05:25,000 --> 00:05:26,000
+Now we're using the constructor to create
+
+130
+00:05:26,000 --> 00:05:29,000
+all the array elements so we can actually scroll down here
+
+131
+00:05:29,000 --> 00:05:32,000
+and just get rid of this "create method".
+
+132
+00:05:32,000 --> 00:05:35,000
+With that, it's good and running.
+
+133
+00:05:35,000 --> 00:05:37,000
+We get the same results we have been getting, which is good,
+
+134
+00:05:37,000 --> 00:05:40,000
+but the key thing is that we're using the constructor
+
+135
+00:05:40,000 --> 00:05:41,000
+to set up the object and get the object
+
+136
+00:05:41,000 --> 00:05:44,000
+to the appropriate state, so that we take that burden
+
+137
+00:05:44,000 --> 00:05:46,000
+off of the program that's using the object
+
+138
+00:05:46,000 --> 00:59:00,000
+and keep those details and housekeeping inside the object itself.
+

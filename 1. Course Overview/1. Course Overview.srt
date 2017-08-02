@@ -1,0 +1,64 @@
+1
+00:00:00,000 --> 00:00:12,000
+Hi everyone. My name is Jim Wilson. Welcome to my course, Java Fundamentals: The Java Language.
+
+2
+00:00:12,000 --> 00:00:16,000
+I'm president of JW Hedgehog, Incorporated and I've had the good fortune to have been a professional software
+
+3
+00:00:16,000 --> 00:00:20,000
+developer now for more than 30 years.
+
+4
+00:00:20,000 --> 00:00:24,000
+Did you know that Java is the most sought after programming language skill among software developers?
+
+5
+00:00:24,000 --> 00:00:29,000
+Java is supported on everything from smartphones to servers to many of the special purpose devices that make up
+
+6
+00:00:29,000 --> 00:00:32,000
+the inner node of things.
+
+7
+00:00:32,000 --> 00:00:37,000
+In addition to being important to software developers, a recent survey listed Java as one of the five most
+
+8
+00:00:37,000 --> 00:00:42,000
+important skills for data scientists, those folks who work their way through all of that big data.
+
+9
+00:00:42,000 --> 00:00:47,000
+In this course we're going to teach you everything you need to know to get started working in the Java
+
+10
+00:00:47,000 --> 00:00:48,000
+programming language.
+
+11
+00:00:48,000 --> 00:00:54,000
+So the major topics we cover include setting up your Java development environment, language constructs &amp;
+
+12
+00:00:54,000 --> 00:01:04,000
+control flow, classes, class inheritance, &amp; interfaces, exceptions &amp; error handling, creating &amp; using Java packages.
+
+13
+00:01:04,000 --> 00:01:08,000
+By the end of this course you'll be ready to begin working in any of the many environments that rely on
+
+14
+00:01:08,000 --> 00:01:11,000
+the Java programming language. This is a beginning course
+
+15
+00:01:11,000 --> 00:01:16,000
+and therefore makes no assumptions on prior programming experience. I hope you'll join me as we learn
+
+16
+00:01:16,000 --> 00:59:00,000
+Java programming with the course, Java Fundamentals: The Java Language, at Pluralsight.
+

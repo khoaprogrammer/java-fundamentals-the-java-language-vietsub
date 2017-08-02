@@ -1,0 +1,628 @@
+1
+00:00:02,000 --> 00:00:03,000
+In the classes we've been working with
+
+2
+00:00:03,000 --> 00:00:05,000
+throughout the course, we've always been using
+
+3
+00:00:05,000 --> 00:00:07,000
+what are called instance members
+
+4
+00:00:07,000 --> 00:00:08,000
+where each class member is associated
+
+5
+00:00:08,000 --> 00:00:10,000
+with specific class instance
+
+6
+00:00:10,000 --> 00:00:12,000
+and that's what you normally want,
+
+7
+00:00:12,000 --> 00:00:15,000
+but sometimes you want to be able to have a class member
+
+8
+00:00:15,000 --> 00:00:17,000
+that's available class-wide
+
+9
+00:00:17,000 --> 00:00:19,000
+and that's where static members come in.
+
+10
+00:00:19,000 --> 00:00:21,000
+So a static member is a class member
+
+11
+00:00:21,000 --> 00:00:26,000
+that's not associated with any individual instance.
+
+12
+00:00:26,000 --> 00:00:28,000
+Now the way you declare static members
+
+13
+00:00:28,000 --> 00:00:30,000
+is very similar to the way you declare instance members
+
+14
+00:00:30,000 --> 00:00:33,000
+except you include the keyword static.
+
+15
+00:00:33,000 --> 00:00:35,000
+So a static field is declared just like a regular field
+
+16
+00:00:35,000 --> 00:00:37,000
+except you put the keyword static in front of it,
+
+17
+00:00:37,000 --> 00:00:40,000
+similarly when declaring a static method.
+
+18
+00:00:40,000 --> 00:00:42,000
+The thing is that when you create static members
+
+19
+00:00:42,000 --> 00:00:44,000
+because they're not associated with individual instance,
+
+20
+00:00:44,000 --> 00:00:47,000
+you can actually access them using the class name.
+
+21
+00:00:47,000 --> 00:00:49,000
+So if you think about static fields,
+
+22
+00:00:49,000 --> 00:00:52,000
+a static field would be a field
+
+23
+00:00:52,000 --> 00:00:55,000
+whose value is not associated with any specific instance.
+
+24
+00:00:55,000 --> 00:00:57,000
+Again, it's a class Y.
+
+25
+00:00:57,000 --> 00:01:00,000
+What that means is that each instance of the class
+
+26
+00:01:00,000 --> 00:01:04,000
+will actually access the same value for that field.
+
+27
+00:01:04,000 --> 00:01:06,000
+So a static method is usually a case
+
+28
+00:01:06,000 --> 00:01:08,000
+where you have a method that wants to do some work
+
+29
+00:01:08,000 --> 00:01:11,000
+that's not specific to any individual instance.
+
+30
+00:01:11,000 --> 00:01:13,000
+Static methods can only access static fields.
+
+31
+00:01:13,000 --> 00:01:16,000
+They can't access instance fields because, again,
+
+32
+00:01:16,000 --> 00:01:18,000
+they're not associated with any individual instance.
+
+33
+00:01:18,000 --> 00:01:20,000
+So let's take a look at using this in some code.
+
+34
+00:01:20,000 --> 00:01:22,000
+So we've got our flight class we've been using
+
+35
+00:01:22,000 --> 00:01:24,000
+throughout the course and we know that
+
+36
+00:01:24,000 --> 00:01:25,000
+one of the things we've done is keep track
+
+37
+00:01:25,000 --> 00:01:27,000
+of the number of passengers.
+
+38
+00:01:27,000 --> 00:01:29,000
+So each flight can track how many people
+
+39
+00:01:29,000 --> 00:01:32,000
+are on that one flight with the passenger's field.
+
+40
+00:01:32,000 --> 00:01:34,000
+We have this add one passenger method
+
+41
+00:01:34,000 --> 00:01:37,000
+that increments the count there.
+
+42
+00:01:37,000 --> 00:01:38,000
+Now let's say what we want to do now
+
+43
+00:01:38,000 --> 00:01:40,000
+is that in addition to each flight
+
+44
+00:01:40,000 --> 00:01:41,000
+keeping track of how many passengers
+
+45
+00:01:41,000 --> 00:01:44,000
+are on that flight, we'd like to have an easy way
+
+46
+00:01:44,000 --> 00:01:45,000
+to keep track of how many passengers
+
+47
+00:01:45,000 --> 00:01:48,000
+are on the total of all flights.
+
+48
+00:01:48,000 --> 00:01:50,000
+And that's a great use for a static field.
+
+49
+00:01:50,000 --> 00:01:51,000
+So what I'm going to do is add a field here
+
+50
+00:01:51,000 --> 00:01:53,000
+called all passengers.
+
+51
+00:01:53,000 --> 00:01:55,000
+Again, I declared just like an instance field,
+
+52
+00:01:55,000 --> 00:01:57,000
+but I've actually marked it with static.
+
+53
+00:01:57,000 --> 00:02:00,000
+That now means it's not associated with any instance.
+
+54
+00:02:00,000 --> 00:02:02,000
+I'll add some methods to work with it.
+
+55
+00:02:02,000 --> 00:02:05,000
+I'll have a method here get all passengers
+
+56
+00:02:05,000 --> 00:02:07,000
+and then I'll simply return back the value
+
+57
+00:02:07,000 --> 00:02:09,000
+of all passengers.
+
+58
+00:02:09,000 --> 00:02:11,000
+So again, get all passengers to declare
+
+59
+00:02:11,000 --> 00:02:13,000
+like any other method except it's marked as static.
+
+60
+00:02:13,000 --> 00:02:15,000
+And I also want to have the ability to set number
+
+61
+00:02:15,000 --> 00:02:17,000
+of all passengers back to zero.
+
+62
+00:02:17,000 --> 00:02:19,000
+So I have a method here called reset all passengers,
+
+63
+00:02:19,000 --> 00:02:22,000
+which then just sets it to zero.
+
+64
+00:02:22,000 --> 00:02:23,000
+So let's use this in some code.
+
+65
+00:02:23,000 --> 00:02:25,000
+So we go out here and let's say first of all
+
+66
+00:02:25,000 --> 00:02:28,000
+we want to just go ahead and reset all passengers.
+
+67
+00:02:28,000 --> 00:02:30,000
+Now again, the key thing to understand in static members
+
+68
+00:02:30,000 --> 00:02:33,000
+is that they are stored separate from any instance.
+
+69
+00:02:33,000 --> 00:02:35,000
+Alright, so the storage area for all passengers
+
+70
+00:02:35,000 --> 00:02:38,000
+is outside of any instance of the flight class.
+
+71
+00:02:38,000 --> 00:02:40,000
+Alright, so if I go out here and I say
+
+72
+00:02:40,000 --> 00:02:43,000
+print line flight dot get all passengers,
+
+73
+00:02:43,000 --> 00:02:45,000
+get all passengers will get the current value
+
+74
+00:02:45,000 --> 00:02:47,000
+of all passengers, which of course is zero
+
+75
+00:02:47,000 --> 00:02:49,000
+and print that out.
+
+76
+00:02:49,000 --> 00:02:51,000
+So now the question is, how do I change the value
+
+77
+00:02:51,000 --> 00:02:52,000
+of all passengers?
+
+78
+00:02:52,000 --> 00:02:54,000
+How do I increment that, cause I want to increment it
+
+79
+00:02:54,000 --> 00:02:56,000
+each time I add a passenger.
+
+80
+00:02:56,000 --> 00:02:58,000
+Well in our add one passenger method,
+
+81
+00:02:58,000 --> 00:03:01,000
+just below where you increment passengers by one,
+
+82
+00:03:01,000 --> 00:03:04,000
+we'll go ahead and just simply add one to all passengers.
+
+83
+00:03:04,000 --> 00:03:06,000
+See we're not really interacting with it any differently.
+
+84
+00:03:06,000 --> 00:03:08,000
+What's going to change its behavior
+
+85
+00:03:08,000 --> 00:03:10,000
+is the way its storage is managed.
+
+86
+00:03:10,000 --> 00:03:14,000
+Let's say we have now our flight LAX045.
+
+87
+00:03:14,000 --> 00:03:16,000
+So we actually created an instance of the flight class.
+
+88
+00:03:16,000 --> 00:03:17,000
+Alright, it has its own memory.
+
+89
+00:03:17,000 --> 00:03:20,000
+Again, notice that instance memory is separate
+
+90
+00:03:20,000 --> 00:03:23,000
+from the all passengers memory.
+
+91
+00:03:23,000 --> 00:03:26,000
+So if I go off and I say LAX045, add one passenger,
+
+92
+00:03:26,000 --> 00:03:30,000
+of course, the passenger for the instance LAX045
+
+93
+00:03:30,000 --> 00:03:34,000
+gets incremented by one as does all passengers.
+
+94
+00:03:34,000 --> 00:03:35,000
+Alright, so if I call add one passenger again
+
+95
+00:03:35,000 --> 00:03:39,000
+on LAX045, LAX045 passenger increments by one
+
+96
+00:03:39,000 --> 00:03:42,000
+as does all passengers.
+
+97
+00:03:42,000 --> 00:03:44,000
+But now let's create another instance.
+
+98
+00:03:44,000 --> 00:03:46,000
+We have our SLC015.
+
+99
+00:03:46,000 --> 00:03:49,000
+Of course, it has its own memory associated with it.
+
+100
+00:03:49,000 --> 00:03:53,000
+So when I call add one passenger on SLC015,
+
+101
+00:03:53,000 --> 00:03:56,000
+passengers in SLC015 increments by one
+
+102
+00:03:56,000 --> 00:03:59,000
+going from zero to one, but all passengers
+
+103
+00:03:59,000 --> 00:04:00,000
+keeps its old value.
+
+104
+00:04:00,000 --> 00:04:03,000
+So it now goes from two to three.
+
+105
+00:04:03,000 --> 00:04:05,000
+You see that all passengers is continuing to count up
+
+106
+00:04:05,000 --> 00:04:08,000
+even as we interact with it through different instances.
+
+107
+00:04:08,000 --> 00:04:10,000
+That's where the power statics come in.
+
+108
+00:04:10,000 --> 00:04:12,000
+So now if I go ahead and print out the value
+
+109
+00:04:12,000 --> 00:04:14,000
+of get all passengers, I get three.
+
+110
+00:04:14,000 --> 00:04:18,000
+So I'm not doing any extra work to keep this total value
+
+111
+00:04:18,000 --> 00:04:19,000
+across all instances.
+
+112
+00:04:19,000 --> 00:04:23,000
+So by declaring it as static, gave me that ability.
+
+113
+00:04:23,000 --> 00:04:27,000
+Now as I mentioned, we can access static members
+
+114
+00:04:27,000 --> 00:04:29,000
+by using the class name.
+
+115
+00:04:29,000 --> 00:04:33,000
+But Java also has a shorthand for accessing static members
+
+116
+00:04:33,000 --> 00:04:35,000
+called static import.
+
+117
+00:04:35,000 --> 00:04:38,000
+And static import allows you to access static members
+
+118
+00:04:38,000 --> 00:04:40,000
+without even using the class name.
+
+119
+00:04:40,000 --> 00:04:42,000
+So it's really just going to be shorthand mechanism.
+
+120
+00:04:42,000 --> 00:04:44,000
+So we take a look at our code here, again,
+
+121
+00:04:44,000 --> 00:04:46,000
+where we're using the flight class
+
+122
+00:04:46,000 --> 00:04:48,000
+and we were calling in to reset all passengers
+
+123
+00:04:48,000 --> 00:04:49,000
+and get all passengers.
+
+124
+00:04:49,000 --> 00:04:51,000
+Well rather than have to always say flight dot
+
+125
+00:04:51,000 --> 00:04:53,000
+in front of it, we'd like to be able to say
+
+126
+00:04:53,000 --> 00:04:56,000
+reset all passengers or get all passengers.
+
+127
+00:04:56,000 --> 00:04:58,000
+We'll use a static import to do that.
+
+128
+00:04:58,000 --> 00:05:00,000
+So first I'm going to give us just a little bit more room
+
+129
+00:05:00,000 --> 00:05:03,000
+to work here and so it's an import statement
+
+130
+00:05:03,000 --> 00:05:05,000
+so we're going to use an import at the top.
+
+131
+00:05:05,000 --> 00:05:06,000
+Remember, we used import earlier
+
+132
+00:05:06,000 --> 00:05:09,000
+to actually be able to use shorthands for classes
+
+133
+00:05:09,000 --> 00:05:11,000
+so we didn't have to package qualify them.
+
+134
+00:05:11,000 --> 00:05:13,000
+Now we're going to use the import for shorthands
+
+135
+00:05:13,000 --> 00:05:15,000
+for static members, but we don't have to qualify them.
+
+136
+00:05:15,000 --> 00:05:16,000
+So we have the word import.
+
+137
+00:05:16,000 --> 00:05:19,000
+In this case, we include the word static.
+
+138
+00:05:19,000 --> 00:05:20,000
+So this is a static import.
+
+139
+00:05:20,000 --> 00:05:23,000
+We then give it the package name, dot the class name,
+
+140
+00:05:23,000 --> 00:05:26,000
+which is our flight class and then we also include
+
+141
+00:05:26,000 --> 00:05:27,000
+the member name.
+
+142
+00:05:27,000 --> 00:05:29,000
+So reset all passengers.
+
+143
+00:05:29,000 --> 00:05:32,000
+So now where we say flight dot reset all passengers,
+
+144
+00:05:32,000 --> 00:05:35,000
+now that can simply become reset all passengers.
+
+145
+00:05:35,000 --> 00:05:39,000
+The import statement allows us to use just a method name.
+
+146
+00:05:39,000 --> 00:05:41,000
+So the same thing for get all passengers.
+
+147
+00:05:41,000 --> 00:05:45,000
+I can have it import, static, the package name,
+
+148
+00:05:45,000 --> 00:05:49,000
+dot the class name, in this case flight dot the method name.
+
+149
+00:05:49,000 --> 00:05:51,000
+So in each case we now print out
+
+150
+00:05:51,000 --> 00:05:53,000
+and call get all passengers, instead of saying flight dot
+
+151
+00:05:53,000 --> 00:05:56,000
+get all passengers, we'll say get all passengers.
+
+152
+00:05:56,000 --> 00:05:58,000
+Same thing in the other print statement.
+
+153
+00:05:58,000 --> 00:06:00,000
+And so these static imports just allowed us
+
+154
+00:06:00,000 --> 00:06:03,000
+to type that more succinctly.
+
+155
+00:06:03,000 --> 00:06:05,000
+In the next clip we'll see some other uses
+
+156
+00:06:05,000 --> 00:06:06,000
+and other behaviors of working with statics
+
+157
+00:06:06,000 --> 00:59:00,000
+as we talked about static initializers.
+

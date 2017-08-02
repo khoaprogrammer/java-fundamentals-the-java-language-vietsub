@@ -1,0 +1,296 @@
+1
+00:00:02,000 --> 00:00:04,000
+Most of the time we do not want to allow access
+
+2
+00:00:04,000 --> 00:00:08,000
+to the fields within our classes from outside of that class.
+
+3
+00:00:08,000 --> 00:00:11,000
+We want to hide those kind of details because the fields
+
+4
+00:00:11,000 --> 00:00:13,000
+are a very fundamental part, are very kind of
+
+5
+00:00:13,000 --> 00:00:16,000
+low level part of the way a class solves a problem.
+
+6
+00:00:16,000 --> 00:00:18,000
+And they're very likely to change over time.
+
+7
+00:00:18,000 --> 00:00:21,000
+So we don't want to have this kind of details exposed
+
+8
+00:00:21,000 --> 00:00:22,000
+outside of the class.
+
+9
+00:00:22,000 --> 00:00:24,000
+Now that doesn't mean that we don't want to allow
+
+10
+00:00:24,000 --> 00:00:27,000
+interaction with the information side of those fields
+
+11
+00:00:27,000 --> 00:00:28,000
+from outside the class.
+
+12
+00:00:28,000 --> 00:00:31,000
+So what we do is we generally use methods to control
+
+13
+00:00:31,000 --> 00:00:35,000
+access to our fields.
+
+14
+00:00:35,000 --> 00:00:38,000
+As you expect this is an issue that we have to address
+
+15
+00:00:38,000 --> 00:00:39,000
+very frequently.
+
+16
+00:00:39,000 --> 00:00:43,000
+So a common pattern called the accessor/mutator pattern
+
+17
+00:00:43,000 --> 00:00:44,000
+has a reason to deal with that.
+
+18
+00:00:44,000 --> 00:00:46,000
+Now if you're not familiar with the term pattern
+
+19
+00:00:46,000 --> 00:00:47,000
+all that means is that's just kind of a common way
+
+20
+00:00:47,000 --> 00:00:49,000
+we solve the problem.
+
+21
+00:00:49,000 --> 00:00:50,000
+Now let's take a look at our Flight class
+
+22
+00:00:50,000 --> 00:00:51,000
+we've been working with.
+
+23
+00:00:51,000 --> 00:00:53,000
+We have a couple of fields inside of here:
+
+24
+00:00:53,000 --> 00:00:54,000
+passengers and seats.
+
+25
+00:00:54,000 --> 00:00:58,000
+Let's say that we decide that we'd like to allow
+
+26
+00:00:58,000 --> 00:01:00,000
+interaction with the seats values.
+
+27
+00:01:00,000 --> 00:01:02,000
+Now, again, we don't want to give them direct access
+
+28
+00:01:02,000 --> 00:01:04,000
+to seats, we don't want to make that public.
+
+29
+00:01:04,000 --> 00:01:06,000
+So what we'll do is we'll use methods to address that.
+
+30
+00:01:06,000 --> 00:01:09,000
+So what we do is we use what's called an accessor
+
+31
+00:01:09,000 --> 00:01:10,000
+to get to the field value.
+
+32
+00:01:10,000 --> 00:01:12,000
+It's often just called a getter.
+
+33
+00:01:12,000 --> 00:01:14,000
+And what we do is we create a method normally
+
+34
+00:01:14,000 --> 00:01:17,000
+that has the word get followed by the field name.
+
+35
+00:01:17,000 --> 00:01:22,000
+So the accessor for our seats would simply be getSeats.
+
+36
+00:01:22,000 --> 00:01:25,000
+Notice that the return type is the same as the field itself
+
+37
+00:01:25,000 --> 00:01:28,000
+and also notice that the method is following CamelCase.
+
+38
+00:01:28,000 --> 00:01:31,000
+A lowercase g for the first word and an uppercase S
+
+39
+00:01:31,000 --> 00:01:33,000
+for Seats the second word.
+
+40
+00:01:33,000 --> 00:01:35,000
+Even though the field started with a lowercase s
+
+41
+00:01:35,000 --> 00:01:37,000
+that doesn't matter, we're going to use
+
+42
+00:01:37,000 --> 00:01:39,000
+consistent CamelCasing as we name things.
+
+43
+00:01:39,000 --> 00:01:43,000
+And all the accessor does is just return seats.
+
+44
+00:01:43,000 --> 00:01:46,000
+So easy for the consumer of the class to get to the value
+
+45
+00:01:46,000 --> 00:01:48,000
+but we've got control if we ever change
+
+46
+00:01:48,000 --> 00:01:51,000
+the way we manage seats, that will not affect
+
+47
+00:01:51,000 --> 00:01:53,000
+anyone using this class.
+
+48
+00:01:53,000 --> 00:01:55,000
+To allow the value of seats to be modified, we use
+
+49
+00:01:55,000 --> 00:01:58,000
+what's called a mutator, also known as a setter.
+
+50
+00:01:58,000 --> 00:02:00,000
+As you might have guessed the way we name that method
+
+51
+00:02:00,000 --> 00:02:03,000
+is simply set and the field name.
+
+52
+00:02:03,000 --> 00:02:05,000
+So a mutator for our seats field
+
+53
+00:02:05,000 --> 00:02:08,000
+this one has public void setSeats.
+
+54
+00:02:08,000 --> 00:02:10,000
+Notice that the return type is void because the setter
+
+55
+00:02:10,000 --> 00:02:12,000
+doesn't return anything back.
+
+56
+00:02:12,000 --> 00:02:16,000
+It has a parameter to receive the incoming value.
+
+57
+00:02:16,000 --> 00:02:18,000
+So now inside of setSeats, what we want to do is set
+
+58
+00:02:18,000 --> 00:02:22,000
+our field seats to have the value of that parameter.
+
+59
+00:02:22,000 --> 00:02:23,000
+Now we have an interesting challenge here.
+
+60
+00:02:23,000 --> 00:02:27,000
+Notice that we're saying seats equal seats.
+
+61
+00:02:27,000 --> 00:02:29,000
+Well because on the right-hand side we want the one
+
+62
+00:02:29,000 --> 00:02:32,000
+as parameter, on the left-hand side we want the one
+
+63
+00:02:32,000 --> 00:02:33,000
+that is the field.
+
+64
+00:02:33,000 --> 00:02:35,000
+This is a great time to use this.
+
+65
+00:02:35,000 --> 00:02:37,000
+If we're putting this in front of the seats on the left
+
+66
+00:02:37,000 --> 00:02:41,000
+that says that I want the field seats to receive the value
+
+67
+00:02:41,000 --> 00:02:44,000
+of the parameter seats.
+
+68
+00:02:44,000 --> 00:02:45,000
+If we go ahead and set up some code
+
+69
+00:02:45,000 --> 00:02:47,000
+we create an instance of our Flight.
+
+70
+00:02:47,000 --> 00:02:50,000
+I want to set the number of seats, I simply call
+
+71
+00:02:50,000 --> 00:02:55,000
+our slcToNyc reference, again setSeats,
+
+72
+00:02:55,000 --> 00:02:59,000
+pass in 150 that would set the value of seats be 150.
+
+73
+00:02:59,000 --> 00:03:02,000
+To get the value back, I simply call getSeats
+
+74
+00:03:02,000 --> 00:59:00,000
+against slcToNyc and returns back the value we set, 150.
+

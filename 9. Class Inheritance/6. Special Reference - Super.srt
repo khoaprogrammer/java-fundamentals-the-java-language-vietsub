@@ -1,0 +1,252 @@
+1
+00:00:02,000 --> 00:00:05,000
+From our discussions in previous modules, we know that Java
+
+2
+00:00:05,000 --> 00:00:08,000
+offers references that have special meaning, like null
+
+3
+00:00:08,000 --> 00:00:11,000
+and this. Another one of those special references is the
+
+4
+00:00:11,000 --> 00:00:16,000
+super reference. Like this, super provides access to the
+
+5
+00:00:16,000 --> 00:00:20,000
+current object. But where super is different is that super
+
+6
+00:00:20,000 --> 00:00:24,000
+treats that object as if it's an instance of its base class.
+
+7
+00:00:24,000 --> 00:00:27,000
+That allows us to access the features of the object as if
+
+8
+00:00:27,000 --> 00:00:31,000
+our current class has not overridden any of those features.
+
+9
+00:00:31,000 --> 00:00:33,000
+This comes in really handy when we're implementing
+
+10
+00:00:33,000 --> 00:00:36,000
+something in our current class and we want to get to the
+
+11
+00:00:36,000 --> 00:00:40,000
+features or a method exactly as they behaved in the base
+
+12
+00:00:40,000 --> 00:00:43,000
+class. Let's take a look here at our Flight class.
+
+13
+00:00:43,000 --> 00:00:46,000
+As you'll recall from the previous clip, we've overridden
+
+14
+00:00:46,000 --> 00:00:50,000
+the equals method to compare two Flight instances based on
+
+15
+00:00:50,000 --> 00:00:52,000
+the flight identification information, the flightNumber and
+
+16
+00:00:52,000 --> 00:00:55,000
+flightClass. Let's look at some code here.
+
+17
+00:00:55,000 --> 00:00:57,000
+Let's say we go ahead and we create an instance of Flight
+
+18
+00:00:57,000 --> 00:01:01,000
+with a flightNumber of 175 and assign that to f1. And then
+
+19
+00:01:01,000 --> 00:01:05,000
+we declare another reference, f2, and assign it f1. So now
+
+20
+00:01:05,000 --> 00:01:10,000
+f1 and f2 are pointing to the exact same Flight instance.
+
+21
+00:01:10,000 --> 00:01:16,000
+So now if we say if(f1.equals(f2)), that's going to call in
+
+22
+00:01:16,000 --> 00:01:20,000
+to our equals method, and now what's it going to do?
+
+23
+00:01:20,000 --> 00:01:21,000
+It's going to go through everything we've written inside of
+
+24
+00:01:21,000 --> 00:01:23,000
+equals. It's going to first make sure it's actually
+
+25
+00:01:23,000 --> 00:01:26,000
+an instance of Flight, it's then going to cast the flight
+
+26
+00:01:26,000 --> 00:01:29,000
+passed in, and then we're going to compare the values
+
+27
+00:01:29,000 --> 00:01:32,000
+of flightNumber and flightClass. Now in this case,
+
+28
+00:01:32,000 --> 00:01:35,000
+the work that we're doing there is not that substantial,
+
+29
+00:01:35,000 --> 00:01:38,000
+but in some cases an equals method may have to test
+
+30
+00:01:38,000 --> 00:01:40,000
+a lot of things. In a complex object, there may be a number
+
+31
+00:01:40,000 --> 00:01:42,000
+of fields to compare, and other operations that you have
+
+32
+00:01:42,000 --> 00:01:47,000
+to go on. The thing is that we know the base class Object
+
+33
+00:01:47,000 --> 00:01:50,000
+implements a version of equals that just checks to see if
+
+34
+00:01:50,000 --> 00:01:54,000
+two references point to the same object, and reference
+
+35
+00:01:54,000 --> 00:01:58,000
+comparisons like that are actually really inexpensive.
+
+36
+00:01:58,000 --> 00:02:00,000
+So it would be great if inside our equals method, maybe what
+
+37
+00:02:00,000 --> 00:02:03,000
+we could do is say well, if the reference passed in points
+
+38
+00:02:03,000 --> 00:02:06,000
+to the same object that we currently do, we know they
+
+39
+00:02:06,000 --> 00:02:08,000
+must be equal because they're the same object. Let's just
+
+40
+00:02:08,000 --> 00:02:11,000
+get out of here. So let's update our equals method to do
+
+41
+00:02:11,000 --> 00:02:13,000
+that. So let's go ahead and make a little room inside our
+
+42
+00:02:13,000 --> 00:02:16,000
+equals method here, and what we'll do is put an if at the
+
+43
+00:02:16,000 --> 00:02:21,000
+very beginning, and we'll simply say equals(o)
+
+44
+00:02:21,000 --> 00:02:25,000
+and if that returns true, we'll then, in turn return true.
+
+45
+00:02:25,000 --> 00:02:28,000
+Now of course the problem here is that as we've written this
+
+46
+00:02:28,000 --> 00:02:30,000
+when we call equals inside this if statement, what are we
+
+47
+00:02:30,000 --> 00:02:32,000
+going to do? We're going to call back into our own equals
+
+48
+00:02:32,000 --> 00:02:35,000
+method, which will then again call back into our own equals
+
+49
+00:02:35,000 --> 00:02:38,000
+method, and just do that repeatedly, actually until we crash
+
+50
+00:02:38,000 --> 00:02:41,000
+wth an error. What we really want to do is, at this point,
+
+51
+00:02:41,000 --> 00:02:45,000
+call equals as it was implemented in our base class,
+
+52
+00:02:45,000 --> 00:02:47,000
+and that's where the super reference comes in. So we go
+
+53
+00:02:47,000 --> 00:02:51,000
+ahead and move that equals over and we put super in front
+
+54
+00:02:51,000 --> 00:02:55,000
+of it. What will happen now is that when we call into the
+
+55
+00:02:55,000 --> 00:02:58,000
+Flight implementation of equals, the first thing that we do
+
+56
+00:02:58,000 --> 00:03:01,000
+inside of that implementation is call into our base class
+
+57
+00:03:01,000 --> 00:03:04,000
+implementation, which compares to see if both references
+
+58
+00:03:04,000 --> 00:03:07,000
+point to the same object. If they do, we just exit out of
+
+59
+00:03:07,000 --> 00:03:10,000
+here. If we didn't, we would go through and then do the
+
+60
+00:03:10,000 --> 00:03:12,000
+other tests that we've built inside our equals
+
+61
+00:03:12,000 --> 00:03:16,000
+implementation. So we've been able to access that base class
+
+62
+00:03:16,000 --> 00:03:19,000
+behavior when we wanted to, but still have our overridden
+
+63
+00:03:19,000 --> 00:59:00,000
+behavior when we needed it.
+

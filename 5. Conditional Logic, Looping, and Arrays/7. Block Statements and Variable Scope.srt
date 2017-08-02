@@ -1,0 +1,132 @@
+1
+00:00:01,000 --> 00:00:04,000
+Because we used these block statements, what happens
+
+2
+00:00:04,000 --> 00:00:08,000
+if we declare a variable inside of a block?
+
+3
+00:00:08,000 --> 00:00:10,000
+Well it turns out that variables that are declared inside
+
+4
+00:00:10,000 --> 00:00:13,000
+of a block are only visible within that block.
+
+5
+00:00:13,000 --> 00:00:16,000
+They're not visible beyond the scope of that block.
+
+6
+00:00:16,000 --> 00:00:20,000
+In fact, this idea of where are variables visible is known
+
+7
+00:00:20,000 --> 00:00:22,000
+as the variable scope.
+
+8
+00:00:22,000 --> 00:00:24,000
+Let's take a look at some code.
+
+9
+00:00:24,000 --> 00:00:26,000
+So I've got code set up here where I've initialized
+
+10
+00:00:26,000 --> 00:00:29,000
+students to 30 and rooms to four.
+
+11
+00:00:29,000 --> 00:00:31,000
+So I put an if statement in place where I want to just
+
+12
+00:00:31,000 --> 00:00:33,000
+make sure that rooms is greater than zero.
+
+13
+00:00:33,000 --> 00:00:36,000
+I open it up with my bracket, meaning I want to create a
+
+14
+00:00:36,000 --> 00:00:39,000
+block, so I have a closing bracket, the closed block.
+
+15
+00:00:39,000 --> 00:00:42,000
+And inside of that I print out students and rooms and
+
+16
+00:00:42,000 --> 00:00:47,000
+then I declare a float called average, which has a result
+
+17
+00:00:47,000 --> 00:00:50,000
+of students divided by rooms.
+
+18
+00:00:50,000 --> 00:00:54,000
+Now if I then, outside the if block, attempt to print out
+
+19
+00:00:54,000 --> 00:00:57,000
+average, I actually get a compile error, because once I
+
+20
+00:00:57,000 --> 00:01:01,000
+leave that block, average no longer exists.
+
+21
+00:01:01,000 --> 00:01:04,000
+But notice that variables can come into the block.
+
+22
+00:01:04,000 --> 00:01:06,000
+All right, I've got students declared before the block
+
+23
+00:01:06,000 --> 00:01:09,000
+started, and students is valid to use within the block.
+
+24
+00:01:09,000 --> 00:01:12,000
+Same thing is true for rooms.
+
+25
+00:01:12,000 --> 00:01:15,000
+So the way it works is that variables that are in scope
+
+26
+00:01:15,000 --> 00:01:18,000
+when the block starts remain
+
+27
+00:01:18,000 --> 00:01:21,000
+in scope, but variables that are created within the block
+
+28
+00:01:21,000 --> 00:01:26,000
+go out of scope at the end of the block.
+
+29
+00:01:26,000 --> 00:01:28,000
+So the way I would have to fix this code is
+
+30
+00:01:28,000 --> 00:01:30,000
+I would have to do one of two things.
+
+31
+00:01:30,000 --> 00:01:34,000
+I'd have to declare average before the start of the block,
+
+32
+00:01:34,000 --> 00:01:38,000
+so move it up before the if, or I can move the print
+
+33
+00:01:38,000 --> 00:59:00,000
+statement inside the block while average is still available.
+

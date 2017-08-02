@@ -1,0 +1,72 @@
+1
+00:00:01,000 --> 00:00:03,000
+Remember that we talked about the fact that classes
+
+2
+00:00:03,000 --> 00:00:06,000
+are made up of both state and executable code.
+
+3
+00:00:06,000 --> 00:00:08,000
+It's reasonable to expect that when
+
+4
+00:00:08,000 --> 00:00:13,000
+an object is first created, that it's going to be in some useful state.
+
+5
+00:00:13,000 --> 00:00:15,000
+Java will provide a default state
+
+6
+00:00:15,000 --> 00:00:19,000
+when the object is first created, but that might sometimes not be enough.
+
+7
+00:00:19,000 --> 00:00:22,000
+You may need to actually set these values yourself
+
+8
+00:00:22,000 --> 00:00:25,000
+or even execute some code.
+
+9
+00:00:25,000 --> 00:00:28,000
+Java gives the ability to set the initial state
+
+10
+00:00:28,000 --> 00:00:30,000
+of an object and it provides three separate mechanisms
+
+11
+00:00:30,000 --> 00:00:32,000
+for doing so.
+
+12
+00:00:32,000 --> 00:00:34,000
+One is what they call Field initializers, where we assign
+
+13
+00:00:34,000 --> 00:00:37,000
+a specific value to a field.
+
+14
+00:00:37,000 --> 00:00:40,000
+Another is called Constructors where we can potentially
+
+15
+00:00:40,000 --> 00:00:43,000
+pass in parameters and run code to set the state.
+
+16
+00:00:43,000 --> 00:00:45,000
+Another one is called Initialization blocks
+
+17
+00:00:45,000 --> 00:00:47,000
+that allows us to run code that can be shared potentially
+
+18
+00:00:47,000 --> 00:59:00,000
+across constructors.
+

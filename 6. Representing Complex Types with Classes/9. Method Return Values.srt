@@ -1,0 +1,420 @@
+1
+00:00:02,000 --> 00:00:05,000
+When a method returns that method's not void
+
+2
+00:00:05,000 --> 00:00:07,000
+that it actually returns a value.
+
+3
+00:00:07,000 --> 00:00:10,000
+Now method always returns just a single value.
+
+4
+00:00:10,000 --> 00:00:13,000
+Now a value can be a primitive type like a float,
+
+5
+00:00:13,000 --> 00:00:15,000
+a short, a Boolean.
+
+6
+00:00:15,000 --> 00:00:18,000
+Can also be a reference to an object,
+
+7
+00:00:18,000 --> 00:00:20,000
+and it can even be in a reference to an array
+
+8
+00:00:20,000 --> 00:00:23,000
+because in Java arrays are objects.
+
+9
+00:00:23,000 --> 00:00:24,000
+So let's take a look at that Flight class
+
+10
+00:00:24,000 --> 00:00:25,000
+we've been working with.
+
+11
+00:00:25,000 --> 00:00:28,000
+Now remember that it has two fields in it:
+
+12
+00:00:28,000 --> 00:00:29,000
+passengers and seats.
+
+13
+00:00:29,000 --> 00:00:31,000
+And for now, I'm not going to show the other methods
+
+14
+00:00:31,000 --> 00:00:33,000
+we've seen already, I want to focus on some new methods
+
+15
+00:00:33,000 --> 00:00:35,000
+we're going to add here.
+
+16
+00:00:35,000 --> 00:00:38,000
+So let's say we have a method that we want to check and see
+
+17
+00:00:38,000 --> 00:00:41,000
+that is there room to combine the passengers
+
+18
+00:00:41,000 --> 00:00:45,000
+from another flight with those passengers on this flight.
+
+19
+00:00:45,000 --> 00:00:47,000
+So it knows we pass in a parameter which is the other Flight
+
+20
+00:00:47,000 --> 00:00:51,000
+we call F2 and that return type is Boolean.
+
+21
+00:00:51,000 --> 00:00:53,000
+So we could say here is that we'll figure out the total
+
+22
+00:00:53,000 --> 00:00:54,000
+number of passengers.
+
+23
+00:00:54,000 --> 00:00:56,000
+So how many passengers do we have
+
+24
+00:00:56,000 --> 00:00:59,000
+with how many passengers does the other flight have?
+
+25
+00:00:59,000 --> 00:01:02,000
+And then we check and see, well if that total is less than
+
+26
+00:01:02,000 --> 00:01:05,000
+or equal to the number of seats we have will return true,
+
+27
+00:01:05,000 --> 00:01:08,000
+otherwise will return false.
+
+28
+00:01:08,000 --> 00:01:10,000
+In this case it's a method returning back
+
+29
+00:01:10,000 --> 00:01:12,000
+a Boolean variable.
+
+30
+00:01:12,000 --> 00:01:15,000
+Notice the code we're using for our return value here,
+
+31
+00:01:15,000 --> 00:01:18,000
+if total less than or equal to seats resolves to true
+
+32
+00:01:18,000 --> 00:01:20,000
+we then return true.
+
+33
+00:01:20,000 --> 00:01:22,000
+If total less than or equal to seats resolves to false
+
+34
+00:01:22,000 --> 00:01:23,000
+we return false.
+
+35
+00:01:23,000 --> 00:01:26,000
+Well, rather than actually have the if and the return
+
+36
+00:01:26,000 --> 00:01:29,000
+why don't we just use that value directly.
+
+37
+00:01:29,000 --> 00:01:31,000
+So what we can do is we can replace that if statement
+
+38
+00:01:31,000 --> 00:01:35,000
+by simply saying return total less than or equal to seats.
+
+39
+00:01:35,000 --> 00:01:39,000
+Whatever that resolves to it will be our return value.
+
+40
+00:01:39,000 --> 00:01:40,000
+So let's make a little more room here,
+
+41
+00:01:40,000 --> 00:01:42,000
+since we have covered some of that code.
+
+42
+00:01:42,000 --> 00:01:43,000
+Let's create another method here.
+
+43
+00:01:43,000 --> 00:01:47,000
+This method we'll call createNewWithBoth
+
+44
+00:01:47,000 --> 00:01:49,000
+and you notice that this one returns back a reference
+
+45
+00:01:49,000 --> 00:01:51,000
+to a Flight object.
+
+46
+00:01:51,000 --> 00:01:53,000
+And the idea here is that it will actually create
+
+47
+00:01:53,000 --> 00:01:57,000
+a brand new Flight that combines the passenger count
+
+48
+00:01:57,000 --> 00:02:01,000
+from the current Flight and that Flight f2 that's passed in.
+
+49
+00:02:01,000 --> 00:02:03,000
+So we'll do here is we'll create a new instance
+
+50
+00:02:03,000 --> 00:02:06,000
+of the Flight object.
+
+51
+00:02:06,000 --> 00:02:08,000
+We'll then say the number of seats in that newFlight
+
+52
+00:02:08,000 --> 00:02:10,000
+is equal to the number of seats
+
+53
+00:02:10,000 --> 00:02:12,000
+that our current Flight object has
+
+54
+00:02:12,000 --> 00:02:15,000
+and then number of passengers has to combine
+
+55
+00:02:15,000 --> 00:02:18,000
+of our passengers and the other Flight
+
+56
+00:02:18,000 --> 00:02:21,000
+and then we'll just return back this newly created Flight.
+
+57
+00:02:21,000 --> 00:02:23,000
+We're returning back a reference to this newFlight
+
+58
+00:02:23,000 --> 00:02:24,000
+that we created.
+
+59
+00:02:24,000 --> 00:02:28,000
+So to use this in code, what we'll do is let's go ahead
+
+60
+00:02:28,000 --> 00:02:30,000
+and declare one Flight instance.
+
+61
+00:02:30,000 --> 00:02:32,000
+That will be a Flight to LAX, to Los Angeles
+
+62
+00:02:32,000 --> 00:02:34,000
+that will be our Flight lax1.
+
+63
+00:02:34,000 --> 00:02:38,000
+We'll create another Flight to Los Angeles, lax2.
+
+64
+00:02:38,000 --> 00:02:41,000
+And we'll say that we just run some code that adds
+
+65
+00:02:41,000 --> 00:02:43,000
+passengers to both of these flights.
+
+66
+00:02:43,000 --> 00:02:45,000
+So at some point when we get passed this comment,
+
+67
+00:02:45,000 --> 00:02:49,000
+both lax1 and lax2 has some number of passengers.
+
+68
+00:02:49,000 --> 00:02:52,000
+So let me just create a new Flight reference
+
+69
+00:02:52,000 --> 00:02:53,000
+but as I'm not creating a Flight
+
+70
+00:02:53,000 --> 00:02:55,000
+it's just a Flight reference.
+
+71
+00:02:55,000 --> 00:02:57,000
+What I want to do now is check to see that
+
+72
+00:02:57,000 --> 00:03:01,000
+well if there's room to combine lax1 and lax2 passengers,
+
+73
+00:03:01,000 --> 00:03:03,000
+I want to go ahead and do that.
+
+74
+00:03:03,000 --> 00:03:05,000
+So what I'll do here is have an if statement in place
+
+75
+00:03:05,000 --> 00:03:10,000
+that says well, if lax1.hasRoom(lax2).
+
+76
+00:03:10,000 --> 00:03:13,000
+Well that calls over to our hasRoom method.
+
+77
+00:03:13,000 --> 00:03:16,000
+When we get into the hasRoom method, because we called
+
+78
+00:03:16,000 --> 00:03:20,000
+hasRoom against the lax1 Flight instance,
+
+79
+00:03:20,000 --> 00:03:22,000
+anywhere we refer to the class variables
+
+80
+00:03:22,000 --> 00:03:26,000
+passengers and seats whether unqualified
+
+81
+00:03:26,000 --> 00:03:28,000
+that means we're referring to the values
+
+82
+00:03:28,000 --> 00:03:30,000
+that are currently in lax1.
+
+83
+00:03:30,000 --> 00:03:33,000
+When we refer to passengers using the f2 reference,
+
+84
+00:03:33,000 --> 00:03:36,000
+that's actually lax2's passengers because that's
+
+85
+00:03:36,000 --> 00:03:38,000
+when we passed in to the parameter.
+
+86
+00:03:38,000 --> 00:03:40,000
+So when we run this method it basically adds those together
+
+87
+00:03:40,000 --> 00:03:44,000
+and then if there's room it will return back true.
+
+88
+00:03:44,000 --> 00:03:46,000
+If there's not it will return back false.
+
+89
+00:03:46,000 --> 00:03:49,000
+Then we can go ahead and say lax3 equals
+
+90
+00:03:49,000 --> 00:03:54,000
+lax1.createNewWithBoth passing lax2.
+
+91
+00:03:54,000 --> 00:03:55,000
+So now again, control transfers over
+
+92
+00:03:55,000 --> 00:03:57,000
+to the createNewWithBoth.
+
+93
+00:03:57,000 --> 00:04:00,000
+Again, because we called this against lax1,
+
+94
+00:04:00,000 --> 00:04:03,000
+anywhere we use seats or passengers unqualified
+
+95
+00:04:03,000 --> 00:04:06,000
+those are the lax1 seats.
+
+96
+00:04:06,000 --> 00:04:10,000
+f2 passengers will be the lax2 passengers.
+
+97
+00:04:10,000 --> 00:04:12,000
+So in this code we go ahead and create
+
+98
+00:04:12,000 --> 00:04:15,000
+that newFlight instance assign it to the number of seats
+
+99
+00:04:15,000 --> 00:04:19,000
+from lax1 to Flight reference we were called against
+
+100
+00:04:19,000 --> 00:04:23,000
+and then passengers are set to the value of lax1's
+
+101
+00:04:23,000 --> 00:04:25,000
+passengers plus lax2's passengers.
+
+102
+00:04:25,000 --> 00:04:28,000
+And then we return back that newFlight.
+
+103
+00:04:28,000 --> 00:04:31,000
+So lax3 we receive a reference to that newly created
+
+104
+00:04:31,000 --> 00:04:33,000
+Flight instance returned back
+
+105
+00:04:33,000 --> 00:59:00,000
+from the createNewWithBoth method.
+

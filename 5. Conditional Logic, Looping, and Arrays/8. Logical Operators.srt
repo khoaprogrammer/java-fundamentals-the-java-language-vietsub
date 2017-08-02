@@ -1,0 +1,296 @@
+1
+00:00:02,000 --> 00:00:05,000
+Logical operators are useful for arriving at a true or false
+
+2
+00:00:05,000 --> 00:00:10,000
+value by operating on other things to provide true or
+
+3
+00:00:10,000 --> 00:00:11,000
+false values.
+
+4
+00:00:11,000 --> 00:00:14,000
+They could be Boolean variables or more commonly,
+
+5
+00:00:14,000 --> 00:00:18,000
+logical operators are used to work on the results of other
+
+6
+00:00:18,000 --> 00:00:21,000
+relational operations.
+
+7
+00:00:21,000 --> 00:00:24,000
+There are basically four fundamental logical operators.
+
+8
+00:00:24,000 --> 00:00:28,000
+And, or, exclusive or, and what we call negation.
+
+9
+00:00:28,000 --> 00:00:31,000
+And we look at this is that the and allows us to take
+
+10
+00:00:31,000 --> 00:00:35,000
+two things and resolve to true or false, and if both of
+
+11
+00:00:35,000 --> 00:00:39,000
+those are true, then the and returns true.
+
+12
+00:00:39,000 --> 00:00:41,000
+So we look at a little bit of code here.
+
+13
+00:00:41,000 --> 00:00:45,000
+If I have three variables declared, a, b, and c.
+
+14
+00:00:45,000 --> 00:00:50,000
+And I say, "If a is greater than b, and b is greater than c,
+
+15
+00:00:50,000 --> 00:00:53,000
+"print out 'a is greater than c'."
+
+16
+00:00:53,000 --> 00:00:55,000
+What this does is that, first we did the comparison
+
+17
+00:00:55,000 --> 00:00:59,000
+of a being greater than b, in this case it is, right?
+
+18
+00:00:59,000 --> 00:01:03,000
+20 is greater than 14, so a greater than b resolves to true.
+
+19
+00:01:03,000 --> 00:01:06,000
+Then we operate on b greater than c.
+
+20
+00:01:06,000 --> 00:01:10,000
+14 is greater than five; that resolves to true.
+
+21
+00:01:10,000 --> 00:01:13,000
+And then we add those two trues together and true
+
+22
+00:01:13,000 --> 00:01:15,000
+and true equals true.
+
+23
+00:01:15,000 --> 00:01:19,000
+So an and resolves to true only if both sides of it are
+
+24
+00:01:19,000 --> 00:01:20,000
+also true.
+
+25
+00:01:20,000 --> 00:01:22,000
+Then we have an or.
+
+26
+00:01:22,000 --> 00:01:25,000
+Or compares two sides and only one side needs to be
+
+27
+00:01:25,000 --> 00:01:28,000
+true, all right, so if the first one's false and the second
+
+28
+00:01:28,000 --> 00:01:31,000
+side is true, then that resolves to true.
+
+29
+00:01:31,000 --> 00:01:33,000
+If the first side is true and the second side is false,
+
+30
+00:01:33,000 --> 00:01:37,000
+that still resolves to true, and even if both sides are true
+
+31
+00:01:37,000 --> 00:01:40,000
+the or resolves to true.
+
+32
+00:01:40,000 --> 00:01:42,000
+Now that's different than the exclusive or.
+
+33
+00:01:42,000 --> 00:01:46,000
+In the exclusive or,
+
+34
+00:01:46,000 --> 00:01:49,000
+exactly one side needs to be true.
+
+35
+00:01:49,000 --> 00:01:53,000
+It can be false or true and then true or false.
+
+36
+00:01:53,000 --> 00:01:56,000
+In the case of the exclusive or, it just can't be
+
+37
+00:01:56,000 --> 00:01:58,000
+true or true.
+
+38
+00:01:58,000 --> 00:01:59,000
+And the last one is negation.
+
+39
+00:01:59,000 --> 00:02:02,000
+Negation basically reverses the result.
+
+40
+00:02:02,000 --> 00:02:08,000
+So basically, when you use negation, not false is true.
+
+41
+00:02:08,000 --> 00:02:10,000
+So we just look at that in code.
+
+42
+00:02:10,000 --> 00:02:12,000
+Got a little Boolean variable, done.
+
+43
+00:02:12,000 --> 00:02:14,000
+I say done is false.
+
+44
+00:02:14,000 --> 00:02:17,000
+Well if I go, if not done, print out "keep going".
+
+45
+00:02:17,000 --> 00:02:20,000
+When we look at done, done is false
+
+46
+00:02:20,000 --> 00:02:27,000
+but then the not of done, or the not of false, is true.
+
+47
+00:02:27,000 --> 00:02:30,000
+There are two special logical operators called conditional
+
+48
+00:02:30,000 --> 00:02:32,000
+logical operators.
+
+49
+00:02:32,000 --> 00:02:36,000
+There's a conditional and and a conditional or.
+
+50
+00:02:36,000 --> 00:02:39,000
+Now conceptually, these resolve the same way as the other
+
+51
+00:02:39,000 --> 00:02:42,000
+ands and ors we looked at.
+
+52
+00:02:42,000 --> 00:02:45,000
+The key difference, though, is that they only execute
+
+53
+00:02:45,000 --> 00:02:48,000
+the right side of their test if they need to do that to
+
+54
+00:02:48,000 --> 00:02:50,000
+determine the result.
+
+55
+00:02:50,000 --> 00:02:52,000
+So in the case of an and, all right, both sides have to
+
+56
+00:02:52,000 --> 00:02:57,000
+be true, so a conditional logical and only executes
+
+57
+00:02:57,000 --> 00:03:01,000
+the right side if the left side was already true.
+
+58
+00:03:01,000 --> 00:03:02,000
+All right, so if the left side was false, we know the and's
+
+59
+00:03:02,000 --> 00:03:04,000
+going to fail anyway, so there's no reason to even run
+
+60
+00:03:04,000 --> 00:03:07,000
+the right side of it.
+
+61
+00:03:07,000 --> 00:03:11,000
+In the case of the conditional logical or, it only executes
+
+62
+00:03:11,000 --> 00:03:14,000
+the right side if the left side is false, because if the
+
+63
+00:03:14,000 --> 00:03:17,000
+left side were true, in that case, we'd already know we
+
+64
+00:03:17,000 --> 00:03:21,000
+were done, so we wouldn't need to execute the right side.
+
+65
+00:03:21,000 --> 00:03:24,000
+So looking at the conditional and, we still need both
+
+66
+00:03:24,000 --> 00:03:27,000
+sides to be true for that to resolve to true, but
+
+67
+00:03:27,000 --> 00:03:31,000
+when doing a test, if the left side had resolved to false,
+
+68
+00:03:31,000 --> 00:03:34,000
+it would never even run the right side because we already
+
+69
+00:03:34,000 --> 00:03:36,000
+know the result of the and would be false.
+
+70
+00:03:36,000 --> 00:03:39,000
+Looking at the conditional or, the left side is false,
+
+71
+00:03:39,000 --> 00:03:43,000
+or that with a right side of true, that resolves to true.
+
+72
+00:03:43,000 --> 00:03:46,000
+If you do a conditional or and the left side is true,
+
+73
+00:03:46,000 --> 00:03:48,000
+it never even runs the right side because we already know
+
+74
+00:03:48,000 --> 00:59:00,000
+the result's going to be true.
+

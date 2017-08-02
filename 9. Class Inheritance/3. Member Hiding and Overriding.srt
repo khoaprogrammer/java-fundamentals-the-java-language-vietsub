@@ -1,0 +1,444 @@
+1
+00:00:02,000 --> 00:00:05,000
+When we're adding behavior to a derived class, that
+
+2
+00:00:05,000 --> 00:00:07,000
+derived class can of course have fields, as we've seen.
+
+3
+00:00:07,000 --> 00:00:11,000
+The thing is that if the derived class adds a field,
+
+4
+00:00:11,000 --> 00:00:14,000
+that has the same name as the field in the base class,
+
+5
+00:00:14,000 --> 00:00:17,000
+it will actually hide the base class field. Let's see
+
+6
+00:00:17,000 --> 00:00:21,000
+what that means. Take a look at our code here. Remember
+
+7
+00:00:21,000 --> 00:00:23,000
+that we have our Flight class, and as we've seen, our Flight
+
+8
+00:00:23,000 --> 00:00:27,000
+class has a method called add1Passenger. Now inside of
+
+9
+00:00:27,000 --> 00:00:30,000
+our add1Passenger it will check to see if we have enough
+
+10
+00:00:30,000 --> 00:00:33,000
+seating, if so we add the passenger, if not we handle
+
+11
+00:00:33,000 --> 00:00:36,000
+the case of too many. And the way we check and see if
+
+12
+00:00:36,000 --> 00:00:38,000
+we have enough seating is that we have a method called
+
+13
+00:00:38,000 --> 00:00:41,000
+hasSeating. What hasSeating does, it looks and sees that
+
+14
+00:00:41,000 --> 00:00:44,000
+as long as the number of passengers is less than the number
+
+15
+00:00:44,000 --> 00:00:47,000
+of seats, then we'll say we have seats. So our Flight class
+
+16
+00:00:47,000 --> 00:00:52,000
+has a field called seats with a value of 150. So if we
+
+17
+00:00:52,000 --> 00:00:55,000
+create an instance of our Flight class and it to a
+
+18
+00:00:55,000 --> 00:00:57,000
+Flight reference called f1, we print out the value of
+
+19
+00:00:57,000 --> 00:01:03,000
+f1.seats, we will of course get 150. If we take our
+
+20
+00:01:03,000 --> 00:01:06,000
+CargoFlight class that extends the Flight class,
+
+21
+00:01:06,000 --> 00:01:09,000
+we inherit from it, if it adds its own field called seats
+
+22
+00:01:09,000 --> 00:01:12,000
+with a value of 12, which would make sense, right?
+
+23
+00:01:12,000 --> 00:01:15,000
+If a plane is a cargo flight it may have fewer seats.
+
+24
+00:01:15,000 --> 00:01:16,000
+If we then go out here and create an instance of the
+
+25
+00:01:16,000 --> 00:01:19,000
+CargoFlight class and assign it to a reference of type
+
+26
+00:01:19,000 --> 00:01:23,000
+CargoFlight called cf, if we print out the value of cf.seats
+
+27
+00:01:23,000 --> 00:01:28,000
+that gives us a value of 12. The CargoFlight seats field is
+
+28
+00:01:28,000 --> 00:01:32,000
+hiding the Flight seats field. But now something unexpected
+
+29
+00:01:32,000 --> 00:01:36,000
+can happen by doing that. If I now create an instance of the
+
+30
+00:01:36,000 --> 00:01:40,000
+CargoFlight class, and I assign it to a reference of type
+
+31
+00:01:40,000 --> 00:01:45,000
+Flight, that we've called f2, when we print out f2.seats
+
+32
+00:01:45,000 --> 00:01:50,000
+what we will actually get is the value 150. Because the
+
+33
+00:01:50,000 --> 00:01:55,000
+seats value of 12 is only visible when the instance is
+
+34
+00:01:55,000 --> 00:01:59,000
+being worked with as a CargoFlight. Because the reference
+
+35
+00:01:59,000 --> 00:02:02,000
+here f2 is of type Flight, it doesn't know anything about
+
+36
+00:02:02,000 --> 00:02:04,000
+the seats value of 12. It only knows about the seats value
+
+37
+00:02:04,000 --> 00:02:08,000
+of 150. That becomes really important as we start using
+
+38
+00:02:08,000 --> 00:02:14,000
+methods from the base class. So if I take f2.add1Passenger,
+
+39
+00:02:14,000 --> 00:02:17,000
+when that calls into the method to add1Passenger, which
+
+40
+00:02:17,000 --> 00:02:20,000
+that in turn calls hasSeating, when it checks the value of
+
+41
+00:02:20,000 --> 00:02:23,000
+seats, it's going to use the value of seats that's defined
+
+42
+00:02:23,000 --> 00:02:27,000
+inside the Flight class, which is 150 - which would allow us
+
+43
+00:02:27,000 --> 00:02:31,000
+to add 150 passengers to a plane with only 12 seats.
+
+44
+00:02:31,000 --> 00:02:35,000
+Now this is not limited to the scenario where the reference
+
+45
+00:02:35,000 --> 00:02:39,000
+is of type Flight. If we were to say cf.add1Passenger,
+
+46
+00:02:39,000 --> 00:02:42,000
+cf is of type CargoFlight. Again, because add1Passenger
+
+47
+00:02:42,000 --> 00:02:45,000
+calls hasSeating and hasSeating is implemented inside the
+
+48
+00:02:45,000 --> 00:02:50,000
+Flight class, it would still use the value of 150, because
+
+49
+00:02:50,000 --> 00:02:53,000
+within that method it only knows about the fields defined
+
+50
+00:02:53,000 --> 00:02:58,000
+within Flight. So you can see this idea of hiding fields is
+
+51
+00:02:58,000 --> 00:03:00,000
+a very dangerous thing, so I'm going to go ahead and
+
+52
+00:03:00,000 --> 00:03:02,000
+highlight that in red. Now, when we work with methods
+
+53
+00:03:02,000 --> 00:03:07,000
+it's a little different. Methods can override base class
+
+54
+00:03:07,000 --> 00:03:10,000
+methods, so if you have a derived class that has a method
+
+55
+00:03:10,000 --> 00:03:12,000
+with the same signature as a base class method, it will
+
+56
+00:03:12,000 --> 00:03:15,000
+override it. Remember the signature means it has the same
+
+57
+00:03:15,000 --> 00:03:19,000
+name and the same parameter list. Let's see how overriding
+
+58
+00:03:19,000 --> 00:03:23,000
+differs from hiding. So we have our class here, CargoFlight
+
+59
+00:03:23,000 --> 00:03:27,000
+deriving from Flight, same exact code we saw before.
+
+60
+00:03:27,000 --> 00:03:30,000
+What we're going to do here is that when we set seats
+
+61
+00:03:30,000 --> 00:03:32,000
+equal to 150 as a field, what we're going to do is
+
+62
+00:03:32,000 --> 00:03:34,000
+get rid of that field, seats, and we're going to change it
+
+63
+00:03:34,000 --> 00:03:39,000
+to a method called getSeats that returns a value of 150.
+
+64
+00:03:39,000 --> 00:03:41,000
+Of course that means that our hasSeating method has to be
+
+65
+00:03:41,000 --> 00:03:46,000
+changed to get rid of seats and instead call getSeats.
+
+66
+00:03:46,000 --> 00:03:49,000
+And then our derived class, CargoFlight, will get rid of
+
+67
+00:03:49,000 --> 00:03:52,000
+its field seats, and add in a method called getSeats
+
+68
+00:03:52,000 --> 00:03:56,000
+that returns 12. So now if we work with this, we go out here
+
+69
+00:03:56,000 --> 00:04:00,000
+we have our Flight reference f1, assigned the value of a new
+
+70
+00:04:00,000 --> 00:04:03,000
+Flight instance. Of course when we print out getSeats, it's
+
+71
+00:04:03,000 --> 00:04:07,000
+going to print out 150. If we have a CargoFlight reference
+
+72
+00:04:07,000 --> 00:04:10,000
+cf pointing to a new instance of CargoFlight, when it prints
+
+73
+00:04:10,000 --> 00:04:14,000
+out getSeats, it will print out 12. But here's where we see
+
+74
+00:04:14,000 --> 00:04:19,000
+the difference. If I now have a Flight reference called f2
+
+75
+00:04:19,000 --> 00:04:23,000
+assigned to a new instance of CargoFlight, when we call
+
+76
+00:04:23,000 --> 00:04:28,000
+getSeats, because the getSeats method from CargoFlight
+
+77
+00:04:28,000 --> 00:04:32,000
+overrides the getSeats method from Flight, we will now
+
+78
+00:04:32,000 --> 00:04:36,000
+get the appropriate value of 12. So the method in the
+
+79
+00:04:36,000 --> 00:04:39,000
+derived class has overridden the base class method.
+
+80
+00:04:39,000 --> 00:04:42,000
+And that really important as we start to do further work.
+
+81
+00:04:42,000 --> 00:04:46,000
+So if I take my f2, a reference of type Flight, and
+
+82
+00:04:46,000 --> 00:04:50,000
+call add1Passenger, it calls into the add1Passenger method.
+
+83
+00:04:50,000 --> 00:04:54,000
+Inside of add1Passenger, we call into hasSeating. When we
+
+84
+00:04:54,000 --> 00:04:58,000
+get into hasSeating, when it calls getSeats, because the
+
+85
+00:04:58,000 --> 00:05:01,000
+instance is of type CargoFlight, the implementation of
+
+86
+00:05:01,000 --> 00:05:04,000
+getSeats inside of CargoFlight is actually what gets called,
+
+87
+00:05:04,000 --> 00:05:07,000
+returning the appropriate value of 12. So it would only
+
+88
+00:05:07,000 --> 00:05:11,000
+allow us to add 12 passengers. And that works whether we
+
+89
+00:05:11,000 --> 00:05:14,000
+have a reference like f2 of type Flight, or a reference cf
+
+90
+00:05:14,000 --> 00:05:17,000
+which is of the appropriate type CargoFlight. The method
+
+91
+00:05:17,000 --> 00:05:20,000
+in the base class is actually being overridden, assuring
+
+92
+00:05:20,000 --> 00:05:22,000
+that the appropriate method implementation gets called
+
+93
+00:05:22,000 --> 00:05:26,000
+based on the type of object created, not the type of
+
+94
+00:05:26,000 --> 00:05:29,000
+reference used. If you come from other object-oriented
+
+95
+00:05:29,000 --> 00:05:33,000
+languages, like C# or C++, something that may stand out
+
+96
+00:05:33,000 --> 00:05:35,000
+to you here is that you'll notice that we didn't have to do
+
+97
+00:05:35,000 --> 00:05:37,000
+anything special to be able to override that getSeats
+
+98
+00:05:37,000 --> 00:05:42,000
+method. In Java all methods are automatically overridable
+
+99
+00:05:42,000 --> 00:05:44,000
+unless you do something special to say that you don't want
+
+100
+00:05:44,000 --> 00:05:47,000
+them overridden. We'll talk about how to do that a little
+
+101
+00:05:47,000 --> 00:05:49,000
+later in this module. One of the things that may come to
+
+102
+00:05:49,000 --> 00:05:51,000
+mind, though, is that how do you make sure that you haven't
+
+103
+00:05:51,000 --> 00:05:53,000
+accidentally made a mistake in terms of maybe not matching
+
+104
+00:05:53,000 --> 00:05:57,000
+the signature correctly. What Java provides is the override
+
+105
+00:05:57,000 --> 00:06:01,000
+annotation. and what this tells the compiler is that it is
+
+106
+00:06:01,000 --> 00:06:05,000
+your intention to override a method from the base class.
+
+107
+00:06:05,000 --> 00:06:07,000
+So the compiler will actually check and make sure that the
+
+108
+00:06:07,000 --> 00:06:11,000
+base class has a method with that signature. So it's kind of
+
+109
+00:06:11,000 --> 00:06:13,000
+just a sanity check to make sure that the method you're
+
+110
+00:06:13,000 --> 00:06:17,000
+declaring really does replace a method in the base class.
+
+111
+00:06:17,000 --> 00:59:00,000
+Has no impact on run time, it's only used at compile time.
+

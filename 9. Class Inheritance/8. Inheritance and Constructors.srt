@@ -1,0 +1,328 @@
+1
+00:00:02,000 --> 00:00:04,000
+An issue that's very important to understand as we look at
+
+2
+00:00:04,000 --> 00:00:06,000
+the idea of inheriting one class from another, is that in
+
+3
+00:00:06,000 --> 00:00:11,000
+Java, constructors are not inherited. Each class is
+
+4
+00:00:11,000 --> 00:00:15,000
+responsible for defining its own constructors. A derived
+
+5
+00:00:15,000 --> 00:00:18,000
+class, though, must always call one of the base class
+
+6
+00:00:18,000 --> 00:00:21,000
+constructors. So as you define the constructors inside
+
+7
+00:00:21,000 --> 00:00:23,000
+of your derived class, there's always going to be a call
+
+8
+00:00:23,000 --> 00:00:26,000
+back to a base class constructor. Now that call does not
+
+9
+00:00:26,000 --> 00:00:29,000
+have to be explicit. If you don't have an explicit call to
+
+10
+00:00:29,000 --> 00:00:33,000
+a base class constructor, then it will use the base class's
+
+11
+00:00:33,000 --> 00:00:36,000
+no-argument constructor. But you can call a specific
+
+12
+00:00:36,000 --> 00:00:39,000
+constructor if you want to. You simply use the super
+
+13
+00:00:39,000 --> 00:00:44,000
+notation, followed by the list of parameters that correspond
+
+14
+00:00:44,000 --> 00:00:47,000
+to the base class constructor that you want to call. You do
+
+15
+00:00:47,000 --> 00:00:50,000
+have to make that the first line in your constructor though.
+
+16
+00:00:50,000 --> 00:00:54,000
+Let's see what this looks like in code. Now we've looked at
+
+17
+00:00:54,000 --> 00:00:56,000
+our Flight class, we've done a bunch of work with that
+
+18
+00:00:56,000 --> 00:00:59,000
+until now. And I want to focus in on the no-argument
+
+19
+00:00:59,000 --> 00:01:02,000
+constructor and its constructor that accepts the
+
+20
+00:01:02,000 --> 00:01:05,000
+flightNumber. That allows us to create code that creates
+
+21
+00:01:05,000 --> 00:01:08,000
+an instance of Flight, in this case, creating a new flight
+
+22
+00:01:08,000 --> 00:01:13,000
+with flightNumber 175. Now our CargoFlight class, that has
+
+23
+00:01:13,000 --> 00:01:15,000
+a number of members inside of it, has no constructors to
+
+24
+00:01:15,000 --> 00:01:18,000
+find. That of course means that we can create an instance
+
+25
+00:01:18,000 --> 00:01:22,000
+of CargoFlight using a no-argument constructor, because
+
+26
+00:01:22,000 --> 00:01:25,000
+Java provides a no-argument constructor for us by default
+
+27
+00:01:25,000 --> 00:01:28,000
+if we haven't specified one. But if we try to go off and
+
+28
+00:01:28,000 --> 00:01:32,000
+create a CargoFlight with a flightNumber, that's not going
+
+29
+00:01:32,000 --> 00:01:34,000
+to work. We get an error, because even though our base
+
+30
+00:01:34,000 --> 00:01:37,000
+class, Flight, has a constructor that accepts a flightNumber
+
+31
+00:01:37,000 --> 00:01:40,000
+CargoFlight does not. So if we want to be able to create
+
+32
+00:01:40,000 --> 00:01:44,000
+CargoFlights with a flightNumber, we need to define a
+
+33
+00:01:44,000 --> 00:01:47,000
+constructor in CargoFlight that accepts the flightNumber.
+
+34
+00:01:47,000 --> 00:01:49,000
+Now we don't have to do that work ourself. As we said
+
+35
+00:01:49,000 --> 00:01:52,000
+we can delegate that to the base class by simply using that
+
+36
+00:01:52,000 --> 00:01:57,000
+super notation and passing in flightNumber. And so now
+
+37
+00:01:57,000 --> 00:02:00,000
+we can go ahead and construct our CargoFlight with a
+
+38
+00:02:00,000 --> 00:02:03,000
+flightNumber, in this case 294. That calls into our
+
+39
+00:02:03,000 --> 00:02:06,000
+CargoFlight's constructor accepting a flightNumber,
+
+40
+00:02:06,000 --> 00:02:10,000
+which in turn calls the implementation inside of Flight.
+
+41
+00:02:10,000 --> 00:02:13,000
+Now we can of course extend behavior beyond the base
+
+42
+00:02:13,000 --> 00:02:17,000
+class constructors. For example, our CargoFlight class
+
+43
+00:02:17,000 --> 00:02:21,000
+keeps track of the idea of the maximum cargo space.
+
+44
+00:02:21,000 --> 00:02:24,000
+So we could go off and define a CargoFlight constructor
+
+45
+00:02:24,000 --> 00:02:28,000
+that accepts flightNumber and a value that we want to
+
+46
+00:02:28,000 --> 00:02:32,000
+use for maxCargoSpace. Now inside of the CargoFlight
+
+47
+00:02:32,000 --> 00:02:36,000
+constructor, we can of course set maxCargoSpace.
+
+48
+00:02:36,000 --> 00:02:38,000
+If we want to go ahead and call up to the base class
+
+49
+00:02:38,000 --> 00:02:40,000
+constructor, we again use the super notation, but it
+
+50
+00:02:40,000 --> 00:02:44,000
+has to be the first line of the constructor. So this would
+
+51
+00:02:44,000 --> 00:02:47,000
+call into the Flight constructor that accepts a flightNumber
+
+52
+00:02:47,000 --> 00:02:51,000
+and then sets maxCargoSpace. But in this situation, rather
+
+53
+00:02:51,000 --> 00:02:54,000
+than call into the base class, we've already done work
+
+54
+00:02:54,000 --> 00:02:57,000
+inside of our class to create a constructor that accepts
+
+55
+00:02:57,000 --> 00:03:00,000
+a flightNumber, so rather than call super in this case,
+
+56
+00:03:00,000 --> 00:03:04,000
+it would be better to go ahead and use this. So now
+
+57
+00:03:04,000 --> 00:03:05,000
+if we go off and we create code that says I want to
+
+58
+00:03:05,000 --> 00:03:08,000
+create a CargoFlight instance that accepts a flightNumber
+
+59
+00:03:08,000 --> 00:03:12,000
+and maxCargoSpace, it'll call our CargoFlight constructor,
+
+60
+00:03:12,000 --> 00:03:15,000
+that accepts those two parameters. We will then call up
+
+61
+00:03:15,000 --> 00:03:18,000
+to our CargoFlight constructor that accepts the flightNumber
+
+62
+00:03:18,000 --> 00:03:20,000
+and then that calls into the base class constructor that
+
+63
+00:03:20,000 --> 00:03:23,000
+accepts flightNumber. Now something that's happened is
+
+64
+00:03:23,000 --> 00:03:26,000
+that as we've added these two constructors to CargoFlight
+
+65
+00:03:26,000 --> 00:03:29,000
+we've broken a line of code, right? The line of code where
+
+66
+00:03:29,000 --> 00:03:32,000
+we've created a CargoFlight passing in no parameters
+
+67
+00:03:32,000 --> 00:03:35,000
+no longer works. If we want to have that we need to go
+
+68
+00:03:35,000 --> 00:03:38,000
+ahead and add that to our CargoFlight class. So now
+
+69
+00:03:38,000 --> 00:03:41,000
+this code would build again, and when we call into our
+
+70
+00:03:41,000 --> 00:03:46,000
+CargoFlight constructor, it will then call into our Flight
+
+71
+00:03:46,000 --> 00:03:49,000
+class's constructor that takes no arguments, right?
+
+72
+00:03:49,000 --> 00:03:53,000
+And that happens because we did not specify any base
+
+73
+00:03:53,000 --> 00:03:57,000
+class constructor. So let's say we add another constructor
+
+74
+00:03:57,000 --> 00:04:01,000
+to our CargoFlight. This one accepts only cargo space, and
+
+75
+00:04:01,000 --> 00:04:05,000
+all we do inside of here is set maxCargoSpace. So if we now
+
+76
+00:04:05,000 --> 00:04:07,000
+create a line of code that news up a CargoFlight, passing in
+
+77
+00:04:07,000 --> 00:04:11,000
+only maxCargoSpace, what does this do? Well, it calls our
+
+78
+00:04:11,000 --> 00:04:14,000
+constructor, but before it executes the body of our
+
+79
+00:04:14,000 --> 00:04:17,000
+constructor, it will call up to the Flight class's
+
+80
+00:04:17,000 --> 00:04:21,000
+constructor that has no arguments, and then run the rest
+
+81
+00:04:21,000 --> 00:04:24,000
+of our constructor. So it always calls into a base class
+
+82
+00:04:24,000 --> 00:59:00,000
+constructor, even when we don't specify one.
+

@@ -1,0 +1,76 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to the next module in our Java Fundamentals Course
+
+2
+00:00:04,000 --> 00:00:06,000
+on the Java language.
+
+3
+00:00:06,000 --> 00:00:08,000
+In this module, we're going to look at class initializers
+
+4
+00:00:08,000 --> 00:00:12,000
+and constructors, my name is Jim Wilson.
+
+5
+00:00:12,000 --> 00:00:15,000
+In this module, we're going to first look at
+
+6
+00:00:15,000 --> 00:00:19,000
+the idea of establishing the initial state of our objects.
+
+7
+00:00:19,000 --> 00:00:22,000
+We'll look at how we can set the value of class fields
+
+8
+00:00:22,000 --> 00:00:24,000
+as part of the class declarations.
+
+9
+00:00:24,000 --> 00:00:26,000
+We touched on constructors in the last module,
+
+10
+00:00:26,000 --> 00:00:29,000
+we'll look a lot more at how we work with constructors
+
+11
+00:00:29,000 --> 00:00:31,000
+and the idea of having multiple constructors.
+
+12
+00:00:31,000 --> 00:00:33,000
+We'll then look at how we can chain multiple constructors
+
+13
+00:00:33,000 --> 00:00:36,000
+together and even use constructor visibility
+
+14
+00:00:36,000 --> 00:00:40,000
+to control how and where our class instances are created.
+
+15
+00:00:40,000 --> 00:00:43,000
+We'll talk about a way to share code across constructors
+
+16
+00:00:43,000 --> 00:00:45,000
+called initialization blocks.
+
+17
+00:00:45,000 --> 00:00:47,000
+And with all these different ways to construct
+
+18
+00:00:47,000 --> 00:00:49,000
+and initialize our objects, we'll talk about how the order
+
+19
+00:00:49,000 --> 00:59:00,000
+of those things occur.
+

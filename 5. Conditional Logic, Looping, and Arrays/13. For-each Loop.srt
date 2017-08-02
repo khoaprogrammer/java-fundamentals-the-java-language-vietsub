@@ -1,0 +1,148 @@
+1
+00:00:02,000 --> 00:00:04,000
+One of the most convenient ways to walk through the
+
+2
+00:00:04,000 --> 00:00:07,000
+members of an array is the for each loop, also known as the
+
+3
+00:00:07,000 --> 00:00:11,000
+enhanced for loop and what it does is takes care of just
+
+4
+00:00:11,000 --> 00:00:14,000
+executing that loop or the statement within the loop once
+
+5
+00:00:14,000 --> 00:00:16,000
+for each member in the array.
+
+6
+00:00:16,000 --> 00:00:19,000
+Basically, it's just the for keyword, and we have
+
+7
+00:00:19,000 --> 00:00:22,000
+parenthesis, but rather than having an explicit conditions
+
+8
+00:00:22,000 --> 00:00:25,000
+or array initializations, we actually just put the array in
+
+9
+00:00:25,000 --> 00:00:29,000
+there, preceded by a colon and then we declare a variable
+
+10
+00:00:29,000 --> 00:00:33,000
+to hold an individual array member, and then we can walk
+
+11
+00:00:33,000 --> 00:00:36,000
+through the body of our loop, we'll go through once for each
+
+12
+00:00:36,000 --> 00:00:39,000
+member of the array.
+
+13
+00:00:39,000 --> 00:00:41,000
+And it takes care of handling the details of getting the
+
+14
+00:00:41,000 --> 00:00:45,000
+length of the array as well as accessing each of the values.
+
+15
+00:00:45,000 --> 00:00:47,000
+Later in the course we'll see that a for each loop can also
+
+16
+00:00:47,000 --> 00:00:50,000
+work with other special data types other than arrays,
+
+17
+00:00:50,000 --> 00:00:53,000
+but of the types we've talked about so far, arrays are
+
+18
+00:00:53,000 --> 00:00:55,000
+the only thing that works with it.
+
+19
+00:00:55,000 --> 00:00:57,000
+Now to see it in action, imagine we have this scenario
+
+20
+00:00:57,000 --> 00:01:00,000
+again where we've got an array of values, in this case
+
+21
+00:01:00,000 --> 00:01:05,000
+we've got three values: 10.0, 20.0 and 15.0, and we
+
+22
+00:01:05,000 --> 00:01:08,000
+want to sum them up, just like we've done before.
+
+23
+00:01:08,000 --> 00:01:11,000
+Well, rather an array than the explicit for loop, where we
+
+24
+00:01:11,000 --> 00:01:14,000
+set up an index variable, incremented it ourselves, keep
+
+25
+00:01:14,000 --> 00:01:17,000
+testing its condition, with the for each loop, you can just
+
+26
+00:01:17,000 --> 00:01:20,000
+set up the for, say that, "Well, I know that array has
+
+27
+00:01:20,000 --> 00:01:22,000
+"floats in it."
+
+28
+00:01:22,000 --> 00:01:24,000
+Add the colon, and then we have theVals.
+
+29
+00:01:24,000 --> 00:01:27,000
+We simply have the array name there.
+
+30
+00:01:27,000 --> 00:01:30,000
+And now inside the body of our loop here, we can simply say,
+
+31
+00:01:30,000 --> 00:01:33,000
+sum plus equals currentVal
+
+32
+00:01:33,000 --> 00:01:35,000
+and what'll happen is that the first time through that loop,
+
+33
+00:01:35,000 --> 00:01:39,000
+currentVal will have a value of 10.0, which would make
+
+34
+00:01:39,000 --> 00:01:43,000
+sum 10.0, next time we come around the loop, currentVal
+
+35
+00:01:43,000 --> 00:01:47,000
+will have a value of 20.0, making our sum 30.0, next time
+
+36
+00:01:47,000 --> 00:01:51,000
+through the loop, currentVal will have a value of 15.0,
+
+37
+00:01:51,000 --> 00:59:00,000
+making our sum 45.0 so we would print out 45.0.
+

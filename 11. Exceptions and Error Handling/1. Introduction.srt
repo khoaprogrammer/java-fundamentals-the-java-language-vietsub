@@ -1,0 +1,48 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to the next module in the Pluralsight Java
+
+2
+00:00:04,000 --> 00:00:06,000
+fundamentals course, on the Java language.
+
+3
+00:00:06,000 --> 00:00:09,000
+In this module, we cover Exceptions and Error Handling.
+
+4
+00:00:09,000 --> 00:00:11,000
+My name is Jim Wilson.
+
+5
+00:00:11,000 --> 00:00:12,000
+In this module, we cover a number of things
+
+6
+00:00:12,000 --> 00:00:13,000
+related to exceptions.
+
+7
+00:00:13,000 --> 00:00:16,000
+We'll first take a look at the role of exceptions.
+
+8
+00:00:16,000 --> 00:00:18,000
+Then, we'll talk about the try/catch/finally statement,
+
+9
+00:00:18,000 --> 00:00:20,000
+that allows us to handle exceptions.
+
+10
+00:00:20,000 --> 00:00:22,000
+We'll talk about our responsibilities when we have
+
+11
+00:00:22,000 --> 00:00:24,000
+exceptions that cross method boundaries, look at how
+
+12
+00:00:24,000 --> 00:59:00,000
+to throw exceptions, and finally, how to create our own custom exception types.
+

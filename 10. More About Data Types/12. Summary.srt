@@ -1,0 +1,136 @@
+1
+00:00:02,000 --> 00:00:06,000
+To wrap up, remember the key things you want to remember from this module are first,
+
+2
+00:00:06,000 --> 00:00:07,000
+we have the string class,
+
+3
+00:00:07,000 --> 00:00:10,000
+which allows us to store a sequence of unicode characters
+
+4
+00:00:10,000 --> 00:00:13,000
+and any class that you create,
+
+5
+00:00:13,000 --> 00:00:16,000
+you can override the toString method to define
+
+6
+00:00:16,000 --> 00:00:19,000
+how your class behaves when converted to a string.
+
+7
+00:00:19,000 --> 00:00:22,000
+Remember that because strings are immutable,
+
+8
+00:00:22,000 --> 00:00:23,000
+meaning that they can't be changed directly,
+
+9
+00:00:23,000 --> 00:00:26,000
+we don't want to manipulate strings themselves directly.
+
+10
+00:00:26,000 --> 00:00:28,000
+Instead we use the StringBuilder class,
+
+11
+00:00:28,000 --> 00:00:29,000
+which provides an efficient way
+
+12
+00:00:29,000 --> 00:00:31,000
+for us to manipulate strings.
+
+13
+00:00:31,000 --> 00:00:34,000
+Primitive types provide a very efficient way
+
+14
+00:00:34,000 --> 00:00:35,000
+to manage primitive values,
+
+15
+00:00:35,000 --> 00:00:38,000
+but they lack the capability of classes.
+
+16
+00:00:38,000 --> 00:00:39,000
+So the primitive wrapper classes
+
+17
+00:00:39,000 --> 00:00:42,000
+give us the ability to get to class features
+
+18
+00:00:42,000 --> 00:00:45,000
+when working with primitive values.
+
+19
+00:00:45,000 --> 00:00:46,000
+Remember though that the primitive wrapper classes
+
+20
+00:00:46,000 --> 00:00:49,000
+are much less efficient than the primitive types themselves,
+
+21
+00:00:49,000 --> 00:00:51,000
+so only use the primitive wrapper classes
+
+22
+00:00:51,000 --> 00:00:54,000
+when you need the capabilities they provide.
+
+23
+00:00:54,000 --> 00:00:56,000
+Final fields allow us to define a field
+
+24
+00:00:56,000 --> 00:00:58,000
+that cannot be changed once set.
+
+25
+00:00:58,000 --> 00:01:02,000
+Remember that there are two kinds of final fields.
+
+26
+00:01:02,000 --> 00:01:04,000
+A simple final field is set
+
+27
+00:01:04,000 --> 00:01:06,000
+during the creation of an object instance.
+
+28
+00:01:06,000 --> 00:01:09,000
+Whereas a static final field
+
+29
+00:01:09,000 --> 00:01:11,000
+serves more as a named constant.
+
+30
+00:01:11,000 --> 00:01:12,000
+It can't be changed by any object instance.
+
+31
+00:01:12,000 --> 00:01:16,000
+Its value is associated instead with the class itself.
+
+32
+00:01:16,000 --> 00:01:18,000
+And, finally we have enumeration types,
+
+33
+00:01:18,000 --> 00:01:20,000
+which allow us to define a type
+
+34
+00:01:20,000 --> 00:59:00,000
+that can only hold a finite list of values.
+

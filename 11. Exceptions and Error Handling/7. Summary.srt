@@ -1,0 +1,128 @@
+1
+00:00:02,000 --> 00:00:04,000
+To wrap up, remember our focus in this module
+
+2
+00:00:04,000 --> 00:00:05,000
+is on exceptions.
+
+3
+00:00:05,000 --> 00:00:08,000
+And exceptions provides an non-intrusive way
+
+4
+00:00:08,000 --> 00:00:09,000
+to signal errors.
+
+5
+00:00:09,000 --> 00:00:12,000
+And, when we're working with exceptions, we use try, catch
+
+6
+00:00:12,000 --> 00:00:14,000
+and finally to provide a structured way
+
+7
+00:00:14,000 --> 00:00:16,000
+to handle those exceptions.
+
+8
+00:00:16,000 --> 00:00:18,000
+The try block is the work we want to perform normally,
+
+9
+00:00:18,000 --> 00:00:20,000
+the catch block is what we want to do
+
+10
+00:00:20,000 --> 00:00:22,000
+if something goes wrong, and finally gives us a common place
+
+11
+00:00:22,000 --> 00:00:24,000
+to put our clean-up code.
+
+12
+00:00:24,000 --> 00:00:26,000
+And remember that exceptions are typed, and can be caught
+
+13
+00:00:26,000 --> 00:00:28,000
+by type, so you can have a separate catch statement
+
+14
+00:00:28,000 --> 00:00:30,000
+for differing exception types.
+
+15
+00:00:30,000 --> 00:00:33,000
+So, you can provide a very specific handling for each type.
+
+16
+00:00:33,000 --> 00:00:35,000
+Remember, though, you want to catch from most specific type
+
+17
+00:00:35,000 --> 00:00:38,000
+to least specific, because the system checks from the top
+
+18
+00:00:38,000 --> 00:00:41,000
+down of catches, and the first catch it encounters
+
+19
+00:00:41,000 --> 00:00:44,000
+they can assign that exception type to it will use.
+
+20
+00:00:44,000 --> 00:00:46,000
+So, if you've got a more specific handler, you want to
+
+21
+00:00:46,000 --> 00:00:50,000
+put that before your more general handler.
+
+22
+00:00:50,000 --> 00:00:53,000
+Remember, exceptions are raised using the throw key word,
+
+23
+00:00:53,000 --> 00:00:56,000
+but remember that, if a method has any checked exceptions
+
+24
+00:00:56,000 --> 00:00:59,000
+that it doesn't catch, then it must declare those exceptions
+
+25
+00:00:59,000 --> 00:01:02,000
+can occur by using the throws clause
+
+26
+00:01:02,000 --> 00:01:03,000
+on the method declaration.
+
+27
+00:01:03,000 --> 00:01:05,000
+And normally, when we throw exceptions,
+
+28
+00:01:05,000 --> 00:01:07,000
+we want to choose one of the build-in exceptions, but,
+
+29
+00:01:07,000 --> 00:01:11,000
+if we need to, we can create our own custom exception types.
+
+30
+00:01:11,000 --> 00:01:13,000
+And normally, those exception types will inherit
+
+31
+00:01:13,000 --> 00:01:17,000
+from the exception class, which makes our custom exceptions
+
+32
+00:01:17,000 --> 00:59:00,000
+checked exceptions.
+

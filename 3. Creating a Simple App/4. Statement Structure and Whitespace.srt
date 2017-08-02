@@ -1,0 +1,220 @@
+1
+00:00:01,000 --> 00:00:03,000
+Java programs are made up of statements.
+
+2
+00:00:03,000 --> 00:00:05,000
+Now, a lot of different things can
+
+3
+00:00:05,000 --> 00:00:06,000
+go on in a particular statement.
+
+4
+00:00:06,000 --> 00:00:09,000
+And, we'll talk about those things throughout this course.
+
+5
+00:00:09,000 --> 00:00:12,000
+But fundamentally, programs are made up of statements.
+
+6
+00:00:12,000 --> 00:00:15,000
+Now, each statement ends with a semicolon, right?
+
+7
+00:00:15,000 --> 00:00:18,000
+Java's a language where the new line and the Enter key
+
+8
+00:00:18,000 --> 00:00:20,000
+doesn't really create a new statement, right?
+
+9
+00:00:20,000 --> 00:00:22,000
+It actually (mumbles) on the semicolon.
+
+10
+00:00:22,000 --> 00:00:24,000
+If you're going from any of the C-based languages,
+
+11
+00:00:24,000 --> 00:00:26,000
+that's something you're very familiar with, right?
+
+12
+00:00:26,000 --> 00:00:28,000
+Other languages, like Visual Basic, actually use
+
+13
+00:00:28,000 --> 00:00:30,000
+the end of the end of line to mark a statement.
+
+14
+00:00:30,000 --> 00:00:32,000
+In Java, it's the semicolon.
+
+15
+00:00:32,000 --> 00:00:35,000
+And the parts of a statement can be separated
+
+16
+00:00:35,000 --> 00:00:37,000
+by zero or more whitespaces, right?
+
+17
+00:00:37,000 --> 00:00:40,000
+So, and a whitespace can be many different things.
+
+18
+00:00:40,000 --> 00:00:42,000
+It can be the Space character.
+
+19
+00:00:42,000 --> 00:00:43,000
+It can be a Tab.
+
+20
+00:00:43,000 --> 00:00:46,000
+And because statements don't end with new line,
+
+21
+00:00:46,000 --> 00:00:55,000
+even the new line itself is just a whitespace in Java.
+
+22
+00:00:55,000 --> 00:00:57,000
+Java's a language that gives us a lot of flexibility
+
+23
+00:00:57,000 --> 00:00:58,000
+with whitespaces.
+
+24
+00:00:58,000 --> 00:00:59,000
+Because, remember we said that the parts can be
+
+25
+00:00:59,000 --> 00:01:01,000
+separated by zero or more whitespaces.
+
+26
+00:01:01,000 --> 00:01:04,000
+So, it allows us to format things in a way
+
+27
+00:01:04,000 --> 00:01:05,000
+that works well for us, right?
+
+28
+00:01:05,000 --> 00:01:08,000
+So, I can have a statement like this where all of the parts
+
+29
+00:01:08,000 --> 00:01:11,000
+are pushed all together with no whitespaces
+
+30
+00:01:11,000 --> 00:01:12,000
+between them.
+
+31
+00:01:12,000 --> 00:01:14,000
+But then, I can have the same statement
+
+32
+00:01:14,000 --> 00:01:16,000
+where I just put a space after the Print line,
+
+33
+00:01:16,000 --> 00:01:17,000
+and a space after the parenthesis,
+
+34
+00:01:17,000 --> 00:01:20,000
+and a space before the other parenthesis.
+
+35
+00:01:20,000 --> 00:01:22,000
+That will do the exact same thing.
+
+36
+00:01:22,000 --> 00:01:24,000
+I can even put multiple spaces in there, right,
+
+37
+00:01:24,000 --> 00:01:26,000
+and that still does the exact same thing.
+
+38
+00:01:26,000 --> 00:01:28,000
+And, remember that because the new line
+
+39
+00:01:28,000 --> 00:01:30,000
+is considered a whitespace, I can even format
+
+40
+00:01:30,000 --> 00:01:31,000
+it like this, right?
+
+41
+00:01:31,000 --> 00:01:33,000
+Now, this is kind of a crazy way to format it
+
+42
+00:01:33,000 --> 00:01:35,000
+and I wouldn't suggest you do this.
+
+43
+00:01:35,000 --> 00:01:37,000
+But, it's all just whitespace, all right?
+
+44
+00:01:37,000 --> 00:01:39,000
+So, after that Print line, we've got a new line,
+
+45
+00:01:39,000 --> 00:01:40,000
+followed by a bunch of the Space characters.
+
+46
+00:01:40,000 --> 00:01:42,000
+That's fine.
+
+47
+00:01:42,000 --> 00:01:44,000
+All right, after that parenthesis, we got a new line again.
+
+48
+00:01:44,000 --> 00:01:48,000
+After Hello World, we got a new line, another new line,
+
+49
+00:01:48,000 --> 00:01:50,000
+and then, a whole bunch of whitespaces.
+
+50
+00:01:50,000 --> 00:01:52,000
+All right, so (mumbles) a whole bunch of Space character.
+
+51
+00:01:52,000 --> 00:01:55,000
+And so, it just shows us that the whitespace allows us
+
+52
+00:01:55,000 --> 00:01:58,000
+to indent, format, put line breaks
+
+53
+00:01:58,000 --> 00:01:59,000
+in a way that works for us, right?
+
+54
+00:01:59,000 --> 00:02:01,000
+The whitespaces are just separators.
+
+55
+00:02:01,000 --> 00:59:00,000
+And, it's that semicolon that marks the end of the statement.
+

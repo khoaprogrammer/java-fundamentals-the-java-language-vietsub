@@ -1,0 +1,192 @@
+1
+00:00:02,000 --> 00:00:04,000
+Let's take a look at a demo comparing the behavior
+
+2
+00:00:04,000 --> 00:00:10,000
+of a logical and to that of a conditional logical and.
+
+3
+00:00:10,000 --> 00:00:12,000
+We have a simple program here where we have
+
+4
+00:00:12,000 --> 00:00:14,000
+two variables declared at the top,
+
+5
+00:00:14,000 --> 00:00:17,000
+students equals 150 and rooms equals zero.
+
+6
+00:00:17,000 --> 00:00:19,000
+And let's say I just want to put in a condition here
+
+7
+00:00:19,000 --> 00:00:21,000
+where I want to print out the message "crowded"
+
+8
+00:00:21,000 --> 00:00:24,000
+if there are more than 30 students to a room.
+
+9
+00:00:24,000 --> 00:00:26,000
+So I'm just going to run my if statement.
+
+10
+00:00:26,000 --> 00:00:30,000
+I'll just take students, divide that by rooms, and if that's
+
+11
+00:00:30,000 --> 00:00:34,000
+greater than 30 I'll go ahead and I'll print out my message.
+
+12
+00:00:34,000 --> 00:00:36,000
+So if the result of students divided by rooms
+
+13
+00:00:36,000 --> 00:00:39,000
+is greater than 30, I print out that crowded message.
+
+14
+00:00:39,000 --> 00:00:42,000
+Now of course one of the issues I have is that, what if the
+
+15
+00:00:42,000 --> 00:00:45,000
+rooms is zero, right, and you can't legally divide by zero.
+
+16
+00:00:45,000 --> 00:00:48,000
+So what I really want to say is, "Well, if rooms is greater
+
+17
+00:00:48,000 --> 00:00:51,000
+"than zero AND students divided by rooms is greater
+
+18
+00:00:51,000 --> 00:00:54,000
+"than 30, then I'll print out that message."
+
+19
+00:00:54,000 --> 00:00:58,000
+So what I'll do here, is just put in your rooms greater than
+
+20
+00:00:58,000 --> 00:01:03,000
+zero and then and students divided by rooms greater than 30.
+
+21
+00:01:03,000 --> 00:01:06,000
+All right, so that way we'll do both tests, right?
+
+22
+00:01:06,000 --> 00:01:08,000
+Rooms is greater than zero so we have valid division
+
+23
+00:01:08,000 --> 00:01:10,000
+and then the result of the division.
+
+24
+00:01:10,000 --> 00:01:13,000
+So let's go ahead and run this.
+
+25
+00:01:13,000 --> 00:01:15,000
+And notice what happens there, I'm getting an error message.
+
+26
+00:01:15,000 --> 00:01:18,000
+Because it's not legal to divide by zero.
+
+27
+00:01:18,000 --> 00:01:21,000
+Because what happened is that it first did rooms
+
+28
+00:01:21,000 --> 00:01:23,000
+greater than zero, now that tested to false, right,
+
+29
+00:01:23,000 --> 00:01:26,000
+because rooms is not greater than zero, but then it
+
+30
+00:01:26,000 --> 00:01:28,000
+tried to do the right hand side of the and as well.
+
+31
+00:01:28,000 --> 00:01:31,000
+It tried to do the students divided by rooms, which created
+
+32
+00:01:31,000 --> 00:01:34,000
+the error because you can't legally divide by zero.
+
+33
+00:01:34,000 --> 00:01:37,000
+But now, if I go ahead and change this to the double
+
+34
+00:01:37,000 --> 00:01:41,000
+ampersand, making it the conditional logical and, now
+
+35
+00:01:41,000 --> 00:01:44,000
+we'll only do the right hand side if the left hand side
+
+36
+00:01:44,000 --> 00:01:46,000
+was true, or conditionally, right?
+
+37
+00:01:46,000 --> 00:01:49,000
+It does the right hand side conditionally.
+
+38
+00:01:49,000 --> 00:01:51,000
+Now if I run it, I don't get the error message.
+
+39
+00:01:51,000 --> 00:01:53,000
+It ran successfully.
+
+40
+00:01:53,000 --> 00:01:55,000
+Now it didn't print the message out, right, because the
+
+41
+00:01:55,000 --> 00:01:58,000
+combined value of the test was false.
+
+42
+00:01:58,000 --> 00:02:01,000
+Rooms was not greater than zero, but we ran successfully.
+
+43
+00:02:01,000 --> 00:02:03,000
+So we were able to conditionally execute the right hand
+
+44
+00:02:03,000 --> 00:02:06,000
+side of the and based on the left hand side, so if the
+
+45
+00:02:06,000 --> 00:02:08,000
+left hand side had been true, we would have also run the
+
+46
+00:02:08,000 --> 00:02:11,000
+right hand side to see if it was true, but once the left
+
+47
+00:02:11,000 --> 00:02:13,000
+hand side was false, we never even bothered running the
+
+48
+00:02:13,000 --> 00:59:00,000
+right hand side.
+

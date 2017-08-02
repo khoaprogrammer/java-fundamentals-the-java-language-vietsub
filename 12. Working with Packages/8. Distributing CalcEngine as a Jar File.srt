@@ -1,0 +1,908 @@
+1
+00:00:02,000 --> 00:00:03,000
+In this demo, we'll take a look at
+
+2
+00:00:03,000 --> 00:00:04,000
+how we can package up our applications
+
+3
+00:00:04,000 --> 00:00:08,000
+as a JAR file for distribution.
+
+4
+00:00:08,000 --> 00:00:12,000
+Here we have our application opened up in an IDE, in this case it's IntelliJ
+
+5
+00:00:12,000 --> 00:00:14,000
+and the application's in the exact state
+
+6
+00:00:14,000 --> 00:00:16,000
+it was when we finished up the last demo.
+
+7
+00:00:16,000 --> 00:00:17,000
+Now as we know of course,
+
+8
+00:00:17,000 --> 00:00:19,000
+we could run this right inside of the IDE.
+
+9
+00:00:19,000 --> 00:00:21,000
+We've done that a bunch of times.
+
+10
+00:00:21,000 --> 00:00:22,000
+We want to look at now how we can
+
+11
+00:00:22,000 --> 00:00:24,000
+distribute it around so people
+
+12
+00:00:24,000 --> 00:00:25,000
+without the IDE can run it.
+
+13
+00:00:25,000 --> 00:00:28,000
+We touched on this briefly back in Module two.
+
+14
+00:00:28,000 --> 00:00:31,000
+We're going to look at things a lot more closely now.
+
+15
+00:00:31,000 --> 00:00:33,000
+If I switch over to the folder where
+
+16
+00:00:33,000 --> 00:00:36,000
+this is built out at.
+
+17
+00:00:36,000 --> 00:00:37,000
+Here I am in the folder that contains
+
+18
+00:00:37,000 --> 00:00:39,000
+the demos for this module.
+
+19
+00:00:39,000 --> 00:00:40,000
+Working on the CalcEngine demo right now.
+
+20
+00:00:40,000 --> 00:00:42,000
+Let's just go inside there.
+
+21
+00:00:42,000 --> 00:00:44,000
+What we want to look at is the Out folder.
+
+22
+00:00:44,000 --> 00:00:47,000
+Again, this Out folder is something that IntelliJ uses,
+
+23
+00:00:47,000 --> 00:00:50,000
+other systems use different folder structures.
+
+24
+00:00:50,000 --> 00:00:53,000
+We go in here into a production folder and CalcEngine.
+
+25
+00:00:53,000 --> 00:00:55,000
+This is the output from CalcEngine.
+
+26
+00:00:55,000 --> 00:00:57,000
+And you see the only thing we see here
+
+27
+00:00:57,000 --> 00:00:59,000
+is a COM folder.
+
+28
+00:00:59,000 --> 00:01:00,000
+Remember that we said that building
+
+29
+00:01:00,000 --> 00:01:02,000
+the Java applications creates a folder structure
+
+30
+00:01:02,000 --> 00:01:04,000
+that corresponds to the package names.
+
+31
+00:01:04,000 --> 00:01:07,000
+So I say COM, Pluralsight and when
+
+32
+00:01:07,000 --> 00:01:09,000
+I get inside of there, there's two folders
+
+33
+00:01:09,000 --> 00:01:10,000
+because I have two packages that
+
+34
+00:01:10,000 --> 00:01:12,000
+fall under COM.Pluralsight.
+
+35
+00:01:12,000 --> 00:01:14,000
+CalcEngine and myapp.
+
+36
+00:01:14,000 --> 00:01:16,000
+And from a nomenclature standpoint,
+
+37
+00:01:16,000 --> 00:01:18,000
+CalcEngine is considered to be
+
+38
+00:01:18,000 --> 00:01:21,000
+a sub package of COM.Pluralsight.
+
+39
+00:01:21,000 --> 00:01:22,000
+There's no special relationship there
+
+40
+00:01:22,000 --> 00:01:23,000
+other than how they're stored.
+
+41
+00:01:23,000 --> 00:01:25,000
+But it's just a terminology that's used.
+
+42
+00:01:25,000 --> 00:01:29,000
+The same way myapp is a sub package of COM.Pluralsight.
+
+43
+00:01:29,000 --> 00:01:32,000
+If I go into my app, we see the class file for Main,
+
+44
+00:01:32,000 --> 00:01:33,000
+this is a complied version of Main.
+
+45
+00:01:33,000 --> 00:01:35,000
+We go back to the Pluralsight,
+
+46
+00:01:35,000 --> 00:01:37,000
+go into CalcEngine, see all the class files there
+
+47
+00:01:37,000 --> 00:01:38,000
+for all the compiled versions
+
+48
+00:01:38,000 --> 00:01:40,000
+of the classes we have in that package.
+
+49
+00:01:40,000 --> 00:01:42,000
+If I want to jump back up here to COM
+
+50
+00:01:42,000 --> 00:01:45,000
+and then I'll go up one more level where CalcEngine is.
+
+51
+00:01:45,000 --> 00:01:48,000
+This is the root of my package.
+
+52
+00:01:48,000 --> 00:01:50,000
+I should be able to run the program from here.
+
+53
+00:01:50,000 --> 00:01:51,000
+If I want to, I can go in here
+
+54
+00:01:51,000 --> 00:01:55,000
+and I can open up a command prompt.
+
+55
+00:01:55,000 --> 00:01:56,000
+Here we're on the command prompt.
+
+56
+00:01:56,000 --> 00:01:57,000
+If I want to run the program,
+
+57
+00:01:57,000 --> 00:02:00,000
+I just type Java and then the class
+
+58
+00:02:00,000 --> 00:02:01,000
+that's my entry point which is
+
+59
+00:02:01,000 --> 00:02:06,000
+COM.Pluralsight.myapp.main.
+
+60
+00:02:06,000 --> 00:02:07,000
+Now just go ahead and hit Enter
+
+61
+00:02:07,000 --> 00:02:09,000
+and of course, the application runs.
+
+62
+00:02:09,000 --> 00:02:11,000
+So that proves that if we were to actually
+
+63
+00:02:11,000 --> 00:02:14,000
+take this COM folder and its contents
+
+64
+00:02:14,000 --> 00:02:15,000
+and copy it over to another machine
+
+65
+00:02:15,000 --> 00:02:17,000
+as long as that machine had Java installed on it.
+
+66
+00:02:17,000 --> 00:02:20,000
+We could run it on that machine just like this.
+
+67
+00:02:20,000 --> 00:02:21,000
+As we talked about, JAR files are
+
+68
+00:02:21,000 --> 00:02:26,000
+a much more convenient way to distribute our applications.
+
+69
+00:02:26,000 --> 00:02:27,000
+Let's take a look at how we can
+
+70
+00:02:27,000 --> 00:02:30,000
+actually create that JAR file using the IDEs.
+
+71
+00:02:30,000 --> 00:02:33,000
+First doing it with IntelliJ
+
+72
+00:02:33,000 --> 00:02:34,000
+and then I'll show you, as well,
+
+73
+00:02:34,000 --> 00:02:35,000
+how to do it in NetBeans.
+
+74
+00:02:35,000 --> 00:02:37,000
+Again, of course, you could also use
+
+75
+00:02:37,000 --> 00:02:38,000
+the actual JAR utility.
+
+76
+00:02:38,000 --> 00:02:40,000
+I've got the URL on the screen
+
+77
+00:02:40,000 --> 00:02:42,000
+for the documentation for the JAR utility.
+
+78
+00:02:42,000 --> 00:02:45,000
+We're going to focus on the IDEs for right now.
+
+79
+00:02:45,000 --> 00:02:48,000
+We go back here into IntelliJ.
+
+80
+00:02:48,000 --> 00:02:49,000
+Now IntelliJ is kind of interesting.
+
+81
+00:02:49,000 --> 00:02:53,000
+It uses an unusual way or at least
+
+82
+00:02:53,000 --> 00:02:57,000
+a nonstandard way of how you specify
+
+83
+00:02:57,000 --> 00:02:58,000
+you want to create a JAR file.
+
+84
+00:02:58,000 --> 00:02:59,000
+Other environments tend to do it
+
+85
+00:02:59,000 --> 00:03:01,000
+more directly as part of the build process.
+
+86
+00:03:01,000 --> 00:03:03,000
+IntelliJ actually has the generation
+
+87
+00:03:03,000 --> 00:03:06,000
+of the JARs as something separate.
+
+88
+00:03:06,000 --> 00:03:08,000
+The way we set up the JAR file in IntelliJ
+
+89
+00:03:08,000 --> 00:03:10,000
+is we go to the File menu,
+
+90
+00:03:10,000 --> 00:03:14,000
+go to one here called Project Structure.
+
+91
+00:03:14,000 --> 00:03:15,000
+You notice here under Project Settings
+
+92
+00:03:15,000 --> 00:03:17,000
+here on the left, there's one option here
+
+93
+00:03:17,000 --> 00:03:19,000
+called Artifacts and Artifacts are other things
+
+94
+00:03:19,000 --> 00:03:21,000
+you can produce from the project.
+
+95
+00:03:21,000 --> 00:03:24,000
+A JAR file is considered an artifact in IntelliJ.
+
+96
+00:03:24,000 --> 00:03:27,000
+So what we do is we go up to this plus sign up here, we choose that.
+
+97
+00:03:27,000 --> 00:03:28,000
+It says, "What kind of artifact do you want?"
+
+98
+00:03:28,000 --> 00:03:31,000
+Well I want a JAR artifact and I want
+
+99
+00:03:31,000 --> 00:03:33,000
+to generate a JAR file from the modules
+
+100
+00:03:33,000 --> 00:03:34,000
+that are in this project.
+
+101
+00:03:34,000 --> 00:03:36,000
+So I'm going to choose that.
+
+102
+00:03:36,000 --> 00:03:37,000
+Notice one of the options here
+
+103
+00:03:37,000 --> 00:03:40,000
+when this dialogue pops up is Main class.
+
+104
+00:03:40,000 --> 00:03:42,000
+So it says, "Well, do you want me
+
+105
+00:03:42,000 --> 00:03:43,000
+"to actually put a Main class as
+
+106
+00:03:43,000 --> 00:03:44,000
+"the entry point in this?"
+
+107
+00:03:44,000 --> 00:03:45,000
+And we do want to do that.
+
+108
+00:03:45,000 --> 00:03:48,000
+I'm just going to choose the dot, dot, dot here.
+
+109
+00:03:48,000 --> 00:03:51,000
+I'm going to choose my COM.Pluralsight.myapp.Main.
+
+110
+00:03:51,000 --> 00:03:53,000
+So say, OK.
+
+111
+00:03:53,000 --> 00:03:56,000
+Now what this does once I choose that option
+
+112
+00:03:56,000 --> 00:03:59,000
+is it actually will generate the manifest
+
+113
+00:03:59,000 --> 00:04:01,000
+for this JAR file specifying that
+
+114
+00:04:01,000 --> 00:04:02,000
+that's the main entry point.
+
+115
+00:04:02,000 --> 00:04:04,000
+We'll see why that's useful in a minute.
+
+116
+00:04:04,000 --> 00:04:06,000
+Go ahead and say OK.
+
+117
+00:04:06,000 --> 00:04:08,000
+That's all set up now, so we'll say OK again.
+
+118
+00:04:08,000 --> 00:04:10,000
+Now if I was to go off and just build
+
+119
+00:04:10,000 --> 00:04:11,000
+my project right now,
+
+120
+00:04:11,000 --> 00:04:13,000
+I still wouldn't have a JAR file.
+
+121
+00:04:13,000 --> 00:04:15,000
+In order to get the JAR file,
+
+122
+00:04:15,000 --> 00:04:16,000
+what I have to do is
+
+123
+00:04:16,000 --> 00:04:20,000
+go to the Build menu, choose Build Artifacts.
+
+124
+00:04:20,000 --> 00:04:21,000
+It says, "What do you want me to do?"
+
+125
+00:04:21,000 --> 00:04:24,000
+So it's CalcEngine JAR, I want to build it.
+
+126
+00:04:24,000 --> 00:04:28,000
+That now goes off and builds that JAR file.
+
+127
+00:04:28,000 --> 00:04:29,000
+What I want to do is let's go back
+
+128
+00:04:29,000 --> 00:04:32,000
+to the file system now.
+
+129
+00:04:32,000 --> 00:04:34,000
+Here we are in the file system
+
+130
+00:04:34,000 --> 00:04:36,000
+and you'll notice that before we just had
+
+131
+00:04:36,000 --> 00:04:37,000
+that COM folder here.
+
+132
+00:04:37,000 --> 00:04:40,000
+Notice now that there's a meta.INF folder.
+
+133
+00:04:40,000 --> 00:04:42,000
+That's actually going to contain our manifest.
+
+134
+00:04:42,000 --> 00:04:43,000
+If I go inside of here,
+
+135
+00:04:43,000 --> 00:04:46,000
+it says manifest.mf, that's our manifest file.
+
+136
+00:04:46,000 --> 00:04:48,000
+If I double click on this,
+
+137
+00:04:48,000 --> 00:04:50,000
+you notice that it has an entry here
+
+138
+00:04:50,000 --> 00:04:53,000
+Main class, COM.Pluralsight.myapp.Main.
+
+139
+00:04:53,000 --> 00:04:56,000
+That actually gets included in the JAR file
+
+140
+00:04:56,000 --> 00:04:58,000
+so we're able to just basically execute
+
+141
+00:04:58,000 --> 00:05:00,000
+the JAR file and Java will know what class
+
+142
+00:05:00,000 --> 00:05:01,000
+we want to run.
+
+143
+00:05:01,000 --> 00:05:04,000
+Let's go ahead and close this guy out.
+
+144
+00:05:04,000 --> 00:05:07,000
+I'm going to jump back up here to my Out folder and you notice here
+
+145
+00:05:07,000 --> 00:05:09,000
+there's an Artifacts folder.
+
+146
+00:05:09,000 --> 00:05:10,000
+I go inside of there, notice there's a folder
+
+147
+00:05:10,000 --> 00:05:13,000
+called CalcEngine_JAR.
+
+148
+00:05:13,000 --> 00:05:15,000
+So that's our JAR file.
+
+149
+00:05:15,000 --> 00:05:17,000
+Let's go ahead and open a command prompt
+
+150
+00:05:17,000 --> 00:05:20,000
+in this location now.
+
+151
+00:05:20,000 --> 00:05:22,000
+Here we are in the folder containing the JAR file.
+
+152
+00:05:22,000 --> 00:05:24,000
+What's nice about this is since
+
+153
+00:05:24,000 --> 00:05:26,000
+the JAR file actually specifies
+
+154
+00:05:26,000 --> 00:05:28,000
+what the main entry point is,
+
+155
+00:05:28,000 --> 00:05:30,000
+I can effectively just run the JAR file
+
+156
+00:05:30,000 --> 00:05:33,000
+and just say Java, I'm going to use an option
+
+157
+00:05:33,000 --> 00:05:37,000
+JAR and then I'm going to put in the name of the JAR file.
+
+158
+00:05:37,000 --> 00:05:40,000
+Basically that tells Java to run this JAR file.
+
+159
+00:05:40,000 --> 00:05:42,000
+Because the JAR includes a manifest
+
+160
+00:05:42,000 --> 00:05:44,000
+that says what the main entry point is,
+
+161
+00:05:44,000 --> 00:05:46,000
+Java can figure out what class to run.
+
+162
+00:05:46,000 --> 00:05:48,000
+If I go ahead and run this now,
+
+163
+00:05:48,000 --> 00:05:50,000
+our application runs correctly.
+
+164
+00:05:50,000 --> 00:05:51,000
+So you see, that's where if I have the JAR files
+
+165
+00:05:51,000 --> 00:05:53,000
+come in as that, not only do we have
+
+166
+00:05:53,000 --> 00:05:55,000
+this nice packaging of the whole application
+
+167
+00:05:55,000 --> 00:05:57,000
+in a single file but even the file
+
+168
+00:05:57,000 --> 00:05:59,000
+includes the information necessary
+
+169
+00:05:59,000 --> 00:06:00,000
+to run its contents and there's other
+
+170
+00:06:00,000 --> 00:06:03,000
+information that can be included in there as well.
+
+171
+00:06:03,000 --> 00:06:06,000
+Let's go back to our file system for a second.
+
+172
+00:06:06,000 --> 00:06:08,000
+Remember I mentioned that JAR files
+
+173
+00:06:08,000 --> 00:06:11,000
+follow the standard ZIP file format.
+
+174
+00:06:11,000 --> 00:06:14,000
+We can actually explore inside of a JAR file pretty easily.
+
+175
+00:06:14,000 --> 00:06:17,000
+Just note, there are utilities that will
+
+176
+00:06:17,000 --> 00:06:20,000
+actually let you generate the source code
+
+177
+00:06:20,000 --> 00:06:23,000
+tied to the contents of the JAR file.
+
+178
+00:06:23,000 --> 00:06:24,000
+That's what I'm looking at here.
+
+179
+00:06:24,000 --> 00:06:26,000
+I just want to show you what the structure
+
+180
+00:06:26,000 --> 00:06:28,000
+of the inside of the JAR file looks like.
+
+181
+00:06:28,000 --> 00:06:29,000
+So what I'm going to do is, I'm going to take this file
+
+182
+00:06:29,000 --> 00:06:31,000
+and I'm just going to copy it.
+
+183
+00:06:31,000 --> 00:06:34,000
+I'm going to paste it back in.
+
+184
+00:06:34,000 --> 00:06:36,000
+What I'm going to do is I'm going to change its name.
+
+185
+00:06:36,000 --> 00:06:40,000
+I'm going to change its name to CalcEngine.zip.
+
+186
+00:06:40,000 --> 00:06:42,000
+The reason I changed its name
+
+187
+00:06:42,000 --> 00:06:44,000
+is because I'm on a Window system right now
+
+188
+00:06:44,000 --> 00:06:46,000
+and on Windows, once it sees that that's
+
+189
+00:06:46,000 --> 00:06:50,000
+a zip file extension, it will actually allow me
+
+190
+00:06:50,000 --> 00:06:52,000
+to explore it as a zip file.
+
+191
+00:06:52,000 --> 00:06:54,000
+We'll go ahead and hit enter.
+
+192
+00:06:54,000 --> 00:06:55,000
+Windows just prompts me to make sure
+
+193
+00:06:55,000 --> 00:06:57,000
+I really do want to change the file name
+
+194
+00:06:57,000 --> 00:06:58,000
+and I'll say yes.
+
+195
+00:06:58,000 --> 00:07:01,000
+Now when I double click on this CalcEngine.zip
+
+196
+00:07:01,000 --> 00:07:03,000
+I can now explore its contents.
+
+197
+00:07:03,000 --> 00:07:04,000
+You notice that it's looking very much
+
+198
+00:07:04,000 --> 00:07:07,000
+like the folder we were looking at earlier.
+
+199
+00:07:07,000 --> 00:07:10,000
+We see our COM folder, Pluralsight
+
+200
+00:07:10,000 --> 00:07:12,000
+and then these are the packet sub folders
+
+201
+00:07:12,000 --> 00:07:14,000
+containing the class files.
+
+202
+00:07:14,000 --> 00:07:15,000
+So we can see the JAR file really is
+
+203
+00:07:15,000 --> 00:07:21,000
+just a zip file with the addition of that manifest.
+
+204
+00:07:21,000 --> 00:07:22,000
+As I mentioned earlier,
+
+205
+00:07:22,000 --> 00:07:24,000
+IntelliJ uses a very different process
+
+206
+00:07:24,000 --> 00:07:25,000
+for generating the JAR files than
+
+207
+00:07:25,000 --> 00:07:27,000
+most other environments do.
+
+208
+00:07:27,000 --> 00:07:28,000
+I'd like to show you here just quickly
+
+209
+00:07:28,000 --> 00:07:32,000
+inside of NetBeans how you set NetBeans
+
+210
+00:07:32,000 --> 00:07:33,000
+to generate a JAR file.
+
+211
+00:07:33,000 --> 00:07:35,000
+What I have open here is this Hello NetBeans project
+
+212
+00:07:35,000 --> 00:07:37,000
+we created earlier in the course.
+
+213
+00:07:37,000 --> 00:07:39,000
+What this is really straightforward.
+
+214
+00:07:39,000 --> 00:07:40,000
+I'm going to go over here to
+
+215
+00:07:40,000 --> 00:07:43,000
+the Project Structure, right-click, choose properties.
+
+216
+00:07:43,000 --> 00:07:45,000
+You notice there's an options here
+
+217
+00:07:45,000 --> 00:07:46,000
+our sections say on packaging.
+
+218
+00:07:46,000 --> 00:07:48,000
+We're just going to choose packaging
+
+219
+00:07:48,000 --> 00:07:49,000
+and basically we'll go ahead
+
+220
+00:07:49,000 --> 00:07:52,000
+and create the JAR file, compress the JAR file
+
+221
+00:07:52,000 --> 00:07:54,000
+and we'll say OK.
+
+222
+00:07:54,000 --> 00:07:56,000
+The simple fact of doing that,
+
+223
+00:07:56,000 --> 00:07:58,000
+now when we build a project,
+
+224
+00:07:58,000 --> 00:08:00,000
+NetBeans will now generate the JAR file.
+
+225
+00:08:00,000 --> 00:08:02,000
+So the JAR file will just be part of the build process.
+
+226
+00:08:02,000 --> 00:08:05,000
+Unlike IntelliJ where generating the JAR file was a separate process,
+
+227
+00:08:05,000 --> 00:59:00,000
+here in NetBeans it will just be part of the overall build process.
+

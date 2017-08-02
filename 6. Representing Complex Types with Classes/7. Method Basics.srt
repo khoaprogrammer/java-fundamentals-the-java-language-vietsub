@@ -1,0 +1,240 @@
+1
+00:00:01,000 --> 00:00:03,000
+Now we've mentioned that methods are basically just
+
+2
+00:00:03,000 --> 00:00:06,000
+executable code that we can use to manipulate the state
+
+3
+00:00:06,000 --> 00:00:09,000
+of our objects and perform operations.
+
+4
+00:00:09,000 --> 00:00:11,000
+Basically, each method has a name.
+
+5
+00:00:11,000 --> 00:00:13,000
+Now the rules for creating method names
+
+6
+00:00:13,000 --> 00:00:15,000
+are the same as they were with variables.
+
+7
+00:00:15,000 --> 00:00:16,000
+One of the things we normally do from a stylistic
+
+8
+00:00:16,000 --> 00:00:18,000
+standpoint, though, is use a verb or some kind of
+
+9
+00:00:18,000 --> 00:00:22,000
+action statement to name our methods.
+
+10
+00:00:22,000 --> 00:00:24,000
+Now methods have a return type and in Java there's
+
+11
+00:00:24,000 --> 00:00:27,000
+always a return type so if a method doesn't return
+
+12
+00:00:27,000 --> 00:00:30,000
+anything, then that return type is void.
+
+13
+00:00:30,000 --> 00:00:32,000
+And then a method can have parameters.
+
+14
+00:00:32,000 --> 00:00:34,000
+So parameters, start with a parenthesis after
+
+15
+00:00:34,000 --> 00:00:37,000
+the method name, you then list the parameters,
+
+16
+00:00:37,000 --> 00:00:39,000
+close the parenthesis.
+
+17
+00:00:39,000 --> 00:00:42,000
+Then the body of the method is enclosed in brackets
+
+18
+00:00:42,000 --> 00:00:45,000
+with however many statements it takes to build your method.
+
+19
+00:00:45,000 --> 00:00:47,000
+Now note that these brackets are not a statement block.
+
+20
+00:00:47,000 --> 00:00:49,000
+They're always required, even if your method only had
+
+21
+00:00:49,000 --> 00:00:52,000
+one statement, that statement goes inside
+
+22
+00:00:52,000 --> 00:00:54,000
+of brackets in a method.
+
+23
+00:00:54,000 --> 00:00:57,000
+So to see an example, let's create a really simple method
+
+24
+00:00:57,000 --> 00:01:00,000
+here and we'll have it not return any values.
+
+25
+00:01:00,000 --> 00:01:03,000
+We'll make it a void method and let's say we'll call this
+
+26
+00:01:03,000 --> 00:01:06,000
+guy showSum and let's say what we want this method to do
+
+27
+00:01:06,000 --> 00:01:09,000
+is maybe take two floating point values, add them up
+
+28
+00:01:09,000 --> 00:01:12,000
+and then it will print out that value multiple times.
+
+29
+00:01:12,000 --> 00:01:14,000
+So it'll be three parameters here.
+
+30
+00:01:14,000 --> 00:01:16,000
+So we have our open paren,
+
+31
+00:01:16,000 --> 00:01:19,000
+so let's have a float x, a comma to separate it
+
+32
+00:01:19,000 --> 00:01:22,000
+from the next parameter of float y.
+
+33
+00:01:22,000 --> 00:01:24,000
+A comma to separate it from the next parameter
+
+34
+00:01:24,000 --> 00:01:26,000
+and then an int count.
+
+35
+00:01:26,000 --> 00:01:29,000
+So the idea is that we'll add x to y and then print that
+
+36
+00:01:29,000 --> 00:01:31,000
+result out count number of times.
+
+37
+00:01:31,000 --> 00:01:33,000
+So we'll close the parenthesis,
+
+38
+00:01:33,000 --> 00:01:36,000
+we then put our brackets in place for the body
+
+39
+00:01:36,000 --> 00:01:37,000
+and then we'll do the work.
+
+40
+00:01:37,000 --> 00:01:40,000
+So we'll add x plus y to get sum,
+
+41
+00:01:40,000 --> 00:01:42,000
+we'll create a loop that counts from zero
+
+42
+00:01:42,000 --> 00:01:46,000
+and incrementing i each time as long as it's less than count
+
+43
+00:01:46,000 --> 00:01:48,000
+and then prints that value out.
+
+44
+00:01:48,000 --> 00:01:50,000
+So now when it comes down to use this method,
+
+45
+00:01:50,000 --> 00:01:52,000
+the first thing we want to do is let's go ahead
+
+46
+00:01:52,000 --> 00:01:54,000
+and just wrap it up inside of a class because all methods
+
+47
+00:01:54,000 --> 00:01:55,000
+are inside of classes.
+
+48
+00:01:55,000 --> 00:01:57,000
+We'll go ahead and make our method public
+
+49
+00:01:57,000 --> 00:01:59,000
+so we can access it.
+
+50
+00:01:59,000 --> 00:02:01,000
+And then put together some code that will first create
+
+51
+00:02:01,000 --> 00:02:04,000
+an instance of our object and then we're going to say
+
+52
+00:02:04,000 --> 00:02:07,000
+object instance name which is m.showSum,
+
+53
+00:02:07,000 --> 00:02:08,000
+calling the method.
+
+54
+00:02:08,000 --> 00:02:12,000
+And we're going to pass in 7.5, 1.4, and three.
+
+55
+00:02:12,000 --> 00:02:16,000
+So the 7.5 will go into x, the 1.4 goes in the y,
+
+56
+00:02:16,000 --> 00:02:18,000
+and the three goes in to count.
+
+57
+00:02:18,000 --> 00:02:20,000
+So what will happen then is that sum will become 7.5
+
+58
+00:02:20,000 --> 00:02:24,000
+plus 1.4, 8.9, then we're going to go inside of our loop
+
+59
+00:02:24,000 --> 00:02:26,000
+and print that out three times.
+
+60
+00:02:26,000 --> 00:59:00,000
+So we would see 8.9 printed out three times.
+

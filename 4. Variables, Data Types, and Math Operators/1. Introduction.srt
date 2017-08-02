@@ -1,0 +1,24 @@
+1
+00:00:02,000 --> 00:00:06,000
+Welcome to this module on Variables, Data Types, and Math Operators.
+
+2
+00:00:06,000 --> 00:00:11,000
+My name is Jim Wilson.
+
+3
+00:00:11,000 --> 00:00:15,000
+In this module, we'll first look at how to name and use variables.
+
+4
+00:00:15,000 --> 00:00:20,000
+We'll then look at the primitive data types in Java and their behavior.
+
+5
+00:00:20,000 --> 00:00:23,000
+We'll go through the arithmetic operators and the order of precedence.
+
+6
+00:00:23,000 --> 00:59:00,000
+And then finally, type conversions, both implicit and explicit type conversions.
+

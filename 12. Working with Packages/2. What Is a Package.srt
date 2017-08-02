@@ -1,0 +1,128 @@
+1
+00:00:01,000 --> 00:00:04,000
+Packages are an important concept in Java
+
+2
+00:00:04,000 --> 00:00:06,000
+but they're actually a pretty simple concept.
+
+3
+00:00:06,000 --> 00:00:10,000
+Basically a package is just a group of related types.
+
+4
+00:00:10,000 --> 00:00:11,000
+But by putting our types in packages,
+
+5
+00:00:11,000 --> 00:00:14,000
+we get kind of three core benefits.
+
+6
+00:00:14,000 --> 00:00:16,000
+One, packages create a name space
+
+7
+00:00:16,000 --> 00:00:20,000
+They provide a way for us to avoid type naming collisions.
+
+8
+00:00:20,000 --> 00:00:22,000
+To provide an access boundary.
+
+9
+00:00:22,000 --> 00:00:24,000
+They provide a way for us to limit access to types
+
+10
+00:00:24,000 --> 00:00:26,000
+and types members and also,
+
+11
+00:00:26,000 --> 00:00:29,000
+they act as a way for us to distribute our types.
+
+12
+00:00:29,000 --> 00:00:31,000
+Now we'll look at each one of these ideas in detail
+
+13
+00:00:31,000 --> 00:00:33,000
+throughout this module but first,
+
+14
+00:00:33,000 --> 00:00:37,000
+let's take a look at the idea of how we declare packages.
+
+15
+00:00:37,000 --> 00:00:42,000
+Now each source file identifies the associated package.
+
+16
+00:00:42,000 --> 00:00:44,000
+We do that by using the package keyword.
+
+17
+00:00:44,000 --> 00:00:46,000
+The package declaration and a source file
+
+18
+00:00:46,000 --> 00:00:50,000
+must appear before any type declarations.
+
+19
+00:00:50,000 --> 00:00:52,000
+If we take a look at our idea of our flight class here
+
+20
+00:00:52,000 --> 00:00:54,000
+that we've been using throughout the course.
+
+21
+00:00:54,000 --> 00:00:56,000
+To put that into a packet,
+
+22
+00:00:56,000 --> 00:00:58,000
+we simply added the keyword package
+
+23
+00:00:58,000 --> 00:00:59,000
+and then the name of that package.
+
+24
+00:00:59,000 --> 00:01:03,000
+In this case, XXXXXX.
+
+25
+00:01:03,000 --> 00:01:05,000
+Once that package declaration's in the source file,
+
+26
+00:01:05,000 --> 00:01:08,000
+any types that appear within that source file
+
+27
+00:01:08,000 --> 00:01:10,000
+will now be part of that package.
+
+28
+00:01:10,000 --> 00:01:14,000
+Now obviously, a package name like XXXXXX
+
+29
+00:01:14,000 --> 00:01:15,000
+is not going to be very useful
+
+30
+00:01:15,000 --> 00:01:17,000
+in terms of dealing with naming collisions and so forth.
+
+31
+00:01:17,000 --> 00:01:19,000
+So in this next clip, let's take a look
+
+32
+00:01:19,000 --> 00:59:00,000
+at this idea of packages being useful as a name space
+

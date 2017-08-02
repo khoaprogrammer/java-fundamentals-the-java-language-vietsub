@@ -1,0 +1,808 @@
+1
+00:00:02,000 --> 00:00:04,000
+In this demo, we'll take our CalcEngine application
+
+2
+00:00:04,000 --> 00:00:06,000
+and separate out the application part of it
+
+3
+00:00:06,000 --> 00:00:08,000
+from the classes we might want
+
+4
+00:00:08,000 --> 00:00:12,000
+to reuse in other applications.
+
+5
+00:00:12,000 --> 00:00:14,000
+The way our CalcEngine project is currently written,
+
+6
+00:00:14,000 --> 00:00:17,000
+the app part of it, our main entry point
+
+7
+00:00:17,000 --> 00:00:20,000
+is in the same package as all the classes we used
+
+8
+00:00:20,000 --> 00:00:21,000
+to do the work.
+
+9
+00:00:21,000 --> 00:00:22,000
+Now there's a high probability
+
+10
+00:00:22,000 --> 00:00:24,000
+that if we do a good job with these classes,
+
+11
+00:00:24,000 --> 00:00:27,000
+we might want to use these features in other applications.
+
+12
+00:00:27,000 --> 00:00:29,000
+So it probably makes sense to split
+
+13
+00:00:29,000 --> 00:00:31,000
+the application part of this out from
+
+14
+00:00:31,000 --> 00:00:34,000
+those other classes we might want to reuse.
+
+15
+00:00:34,000 --> 00:00:36,000
+So we're here in our main application.
+
+16
+00:00:36,000 --> 00:00:39,000
+Let's get it out of the com.Pluralsight.calcEngine package
+
+17
+00:00:39,000 --> 00:00:41,000
+and let's move it into one called
+
+18
+00:00:41,000 --> 00:00:44,000
+something like com.Pluralsight.myapp.
+
+19
+00:00:44,000 --> 00:00:45,000
+Remember that the way we change
+
+20
+00:00:45,000 --> 00:00:47,000
+the package from a Java standpoint
+
+21
+00:00:47,000 --> 00:00:49,000
+is simply change the package declaration.
+
+22
+00:00:49,000 --> 00:00:53,000
+If I change this CalcEngine to say my app.
+
+23
+00:00:53,000 --> 00:00:54,000
+From a Java standpoint changing
+
+24
+00:00:54,000 --> 00:00:57,000
+that package declaration is all we have to do.
+
+25
+00:00:57,000 --> 00:00:59,000
+But remember, as we talked about in Module two,
+
+26
+00:00:59,000 --> 00:01:01,000
+some of the IDEs actually require
+
+27
+00:01:01,000 --> 00:01:02,000
+that the source file structure,
+
+28
+00:01:02,000 --> 00:01:05,000
+to say the source folder structure
+
+29
+00:01:05,000 --> 00:01:07,000
+matches the structure of the package name.
+
+30
+00:01:07,000 --> 00:01:10,000
+For IntelliJ, we actually have to move
+
+31
+00:01:10,000 --> 00:01:12,000
+Main into a folder that corresponds
+
+32
+00:01:12,000 --> 00:01:14,000
+to our package structure.
+
+33
+00:01:14,000 --> 00:01:16,000
+Fortunately, IntelliJ will do that work for us.
+
+34
+00:01:16,000 --> 00:01:18,000
+Notice this little light bulb that's up here.
+
+35
+00:01:18,000 --> 00:01:21,000
+If I click on that, to say move to package
+
+36
+00:01:21,000 --> 00:01:23,000
+com.Pluralsight.myapp,
+
+37
+00:01:23,000 --> 00:01:25,000
+making that selection now causes it
+
+38
+00:01:25,000 --> 00:01:27,000
+to move that source file and reset up
+
+39
+00:01:27,000 --> 00:01:29,000
+all the folder structure we need.
+
+40
+00:01:29,000 --> 00:01:30,000
+NetBeans does that same thing.
+
+41
+00:01:30,000 --> 00:01:32,000
+If you look over here now,
+
+42
+00:01:32,000 --> 00:01:33,000
+the way it's laid out is we've got
+
+43
+00:01:33,000 --> 00:01:35,000
+under our source folder com.Pluralsight
+
+44
+00:01:35,000 --> 00:01:36,000
+and there's two sub folders.
+
+45
+00:01:36,000 --> 00:01:39,000
+One for CalcEngine and one for myapp,
+
+46
+00:01:39,000 --> 00:01:41,000
+myapp contains Main.
+
+47
+00:01:41,000 --> 00:01:42,000
+And again, that works very similarly
+
+48
+00:01:42,000 --> 00:01:44,000
+inside of NetBeans.
+
+49
+00:01:44,000 --> 00:01:45,000
+Now the problem now of course is that,
+
+50
+00:01:45,000 --> 00:01:48,000
+because the main source file is no longer
+
+51
+00:01:48,000 --> 00:01:50,000
+in the same package as our support code.
+
+52
+00:01:50,000 --> 00:01:52,000
+Things like calculate helper,
+
+53
+00:01:52,000 --> 00:01:55,000
+we now need to add import statements for those.
+
+54
+00:01:55,000 --> 00:01:56,000
+One of the nice things though is that
+
+55
+00:01:56,000 --> 00:01:57,000
+the IDE helps with that.
+
+56
+00:01:57,000 --> 00:01:59,000
+Like our Calculate Helper here.
+
+57
+00:01:59,000 --> 00:02:00,000
+Notice that it's saying that if I just do
+
+58
+00:02:00,000 --> 00:02:03,000
+ALT-enter, it will go ahead and add
+
+59
+00:02:03,000 --> 00:02:04,000
+that import for me.
+
+60
+00:02:04,000 --> 00:02:06,000
+You notice the import was added at the top.
+
+61
+00:02:06,000 --> 00:02:08,000
+Scroll up so you can see everything here.
+
+62
+00:02:08,000 --> 00:02:09,000
+So we still have our package declaration
+
+63
+00:02:09,000 --> 00:02:11,000
+but that import was added for us.
+
+64
+00:02:11,000 --> 00:02:13,000
+Again, NetBeans works very similar to that.
+
+65
+00:02:13,000 --> 00:02:15,000
+It will go ahead and add those imports for us.
+
+66
+00:02:15,000 --> 00:02:17,000
+If I scroll down here, things like
+
+67
+00:02:17,000 --> 00:02:19,000
+an invalid statement exception.
+
+68
+00:02:19,000 --> 00:02:21,000
+Again, I can just do ALT-Enter
+
+69
+00:02:21,000 --> 00:02:22,000
+and it will add the import for that as well.
+
+70
+00:02:22,000 --> 00:02:24,000
+If I scroll back up here,
+
+71
+00:02:24,000 --> 00:02:25,000
+I've got that as well.
+
+72
+00:02:25,000 --> 00:02:27,000
+If we scroll down here, again,
+
+73
+00:02:27,000 --> 00:02:29,000
+that's going to happen for all our classes
+
+74
+00:02:29,000 --> 00:02:32,000
+that are coming from our com.Pluralsight.CalcEngine package/
+
+75
+00:02:32,000 --> 00:02:35,000
+Math equation, scrolling down here,
+
+76
+00:02:35,000 --> 00:02:36,000
+things like calculate base, divider,
+
+77
+00:02:36,000 --> 00:02:39,000
+add or subtract or multiplier, all those.
+
+78
+00:02:39,000 --> 00:02:41,000
+What we want to do is make sure
+
+79
+00:02:41,000 --> 00:02:42,000
+we have imports for all those.
+
+80
+00:02:42,000 --> 00:02:43,000
+So we have to add space so we'll have
+
+81
+00:02:43,000 --> 00:02:45,000
+room for all those.
+
+82
+00:02:45,000 --> 00:02:46,000
+Now again, I could go through and have
+
+83
+00:02:46,000 --> 00:02:48,000
+IntelliJ add all those for us but I'll go through
+
+84
+00:02:48,000 --> 00:02:51,000
+and just add them here quickly.
+
+85
+00:02:51,000 --> 00:02:52,000
+Now we have all the import statements
+
+86
+00:02:52,000 --> 00:02:54,000
+that we need here.
+
+87
+00:02:54,000 --> 00:02:56,000
+One thing to note here is that right now
+
+88
+00:02:56,000 --> 00:02:58,000
+we have about eight imports all coming from
+
+89
+00:02:58,000 --> 00:03:01,000
+com.Pluralsight.CalcEngine.
+
+90
+00:03:01,000 --> 00:03:03,000
+As we mentioned, it's good to use
+
+91
+00:03:03,000 --> 00:03:04,000
+the single-type-imports because
+
+92
+00:03:04,000 --> 00:03:06,000
+it protects us from any changes
+
+93
+00:03:06,000 --> 00:03:08,000
+in an outside package.
+
+94
+00:03:08,000 --> 00:03:09,000
+One thing I want to point out about
+
+95
+00:03:09,000 --> 00:03:10,000
+a behavior in IntelliJ.
+
+96
+00:03:10,000 --> 00:03:12,000
+I don't want to spend a lot of time on the IDE
+
+97
+00:03:12,000 --> 00:03:13,000
+but this is something that's important to note.
+
+98
+00:03:13,000 --> 00:03:16,000
+IntelliJ does something with the imports.
+
+99
+00:03:16,000 --> 00:03:20,000
+By default, if you have five or more imports
+
+100
+00:03:20,000 --> 00:03:21,000
+from the same package,
+
+101
+00:03:21,000 --> 00:03:24,000
+it actually switches over to Import on demand.
+
+102
+00:03:24,000 --> 00:03:26,000
+It just replaces all these individual imports
+
+103
+00:03:26,000 --> 00:03:28,000
+with one import with a star on it.
+
+104
+00:03:28,000 --> 00:03:29,000
+That's a dangerous behavior.
+
+105
+00:03:29,000 --> 00:03:30,000
+Let me just show you quickly how
+
+106
+00:03:30,000 --> 00:03:32,000
+to fix that inside of IntelliJ.
+
+107
+00:03:32,000 --> 00:03:35,000
+If we go up to our File menu
+
+108
+00:03:35,000 --> 00:03:37,000
+and we choose Settings.
+
+109
+00:03:37,000 --> 00:03:38,000
+Here under Settings, you want to go
+
+110
+00:03:38,000 --> 00:03:42,000
+to the Editor section, the Java section under that,
+
+111
+00:03:42,000 --> 00:03:43,000
+or I should say Java subsection.
+
+112
+00:03:43,000 --> 00:03:45,000
+There's an imports tab.
+
+113
+00:03:45,000 --> 00:03:47,000
+You want to set this entry here
+
+114
+00:03:47,000 --> 00:03:49,000
+where it says Class count use import with *.
+
+115
+00:03:49,000 --> 00:03:51,000
+Normally that's five by default.
+
+116
+00:03:51,000 --> 00:03:52,000
+You want to move it to a high value
+
+117
+00:03:52,000 --> 00:03:55,000
+like 100 or 1,000 to prevent it
+
+118
+00:03:55,000 --> 00:03:57,000
+from actually switching over to Import on demand.
+
+119
+00:03:57,000 --> 00:03:59,000
+NetBeans does not have that issue,
+
+120
+00:03:59,000 --> 00:04:01,000
+that's an IntelliJ thing.
+
+121
+00:04:01,000 --> 00:04:03,000
+Now, we have all our reusable classes
+
+122
+00:04:03,000 --> 00:04:05,000
+in the CalcEngine package with Main
+
+123
+00:04:05,000 --> 00:04:07,000
+off in its own package for the application.
+
+124
+00:04:07,000 --> 00:04:09,000
+Now something to think about here.
+
+125
+00:04:09,000 --> 00:04:10,000
+Let's go to our Calculator Helper class.
+
+126
+00:04:10,000 --> 00:04:12,000
+Remember, our Calculator Helper class
+
+127
+00:04:12,000 --> 00:04:16,000
+has a field inside of it called Command
+
+128
+00:04:16,000 --> 00:04:18,000
+that uses the type math command.
+
+129
+00:04:18,000 --> 00:04:20,000
+Remember, math command is an enumeration
+
+130
+00:04:20,000 --> 00:04:22,000
+that we're using inside of Calculator Helper
+
+131
+00:04:22,000 --> 00:04:24,000
+so that once we determine the string
+
+132
+00:04:24,000 --> 00:04:25,000
+representation of the operation,
+
+133
+00:04:25,000 --> 00:04:29,000
+we can use the enumeration the rest of our code.
+
+134
+00:04:29,000 --> 00:04:31,000
+Now that's meant for our own internal usage.
+
+135
+00:04:31,000 --> 00:04:33,000
+We don't want other people using it.
+
+136
+00:04:33,000 --> 00:04:35,000
+We don't want that to be public.
+
+137
+00:04:35,000 --> 00:04:36,000
+What we'll do is go into our Math Command
+
+138
+00:04:36,000 --> 00:04:38,000
+source file here and we'll just take away
+
+139
+00:04:38,000 --> 00:04:39,000
+the public on it.
+
+140
+00:04:39,000 --> 00:04:41,000
+Alright, so now it has become package private.
+
+141
+00:04:41,000 --> 00:04:43,000
+It can only be used in our packet.
+
+142
+00:04:43,000 --> 00:04:45,000
+It's important to do that with things like
+
+143
+00:04:45,000 --> 00:04:48,000
+Math Command here that we're using internally.
+
+144
+00:04:48,000 --> 00:04:49,000
+Because it may seem at first okay,
+
+145
+00:04:49,000 --> 00:04:51,000
+to say, "We'll just go ahead and leave it public."
+
+146
+00:04:51,000 --> 00:04:52,000
+"If people use it, who cares?"
+
+147
+00:04:52,000 --> 00:04:54,000
+Well, if other code that you don't control
+
+148
+00:04:54,000 --> 00:04:56,000
+starts using this enumeration
+
+149
+00:04:56,000 --> 00:04:57,000
+and then you need to make a change
+
+150
+00:04:57,000 --> 00:04:58,000
+to it for some reason,
+
+151
+00:04:58,000 --> 00:05:00,000
+you now risk breaking their code.
+
+152
+00:05:00,000 --> 00:05:03,000
+So any types that we create that were meant
+
+153
+00:05:03,000 --> 00:05:04,000
+only for use in our package,
+
+154
+00:05:04,000 --> 00:05:06,000
+it's important to not declare them public.
+
+155
+00:05:06,000 --> 00:05:09,000
+To make them package private.
+
+156
+00:05:09,000 --> 00:05:11,000
+What happens is that now that that's package private,
+
+157
+00:05:11,000 --> 00:05:13,000
+if I go into Main which is in a different package
+
+158
+00:05:13,000 --> 00:05:15,000
+but if I try to use Math command,
+
+159
+00:05:15,000 --> 00:05:17,000
+it won't actually let me.
+
+160
+00:05:17,000 --> 00:05:18,000
+If I just type Math command,
+
+161
+00:05:18,000 --> 00:05:19,000
+notice that Math commands not even
+
+162
+00:05:19,000 --> 00:05:20,000
+coming up in our options?
+
+163
+00:05:20,000 --> 00:05:22,000
+I'll go ahead and type if all the way out.
+
+164
+00:05:22,000 --> 00:05:24,000
+Notice that it still just says that that's an error.
+
+165
+00:05:24,000 --> 00:05:25,000
+I don't know what that is.
+
+166
+00:05:25,000 --> 00:05:26,000
+I can't resolve the symbol.
+
+167
+00:05:26,000 --> 00:05:28,000
+Even if I try to forcibly put
+
+168
+00:05:28,000 --> 00:05:30,000
+the package name in front of it.
+
+169
+00:05:30,000 --> 00:05:32,000
+You notice now, I end up with
+
+170
+00:05:32,000 --> 00:05:34,000
+an error saying it can't be accessed outside the package.
+
+171
+00:05:34,000 --> 00:05:38,000
+So that protects it from being used outside the package.
+
+172
+00:05:38,000 --> 00:05:39,000
+Now with Main being off in its own package
+
+173
+00:05:39,000 --> 00:05:41,000
+in myapp, everything should still work fine
+
+174
+00:05:41,000 --> 00:05:43,000
+because I have all the necessary imports in there.
+
+175
+00:05:43,000 --> 00:05:46,000
+If I run this, you notice that we ended up getting
+
+176
+00:05:46,000 --> 00:05:47,000
+an error here and you see this thing
+
+177
+00:05:47,000 --> 00:05:50,000
+Class not found exception.
+
+178
+00:05:50,000 --> 00:05:51,000
+It's our main entry point.
+
+179
+00:05:51,000 --> 00:05:53,000
+The problem here is not a Java problem,
+
+180
+00:05:53,000 --> 00:05:55,000
+it's an IDE problem.
+
+181
+00:05:55,000 --> 00:05:56,000
+Again, I don't want to spend a lot of time
+
+182
+00:05:56,000 --> 00:05:59,000
+on IDE details but one thing to be aware of
+
+183
+00:05:59,000 --> 00:06:02,000
+is that if you change the class it's associated
+
+184
+00:06:02,000 --> 00:06:04,000
+with your application entry points
+
+185
+00:06:04,000 --> 00:06:05,000
+and the IDE, you want to make sure
+
+186
+00:06:05,000 --> 00:06:07,000
+that the IDE knows about it.
+
+187
+00:06:07,000 --> 00:06:09,000
+So to tell IntelliJ that we've changed
+
+188
+00:06:09,000 --> 00:06:12,000
+the startup path, we're going to go to Run,
+
+189
+00:06:12,000 --> 00:06:14,000
+Edit Configurations and notice
+
+190
+00:06:14,000 --> 00:06:16,000
+that the main class here is still
+
+191
+00:06:16,000 --> 00:06:18,000
+pointing to the one in CalcEngine.
+
+192
+00:06:18,000 --> 00:06:20,000
+I could just go here and change this to myapp
+
+193
+00:06:20,000 --> 00:06:21,000
+or I could click the button here
+
+194
+00:06:21,000 --> 00:06:22,000
+and just choose it.
+
+195
+00:06:22,000 --> 00:06:25,000
+Notice it says, well here's a class called Main
+
+196
+00:06:25,000 --> 00:06:27,000
+in the com.Pluralsight.myapp package
+
+197
+00:06:27,000 --> 00:06:28,000
+that will actually satisfy the requirements
+
+198
+00:06:28,000 --> 00:06:29,000
+of a startup path.
+
+199
+00:06:29,000 --> 00:06:30,000
+So we'll go ahead and choose that.
+
+200
+00:06:30,000 --> 00:06:32,000
+Now we'll say OK.
+
+201
+00:06:32,000 --> 00:06:34,000
+Now we run our application.
+
+202
+00:06:34,000 --> 00:59:00,000
+Everything works just as it should.
+

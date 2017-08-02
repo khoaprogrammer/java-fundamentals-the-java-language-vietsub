@@ -1,0 +1,332 @@
+1
+00:00:01,000 --> 00:00:04,000
+As we saw in the last clip, nesting one class
+
+2
+00:00:04,000 --> 00:00:07,000
+inside of another or one type inside of another,
+
+3
+00:00:07,000 --> 00:00:10,000
+provides scoping where we can limit who can access the type
+
+4
+00:00:10,000 --> 00:00:11,000
+and structure.
+
+5
+00:00:11,000 --> 00:00:12,000
+We can even kind of create the name of one class
+
+6
+00:00:12,000 --> 00:00:14,000
+to be structured inside of another.
+
+7
+00:00:14,000 --> 00:00:17,000
+But that's just the beginning of what nested types can do.
+
+8
+00:00:17,000 --> 00:00:20,000
+We can get a much closer relationship when we nest one class
+
+9
+00:00:20,000 --> 00:00:21,000
+inside of another.
+
+10
+00:00:21,000 --> 00:00:24,000
+There's a concept called inner classes.
+
+11
+00:00:24,000 --> 00:00:27,000
+And with inner classes you actually have a class
+
+12
+00:00:27,000 --> 00:00:30,000
+who each instance of which is associated
+
+13
+00:00:30,000 --> 00:00:33,000
+with an instance of its enclosing class.
+
+14
+00:00:33,000 --> 00:00:35,000
+So there's just kind of an implicit relationship
+
+15
+00:00:35,000 --> 00:00:36,000
+between instances.
+
+16
+00:00:36,000 --> 00:00:41,000
+This occurs anytime you nest one class inside of another
+
+17
+00:00:41,000 --> 00:00:44,000
+and don't mark the nested class as static.
+
+18
+00:00:44,000 --> 00:00:46,000
+To see how this works, let's take a look
+
+19
+00:00:46,000 --> 00:00:47,000
+at our flight class again.
+
+20
+00:00:47,000 --> 00:00:49,000
+So remember that our flight class implements
+
+21
+00:00:49,000 --> 00:00:51,000
+the iterable interface.
+
+22
+00:00:51,000 --> 00:00:54,000
+So its method iterator returned back an instance
+
+23
+00:00:54,000 --> 00:00:57,000
+of this class called flight iterator that we created.
+
+24
+00:00:57,000 --> 00:01:01,000
+If we look at flight iterator, it has kind of one job.
+
+25
+00:01:01,000 --> 00:01:04,000
+Alright, walking through that list of crew and roster.
+
+26
+00:01:04,000 --> 00:01:07,000
+The has next and next methods are needed of course
+
+27
+00:01:07,000 --> 00:01:09,000
+because they're part of the iterator interface,
+
+28
+00:01:09,000 --> 00:01:11,000
+and of course, we need the index field
+
+29
+00:01:11,000 --> 00:01:12,000
+to keep track of our location.
+
+30
+00:01:12,000 --> 00:01:14,000
+But the constructor that we have there
+
+31
+00:01:14,000 --> 00:01:18,000
+and the crew and roster fields, those exist
+
+32
+00:01:18,000 --> 00:01:22,000
+just kind of to duplicate content that's already inside
+
+33
+00:01:22,000 --> 00:01:24,000
+of the flight class.
+
+34
+00:01:24,000 --> 00:01:26,000
+Using inner classes we can actually simplify
+
+35
+00:01:26,000 --> 00:01:30,000
+our flight iterator by taking advantage of
+
+36
+00:01:30,000 --> 00:01:31,000
+the implicit relationships that can occur
+
+37
+00:01:31,000 --> 00:01:33,000
+between the classes.
+
+38
+00:01:33,000 --> 00:01:35,000
+So let's take our flight iterator class
+
+39
+00:01:35,000 --> 00:01:37,000
+and we'll move it inside of our flight class here.
+
+40
+00:01:37,000 --> 00:01:39,000
+A couple of things to note here,
+
+41
+00:01:39,000 --> 00:01:41,000
+the flight iterator class is marked as private,
+
+42
+00:01:41,000 --> 00:01:43,000
+which means that the type can't be seen
+
+43
+00:01:43,000 --> 00:01:46,000
+outside of the flight class itself.
+
+44
+00:01:46,000 --> 00:01:49,000
+Also, the class is not marked as static.
+
+45
+00:01:49,000 --> 00:01:51,000
+Alright, that's what makes it an inner class.
+
+46
+00:01:51,000 --> 00:01:53,000
+It's a nested class inside of another class.
+
+47
+00:01:53,000 --> 00:01:55,000
+The nested class is not marked as static.
+
+48
+00:01:55,000 --> 00:01:58,000
+So of course, we'll need our index field
+
+49
+00:01:58,000 --> 00:01:59,000
+to keep track of our location,
+
+50
+00:01:59,000 --> 00:02:02,000
+but then we'll implement our has next method.
+
+51
+00:02:02,000 --> 00:02:04,000
+So of course inside of here, we're going to check
+
+52
+00:02:04,000 --> 00:02:05,000
+where the index is.
+
+53
+00:02:05,000 --> 00:02:09,000
+So we have our index and we can actually compare the index
+
+54
+00:02:09,000 --> 00:02:12,000
+to crew and roster even though crew and roster
+
+55
+00:02:12,000 --> 00:02:14,000
+are not declared inside of flight iterator.
+
+56
+00:02:14,000 --> 00:02:16,000
+They're part of flight.
+
+57
+00:02:16,000 --> 00:02:19,000
+Alright similarly, we have our next method.
+
+58
+00:02:19,000 --> 00:02:21,000
+We can, of course, use the index to get
+
+59
+00:02:21,000 --> 00:02:23,000
+to the right member of crew or roster
+
+60
+00:02:23,000 --> 00:02:26,000
+and then of course return that back.
+
+61
+00:02:26,000 --> 00:02:28,000
+With this, our flight iterator class is nested
+
+62
+00:02:28,000 --> 00:02:31,000
+inside of the flight class can replace
+
+63
+00:02:31,000 --> 00:02:33,000
+that separate flight iterator class.
+
+64
+00:02:33,000 --> 00:02:36,000
+And so when we actually, inside of the iterator method,
+
+65
+00:02:36,000 --> 00:02:39,000
+when we create flight iterator, we don't have to pass in
+
+66
+00:02:39,000 --> 00:02:40,000
+any parameters.
+
+67
+00:02:40,000 --> 00:02:43,000
+We just create that nested flight iterator itself.
+
+68
+00:02:43,000 --> 00:02:45,000
+So why does this work?
+
+69
+00:02:45,000 --> 00:02:49,000
+Well as a nested class, the flight iterator actually has
+
+70
+00:02:49,000 --> 00:02:51,000
+two this references.
+
+71
+00:02:51,000 --> 00:02:53,000
+It has the traditional this reference,
+
+72
+00:02:53,000 --> 00:02:57,000
+the ability to access its own members,
+
+73
+00:02:57,000 --> 00:03:00,000
+but it also has a flight dot this reference,
+
+74
+00:03:00,000 --> 00:03:03,000
+which allows it to access the members
+
+75
+00:03:03,000 --> 00:03:06,000
+of the instance of flight in which it was created.
+
+76
+00:03:06,000 --> 00:03:09,000
+And that gives us power of inner classes.
+
+77
+00:03:09,000 --> 00:03:12,000
+By simply declaring flight iterator as in class
+
+78
+00:03:12,000 --> 00:03:14,000
+that's nested inside of another class,
+
+79
+00:03:14,000 --> 00:03:16,000
+and not marking it as static,
+
+80
+00:03:16,000 --> 00:03:20,000
+each time we create an instance of flight iterator,
+
+81
+00:03:20,000 --> 00:03:23,000
+that flight iterator instance is automatically associated
+
+82
+00:03:23,000 --> 00:03:25,000
+with the instance of the flight class in which
+
+83
+00:03:25,000 --> 00:59:00,000
+it was created.
+

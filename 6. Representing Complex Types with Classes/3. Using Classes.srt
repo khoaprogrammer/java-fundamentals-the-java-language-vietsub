@@ -1,0 +1,316 @@
+1
+00:00:02,000 --> 00:00:05,000
+When you're ready to use a class, as you would expect,
+
+2
+00:00:05,000 --> 00:00:07,000
+you would go ahead and declare a variable.
+
+3
+00:00:07,000 --> 00:00:10,000
+The thing we got to be aware of is that declaring a variable
+
+4
+00:00:10,000 --> 00:00:14,000
+simply allocates space to store what we call a reference
+
+5
+00:00:14,000 --> 00:00:17,000
+to the actual object we want to use.
+
+6
+00:00:17,000 --> 00:00:19,000
+To actually create an instance of our class,
+
+7
+00:00:19,000 --> 00:00:21,000
+otherwise known as an object,
+
+8
+00:00:21,000 --> 00:00:23,000
+we have to use the new keyword.
+
+9
+00:00:23,000 --> 00:00:25,000
+So what we do, we've got our variable nycToSf,
+
+10
+00:00:25,000 --> 00:00:29,000
+we assign that the value of new Flight.
+
+11
+00:00:29,000 --> 00:00:33,000
+What that then does is call the new Flight,
+
+12
+00:00:33,000 --> 00:00:37,000
+allocates the memory associated with that class
+
+13
+00:00:37,000 --> 00:00:40,000
+and then returns back a reference to it.
+
+14
+00:00:40,000 --> 00:00:44,000
+So what means is then that variable nycToSf is not
+
+15
+00:00:44,000 --> 00:00:48,000
+the object itself but a reference to the object.
+
+16
+00:00:48,000 --> 00:00:50,000
+Right now each instance that we create will be separate from
+
+17
+00:00:50,000 --> 00:00:53,000
+one another and, as you see here, that I've actually
+
+18
+00:00:53,000 --> 00:00:56,000
+declared the variable and then assigned the object to it
+
+19
+00:00:56,000 --> 00:00:57,000
+in two separate statements.
+
+20
+00:00:57,000 --> 00:00:59,000
+We can of course do that in a single statement.
+
+21
+00:00:59,000 --> 00:01:02,000
+So I've got a variable slcToDallas equals new Flight
+
+22
+00:01:02,000 --> 00:01:05,000
+that allocates out the slcToDallas, which is the space
+
+23
+00:01:05,000 --> 00:01:10,000
+for the reference, creates the instance of Flight
+
+24
+00:01:10,000 --> 00:01:12,000
+and assigns the reference to our variable.
+
+25
+00:01:12,000 --> 00:01:14,000
+So each of these are two distinct instances of our
+
+26
+00:01:14,000 --> 00:01:18,000
+Flight object and each of their own variables.
+
+27
+00:01:18,000 --> 00:01:20,000
+We can then call a method on one of those instances,
+
+28
+00:01:20,000 --> 00:01:24,000
+in this case we'll call add1Passenger on our slcToDallas,
+
+29
+00:01:24,000 --> 00:01:29,000
+which will cause our passengers to go from zero to one.
+
+30
+00:01:29,000 --> 00:01:31,000
+As we saw when we were using our classes
+
+31
+00:01:31,000 --> 00:01:34,000
+and creating class instances, these objects,
+
+32
+00:01:34,000 --> 00:01:36,000
+we saw that the variable wasn't the object itself.
+
+33
+00:01:36,000 --> 00:01:39,000
+Instead it was a reference to the object and that tells us
+
+34
+00:01:39,000 --> 00:01:41,000
+that we're working with reference types.
+
+35
+00:01:41,000 --> 00:01:43,000
+And that has some important implications when it comes to
+
+36
+00:01:43,000 --> 00:01:45,000
+working with objects.
+
+37
+00:01:45,000 --> 00:01:47,000
+So we look at some code here.
+
+38
+00:01:47,000 --> 00:01:50,000
+If I declare a variable flight1 that points to a new Flight
+
+39
+00:01:50,000 --> 00:01:53,000
+that allocates out to variable flight1,
+
+40
+00:01:53,000 --> 00:01:55,000
+allocates out the instance of our object and puts a
+
+41
+00:01:55,000 --> 00:01:57,000
+reference to that object into flight1,
+
+42
+00:01:57,000 --> 00:02:00,000
+I do the same thing for flight2.
+
+43
+00:02:00,000 --> 00:02:03,000
+That creates a separate object and slides it into a
+
+44
+00:02:03,000 --> 00:02:05,000
+separate variable, flight2.
+
+45
+00:02:05,000 --> 00:02:06,000
+So those two objects are completely separate
+
+46
+00:02:06,000 --> 00:02:07,000
+from one another.
+
+47
+00:02:07,000 --> 00:02:12,000
+So, if I call add1Passenger on flight2
+
+48
+00:02:12,000 --> 00:02:14,000
+the object instance pointed to by flight2
+
+49
+00:02:14,000 --> 00:02:17,000
+will have its passengers incremented from zero to one,
+
+50
+00:02:17,000 --> 00:02:20,000
+so of course if I print out flight2 passengers,
+
+51
+00:02:20,000 --> 00:02:22,000
+it prints out one.
+
+52
+00:02:22,000 --> 00:02:27,000
+Now if I assign flight1 to flight2,
+
+53
+00:02:27,000 --> 00:02:30,000
+that doesn't copy the entire object pointing from
+
+54
+00:02:30,000 --> 00:02:32,000
+by flight1 into flight2.
+
+55
+00:02:32,000 --> 00:02:36,000
+All that does was reassign the reference so that flight2,
+
+56
+00:02:36,000 --> 00:02:39,000
+instead of pointing to the object it currently points to,
+
+57
+00:02:39,000 --> 00:02:43,000
+will now point to the same object that flight1 points to.
+
+58
+00:02:43,000 --> 00:02:45,000
+So now once that object pointing to by flight2 or
+
+59
+00:02:45,000 --> 00:02:48,000
+previously pointed by flight2 is no longer referenced,
+
+60
+00:02:48,000 --> 00:02:51,000
+that object goes away and flight2 and flight1
+
+61
+00:02:51,000 --> 00:02:54,000
+are pointing to now to the exact same object.
+
+62
+00:02:54,000 --> 00:02:58,000
+If I now print out flight2.passengers, it prints out zero
+
+63
+00:02:58,000 --> 00:03:00,000
+because that's the value of passengers in the object
+
+64
+00:03:00,000 --> 00:03:02,000
+it's pointing to.
+
+65
+00:03:02,000 --> 00:03:06,000
+So now if I work through flight1 and I say add1Passenger,
+
+66
+00:03:06,000 --> 00:03:09,000
+where that increments passengers from zero to one,
+
+67
+00:03:09,000 --> 00:03:12,000
+of course, if I then call it add1Passenger again
+
+68
+00:03:12,000 --> 00:03:16,000
+on flight1, that increments it from one to two.
+
+69
+00:03:16,000 --> 00:03:20,000
+So now if I print out flight2.passengers,
+
+70
+00:03:20,000 --> 00:03:24,000
+I get out the value two, I print out the value two.
+
+71
+00:03:24,000 --> 00:03:27,000
+So it's important to understand that we make this
+
+72
+00:03:27,000 --> 00:03:30,000
+assignments we're assigning references around
+
+73
+00:03:30,000 --> 00:03:31,000
+not entire object.
+
+74
+00:03:31,000 --> 00:03:33,000
+This is very different from when we were working with
+
+75
+00:03:33,000 --> 00:03:35,000
+primitive types where the values were
+
+76
+00:03:35,000 --> 00:03:37,000
+actually copied around.
+
+77
+00:03:37,000 --> 00:03:39,000
+So it's really important to understand that that as
+
+78
+00:03:39,000 --> 00:03:42,000
+reference types, assignments cause us to point to the
+
+79
+00:03:42,000 --> 00:59:00,000
+same object instances as opposed to making complete copies.
+

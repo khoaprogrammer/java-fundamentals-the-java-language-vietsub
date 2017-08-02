@@ -1,0 +1,424 @@
+1
+00:00:01,000 --> 00:00:03,000
+So as we've seen when we declare variables,
+
+2
+00:00:03,000 --> 00:00:04,000
+we give them a type.
+
+3
+00:00:04,000 --> 00:00:06,000
+One of the most fundamental types in Java
+
+4
+00:00:06,000 --> 00:00:08,000
+are what are called primitive data types,
+
+5
+00:00:08,000 --> 00:00:09,000
+and these are the data types
+
+6
+00:00:09,000 --> 00:00:11,000
+that are actually built into the language.
+
+7
+00:00:11,000 --> 00:00:13,000
+Now when you hear the term primitive data type,
+
+8
+00:00:13,000 --> 00:00:16,000
+you may think there's something kind of lowly about them.
+
+9
+00:00:16,000 --> 00:00:20,000
+Something less than modern about them,
+
+10
+00:00:20,000 --> 00:00:21,000
+but that's not true at all.
+
+11
+00:00:21,000 --> 00:00:23,000
+Primitive data types are actually very important.
+
+12
+00:00:23,000 --> 00:00:26,000
+They're really the foundation of all other types
+
+13
+00:00:26,000 --> 00:00:27,000
+that we use in Java.
+
+14
+00:00:27,000 --> 00:00:29,000
+So they're really that strong foundation
+
+15
+00:00:29,000 --> 00:00:31,000
+that we're going to build on
+
+16
+00:00:31,000 --> 00:00:33,000
+for any other data types we use in our programs.
+
+17
+00:00:33,000 --> 00:00:37,000
+Now there are four categories of primitive types in Java.
+
+18
+00:00:37,000 --> 00:00:39,000
+There are the integer types, floating point,
+
+19
+00:00:39,000 --> 00:00:45,000
+character, and Boolean.
+
+20
+00:00:45,000 --> 00:00:47,000
+So let's look first at the integer types.
+
+21
+00:00:47,000 --> 00:00:50,000
+Now, there are four different integer types,
+
+22
+00:00:50,000 --> 00:00:52,000
+but the difference in them really is just the size
+
+23
+00:00:52,000 --> 00:00:54,000
+of storage that they take up.
+
+24
+00:00:54,000 --> 00:00:56,000
+But that difference in the size of storage that they take up
+
+25
+00:00:56,000 --> 00:00:59,000
+affects the range of values that can be stored there.
+
+26
+00:00:59,000 --> 00:01:02,000
+The smallest integer type is the byte type.
+
+27
+00:01:02,000 --> 00:01:04,000
+It takes up 8 bits,
+
+28
+00:01:04,000 --> 00:01:08,000
+so it can only store between -128 and 127,
+
+29
+00:01:08,000 --> 00:01:11,000
+and so we see we declare our variable type byte
+
+30
+00:01:11,000 --> 00:01:15,000
+and we assign the integer literal to it.
+
+31
+00:01:15,000 --> 00:01:19,000
+So here we have a byte numberOfEnglishLetters = 26.
+
+32
+00:01:19,000 --> 00:01:21,000
+The next large integer type is short,
+
+33
+00:01:21,000 --> 00:01:23,000
+which takes up 16 bits.
+
+34
+00:01:23,000 --> 00:01:28,000
+Lets you store between -32,000 and 32,000.
+
+35
+00:01:28,000 --> 00:01:29,000
+Use it exactly the same way.
+
+36
+00:01:29,000 --> 00:01:34,000
+So we have here short feetInMile = 5283.
+
+37
+00:01:34,000 --> 00:01:36,000
+Probably the most commonly used integer type
+
+38
+00:01:36,000 --> 00:01:37,000
+is the one called int.
+
+39
+00:01:37,000 --> 00:01:40,000
+That's a 32 bit integer.
+
+40
+00:01:40,000 --> 00:01:42,000
+And being 32 bits, it lets you store between
+
+41
+00:01:42,000 --> 00:01:44,000
+2,000,000,000 and 2,000,000,000.
+
+42
+00:01:44,000 --> 00:01:46,000
+And then the big integer type
+
+43
+00:01:46,000 --> 00:01:47,000
+is what we call a long.
+
+44
+00:01:47,000 --> 00:01:49,000
+It's a big 64 bit integer
+
+45
+00:01:49,000 --> 00:01:52,000
+and you can see it can store huge values in it.
+
+46
+00:01:52,000 --> 00:01:54,000
+The key thing to notice, though,
+
+47
+00:01:54,000 --> 00:01:57,000
+is that when you use a long literal value,
+
+48
+00:01:57,000 --> 00:02:04,000
+you have to put that capital L at the end of it.
+
+49
+00:02:04,000 --> 00:02:06,000
+Now Java also has floating point types.
+
+50
+00:02:06,000 --> 00:02:09,000
+Now, the floating point types can form to the IEEE standard
+
+51
+00:02:09,000 --> 00:02:10,000
+for floating point,
+
+52
+00:02:10,000 --> 00:02:12,000
+and that may or may not be meaningful to you.
+
+53
+00:02:12,000 --> 00:02:16,000
+What it really comes down to is that floating points
+
+54
+00:02:16,000 --> 00:02:17,000
+allow you to store values
+
+55
+00:02:17,000 --> 00:02:19,000
+that have a fractional portion to them.
+
+56
+00:02:19,000 --> 00:02:21,000
+Basically, it support positive, negative, and zero values
+
+57
+00:02:21,000 --> 00:02:23,000
+that have some fractional portion.
+
+58
+00:02:23,000 --> 00:02:26,000
+There's a lot of nuances to the way floating points work.
+
+59
+00:02:26,000 --> 00:02:29,000
+They're kind of outside the scope of this course,
+
+60
+00:02:29,000 --> 00:02:31,000
+but I've got the URL on the screen there for you.
+
+61
+00:02:31,000 --> 00:02:33,000
+If you want to know a lot more about the details
+
+62
+00:02:33,000 --> 00:02:35,000
+in terms of how floating points work
+
+63
+00:02:35,000 --> 00:02:37,000
+and the oddities of them,
+
+64
+00:02:37,000 --> 00:02:39,000
+I encourage you to check that out.
+
+65
+00:02:39,000 --> 00:02:43,000
+But basically, we have our two floating point types in Java.
+
+66
+00:02:43,000 --> 00:02:45,000
+First, we have the float type which is a 32 bit
+
+67
+00:02:45,000 --> 00:02:47,000
+floating point value.
+
+68
+00:02:47,000 --> 00:02:49,000
+Notice that when we use the float type,
+
+69
+00:02:49,000 --> 00:02:52,000
+we have to put the "f" at the end of any constance for it,
+
+70
+00:02:52,000 --> 00:02:53,000
+so when we declare this float
+
+71
+00:02:53,000 --> 00:02:54,000
+called milesInAMarathon,
+
+72
+00:02:54,000 --> 00:02:56,000
+we say 26.2f,
+
+73
+00:02:56,000 --> 00:02:59,000
+saying that it's actually a floating point value.
+
+74
+00:02:59,000 --> 00:03:00,000
+And then we also have double,
+
+75
+00:03:00,000 --> 00:03:03,000
+which is a 64 bit floating point value.
+
+76
+00:03:03,000 --> 00:03:05,000
+If you just use a literal that has a decimal in it,
+
+77
+00:03:05,000 --> 00:03:07,000
+the compiler assumes it's a double,
+
+78
+00:03:07,000 --> 00:03:09,000
+which can also make it explicitly a double
+
+79
+00:03:09,000 --> 00:03:10,000
+by putting a "d" at the end.
+
+80
+00:03:10,000 --> 00:03:13,000
+So we look here we have double atomWithinMeters.
+
+81
+00:03:13,000 --> 00:03:22,000
+You see that 0.0001d denotes that that is a double literal.
+
+82
+00:03:22,000 --> 00:03:25,000
+And our last two primitive types are character and Boolean.
+
+83
+00:03:25,000 --> 00:03:28,000
+A character, or the acts of a char type,
+
+84
+00:03:28,000 --> 00:03:31,000
+stores a single Unicode character.
+
+85
+00:03:31,000 --> 00:03:34,000
+Basically, you denote the literals of these
+
+86
+00:03:34,000 --> 00:03:36,000
+by just using a single apostrophe or a single quote
+
+87
+00:03:36,000 --> 00:03:38,000
+surrounding the constant.
+
+88
+00:03:38,000 --> 00:03:43,000
+If I say char regularU= and I put 'U',
+
+89
+00:03:43,000 --> 00:03:45,000
+that assigns that char into it.
+
+90
+00:03:45,000 --> 00:03:47,000
+I know this is different than strings.
+
+91
+00:03:47,000 --> 00:03:48,000
+We'll talk about strings later.
+
+92
+00:03:48,000 --> 00:03:51,000
+Char is just a single character value.
+
+93
+00:03:51,000 --> 00:03:53,000
+And because the char type supports Unicode,
+
+94
+00:03:53,000 --> 00:03:54,000
+you can actually specify
+
+95
+00:03:54,000 --> 00:03:57,000
+any valid Unicode character in there.
+
+96
+00:03:57,000 --> 00:03:59,000
+So if you want to assign a Unicode character
+
+97
+00:03:59,000 --> 00:04:01,000
+you don't have on your keyboard,
+
+98
+00:04:01,000 --> 00:04:03,000
+you can use the Unicode code point
+
+99
+00:04:03,000 --> 00:04:05,000
+by using that slash U notation.
+
+100
+00:04:05,000 --> 00:04:07,000
+So you see here I've got this char accentedU
+
+101
+00:04:07,000 --> 00:04:11,000
+with the '\u00DA'
+
+102
+00:04:11,000 --> 00:04:14,000
+says that that is actually a U with an accent on it.
+
+103
+00:04:14,000 --> 00:04:16,000
+And then finally we have our Boolean types.
+
+104
+00:04:16,000 --> 00:04:19,000
+Our Boolean types store true and false.
+
+105
+00:04:19,000 --> 00:04:22,000
+The literals for that are true and false.
+
+106
+00:04:22,000 --> 00:59:00,000
+So if I say Boolean iLoveJava = true.
+

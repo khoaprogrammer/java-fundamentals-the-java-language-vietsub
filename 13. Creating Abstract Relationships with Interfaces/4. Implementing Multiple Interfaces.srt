@@ -1,0 +1,804 @@
+1
+00:00:01,000 --> 00:00:03,000
+One of the real values of interfaces
+
+2
+00:00:03,000 --> 00:00:07,000
+is that classes are free to implement multiple interfaces.
+
+3
+00:00:07,000 --> 00:00:09,000
+Remember that a class can
+
+4
+00:00:09,000 --> 00:00:11,000
+only extend one other class,
+
+5
+00:00:11,000 --> 00:00:15,000
+but a class can implement as many interfaces as it needs to,
+
+6
+00:00:15,000 --> 00:00:17,000
+so that means that a class can conform
+
+7
+00:00:17,000 --> 00:00:20,000
+to as many interface-based contracts as it needs to.
+
+8
+00:00:20,000 --> 00:00:22,000
+So let's take a look at something.
+
+9
+00:00:22,000 --> 00:00:23,000
+We've got our Flight class here,
+
+10
+00:00:23,000 --> 00:00:25,000
+and we know it's already implemented,
+
+11
+00:00:25,000 --> 00:00:27,000
+the interface Comparable,
+
+12
+00:00:27,000 --> 00:00:28,000
+but let's say we want to extend
+
+13
+00:00:28,000 --> 00:00:29,000
+our Flight class a little bit more.
+
+14
+00:00:29,000 --> 00:00:30,000
+Remember that, up until now,
+
+15
+00:00:30,000 --> 00:00:32,000
+we've kind of kept a count of
+
+16
+00:00:32,000 --> 00:00:33,000
+the number of passengers we have.
+
+17
+00:00:33,000 --> 00:00:35,000
+Let's say we want to extend our Flight class
+
+18
+00:00:35,000 --> 00:00:38,000
+to actually keep a list of actual passengers.
+
+19
+00:00:38,000 --> 00:00:40,000
+So we create a member variable called roster,
+
+20
+00:00:40,000 --> 00:00:42,000
+it's an array of Passenger.
+
+21
+00:00:42,000 --> 00:00:44,000
+Let's also go ahead and create
+
+22
+00:00:44,000 --> 00:00:46,000
+a CrewMember array we'll call crew,
+
+23
+00:00:46,000 --> 00:00:48,000
+so we can keep track of all the people
+
+24
+00:00:48,000 --> 00:00:50,000
+that are actually on the flight.
+
+25
+00:00:50,000 --> 00:00:52,000
+Since we have all these people on the flight,
+
+26
+00:00:52,000 --> 00:00:54,000
+we'll probably want to be able
+
+27
+00:00:54,000 --> 00:00:56,000
+to list them all at some point,
+
+28
+00:00:56,000 --> 00:00:58,000
+both crew members and passengers.
+
+29
+00:00:58,000 --> 00:01:00,000
+Let's look at those two types.
+
+30
+00:01:00,000 --> 00:01:01,000
+First we have our Passenger class.
+
+31
+00:01:01,000 --> 00:01:04,000
+Now, it implements an interface Comparable,
+
+32
+00:01:04,000 --> 00:01:06,000
+but it doesn't have a base class,
+
+33
+00:01:06,000 --> 00:01:07,000
+so its base class is object.
+
+34
+00:01:07,000 --> 00:01:09,000
+Of course, CrewMember doesn't have
+
+35
+00:01:09,000 --> 00:01:12,000
+a base class either, so its base class is object.
+
+36
+00:01:12,000 --> 00:01:13,000
+So the only thing that's common
+
+37
+00:01:13,000 --> 00:01:15,000
+about CrewMember and Passenger at this point
+
+38
+00:01:15,000 --> 00:01:17,000
+is the object class, and that's not really useful
+
+39
+00:01:17,000 --> 00:01:20,000
+for us in terms of trying to treat them as kind of people.
+
+40
+00:01:20,000 --> 00:01:22,000
+So it probably makes sense for us
+
+41
+00:01:22,000 --> 00:01:24,000
+to go ahead and create a class
+
+42
+00:01:24,000 --> 00:01:26,000
+called Person that has the common
+
+43
+00:01:26,000 --> 00:01:27,000
+characteristics of a person.
+
+44
+00:01:27,000 --> 00:01:29,000
+Let's say each person at least has a name.
+
+45
+00:01:29,000 --> 00:01:31,000
+There's probably other characteristics as well.
+
+46
+00:01:31,000 --> 00:01:33,000
+And then we'll take our CrewMember class
+
+47
+00:01:33,000 --> 00:01:36,000
+and we'll have it extend to Person class.
+
+48
+00:01:36,000 --> 00:01:38,000
+We'll also have our Passenger class
+
+49
+00:01:38,000 --> 00:01:40,000
+extend to Person class.
+
+50
+00:01:40,000 --> 00:01:41,000
+So now crew members and passengers
+
+51
+00:01:41,000 --> 00:01:43,000
+have a commonality, they're each
+
+52
+00:01:43,000 --> 00:01:45,000
+considered an instance of a Person.
+
+53
+00:01:45,000 --> 00:01:46,000
+So what we'd like to be able to do here is
+
+54
+00:01:46,000 --> 00:01:48,000
+use a for each statement to walk through
+
+55
+00:01:48,000 --> 00:01:50,000
+every person on the flight and be able
+
+56
+00:01:50,000 --> 00:01:51,000
+to print out their information
+
+57
+00:01:51,000 --> 00:01:53,000
+or interact with their information.
+
+58
+00:01:53,000 --> 00:01:55,000
+So we look at the for each statement,
+
+59
+00:01:55,000 --> 00:01:56,000
+it would actually tell us that, in order
+
+60
+00:01:56,000 --> 00:01:58,000
+to be able to work with a for each statement,
+
+61
+00:01:58,000 --> 00:02:01,000
+you have to implement an interface called Iterable.
+
+62
+00:02:01,000 --> 00:02:03,000
+So if we take a look at that interface,
+
+63
+00:02:03,000 --> 00:02:05,000
+so the Iterable interface is really simple.
+
+64
+00:02:05,000 --> 00:02:08,000
+It's a generic interface, it has a type associated with it,
+
+65
+00:02:08,000 --> 00:02:11,000
+and it has one member, Iterator.
+
+66
+00:02:11,000 --> 00:02:13,000
+So we'll take our Flight class
+
+67
+00:02:13,000 --> 00:02:16,000
+that already implements the interface Comparable,
+
+68
+00:02:16,000 --> 00:02:18,000
+we'll go ahead and have it implement
+
+69
+00:02:18,000 --> 00:02:19,000
+the interface Iterable.
+
+70
+00:02:19,000 --> 00:02:22,000
+Notice that this one is based on the type Person.
+
+71
+00:02:22,000 --> 00:02:24,000
+I just want to mention that earlier, we said that
+
+72
+00:02:24,000 --> 00:02:26,000
+sometimes we implement interfaces,
+
+73
+00:02:26,000 --> 00:02:28,000
+the type associated with them is the same as the class,
+
+74
+00:02:28,000 --> 00:02:30,000
+like it was for Comparable, it used Flight,
+
+75
+00:02:30,000 --> 00:02:32,000
+but for Iterable, we're using Person,
+
+76
+00:02:32,000 --> 00:02:34,000
+which is different than the class Flight,
+
+77
+00:02:34,000 --> 00:02:36,000
+because we want to keep passing back a person
+
+78
+00:02:36,000 --> 00:02:37,000
+each time we go through the list.
+
+79
+00:02:37,000 --> 00:02:39,000
+So the interface Iterable has one method,
+
+80
+00:02:39,000 --> 00:02:42,000
+so, again, that's the iterator method,
+
+81
+00:02:42,000 --> 00:02:45,000
+and it returns back a type called Iterator.
+
+82
+00:02:45,000 --> 00:02:48,000
+Well, the type Iterator is also an interface.
+
+83
+00:02:48,000 --> 00:02:50,000
+It has two methods on it,
+
+84
+00:02:50,000 --> 00:02:52,000
+has one hasNext, which tells
+
+85
+00:02:52,000 --> 00:02:54,000
+you if there's more to come,
+
+86
+00:02:54,000 --> 00:02:55,000
+and then a method next
+
+87
+00:02:55,000 --> 00:02:57,000
+that returns you back the next thing,
+
+88
+00:02:57,000 --> 00:02:59,000
+in this case, it'd be the next person.
+
+89
+00:02:59,000 --> 00:03:01,000
+And when we implement iterators,
+
+90
+00:03:01,000 --> 00:03:03,000
+we generally implement a separate class
+
+91
+00:03:03,000 --> 00:03:05,000
+to actually manage the iteration.
+
+92
+00:03:05,000 --> 00:03:07,000
+So what we need to do then
+
+93
+00:03:07,000 --> 00:03:08,000
+is implement a class here
+
+94
+00:03:08,000 --> 00:03:11,000
+that actually implements the interface Iterator.
+
+95
+00:03:11,000 --> 00:03:12,000
+So let's go ahead and set that up,
+
+96
+00:03:12,000 --> 00:03:15,000
+and we'll call this class our FlightIterator.
+
+97
+00:03:15,000 --> 00:03:17,000
+As we said, we'll implement the interface Iterator,
+
+98
+00:03:17,000 --> 00:03:20,000
+again, each time it'll return back a Person.
+
+99
+00:03:20,000 --> 00:03:22,000
+We'll have the two methods, hasNext
+
+100
+00:03:22,000 --> 00:03:25,000
+and then the next method.
+
+101
+00:03:25,000 --> 00:03:27,000
+So of course what we want to do here
+
+102
+00:03:27,000 --> 00:03:28,000
+is walk through the list of every person
+
+103
+00:03:28,000 --> 00:03:30,000
+on the flight, whether they're
+
+104
+00:03:30,000 --> 00:03:32,000
+a crew member or a passenger.
+
+105
+00:03:32,000 --> 00:03:34,000
+But of course we'll need those two arrays.
+
+106
+00:03:34,000 --> 00:03:36,000
+Let's have member variables for each of those,
+
+107
+00:03:36,000 --> 00:03:38,000
+one for the crew and one for the roster.
+
+108
+00:03:38,000 --> 00:03:39,000
+We'll have a single index that will
+
+109
+00:03:39,000 --> 00:03:41,000
+walk through the entire combined list,
+
+110
+00:03:41,000 --> 00:03:43,000
+and let's create a constructor that we can
+
+111
+00:03:43,000 --> 00:03:45,000
+use to actually accept those arrays.
+
+112
+00:03:45,000 --> 00:03:48,000
+So we have a crew and roster
+
+113
+00:03:48,000 --> 00:03:50,000
+and we'll assign those to our member variables.
+
+114
+00:03:50,000 --> 00:03:52,000
+And so now let's look at our implementation.
+
+115
+00:03:52,000 --> 00:03:54,000
+Well, first we have hasNext.
+
+116
+00:03:54,000 --> 00:03:56,000
+How do we know if there's more information to come?
+
+117
+00:03:56,000 --> 00:03:58,000
+Well, if we haven't walked through
+
+118
+00:03:58,000 --> 00:04:00,000
+the entire combined list of crew and roster,
+
+119
+00:04:00,000 --> 00:04:02,000
+there's more to come.
+
+120
+00:04:02,000 --> 00:04:03,000
+So as long as our index is less
+
+121
+00:04:03,000 --> 00:04:06,000
+than the combined length of the crew array
+
+122
+00:04:06,000 --> 00:04:08,000
+and the roster array, there must be more to come.
+
+123
+00:04:08,000 --> 00:04:10,000
+And our next is going to return back
+
+124
+00:04:10,000 --> 00:04:12,000
+each individual person.
+
+125
+00:04:12,000 --> 00:04:13,000
+So first we'll walk through the crew array,
+
+126
+00:04:13,000 --> 00:04:16,000
+and then we'll walk through the roster array.
+
+127
+00:04:16,000 --> 00:04:18,000
+So basically, we'll have our Person p,
+
+128
+00:04:18,000 --> 00:04:20,000
+and we'll actually say, well, if the index
+
+129
+00:04:20,000 --> 00:04:22,000
+is less than the crew length,
+
+130
+00:04:22,000 --> 00:04:24,000
+we'll simply return back the crew member
+
+131
+00:04:24,000 --> 00:04:26,000
+that corresponds to that index.
+
+132
+00:04:26,000 --> 00:04:28,000
+All right, so if there were three crew members,
+
+133
+00:04:28,000 --> 00:04:30,000
+indexes zero, one, and two,
+
+134
+00:04:30,000 --> 00:04:32,000
+we'd walk through the crew array.
+
+135
+00:04:32,000 --> 00:04:33,000
+Once we get to three, we now
+
+136
+00:04:33,000 --> 00:04:35,000
+want to switch over to the roster array.
+
+137
+00:04:35,000 --> 00:04:37,000
+So in that case, we'll just use roster
+
+138
+00:04:37,000 --> 00:04:39,000
+with the index minus the crew length.
+
+139
+00:04:39,000 --> 00:04:41,000
+All right, so if we're on index three,
+
+140
+00:04:41,000 --> 00:04:42,000
+well, three minus the length of the crew array,
+
+141
+00:04:42,000 --> 00:04:46,000
+three is zero, that gives us the first one in the roster.
+
+142
+00:04:46,000 --> 00:04:49,000
+So once we have the Person, we'll increment the index,
+
+143
+00:04:49,000 --> 00:04:51,000
+and then we'll return back that Person.
+
+144
+00:04:51,000 --> 00:04:53,000
+So now we have our FlightIterator class
+
+145
+00:04:53,000 --> 00:04:55,000
+that managed the iteration itself.
+
+146
+00:04:55,000 --> 00:04:57,000
+What we want to do now is return an instance
+
+147
+00:04:57,000 --> 00:05:01,000
+of that back from our Flight class's Iterator method.
+
+148
+00:05:01,000 --> 00:05:03,000
+So let's return that back, that new instance.
+
+149
+00:05:03,000 --> 00:05:05,000
+So now we actually have everything we need
+
+150
+00:05:05,000 --> 00:05:08,000
+to be able to walk through every person
+
+151
+00:05:08,000 --> 00:05:10,000
+that's on a flight, both crew and passengers,
+
+152
+00:05:10,000 --> 00:05:12,000
+using our for each statement.
+
+153
+00:05:12,000 --> 00:05:14,000
+Let's take a look at some code to do that.
+
+154
+00:05:14,000 --> 00:05:16,000
+So go out here, we'll create a flight,
+
+155
+00:05:16,000 --> 00:05:18,000
+our lax045, let's say
+
+156
+00:05:18,000 --> 00:05:19,000
+we'll add some crew members to it,
+
+157
+00:05:19,000 --> 00:05:22,000
+Pilot Patty, CoPilot Karl, and Marshal Mary,
+
+158
+00:05:22,000 --> 00:05:24,000
+and then we'll add our Passengers to it,
+
+159
+00:05:24,000 --> 00:05:25,000
+Bob, Jane, Steve, and Lisa,
+
+160
+00:05:25,000 --> 00:05:28,000
+and then we'll create our for each statement,
+
+161
+00:05:28,000 --> 00:05:32,000
+so for Person p:lax045,
+
+162
+00:05:32,000 --> 00:05:34,000
+that's going to say use the iterator
+
+163
+00:05:34,000 --> 00:05:36,000
+to go through each person that's on that flight
+
+164
+00:05:36,000 --> 00:05:37,000
+and we'll write them out.
+
+165
+00:05:37,000 --> 00:05:39,000
+So of course we run this code,
+
+166
+00:05:39,000 --> 00:05:41,000
+we would see each of the crew members first,
+
+167
+00:05:41,000 --> 00:05:42,000
+and then each of the passengers.
+
+168
+00:05:42,000 --> 00:05:45,000
+Now this may seem a little bit abstract
+
+169
+00:05:45,000 --> 00:05:47,000
+because, you know, we wrote all that interface stuff
+
+170
+00:05:47,000 --> 00:05:49,000
+but nothing we're looking at here in the code
+
+171
+00:05:49,000 --> 00:05:51,000
+actually shows the interface stuff.
+
+172
+00:05:51,000 --> 00:05:53,000
+Well, that's because the for statement
+
+173
+00:05:53,000 --> 00:05:57,000
+actually expands out to actually work with the interfaces.
+
+174
+00:05:57,000 --> 00:05:58,000
+So the code I'm going to show here
+
+175
+00:05:58,000 --> 00:05:59,000
+is kind of conceptually what happens,
+
+176
+00:05:59,000 --> 00:06:02,000
+it's not the line-by-line detail of what actually happens,
+
+177
+00:06:02,000 --> 00:06:04,000
+but it gives you an idea of what's
+
+178
+00:06:04,000 --> 00:06:05,000
+actually happening under the covers.
+
+179
+00:06:05,000 --> 00:06:07,000
+When we create that for statement,
+
+180
+00:06:07,000 --> 00:06:08,000
+what effectively happens is it
+
+181
+00:06:08,000 --> 00:06:11,000
+takes the flight, the lax045,
+
+182
+00:06:11,000 --> 00:06:14,000
+casts that into its iterable interface,
+
+183
+00:06:14,000 --> 00:06:16,000
+then using that, we get the iterator,
+
+184
+00:06:16,000 --> 00:06:17,000
+so here we're putting that in
+
+185
+00:06:17,000 --> 00:06:19,000
+something we're calling persons,
+
+186
+00:06:19,000 --> 00:06:21,000
+and then basically we loop over that.
+
+187
+00:06:21,000 --> 00:06:23,000
+So we have a loop in place to just make sure
+
+188
+00:06:23,000 --> 00:06:26,000
+that hasNext is returning true, saying there's more to come,
+
+189
+00:06:26,000 --> 00:06:28,000
+then we use the next method to get
+
+190
+00:06:28,000 --> 00:06:30,000
+whatever is next, the next person,
+
+191
+00:06:30,000 --> 00:06:32,000
+all right, first the crew members, then the passengers,
+
+192
+00:06:32,000 --> 00:06:35,000
+and then finally whatever is the body of our loop execute,
+
+193
+00:06:35,000 --> 00:06:37,000
+in this case, printing out the name.
+
+194
+00:06:37,000 --> 00:06:39,000
+And so you see now the power of interfaces
+
+195
+00:06:39,000 --> 00:06:41,000
+is that the for each statement is useful
+
+196
+00:06:41,000 --> 00:06:43,000
+for many, many, many, many different types,
+
+197
+00:06:43,000 --> 00:06:44,000
+and those types have very little
+
+198
+00:06:44,000 --> 00:06:46,000
+or basically nothing in common.
+
+199
+00:06:46,000 --> 00:06:49,000
+But because, as long as a type conforms
+
+200
+00:06:49,000 --> 00:06:51,000
+to that iterable interface's contract,
+
+201
+00:06:51,000 --> 00:59:00,000
+it can take advantage of the power of the for statement.
+

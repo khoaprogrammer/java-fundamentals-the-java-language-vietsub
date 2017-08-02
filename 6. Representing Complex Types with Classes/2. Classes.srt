@@ -1,0 +1,232 @@
+1
+00:00:01,000 --> 00:00:04,000
+Java is an object-oriented language and that means,
+
+2
+00:00:04,000 --> 00:00:06,000
+of course, that it follows the tenets of object-oriented
+
+3
+00:00:06,000 --> 00:00:10,000
+programming and so objects are these things that encapsulate
+
+4
+00:00:10,000 --> 00:00:13,000
+the data, operations and usage semantics.
+
+5
+00:00:13,000 --> 00:00:16,000
+In other words, is that what you want to work on and how you
+
+6
+00:00:16,000 --> 00:00:19,000
+work with it or kind of package up this idea of an object.
+
+7
+00:00:19,000 --> 00:00:23,000
+Obviously allow the storage and manipulation details
+
+8
+00:00:23,000 --> 00:00:25,000
+of things to be hidden, all right, so that when someone's
+
+9
+00:00:25,000 --> 00:00:28,000
+working with an object, they focus on what they want to
+
+10
+00:00:28,000 --> 00:00:32,000
+have done, it's not their concern on how it's done.
+
+11
+00:00:32,000 --> 00:00:35,000
+The class implementer, or the object implementer,
+
+12
+00:00:35,000 --> 00:00:39,000
+actually focuses on the "how", the consumer or user
+
+13
+00:00:39,000 --> 00:00:40,000
+just focuses on the "what."
+
+14
+00:00:40,000 --> 00:00:43,000
+So that's a really powerful idea that allows us to
+
+15
+00:00:43,000 --> 00:00:45,000
+build more complex programs.
+
+16
+00:00:45,000 --> 00:00:49,000
+The way we get to objects in Java is through classes.
+
+17
+00:00:49,000 --> 00:00:52,000
+Classes provide a structure for describing and creating
+
+18
+00:00:52,000 --> 00:00:54,000
+our objects, in other words the classes are the things
+
+19
+00:00:54,000 --> 00:00:57,000
+that we use to be able to describe our objects
+
+20
+00:00:57,000 --> 00:01:00,000
+and then be able to instantiate them,
+
+21
+00:01:00,000 --> 00:01:04,000
+bring them into existence, to be worked with.
+
+22
+00:01:04,000 --> 00:01:08,000
+Basically a class is a template for creating an object.
+
+23
+00:01:08,000 --> 00:01:10,000
+So the idea is that we want to declare a class,
+
+24
+00:01:10,000 --> 00:01:15,000
+we use the class keyword followed by the class name.
+
+25
+00:01:15,000 --> 00:01:17,000
+Now normally when we create our classes,
+
+26
+00:01:17,000 --> 00:01:19,000
+we put them in their own source file and that source file
+
+27
+00:01:19,000 --> 00:01:23,000
+will have the same name as the class itself.
+
+28
+00:01:23,000 --> 00:01:26,000
+There are some caveats to that that we'll talk about shortly
+
+29
+00:01:26,000 --> 00:01:29,000
+but most cases, your source file name would simply be
+
+30
+00:01:29,000 --> 00:01:31,000
+the classname.java.
+
+31
+00:01:31,000 --> 00:01:33,000
+Now the body of the class is then just contained
+
+32
+00:01:33,000 --> 00:01:34,000
+inside of brackets.
+
+33
+00:01:34,000 --> 00:01:37,000
+You have an opening bracket and a closing bracket
+
+34
+00:01:37,000 --> 00:01:39,000
+and that's where the contents of the class are going to go,
+
+35
+00:01:39,000 --> 00:01:40,000
+all inside of there.
+
+36
+00:01:40,000 --> 00:01:43,000
+Now we mentioned that classes have both the state
+
+37
+00:01:43,000 --> 00:01:46,000
+and what we want to do with it so the idea is that a class
+
+38
+00:01:46,000 --> 00:01:50,000
+has the data inside of it and all of it's executable code.
+
+39
+00:01:50,000 --> 00:01:53,000
+So this captures three general ideas is that the state
+
+40
+00:01:53,000 --> 00:01:55,000
+itself is in what we call fields.
+
+41
+00:01:55,000 --> 00:01:58,000
+So we look at our class Flight we've declared here,
+
+42
+00:01:58,000 --> 00:01:59,000
+it's got two fields in it.
+
+43
+00:01:59,000 --> 00:02:03,000
+They're both integers, one for passengers and one for seats.
+
+44
+00:02:03,000 --> 00:02:05,000
+Classes also have methods, this is the executable code
+
+45
+00:02:05,000 --> 00:02:07,000
+that's going to manipulate the state
+
+46
+00:02:07,000 --> 00:02:09,000
+and perform any operations.
+
+47
+00:02:09,000 --> 00:02:11,000
+So in this case, our class has a method called
+
+48
+00:02:11,000 --> 00:02:14,000
+add1Passenger and, basically, when someone calls
+
+49
+00:02:14,000 --> 00:02:17,000
+that and makes sure that there's enough seats available, and
+
+50
+00:02:17,000 --> 00:02:19,000
+long as there is, it goes ahead and adds another passenger.
+
+51
+00:02:19,000 --> 00:02:21,000
+Then there's what are called constructors.
+
+52
+00:02:21,000 --> 00:02:23,000
+Constructors are kind of special case executable code.
+
+53
+00:02:23,000 --> 00:02:27,000
+This is code that gets run during the creation of an object,
+
+54
+00:02:27,000 --> 00:02:29,000
+largely to set the initial state.
+
+55
+00:02:29,000 --> 00:02:31,000
+So we've got here a constructor that basically starts out
+
+56
+00:02:31,000 --> 00:02:34,000
+by setting seats to 150 and our passengers to zero.
+
+57
+00:02:34,000 --> 00:02:37,000
+So basically means that when we created a Flight,
+
+58
+00:02:37,000 --> 00:59:00,000
+that flight has 150 seats on it.
+

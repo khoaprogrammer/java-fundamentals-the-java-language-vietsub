@@ -1,0 +1,160 @@
+1
+00:00:02,000 --> 00:00:05,000
+To wrap up, our focus in this module was on inheritance.
+
+2
+00:00:05,000 --> 00:00:07,000
+Inheritance allows us to create a class that has the
+
+3
+00:00:07,000 --> 00:00:10,000
+characteristics of another class. In Java, we use the
+
+4
+00:00:10,000 --> 00:00:14,000
+extend keyword to identify that one class is deriving
+
+5
+00:00:14,000 --> 00:00:18,000
+from another. Derived classes can override base class
+
+6
+00:00:18,000 --> 00:00:21,000
+methods, in other words we can provide our own definition
+
+7
+00:00:21,000 --> 00:00:25,000
+of those methods' behaviors. In Java, methods are
+
+8
+00:00:25,000 --> 00:00:28,000
+automatically overridable, but you can optionally include
+
+9
+00:00:28,000 --> 00:00:32,000
+the @Override annotation which just causes the compiler
+
+10
+00:00:32,000 --> 00:00:35,000
+to verify that there's a base class method with the
+
+11
+00:00:35,000 --> 00:00:38,000
+signature you're trying to override. The Object class
+
+12
+00:00:38,000 --> 00:00:41,000
+is the roof of all class hierarchies. Every class in Java
+
+13
+00:00:41,000 --> 00:00:44,000
+inherits from it either directly or indirectly. It gives us
+
+14
+00:00:44,000 --> 00:00:47,000
+the idea of a universal reference type, and it also provides
+
+15
+00:00:47,000 --> 00:00:50,000
+us with a set of known characteristics that all classes
+
+16
+00:00:50,000 --> 00:00:54,000
+have. By default, when we compare two object references
+
+17
+00:00:54,000 --> 00:00:57,000
+for equality, they're only considered equal if they both
+
+18
+00:00:57,000 --> 00:01:00,000
+point to the exact same object instance. But this is a
+
+19
+00:01:00,000 --> 00:01:03,000
+scenario where the Object class comes in handy.
+
+20
+00:01:03,000 --> 00:01:06,000
+The Object class defines an equals method that we can
+
+21
+00:01:06,000 --> 00:01:09,000
+override and provide a more specific definition of equals
+
+22
+00:01:09,000 --> 00:01:12,000
+for any given class. When we're overriding methods, we'll
+
+23
+00:01:12,000 --> 00:01:16,000
+often need to have access to base class behaviors.
+
+24
+00:01:16,000 --> 00:01:19,000
+Using the super keyword we can access our current object
+
+25
+00:01:19,000 --> 00:01:21,000
+instance as if it were an instance of the base class.
+
+26
+00:01:21,000 --> 00:01:24,000
+That allows us to get to those base class behaviors.
+
+27
+00:01:24,000 --> 00:01:27,000
+We will sometimes want to have tighter control
+
+28
+00:01:27,000 --> 00:01:30,000
+over inheritance behaviors, and that's where the
+
+29
+00:01:30,000 --> 00:01:33,000
+final and abstract keywords come in. If a class is marked
+
+30
+00:01:33,000 --> 00:01:36,000
+final, you're not allowed to inherit from it. If a method
+
+31
+00:01:36,000 --> 00:01:39,000
+is marked final, it can't be overridden. If a method is
+
+32
+00:01:39,000 --> 00:01:42,000
+marked abstract, it must be overridden. It doesn't
+
+33
+00:01:42,000 --> 00:01:44,000
+actually have a body, and any class that contains an
+
+34
+00:01:44,000 --> 00:01:48,000
+abstract method is itself abstract, meaning that that class
+
+35
+00:01:48,000 --> 00:01:51,000
+must be inherited from. And finally, remember that
+
+36
+00:01:51,000 --> 00:01:55,000
+constructors are not inherited. Every class is responsible
+
+37
+00:01:55,000 --> 00:01:58,000
+for providing its own constructors. But constructors can
+
+38
+00:01:58,000 --> 00:02:01,000
+call into their base class constructors, again using the
+
+39
+00:02:01,000 --> 00:02:05,000
+super keyword, with the parameter list of the base class
+
+40
+00:02:05,000 --> 00:59:00,000
+constructor they want to call into.
+

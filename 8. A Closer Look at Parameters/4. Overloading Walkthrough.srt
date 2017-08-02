@@ -1,0 +1,796 @@
+1
+00:00:01,000 --> 00:00:03,000
+Let's take a look at our flight class, and see how
+
+2
+00:00:03,000 --> 00:00:06,000
+we might be able to use Overloading to improve this class.
+
+3
+00:00:06,000 --> 00:00:10,000
+Remember that we have the idea of our seats are 150,
+
+4
+00:00:10,000 --> 00:00:13,000
+and we keep track of the number of passengers.
+
+5
+00:00:13,000 --> 00:00:14,000
+And we've had that method that we wrote
+
+6
+00:00:14,000 --> 00:00:16,000
+much earlier in the course, called Add One Passenger,
+
+7
+00:00:16,000 --> 00:00:19,000
+where we just make sure that there's enough seats
+
+8
+00:00:19,000 --> 00:00:20,000
+for one more passenger.
+
+9
+00:00:20,000 --> 00:00:22,000
+If so, we add them, and if not, we go ahead and
+
+10
+00:00:22,000 --> 00:00:25,000
+just handle that, which is just kind of report an error.
+
+11
+00:00:25,000 --> 00:00:27,000
+Well, as we look ahead to maybe making this flight class
+
+12
+00:00:27,000 --> 00:00:29,000
+a little bit more sophisticated, this idea of checking
+
+13
+00:00:29,000 --> 00:00:32,000
+whether there's enough seats to add another passenger,
+
+14
+00:00:32,000 --> 00:00:34,000
+is something that we may have to reuse a lot.
+
+15
+00:00:34,000 --> 00:00:36,000
+So, why don't we go ahead and make that its own method.
+
+16
+00:00:36,000 --> 00:00:38,000
+So we'll have a method called Has Seating.
+
+17
+00:00:38,000 --> 00:00:41,000
+Inside of there, we'll just put that check in for is
+
+18
+00:00:41,000 --> 00:00:43,000
+the number of passengers less than
+
+19
+00:00:43,000 --> 00:00:45,000
+the number of seats available.
+
+20
+00:00:45,000 --> 00:00:47,000
+And what we'll do is we'll update our Add One Passenger
+
+21
+00:00:47,000 --> 00:00:50,000
+to go ahead and use that Has Seating method.
+
+22
+00:00:50,000 --> 00:00:52,000
+So, now as we're keeping track of what's going on with
+
+23
+00:00:52,000 --> 00:00:54,000
+our flight, one of the things we might want to keep track of
+
+24
+00:00:54,000 --> 00:00:56,000
+is the number of total checked bags.
+
+25
+00:00:56,000 --> 00:00:58,000
+Now, we're not going to limit the number of checked bag,
+
+26
+00:00:58,000 --> 00:01:00,000
+but we are going to keep track of it.
+
+27
+00:01:00,000 --> 00:01:02,000
+But, something that we might want to limit
+
+28
+00:01:02,000 --> 00:01:03,000
+is the idea of carry-ons.
+
+29
+00:01:03,000 --> 00:01:05,000
+What we're going to do is we're going to set the maximum
+
+30
+00:01:05,000 --> 00:01:07,000
+number of carry-ons to whatever twice
+
+31
+00:01:07,000 --> 00:01:08,000
+the number of seats are.
+
+32
+00:01:08,000 --> 00:01:10,000
+Right, no one's supposed to have more than two carry-ons.
+
+33
+00:01:10,000 --> 00:01:12,000
+Then we'll go ahead and keep track of that total carry-ons.
+
+34
+00:01:12,000 --> 00:01:15,000
+Let's go ahead and add a method that just allows us to check
+
+35
+00:01:15,000 --> 00:01:18,000
+to see that based on the number of carry-ons someone has,
+
+36
+00:01:18,000 --> 00:01:20,000
+is there space for them.
+
+37
+00:01:20,000 --> 00:01:22,000
+So, all we'll do is just take how many total carry-ons we
+
+38
+00:01:22,000 --> 00:01:24,000
+already have, how many carry-ons they're trying to bring on,
+
+39
+00:01:24,000 --> 00:01:27,000
+as long as that doesn't exceed our maximum carry-ons
+
+40
+00:01:27,000 --> 00:01:28,000
+we'll go ahead and let them do it.
+
+41
+00:01:28,000 --> 00:01:30,000
+And then of course we have all the other
+
+42
+00:01:30,000 --> 00:01:32,000
+members we've seen previously.
+
+43
+00:01:32,000 --> 00:01:35,000
+So, I want to focus in on the idea of Add One Passenger.
+
+44
+00:01:35,000 --> 00:01:38,000
+Because now that we're keeping track of things like
+
+45
+00:01:38,000 --> 00:01:40,000
+total checked bags and carry-on, the idea of adding a
+
+46
+00:01:40,000 --> 00:01:43,000
+passenger is going to be a bit more sophisticated.
+
+47
+00:01:43,000 --> 00:01:46,000
+Let's go ahead and move this off to the side.
+
+48
+00:01:46,000 --> 00:01:47,000
+Now we're still the same Add One Passenger
+
+49
+00:01:47,000 --> 00:01:50,000
+we were just looking at, nothing has changed there.
+
+50
+00:01:50,000 --> 00:01:52,000
+Let's add a little bit more space to work here.
+
+51
+00:01:52,000 --> 00:01:55,000
+So now, if we think about overloading Add One Passenger.
+
+52
+00:01:55,000 --> 00:01:57,000
+Well, keeping track of checked bags is going to be
+
+53
+00:01:57,000 --> 00:01:59,000
+important, so let's add an Overload
+
+54
+00:01:59,000 --> 00:02:01,000
+that accepts one integer, and that's the number of bags.
+
+55
+00:02:01,000 --> 00:02:04,000
+And the logic inside there would be,
+
+56
+00:02:04,000 --> 00:02:06,000
+well we'll call our existing Add One Passenger.
+
+57
+00:02:06,000 --> 00:02:08,000
+Do that work.
+
+58
+00:02:08,000 --> 00:02:10,000
+And then we'll add how many bags they've checked
+
+59
+00:02:10,000 --> 00:02:12,000
+to the total checked bags.
+
+60
+00:02:12,000 --> 00:02:15,000
+Now, one interesting thing about what we're doing here
+
+61
+00:02:15,000 --> 00:02:17,000
+is that it's possible that we tried to add that passenger
+
+62
+00:02:17,000 --> 00:02:19,000
+and there wasn't enough seats available.
+
+63
+00:02:19,000 --> 00:02:20,000
+But in this case, we'd go ahead and
+
+64
+00:02:20,000 --> 00:02:22,000
+increase the total checked bags.
+
+65
+00:02:22,000 --> 00:02:24,000
+So, what we can do is go ahead wrap our code here
+
+66
+00:02:24,000 --> 00:02:26,000
+so that we check the Has Seating before
+
+67
+00:02:26,000 --> 00:02:28,000
+we do any of that other work.
+
+68
+00:02:28,000 --> 00:02:29,000
+And this shows us a couple of things.
+
+69
+00:02:29,000 --> 00:02:32,000
+First of all, notice that when we wanted to access
+
+70
+00:02:32,000 --> 00:02:34,000
+the Overload Add One Passenger that took no arguments,
+
+71
+00:02:34,000 --> 00:02:37,000
+there was no special syntax for that.
+
+72
+00:02:37,000 --> 00:02:40,000
+It wasn't like constructors where we had a special key word.
+
+73
+00:02:40,000 --> 00:02:42,000
+Here, we just call the method name
+
+74
+00:02:42,000 --> 00:02:43,000
+with the right number of parameters.
+
+75
+00:02:43,000 --> 00:02:46,000
+Also, notice that, when you're calling from one
+
+76
+00:02:46,000 --> 00:02:49,000
+overloaded method to another overload of that same method,
+
+77
+00:02:49,000 --> 00:02:51,000
+there's no rules about where it has to be.
+
+78
+00:02:51,000 --> 00:02:54,000
+Remember when we were talking about constructors,
+
+79
+00:02:54,000 --> 00:02:56,000
+the chaining of constructors had to be
+
+80
+00:02:56,000 --> 00:02:58,000
+the first line in the constructor.
+
+81
+00:02:58,000 --> 00:03:00,000
+Here, it's just kind of a method call.
+
+82
+00:03:00,000 --> 00:03:01,000
+You can call it from anywhere in the body
+
+83
+00:03:01,000 --> 00:03:03,000
+of your method you need to.
+
+84
+00:03:03,000 --> 00:03:06,000
+Remember that we also have the idea of a passenger class.
+
+85
+00:03:06,000 --> 00:03:09,000
+If we're running a method to add one passenger, it
+
+86
+00:03:09,000 --> 00:03:13,000
+should probably accept an instance of the passenger class.
+
+87
+00:03:13,000 --> 00:03:16,000
+Now, we're not really going to do anything special here,
+
+88
+00:03:16,000 --> 00:03:18,000
+all we're going to do is call the Add One Passenger
+
+89
+00:03:18,000 --> 00:03:21,000
+that accepts and integer for checked bags.
+
+90
+00:03:21,000 --> 00:03:23,000
+So, we just call on our passenger get checked bags,
+
+91
+00:03:23,000 --> 00:03:25,000
+and pass that in.
+
+92
+00:03:25,000 --> 00:03:26,000
+This shows us another interesting thing
+
+93
+00:03:26,000 --> 00:03:28,000
+about method overloading.
+
+94
+00:03:28,000 --> 00:03:31,000
+Our Add One Passenger that accepted integer number of bags,
+
+95
+00:03:31,000 --> 00:03:33,000
+alright that was adding new functionality.
+
+96
+00:03:33,000 --> 00:03:35,000
+That was functionality that we did not have before.
+
+97
+00:03:35,000 --> 00:03:37,000
+The idea of keeping track of
+
+98
+00:03:37,000 --> 00:03:38,000
+the total number of checked bags.
+
+99
+00:03:38,000 --> 00:03:41,000
+But our Add One Passenger that accepts just
+
+100
+00:03:41,000 --> 00:03:43,000
+a passenger instance, we certainly could have required
+
+101
+00:03:43,000 --> 00:03:46,000
+someone who's using our flight class to simply call
+
+102
+00:03:46,000 --> 00:03:48,000
+Get Checked Bags themselves on Passenger.
+
+103
+00:03:48,000 --> 00:03:50,000
+But that's something we do very commonly, is that
+
+104
+00:03:50,000 --> 00:03:53,000
+overloads sometimes are just used to add convenience.
+
+105
+00:03:53,000 --> 00:03:55,000
+Alright, so the one that accepts the Passenger
+
+106
+00:03:55,000 --> 00:03:57,000
+reference is a convenience overload.
+
+107
+00:03:57,000 --> 00:03:59,000
+So, someone didn't have to call Get Checked Bags themselves.
+
+108
+00:03:59,000 --> 00:04:02,000
+The one that accepts the integer number
+
+109
+00:04:02,000 --> 00:04:04,000
+of bags actually adds functionality.
+
+110
+00:04:04,000 --> 00:04:06,000
+So, as we look at adding functionality, another thing
+
+111
+00:04:06,000 --> 00:04:09,000
+we want to keep track of is this idea of carry-ons.
+
+112
+00:04:09,000 --> 00:04:11,000
+Alright so we have an overload here now that takes
+
+113
+00:04:11,000 --> 00:04:13,000
+the number of checked bags and the number of carry-ons.
+
+114
+00:04:13,000 --> 00:04:15,000
+So, we'll check to see if we have seating.
+
+115
+00:04:15,000 --> 00:04:18,000
+We'll go ahead and call the Add One Passenger
+
+116
+00:04:18,000 --> 00:04:20,000
+that accepts an integer number of bags.
+
+117
+00:04:20,000 --> 00:04:22,000
+And then we'll add the functionality
+
+118
+00:04:22,000 --> 00:04:24,000
+to increase the total number of carry-ons.
+
+119
+00:04:24,000 --> 00:04:26,000
+Now, one of the things we want to do here of course,
+
+120
+00:04:26,000 --> 00:04:27,000
+is that before we add the passenger,
+
+121
+00:04:27,000 --> 00:04:29,000
+not only do we want to check for available seating,
+
+122
+00:04:29,000 --> 00:04:31,000
+but we also want to make sure
+
+123
+00:04:31,000 --> 00:04:34,000
+that we have space for their carry-on.
+
+124
+00:04:34,000 --> 00:04:37,000
+Again, this is an overload that's adding new functionality,
+
+125
+00:04:37,000 --> 00:04:39,000
+validating that we have space for the carry-on
+
+126
+00:04:39,000 --> 00:04:41,000
+and then keeping track of that total number of carry-ons.
+
+127
+00:04:41,000 --> 00:04:43,000
+And then we'll have another convenience overload here, that
+
+128
+00:04:43,000 --> 00:04:46,000
+accepts Passenger reference and the number of carry-ons.
+
+129
+00:04:46,000 --> 00:04:50,000
+And all that's going to do is call up to the implementation
+
+130
+00:04:50,000 --> 00:04:52,000
+of Add One Passenger that accepts an integer number
+
+131
+00:04:52,000 --> 00:04:54,000
+of bags and number of carry-ons.
+
+132
+00:04:54,000 --> 00:04:56,000
+So our classes got a lot more sophisticated here now.
+
+133
+00:04:56,000 --> 00:04:59,000
+The idea of adding a passenger can do a lot more things,
+
+134
+00:04:59,000 --> 00:05:01,000
+as opposed to just keeping count of
+
+135
+00:05:01,000 --> 00:05:02,000
+the number of passengers.
+
+136
+00:05:02,000 --> 00:05:04,000
+We're asking it to keep track of checked bags,
+
+137
+00:05:04,000 --> 00:05:06,000
+the number of carry-ons, and even limit
+
+138
+00:05:06,000 --> 00:05:08,000
+how many carry-ons can get onto that flight.
+
+139
+00:05:08,000 --> 00:05:11,000
+So, let's focus in now on, not just the implementation,
+
+140
+00:05:11,000 --> 00:05:14,000
+but kind of just the signatures.
+
+141
+00:05:14,000 --> 00:05:16,000
+Remember the signature is the thing determines
+
+142
+00:05:16,000 --> 00:05:19,000
+which implementation of an overload gets called.
+
+143
+00:05:19,000 --> 00:05:22,000
+So, focusing in on just the signatures of these,
+
+144
+00:05:22,000 --> 00:05:24,000
+let's go ahead and make some rooms here.
+
+145
+00:05:24,000 --> 00:05:25,000
+So, I've just pushed them all together.
+
+146
+00:05:25,000 --> 00:05:27,000
+These are the same exact methods we were just looking at.
+
+147
+00:05:27,000 --> 00:05:30,000
+So we have just those five overloads of Add One Passenger.
+
+148
+00:05:30,000 --> 00:05:32,000
+And let's see how might get used in a program.
+
+149
+00:05:32,000 --> 00:05:34,000
+So let's add some code here that
+
+150
+00:05:34,000 --> 00:05:35,000
+goes ahead and creates a flight.
+
+151
+00:05:35,000 --> 00:05:37,000
+Let's first create a passenger.
+
+152
+00:05:37,000 --> 00:05:39,000
+And we're passing in zero and one to the constructor.
+
+153
+00:05:39,000 --> 00:05:43,000
+Reminder is the zero is how many free checked bags they get,
+
+154
+00:05:43,000 --> 00:05:45,000
+so in this case they get zero, none.
+
+155
+00:05:45,000 --> 00:05:47,000
+And how many bags they're checking, which is one.
+
+156
+00:05:47,000 --> 00:05:50,000
+Create another passenger that gets zero free bags,
+
+157
+00:05:50,000 --> 00:05:52,000
+but they are checking two bags.
+
+158
+00:05:52,000 --> 00:05:54,000
+So, we've got this all created.
+
+159
+00:05:54,000 --> 00:05:57,000
+So, now if I call on flight, Add One Passenger,
+
+160
+00:05:57,000 --> 00:06:00,000
+well this is the one with no parameters,
+
+161
+00:06:00,000 --> 00:06:02,000
+so it's nice and easy to know which one that chooses.
+
+162
+00:06:02,000 --> 00:06:03,000
+It just calls the implementation of
+
+163
+00:06:03,000 --> 00:06:05,000
+Add One Passenger that accepts no parameters.
+
+164
+00:06:05,000 --> 00:06:08,000
+I call Add One Passenger passing an integer.
+
+165
+00:06:08,000 --> 00:06:11,000
+Okay, well there's only one parameter here,
+
+166
+00:06:11,000 --> 00:06:13,000
+so there are two possible overloads that can handle that.
+
+167
+00:06:13,000 --> 00:06:15,000
+Right, the one that accepts integer,
+
+168
+00:06:15,000 --> 00:06:17,000
+and the one that accepts passenger.
+
+169
+00:06:17,000 --> 00:06:18,000
+But since we're passing an integer,
+
+170
+00:06:18,000 --> 00:06:20,000
+it'll use the integer overload.
+
+171
+00:06:20,000 --> 00:06:22,000
+Similarly, when I call the Add One Passenger
+
+172
+00:06:22,000 --> 00:06:24,000
+passing in a reference to a passenger,
+
+173
+00:06:24,000 --> 00:06:27,000
+it will call the overload that accepts a passenger.
+
+174
+00:06:27,000 --> 00:06:29,000
+But let's go another step.
+
+175
+00:06:29,000 --> 00:06:33,000
+Let's declare a local variable of type Short,
+
+176
+00:06:33,000 --> 00:06:36,000
+called Three Bags that we set to three.
+
+177
+00:06:36,000 --> 00:06:39,000
+Now, when I call Add One Passenger passing in three bags
+
+178
+00:06:39,000 --> 00:06:42,000
+as the first parameter, or short, and then two
+
+179
+00:06:42,000 --> 00:06:44,000
+in integer as the second parameter,
+
+180
+00:06:44,000 --> 00:06:46,000
+well there are two possible overloads here
+
+181
+00:06:46,000 --> 00:06:48,000
+that accept two parameters, right?
+
+182
+00:06:48,000 --> 00:06:50,000
+One that accepts two integers,
+
+183
+00:06:50,000 --> 00:06:52,000
+and one that accepts a passenger and an integer.
+
+184
+00:06:52,000 --> 00:06:55,000
+Notice there is no overload that accepts the short.
+
+185
+00:06:55,000 --> 00:06:58,000
+So how's the system decide which one to call?
+
+186
+00:06:58,000 --> 00:07:01,000
+Well, it starts looking for the automatic conversions
+
+187
+00:07:01,000 --> 00:07:02,000
+that it's able to perform.
+
+188
+00:07:02,000 --> 00:07:04,000
+Remember back in module three we talked about
+
+189
+00:07:04,000 --> 00:07:07,000
+kind of these idea of automatic type conversions?
+
+190
+00:07:07,000 --> 00:07:09,000
+Well, very similar rules are applied here
+
+191
+00:07:09,000 --> 00:07:12,000
+in order to determine how to find the overload.
+
+192
+00:07:12,000 --> 00:07:14,000
+So, what happens is that since the system
+
+193
+00:07:14,000 --> 00:07:16,000
+knows how to convert a short into an int,
+
+194
+00:07:16,000 --> 00:07:19,000
+it will go ahead and call the overload that accepts
+
+195
+00:07:19,000 --> 00:07:21,000
+an integer as the first parameter.
+
+196
+00:07:21,000 --> 00:07:23,000
+And then finally, if we call Add One Passenger
+
+197
+00:07:23,000 --> 00:07:26,000
+passing in a passenger and an integer,
+
+198
+00:07:26,000 --> 00:07:28,000
+and of course calls the appropriate overload for that.
+
+199
+00:07:28,000 --> 00:59:00,000
+The one that accepts a passenger, and an integer.
+

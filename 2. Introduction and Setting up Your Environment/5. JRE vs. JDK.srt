@@ -1,0 +1,188 @@
+1
+00:00:02,000 --> 00:00:04,000
+The JRE and the JDK are two terms
+
+2
+00:00:04,000 --> 00:00:06,000
+you hear people mention very frequently in the Java World.
+
+3
+00:00:06,000 --> 00:00:09,000
+And what they are is a two parts that we need in order
+
+4
+00:00:09,000 --> 00:00:12,000
+to run and create Java Applications.
+
+5
+00:00:12,000 --> 00:00:16,000
+The JRE is the Java Runtime Environment.
+
+6
+00:00:16,000 --> 00:00:18,000
+JDK is the Java Developing Kit.
+
+7
+00:00:18,000 --> 00:00:21,000
+And so the JRE is what you require
+
+8
+00:00:21,000 --> 00:00:23,000
+in order to run Java Applications.
+
+9
+00:00:23,000 --> 00:00:27,000
+And users normally install the JRE.
+
+10
+00:00:27,000 --> 00:00:30,000
+They're the ones who are going to run our apps.
+
+11
+00:00:30,000 --> 00:00:33,000
+The JDK provides the tools required to create Java apps.
+
+12
+00:00:33,000 --> 00:00:35,000
+So normally developers the ones who install
+
+13
+00:00:35,000 --> 00:00:37,000
+the JDK on their machines.
+
+14
+00:00:37,000 --> 00:00:39,000
+And in order to develop the apps you need to run them
+
+15
+00:00:39,000 --> 00:00:47,000
+the JDK installation includes a JRE.
+
+16
+00:00:47,000 --> 00:00:49,000
+So how does all this work together?
+
+17
+00:00:49,000 --> 00:00:51,000
+If we sit down and we type out up a Java Source File
+
+18
+00:00:51,000 --> 00:00:53,000
+with our program code inside of it.
+
+19
+00:00:53,000 --> 00:00:56,000
+And we want to go and run that in some Host Environment how do we do it?
+
+20
+00:00:56,000 --> 00:00:58,000
+That Host Environment might be Windows, Linux.
+
+21
+00:00:58,000 --> 00:00:59,000
+It could be Mac.
+
+22
+00:00:59,000 --> 00:01:00,000
+It could even be a browser.
+
+23
+00:01:00,000 --> 00:01:02,000
+It might be a phone running Android.
+
+24
+00:01:02,000 --> 00:01:04,000
+How do we get from that Source we typed up
+
+25
+00:01:04,000 --> 00:01:05,000
+to something we could actually run
+
+26
+00:01:05,000 --> 00:01:07,000
+on Mac or another computer.
+
+27
+00:01:07,000 --> 00:01:09,000
+Well that's where the Java Development Kit comes in.
+
+28
+00:01:09,000 --> 00:01:11,000
+Using the Java Development Kit
+
+29
+00:01:11,000 --> 00:01:12,000
+we can feed our Source Code into it.
+
+30
+00:01:12,000 --> 00:01:15,000
+And it will produce our Java application.
+
+31
+00:01:15,000 --> 00:01:19,000
+Now Java's not like a low level language like C.
+
+32
+00:01:19,000 --> 00:01:21,000
+C, when you compile a C program
+
+33
+00:01:21,000 --> 00:01:23,000
+it produces an application that can
+
+34
+00:01:23,000 --> 00:01:24,000
+run directly on the Host computer.
+
+35
+00:01:24,000 --> 00:01:27,000
+Java uses an abstraction called Blake Codes
+
+36
+00:01:27,000 --> 00:01:28,000
+that's platform independent.
+
+37
+00:01:28,000 --> 00:01:32,000
+It allows us to not be tied to a particular Host Environment
+
+38
+00:01:32,000 --> 00:01:33,000
+but actually have something that
+
+39
+00:01:33,000 --> 00:01:35,000
+can be run in different Host Environments.
+
+40
+00:01:35,000 --> 00:01:38,000
+And that's where the Java Runtime Environment comes in.
+
+41
+00:01:38,000 --> 00:01:40,000
+The Java Runtime Environment provides what we need
+
+42
+00:01:40,000 --> 00:01:42,000
+in order for our Java app that does
+
+43
+00:01:42,000 --> 00:01:44,000
+Blake Codes to execute in any Host Environment.
+
+44
+00:01:44,000 --> 00:01:47,000
+That's why End-users install the Java Runtime Environment
+
+45
+00:01:47,000 --> 00:01:49,000
+because they just need to run that code.
+
+46
+00:01:49,000 --> 00:01:51,000
+We as developers install the JDK
+
+47
+00:01:51,000 --> 00:59:00,000
+to give us the tools to produce that application.
+

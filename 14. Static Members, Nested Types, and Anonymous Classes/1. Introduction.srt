@@ -1,0 +1,80 @@
+1
+00:00:02,000 --> 00:00:03,000
+Welcome to the final module
+
+2
+00:00:03,000 --> 00:00:05,000
+of the Pluralsight Java fundamentals course
+
+3
+00:00:05,000 --> 00:00:06,000
+on the Java language.
+
+4
+00:00:06,000 --> 00:00:09,000
+In this module, we're going to look at static members,
+
+5
+00:00:09,000 --> 00:00:12,000
+nested types, and anonymous classes.
+
+6
+00:00:12,000 --> 00:00:14,000
+My name is Jim Wilson.
+
+7
+00:00:14,000 --> 00:00:15,000
+So as we go through this module,
+
+8
+00:00:15,000 --> 00:00:17,000
+we're going to touch on a number of things.
+
+9
+00:00:17,000 --> 00:00:19,000
+First of all, the idea of static members
+
+10
+00:00:19,000 --> 00:00:22,000
+having static methods and fields
+
+11
+00:00:22,000 --> 00:00:23,000
+and then we'll look at something called
+
+12
+00:00:23,000 --> 00:00:25,000
+static initialization blocks,
+
+13
+00:00:25,000 --> 00:00:28,000
+the ability to do one time type initialization.
+
+14
+00:00:28,000 --> 00:00:31,000
+Then we'll look at nested types
+
+15
+00:00:31,000 --> 00:00:32,000
+and then a very particular type of nested type
+
+16
+00:00:32,000 --> 00:00:35,000
+called inner classes where we actually can have
+
+17
+00:00:35,000 --> 00:00:39,000
+the nested classes instance automatically associated
+
+18
+00:00:39,000 --> 00:00:42,000
+with an instance of its enclosing class.
+
+19
+00:00:42,000 --> 00:00:44,000
+And then finally, we'll talk about anonymous classes.
+
+20
+00:00:44,000 --> 00:59:00,000
+The ability to declare and create a class all at one time.
+

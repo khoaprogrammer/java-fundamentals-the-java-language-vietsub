@@ -1,0 +1,396 @@
+1
+00:00:01,000 --> 00:00:05,000
+We often need to convert non-string types into strings.
+
+2
+00:00:05,000 --> 00:00:06,000
+Having a value as a string
+
+3
+00:00:06,000 --> 00:00:09,000
+makes it easy to do things like build a message,
+
+4
+00:00:09,000 --> 00:00:12,000
+or display output to a user.
+
+5
+00:00:12,000 --> 00:00:15,000
+The string class provides a helper method called valueOf.
+
+6
+00:00:15,000 --> 00:00:17,000
+It provides overloads that will handle converting
+
+7
+00:00:17,000 --> 00:00:19,000
+many different types to strings.
+
+8
+00:00:19,000 --> 00:00:21,000
+And using it is really straight forward.
+
+9
+00:00:21,000 --> 00:00:23,000
+So, we have something like an integer here, iVal,
+
+10
+00:00:23,000 --> 00:00:25,000
+that we set to 100.
+
+11
+00:00:25,000 --> 00:00:27,000
+If we say sVal equals
+
+12
+00:00:27,000 --> 00:00:30,000
+string.valueOf iVal,
+
+13
+00:00:30,000 --> 00:00:34,000
+sVal will get the string, one zero zero.
+
+14
+00:00:34,000 --> 00:00:35,000
+Now, valueOf is useful when you need to do those
+
+15
+00:00:35,000 --> 00:00:37,000
+explicit conversions.
+
+16
+00:00:37,000 --> 00:00:38,000
+But, very often, Java will take care
+
+17
+00:00:38,000 --> 00:00:41,000
+of doing conversions to strings for you automatically.
+
+18
+00:00:41,000 --> 00:00:44,000
+Let's say we have some code here where we have two integers.
+
+19
+00:00:44,000 --> 00:00:47,000
+I has a value of two and j has a value of three.
+
+20
+00:00:47,000 --> 00:00:50,000
+If I say result equals i times j
+
+21
+00:00:50,000 --> 00:00:52,000
+and I now want to display out to the user
+
+22
+00:00:52,000 --> 00:00:56,000
+a full string showing the operation and the result.
+
+23
+00:00:56,000 --> 00:00:59,000
+So, I say i followed by plus
+
+24
+00:00:59,000 --> 00:01:01,000
+and the string space asterisk space.
+
+25
+00:01:01,000 --> 00:01:03,000
+When Java sees that I'm taking an integer
+
+26
+00:01:03,000 --> 00:01:06,000
+with a plus and the other is a string,
+
+27
+00:01:06,000 --> 00:01:08,000
+it knows that I actually want the string
+
+28
+00:01:08,000 --> 00:01:09,000
+representation of i.
+
+29
+00:01:09,000 --> 00:01:10,000
+So now, if I go in to say,
+
+30
+00:01:10,000 --> 00:01:13,000
+plus j plus space equals space,
+
+31
+00:01:13,000 --> 00:01:15,000
+then plus result,
+
+32
+00:01:15,000 --> 00:01:18,000
+Java will go through and convert i, j,
+
+33
+00:01:18,000 --> 00:01:20,000
+and result the strings for us
+
+34
+00:01:20,000 --> 00:01:22,000
+and then concatenate them all together,
+
+35
+00:01:22,000 --> 00:01:24,000
+so we get that complete string,
+
+36
+00:01:24,000 --> 00:01:28,000
+two space times space 3 space equals space six.
+
+37
+00:01:28,000 --> 00:01:29,000
+All right, it builds that string together for us
+
+38
+00:01:29,000 --> 00:01:32,000
+and took care of those conversions.
+
+39
+00:01:32,000 --> 00:01:34,000
+Now, in this case, we're dealing with a very simple type,
+
+40
+00:01:34,000 --> 00:01:36,000
+right, a very primitive type, an integer.
+
+41
+00:01:36,000 --> 00:01:38,000
+But what about things like more complex types,
+
+42
+00:01:38,000 --> 00:01:40,000
+like classes where the string representation
+
+43
+00:01:40,000 --> 00:01:42,000
+is not so easily known.
+
+44
+00:01:42,000 --> 00:01:46,000
+Well that's where the toString method comes in.
+
+45
+00:01:46,000 --> 00:01:48,000
+Remember we talked about that the object class
+
+46
+00:01:48,000 --> 00:01:50,000
+provides some standard methods
+
+47
+00:01:50,000 --> 00:01:53,000
+that all classes will have.
+
+48
+00:01:53,000 --> 00:01:56,000
+toString is the one we use to get the string representation
+
+49
+00:01:56,000 --> 00:01:57,000
+of a class.
+
+50
+00:01:57,000 --> 00:01:59,000
+Let's take a look at some code for that.
+
+51
+00:01:59,000 --> 00:02:01,000
+Now, remember that we have our flight class
+
+52
+00:02:01,000 --> 00:02:03,000
+that we've been using throughout the course.
+
+53
+00:02:03,000 --> 00:02:05,000
+So, here we created flight class instance
+
+54
+00:02:05,000 --> 00:02:07,000
+with a flight number of 175.
+
+55
+00:02:07,000 --> 00:02:11,000
+If I now say print line my flight is
+
+56
+00:02:11,000 --> 00:02:13,000
+and then we simply can concatenate on my flight,
+
+57
+00:02:13,000 --> 00:02:15,000
+what Java is going to do is call toString
+
+58
+00:02:15,000 --> 00:02:18,000
+on the object referenced by myflight.
+
+59
+00:02:18,000 --> 00:02:19,000
+Now, we haven't implemented toString
+
+60
+00:02:19,000 --> 00:02:20,000
+in the flight class.
+
+61
+00:02:20,000 --> 00:02:22,000
+So, it's going to call the implementation
+
+62
+00:02:22,000 --> 00:02:25,000
+from the object class.
+
+63
+00:02:25,000 --> 00:02:26,000
+And what that will do is give us results
+
+64
+00:02:26,000 --> 00:02:28,000
+that look something like this.
+
+65
+00:02:28,000 --> 00:02:29,000
+Of course we have that literal string,
+
+66
+00:02:29,000 --> 00:02:31,000
+myflight is,
+
+67
+00:02:31,000 --> 00:02:32,000
+but then what we get is
+
+68
+00:02:32,000 --> 00:02:34,000
+the fully qualified class name,
+
+69
+00:02:34,000 --> 00:02:36,000
+including the package that it's in,
+
+70
+00:02:36,000 --> 00:02:38,000
+followed by an at symbol,
+
+71
+00:02:38,000 --> 00:02:40,000
+followed by whatever value is returned
+
+72
+00:02:40,000 --> 00:02:42,000
+by the hash code method.
+
+73
+00:02:42,000 --> 00:02:44,000
+So that gives us kind of a unique representation
+
+74
+00:02:44,000 --> 00:02:47,000
+of this instance, but it's not really very helpful.
+
+75
+00:02:47,000 --> 00:02:48,000
+All right, so we can improve that.
+
+76
+00:02:48,000 --> 00:02:50,000
+So, if we look at our flight class,
+
+77
+00:02:50,000 --> 00:02:51,000
+remember that our flight class
+
+78
+00:02:51,000 --> 00:02:54,000
+had two ways of identifying flights.
+
+79
+00:02:54,000 --> 00:02:56,000
+A flight could be created to have a flight number,
+
+80
+00:02:56,000 --> 00:02:59,000
+or a flight could be created to have a flight class.
+
+81
+00:02:59,000 --> 00:03:02,000
+So, what we want to do now is have our toString method
+
+82
+00:03:02,000 --> 00:03:05,000
+represent a given flight instance in a meaningful way.
+
+83
+00:03:05,000 --> 00:03:08,000
+So, we'll go ahead and override toString
+
+84
+00:03:08,000 --> 00:03:09,000
+and what we'll do here is we'll check and say,
+
+85
+00:03:09,000 --> 00:03:12,000
+well, if it's a flight that has a flight number,
+
+86
+00:03:12,000 --> 00:03:15,000
+what we're going to do is return back the string
+
+87
+00:03:15,000 --> 00:03:20,000
+flight space hash and then add on the flight number.
+
+88
+00:03:20,000 --> 00:03:22,000
+If it's a flight that has a flight class instead,
+
+89
+00:03:22,000 --> 00:03:25,000
+we're just going to say flight space class space
+
+90
+00:03:25,000 --> 00:03:28,000
+and whatever that class character is.
+
+91
+00:03:28,000 --> 00:03:29,000
+So now if we take a look at this code over here,
+
+92
+00:03:29,000 --> 00:03:31,000
+when we call print line,
+
+93
+00:03:31,000 --> 00:03:33,000
+what we're actually going to get out is
+
+94
+00:03:33,000 --> 00:03:36,000
+"My flight is Flight #175".
+
+95
+00:03:36,000 --> 00:03:38,000
+So now we're getting back a more meaningful
+
+96
+00:03:38,000 --> 00:03:41,000
+string representation of that object instance.
+
+97
+00:03:41,000 --> 00:03:43,000
+And that's what we want to do inside of our toString method,
+
+98
+00:03:43,000 --> 00:03:46,000
+is provide that meaningful representation of an instance
+
+99
+00:03:46,000 --> 00:59:00,000
+as a string.
+

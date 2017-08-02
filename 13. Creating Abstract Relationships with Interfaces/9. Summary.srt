@@ -1,0 +1,108 @@
+1
+00:00:02,000 --> 00:00:03,000
+To wrap up, remember the key things
+
+2
+00:00:03,000 --> 00:00:05,000
+you want to remember from this module
+
+3
+00:00:05,000 --> 00:00:07,000
+is that an interface defines a contract.
+
+4
+00:00:07,000 --> 00:00:11,000
+It does not provide any sort of implementation,
+
+5
+00:00:11,000 --> 00:00:13,000
+all right, it's simply the contract.
+
+6
+00:00:13,000 --> 00:00:16,000
+That contract can consist of methods and constants.
+
+7
+00:00:16,000 --> 00:00:19,000
+So the way interfaces are implemented are by classes.
+
+8
+00:00:19,000 --> 00:00:21,000
+Right, classes implement interfaces,
+
+9
+00:00:21,000 --> 00:00:23,000
+and what that means is
+
+10
+00:00:23,000 --> 00:00:25,000
+that any class that implements the interface
+
+11
+00:00:25,000 --> 00:00:29,000
+conforms to the contract defined by the interface,
+
+12
+00:00:29,000 --> 00:00:30,000
+right, and that allows us to have classes
+
+13
+00:00:30,000 --> 00:00:33,000
+with very different features and capabilities
+
+14
+00:00:33,000 --> 00:00:35,000
+but then can conform at times when they need to
+
+15
+00:00:35,000 --> 00:00:37,000
+to specific contracts.
+
+16
+00:00:37,000 --> 00:00:39,000
+One of the key things is that,
+
+17
+00:00:39,000 --> 00:00:41,000
+whereas a class can only extend one class,
+
+18
+00:00:41,000 --> 00:00:44,000
+a class is free to implement as many
+
+19
+00:00:44,000 --> 00:00:46,000
+interfaces as it needs to, so it can conform
+
+20
+00:00:46,000 --> 00:00:49,000
+to as many contracts as it needs to.
+
+21
+00:00:49,000 --> 00:00:53,000
+And remember that interfaces can also extend one another,
+
+22
+00:00:53,000 --> 00:00:55,000
+so you can define an interface
+
+23
+00:00:55,000 --> 00:00:57,000
+that extends another interface.
+
+24
+00:00:57,000 --> 00:00:59,000
+And remember that whenever you implement
+
+25
+00:00:59,000 --> 00:01:01,000
+an interface that extends another interface,
+
+26
+00:01:01,000 --> 00:01:03,000
+by implementing the extended interface,
+
+27
+00:01:03,000 --> 00:59:00,000
+you implicitly implement the base interface.
+

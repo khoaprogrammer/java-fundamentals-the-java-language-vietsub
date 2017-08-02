@@ -1,0 +1,384 @@
+1
+00:00:01,000 --> 00:00:03,000
+Let's take a look now at how packages
+
+2
+00:00:03,000 --> 00:00:08,000
+affect our application.
+
+3
+00:00:08,000 --> 00:00:09,000
+So, here we are in IntelliJ.
+
+4
+00:00:09,000 --> 00:00:12,000
+Let's go ahead and create a new project.
+
+5
+00:00:12,000 --> 00:00:14,000
+It'll, of course, be a Java project.
+
+6
+00:00:14,000 --> 00:00:15,000
+Again, remember that the buttons
+
+7
+00:00:15,000 --> 00:00:16,000
+at the bottom are off the screen here
+
+8
+00:00:16,000 --> 00:00:17,000
+at this resolution.
+
+9
+00:00:17,000 --> 00:00:18,000
+So, we'll go ahead and click that Next button,
+
+10
+00:00:18,000 --> 00:00:23,000
+just accept the defaults here.
+
+11
+00:00:23,000 --> 00:00:24,000
+I'm going to go ahead and create the project template
+
+12
+00:00:24,000 --> 00:00:26,000
+as a command line.
+
+13
+00:00:26,000 --> 00:00:29,000
+Okay, I'll go down here and click the Next button.
+
+14
+00:00:29,000 --> 00:00:30,000
+So now, I'm going to create my project.
+
+15
+00:00:30,000 --> 00:00:34,000
+My project name is going to be Organized.
+
+16
+00:00:34,000 --> 00:00:37,000
+We'll name that as the project.
+
+17
+00:00:37,000 --> 00:00:39,000
+But now, I'm going to go ahead and give this one a package name.
+
+18
+00:00:39,000 --> 00:00:40,000
+All right, so we're going to follow
+
+19
+00:00:40,000 --> 00:00:42,000
+the rules we talked about.
+
+20
+00:00:42,000 --> 00:00:45,000
+Com dot Pluralsight.
+
+21
+00:00:45,000 --> 00:00:46,000
+And then, I'm going to go ahead
+
+22
+00:00:46,000 --> 00:00:48,000
+and add our file qualifier.
+
+23
+00:00:48,000 --> 00:00:52,000
+And, let's just call this one Get Organized.
+
+24
+00:00:52,000 --> 00:00:54,000
+So now, our project name Organized
+
+25
+00:00:54,000 --> 00:00:57,000
+is a IDE concept, or it's just what we're calling
+
+26
+00:00:57,000 --> 00:00:58,000
+the project in the IDE.
+
+27
+00:00:58,000 --> 00:01:00,000
+But, this package name,
+
+28
+00:01:00,000 --> 00:01:02,000
+com dot Pluralsight dot Get Organized
+
+29
+00:01:02,000 --> 00:01:04,000
+is the package name we're using
+
+30
+00:01:04,000 --> 00:01:05,000
+within a Java sense.
+
+31
+00:01:05,000 --> 00:01:07,000
+And very often, the packaged,
+
+32
+00:01:07,000 --> 00:01:09,000
+the last part of the package name is
+
+33
+00:01:09,000 --> 00:01:10,000
+the same as your project name.
+
+34
+00:01:10,000 --> 00:01:11,000
+But, I just wanted to make them different
+
+35
+00:01:11,000 --> 00:01:15,000
+in this case to show that they're not directly related.
+
+36
+00:01:15,000 --> 00:01:20,000
+So, let's just go ahead and finish this.
+
+37
+00:01:20,000 --> 00:01:22,000
+So, here we are in our application now.
+
+38
+00:01:22,000 --> 00:01:23,000
+All right, we got our source code,
+
+39
+00:01:23,000 --> 00:01:24,000
+or excuse me, our Class in place,
+
+40
+00:01:24,000 --> 00:01:26,000
+just like we did before, but now we have
+
+41
+00:01:26,000 --> 00:01:28,000
+that package declaration at the top.
+
+42
+00:01:28,000 --> 00:01:29,000
+All right, what I want to do here is
+
+43
+00:01:29,000 --> 00:01:32,000
+go ahead and delete this line away,
+
+44
+00:01:32,000 --> 00:01:35,000
+and let's go ahead and write some output.
+
+45
+00:01:35,000 --> 00:01:37,000
+But this time, we'll just say something like,
+
+46
+00:01:37,000 --> 00:01:40,000
+hello, get organized.
+
+47
+00:01:40,000 --> 00:01:41,000
+All right, let's just go ahead and run this, make sure everything's fine.
+
+48
+00:01:41,000 --> 00:01:42,000
+So, we'll run it just like we did it before.
+
+49
+00:01:42,000 --> 00:01:45,000
+Run, Run.
+
+50
+00:01:45,000 --> 00:01:46,000
+And, we see there in our output,
+
+51
+00:01:46,000 --> 00:01:47,000
+that our Console window shows,
+
+52
+00:01:47,000 --> 00:01:48,000
+hello, get organized.
+
+53
+00:01:48,000 --> 00:01:50,000
+So, everything run, just like it did before,
+
+54
+00:01:50,000 --> 00:01:55,000
+except within the IDE, nothing's really any different.
+
+55
+00:01:55,000 --> 00:01:57,000
+Let's take a look now about how that change
+
+56
+00:01:57,000 --> 00:02:00,000
+to a package affected our source code file hierarchy.
+
+57
+00:02:00,000 --> 00:02:02,000
+So, I create a project called Organized.
+
+58
+00:02:02,000 --> 00:02:04,000
+So, this is the folder I created it in.
+
+59
+00:02:04,000 --> 00:02:05,000
+So, it's inside of there.
+
+60
+00:02:05,000 --> 00:02:08,000
+Our SRC, our source code area.
+
+61
+00:02:08,000 --> 00:02:09,000
+But, now notice that we have
+
+62
+00:02:09,000 --> 00:02:13,000
+a com Pluralsight,
+
+63
+00:02:13,000 --> 00:02:15,000
+and then, a Get Organized.
+
+64
+00:02:15,000 --> 00:02:18,000
+All right, as so that's where our Main dot Java is.
+
+65
+00:02:18,000 --> 00:02:21,000
+So, it created our folder just like we thought it would.
+
+66
+00:02:21,000 --> 00:02:23,000
+But, let's see how it affects our Class name now.
+
+67
+00:02:23,000 --> 00:02:25,000
+So, I'm going to go back up here to the Organize level.
+
+68
+00:02:25,000 --> 00:02:28,000
+I'm going to the output folder, so Out,
+
+69
+00:02:28,000 --> 00:02:30,000
+Production, and then, Organized.
+
+70
+00:02:30,000 --> 00:02:32,000
+So, I'll go in there.
+
+71
+00:02:32,000 --> 00:02:33,000
+Let's go ahead and open up a command line here.
+
+72
+00:02:33,000 --> 00:02:35,000
+Now, you notice right away that
+
+73
+00:02:35,000 --> 00:02:37,000
+you don't see the Main dot Java in there.
+
+74
+00:02:37,000 --> 00:02:39,000
+In fact, the Main dot Java is actually buried
+
+75
+00:02:39,000 --> 00:02:41,000
+down again under this com folder structure.
+
+76
+00:02:41,000 --> 00:02:42,000
+But, I don't want to focus on that.
+
+77
+00:02:42,000 --> 00:02:44,000
+We'll talk about that aspect of it later in the course.
+
+78
+00:02:44,000 --> 00:02:46,000
+But, what I want to do now is open
+
+79
+00:02:46,000 --> 00:02:48,000
+up the command prompt right there.
+
+80
+00:02:48,000 --> 00:02:50,000
+So, we've got our command prompt,
+
+81
+00:02:50,000 --> 00:02:52,000
+and we're going to go ahead and run the program.
+
+82
+00:02:52,000 --> 00:02:54,000
+Now, remember when we said we run our programs,
+
+83
+00:02:54,000 --> 00:02:57,000
+we (mumbles) identify the Class name.
+
+84
+00:02:57,000 --> 00:02:59,000
+All right, so I'm going to say Java,
+
+85
+00:02:59,000 --> 00:03:00,000
+because we run a Java program.
+
+86
+00:03:00,000 --> 00:03:05,000
+I'm going to say, com dot Pluralsight dot Get Organized.
+
+87
+00:03:05,000 --> 00:03:08,000
+All right, that's our package name dot Main.
+
+88
+00:03:08,000 --> 00:03:10,000
+So now when I run that,
+
+89
+00:03:10,000 --> 00:03:12,000
+we get our hello, get organized.
+
+90
+00:03:12,000 --> 00:03:13,000
+Because remember that we said by putting it
+
+91
+00:03:13,000 --> 00:03:16,000
+in the package, our Class Main, real name is
+
+92
+00:03:16,000 --> 00:03:19,000
+now the fully qualified name within the package.
+
+93
+00:03:19,000 --> 00:03:22,000
+Com dot Pluralsight dot Get Organized dot Main.
+
+94
+00:03:22,000 --> 00:03:24,000
+So, by running that Class name,
+
+95
+00:03:24,000 --> 00:03:25,000
+qualified with the package,
+
+96
+00:03:25,000 --> 00:59:00,000
+our application ran correctly.
+

@@ -1,0 +1,524 @@
+1
+00:00:02,000 --> 00:00:03,000
+Let's jump into some code now
+
+2
+00:00:03,000 --> 00:00:09,000
+to see these type conversion behaviors in action.
+
+3
+00:00:09,000 --> 00:00:10,000
+We have a simple program here
+
+4
+00:00:10,000 --> 00:00:13,000
+that has some declarations at the top.
+
+5
+00:00:13,000 --> 00:00:17,000
+Float, double, byte, short, and long,
+
+6
+00:00:17,000 --> 00:00:19,000
+and the variables for each name to help identify
+
+7
+00:00:19,000 --> 00:00:20,000
+what they're types are.
+
+8
+00:00:20,000 --> 00:00:21,000
+Like float is floatVal,
+
+9
+00:00:21,000 --> 00:00:22,000
+long is longVal.
+
+10
+00:00:22,000 --> 00:00:24,000
+And the program will print out a success message
+
+11
+00:00:24,000 --> 00:00:26,000
+if it runs.
+
+12
+00:00:26,000 --> 00:00:27,000
+So let's just see how some of these type conversions
+
+13
+00:00:27,000 --> 00:00:29,000
+come into play.
+
+14
+00:00:29,000 --> 00:00:31,000
+So first of all, let's just go ahead and create a variable.
+
+15
+00:00:31,000 --> 00:00:34,000
+We have a short which is called result.
+
+16
+00:00:34,000 --> 00:00:37,000
+In fact, let's go ahead and call it result1.
+
+17
+00:00:37,000 --> 00:00:38,000
+And let's just do a simple assignment.
+
+18
+00:00:38,000 --> 00:00:42,000
+So first, we'll just assign the byteVal to it.
+
+19
+00:00:42,000 --> 00:00:43,000
+And now as we expect,
+
+20
+00:00:43,000 --> 00:00:45,000
+if I go ahead and run this,
+
+21
+00:00:45,000 --> 00:00:47,000
+so this'll run successfully.
+
+22
+00:00:47,000 --> 00:00:48,000
+We know that's a valid assignment
+
+23
+00:00:48,000 --> 00:00:50,000
+because a byte can be assigned into a short
+
+24
+00:00:50,000 --> 00:00:52,000
+because that is a widening conversion.
+
+25
+00:00:52,000 --> 00:00:54,000
+If I take this byteVal, though,
+
+26
+00:00:54,000 --> 00:00:58,000
+and I make it a longVal instead,
+
+27
+00:00:58,000 --> 00:01:01,000
+so now it's actually a long.
+
+28
+00:01:01,000 --> 00:01:04,000
+If I run this,
+
+29
+00:01:04,000 --> 00:01:07,000
+I get an error message here saying incompatible types,
+
+30
+00:01:07,000 --> 00:01:10,000
+possible loss of conversion from long to short.
+
+31
+00:01:10,000 --> 00:01:13,000
+So what I can do here is that I can do an explicit cast.
+
+32
+00:01:13,000 --> 00:01:16,000
+I'll just put short in front of this.
+
+33
+00:01:16,000 --> 00:01:18,000
+So now it's valid so I can run it.
+
+34
+00:01:18,000 --> 00:01:20,000
+Of course, it works.
+
+35
+00:01:20,000 --> 00:01:22,000
+Because the long could not go into the short
+
+36
+00:01:22,000 --> 00:01:25,000
+because that was a narrowing conversion,
+
+37
+00:01:25,000 --> 00:01:27,000
+but by putting the explicit cast in front of it,
+
+38
+00:01:27,000 --> 00:01:29,000
+now it's valid.
+
+39
+00:01:29,000 --> 00:01:32,000
+If I want to, I can put a cast notation in any time I want.
+
+40
+00:01:32,000 --> 00:01:34,000
+If I want to be very explicit and say that,
+
+41
+00:01:34,000 --> 00:01:37,000
+you know, I know although the byte conversion is legal,
+
+42
+00:01:37,000 --> 00:01:40,000
+I want to explicitly show that I am casting it,
+
+43
+00:01:40,000 --> 00:01:41,000
+by putting the short cast in there.
+
+44
+00:01:41,000 --> 00:01:46,000
+I can do that, and that's completely legal.
+
+45
+00:01:46,000 --> 00:01:48,000
+So let's take a look at another scenario.
+
+46
+00:01:48,000 --> 00:01:53,000
+I'm going to create another variable called result2
+
+47
+00:01:53,000 --> 00:01:56,000
+and result2 is a short, as well.
+
+48
+00:01:56,000 --> 00:01:57,000
+And what I want to do here,
+
+49
+00:01:57,000 --> 00:01:59,000
+is I'm just going to take my byte value
+
+50
+00:01:59,000 --> 00:02:02,000
+and I want to subtract the long value.
+
+51
+00:02:02,000 --> 00:02:04,000
+Now we know that's not legal,
+
+52
+00:02:04,000 --> 00:02:06,000
+because the result of the expression
+
+53
+00:02:06,000 --> 00:02:09,000
+is going to be the size of the largest integer in it,
+
+54
+00:02:09,000 --> 00:02:10,000
+which is the long.
+
+55
+00:02:10,000 --> 00:02:12,000
+So if I run this,
+
+56
+00:02:12,000 --> 00:02:14,000
+I just get an error saying that it's not valid
+
+57
+00:02:14,000 --> 00:02:17,000
+to convert a long to a short.
+
+58
+00:02:17,000 --> 00:02:18,000
+Let's say I want to go ahead
+
+59
+00:02:18,000 --> 00:02:20,000
+and keep that result to a short.
+
+60
+00:02:20,000 --> 00:02:21,000
+Well I need to do a cast.
+
+61
+00:02:21,000 --> 00:02:23,000
+But what I want to cast this time
+
+62
+00:02:23,000 --> 00:02:25,000
+is the value of the entire result here.
+
+63
+00:02:25,000 --> 00:02:26,000
+So what I'm going to do
+
+64
+00:02:26,000 --> 00:02:29,000
+is put the short cast in front of it here,
+
+65
+00:02:29,000 --> 00:02:30,000
+then what I'll do is go ahead
+
+66
+00:02:30,000 --> 00:02:33,000
+and wrap the whole thing in parenthesis.
+
+67
+00:02:33,000 --> 00:02:34,000
+So now, what we're saying
+
+68
+00:02:34,000 --> 00:02:37,000
+is that the result of byteVal minus longVal,
+
+69
+00:02:37,000 --> 00:02:39,000
+which will be a size long,
+
+70
+00:02:39,000 --> 00:02:41,000
+we want to cast that down to a short.
+
+71
+00:02:41,000 --> 00:02:44,000
+So we're going to run this now.
+
+72
+00:02:44,000 --> 00:02:46,000
+It will run successfully.
+
+73
+00:02:46,000 --> 00:02:48,000
+So now let's try another one.
+
+74
+00:02:48,000 --> 00:02:51,000
+Go ahead and declare another one called result3,
+
+75
+00:02:51,000 --> 00:02:53,000
+and I'll declare this one as a long.
+
+76
+00:02:53,000 --> 00:02:54,000
+So I've got my result3
+
+77
+00:02:54,000 --> 00:02:58,000
+and what I'll do here is I'll assign that our longVal
+
+78
+00:02:58,000 --> 00:03:00,000
+minus our floatVal.
+
+79
+00:03:00,000 --> 00:03:04,000
+So now if I run that,
+
+80
+00:03:04,000 --> 00:03:06,000
+my error now says that it's a lost conversion
+
+81
+00:03:06,000 --> 00:03:09,000
+converting from a float to a long
+
+82
+00:03:09,000 --> 00:03:12,000
+because whenever we have a integer type
+
+83
+00:03:12,000 --> 00:03:14,000
+and any floating point type,
+
+84
+00:03:14,000 --> 00:03:17,000
+the result is going to be the floating point type.
+
+85
+00:03:17,000 --> 00:03:20,000
+So let's go ahead and convert our result now to a float.
+
+86
+00:03:20,000 --> 00:03:21,000
+So I've made that a float
+
+87
+00:03:21,000 --> 00:03:24,000
+so I should be able to go ahead and run it.
+
+88
+00:03:24,000 --> 00:03:26,000
+And it runs successfully.
+
+89
+00:03:26,000 --> 00:03:28,000
+But now if I take the floatVal here
+
+90
+00:03:28,000 --> 00:03:30,000
+and I convert this to be a doubleVal
+
+91
+00:03:30,000 --> 00:03:32,000
+and if I try to run this,
+
+92
+00:03:32,000 --> 00:03:33,000
+I'll get the error
+
+93
+00:03:33,000 --> 00:03:37,000
+because it says the result is going to be a double.
+
+94
+00:03:37,000 --> 00:03:40,000
+Because again, when you do an integer to floating point,
+
+95
+00:03:40,000 --> 00:03:43,000
+it's the size of the largest floating point in the equation.
+
+96
+00:03:43,000 --> 00:03:45,000
+So let's go ahead and make this result a double,
+
+97
+00:03:45,000 --> 00:03:51,000
+so now we can run it.
+
+98
+00:03:51,000 --> 00:03:53,000
+All right, let's look at one more.
+
+99
+00:03:53,000 --> 00:03:56,000
+So I'm going to have another result that I'll make a long.
+
+100
+00:03:56,000 --> 00:03:58,000
+So this result we're calling result4
+
+101
+00:03:58,000 --> 00:04:00,000
+and what I'll do here,
+
+102
+00:04:00,000 --> 00:04:01,000
+is I'll just take the short value
+
+103
+00:04:01,000 --> 00:04:04,000
+and subtract the long value from it.
+
+104
+00:04:04,000 --> 00:04:05,000
+Now we know that's valid
+
+105
+00:04:05,000 --> 00:04:07,000
+because the largest type in there is the long
+
+106
+00:04:07,000 --> 00:04:09,000
+and the result's long so that's okay,
+
+107
+00:04:09,000 --> 00:04:13,000
+but now let's go ahead and add in a floatVal.
+
+108
+00:04:13,000 --> 00:04:16,000
+So if I run it now,
+
+109
+00:04:16,000 --> 00:04:17,000
+I'll get an error message saying
+
+110
+00:04:17,000 --> 00:04:20,000
+it doesn't know how to convert a float to a long.
+
+111
+00:04:20,000 --> 00:04:22,000
+Let's go one step further now
+
+112
+00:04:22,000 --> 00:04:25,000
+and let's go ahead also and add in our doubleVal.
+
+113
+00:04:25,000 --> 00:04:28,000
+Now if we run it, we'll still get an error,
+
+114
+00:04:28,000 --> 00:04:31,000
+but now it says it's unable to convert a double to a long.
+
+115
+00:04:31,000 --> 00:04:32,000
+So as we see our result here,
+
+116
+00:04:32,000 --> 00:04:35,000
+our errors are changing based on the types
+
+117
+00:04:35,000 --> 00:04:36,000
+that are involved.
+
+118
+00:04:36,000 --> 00:04:37,000
+When it was all integers,
+
+119
+00:04:37,000 --> 00:04:39,000
+it was the size of the largest integer there.
+
+120
+00:04:39,000 --> 00:04:41,000
+Once there was a floating point involved,
+
+121
+00:04:41,000 --> 00:04:43,000
+it's the size of the largest floating point.
+
+122
+00:04:43,000 --> 00:04:45,000
+So one of them is a short and a long is a long
+
+123
+00:04:45,000 --> 00:04:47,000
+and when it's a short, a long, and a float,
+
+124
+00:04:47,000 --> 00:04:49,000
+the result became a float,
+
+125
+00:04:49,000 --> 00:04:50,000
+and when it was a short, a long, a float, and a double,
+
+126
+00:04:50,000 --> 00:04:52,000
+the result became a double.
+
+127
+00:04:52,000 --> 00:04:54,000
+So to run this, let's go ahead and cast this whole thing
+
+128
+00:04:54,000 --> 00:04:56,000
+to be a long.
+
+129
+00:04:56,000 --> 00:04:58,000
+So I'll make this a long.
+
+130
+00:04:58,000 --> 00:05:02,000
+Again, we'll wrap the whole thing in parenthesis,
+
+131
+00:05:02,000 --> 00:59:00,000
+and now we should be able to run it just fine.
+

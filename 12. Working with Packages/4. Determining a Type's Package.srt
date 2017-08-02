@@ -1,0 +1,768 @@
+1
+00:00:01,000 --> 00:00:04,000
+With packages serving as a name space for our types,
+
+2
+00:00:04,000 --> 00:00:07,000
+obviously the compiler needs to know each type's package.
+
+3
+00:00:07,000 --> 00:00:10,000
+Now, of course, we can explicitly qualify each type
+
+4
+00:00:10,000 --> 00:00:12,000
+with its package name but doing that,
+
+5
+00:00:12,000 --> 00:00:16,000
+just is impractical, it just makes our code hard to read
+
+6
+00:00:16,000 --> 00:00:18,000
+and honestly, it's a lot of typing.
+
+7
+00:00:18,000 --> 00:00:20,000
+Now Java offers several alternatives
+
+8
+00:00:20,000 --> 00:00:22,000
+to explicitly qualifying our types.
+
+9
+00:00:22,000 --> 00:00:24,000
+What this does is it allows us to use
+
+10
+00:00:24,000 --> 00:00:27,000
+the simple names of our types in our code.
+
+11
+00:00:27,000 --> 00:00:28,000
+Java handles a couple
+
+12
+00:00:28,000 --> 00:00:31,000
+of very common scenarios for us automatically.
+
+13
+00:00:31,000 --> 00:00:34,000
+One of those is that, whenever you're working in a package
+
+14
+00:00:34,000 --> 00:00:36,000
+any types that you refer to that are
+
+15
+00:00:36,000 --> 00:00:40,000
+part of that same package, don't need to be qualified.
+
+16
+00:00:40,000 --> 00:00:42,000
+Also, any types that we work with
+
+17
+00:00:42,000 --> 00:00:45,000
+that are part of the java.lang package
+
+18
+00:00:45,000 --> 00:00:48,000
+and that's the core package for the Java language.
+
+19
+00:00:48,000 --> 00:00:50,000
+Those don't need to be qualified
+
+20
+00:00:50,000 --> 00:00:53,000
+and that includes things like the Object class,
+
+21
+00:00:53,000 --> 00:00:54,000
+our primitive Wrapper classes,
+
+22
+00:00:54,000 --> 00:00:56,000
+the String class, StringBuilder,
+
+23
+00:00:56,000 --> 00:00:58,000
+lots and lots of others.
+
+24
+00:00:58,000 --> 00:00:59,000
+To see the full list of classes that are
+
+25
+00:00:59,000 --> 00:01:01,000
+in the java.lang package,
+
+26
+00:01:01,000 --> 00:01:04,000
+just check out that URL out on the screen there.
+
+27
+00:01:04,000 --> 00:01:05,000
+These two behaviors take care
+
+28
+00:01:05,000 --> 00:01:07,000
+of two kind of extremes.
+
+29
+00:01:07,000 --> 00:01:09,000
+That the current package is the thing
+
+30
+00:01:09,000 --> 00:01:11,000
+that's very personal to you
+
+31
+00:01:11,000 --> 00:01:14,000
+and the java.lang is the thing that's very general.
+
+32
+00:01:14,000 --> 00:01:16,000
+What about all the things in between?
+
+33
+00:01:16,000 --> 00:01:18,000
+Most applications are going to involve
+
+34
+00:01:18,000 --> 00:01:20,000
+a number of different packages.
+
+35
+00:01:20,000 --> 00:01:23,000
+That's where type imports come in.
+
+36
+00:01:23,000 --> 00:01:25,000
+Type imports provide a way for us
+
+37
+00:01:25,000 --> 00:01:28,000
+to tell the compiler how to map
+
+38
+00:01:28,000 --> 00:01:31,000
+simple type names to qualified names.
+
+39
+00:01:31,000 --> 00:01:34,000
+We do that using the import key word.
+
+40
+00:01:34,000 --> 00:01:36,000
+One thing I want to note is that,
+
+41
+00:01:36,000 --> 00:01:37,000
+the keyword, import, may give you
+
+42
+00:01:37,000 --> 00:01:40,000
+a sense of direction, loading something in
+
+43
+00:01:40,000 --> 00:01:41,000
+and that's not what import does.
+
+44
+00:01:41,000 --> 00:01:44,000
+Import is just a mapping for the compiler.
+
+45
+00:01:44,000 --> 00:01:46,000
+Basically there's a couple of different ways
+
+46
+00:01:46,000 --> 00:01:48,000
+we can do the import.
+
+47
+00:01:48,000 --> 00:01:51,000
+One way is what's called a single-type- import.
+
+48
+00:01:51,000 --> 00:01:52,000
+What a single-type-import does
+
+49
+00:01:52,000 --> 00:01:54,000
+is it allows you to provide an import statement
+
+50
+00:01:54,000 --> 00:01:56,000
+that maps in a single type.
+
+51
+00:01:56,000 --> 00:01:58,000
+Let's see what that looks like.
+
+52
+00:01:58,000 --> 00:02:00,000
+Let's say we're working in our code
+
+53
+00:02:00,000 --> 00:02:01,000
+and we're building up to classes
+
+54
+00:02:01,000 --> 00:02:02,000
+that we've been working on.
+
+55
+00:02:02,000 --> 00:02:04,000
+So we have our flight class
+
+56
+00:02:04,000 --> 00:02:06,000
+and we specify that being part of a package.
+
+57
+00:02:06,000 --> 00:02:08,000
+We've got our passenger class
+
+58
+00:02:08,000 --> 00:02:10,000
+and we specify that as being part of a package.
+
+59
+00:02:10,000 --> 00:02:13,000
+Now both of those classes are in our
+
+60
+00:02:13,000 --> 00:02:16,000
+com.Pluralsight.travel package.
+
+61
+00:02:16,000 --> 00:02:18,000
+Let's say if we're building up our application,
+
+62
+00:02:18,000 --> 00:02:19,000
+we want to also incorporate maybe
+
+63
+00:02:19,000 --> 00:02:21,000
+a third party package.
+
+64
+00:02:21,000 --> 00:02:23,000
+So if we think about it, if we're building
+
+65
+00:02:23,000 --> 00:02:25,000
+code around flights and passengers.
+
+66
+00:02:25,000 --> 00:02:27,000
+Something that flights commonly do
+
+67
+00:02:27,000 --> 00:02:28,000
+is provide beverage service.
+
+68
+00:02:28,000 --> 00:02:31,000
+Things like selling beer and wine.
+
+69
+00:02:31,000 --> 00:02:34,000
+We want to go ahead and use a third party package for those features.
+
+70
+00:02:34,000 --> 00:02:36,000
+We have a class like beer,
+
+71
+00:02:36,000 --> 00:02:37,000
+that's specified as a package from
+
+72
+00:02:37,000 --> 00:02:40,000
+some company called xyzcompany.
+
+73
+00:02:40,000 --> 00:02:42,000
+It's also got a class in it called wine.
+
+74
+00:02:42,000 --> 00:02:44,000
+It's part of that same package.
+
+75
+00:02:44,000 --> 00:02:47,000
+Our package com.xyzcompany.bar provides
+
+76
+00:02:47,000 --> 00:02:51,000
+those capabilities around providing beverage service.
+
+77
+00:02:51,000 --> 00:02:54,000
+If we go off and we start building our application
+
+78
+00:02:54,000 --> 00:02:55,000
+and we want to go ahead and create
+
+79
+00:02:55,000 --> 00:02:57,000
+an instant of our flight class.
+
+80
+00:02:57,000 --> 00:02:59,000
+We don't want to have to explicitly qualify the class name,
+
+81
+00:02:59,000 --> 00:03:01,000
+so in order to just say flight,
+
+82
+00:03:01,000 --> 00:03:03,000
+what we'll do is, at the top of our source code,
+
+83
+00:03:03,000 --> 00:03:06,000
+we'll have an import that says,
+
+84
+00:03:06,000 --> 00:03:09,000
+com.Pluralsight.travel.flight.
+
+85
+00:03:09,000 --> 00:03:11,000
+That tells the compiler that whenever
+
+86
+00:03:11,000 --> 00:03:13,000
+we use the class flight,
+
+87
+00:03:13,000 --> 00:03:14,000
+what we're really referring to
+
+88
+00:03:14,000 --> 00:03:18,000
+is the fully qualified class com.Pluralsight.travel.flight
+
+89
+00:03:18,000 --> 00:03:20,000
+or another way to say it is that,
+
+90
+00:03:20,000 --> 00:03:22,000
+we're referring to the flight class
+
+91
+00:03:22,000 --> 00:03:26,000
+as defined inside the package com.Pluralsight.travel.
+
+92
+00:03:26,000 --> 00:03:28,000
+If we want to use the beer class,
+
+93
+00:03:28,000 --> 00:03:29,000
+we'll do an import for that.
+
+94
+00:03:29,000 --> 00:03:34,000
+We'll say Import com.xyzcompany.bar.beer
+
+95
+00:03:34,000 --> 00:03:35,000
+which tells the compiler that whenever
+
+96
+00:03:35,000 --> 00:03:38,000
+we use the simple type name beer,
+
+97
+00:03:38,000 --> 00:03:39,000
+we're referring to the beer class
+
+98
+00:03:39,000 --> 00:03:43,000
+as defined in the package com.xyzcompany.bar.
+
+99
+00:03:43,000 --> 00:03:45,000
+Same sort of thing if we want to use passenger,
+
+100
+00:03:45,000 --> 00:03:48,000
+we provide an import that maps that in.
+
+101
+00:03:48,000 --> 00:03:50,000
+Or if we want to use the type wine,
+
+102
+00:03:50,000 --> 00:03:53,000
+we provide an import that maps that in.
+
+103
+00:03:53,000 --> 00:03:54,000
+We end up with an import statement here
+
+104
+00:03:54,000 --> 00:03:57,000
+for each of our individual types.
+
+105
+00:03:57,000 --> 00:04:00,000
+Now, an alternative to the single-type- import
+
+106
+00:04:00,000 --> 00:04:02,000
+is what's called Import on demand.
+
+107
+00:04:02,000 --> 00:04:04,000
+What Import on demand lets us do
+
+108
+00:04:04,000 --> 00:04:07,000
+is rather than providing a separate import
+
+109
+00:04:07,000 --> 00:04:08,000
+for each individual type,
+
+110
+00:04:08,000 --> 00:04:10,000
+it allows it to provide an import
+
+111
+00:04:10,000 --> 00:04:12,000
+for each package and it allows compiler
+
+112
+00:04:12,000 --> 00:04:15,000
+to map in all the types from within a package.
+
+113
+00:04:15,000 --> 00:04:18,000
+If we take a look at the code we have there.
+
+114
+00:04:18,000 --> 00:04:19,000
+If we look at the four import statements
+
+115
+00:04:19,000 --> 00:04:21,000
+we have here at the top,
+
+116
+00:04:21,000 --> 00:04:22,000
+we can actually replace those
+
+117
+00:04:22,000 --> 00:04:24,000
+and then instead of having a separate one
+
+118
+00:04:24,000 --> 00:04:26,000
+for each individual type,
+
+119
+00:04:26,000 --> 00:04:28,000
+we can have one for each of the packages.
+
+120
+00:04:28,000 --> 00:04:34,000
+We can have one that says, Import com.Pluralsight.travel.*
+
+121
+00:04:34,000 --> 00:04:37,000
+says to map in all the types from
+
+122
+00:04:37,000 --> 00:04:39,000
+the com.Pluralsight.travel package.
+
+123
+00:04:39,000 --> 00:04:45,000
+We can do the same thing with Import com.xyzcompany.bar.*
+
+124
+00:04:45,000 --> 00:04:47,000
+brings in all types from that package.
+
+125
+00:04:47,000 --> 00:04:49,000
+Then, during the compilation process,
+
+126
+00:04:49,000 --> 00:04:51,000
+when the compiler sees the simple name flight,
+
+127
+00:04:51,000 --> 00:04:53,000
+it looks inside those packages to find
+
+128
+00:04:53,000 --> 00:04:55,000
+a definition of a class called flight.
+
+129
+00:04:55,000 --> 00:04:57,000
+It will automatically resolve that
+
+130
+00:04:57,000 --> 00:04:59,000
+to com.Pluralsight.travel.flight.
+
+131
+00:04:59,000 --> 00:05:04,000
+Or for beer, it will resolve to com.xyzcompany.bar.beer.
+
+132
+00:05:04,000 --> 00:05:06,000
+That may sound like a really good way to go.
+
+133
+00:05:06,000 --> 00:05:09,000
+Why would I use single-type-imports?
+
+134
+00:05:09,000 --> 00:05:11,000
+Well let's look at a scenario.
+
+135
+00:05:11,000 --> 00:05:12,000
+Let's say that we're using these packages
+
+136
+00:05:12,000 --> 00:05:16,000
+and remember that com.xyzcompany.bar package
+
+137
+00:05:16,000 --> 00:05:18,000
+comes from a third party.
+
+138
+00:05:18,000 --> 00:05:20,000
+So we go and install a fresh version
+
+139
+00:05:20,000 --> 00:05:21,000
+of that package because maybe there's
+
+140
+00:05:21,000 --> 00:05:23,000
+a bug fix or something in there that we want.
+
+141
+00:05:23,000 --> 00:05:24,000
+Inside of that package,
+
+142
+00:05:24,000 --> 00:05:26,000
+maybe they've added another type.
+
+143
+00:05:26,000 --> 00:05:31,000
+Maybe they've added a type inside of there called flight.
+
+144
+00:05:31,000 --> 00:05:33,000
+Something that's becoming very common in recent years
+
+145
+00:05:33,000 --> 00:05:35,000
+is rather than buying a single large beer
+
+146
+00:05:35,000 --> 00:05:37,000
+is something called a beer flight.
+
+147
+00:05:37,000 --> 00:05:39,000
+Beer flight is this idea of three or four
+
+148
+00:05:39,000 --> 00:05:42,000
+small beers where each one's a different kind
+
+149
+00:05:42,000 --> 00:05:44,000
+so I can try out different things.
+
+150
+00:05:44,000 --> 00:05:46,000
+As this company wanted to stay current,
+
+151
+00:05:46,000 --> 00:05:47,000
+they introduced this class called flight
+
+152
+00:05:47,000 --> 00:05:49,000
+representing that concept.
+
+153
+00:05:49,000 --> 00:05:50,000
+The problem with this is that,
+
+154
+00:05:50,000 --> 00:05:52,000
+now if I go ahead and compile my application,
+
+155
+00:05:52,000 --> 00:05:54,000
+even though I haven't changed anything
+
+156
+00:05:54,000 --> 00:05:56,000
+in my application, I'm now going to get
+
+157
+00:05:56,000 --> 00:05:59,000
+an error on this line where I used flight.
+
+158
+00:05:59,000 --> 00:06:00,000
+Because the compiler's going to say
+
+159
+00:06:00,000 --> 00:06:02,000
+that well, both of those packages
+
+160
+00:06:02,000 --> 00:06:04,000
+have a flight class inside of there.
+
+161
+00:06:04,000 --> 00:06:05,000
+I don't know which one to use.
+
+162
+00:06:05,000 --> 00:06:07,000
+With no changes to my code,
+
+163
+00:06:07,000 --> 00:06:08,000
+I now have a bug.
+
+164
+00:06:08,000 --> 00:06:11,000
+But if we use a single-type-import instead
+
+165
+00:06:11,000 --> 00:06:13,000
+because we've explicitly said,
+
+166
+00:06:13,000 --> 00:06:15,000
+"When I use the class flight,
+
+167
+00:06:15,000 --> 00:06:18,000
+"I mean com.Pluralsight.travel.flight,
+
+168
+00:06:18,000 --> 00:06:21,000
+"I'm not exposed to this problem."
+
+169
+00:06:21,000 --> 00:06:23,000
+The single-type-import prevents me
+
+170
+00:06:23,000 --> 00:06:25,000
+from that kind of situation.
+
+171
+00:06:25,000 --> 00:06:27,000
+If we look at our options here,
+
+172
+00:06:27,000 --> 00:06:29,000
+our single-type-import is really
+
+173
+00:06:29,000 --> 00:06:32,000
+the preferred way to import types
+
+174
+00:06:32,000 --> 00:06:33,000
+because it's much safer.
+
+175
+00:06:33,000 --> 00:06:34,000
+Now you might be thinking that,
+
+176
+00:06:34,000 --> 00:06:35,000
+well I don't want to have to type in
+
+177
+00:06:35,000 --> 00:06:37,000
+all those imports all the time.
+
+178
+00:06:37,000 --> 00:06:39,000
+You don't have to worry about that.
+
+179
+00:06:39,000 --> 00:06:41,000
+Modern IDEs will add
+
+180
+00:06:41,000 --> 00:06:44,000
+your single type imports for you automatically.
+
+181
+00:06:44,000 --> 00:06:45,000
+Pretty much all of them do.
+
+182
+00:06:45,000 --> 00:06:48,000
+I know certainly, IntelliJ and NetBeans do.
+
+183
+00:06:48,000 --> 00:06:49,000
+Basically, when you're typing up your code,
+
+184
+00:06:49,000 --> 00:06:51,000
+when you use the single-type-name,
+
+185
+00:06:51,000 --> 00:06:53,000
+the ID automatically just adds the import
+
+186
+00:06:53,000 --> 00:06:54,000
+to the top for you.
+
+187
+00:06:54,000 --> 00:06:56,000
+Now, if you decide you want to use
+
+188
+00:06:56,000 --> 00:06:58,000
+Import on demand, remember that
+
+189
+00:06:58,000 --> 00:07:00,000
+you want to use that with caution
+
+190
+00:07:00,000 --> 00:07:01,000
+because as we've seen,
+
+191
+00:07:01,000 --> 00:07:04,000
+that exposes you code to potential breakage
+
+192
+00:07:04,000 --> 00:59:00,000
+from things outside of your code itself.
+

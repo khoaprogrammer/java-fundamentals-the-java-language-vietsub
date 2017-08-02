@@ -1,0 +1,724 @@
+1
+00:00:01,000 --> 00:00:02,000
+Throughout our discussions in this course,
+
+2
+00:00:02,000 --> 00:00:04,000
+recently we've been talking about classes.
+
+3
+00:00:04,000 --> 00:00:06,000
+Now, the thing we see when we talk about classes
+
+4
+00:00:06,000 --> 00:00:08,000
+is that classes provide convenience.
+
+5
+00:00:08,000 --> 00:00:11,000
+One of the conveniences is that all classes
+
+6
+00:00:11,000 --> 00:00:13,000
+inherit from the object class,
+
+7
+00:00:13,000 --> 00:00:15,000
+so we can use object as a standard way to interact
+
+8
+00:00:15,000 --> 00:00:17,000
+with all class instances.
+
+9
+00:00:17,000 --> 00:00:19,000
+So, that's a good thing.
+
+10
+00:00:19,000 --> 00:00:21,000
+Classes have fields and methods
+
+11
+00:00:21,000 --> 00:00:22,000
+that are specific to that type.
+
+12
+00:00:22,000 --> 00:00:24,000
+That means that we can have values
+
+13
+00:00:24,000 --> 00:00:26,000
+and operations directly associated with a type.
+
+14
+00:00:26,000 --> 00:00:28,000
+So that's a good thing.
+
+15
+00:00:28,000 --> 00:00:29,000
+One of the things we need to be aware of though
+
+16
+00:00:29,000 --> 00:00:32,000
+is that classes also have overhead.
+
+17
+00:00:32,000 --> 00:00:35,000
+Every class instance has a certain amount of memory
+
+18
+00:00:35,000 --> 00:00:38,000
+that's always taken up just by the fact that it's a class
+
+19
+00:00:38,000 --> 00:00:39,000
+and that's before it even has
+
+20
+00:00:39,000 --> 00:00:42,000
+its own specific values inside of there.
+
+21
+00:00:42,000 --> 00:00:43,000
+So, generally we consider that,
+
+22
+00:00:43,000 --> 00:00:45,000
+that little bit of extra overhead worthwhile
+
+23
+00:00:45,000 --> 00:00:47,000
+to get those conveniences.
+
+24
+00:00:47,000 --> 00:00:50,000
+Now, the thing is that primitive types
+
+25
+00:00:50,000 --> 00:00:53,000
+focus on efficiency, where we use them a lot.
+
+26
+00:00:53,000 --> 00:00:54,000
+So, we want primitive types, in general,
+
+27
+00:00:54,000 --> 00:00:56,000
+to be very lightweight.
+
+28
+00:00:56,000 --> 00:00:57,000
+All right, so the idea is that
+
+29
+00:00:57,000 --> 00:00:59,000
+if you have a four byte int,
+
+30
+00:00:59,000 --> 00:01:02,000
+it simply occupies four bytes, nothing beyond that.
+
+31
+00:01:02,000 --> 00:01:04,000
+So, that's certainly a good thing.
+
+32
+00:01:04,000 --> 00:01:06,000
+But now, in order to get that efficiency
+
+33
+00:01:06,000 --> 00:01:08,000
+we have to give some things up.
+
+34
+00:01:08,000 --> 00:01:09,000
+We can't have fields or methods
+
+35
+00:01:09,000 --> 00:01:11,000
+associated with primitive types.
+
+36
+00:01:11,000 --> 00:01:13,000
+And primitive types cannot be treated as objects.
+
+37
+00:01:13,000 --> 00:01:16,000
+And most of the time,
+
+38
+00:01:16,000 --> 00:01:18,000
+this division between classes and primitive types
+
+39
+00:01:18,000 --> 00:01:22,000
+gives us kind of a really effective way to work.
+
+40
+00:01:22,000 --> 00:01:24,000
+But there are times when we're working with primitive values
+
+41
+00:01:24,000 --> 00:01:27,000
+that we're willing to give up these efficiencies
+
+42
+00:01:27,000 --> 00:01:31,000
+in order to get the convenience that we have with classes.
+
+43
+00:01:31,000 --> 00:01:34,000
+And that's where the primitive wrapper classes come in.
+
+44
+00:01:34,000 --> 00:01:36,000
+The primitive wrapper classes give us
+
+45
+00:01:36,000 --> 00:01:38,000
+the capability of classes,
+
+46
+00:01:38,000 --> 00:01:40,000
+but they do also incur that overhead,
+
+47
+00:01:40,000 --> 00:01:42,000
+but they allow us to have these capabilities
+
+48
+00:01:42,000 --> 00:01:45,000
+when interacting with primitive values.
+
+49
+00:01:45,000 --> 00:01:48,000
+Now, the primitive classes are indeed classes.
+
+50
+00:01:48,000 --> 00:01:52,000
+As with all classes, they inherit from the object class
+
+51
+00:01:52,000 --> 00:01:54,000
+and each of the primitive types
+
+52
+00:01:54,000 --> 00:01:56,000
+has a corresponding wrapper class.
+
+53
+00:01:56,000 --> 00:01:59,000
+So, the Boolean primitive type
+
+54
+00:01:59,000 --> 00:02:01,000
+has a wrapper class called Boolean.
+
+55
+00:02:01,000 --> 00:02:03,000
+The only difference is capital B for the class,
+
+56
+00:02:03,000 --> 00:02:05,000
+lowercase B for the primitive type.
+
+57
+00:02:05,000 --> 00:02:07,000
+The char primitive types
+
+58
+00:02:07,000 --> 00:02:10,000
+has a class called Character.
+
+59
+00:02:10,000 --> 00:02:12,000
+And it when it comes to the numeric classes,
+
+60
+00:02:12,000 --> 00:02:14,000
+they all have a common base class called number.
+
+61
+00:02:14,000 --> 00:02:17,000
+Number is an abstract class that all the numeric
+
+62
+00:02:17,000 --> 00:02:20,000
+primitive wrapper classes inherit from.
+
+63
+00:02:20,000 --> 00:02:23,000
+We have four classes, one for each of the integer types.
+
+64
+00:02:23,000 --> 00:02:26,000
+And we have two, one for each of the
+
+65
+00:02:26,000 --> 00:02:28,000
+floating point types.
+
+66
+00:02:28,000 --> 00:02:30,000
+And, again, these are all real classes.
+
+67
+00:02:30,000 --> 00:02:31,000
+So they can be treated as object
+
+68
+00:02:31,000 --> 00:02:34,000
+and they have fields and methods associated with them
+
+69
+00:02:34,000 --> 00:02:36,000
+that are particular to that type.
+
+70
+00:02:36,000 --> 00:02:37,000
+One thing to be aware of,
+
+71
+00:02:37,000 --> 00:02:40,000
+all the primitive wrapper classes are immutable.
+
+72
+00:02:40,000 --> 00:02:44,000
+So, a given instance always has the same value inside of it.
+
+73
+00:02:44,000 --> 00:02:47,000
+So, if you have a reference to a instance
+
+74
+00:02:47,000 --> 00:02:48,000
+of one of the primitive wrapper classes
+
+75
+00:02:48,000 --> 00:02:50,000
+and you do something that changes the value
+
+76
+00:02:50,000 --> 00:02:52,000
+you will get a reference
+
+77
+00:02:52,000 --> 00:02:54,000
+to a different instance of that class.
+
+78
+00:02:54,000 --> 00:02:55,000
+Very much like working with strings.
+
+79
+00:02:55,000 --> 00:02:57,000
+So, you just want to be aware of that.
+
+80
+00:02:57,000 --> 00:03:00,000
+And as you would expect, you often have to convert between
+
+81
+00:03:00,000 --> 00:03:03,000
+the wrapper classes and the primitives.
+
+82
+00:03:03,000 --> 00:03:06,000
+And Java provides a number of ways to handle that.
+
+83
+00:03:06,000 --> 00:03:08,000
+The news is that the most common scenarios
+
+84
+00:03:08,000 --> 00:03:11,000
+are handled automatically by Java.
+
+85
+00:03:11,000 --> 00:03:13,000
+And we take a look at some code.
+
+86
+00:03:13,000 --> 00:03:16,000
+So we go in here and we declare
+
+87
+00:03:16,000 --> 00:03:18,000
+Integer a equals 100.
+
+88
+00:03:18,000 --> 00:03:21,000
+Well Integer a means that a is a reference
+
+89
+00:03:21,000 --> 00:03:24,000
+to an instance of the integer wrapper class.
+
+90
+00:03:24,000 --> 00:03:27,000
+But 100 is the primitive value 100.
+
+91
+00:03:27,000 --> 00:03:29,000
+Java will take care of
+
+92
+00:03:29,000 --> 00:03:32,000
+getting a reference to an instance of the integer class
+
+93
+00:03:32,000 --> 00:03:35,000
+that has the value 100 inside of it.
+
+94
+00:03:35,000 --> 00:03:37,000
+Now, if we say int b equals a,
+
+95
+00:03:37,000 --> 00:03:39,000
+well b is a primitive type,
+
+96
+00:03:39,000 --> 00:03:41,000
+a is a reference to a wrapper class.
+
+97
+00:03:41,000 --> 00:03:45,000
+Java will take care getting the value out of a
+
+98
+00:03:45,000 --> 00:03:47,000
+and just to note that the idea of conversions
+
+99
+00:03:47,000 --> 00:03:50,000
+happens with both variables and literals.
+
+100
+00:03:50,000 --> 00:03:52,000
+All right, so just like we had an integer a equals 100,
+
+101
+00:03:52,000 --> 00:03:55,000
+we could have integer c equals b,
+
+102
+00:03:55,000 --> 00:03:57,000
+while b is a primitive variable,
+
+103
+00:03:57,000 --> 00:04:00,000
+c is a reference to the integer class.
+
+104
+00:04:00,000 --> 00:04:03,000
+Java will take care of getting a reference
+
+105
+00:04:03,000 --> 00:04:05,000
+to the integer class that has the same value
+
+106
+00:04:05,000 --> 00:04:07,000
+that b has inside of it.
+
+107
+00:04:07,000 --> 00:04:09,000
+When it comes to making these conversions
+
+108
+00:04:09,000 --> 00:04:13,000
+Java also provides methods for doing explicit conversions.
+
+109
+00:04:13,000 --> 00:04:15,000
+If you want to convert from a primitive type
+
+110
+00:04:15,000 --> 00:04:18,000
+to a wrapper class,
+
+111
+00:04:18,000 --> 00:04:21,000
+the wrapper classes all have a valueOf method on them.
+
+112
+00:04:21,000 --> 00:04:23,000
+That process is known as boxing.
+
+113
+00:04:23,000 --> 00:04:25,000
+The idea of boxing is that you take a primitive value
+
+114
+00:04:25,000 --> 00:04:27,000
+and you wrap it up in a box,
+
+115
+00:04:27,000 --> 00:04:28,000
+which is now the class.
+
+116
+00:04:28,000 --> 00:04:31,000
+If you want to convert from a wrapper class
+
+117
+00:04:31,000 --> 00:04:32,000
+to the primitive type,
+
+118
+00:04:32,000 --> 00:04:35,000
+each of the wrapper classes has a,
+
+119
+00:04:35,000 --> 00:04:37,000
+what I call xxxValue method.
+
+120
+00:04:37,000 --> 00:04:39,000
+And basically the xxx
+
+121
+00:04:39,000 --> 00:04:41,000
+is the name of the primitive type.
+
+122
+00:04:41,000 --> 00:04:44,000
+So integer has integer.intValue.
+
+123
+00:04:44,000 --> 00:04:47,000
+Double has double.doubleValue.
+
+124
+00:04:47,000 --> 00:04:50,000
+As you might expect, this is what's called unboxing.
+
+125
+00:04:50,000 --> 00:04:52,000
+To see this in practice,
+
+126
+00:04:52,000 --> 00:04:53,000
+I have a little more code here.
+
+127
+00:04:53,000 --> 00:04:55,000
+We'll say integer d equals
+
+128
+00:04:55,000 --> 00:04:58,000
+integer.valueOf 100.
+
+129
+00:04:58,000 --> 00:05:00,000
+All right, it takes that primitive 100
+
+130
+00:05:00,000 --> 00:05:02,000
+and gives us back a reference to the integer class
+
+131
+00:05:02,000 --> 00:05:04,000
+with that same value.
+
+132
+00:05:04,000 --> 00:05:07,000
+Int e equals d.intvalue.
+
+133
+00:05:07,000 --> 00:05:09,000
+d is a reference to one of the wrapper classes.
+
+134
+00:05:09,000 --> 00:05:12,000
+That intValue method gives us the value out of it.
+
+135
+00:05:12,000 --> 00:05:16,000
+And again, integer f equals integer.valueOf e.
+
+136
+00:05:16,000 --> 00:05:18,000
+Again, it gives us a wrapper class reference
+
+137
+00:05:18,000 --> 00:05:20,000
+that corresponds to the value of e.
+
+138
+00:05:20,000 --> 00:05:22,000
+If you take a look at the code at the top there,
+
+139
+00:05:22,000 --> 00:05:24,000
+we say integer a equals 100.
+
+140
+00:05:24,000 --> 00:05:28,000
+And then we look at integer d equals integer.valueOf 100.
+
+141
+00:05:28,000 --> 00:05:31,000
+You notice that we're doing very much the same thing there.
+
+142
+00:05:31,000 --> 00:05:33,000
+It turns out, we're actually doing exactly the same thing.
+
+143
+00:05:33,000 --> 00:05:36,000
+In a situation like that, the compiler actually injects
+
+144
+00:05:36,000 --> 00:05:40,000
+that integer.valueOf call for us.
+
+145
+00:05:40,000 --> 00:05:42,000
+In fact, we don't really have to use these valueOf's
+
+146
+00:05:42,000 --> 00:05:44,000
+and intValues that often anymore.
+
+147
+00:05:44,000 --> 00:05:47,000
+Prior to Java 5, you always had to use them.
+
+148
+00:05:47,000 --> 00:05:48,000
+Starting at Java 5,
+
+149
+00:05:48,000 --> 00:05:51,000
+the compiler started inferring their usage.
+
+150
+00:05:51,000 --> 00:05:53,000
+So a good deal of the time, you can rely on the compiler
+
+151
+00:05:53,000 --> 00:05:55,000
+to do the conversion for you.
+
+152
+00:05:55,000 --> 00:05:57,000
+But know that those methods are there if you need them.
+
+153
+00:05:57,000 --> 00:05:59,000
+And just to be clear, they're not limited to integers.
+
+154
+00:05:59,000 --> 00:06:02,000
+These are there for all of the wrapper classes.
+
+155
+00:06:02,000 --> 00:06:06,000
+So I look here like Float g equals float.valueOf.
+
+156
+00:06:06,000 --> 00:06:08,000
+Right, that returns back a reference
+
+157
+00:06:08,000 --> 00:06:11,000
+to the float class, with a value of 18.125 inside of it.
+
+158
+00:06:11,000 --> 00:06:15,000
+All right, I say float h equals g.floatValue.
+
+159
+00:06:15,000 --> 00:06:17,000
+That gives me the primitive value back out
+
+160
+00:06:17,000 --> 00:06:19,000
+of that instance reference by g.
+
+161
+00:06:19,000 --> 00:06:20,000
+Now, there's one other type conversion
+
+162
+00:06:20,000 --> 00:06:21,000
+we need to think about.
+
+163
+00:06:21,000 --> 00:06:23,000
+And that's strings.
+
+164
+00:06:23,000 --> 00:06:26,000
+And Java provides mechanisms for that as well.
+
+165
+00:06:26,000 --> 00:06:28,000
+If we want to convert a string to a primitive value,
+
+166
+00:06:28,000 --> 00:06:31,000
+each of the wrapper classes has a parse method on it.
+
+167
+00:06:31,000 --> 00:06:33,000
+So, like integer has parse.int.
+
+168
+00:06:33,000 --> 00:06:35,000
+That will parse a string value
+
+169
+00:06:35,000 --> 00:06:40,000
+and give you back the primitive value corresponding to it.
+
+170
+00:06:40,000 --> 00:06:43,000
+We also have an overload of valueOf that accepts a string.
+
+171
+00:06:43,000 --> 00:06:47,000
+And this give you back a reference to a wrapper class.
+
+172
+00:06:47,000 --> 00:06:49,000
+So, we just look at that in code.
+
+173
+00:06:49,000 --> 00:06:54,000
+If I say, I have a string here s with a value of 87.44.
+
+174
+00:06:54,000 --> 00:06:58,000
+If I say, double s1 equals double.parsedouble of s,
+
+175
+00:06:58,000 --> 00:07:01,000
+notice that even though I'm calling parse double
+
+176
+00:07:01,000 --> 00:07:03,000
+on the wrapper class double,
+
+177
+00:07:03,000 --> 00:07:06,000
+it returns back a primitive type.
+
+178
+00:07:06,000 --> 00:07:09,000
+It actually returns back to primitive 87.44.
+
+179
+00:07:09,000 --> 00:07:13,000
+Whereas if I say double s2 double.valueOf s,
+
+180
+00:07:13,000 --> 00:07:16,000
+valueOf returns back a reference to
+
+181
+00:07:16,000 --> 00:59:00,000
+a wrapper class that has that value, 87.44 inside of it.
+

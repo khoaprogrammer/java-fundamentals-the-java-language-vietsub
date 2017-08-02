@@ -1,0 +1,68 @@
+1
+00:00:02,000 --> 00:00:03,000
+Welcome to the next module of our
+
+2
+00:00:03,000 --> 00:00:06,000
+Java Fundamentals course on the Java language.
+
+3
+00:00:06,000 --> 00:00:09,000
+In this module, we look at how we represent complex types using classes.
+
+4
+00:00:09,000 --> 00:00:13,000
+My name is Jim Wilson.
+
+5
+00:00:13,000 --> 00:00:15,000
+In this module we start digging into the
+
+6
+00:00:15,000 --> 00:00:17,000
+object-oriented aspects of Java.
+
+7
+00:00:17,000 --> 00:00:19,000
+So we'll first look at classes, how we create them
+
+8
+00:00:19,000 --> 00:00:21,000
+and how we use them.
+
+9
+00:00:21,000 --> 00:00:22,000
+We'll then look at the concept of classes
+
+10
+00:00:22,000 --> 00:00:24,000
+being reference types and how that makes them
+
+11
+00:00:24,000 --> 00:00:26,000
+behave differently than primitive types.
+
+12
+00:00:26,000 --> 00:00:28,000
+We'll look at the idea of encapsulation, other words,
+
+13
+00:00:28,000 --> 00:00:30,000
+how do we keep the details of our classes inside of our
+
+14
+00:00:30,000 --> 00:00:34,000
+classes and not the concern of those using the classes.
+
+15
+00:00:34,000 --> 00:00:38,000
+We'll look at the basic behavior and creation of methods in Java.
+
+16
+00:00:38,000 --> 00:00:40,000
+And then we'll look at how we control interaction
+
+17
+00:00:40,000 --> 00:59:00,000
+with the data in our classes using field accessors and mutators.
+

@@ -1,0 +1,220 @@
+1
+00:00:02,000 --> 00:00:03,000
+Thinking about our if statements.
+
+2
+00:00:03,000 --> 00:00:06,000
+Remember we said that if our if statement conditionally
+
+3
+00:00:06,000 --> 00:00:09,000
+executes another statement, and if you think about it,
+
+4
+00:00:09,000 --> 00:00:12,000
+we never saw any kind of end if, or anything like that.
+
+5
+00:00:12,000 --> 00:00:15,000
+So how do we execute multiple statements conditionally?
+
+6
+00:00:15,000 --> 00:00:18,000
+Well that's where a block statement comes in.
+
+7
+00:00:18,000 --> 00:00:20,000
+A block statement groups individual statements into a
+
+8
+00:00:20,000 --> 00:00:24,000
+compound statement, so if we have a series of statements
+
+9
+00:00:24,000 --> 00:00:27,000
+that we want to group together what we can do is wrap
+
+10
+00:00:27,000 --> 00:00:31,000
+them in an opening bracket and a closing bracket and
+
+11
+00:00:31,000 --> 00:00:34,000
+that now makes them a compound statement and enables
+
+12
+00:00:34,000 --> 00:00:36,000
+them to be treated as a single statement.
+
+13
+00:00:36,000 --> 00:00:39,000
+So we look at this in code.
+
+14
+00:00:39,000 --> 00:00:41,000
+I have some code set up here where I've got v1 equals 10,
+
+15
+00:00:41,000 --> 00:00:44,000
+v2 equals four, and a variable diff.
+
+16
+00:00:44,000 --> 00:00:48,000
+And I say, "if v1 is greater than v2" and I put in
+
+17
+00:00:48,000 --> 00:00:52,000
+diff equals v1 minus v2, print out "v1 is bigger"
+
+18
+00:00:52,000 --> 00:00:56,000
+and then diff, the way this code is currently written,
+
+19
+00:00:56,000 --> 00:01:00,000
+the assignment of diff equals v1 minus v2 is conditional
+
+20
+00:01:00,000 --> 00:01:03,000
+on whether v1 is greater than v2 but their two print
+
+21
+00:01:03,000 --> 00:01:06,000
+statements there, v1 is bigger and diff, will print every
+
+22
+00:01:06,000 --> 00:01:10,000
+time because only the single statement of the assignment
+
+23
+00:01:10,000 --> 00:01:13,000
+of diff is tied to the condition, so that's where block
+
+24
+00:01:13,000 --> 00:01:15,000
+statements come in.
+
+25
+00:01:15,000 --> 00:01:19,000
+Putting an open bracket after the if and then a close bracket
+
+26
+00:01:19,000 --> 00:01:22,000
+after that print of diff.
+
+27
+00:01:22,000 --> 00:01:25,000
+Now that becomes a block statement and so the if now
+
+28
+00:01:25,000 --> 00:01:29,000
+condition is tied to those entire three statements.
+
+29
+00:01:29,000 --> 00:01:32,000
+Similarly I can do that with an else if.
+
+30
+00:01:32,000 --> 00:01:36,000
+All right, so I've got an else if v2 is greater than v1.
+
+31
+00:01:36,000 --> 00:01:39,000
+Although, by the way, I have my code indented, it looks like
+
+32
+00:01:39,000 --> 00:01:41,000
+all three of these statements, the diff assignment and the
+
+33
+00:01:41,000 --> 00:01:44,000
+two print outs are tied to that v2 is greater than v1,
+
+34
+00:01:44,000 --> 00:01:48,000
+currently only the diff assignment is tied to the condition.
+
+35
+00:01:48,000 --> 00:01:51,000
+Again, I need to put an open bracket and a closed bracket
+
+36
+00:01:51,000 --> 00:01:53,000
+to bring those into a block statement.
+
+37
+00:01:53,000 --> 00:01:55,000
+And then I add an else.
+
+38
+00:01:55,000 --> 00:01:58,000
+Now the thing to note is that block statements are kind
+
+39
+00:01:58,000 --> 00:01:59,000
+of independent from one another, right?
+
+40
+00:01:59,000 --> 00:02:02,000
+So if you have an if and an else if and an else, if you want
+
+41
+00:02:02,000 --> 00:02:04,000
+to have block statements on part of them, like I do on the
+
+42
+00:02:04,000 --> 00:02:07,000
+if and the else if, with just single statements on other
+
+43
+00:02:07,000 --> 00:02:11,000
+parts, like we do with the else, that's just fine.
+
+44
+00:02:11,000 --> 00:02:13,000
+Just one other thing I want to bring note to as well
+
+45
+00:02:13,000 --> 00:02:16,000
+in this code: notice the very first line of code.
+
+46
+00:02:16,000 --> 00:02:18,000
+I'm doing variable declarations in a way
+
+47
+00:02:18,000 --> 00:02:20,000
+I haven't done before.
+
+48
+00:02:20,000 --> 00:02:23,000
+Notice that on one line, I'm declaring multiple variables
+
+49
+00:02:23,000 --> 00:02:24,000
+of type int.
+
+50
+00:02:24,000 --> 00:02:26,000
+Normally in our other code we've done them
+
+51
+00:02:26,000 --> 00:02:28,000
+as individual lines, and I just wanted to show you here that
+
+52
+00:02:28,000 --> 00:02:31,000
+you can actually do multiple variable declarations on the
+
+53
+00:02:31,000 --> 00:02:34,000
+one line like that, so we're saying that v1 is an int that
+
+54
+00:02:34,000 --> 00:02:37,000
+has a value of ten initially, v2 is an int, has a value of
+
+55
+00:02:37,000 --> 00:59:00,000
+four initially and diff is an int that's not yet initialized.
+

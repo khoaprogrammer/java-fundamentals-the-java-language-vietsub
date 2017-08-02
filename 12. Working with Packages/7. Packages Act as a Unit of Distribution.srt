@@ -1,0 +1,352 @@
+1
+00:00:02,000 --> 00:00:03,000
+When we create software whether it's
+
+2
+00:00:03,000 --> 00:00:06,000
+for an entire application or just some classes
+
+3
+00:00:06,000 --> 00:00:08,000
+we wanted to give to other developers to use,
+
+4
+00:00:08,000 --> 00:00:10,000
+at some point, we want to distribute that software.
+
+5
+00:00:10,000 --> 00:00:12,000
+By working with packages,
+
+6
+00:00:12,000 --> 00:00:15,000
+our software gets built into a predictable structure
+
+7
+00:00:15,000 --> 00:00:17,000
+and that predictable structure
+
+8
+00:00:17,000 --> 00:00:20,000
+simplifies this idea of distribution.
+
+9
+00:00:20,000 --> 00:00:22,000
+Our class files get organized in
+
+10
+00:00:22,000 --> 00:00:24,000
+hierarchical folders that reflect
+
+11
+00:00:24,000 --> 00:00:25,000
+the name of our package.
+
+12
+00:00:25,000 --> 00:00:28,000
+Basically, each part of the package name
+
+13
+00:00:28,000 --> 00:00:29,000
+gets a separate folder.
+
+14
+00:00:29,000 --> 00:00:31,000
+If we look at something like our flight class
+
+15
+00:00:31,000 --> 00:00:32,000
+that we've got in the package
+
+16
+00:00:32,000 --> 00:00:34,000
+com.Pluralsight.travel.
+
+17
+00:00:34,000 --> 00:00:37,000
+When we build this, we'll get a folder COM
+
+18
+00:00:37,000 --> 00:00:40,000
+with a sub folder Pluralsight,
+
+19
+00:00:40,000 --> 00:00:42,000
+with a sub folder travel and then
+
+20
+00:00:42,000 --> 00:00:44,000
+we have our flight.class file that goes
+
+21
+00:00:44,000 --> 00:00:45,000
+into that travel folder.
+
+22
+00:00:45,000 --> 00:00:47,000
+That flight.class file is the compiled version
+
+23
+00:00:47,000 --> 00:00:51,000
+of our class, it's the (mumbles) codes for our flight class.
+
+24
+00:00:51,000 --> 00:00:53,000
+Now if we have another class like passenger,
+
+25
+00:00:53,000 --> 00:00:55,000
+it's in that same package.
+
+26
+00:00:55,000 --> 00:00:57,000
+It will be in the COM folder with
+
+27
+00:00:57,000 --> 00:00:58,000
+a sub folder Pluralsight,
+
+28
+00:00:58,000 --> 00:01:00,000
+sub folder travel and then we get
+
+29
+00:01:00,000 --> 00:01:02,000
+our passenger.class file in there
+
+30
+00:01:02,000 --> 00:01:04,000
+with a compiled version of that class.
+
+31
+00:01:04,000 --> 00:01:06,000
+So while the classes that are in that package
+
+32
+00:01:06,000 --> 00:01:09,000
+will be organized under the same folder structure.
+
+33
+00:01:09,000 --> 00:01:11,000
+I can actually distribute this software
+
+34
+00:01:11,000 --> 00:01:14,000
+by taking that COM folder and its contents
+
+35
+00:01:14,000 --> 00:01:16,000
+and just copying it to another computer
+
+36
+00:01:16,000 --> 00:01:18,000
+and it will have the software.
+
+37
+00:01:18,000 --> 00:01:19,000
+Now as nice as it is working with
+
+38
+00:01:19,000 --> 00:01:21,000
+a simple folder structure like that,
+
+39
+00:01:21,000 --> 00:01:23,000
+there might be a better choice than that.
+
+40
+00:01:23,000 --> 00:01:26,000
+That's where archive files come in.
+
+41
+00:01:26,000 --> 00:01:28,000
+Archive files allow us to put that folder structure
+
+42
+00:01:28,000 --> 00:01:33,000
+into a file and these are commonly known as JAR files.
+
+43
+00:01:33,000 --> 00:01:35,000
+What it does is it takes that entire hierarchy
+
+44
+00:01:35,000 --> 00:01:39,000
+of the folders and can put it into a single file.
+
+45
+00:01:39,000 --> 00:01:42,000
+That file can even optionally be compressed.
+
+46
+00:01:42,000 --> 00:01:44,000
+We now get the convenience of moving
+
+47
+00:01:44,000 --> 00:01:46,000
+from an entire folder of files
+
+48
+00:01:46,000 --> 00:01:49,000
+into a single file and that file can be efficiently stored.
+
+49
+00:01:49,000 --> 00:01:51,000
+In addition, the archive file can optionally include
+
+50
+00:01:51,000 --> 00:01:55,000
+a manifest and that manifest provides
+
+51
+00:01:55,000 --> 00:01:59,000
+information about what's going on inside that archive.
+
+52
+00:01:59,000 --> 00:02:02,000
+Basically it's just a bunch of name value pairs
+
+53
+00:02:02,000 --> 00:02:04,000
+and I've got the URL on screen.
+
+54
+00:02:04,000 --> 00:02:07,000
+I'm showing you the documentation for the manifest.
+
+55
+00:02:07,000 --> 00:02:09,000
+One of the things we commonly use
+
+56
+00:02:09,000 --> 00:02:11,000
+the manifest for is identifying
+
+57
+00:02:11,000 --> 00:02:13,000
+the startup class that's contained
+
+58
+00:02:13,000 --> 00:02:15,000
+in an archive file making it easy for us
+
+59
+00:02:15,000 --> 00:02:17,000
+to run a program that's inside
+
+60
+00:02:17,000 --> 00:02:19,000
+of an archive file.
+
+61
+00:02:19,000 --> 00:02:21,000
+Now it's easy to create archive files.
+
+62
+00:02:21,000 --> 00:02:24,000
+The JDK actually provides a utility for doing so
+
+63
+00:02:24,000 --> 00:02:26,000
+called the JAR utility.
+
+64
+00:02:26,000 --> 00:02:29,000
+It's a command line utility and it's easy enough to use.
+
+65
+00:02:29,000 --> 00:02:32,000
+We have other options as well.
+
+66
+00:02:32,000 --> 00:02:33,000
+Many other tools actually include
+
+67
+00:02:33,000 --> 00:02:36,000
+the ability to create JAR files.
+
+68
+00:02:36,000 --> 00:02:39,000
+A number of the Integrated Development Environments
+
+69
+00:02:39,000 --> 00:02:41,000
+are what we commonly know as IDEs have that ability.
+
+70
+00:02:41,000 --> 00:02:43,000
+In fact, both the ones we talk about
+
+71
+00:02:43,000 --> 00:02:44,000
+in this course do.
+
+72
+00:02:44,000 --> 00:02:48,000
+IntelliJ does as well as NetBeans
+
+73
+00:02:48,000 --> 00:02:49,000
+as well as many others have that
+
+74
+00:02:49,000 --> 00:02:51,000
+built right into it, so it's part
+
+75
+00:02:51,000 --> 00:02:54,000
+of our build process we can generate a JAR file.
+
+76
+00:02:54,000 --> 00:02:56,000
+Also, many of the build automation systems
+
+77
+00:02:56,000 --> 00:02:58,000
+are what are commonly known
+
+78
+00:02:58,000 --> 00:03:01,000
+as Build Managers have that ability.
+
+79
+00:03:01,000 --> 00:03:03,000
+Those include things like Gradle
+
+80
+00:03:03,000 --> 00:03:05,000
+as well as Maven and many others.
+
+81
+00:03:05,000 --> 00:03:07,000
+So that we have that command line utility
+
+82
+00:03:07,000 --> 00:03:08,000
+for creating JAR files,
+
+83
+00:03:08,000 --> 00:03:10,000
+very often we never have to use that.
+
+84
+00:03:10,000 --> 00:03:12,000
+We can actually produce the JAR files
+
+85
+00:03:12,000 --> 00:03:14,000
+as part of other build processes that we do.
+
+86
+00:03:14,000 --> 00:03:16,000
+So in our next clip, let's take a look
+
+87
+00:03:16,000 --> 00:03:18,000
+at using packages for distribution
+
+88
+00:03:18,000 --> 00:59:00,000
+and working with those packages in archive files.
+

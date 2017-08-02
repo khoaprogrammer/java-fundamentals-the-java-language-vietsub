@@ -1,0 +1,188 @@
+1
+00:00:02,000 --> 00:00:04,000
+Arrays are a really important part of Java.
+
+2
+00:00:04,000 --> 00:00:08,000
+Their formal definition is that they provide ordered collection of elements.
+
+3
+00:00:08,000 --> 00:00:10,000
+What that really means is that they allow us to store
+
+4
+00:00:10,000 --> 00:00:15,000
+multiple values of a common type under a single name.
+
+5
+00:00:15,000 --> 00:00:19,000
+So if we do something like float, theVals, but you notice
+
+6
+00:00:19,000 --> 00:00:22,000
+that we've got that square bracket right after float,
+
+7
+00:00:22,000 --> 00:00:25,000
+that indicates that we're declaring theVals as an array.
+
+8
+00:00:25,000 --> 00:00:30,000
+So that allocates out a name now, again, access an array,
+
+9
+00:00:30,000 --> 00:00:33,000
+and then we use this keyword new and then float three.
+
+10
+00:00:33,000 --> 00:00:39,000
+What this says is actually, "Allocate space to store three "float values."
+
+11
+00:00:39,000 --> 00:00:42,000
+And they're all accessible under this one name, theVals.
+
+12
+00:00:42,000 --> 00:00:45,000
+Now each of the members or elements of the array are
+
+13
+00:00:45,000 --> 00:00:49,000
+accessed through an index and the index is zero-based,
+
+14
+00:00:49,000 --> 00:00:54,000
+so basically the indexes run from zero to one less than
+
+15
+00:00:54,000 --> 00:00:55,000
+the number of elements, so in this case, we'd have our
+
+16
+00:00:55,000 --> 00:01:00,000
+first one as zero, then one, then two.
+
+17
+00:01:00,000 --> 00:01:07,000
+So using that, we can now put values in and get the values from the array.
+
+18
+00:01:07,000 --> 00:01:11,000
+So if I say theVals subzero equals 10, that stores 10
+
+19
+00:01:11,000 --> 00:01:14,000
+in the zero's position.
+
+20
+00:01:14,000 --> 00:01:17,000
+Then theVals sub one is 20, puts 20 in the one position.
+
+21
+00:01:17,000 --> 00:01:23,000
+And then theVals sub two is 15, puts 15 in the number two position.
+
+22
+00:01:23,000 --> 00:01:25,000
+So that's how we want to do something like go through this
+
+23
+00:01:25,000 --> 00:01:28,000
+array and add everything up, well if we're going to add them
+
+24
+00:01:28,000 --> 00:01:32,000
+up, we'll allocate some space to store the result, called sum.
+
+25
+00:01:32,000 --> 00:01:34,000
+The beauty of arrays is it makes it very easy to move
+
+26
+00:01:34,000 --> 00:01:37,000
+through these values using loops.
+
+27
+00:01:37,000 --> 00:01:40,000
+And one of the questions of course is, we have to know
+
+28
+00:01:40,000 --> 00:01:42,000
+how many spaces to walk through.
+
+29
+00:01:42,000 --> 00:01:46,000
+Well arrays expose a value called length to tell us
+
+30
+00:01:46,000 --> 00:01:49,000
+how many elements are in there so I can write a loop
+
+31
+00:01:49,000 --> 00:01:53,000
+like for int i equals zero as long as i is less than
+
+32
+00:01:53,000 --> 00:01:57,000
+theVals.length, well that will walk through each element as
+
+33
+00:01:57,000 --> 00:02:01,000
+long as I increment i by one each time as we've done here.
+
+34
+00:02:01,000 --> 00:02:04,000
+So I can sum up the values in this array by simply
+
+35
+00:02:04,000 --> 00:02:08,000
+sum plus equals theVals sub i, each pass of this loop
+
+36
+00:02:08,000 --> 00:02:11,000
+I'll go through a different element, the zero first and
+
+37
+00:02:11,000 --> 00:02:13,000
+then the number two element and then I can of course
+
+38
+00:02:13,000 --> 00:02:15,000
+print out that sum.
+
+39
+00:02:15,000 --> 00:02:18,000
+Now you notice here that this process of allocating the
+
+40
+00:02:18,000 --> 00:02:20,000
+array and initializing it is pretty cumbersome, right?
+
+41
+00:02:20,000 --> 00:02:23,000
+It takes a lot to do that and that's something we might
+
+42
+00:02:23,000 --> 00:02:26,000
+want to do very often in a program, so Java makes it very
+
+43
+00:02:26,000 --> 00:02:31,000
+easy to create a shorthand for that is that after we declare
+
+44
+00:02:31,000 --> 00:02:35,000
+the array name, you can use an open bracket, and just list
+
+45
+00:02:35,000 --> 00:02:40,000
+the values and enclose it and that has the same effect.
+
+46
+00:02:40,000 --> 00:02:42,000
+It automatically allocates the right number of spaces,
+
+47
+00:02:42,000 --> 00:59:00,000
+in this case, three, and initializes a value in each one of those spaces.
+

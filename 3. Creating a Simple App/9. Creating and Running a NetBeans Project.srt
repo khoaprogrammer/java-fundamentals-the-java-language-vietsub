@@ -1,0 +1,472 @@
+1
+00:00:02,000 --> 00:00:04,000
+Up to now, we've done all of our IDE work inside of IntelliJ.
+
+2
+00:00:04,000 --> 00:00:07,000
+So, let's take a quick look at using NetBeans
+
+3
+00:00:07,000 --> 00:00:12,000
+to create and run a project.
+
+4
+00:00:12,000 --> 00:00:14,000
+I have a shortcut to NetBeans right here
+
+5
+00:00:14,000 --> 00:00:18,000
+on my Desktop, so let's go ahead and start that up.
+
+6
+00:00:18,000 --> 00:00:21,000
+So, here we are inside of the NetBeans IDE.
+
+7
+00:00:21,000 --> 00:00:22,000
+So, let's create a new project.
+
+8
+00:00:22,000 --> 00:00:26,000
+So, I'm just going to say File, New Project.
+
+9
+00:00:26,000 --> 00:00:27,000
+And when you come over here, it just asks me
+
+10
+00:00:27,000 --> 00:00:28,000
+what kind of project I want it to be.
+
+11
+00:00:28,000 --> 00:00:30,000
+So, I want it to go ahead and be a Java project.
+
+12
+00:00:30,000 --> 00:00:33,000
+It's going to be a Java application, so that's all fine.
+
+13
+00:00:33,000 --> 00:00:36,000
+So, just click Next.
+
+14
+00:00:36,000 --> 00:00:37,000
+So now, it comes in here and it
+
+15
+00:00:37,000 --> 00:00:38,000
+first wants the project name.
+
+16
+00:00:38,000 --> 00:00:39,000
+So, we'll go ahead and call this.
+
+17
+00:00:39,000 --> 00:00:40,000
+We'll just call this our
+
+18
+00:00:40,000 --> 00:00:43,000
+Hello NetBeans project.
+
+19
+00:00:43,000 --> 00:00:45,000
+And so just like IntelliJ, the project name
+
+20
+00:00:45,000 --> 00:00:48,000
+is really an IDE concept, all right.
+
+21
+00:00:48,000 --> 00:00:50,000
+So, what we want to do now is go through it,
+
+22
+00:00:50,000 --> 00:00:52,000
+identify where we want it to go,
+
+23
+00:00:52,000 --> 00:00:53,000
+so I'm just going to put it in the same
+
+24
+00:00:53,000 --> 00:00:55,000
+Demo folder I've been using for the other parts,
+
+25
+00:00:55,000 --> 00:00:57,000
+for the other demos.
+
+26
+00:00:57,000 --> 00:00:59,000
+And, I'm down here to create a Main Class, all right.
+
+27
+00:00:59,000 --> 00:01:01,000
+So, remember that we have our Main entry point
+
+28
+00:01:01,000 --> 00:01:03,000
+into our application.
+
+29
+00:01:03,000 --> 00:01:07,000
+Now in NetBeans, you actually specify the package name
+
+30
+00:01:07,000 --> 00:01:09,000
+and the Class name all together, all right.
+
+31
+00:01:09,000 --> 00:01:11,000
+And so, we're going to follow the same rules
+
+32
+00:01:11,000 --> 00:01:14,000
+of com dot Pluralsight.
+
+33
+00:01:14,000 --> 00:01:17,000
+So, I've the top level of the package name.
+
+34
+00:01:17,000 --> 00:01:21,000
+I'm just going to make the next level, just say Example.
+
+35
+00:01:21,000 --> 00:01:23,000
+And so at this point, that's still my package name.
+
+36
+00:01:23,000 --> 00:01:25,000
+And then, we'd give it that initial Class.
+
+37
+00:01:25,000 --> 00:01:27,000
+And, remember we said although IntelliJ
+
+38
+00:01:27,000 --> 00:01:30,000
+always called it Main, we can call it anything we want.
+
+39
+00:01:30,000 --> 00:01:32,000
+So, I'm going to go ahead and call it App Main.
+
+40
+00:01:32,000 --> 00:01:34,000
+So, what this is really saying is that my initial Class
+
+41
+00:01:34,000 --> 00:01:36,000
+is called App Main and it's in the package
+
+42
+00:01:36,000 --> 00:01:38,000
+com dot Pluralsight dot Example.
+
+43
+00:01:38,000 --> 00:01:42,000
+So, let's click finish.
+
+44
+00:01:42,000 --> 00:01:44,000
+So, here we are inside of the source code.
+
+45
+00:01:44,000 --> 00:01:46,000
+I went ahead and closed this output window for now.
+
+46
+00:01:46,000 --> 00:01:48,000
+Just to get it out of the way, so we can see more.
+
+47
+00:01:48,000 --> 00:01:51,000
+So, notice that over there on the left,
+
+48
+00:01:51,000 --> 00:01:52,000
+there's our source packages and that's our
+
+49
+00:01:52,000 --> 00:01:55,000
+App Main dot Java, which is the source code file
+
+50
+00:01:55,000 --> 00:01:56,000
+we're in right now.
+
+51
+00:01:56,000 --> 00:02:00,000
+Notice there at the top, it creates our package declaration,
+
+52
+00:02:00,000 --> 00:02:01,000
+com dot Pluralsight dot Example,
+
+53
+00:02:01,000 --> 00:02:03,000
+and we see our Class definition.
+
+54
+00:02:03,000 --> 00:02:06,000
+We've got our Main entry point, which is the public
+
+55
+00:02:06,000 --> 00:02:07,000
+static void Main, right?
+
+56
+00:02:07,000 --> 00:02:10,000
+So, that's where our code will run from initially.
+
+57
+00:02:10,000 --> 00:02:13,000
+And, you notice also that NetBeans even puts
+
+58
+00:02:13,000 --> 00:02:14,000
+some initial comments in.
+
+59
+00:02:14,000 --> 00:02:17,000
+All right, if it's a block comment up at the very top there,
+
+60
+00:02:17,000 --> 00:02:18,000
+it's just telling us a little bit about working
+
+61
+00:02:18,000 --> 00:02:20,000
+with the IDE itself.
+
+62
+00:02:20,000 --> 00:02:22,000
+If you notice there's the slash, star, star
+
+63
+00:02:22,000 --> 00:02:24,000
+above the App Main, all right.
+
+64
+00:02:24,000 --> 00:02:27,000
+That's actually a JavaDocs comment.
+
+65
+00:02:27,000 --> 00:02:29,000
+So, it's even initially laying it out so that we have
+
+66
+00:02:29,000 --> 00:02:31,000
+JavaDocs in place for the App Main,
+
+67
+00:02:31,000 --> 00:02:34,000
+and even for our Main entry point.
+
+68
+00:02:34,000 --> 00:02:36,000
+So, let's go inside of here, and let's just add
+
+69
+00:02:36,000 --> 00:02:39,000
+a little code to output something.
+
+70
+00:02:39,000 --> 00:02:40,000
+So, we've added the code now just to print
+
+71
+00:02:40,000 --> 00:02:42,000
+out, Hello NetBeans.
+
+72
+00:02:42,000 --> 00:02:43,000
+So, let's go up here and try running it.
+
+73
+00:02:43,000 --> 00:02:45,000
+So, I'm going to go up here to my Run menu,
+
+74
+00:02:45,000 --> 00:02:48,000
+choose Run Project.
+
+75
+00:02:48,000 --> 00:02:50,000
+So, we can see that Output window,
+
+76
+00:02:50,000 --> 00:02:52,000
+that we've got the Hello NetBeans printed out,
+
+77
+00:02:52,000 --> 00:02:54,000
+so we were able to run.
+
+78
+00:02:54,000 --> 00:02:55,000
+Or, I should say compile and run
+
+79
+00:02:55,000 --> 00:02:57,000
+our application that easily, right?
+
+80
+00:02:57,000 --> 00:02:59,000
+Very much like what we did in IntelliJ.
+
+81
+00:02:59,000 --> 00:03:01,000
+We saw that there were some basic differences
+
+82
+00:03:01,000 --> 00:03:04,000
+in terms of how we created that initial Class name
+
+83
+00:03:04,000 --> 00:03:05,000
+and created the project, but fundamentally,
+
+84
+00:03:05,000 --> 00:03:09,000
+all the IDEs work in very similar ways.
+
+85
+00:03:09,000 --> 00:03:10,000
+And now, let's take a look at if we wanted to actually
+
+86
+00:03:10,000 --> 00:03:13,000
+run this application from the command line,
+
+87
+00:03:13,000 --> 00:03:16,000
+where we would actually find the folder,
+
+88
+00:03:16,000 --> 00:03:17,000
+so that we could actually run it.
+
+89
+00:03:17,000 --> 00:03:18,000
+All right, because remember I mentioned earlier
+
+90
+00:03:18,000 --> 00:03:22,000
+that each of the IDEs kind of sets up its output
+
+91
+00:03:22,000 --> 00:03:26,000
+folder structure a little bit differently.
+
+92
+00:03:26,000 --> 00:03:27,000
+So, here I am in my Demo folder,
+
+93
+00:03:27,000 --> 00:03:30,000
+and here's our Hello NetBeans folder
+
+94
+00:03:30,000 --> 00:03:31,000
+that we created for this project.
+
+95
+00:03:31,000 --> 00:03:33,000
+Go down inside of there.
+
+96
+00:03:33,000 --> 00:03:34,000
+And, you'll notice here that
+
+97
+00:03:34,000 --> 00:03:37,000
+in NetBeans, instead of having an output folder,
+
+98
+00:03:37,000 --> 00:03:38,000
+we actually have this Build folder.
+
+99
+00:03:38,000 --> 00:03:39,000
+So, let's go in there,
+
+100
+00:03:39,000 --> 00:03:41,000
+and then, there's a Classes folder.
+
+101
+00:03:41,000 --> 00:03:42,000
+All right, an that's where we're going to run
+
+102
+00:03:42,000 --> 00:03:44,000
+our application from in the command line
+
+103
+00:03:44,000 --> 00:03:46,000
+here in a NetBeans project.
+
+104
+00:03:46,000 --> 00:03:48,000
+So, we're going to go ahead and just open
+
+105
+00:03:48,000 --> 00:03:51,000
+up the command prompt.
+
+106
+00:03:51,000 --> 00:03:53,000
+And just like before, we're going to say,
+
+107
+00:03:53,000 --> 00:03:55,000
+Java to run it, and we're going to, again,
+
+108
+00:03:55,000 --> 00:03:56,000
+give the package.
+
+109
+00:03:56,000 --> 00:03:59,000
+Call it, excuse me, package qualified Class name.
+
+110
+00:03:59,000 --> 00:04:01,000
+So, com dot Pluralsight dot Example.
+
+111
+00:04:01,000 --> 00:04:03,000
+All right, and then our Class name,
+
+112
+00:04:03,000 --> 00:04:06,000
+which in this case, we call it App Main.
+
+113
+00:04:06,000 --> 00:04:09,000
+If we hit Enter, we can there see our output,
+
+114
+00:04:09,000 --> 00:04:10,000
+Hello NetBeans.
+
+115
+00:04:10,000 --> 00:04:12,000
+All right, and so we've still ran it exactly the same.
+
+116
+00:04:12,000 --> 00:04:16,000
+The only difference was that the IDE for NetBeans
+
+117
+00:04:16,000 --> 00:04:19,000
+created a slightly different output file structure
+
+118
+00:04:19,000 --> 00:59:00,000
+than IntelliJ had.
+

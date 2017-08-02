@@ -1,0 +1,244 @@
+1
+00:00:02,000 --> 00:00:06,000
+In this demo we'll add accessors and mutators to our CalcEngine app.
+
+2
+00:00:06,000 --> 00:00:08,000
+And we'll look at how to deal with situations
+
+3
+00:00:08,000 --> 00:00:10,000
+where we may want to provide the ability to see a value
+
+4
+00:00:10,000 --> 00:00:14,000
+but not modify a value.
+
+5
+00:00:14,000 --> 00:00:16,000
+So here we are back in our CalcEngine app
+
+6
+00:00:16,000 --> 00:00:18,000
+and I'm here in the Mathequation class.
+
+7
+00:00:18,000 --> 00:00:19,000
+We have our four fields at the top,
+
+8
+00:00:19,000 --> 00:00:21,000
+they're all currently public.
+
+9
+00:00:21,000 --> 00:00:22,000
+Now the first thing we want to do is go ahead
+
+10
+00:00:22,000 --> 00:00:25,000
+and make these guys all private.
+
+11
+00:00:25,000 --> 00:00:27,000
+So if the value's all private now we can go ahead
+
+12
+00:00:27,000 --> 00:00:29,000
+and add our accessors and our mutators.
+
+13
+00:00:29,000 --> 00:00:30,000
+This can really be straightforward.
+
+14
+00:00:30,000 --> 00:00:33,000
+Let's go ahead, let's first do it for leftVal,
+
+15
+00:00:33,000 --> 00:00:35,000
+so for leftVal go ahead and make it public.
+
+16
+00:00:35,000 --> 00:00:38,000
+Return value will be the same as leftVal which is double.
+
+17
+00:00:38,000 --> 00:00:41,000
+We'll call it getLeftVal and all that does
+
+18
+00:00:41,000 --> 00:00:44,000
+is simply return back leftVal.
+
+19
+00:00:44,000 --> 00:00:47,000
+So that gives us an access of our leftVal.
+
+20
+00:00:47,000 --> 00:00:50,000
+For our mutator, again will be public.
+
+21
+00:00:50,000 --> 00:00:52,000
+This time it will be void though because mutators
+
+22
+00:00:52,000 --> 00:00:54,000
+don't return a value.
+
+23
+00:00:54,000 --> 00:00:58,000
+It will be set leftVal and we'll accept a parameter
+
+24
+00:00:58,000 --> 00:01:00,000
+of type double we'll call leftVal.
+
+25
+00:01:00,000 --> 00:01:02,000
+And then from there we simply assign a parameter
+
+26
+00:01:02,000 --> 00:01:04,000
+to our field.
+
+27
+00:01:04,000 --> 00:01:06,000
+That's pretty straightforward and we're going to do that
+
+28
+00:01:06,000 --> 00:01:09,000
+for rightVal and opCode as well.
+
+29
+00:01:09,000 --> 00:01:12,000
+So those accessors and mutators in place we can set
+
+30
+00:01:12,000 --> 00:01:14,000
+the values of any of those as well as access them.
+
+31
+00:01:14,000 --> 00:01:18,000
+And that makes sense for leftVal, rightVal, and opCode.
+
+32
+00:01:18,000 --> 00:01:20,000
+But result's a little different.
+
+33
+00:01:20,000 --> 00:01:24,000
+Result is the result of this class doing what it does,
+
+34
+00:01:24,000 --> 00:01:25,000
+executing an operation.
+
+35
+00:01:25,000 --> 00:01:28,000
+So it doesn't really make sense for anyone to be able
+
+36
+00:01:28,000 --> 00:01:30,000
+to modify result from the outside.
+
+37
+00:01:30,000 --> 00:01:32,000
+They certainly should be able to see it but not modify it.
+
+38
+00:01:32,000 --> 00:01:35,000
+So this the case where we may want to have a accessor
+
+39
+00:01:35,000 --> 00:01:36,000
+but not a mutator.
+
+40
+00:01:36,000 --> 00:01:39,000
+What it does is an effect make our result a read-only value.
+
+41
+00:01:39,000 --> 00:01:42,000
+So we'll do is for our result, we'll go ahead and create
+
+42
+00:01:42,000 --> 00:01:46,000
+that accessor but we're not going to have a mutator.
+
+43
+00:01:46,000 --> 00:01:48,000
+So with that we can now just go ahead and update
+
+44
+00:01:48,000 --> 00:01:50,000
+our application and go ahead and use
+
+45
+00:01:50,000 --> 00:01:52,000
+the accessors and mutators we've created.
+
+46
+00:01:52,000 --> 00:01:54,000
+So down here we create MathEquation instance.
+
+47
+00:01:54,000 --> 00:01:57,000
+We'll just update this to use the mutator,
+
+48
+00:01:57,000 --> 00:02:02,000
+so I'll say setLeftVal, let me pass the leftVal
+
+49
+00:02:02,000 --> 00:02:06,000
+as a parameter, close this parenthesis.
+
+50
+00:02:06,000 --> 00:02:09,000
+Do the same thing for rightVal and opCode.
+
+51
+00:02:09,000 --> 00:02:11,000
+So that now creates the instance of the MathEquation
+
+52
+00:02:11,000 --> 00:02:13,000
+setting each of the values.
+
+53
+00:02:13,000 --> 00:02:15,000
+Then we head up here where we access the result,
+
+54
+00:02:15,000 --> 00:02:17,000
+we'll change that to use the accessor for results.
+
+55
+00:02:17,000 --> 00:02:20,000
+Let's make this getResult.
+
+56
+00:02:20,000 --> 00:02:23,000
+So let's go ahead and run it, make sure everything works.
+
+57
+00:02:23,000 --> 00:02:25,000
+And there we have our output values.
+
+58
+00:02:25,000 --> 00:02:28,000
+So we've now updated our MathEquation class.
+
+59
+00:02:28,000 --> 00:02:30,000
+So we're properly hiding the data inside of it,
+
+60
+00:02:30,000 --> 00:02:32,000
+which will allow us to evolve it when effectively over time
+
+61
+00:02:32,000 --> 00:59:00,000
+without impacting code that uses our class.
+

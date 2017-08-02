@@ -1,0 +1,72 @@
+1
+00:00:01,000 --> 00:00:03,000
+Welcome to the next module
+
+2
+00:00:03,000 --> 00:00:05,000
+of the Pluralsight Java fundamentals course
+
+3
+00:00:05,000 --> 00:00:06,000
+on the Java language.
+
+4
+00:00:06,000 --> 00:00:09,000
+In this module, we talk more about data types.
+
+5
+00:00:09,000 --> 00:00:11,000
+My name is Jim Wilson.
+
+6
+00:00:11,000 --> 00:00:12,000
+As we go through this module,
+
+7
+00:00:12,000 --> 00:00:14,000
+we'll first look at the String class
+
+8
+00:00:14,000 --> 00:00:16,000
+and how to work with string values.
+
+9
+00:00:16,000 --> 00:00:18,000
+We'll then look at how we can work with strings
+
+10
+00:00:18,000 --> 00:00:20,000
+and manipulate strings more efficiently
+
+11
+00:00:20,000 --> 00:00:22,000
+using the StringBuilder class.
+
+12
+00:00:22,000 --> 00:00:24,000
+We'll see how we can bring the capability of classes
+
+13
+00:00:24,000 --> 00:00:28,000
+to primitive values, using the primitive wrapper classes.
+
+14
+00:00:28,000 --> 00:00:29,000
+We'll see how to create fields
+
+15
+00:00:29,000 --> 00:00:33,000
+that can't be changed once set, using final fields.
+
+16
+00:00:33,000 --> 00:00:36,000
+Then we'll finish up with enumeration types,
+
+17
+00:00:36,000 --> 00:00:37,000
+which allow us to define types
+
+18
+00:00:37,000 --> 00:59:00,000
+that can only hold a finite list of values.
+

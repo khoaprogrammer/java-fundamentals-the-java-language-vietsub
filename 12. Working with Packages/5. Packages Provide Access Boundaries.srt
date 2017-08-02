@@ -1,0 +1,228 @@
+1
+00:00:01,000 --> 00:00:03,000
+As we mentioned, a package is generally
+
+2
+00:00:03,000 --> 00:00:05,000
+a group of related types and those types
+
+3
+00:00:05,000 --> 00:00:09,000
+will provide some kind of related functionality.
+
+4
+00:00:09,000 --> 00:00:10,000
+But sometimes, all the capabilities
+
+5
+00:00:10,000 --> 00:00:14,000
+inside of a package may not meant to be used publicly.
+
+6
+00:00:14,000 --> 00:00:17,000
+So a package can serve as an access boundary.
+
+7
+00:00:17,000 --> 00:00:19,000
+A concept we've often referred to as
+
+8
+00:00:19,000 --> 00:00:22,000
+package private and what that's useful for
+
+9
+00:00:22,000 --> 00:00:24,000
+is you have this case where you're providing
+
+10
+00:00:24,000 --> 00:00:26,000
+some sort of public functionality
+
+11
+00:00:26,000 --> 00:00:27,000
+but sometimes, there's some kind of
+
+12
+00:00:27,000 --> 00:00:29,000
+internal work or internal housekeeping
+
+13
+00:00:29,000 --> 00:00:31,000
+that has to go on that you don't want
+
+14
+00:00:31,000 --> 00:00:33,000
+used outside the package.
+
+15
+00:00:33,000 --> 00:00:34,000
+So the idea is that you've got these
+
+16
+00:00:34,000 --> 00:00:36,000
+either types or features
+
+17
+00:00:36,000 --> 00:00:38,000
+that support the package but they're not
+
+18
+00:00:38,000 --> 00:00:41,000
+meant to be used stand alone.
+
+19
+00:00:41,000 --> 00:00:43,000
+You can do this, again, at the type level.
+
+20
+00:00:43,000 --> 00:00:46,000
+You may have entire classes that provide
+
+21
+00:00:46,000 --> 00:00:48,000
+functionality that's used by other classes
+
+22
+00:00:48,000 --> 00:00:51,000
+inside the package but not outside the package
+
+23
+00:00:51,000 --> 00:00:54,000
+or you might even have a public class
+
+24
+00:00:54,000 --> 00:00:56,000
+that has certain features about it
+
+25
+00:00:56,000 --> 00:00:58,000
+that are not meant to be used stand alone,
+
+26
+00:00:58,000 --> 00:01:00,000
+they're only meant to be used to cooperate
+
+27
+00:01:00,000 --> 00:01:03,000
+with other classes inside that package.
+
+28
+00:01:03,000 --> 00:01:04,000
+So thinking about this now.
+
+29
+00:01:04,000 --> 00:01:07,000
+We have four kinds of access modifiers
+
+30
+00:01:07,000 --> 00:01:09,000
+available to us in Java.
+
+31
+00:01:09,000 --> 00:01:10,000
+The one we just mentioned,
+
+32
+00:01:10,000 --> 00:01:12,000
+the idea of this package private.
+
+33
+00:01:12,000 --> 00:01:15,000
+Again, you do that by putting no access modifier
+
+34
+00:01:15,000 --> 00:01:17,000
+either on a type or a type member
+
+35
+00:01:17,000 --> 00:01:19,000
+which means it can only be used
+
+36
+00:01:19,000 --> 00:01:22,000
+by other types inside that package.
+
+37
+00:01:22,000 --> 00:01:23,000
+Of course, we also have public
+
+38
+00:01:23,000 --> 00:01:25,000
+which means that the type or member
+
+39
+00:01:25,000 --> 00:01:27,000
+can be used anywhere.
+
+40
+00:01:27,000 --> 00:01:28,000
+We also have private,
+
+41
+00:01:28,000 --> 00:01:30,000
+which means that it's a member
+
+42
+00:01:30,000 --> 00:01:33,000
+that can only be used within the type itself.
+
+43
+00:01:33,000 --> 00:01:36,000
+And then a concept of protected.
+
+44
+00:01:36,000 --> 00:01:39,000
+Protected says it can be used by the type itself
+
+45
+00:01:39,000 --> 00:01:41,000
+or other types that inherit from it.
+
+46
+00:01:41,000 --> 00:01:43,000
+As a protected member,
+
+47
+00:01:43,000 --> 00:01:45,000
+it can be used by any type inherited from the class
+
+48
+00:01:45,000 --> 00:01:47,000
+whether it's in the same package or not.
+
+49
+00:01:47,000 --> 00:01:49,000
+Package private is the only one
+
+50
+00:01:49,000 --> 00:01:51,000
+that really applies to package boundaries.
+
+51
+00:01:51,000 --> 00:01:54,000
+One thing to note, the ideas of private and protected
+
+52
+00:01:54,000 --> 00:01:56,000
+only being usable on types,
+
+53
+00:01:56,000 --> 00:01:58,000
+is limited to the concept of top level types.
+
+54
+00:01:58,000 --> 00:02:00,000
+If something called nested classes,
+
+55
+00:02:00,000 --> 00:02:03,000
+they can be marked as private or protected.
+
+56
+00:02:03,000 --> 00:02:04,000
+We're going to talk about nested classes
+
+57
+00:02:04,000 --> 00:59:00,000
+just a little bit later in this course.
+

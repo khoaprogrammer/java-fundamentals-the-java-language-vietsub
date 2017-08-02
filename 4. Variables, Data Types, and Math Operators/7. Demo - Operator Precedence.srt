@@ -1,0 +1,404 @@
+1
+00:00:02,000 --> 00:00:04,000
+To get a better sense of how operator precedence works,
+
+2
+00:00:04,000 --> 00:00:10,000
+let's take a look at some code.
+
+3
+00:00:10,000 --> 00:00:11,000
+We have simple program here
+
+4
+00:00:11,000 --> 00:00:13,000
+with four variables declared at the top.
+
+5
+00:00:13,000 --> 00:00:16,000
+What we want to do is set up some math operations
+
+6
+00:00:16,000 --> 00:00:18,000
+and see how the order of precedence
+
+7
+00:00:18,000 --> 00:00:19,000
+affects the result we get.
+
+8
+00:00:19,000 --> 00:00:24,000
+Let's go ahead and declare an integer for a result.
+
+9
+00:00:24,000 --> 00:00:25,000
+So I'll just call that result1.
+
+10
+00:00:25,000 --> 00:00:26,000
+What you want to do here
+
+11
+00:00:26,000 --> 00:00:29,000
+is you want to take the variable valA,
+
+12
+00:00:29,000 --> 00:00:33,000
+then I'm going to go ahead and subtract valB from it,
+
+13
+00:00:33,000 --> 00:00:35,000
+and then I'll divide that by valC.
+
+14
+00:00:35,000 --> 00:00:39,000
+Now I'm going to go ahead and just duplicate that now
+
+15
+00:00:39,000 --> 00:00:41,000
+so I have another one just like it.
+
+16
+00:00:41,000 --> 00:00:43,000
+Call this one result2.
+
+17
+00:00:43,000 --> 00:00:44,000
+And all I'm going to do
+
+18
+00:00:44,000 --> 00:00:45,000
+is put a parenthesis in,
+
+19
+00:00:45,000 --> 00:00:49,000
+put a parenthesis around valA and valB here.
+
+20
+00:00:49,000 --> 00:00:50,000
+All right we have these parenthesis in place,
+
+21
+00:00:50,000 --> 00:00:51,000
+so the last thing we want to do
+
+22
+00:00:51,000 --> 00:00:54,000
+is just go ahead and print these guys out.
+
+23
+00:00:54,000 --> 00:00:55,000
+All right, so let's go ahead and run it.
+
+24
+00:00:55,000 --> 00:00:56,000
+And as we run it,
+
+25
+00:00:56,000 --> 00:00:58,000
+you can see that we get two very different results.
+
+26
+00:00:58,000 --> 00:01:01,000
+The first one, result1, gives us a value of 19.
+
+27
+00:01:01,000 --> 00:01:03,000
+The second one, result2, gives us a value of 5.
+
+28
+00:01:03,000 --> 00:01:05,000
+What's happening there?
+
+29
+00:01:05,000 --> 00:01:07,000
+Well on the first line, where we set result1,
+
+30
+00:01:07,000 --> 00:01:10,000
+remember that multiplicative operations
+
+31
+00:01:10,000 --> 00:01:12,000
+take precedence over additive operations.
+
+32
+00:01:12,000 --> 00:01:14,000
+So division is a multiplicative operation,
+
+33
+00:01:14,000 --> 00:01:17,000
+so basically valueB, which is 6,
+
+34
+00:01:17,000 --> 00:01:20,000
+was divided by valueC, which is 3,
+
+35
+00:01:20,000 --> 00:01:22,000
+which gave us the result of 2.
+
+36
+00:01:22,000 --> 00:01:25,000
+So then we subtracted that 2 from valA, which is 21,
+
+37
+00:01:25,000 --> 00:01:27,000
+giving us 19.
+
+38
+00:01:27,000 --> 00:01:30,000
+The second one, result2, because of the parenthesis,
+
+39
+00:01:30,000 --> 00:01:33,000
+we overrode that normal order of operations.
+
+40
+00:01:33,000 --> 00:01:37,000
+As a result, we first subtracted 6 from 21,
+
+41
+00:01:37,000 --> 00:01:39,000
+which gave us 15,
+
+42
+00:01:39,000 --> 00:01:41,000
+and then we divided that by 3,
+
+43
+00:01:41,000 --> 00:01:44,000
+which gave us the result 5.
+
+44
+00:01:44,000 --> 00:01:46,000
+So we overrode that normal order of operations
+
+45
+00:01:46,000 --> 00:01:49,000
+by adding parenthesis.
+
+46
+00:01:49,000 --> 00:01:50,000
+So let's look at another case here.
+
+47
+00:01:50,000 --> 00:01:52,000
+We'll go and set up another equation.
+
+48
+00:01:52,000 --> 00:01:54,000
+We'll set up a result3 here.
+
+49
+00:01:54,000 --> 00:01:58,000
+And for result3, what we'll do is we'll set valA,
+
+50
+00:01:58,000 --> 00:02:01,000
+we'll divide that by valC,
+
+51
+00:02:01,000 --> 00:02:04,000
+then we'll multiply that times valD,
+
+52
+00:02:04,000 --> 00:02:09,000
+and then finally add in valB.
+
+53
+00:02:09,000 --> 00:02:10,000
+That sets up one.
+
+54
+00:02:10,000 --> 00:02:12,000
+So let's go ahead and copy this now.
+
+55
+00:02:12,000 --> 00:02:14,000
+And we'll duplicate it,
+
+56
+00:02:14,000 --> 00:02:16,000
+but then we'll modify it a little bit.
+
+57
+00:02:16,000 --> 00:02:19,000
+So we'll call a result here result4.
+
+58
+00:02:19,000 --> 00:02:20,000
+We'll use some parenthesis.
+
+59
+00:02:20,000 --> 00:02:22,000
+So the first thing I'll do is put parenthesis
+
+60
+00:02:22,000 --> 00:02:24,000
+around this addition here,
+
+61
+00:02:24,000 --> 00:02:26,000
+valD and valB,
+
+62
+00:02:26,000 --> 00:02:27,000
+and then what I'll do
+
+63
+00:02:27,000 --> 00:02:30,000
+is I'll put another set around valC
+
+64
+00:02:30,000 --> 00:02:33,000
+and the result of valD plus valB.
+
+65
+00:02:33,000 --> 00:02:35,000
+So I've now got nested parenthesis.
+
+66
+00:02:35,000 --> 00:02:37,000
+So with that in place now,
+
+67
+00:02:37,000 --> 00:02:38,000
+what I want to do is just go ahead
+
+68
+00:02:38,000 --> 00:02:41,000
+and print these guys out, as well.
+
+69
+00:02:41,000 --> 00:02:42,000
+Okay, we're all set there.
+
+70
+00:02:42,000 --> 00:02:45,000
+Let's go ahead and run it.
+
+71
+00:02:45,000 --> 00:02:46,000
+You'll notice again,
+
+72
+00:02:46,000 --> 00:02:48,000
+we get very different results.
+
+73
+00:02:48,000 --> 00:02:50,000
+For the result3 we get 13.
+
+74
+00:02:50,000 --> 00:02:53,000
+For result4 we get the number 1.
+
+75
+00:02:53,000 --> 00:02:54,000
+Well what's different?
+
+76
+00:02:54,000 --> 00:02:56,000
+Well again remember that multiplicative operations
+
+77
+00:02:56,000 --> 00:02:59,000
+come ahead of additive,
+
+78
+00:02:59,000 --> 00:03:02,000
+and then when two operations are on the same precedence,
+
+79
+00:03:02,000 --> 00:03:03,000
+they're left to right.
+
+80
+00:03:03,000 --> 00:03:06,000
+So on our result3, the first thing that happens is valA
+
+81
+00:03:06,000 --> 00:03:09,000
+is divided by valC.
+
+82
+00:03:09,000 --> 00:03:11,000
+valA has a value of 21,
+
+83
+00:03:11,000 --> 00:03:12,000
+valC has a value of 3,
+
+84
+00:03:12,000 --> 00:03:15,000
+so that gives us a value of 7.
+
+85
+00:03:15,000 --> 00:03:17,000
+Then that's multiplied by valD,
+
+86
+00:03:17,000 --> 00:03:18,000
+which has a value of 1,
+
+87
+00:03:18,000 --> 00:03:20,000
+so it's still 7,
+
+88
+00:03:20,000 --> 00:03:22,000
+and then we add in valB,
+
+89
+00:03:22,000 --> 00:03:24,000
+which gives us a value of 6.
+
+90
+00:03:24,000 --> 00:03:26,000
+And that gives us 13.
+
+91
+00:03:26,000 --> 00:03:28,000
+But now in result4,
+
+92
+00:03:28,000 --> 00:03:30,000
+because of the parenthesis,
+
+93
+00:03:30,000 --> 00:03:32,000
+we're changing that order of operations.
+
+94
+00:03:32,000 --> 00:03:34,000
+So we have nested parenthesis
+
+95
+00:03:34,000 --> 00:03:35,000
+going to the inner most ones,
+
+96
+00:03:35,000 --> 00:03:38,000
+so first we get valD plus valB.
+
+97
+00:03:38,000 --> 00:03:41,000
+So valD is 1, valB is 6,
+
+98
+00:03:41,000 --> 00:03:43,000
+so 1 plus 6 is 7.
+
+99
+00:03:43,000 --> 00:03:47,000
+We multiply that times valC, which is 3, which is 21.
+
+100
+00:03:47,000 --> 00:03:49,000
+And then we divide valA, which is 21,
+
+101
+00:03:49,000 --> 00:59:00,000
+by 21, giving us the result of 1.
+

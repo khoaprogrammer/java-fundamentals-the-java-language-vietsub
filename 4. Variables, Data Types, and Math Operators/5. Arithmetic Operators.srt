@@ -1,0 +1,504 @@
+1
+00:00:02,000 --> 00:00:04,000
+Something we commonly have to do in our programs
+
+2
+00:00:04,000 --> 00:00:06,000
+is perform arithmetic operations.
+
+3
+00:00:06,000 --> 00:00:09,000
+Java provides three basic categories
+
+4
+00:00:09,000 --> 00:00:12,000
+of operators for performing math operations.
+
+5
+00:00:12,000 --> 00:00:14,000
+There are the basic operators
+
+6
+00:00:14,000 --> 00:00:17,000
+like add, subtract, multiply, and divide.
+
+7
+00:00:17,000 --> 00:00:20,000
+What are called prefix and postfix operators
+
+8
+00:00:20,000 --> 00:00:27,000
+and then there are called compound assignment operators.
+
+9
+00:00:27,000 --> 00:00:30,000
+The basic math operators are just what you would expect.
+
+10
+00:00:30,000 --> 00:00:33,000
+Things like add, subtract, multiply, and divide.
+
+11
+00:00:33,000 --> 00:00:35,000
+The operators we use for these are, again,
+
+12
+00:00:35,000 --> 00:00:36,000
+things that are very familiar,
+
+13
+00:00:36,000 --> 00:00:38,000
+where if I'm adding I need a plus sign.
+
+14
+00:00:38,000 --> 00:00:40,000
+When I do things like add,
+
+15
+00:00:40,000 --> 00:00:42,000
+it doesn't really matter whether I'm using a floating point
+
+16
+00:00:42,000 --> 00:00:43,000
+or an integer.
+
+17
+00:00:43,000 --> 00:00:49,000
+So if I say 1+2, the answer is going to be 3.
+
+18
+00:00:49,000 --> 00:00:51,000
+For subtract we use the minus sign.
+
+19
+00:00:51,000 --> 00:00:53,000
+Again, it doesn't really matter whether we're using
+
+20
+00:00:53,000 --> 00:00:54,000
+floating point or integers.
+
+21
+00:00:54,000 --> 00:00:57,000
+If I subtract 4 from 5, I get 1.
+
+22
+00:00:57,000 --> 00:00:59,000
+If we multiply we use an asterisk.
+
+23
+00:00:59,000 --> 00:01:02,000
+4 times 2 is 8.
+
+24
+00:01:02,000 --> 00:01:04,000
+All this stuff is really straight forward.
+
+25
+00:01:04,000 --> 00:01:06,000
+As we get to the divide operations, though,
+
+26
+00:01:06,000 --> 00:01:08,000
+there are some differences between floating point
+
+27
+00:01:08,000 --> 00:01:09,000
+and integer.
+
+28
+00:01:09,000 --> 00:01:13,000
+If I take 13.0 and divide it by 5.0,
+
+29
+00:01:13,000 --> 00:01:15,000
+that's a floating point operation.
+
+30
+00:01:15,000 --> 00:01:16,000
+Floating points have fractions.
+
+31
+00:01:16,000 --> 00:01:19,000
+So I will get 2.6.
+
+32
+00:01:19,000 --> 00:01:23,000
+But now if I take the integer 13 divided by 5,
+
+33
+00:01:23,000 --> 00:01:25,000
+that's an integer operations.
+
+34
+00:01:25,000 --> 00:01:27,000
+Integers don't have fractions.
+
+35
+00:01:27,000 --> 00:01:30,000
+So I'll actually get just 2.
+
+36
+00:01:30,000 --> 00:01:33,000
+It doesn't matter what the fractional portion would be,
+
+37
+00:01:33,000 --> 00:01:34,000
+it's just dropped.
+
+38
+00:01:34,000 --> 00:01:35,000
+There's no rounding or anything,
+
+39
+00:01:35,000 --> 00:01:37,000
+it's just the whole number of times
+
+40
+00:01:37,000 --> 00:01:39,000
+that you can do the division.
+
+41
+00:01:39,000 --> 00:01:42,000
+So 5 goes into 13 two whole times.
+
+42
+00:01:42,000 --> 00:01:45,000
+There's another operator called the modulus operator,
+
+43
+00:01:45,000 --> 00:01:47,000
+also known as the remainder operator,
+
+44
+00:01:47,000 --> 00:01:50,000
+and that gives you the remainder of the divide.
+
+45
+00:01:50,000 --> 00:01:53,000
+So let's look at the integer first on this one.
+
+46
+00:01:53,000 --> 00:01:56,000
+If I say 13 modulus 5, that's the percent symbol,
+
+47
+00:01:56,000 --> 00:01:59,000
+my answer will be 3.
+
+48
+00:01:59,000 --> 00:02:01,000
+5 goes into 13 two whole times,
+
+49
+00:02:01,000 --> 00:02:03,000
+leaving three.
+
+50
+00:02:03,000 --> 00:02:05,000
+5 times 2 is 10,
+
+51
+00:02:05,000 --> 00:02:06,000
+subtract 10 from 13,
+
+52
+00:02:06,000 --> 00:02:07,000
+you get 3.
+
+53
+00:02:07,000 --> 00:02:10,000
+And you can do a modulus on floating point, as well.
+
+54
+00:02:10,000 --> 00:02:20,000
+So I do 13.0 % 5.0, I'll have a remainder of 3.0.
+
+55
+00:02:20,000 --> 00:02:21,000
+As we look at the prefix and postfix operators,
+
+56
+00:02:21,000 --> 00:02:24,000
+they allow us to operate directly on value.
+
+57
+00:02:24,000 --> 00:02:28,000
+The ++ symbol is the increment.
+
+58
+00:02:28,000 --> 00:02:29,000
+Increments value by 1.
+
+59
+00:02:29,000 --> 00:02:31,000
+The -- symbol,
+
+60
+00:02:31,000 --> 00:02:33,000
+decrements value by 1.
+
+61
+00:02:33,000 --> 00:02:34,000
+So if we look here,
+
+62
+00:02:34,000 --> 00:02:37,000
+if I have a variable myVal and I set it to 5,
+
+63
+00:02:37,000 --> 00:02:42,000
+if I say print out ++myVal,
+
+64
+00:02:42,000 --> 00:02:44,000
+that's the increment operator,
+
+65
+00:02:44,000 --> 00:02:47,000
+because it's before the actual variable,
+
+66
+00:02:47,000 --> 00:02:48,000
+the ++ before the variable,
+
+67
+00:02:48,000 --> 00:02:49,000
+that's a prefix,
+
+68
+00:02:49,000 --> 00:02:52,000
+which means that the operation is actually applied
+
+69
+00:02:52,000 --> 00:02:54,000
+before we get the value back.
+
+70
+00:02:54,000 --> 00:02:57,000
+So the result as print statement is actually 6.
+
+71
+00:02:57,000 --> 00:03:00,000
+The 5 was incremented for a print out of a 6.
+
+72
+00:03:00,000 --> 00:03:02,000
+If I print myVal again,
+
+73
+00:03:02,000 --> 00:03:04,000
+it's still 6.
+
+74
+00:03:04,000 --> 00:03:07,000
+But now if I move the operator after the variable,
+
+75
+00:03:07,000 --> 00:03:09,000
+it's now a postfix operator.
+
+76
+00:03:09,000 --> 00:03:11,000
+What that means is that I get the value back
+
+77
+00:03:11,000 --> 00:03:14,000
+and then the operations perform.
+
+78
+00:03:14,000 --> 00:03:15,000
+So if I look at similar code here,
+
+79
+00:03:15,000 --> 00:03:17,000
+where I have my variable myVal,
+
+80
+00:03:17,000 --> 00:03:18,000
+I set it to 5,
+
+81
+00:03:18,000 --> 00:03:21,000
+but this time I print it out I say myVal ++,
+
+82
+00:03:21,000 --> 00:03:24,000
+so I'm doing a postfix increment.
+
+83
+00:03:24,000 --> 00:03:27,000
+The value printed will be 5
+
+84
+00:03:27,000 --> 00:03:28,000
+because that 5 was returned.
+
+85
+00:03:28,000 --> 00:03:31,000
+But myVal is now incremented.
+
+86
+00:03:31,000 --> 00:03:38,000
+If I print myVal now, I will get 6.
+
+87
+00:03:38,000 --> 00:03:40,000
+The last category of math operators
+
+88
+00:03:40,000 --> 00:03:43,000
+are what we call compound assignment operators.
+
+89
+00:03:43,000 --> 00:03:45,000
+What these do is they combine an operation
+
+90
+00:03:45,000 --> 00:03:46,000
+and the assignment,
+
+91
+00:03:46,000 --> 00:03:51,000
+so basically it looks at the right side of the operator,
+
+92
+00:03:51,000 --> 00:03:53,000
+takes whatever that is
+
+93
+00:03:53,000 --> 00:03:56,000
+and applies the operation to the left side
+
+94
+00:03:56,000 --> 00:03:59,000
+and then stores the value into the left side.
+
+95
+00:03:59,000 --> 00:04:01,000
+So let's see what that looks like.
+
+96
+00:04:01,000 --> 00:04:02,000
+Right here I have myVal.
+
+97
+00:04:02,000 --> 00:04:03,000
+I set it equal to 50.
+
+98
+00:04:03,000 --> 00:04:07,000
+If I say myVal -= 5,
+
+99
+00:04:07,000 --> 00:04:10,000
+so the right hand side's value is 5,
+
+100
+00:04:10,000 --> 00:04:13,000
+the left hand side value is currently 50,
+
+101
+00:04:13,000 --> 00:04:16,000
+it applies the operation, which is the minus sign,
+
+102
+00:04:16,000 --> 00:04:18,000
+so it subtracts 5 from 50,
+
+103
+00:04:18,000 --> 00:04:21,000
+and then stores that value back into myVal.
+
+104
+00:04:21,000 --> 00:04:22,000
+So if I print out myVal,
+
+105
+00:04:22,000 --> 00:04:25,000
+myVal has 45.
+
+106
+00:04:25,000 --> 00:04:29,000
+And they're available for all five basic math operations.
+
+107
+00:04:29,000 --> 00:04:31,000
+In my experience, I used the minus equals
+
+108
+00:04:31,000 --> 00:04:34,000
+and the plus equals far in a way the most,
+
+109
+00:04:34,000 --> 00:04:37,000
+but you do find occasions to use the other ones, as well.
+
+110
+00:04:37,000 --> 00:04:38,000
+So looking at another example,
+
+111
+00:04:38,000 --> 00:04:41,000
+if I have a int result = 100
+
+112
+00:04:41,000 --> 00:04:44,000
+and I have two more variables.
+
+113
+00:04:44,000 --> 00:04:48,000
+val1 = 5 and val2 = 10.
+
+114
+00:04:48,000 --> 00:04:53,000
+If I now say result /= val1 * val2,
+
+115
+00:04:53,000 --> 00:04:54,000
+remember that it's going to take the complete result
+
+116
+00:04:54,000 --> 00:04:56,000
+of the right side.
+
+117
+00:04:56,000 --> 00:04:58,000
+So if I look at val1 times val2,
+
+118
+00:04:58,000 --> 00:05:02,000
+the result of 5 times 10 is 50.
+
+119
+00:05:02,000 --> 00:05:04,000
+It then take the existing value and result,
+
+120
+00:05:04,000 --> 00:05:06,000
+which in this case is 100,
+
+121
+00:05:06,000 --> 00:05:08,000
+and it then takes that operator,
+
+122
+00:05:08,000 --> 00:05:10,000
+which is divide,
+
+123
+00:05:10,000 --> 00:05:11,000
+and performs that operation between them.
+
+124
+00:05:11,000 --> 00:05:14,000
+So it's going to divide 100 by 50
+
+125
+00:05:14,000 --> 00:05:17,000
+and then store that back into our variable called result.
+
+126
+00:05:17,000 --> 00:59:00,000
+So we print out the value of 2.
+

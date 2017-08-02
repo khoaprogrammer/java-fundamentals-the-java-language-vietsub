@@ -1,0 +1,452 @@
+1
+00:00:02,000 --> 00:00:04,000
+In order to do anything interesting in a program,
+
+2
+00:00:04,000 --> 00:00:08,000
+we have to have the ability to store and manipulate values.
+
+3
+00:00:08,000 --> 00:00:10,000
+What allows us to do that are what we call variables.
+
+4
+00:00:10,000 --> 00:00:15,000
+A variable, simply put, is just named data storage.
+
+5
+00:00:15,000 --> 00:00:18,000
+Now Java is a strongly typed language.
+
+6
+00:00:18,000 --> 00:00:21,000
+Now what that means is that when we declare a variable,
+
+7
+00:00:21,000 --> 00:00:25,000
+like in this case, we have a variable named datavalue,
+
+8
+00:00:25,000 --> 00:00:27,000
+we have to specify the type of that variable.
+
+9
+00:00:27,000 --> 00:00:28,000
+In this case, it's what we call an int,
+
+10
+00:00:28,000 --> 00:00:30,000
+something that can store integers.
+
+11
+00:00:30,000 --> 00:00:33,000
+So what that means is that the datavalue variable
+
+12
+00:00:33,000 --> 00:00:37,000
+can only store things that are compatible with the type int.
+
+13
+00:00:37,000 --> 00:00:39,000
+As we go through the course, we'll talk about this idea
+
+14
+00:00:39,000 --> 00:00:41,000
+of one typing compatible with another.
+
+15
+00:00:41,000 --> 00:00:44,000
+Now, we declare a variable, we can of course, then
+
+16
+00:00:44,000 --> 00:00:45,000
+assign a value to it, right,
+
+17
+00:00:45,000 --> 00:00:49,000
+so our variable, datavalue, now holds the value 100.
+
+18
+00:00:49,000 --> 00:00:50,000
+Now, when we use variables,
+
+19
+00:00:50,000 --> 00:00:51,000
+we can do it the way we've done here
+
+20
+00:00:51,000 --> 00:00:53,000
+where we declare it, then assign it
+
+21
+00:00:53,000 --> 00:00:55,000
+or as a matter of convenience,
+
+22
+00:00:55,000 --> 00:00:58,000
+we can declare them and assign them in a single statement.
+
+23
+00:00:58,000 --> 00:01:01,000
+Java is a language that allows you to modify
+
+24
+00:01:01,000 --> 00:01:03,000
+the value stored in a variable.
+
+25
+00:01:03,000 --> 00:01:05,000
+So you can store an initial value in a variable
+
+26
+00:01:05,000 --> 00:01:06,000
+and throughout the course of your program,
+
+27
+00:01:06,000 --> 00:01:11,000
+you can modify the value that's stored inside that variable.
+
+28
+00:01:11,000 --> 00:01:13,000
+When it comes to naming variables in Java,
+
+29
+00:01:13,000 --> 00:01:18,000
+we follow a combination of rules and conventions.
+
+30
+00:01:18,000 --> 00:01:21,000
+The rules allow us to use letters, numbers,
+
+31
+00:01:21,000 --> 00:01:23,000
+the dollar signs, and the underscore
+
+32
+00:01:23,000 --> 00:01:27,000
+but by convention, we only use letters and numbers.
+
+33
+00:01:27,000 --> 00:01:31,000
+The rules require that that first character is not a number,
+
+34
+00:01:31,000 --> 00:01:33,000
+but since convention say that we never use a dollar sign
+
+35
+00:01:33,000 --> 00:01:36,000
+or an underscore, that means that
+
+36
+00:01:36,000 --> 00:01:38,000
+we always end up starting it with a letter.
+
+37
+00:01:38,000 --> 00:01:40,000
+So some examples are like,
+
+38
+00:01:40,000 --> 00:01:42,000
+if I wanted to declare a variable called total,
+
+39
+00:01:42,000 --> 00:01:45,000
+writes t-o-t-a-l, all right that's valid
+
+40
+00:01:45,000 --> 00:01:49,000
+or grade4 because the four is not the first character,
+
+41
+00:01:49,000 --> 00:01:51,000
+that's a valid variable name.
+
+42
+00:01:51,000 --> 00:01:54,000
+By convention, we follow the naming style
+
+43
+00:01:54,000 --> 00:01:55,000
+known as Camel Case.
+
+44
+00:01:55,000 --> 00:01:58,000
+What that means is that the first letter of the variable
+
+45
+00:01:58,000 --> 00:02:00,000
+name is a lowercase letter.
+
+46
+00:02:00,000 --> 00:02:05,000
+We start each word after the first with an uppercase letter
+
+47
+00:02:05,000 --> 00:02:07,000
+and all other letters are lowercase.
+
+48
+00:02:07,000 --> 00:02:10,000
+Example would be bankAccountBalance.
+
+49
+00:02:10,000 --> 00:02:11,000
+All right, the first word is bank.
+
+50
+00:02:11,000 --> 00:02:13,000
+That starts with lowercase.
+
+51
+00:02:13,000 --> 00:02:15,000
+The second word's account, so we have a capital A.
+
+52
+00:02:15,000 --> 00:02:17,000
+Next word is balance, it's a capital B.
+
+53
+00:02:17,000 --> 00:02:20,000
+Another example, level2Training.
+
+54
+00:02:20,000 --> 00:02:22,000
+First word level is all lowercase.
+
+55
+00:02:22,000 --> 00:02:24,000
+We still have the number two in there, that's valid,
+
+56
+00:02:24,000 --> 00:02:26,000
+but when we start the next word, training,
+
+57
+00:02:26,000 --> 00:02:29,000
+we use a capital T.
+
+58
+00:02:29,000 --> 00:02:30,000
+So let's take a look now at a simple case
+
+59
+00:02:30,000 --> 00:02:31,000
+of using some variables.
+
+60
+00:02:31,000 --> 00:02:33,000
+So I've got a program stubbed out here
+
+61
+00:02:33,000 --> 00:02:36,000
+with my entry into my main method.
+
+62
+00:02:36,000 --> 00:02:37,000
+I'm going to, again, declare a variable here
+
+63
+00:02:37,000 --> 00:02:39,000
+called myVar, whose type int.
+
+64
+00:02:39,000 --> 00:02:41,000
+We can also call this a local variable
+
+65
+00:02:41,000 --> 00:02:43,000
+just because it's local to the method mean
+
+66
+00:02:43,000 --> 00:02:45,000
+and we'll see some other ways to store information
+
+67
+00:02:45,000 --> 00:02:47,000
+that are not local throughout this course.
+
+68
+00:02:47,000 --> 00:02:50,000
+But here we have local variable myVar.
+
+69
+00:02:50,000 --> 00:02:52,000
+If I go ahead and try to use myVar right now
+
+70
+00:02:52,000 --> 00:02:53,000
+instead of trying to print it out,
+
+71
+00:02:53,000 --> 00:02:56,000
+that would actually be an error
+
+72
+00:02:56,000 --> 00:02:57,000
+because local variables don't automatically
+
+73
+00:02:57,000 --> 00:02:58,000
+get a value.
+
+74
+00:02:58,000 --> 00:03:01,000
+There's nothing define stored inside of them
+
+75
+00:03:01,000 --> 00:03:03,000
+so we don't want to do that.
+
+76
+00:03:03,000 --> 00:03:05,000
+Before we actually use a variable,
+
+77
+00:03:05,000 --> 00:03:06,000
+we want to make sure
+
+78
+00:03:06,000 --> 00:03:08,000
+and put something inside of it.
+
+79
+00:03:08,000 --> 00:03:10,000
+So in this case, I have stored the value 50
+
+80
+00:03:10,000 --> 00:03:11,000
+inside of myVar.
+
+81
+00:03:11,000 --> 00:03:13,000
+So, of course, now if I print that out,
+
+82
+00:03:13,000 --> 00:03:16,000
+I'll get the value 50.
+
+83
+00:03:16,000 --> 00:03:18,000
+Now I can go ahead and declare another variable here,
+
+84
+00:03:18,000 --> 00:03:19,000
+I'll call anotherVar.
+
+85
+00:03:19,000 --> 00:03:21,000
+You'll notice that my variables don't have to be
+
+86
+00:03:21,000 --> 00:03:22,000
+all declared at the top.
+
+87
+00:03:22,000 --> 00:03:24,000
+I can declare them anywhere in my flow of logic
+
+88
+00:03:24,000 --> 00:03:25,000
+that I want to.
+
+89
+00:03:25,000 --> 00:03:29,000
+So my anotherVar has a value of 100 stored inside of it.
+
+90
+00:03:29,000 --> 00:03:30,000
+If I print that out,
+
+91
+00:03:30,000 --> 00:03:32,000
+of course I get 100.
+
+92
+00:03:32,000 --> 00:03:35,000
+I can assign one variable to another.
+
+93
+00:03:35,000 --> 00:03:37,000
+So I've assigned anotherVar to myVar.
+
+94
+00:03:37,000 --> 00:03:40,000
+What I'm saying is that I'm assigning the value
+
+95
+00:03:40,000 --> 00:03:41,000
+of anotherVar to myVar,
+
+96
+00:03:41,000 --> 00:03:43,000
+so if I print out myVar,
+
+97
+00:03:43,000 --> 00:03:45,000
+I get the value 100.
+
+98
+00:03:45,000 --> 00:03:46,000
+And what's interesting to note is that
+
+99
+00:03:46,000 --> 00:03:49,000
+if I go out here and I change anotherVar,
+
+100
+00:03:49,000 --> 00:03:51,000
+so I assign it to 200,
+
+101
+00:03:51,000 --> 00:03:54,000
+if I print it out it has 200 in it.
+
+102
+00:03:54,000 --> 00:03:56,000
+But if I print out myVar,
+
+103
+00:03:56,000 --> 00:03:59,000
+it still only has 100 in it.
+
+104
+00:03:59,000 --> 00:04:00,000
+Basically we're doing what's called
+
+105
+00:04:00,000 --> 00:04:01,000
+copy by value, there.
+
+106
+00:04:01,000 --> 00:04:02,000
+We'll talk a little bit more shortly
+
+107
+00:04:02,000 --> 00:04:05,000
+about what's actually happening under the covers
+
+108
+00:04:05,000 --> 00:04:07,000
+that allows the sign between one variable and another
+
+109
+00:04:07,000 --> 00:04:09,000
+without them staying linked.
+
+110
+00:04:09,000 --> 00:04:10,000
+But the key thing to remember here
+
+111
+00:04:10,000 --> 00:04:11,000
+is that you can declare variables,
+
+112
+00:04:11,000 --> 00:04:14,000
+we can assign values to them, we can modify our variables,
+
+113
+00:04:14,000 --> 00:59:00,000
+and we can assign values from one variable to another.
+

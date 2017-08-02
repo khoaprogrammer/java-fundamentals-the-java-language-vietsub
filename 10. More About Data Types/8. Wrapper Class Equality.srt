@@ -1,0 +1,244 @@
+1
+00:00:02,000 --> 00:00:03,000
+Let's take a look at how the wrapper classes
+
+2
+00:00:03,000 --> 00:00:06,000
+affect the idea of comparing for equality.
+
+3
+00:00:06,000 --> 00:00:08,000
+So, we have some code here where we have a variable,
+
+4
+00:00:08,000 --> 00:00:11,000
+i1000a, whose type is integer.
+
+5
+00:00:11,000 --> 00:00:13,000
+We assign it 10 times 10 times 10.
+
+6
+00:00:13,000 --> 00:00:15,000
+So, we have the value 1000
+
+7
+00:00:15,000 --> 00:00:18,000
+stored into the integer wrapper class.
+
+8
+00:00:18,000 --> 00:00:22,000
+And I say integer i1000B equals 100 times 10.
+
+9
+00:00:22,000 --> 00:00:24,000
+So, that also has the value 1000
+
+10
+00:00:24,000 --> 00:00:27,000
+stored into an instance of the integer wrapper class.
+
+11
+00:00:27,000 --> 00:00:30,000
+Now, if I compare them using the equals equals operator.
+
+12
+00:00:30,000 --> 00:00:32,000
+Now, if these were two primitive variables,
+
+13
+00:00:32,000 --> 00:00:35,000
+equals equals would compare just fine.
+
+14
+00:00:35,000 --> 00:00:38,000
+But, because these are references to classes,
+
+15
+00:00:38,000 --> 00:00:40,000
+this will actually test for false.
+
+16
+00:00:40,000 --> 00:00:43,000
+Because remember, equals equals only returns true
+
+17
+00:00:43,000 --> 00:00:46,000
+if both references point to the same exact object.
+
+18
+00:00:46,000 --> 00:00:47,000
+So, when we're working with these wrapper classes,
+
+19
+00:00:47,000 --> 00:00:50,000
+we generally want to use the equals method,
+
+20
+00:00:50,000 --> 00:00:52,000
+to check for equality.
+
+21
+00:00:52,000 --> 00:00:55,000
+So, we say i1000A.equals i1000B,
+
+22
+00:00:55,000 --> 00:00:57,000
+we get back the value true,
+
+23
+00:00:57,000 --> 00:00:59,000
+because it actually checks the value
+
+24
+00:00:59,000 --> 00:01:00,000
+stored inside each one.
+
+25
+00:01:00,000 --> 00:01:02,000
+But let's look at another example.
+
+26
+00:01:02,000 --> 00:01:05,000
+I have a variable i8A, which again
+
+27
+00:01:05,000 --> 00:01:07,000
+is a reference of type integer,
+
+28
+00:01:07,000 --> 00:01:09,000
+equals four times two, so it has the value of eight
+
+29
+00:01:09,000 --> 00:01:11,000
+in that integer wrapper class.
+
+30
+00:01:11,000 --> 00:01:15,000
+Then I have integer i8B equals two times two times two.
+
+31
+00:01:15,000 --> 00:01:17,000
+So, again it has the value eight
+
+32
+00:01:17,000 --> 00:01:20,000
+stored inside of a integer wrapper class.
+
+33
+00:01:20,000 --> 00:01:25,000
+But now when I do i8A equals equals i8B,
+
+34
+00:01:25,000 --> 00:01:26,000
+I get back true.
+
+35
+00:01:26,000 --> 00:01:28,000
+Now remember that that can only return true
+
+36
+00:01:28,000 --> 00:01:32,000
+if both those references point to the same exact object.
+
+37
+00:01:32,000 --> 00:01:35,000
+And that turns out to be true because in Java,
+
+38
+00:01:35,000 --> 00:01:38,000
+certain boxing conversions are defined
+
+39
+00:01:38,000 --> 00:01:39,000
+to always return back a reference
+
+40
+00:01:39,000 --> 00:01:42,000
+to the exact same instance.
+
+41
+00:01:42,000 --> 00:01:44,000
+And there are five types when that happens.
+
+42
+00:01:44,000 --> 00:01:47,000
+You have an int, a short, or a byte
+
+43
+00:01:47,000 --> 00:01:51,000
+in the range of minus 128 to positive 127.
+
+44
+00:01:51,000 --> 00:01:54,000
+When that is converted into
+
+45
+00:01:54,000 --> 00:01:56,000
+the corresponding wrapper class,
+
+46
+00:01:56,000 --> 00:01:58,000
+you will always get a reference to the same exact object
+
+47
+00:01:58,000 --> 00:02:00,000
+for the same exact value.
+
+48
+00:02:00,000 --> 00:02:03,000
+All right, so an int of value five,
+
+49
+00:02:03,000 --> 00:02:06,000
+when it's converted to an integer,
+
+50
+00:02:06,000 --> 00:02:07,000
+it will always be a reference
+
+51
+00:02:07,000 --> 00:02:10,000
+to the same exact integer instance.
+
+52
+00:02:10,000 --> 00:02:12,000
+On the char type, it's any character value
+
+53
+00:02:12,000 --> 00:02:15,000
+from the range of the character zero
+
+54
+00:02:15,000 --> 00:02:18,000
+all the way up to the character zero zero ff.
+
+55
+00:02:18,000 --> 00:02:20,000
+And for Boolean, it's all of its values.
+
+56
+00:02:20,000 --> 00:02:22,000
+Because, remember Boolean only has two.
+
+57
+00:02:22,000 --> 00:02:23,000
+True or false.
+
+58
+00:02:23,000 --> 00:02:26,000
+So any time you convert to Boolean value true
+
+59
+00:02:26,000 --> 00:02:28,000
+to the class capital B Boolean,
+
+60
+00:02:28,000 --> 00:02:30,000
+all the trues will point to the same object instance
+
+61
+00:02:30,000 --> 00:59:00,000
+and all the falses will point to the same object instance.
+

@@ -1,0 +1,232 @@
+1
+00:00:01,000 --> 00:00:03,000
+When working with interfaces,
+
+2
+00:00:03,000 --> 00:00:04,000
+you'll notice that some interfaces
+
+3
+00:00:04,000 --> 00:00:06,000
+require additional type information.
+
+4
+00:00:06,000 --> 00:00:09,000
+This uses a concept known as generics.
+
+5
+00:00:09,000 --> 00:00:11,000
+Now if we were to go in and take a look
+
+6
+00:00:11,000 --> 00:00:14,000
+at the declaration for the Comparable interface,
+
+7
+00:00:14,000 --> 00:00:16,000
+you'll notice that after the name Comparable,
+
+8
+00:00:16,000 --> 00:00:17,000
+there's this less-than symbol,
+
+9
+00:00:17,000 --> 00:00:19,000
+T, and then a greater-than symbol.
+
+10
+00:00:19,000 --> 00:00:22,000
+This is saying that Comparable interface implementation
+
+11
+00:00:22,000 --> 00:00:24,000
+can be tied to a type.
+
+12
+00:00:24,000 --> 00:00:26,000
+So if we take a look now
+
+13
+00:00:26,000 --> 00:00:28,000
+at the way it declares the compareTo method,
+
+14
+00:00:28,000 --> 00:00:30,000
+you'll notice it has that same T.
+
+15
+00:00:30,000 --> 00:00:31,000
+So we can specify in our implementation
+
+16
+00:00:31,000 --> 00:00:33,000
+what type we want to expect to receive
+
+17
+00:00:33,000 --> 00:00:35,000
+in that compareTo method.
+
+18
+00:00:35,000 --> 00:00:37,000
+If we take a look at here in our Flight class.
+
+19
+00:00:37,000 --> 00:00:39,000
+Now, right now our Comparable doesn't specify type,
+
+20
+00:00:39,000 --> 00:00:42,000
+which is why our compareTo is accepting an object.
+
+21
+00:00:42,000 --> 00:00:44,000
+But if we instead, after the Comparable,
+
+22
+00:00:44,000 --> 00:00:48,000
+put in the less-than symbol and Flight and greater-than,
+
+23
+00:00:48,000 --> 00:00:50,000
+we're now saying that we want to implement Comparable
+
+24
+00:00:50,000 --> 00:00:52,000
+using the Flight type.
+
+25
+00:00:52,000 --> 00:00:53,000
+So our compareTo method then,
+
+26
+00:00:53,000 --> 00:00:56,000
+rather than having an object as parameter
+
+27
+00:00:56,000 --> 00:00:58,000
+would have a parameter of type Flight.
+
+28
+00:00:58,000 --> 00:01:00,000
+That would allow us to get rid of this cast
+
+29
+00:01:00,000 --> 00:01:02,000
+from object to Flight.
+
+30
+00:01:02,000 --> 00:01:04,000
+It would also give us all the type safety
+
+31
+00:01:04,000 --> 00:01:06,000
+of having typed parameters,
+
+32
+00:01:06,000 --> 00:01:08,000
+so we're not dependent on receiving things
+
+33
+00:01:08,000 --> 00:01:10,000
+as an object and then having to convert them.
+
+34
+00:01:10,000 --> 00:01:12,000
+We know that by the time they reach our code,
+
+35
+00:01:12,000 --> 00:01:16,000
+it's already the appropriate type, in this case, Flight.
+
+36
+00:01:16,000 --> 00:01:19,000
+So, similarly, if we take a look at our Passenger class,
+
+37
+00:01:19,000 --> 00:01:22,000
+rather than our compareTo for Passenger
+
+38
+00:01:22,000 --> 00:01:23,000
+accepting an object, we can specify
+
+39
+00:01:23,000 --> 00:01:27,000
+that our Comparable should be tied to the type Passenger.
+
+40
+00:01:27,000 --> 00:01:29,000
+So then in that case, our compareTo would
+
+41
+00:01:29,000 --> 00:01:32,000
+instead accept a Passenger parameter,
+
+42
+00:01:32,000 --> 00:01:36,000
+and we can get rid of again that cast that we have in place.
+
+43
+00:01:36,000 --> 00:01:37,000
+Now one thing to note is that
+
+44
+00:01:37,000 --> 00:01:39,000
+when you implement the interface,
+
+45
+00:01:39,000 --> 00:01:41,000
+the type that you pass in doesn't have
+
+46
+00:01:41,000 --> 00:01:44,000
+to be the same type as the class that's implementing it.
+
+47
+00:01:44,000 --> 00:01:46,000
+In some cases it makes sense to, in other cases it doesn't.
+
+48
+00:01:46,000 --> 00:01:48,000
+We'll see an example in the next clip of a time
+
+49
+00:01:48,000 --> 00:01:51,000
+where we don't actually have to use that same type.
+
+50
+00:01:51,000 --> 00:01:53,000
+Also, I want to note that generics are not
+
+51
+00:01:53,000 --> 00:01:56,000
+something that's specific to interfaces.
+
+52
+00:01:56,000 --> 00:01:58,000
+Generics are this kind of generalized concept in Java.
+
+53
+00:01:58,000 --> 00:02:01,000
+It's a very, very powerful concept.
+
+54
+00:02:01,000 --> 00:02:03,000
+Once you've had a chance to work
+
+55
+00:02:03,000 --> 00:02:05,000
+with the basics of Java a bit more,
+
+56
+00:02:05,000 --> 00:02:06,000
+I would encourage you to check out
+
+57
+00:02:06,000 --> 00:02:08,000
+the Pluralsight class on Java Generics.
+
+58
+00:02:08,000 --> 00:59:00,000
+I have the URL for that class up on the screen now.
+

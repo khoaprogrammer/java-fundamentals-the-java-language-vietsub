@@ -1,0 +1,268 @@
+1
+00:00:02,000 --> 00:00:04,000
+Here we are, back in our CalcEngine app,
+
+2
+00:00:04,000 --> 00:00:06,000
+and remember, we have our DynamicHelper class
+
+3
+00:00:06,000 --> 00:00:08,000
+that knows how to parse apart a statement,
+
+4
+00:00:08,000 --> 00:00:11,000
+find a handler that knows how to deal with a keyword,
+
+5
+00:00:11,000 --> 00:00:13,000
+ask the handler to do the operation,
+
+6
+00:00:13,000 --> 00:00:16,000
+and then our DynamicHelper can build the output.
+
+7
+00:00:16,000 --> 00:00:18,000
+Now, again, we've done all of this in terms of the interface
+
+8
+00:00:18,000 --> 00:00:20,000
+so we can actually extend the ability
+
+9
+00:00:20,000 --> 00:00:22,000
+of DynamicHelper very easily.
+
+10
+00:00:22,000 --> 00:00:24,000
+So let's imagine that we want
+
+11
+00:00:24,000 --> 00:00:26,000
+to have another statement in here,
+
+12
+00:00:26,000 --> 00:00:27,000
+something we've never done before.
+
+13
+00:00:27,000 --> 00:00:29,000
+Maybe we want to support a statement
+
+14
+00:00:29,000 --> 00:00:31,000
+that can actually raise values to a power.
+
+15
+00:00:31,000 --> 00:00:33,000
+So we'll use the keyword power,
+
+16
+00:00:33,000 --> 00:00:36,000
+I want to say something like 5.0, 2.0,
+
+17
+00:00:36,000 --> 00:00:37,000
+that we're going to square
+
+18
+00:00:37,000 --> 00:00:40,000
+the value of 5.0, 5.0 times itself.
+
+19
+00:00:40,000 --> 00:00:42,000
+So the result of that would
+
+20
+00:00:42,000 --> 00:00:46,000
+be something like 5.0, let's say
+
+21
+00:00:46,000 --> 00:00:49,000
+use the caret for power of, 2.0
+
+22
+00:00:49,000 --> 00:00:52,000
+equals 25.0, so we want to build
+
+23
+00:00:52,000 --> 00:00:54,000
+a handler that can do that work.
+
+24
+00:00:54,000 --> 00:00:56,000
+So what we'll do is we'll add a new class
+
+25
+00:00:56,000 --> 00:01:00,000
+to our project called PowerOf.
+
+26
+00:01:00,000 --> 00:01:02,000
+Create the class, and we're going
+
+27
+00:01:02,000 --> 00:01:05,000
+to have it implement our MathProcessing interface.
+
+28
+00:01:05,000 --> 00:01:08,000
+We'll go ahead and add all the methods,
+
+29
+00:01:08,000 --> 00:01:11,000
+say all three of them.
+
+30
+00:01:11,000 --> 00:01:13,000
+So we want out PowerOf implementation here
+
+31
+00:01:13,000 --> 00:01:17,000
+to do the work necessary to plug into our DynamicHelper.
+
+32
+00:01:17,000 --> 00:01:19,000
+We'll have a getKeyword, we'll have
+
+33
+00:01:19,000 --> 00:01:21,000
+the keyword it understands is power.
+
+34
+00:01:21,000 --> 00:01:24,000
+The symbol that it returns is that caret.
+
+35
+00:01:24,000 --> 00:01:26,000
+And then to do the actual work,
+
+36
+00:01:26,000 --> 00:01:27,000
+we'll use one of the built-in
+
+37
+00:01:27,000 --> 00:01:29,000
+math libraries called pow, p-o-w.
+
+38
+00:01:29,000 --> 00:01:33,000
+And to pow, we'll pass in a leftVal and a rightVal.
+
+39
+00:01:33,000 --> 00:01:36,000
+So we now have a class, PowerOf,
+
+40
+00:01:36,000 --> 00:01:38,000
+that knows how to raise values to a power
+
+41
+00:01:38,000 --> 00:01:40,000
+and conform to our MathProcessing interface.
+
+42
+00:01:40,000 --> 00:01:43,000
+So now to add that into our DynamicHelper,
+
+43
+00:01:43,000 --> 00:01:45,000
+all we have to do is go back to our Main,
+
+44
+00:01:45,000 --> 00:01:47,000
+and here we new up the Adder, we're going
+
+45
+00:01:47,000 --> 00:01:50,000
+to go ahead in that same array we passed in there,
+
+46
+00:01:50,000 --> 00:01:52,000
+we'll now new up PowerOf,
+
+47
+00:01:52,000 --> 00:01:55,000
+and that's all we do, create an instance of the class
+
+48
+00:01:55,000 --> 00:01:56,000
+that implements the interface,
+
+49
+00:01:56,000 --> 00:01:58,000
+and then make DynamicHelper aware of it.
+
+50
+00:01:58,000 --> 00:02:00,000
+Now when we run this,
+
+51
+00:02:00,000 --> 00:02:02,000
+we should see that both the add statement
+
+52
+00:02:02,000 --> 00:02:04,000
+and the power statement get handled.
+
+53
+00:02:04,000 --> 00:02:06,000
+And you see there that we do.
+
+54
+00:02:06,000 --> 00:02:08,000
+The add statement adds the numbers together correctly,
+
+55
+00:02:08,000 --> 00:02:10,000
+the power statement raised 5.0
+
+56
+00:02:10,000 --> 00:02:13,000
+to the power of two, producing 25.
+
+57
+00:02:13,000 --> 00:02:14,000
+And you see, that's where the power
+
+58
+00:02:14,000 --> 00:02:16,000
+of interfaces really shine through.
+
+59
+00:02:16,000 --> 00:02:19,000
+That ability to take a problem,
+
+60
+00:02:19,000 --> 00:02:22,000
+abstractly model it in terms of its individual pieces,
+
+61
+00:02:22,000 --> 00:02:26,000
+model the contract to fulfill those pieces as an interface,
+
+62
+00:02:26,000 --> 00:02:28,000
+and then you can very easily just
+
+63
+00:02:28,000 --> 00:02:30,000
+build implementations of the interface
+
+64
+00:02:30,000 --> 00:02:33,000
+that focus on a very specific set of work.
+
+65
+00:02:33,000 --> 00:02:35,000
+And then you can leverage a lot of that existing work
+
+66
+00:02:35,000 --> 00:02:37,000
+that you've already done to get very powerful results
+
+67
+00:02:37,000 --> 00:59:00,000
+with only a little bit of incremental work each time.
+

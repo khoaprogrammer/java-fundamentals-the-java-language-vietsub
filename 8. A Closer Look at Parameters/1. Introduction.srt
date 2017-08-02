@@ -1,0 +1,48 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to the next module of our Java Fundamentals Course
+
+2
+00:00:04,000 --> 00:00:06,000
+on the Java language.
+
+3
+00:00:06,000 --> 00:00:08,000
+In this module, we take a closer look at parameters.
+
+4
+00:00:08,000 --> 00:00:12,000
+My name is Jim Wilson.
+
+5
+00:00:12,000 --> 00:00:15,000
+In this module, we'll first look at the idea of parameter
+
+6
+00:00:15,000 --> 00:00:17,000
+immutability, the idea that changes made to a parameter
+
+7
+00:00:17,000 --> 00:00:21,000
+in a method are not reflected once we exit the method.
+
+8
+00:00:21,000 --> 00:00:24,000
+But members of a class can be affected inside of a method.
+
+9
+00:00:24,000 --> 00:00:27,000
+Then we'll look at the idea of constructor and method
+
+10
+00:00:27,000 --> 00:00:29,000
+overloading, the idea of having a constructor
+
+11
+00:00:29,000 --> 00:00:30,000
+or method with differing parameters.
+
+12
+00:00:30,000 --> 00:59:00,000
+And then finally the idea of supporting a variable number of parameters.
+

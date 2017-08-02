@@ -1,0 +1,208 @@
+1
+00:00:02,000 --> 00:00:03,000
+Let's walk through installing
+
+2
+00:00:03,000 --> 00:00:05,000
+the IntelliJ Community Edition.
+
+3
+00:00:05,000 --> 00:00:08,000
+The URL on screen there, the bitly URL will take
+
+4
+00:00:08,000 --> 00:00:11,000
+you to whatever the current version of IntelliJ is.
+
+5
+00:00:11,000 --> 00:00:13,000
+Currently it's 14.1.
+
+6
+00:00:13,000 --> 00:00:15,000
+But even as the versions evolve
+
+7
+00:00:15,000 --> 00:00:20,000
+that URL should still remain valid.
+
+8
+00:00:20,000 --> 00:00:22,000
+Here we are in our browser.
+
+9
+00:00:22,000 --> 00:00:24,000
+So let's go ahead and put that URL in
+
+10
+00:00:24,000 --> 00:00:28,000
+and get to the IntelliJ page.
+
+11
+00:00:28,000 --> 00:00:30,000
+We hit Enter.
+
+12
+00:00:30,000 --> 00:00:32,000
+Just scroll down a little bit here
+
+13
+00:00:32,000 --> 00:00:33,000
+so you can see where we're at.
+
+14
+00:00:33,000 --> 00:00:35,000
+You see this one page.
+
+15
+00:00:35,000 --> 00:00:38,000
+And it's got both the Commercial Edition
+
+16
+00:00:38,000 --> 00:00:39,000
+and the Community Edition.
+
+17
+00:00:39,000 --> 00:00:40,000
+Want to make sure we go ahead
+
+18
+00:00:40,000 --> 00:00:42,000
+and download the Community Edition.
+
+19
+00:00:42,000 --> 00:00:45,000
+So we just go ahead and click on the download button here.
+
+20
+00:00:45,000 --> 00:00:48,000
+Once the download's complete
+
+21
+00:00:48,000 --> 00:00:54,000
+we just go ahead and run the installer.
+
+22
+00:00:54,000 --> 00:00:55,000
+So we'll just step through this now so I'll start.
+
+23
+00:00:55,000 --> 00:00:57,000
+I'll click Next.
+
+24
+00:00:57,000 --> 00:00:59,000
+I'm going to go ahead and accept the
+
+25
+00:00:59,000 --> 00:01:02,000
+Default Installation Folder.
+
+26
+00:01:02,000 --> 00:01:04,000
+Now I'm going to go ahead and create a desktop shortcut
+
+27
+00:01:04,000 --> 00:01:05,000
+to make it a little easier to find.
+
+28
+00:01:05,000 --> 00:01:07,000
+And also I've got these associations
+
+29
+00:01:07,000 --> 00:01:09,000
+so I'm going to go ahead and associate with .java.
+
+30
+00:01:09,000 --> 00:01:12,000
+That way if I just double click on any .java File
+
+31
+00:01:12,000 --> 00:01:15,000
+it'll automatically Open it up inside of IntelliJ.
+
+32
+00:01:15,000 --> 00:01:17,000
+Click Next.
+
+33
+00:01:17,000 --> 00:01:20,000
+I'm going to keep all the defaults here on the Groups.
+
+34
+00:01:20,000 --> 00:01:25,000
+And it's off and installing.
+
+35
+00:01:25,000 --> 00:01:27,000
+So my installation's complete.
+
+36
+00:01:27,000 --> 00:01:29,000
+So I'm going to go ahead here and just click this box
+
+37
+00:01:29,000 --> 00:01:31,000
+that says go ahead and run IntelliJ when I exit.
+
+38
+00:01:31,000 --> 00:01:36,000
+So I'll click finish.
+
+39
+00:01:36,000 --> 00:01:37,000
+I'm going to tell it not to worry about
+
+40
+00:01:37,000 --> 00:01:39,000
+importing any previous settings.
+
+41
+00:01:39,000 --> 00:01:43,000
+I'm just going to say OK.
+
+42
+00:01:43,000 --> 00:01:44,000
+Now the first time you run it
+
+43
+00:01:44,000 --> 00:01:46,000
+it wants to ask you how do you want set it up.
+
+44
+00:01:46,000 --> 00:01:48,000
+Do you want to customize its appearance and everything.
+
+45
+00:01:48,000 --> 00:01:49,000
+I'm just going to say just skip all that
+
+46
+00:01:49,000 --> 00:01:56,000
+and just set the defaults.
+
+47
+00:01:56,000 --> 00:01:58,000
+And see now I'm at the starting window.
+
+48
+00:01:58,000 --> 00:02:00,000
+Now we have IntelliJ installed as well.
+
+49
+00:02:00,000 --> 00:02:01,000
+And again in the next module
+
+50
+00:02:01,000 --> 00:02:02,000
+We'll actually start using this
+
+51
+00:02:02,000 --> 00:02:03,000
+and building some Code with it.
+
+52
+00:02:03,000 --> 00:59:00,000
+We now know we have a successful install.
+

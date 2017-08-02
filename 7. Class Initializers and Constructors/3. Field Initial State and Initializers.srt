@@ -1,0 +1,340 @@
+1
+00:00:02,000 --> 00:00:05,000
+You recall that when we talked about variable declarations,
+
+2
+00:00:05,000 --> 00:00:07,000
+we said that variables always have to have
+
+3
+00:00:07,000 --> 00:00:09,000
+an explicit value assigned to them.
+
+4
+00:00:09,000 --> 00:00:11,000
+That's not true for fields.
+
+5
+00:00:11,000 --> 00:00:13,000
+Fields will get a default value automatically
+
+6
+00:00:13,000 --> 00:00:15,000
+as part of the object construction.
+
+7
+00:00:15,000 --> 00:00:18,000
+That default value will always be what I call
+
+8
+00:00:18,000 --> 00:00:21,000
+the field's "zero" value, and what I mean by that,
+
+9
+00:00:21,000 --> 00:00:24,000
+is that it's kind of whatever the empty state
+
+10
+00:00:24,000 --> 00:00:26,000
+of that field is based on its data type.
+
+11
+00:00:26,000 --> 00:00:28,000
+If we take a look here, for example,
+
+12
+00:00:28,000 --> 00:00:32,000
+all of the integer fields, byte, short, int and long,
+
+13
+00:00:32,000 --> 00:00:33,000
+the value is actually zero.
+
+14
+00:00:33,000 --> 00:00:36,000
+Same with the floating point, the value is zero.
+
+15
+00:00:36,000 --> 00:00:40,000
+For the char type, zero value, it's basically gamma zero,
+
+16
+00:00:40,000 --> 00:00:42,000
+it's kind of the null character.
+
+17
+00:00:42,000 --> 00:00:46,000
+For Boolean, it defaults to false and for reference type,
+
+18
+00:00:46,000 --> 00:00:47,000
+they default to null.
+
+19
+00:00:47,000 --> 00:00:49,000
+We have all these default values that they get
+
+20
+00:00:49,000 --> 00:00:51,000
+and these are all reasonable defaults,
+
+21
+00:00:51,000 --> 00:00:54,000
+but as your objects get more sophisticated,
+
+22
+00:00:54,000 --> 00:00:57,000
+those default values may not be the right thing
+
+23
+00:00:57,000 --> 00:00:59,000
+for your object's initial state.
+
+24
+00:00:59,000 --> 00:01:00,000
+The good news is we don't have to accept
+
+25
+00:01:00,000 --> 00:01:03,000
+those default values.
+
+26
+00:01:03,000 --> 00:01:06,000
+Java provides what they call field initializers,
+
+27
+00:01:06,000 --> 00:01:08,000
+and a field initializer allows you to specify
+
+28
+00:01:08,000 --> 00:01:12,000
+the field's initial value as part of its declaration.
+
+29
+00:01:12,000 --> 00:01:16,000
+Imagine we have this class, we call the class Earth,
+
+30
+00:01:16,000 --> 00:01:19,000
+and it has a field called "circumference in miles".
+
+31
+00:01:19,000 --> 00:01:21,000
+We want to go and set that to our initial value,
+
+32
+00:01:21,000 --> 00:01:23,000
+initial value of zero doesn't make sense,
+
+33
+00:01:23,000 --> 00:01:26,000
+we know that Earth actually has a circumference.
+
+34
+00:01:26,000 --> 00:01:28,000
+What we can do is just do a simple assignment
+
+35
+00:01:28,000 --> 00:01:30,000
+to set its initial value.
+
+36
+00:01:30,000 --> 00:01:31,000
+We can just simply say:
+
+37
+00:01:31,000 --> 00:01:34,000
+"Circumference in miles equals 24,901."
+
+38
+00:01:34,000 --> 00:01:38,000
+By creating an instance of the Earth class, that field
+
+39
+00:01:38,000 --> 00:01:41,000
+will have the value 24,901.
+
+40
+00:01:41,000 --> 00:01:42,000
+Now, simple assignments are a good start,
+
+41
+00:01:42,000 --> 00:01:44,000
+but that may not be enough.
+
+42
+00:01:44,000 --> 00:01:47,000
+You can also use an actual equation.
+
+43
+00:01:47,000 --> 00:01:51,000
+If we had circumference in kilometers, we could
+
+44
+00:01:51,000 --> 00:01:54,000
+calculate that out by hand or we can simply say that
+
+45
+00:01:54,000 --> 00:01:58,000
+well, I know that if I take 24,901 and multiply it by
+
+46
+00:01:58,000 --> 00:02:00,000
+one point six, that will give me the circumference
+
+47
+00:02:00,000 --> 00:02:04,000
+in kilometers as we actually have that equation.
+
+48
+00:02:04,000 --> 00:02:06,000
+Remember though that the equation has to be
+
+49
+00:02:06,000 --> 00:02:07,000
+a valid equation.
+
+50
+00:02:07,000 --> 00:02:12,000
+Right now, this wouldn't compile because 24,901 is an
+
+51
+00:02:12,000 --> 00:02:15,000
+intertype, when I multiply it by one point six,
+
+52
+00:02:15,000 --> 00:02:17,000
+which is a double, that result will be a double
+
+53
+00:02:17,000 --> 00:02:20,000
+that it can't assign directly into the long,
+
+54
+00:02:20,000 --> 00:02:22,000
+circumference in kilometers.
+
+55
+00:02:22,000 --> 00:02:24,000
+So we just go and put a cast in place and that now
+
+56
+00:02:24,000 --> 00:02:26,000
+becomes a legal assignment.
+
+57
+00:02:26,000 --> 00:02:28,000
+If we look here, we see that we're duplicating that
+
+58
+00:02:28,000 --> 00:02:33,000
+24,901 in two places, it would be nice to only use it once.
+
+59
+00:02:33,000 --> 00:02:36,000
+Well, we can actually reference other fields in our
+
+60
+00:02:36,000 --> 00:02:40,000
+field initializers, so we can take that 24,901
+
+61
+00:02:40,000 --> 00:02:44,000
+and replace it with the field circumference in miles
+
+62
+00:02:44,000 --> 00:02:46,000
+so that the equation will then use the value
+
+63
+00:02:46,000 --> 00:02:50,000
+of circumference in miles when it does the calculation.
+
+64
+00:02:50,000 --> 00:02:51,000
+Things are getting better and better
+
+65
+00:02:51,000 --> 00:02:53,000
+as we go along here.
+
+66
+00:02:53,000 --> 00:02:57,000
+One thing that's interesting to note, if we calculate out
+
+67
+00:02:57,000 --> 00:03:00,000
+24,901 times one point six, the value that
+
+68
+00:03:00,000 --> 00:03:05,000
+that calculates to is 39,841.6.
+
+69
+00:03:05,000 --> 00:03:08,000
+Now, when we cast that to a long,
+
+70
+00:03:08,000 --> 00:03:09,000
+the cast is just going to truncate it,
+
+71
+00:03:09,000 --> 00:03:12,000
+so the value of circumference in kilometers
+
+72
+00:03:12,000 --> 00:03:15,000
+will end up being 39,841 and less than
+
+73
+00:03:15,000 --> 00:03:17,000
+ideally accurate, the better answer for that would be
+
+74
+00:03:17,000 --> 00:03:20,000
+39,842.
+
+75
+00:03:20,000 --> 00:03:22,000
+The good news is we can make any method calls
+
+76
+00:03:22,000 --> 00:03:25,000
+that we need to in here, so, one of the things we can do,
+
+77
+00:03:25,000 --> 00:03:29,000
+there is a built-in method called "Math dot round".
+
+78
+00:03:29,000 --> 00:03:31,000
+If we call Math dot round, it will take the result
+
+79
+00:03:31,000 --> 00:03:36,000
+of that equation, 39,841.6 and actually round it,
+
+80
+00:03:36,000 --> 00:03:40,000
+so that we then would get 39,842
+
+81
+00:03:40,000 --> 00:03:42,000
+into our circumference in kilometer.
+
+82
+00:03:42,000 --> 00:03:44,000
+You notice that these field initializers are really powerful
+
+83
+00:03:44,000 --> 00:03:46,000
+because you can do as much as you need to,
+
+84
+00:03:46,000 --> 00:03:48,000
+anything from a simple assignment,
+
+85
+00:03:48,000 --> 00:59:00,000
+to equations, all the way up through method calls.
+

@@ -1,0 +1,1080 @@
+1
+00:00:02,000 --> 00:00:04,000
+In this demo, we'll enhance our CalcEngine program
+
+2
+00:00:04,000 --> 00:00:06,000
+to take advantage of the data type capabilities
+
+3
+00:00:06,000 --> 00:00:09,000
+we've talked about throughout this module.
+
+4
+00:00:09,000 --> 00:00:11,000
+What we'll do is add in some string processing capability,
+
+5
+00:00:11,000 --> 00:00:13,000
+so we can take a string like
+
+6
+00:00:13,000 --> 00:00:16,000
+add space 1.0 space 2.0.
+
+7
+00:00:16,000 --> 00:00:19,000
+We'll calculate the answer and then write it back out
+
+8
+00:00:19,000 --> 00:00:21,000
+in a more traditional format,
+
+9
+00:00:21,000 --> 00:00:26,000
+like 1.0 plus 2.0 equals 3.0.
+
+10
+00:00:26,000 --> 00:00:28,000
+Here we are in our CalcEngine program
+
+11
+00:00:28,000 --> 00:00:30,000
+and it's basically just like it was
+
+12
+00:00:30,000 --> 00:00:32,000
+when we left it at the end of the last module
+
+13
+00:00:32,000 --> 00:00:33,000
+with just a few small changes.
+
+14
+00:00:33,000 --> 00:00:35,000
+One thing I've done,
+
+15
+00:00:35,000 --> 00:00:37,000
+is all the code that was in our main method,
+
+16
+00:00:37,000 --> 00:00:39,000
+I've moved into other methods
+
+17
+00:00:39,000 --> 00:00:41,000
+so it's kind of not in our way here
+
+18
+00:00:41,000 --> 00:00:43,000
+as we're writing our new code.
+
+19
+00:00:43,000 --> 00:00:45,000
+I actually have the code in place here to call those methods
+
+20
+00:00:45,000 --> 00:00:46,000
+and I've just commented them out
+
+21
+00:00:46,000 --> 00:00:49,000
+because we're not going focus on those right now.
+
+22
+00:00:49,000 --> 00:00:50,000
+The other thing I've done
+
+23
+00:00:50,000 --> 00:00:52,000
+is I've created a string array here
+
+24
+00:00:52,000 --> 00:00:53,000
+that actually has four strings in it.
+
+25
+00:00:53,000 --> 00:00:57,000
+And these strings all have the operations we want to perform
+
+26
+00:00:57,000 --> 00:00:59,000
+in the syntax we want to use.
+
+27
+00:00:59,000 --> 00:01:01,000
+Like this first one says divide
+
+28
+00:01:01,000 --> 00:01:03,000
+100.0, 50.0
+
+29
+00:01:03,000 --> 00:01:06,000
+and with each one those separated by a space,
+
+30
+00:01:06,000 --> 00:01:07,000
+then what we want the program to do
+
+31
+00:01:07,000 --> 00:01:09,000
+is be able to print out something like
+
+32
+00:01:09,000 --> 00:01:13,000
+100.0 slash 50.0 equals 2.0.
+
+33
+00:01:13,000 --> 00:01:15,000
+And do that for all four math operations.
+
+34
+00:01:15,000 --> 00:01:18,000
+So, to get started, the first thing we want to do
+
+35
+00:01:18,000 --> 00:01:20,000
+and let's go ahead and add in an enumeration
+
+36
+00:01:20,000 --> 00:01:22,000
+that contains values for each of the four operations
+
+37
+00:01:22,000 --> 00:01:24,000
+we want to perform.
+
+38
+00:01:24,000 --> 00:01:26,000
+I'll go ahead and create our enumeration.
+
+39
+00:01:26,000 --> 00:01:30,000
+Just like I create a class.
+
+40
+00:01:30,000 --> 00:01:32,000
+Now, the way most of the IDEs let you do it is that
+
+41
+00:01:32,000 --> 00:01:33,000
+when you want to create something that's not a class,
+
+42
+00:01:33,000 --> 00:01:35,000
+you can just say which one it creates.
+
+43
+00:01:35,000 --> 00:01:37,000
+So, I'm going to go ahead and say Enum.
+
+44
+00:01:37,000 --> 00:01:40,000
+And let's go ahead and call my Enum, MathCommand.
+
+45
+00:01:40,000 --> 00:01:41,000
+I'll create that.
+
+46
+00:01:41,000 --> 00:01:43,000
+And we want to put our four operations in here.
+
+47
+00:01:43,000 --> 00:01:46,000
+So operations are going to be add, subtract,
+
+48
+00:01:46,000 --> 00:01:49,000
+multiply and divide.
+
+49
+00:01:49,000 --> 00:01:50,000
+So, we have our enumeration,
+
+50
+00:01:50,000 --> 00:01:52,000
+with each of the command values separated by a comma
+
+51
+00:01:52,000 --> 00:01:54,000
+and that's all we need to do with that for right now.
+
+52
+00:01:54,000 --> 00:01:56,000
+Let's go ahead and now and let's create a class
+
+53
+00:01:56,000 --> 00:01:59,000
+that we'll use to do the string processing for us.
+
+54
+00:01:59,000 --> 00:02:03,000
+So it will do the work to process a string value
+
+55
+00:02:03,000 --> 00:02:07,000
+and get us those results back as the other string format.
+
+56
+00:02:07,000 --> 00:02:10,000
+So we're going to create a new class again.
+
+57
+00:02:10,000 --> 00:02:11,000
+And we'll go ahead and call this one
+
+58
+00:02:11,000 --> 00:02:14,000
+our CalculateHelper.
+
+59
+00:02:14,000 --> 00:02:16,000
+So, we have that, create it.
+
+60
+00:02:16,000 --> 00:02:18,000
+So inside of here, what we're going to need
+
+61
+00:02:18,000 --> 00:02:20,000
+are four fields.
+
+62
+00:02:20,000 --> 00:02:23,000
+Basically we'll need one field to hold the command.
+
+63
+00:02:23,000 --> 00:02:25,000
+So, we'll declare that as our math command.
+
+64
+00:02:25,000 --> 00:02:28,000
+So in our command field we've typed MathCommand.
+
+65
+00:02:28,000 --> 00:02:31,000
+Now declare one for the left value
+
+66
+00:02:31,000 --> 00:02:33,000
+and then we'll do the same thing for right value,
+
+67
+00:02:33,000 --> 00:02:35,000
+and result.
+
+68
+00:02:35,000 --> 00:02:36,000
+So we have all fields we need now.
+
+69
+00:02:36,000 --> 00:02:38,000
+Let's go down to method,
+
+70
+00:02:38,000 --> 00:02:40,000
+we'll call process that will accept the input string
+
+71
+00:02:40,000 --> 00:02:43,000
+and do the work to process the contents of that string.
+
+72
+00:02:43,000 --> 00:02:46,000
+So, we'll make it a public void method.
+
+73
+00:02:46,000 --> 00:02:48,000
+And its only parameter is the string
+
+74
+00:02:48,000 --> 00:02:51,000
+that'll be the statement that we receive.
+
+75
+00:02:51,000 --> 00:02:52,000
+So we have that there.
+
+76
+00:02:52,000 --> 00:02:54,000
+Now, remember that what we want to do is receive a string
+
+77
+00:02:54,000 --> 00:02:55,000
+that looks something like this, right.
+
+78
+00:02:55,000 --> 00:02:59,000
+Add space 1.0 space 2.0.
+
+79
+00:02:59,000 --> 00:03:02,000
+So we have to go ahead and process each of those parts.
+
+80
+00:03:02,000 --> 00:03:04,000
+Remember that when we were
+
+81
+00:03:04,000 --> 00:03:06,000
+looking at the methods that the string class offers,
+
+82
+00:03:06,000 --> 00:03:07,000
+there was one called split
+
+83
+00:03:07,000 --> 00:03:10,000
+that handles this scenario of breaking a string up
+
+84
+00:03:10,000 --> 00:03:13,000
+into its parse based on some separating character.
+
+85
+00:03:13,000 --> 00:03:14,000
+So, let's go ahead and deal with that.
+
+86
+00:03:14,000 --> 00:03:18,000
+So, we want to create a string array called parts.
+
+87
+00:03:18,000 --> 00:03:20,000
+And all we have to do here is set it equal to
+
+88
+00:03:20,000 --> 00:03:22,000
+statement.split
+
+89
+00:03:22,000 --> 00:03:25,000
+and then we specify the separating character,
+
+90
+00:03:25,000 --> 00:03:27,000
+which is just that space.
+
+91
+00:03:27,000 --> 00:03:30,000
+Split will return the values inside of statement
+
+92
+00:03:30,000 --> 00:03:32,000
+based on the space separator.
+
+93
+00:03:32,000 --> 00:03:33,000
+All right, so the first value inside of there
+
+94
+00:03:33,000 --> 00:03:36,000
+is going to be the command.
+
+95
+00:03:36,000 --> 00:03:37,000
+And command string is going to be set
+
+96
+00:03:37,000 --> 00:03:41,000
+equal to the value of parts subzero.
+
+97
+00:03:41,000 --> 00:03:43,000
+And what we expect to find in there
+
+98
+00:03:43,000 --> 00:03:45,000
+is the value like add.
+
+99
+00:03:45,000 --> 00:03:46,000
+Now, the next thing we want to do
+
+100
+00:03:46,000 --> 00:03:48,000
+is get the left value out of there.
+
+101
+00:03:48,000 --> 00:03:49,000
+So, let's go ahead and put the left value
+
+102
+00:03:49,000 --> 00:03:51,000
+right into our field called left value.
+
+103
+00:03:51,000 --> 00:03:54,000
+And that value is going to be in part sub one.
+
+104
+00:03:54,000 --> 00:03:56,000
+Now, part sub one though is a string
+
+105
+00:03:56,000 --> 00:03:58,000
+so we want to go ahead and convert that string
+
+106
+00:03:58,000 --> 00:03:59,000
+into a double.
+
+107
+00:03:59,000 --> 00:04:02,000
+So, we'll use double.parsedouble
+
+108
+00:04:02,000 --> 00:04:06,000
+to convert that string into the primitive type double.
+
+109
+00:04:06,000 --> 00:04:09,000
+So that'll give us back to 1.0 as a double,
+
+110
+00:04:09,000 --> 00:04:13,000
+we'll then do the same thing for the right value
+
+111
+00:04:13,000 --> 00:04:14,000
+from part sub two.
+
+112
+00:04:14,000 --> 00:04:16,000
+So, with that we'll have
+
+113
+00:04:16,000 --> 00:04:18,000
+the value on the right-hand side.
+
+114
+00:04:18,000 --> 00:04:19,000
+Something like 2.0.
+
+115
+00:04:19,000 --> 00:04:22,000
+All right, so now we have our command as a string
+
+116
+00:04:22,000 --> 00:04:25,000
+and then the left values and the right value.
+
+117
+00:04:25,000 --> 00:04:27,000
+Now, what we want do is convert our command
+
+118
+00:04:27,000 --> 00:04:31,000
+from being a string into our math command enumeration.
+
+119
+00:04:31,000 --> 00:04:33,000
+So, let's go ahead and create another method here.
+
+120
+00:04:33,000 --> 00:04:35,000
+It'll be a private method.
+
+121
+00:04:35,000 --> 00:04:38,000
+And we'll call it set command from string.
+
+122
+00:04:38,000 --> 00:04:41,000
+And it's only parameter will be the command string.
+
+123
+00:04:41,000 --> 00:04:42,000
+So, we have that there.
+
+124
+00:04:42,000 --> 00:04:45,000
+Now, remember that what we want this guy to do
+
+125
+00:04:45,000 --> 00:04:48,000
+is take that string value, like add,
+
+126
+00:04:48,000 --> 00:04:52,000
+and convert that into our MathCommand.Add.
+
+127
+00:04:52,000 --> 00:04:55,000
+So what we'll do now is we'll take our command string
+
+128
+00:04:55,000 --> 00:04:57,000
+and we'll want to do a comparison with that so we'll say,
+
+129
+00:04:57,000 --> 00:04:59,000
+if, let's say command string
+
+130
+00:04:59,000 --> 00:05:03,000
+and I'm going to use EqualsIgnoreCase.
+
+131
+00:05:03,000 --> 00:05:05,000
+So now, the question is what do we compare that to?
+
+132
+00:05:05,000 --> 00:05:07,000
+Because all we have is our enumeration.
+
+133
+00:05:07,000 --> 00:05:10,000
+So, let's take our enumeration value for add.
+
+134
+00:05:10,000 --> 00:05:12,000
+Well, remember that I mentioned that
+
+135
+00:05:12,000 --> 00:05:14,000
+if you want to convert a type to a string,
+
+136
+00:05:14,000 --> 00:05:16,000
+you can call this toString method.
+
+137
+00:05:16,000 --> 00:05:17,000
+That's also true for enumeration.
+
+138
+00:05:17,000 --> 00:05:20,000
+So I want to say, .toString.
+
+139
+00:05:20,000 --> 00:05:21,000
+And what that will do
+
+140
+00:05:21,000 --> 00:05:24,000
+is it will actually take those characters,
+
+141
+00:05:24,000 --> 00:05:27,000
+capital A-D-D and convert them into the string, A-D-D.
+
+142
+00:05:27,000 --> 00:05:30,000
+So we're actually taking our enumeration value
+
+143
+00:05:30,000 --> 00:05:32,000
+and making it a string.
+
+144
+00:05:32,000 --> 00:05:33,000
+So, if we get a match on that,
+
+145
+00:05:33,000 --> 00:05:36,000
+what we can do is we can take our command member variable,
+
+146
+00:05:36,000 --> 00:05:37,000
+which is a type math command
+
+147
+00:05:37,000 --> 00:05:41,000
+and assign it the value of MathCommand.Add.
+
+148
+00:05:41,000 --> 00:05:43,000
+Then we can do that same thing on a else if,
+
+149
+00:05:43,000 --> 00:05:46,000
+but we'll do it for subtract this time.
+
+150
+00:05:46,000 --> 00:05:47,000
+And if that matches,
+
+151
+00:05:47,000 --> 00:05:50,000
+we'll set command to be MathCommand.subtract
+
+152
+00:05:50,000 --> 00:05:52,000
+and then we'll do the same things for
+
+153
+00:05:52,000 --> 00:05:54,000
+multiply and divide.
+
+154
+00:05:54,000 --> 00:05:56,000
+So now we have all four cases handled.
+
+155
+00:05:56,000 --> 00:05:58,000
+I'll just scroll down here so we can see a little better.
+
+156
+00:05:58,000 --> 00:06:00,000
+As we bring in that command string coming in,
+
+157
+00:06:00,000 --> 00:06:03,000
+we can now translate it into the enumeration math command
+
+158
+00:06:03,000 --> 00:06:05,000
+and store that into command.
+
+159
+00:06:05,000 --> 00:06:07,000
+So, if I scroll back up here a little bit,
+
+160
+00:06:07,000 --> 00:06:08,000
+in our process method now,
+
+161
+00:06:08,000 --> 00:06:12,000
+what we'll do is we'll call that set command from string
+
+162
+00:06:12,000 --> 00:06:14,000
+passing in the command string.
+
+163
+00:06:14,000 --> 00:06:17,000
+So, when we return back from set command from string,
+
+164
+00:06:17,000 --> 00:06:19,000
+we will now have our command
+
+165
+00:06:19,000 --> 00:06:21,000
+with the appropriate enumeration value inside of it.
+
+166
+00:06:21,000 --> 00:06:23,000
+So what we want to do inside of here,
+
+167
+00:06:23,000 --> 00:06:26,000
+is take advantage of those calculate base derived classes
+
+168
+00:06:26,000 --> 00:06:28,000
+we created in the previous module
+
+169
+00:06:28,000 --> 00:06:30,000
+to do the actual work.
+
+170
+00:06:30,000 --> 00:06:32,000
+So what I'm going to do is create a local variable.
+
+171
+00:06:32,000 --> 00:06:35,000
+A type CalculateBase called calculator.
+
+172
+00:06:35,000 --> 00:06:36,000
+And with that variable I can reference any of classes
+
+173
+00:06:36,000 --> 00:06:39,000
+that derive from CalculateBase.
+
+174
+00:06:39,000 --> 00:06:40,000
+So, what I'll do is,
+
+175
+00:06:40,000 --> 00:06:43,000
+put a switch statement in on command.
+
+176
+00:06:43,000 --> 00:06:46,000
+And then based on the value of my field command,
+
+177
+00:06:46,000 --> 00:06:49,000
+I will go ahead and create the appropriate instance.
+
+178
+00:06:49,000 --> 00:06:51,000
+So, we'll start start of by creating our switch statement.
+
+179
+00:06:51,000 --> 00:06:54,000
+It's going to be oncommand.
+
+180
+00:06:54,000 --> 00:06:56,000
+So, we have that in there. And what we'll do is do a case
+
+181
+00:06:56,000 --> 00:06:57,000
+on each of the possible values.
+
+182
+00:06:57,000 --> 00:07:01,000
+Want to say case and I'm going to just say Add.
+
+183
+00:07:01,000 --> 00:07:03,000
+Notice here, inside of the switch statement,
+
+184
+00:07:03,000 --> 00:07:05,000
+when we access the value of our enumeration,
+
+185
+00:07:05,000 --> 00:07:07,000
+all we need is the value itself.
+
+186
+00:07:07,000 --> 00:07:09,000
+Normally, when we work with enumeration,
+
+187
+00:07:09,000 --> 00:07:11,000
+we often have to include the enumeration name,
+
+188
+00:07:11,000 --> 00:07:12,000
+but we don't have to do that
+
+189
+00:07:12,000 --> 00:07:14,000
+when we're inside of a switch statement.
+
+190
+00:07:14,000 --> 00:07:16,000
+So we're checking our case Add.
+
+191
+00:07:16,000 --> 00:07:18,000
+If our command was an Add,
+
+192
+00:07:18,000 --> 00:07:19,000
+what we're going to do is take our calculator
+
+193
+00:07:19,000 --> 00:07:23,000
+and assign it a new instance of Adder.
+
+194
+00:07:23,000 --> 00:07:26,000
+Because our Adder knows how to do addition.
+
+195
+00:07:26,000 --> 00:07:27,000
+And what we'll do is we'll create it
+
+196
+00:07:27,000 --> 00:07:29,000
+with our left value and right value.
+
+197
+00:07:29,000 --> 00:07:32,000
+So at this point, calculator references an instance of adder
+
+198
+00:07:32,000 --> 00:07:34,000
+that has the values that have to be operated on.
+
+199
+00:07:34,000 --> 00:07:36,000
+So, let's go ahead and put a break here.
+
+200
+00:07:36,000 --> 00:07:38,000
+We'll then do case subtract.
+
+201
+00:07:38,000 --> 00:07:39,000
+We'll then set our calculator
+
+202
+00:07:39,000 --> 00:07:41,000
+to a new instance of subtractor.
+
+203
+00:07:41,000 --> 00:07:43,000
+Again, we need a break.
+
+204
+00:07:43,000 --> 00:07:44,000
+And then we'll do that same thing again,
+
+205
+00:07:44,000 --> 00:07:48,000
+but for multiply and divide.
+
+206
+00:07:48,000 --> 00:07:50,000
+So now our switch statement will take care
+
+207
+00:07:50,000 --> 00:07:52,000
+of creating either an adder, a subtractor,
+
+208
+00:07:52,000 --> 00:07:54,000
+a multiplier, or a divider,
+
+209
+00:07:54,000 --> 00:07:57,000
+based on whichever command was typed in.
+
+210
+00:07:57,000 --> 00:07:59,000
+So now we know that we can just use our calculator
+
+211
+00:07:59,000 --> 00:08:00,000
+to do the actual word.
+
+212
+00:08:00,000 --> 00:08:02,000
+So, what I'll do is I'll take my calculator
+
+213
+00:08:02,000 --> 00:08:04,000
+and call calculate method,
+
+214
+00:08:04,000 --> 00:08:06,000
+so that'll do the actual operation
+
+215
+00:08:06,000 --> 00:08:09,000
+and then we will get the result from the calculator
+
+216
+00:08:09,000 --> 00:08:11,000
+and store that into our result field.
+
+217
+00:08:11,000 --> 00:08:13,000
+And so with that, our process method is complete.
+
+218
+00:08:13,000 --> 00:08:15,000
+I'll scroll back to the top here.
+
+219
+00:08:15,000 --> 00:08:16,000
+Inside our process method,
+
+220
+00:08:16,000 --> 00:08:18,000
+we receive a complete string.
+
+221
+00:08:18,000 --> 00:08:21,000
+We then break it into individual parts.
+
+222
+00:08:21,000 --> 00:08:23,000
+We translate the string command
+
+223
+00:08:23,000 --> 00:08:26,000
+into our math command enumeration.
+
+224
+00:08:26,000 --> 00:08:28,000
+And then if I scroll down here a little bit,
+
+225
+00:08:28,000 --> 00:08:30,000
+we then look at that command
+
+226
+00:08:30,000 --> 00:08:34,000
+and create the appropriate calculate base derived class
+
+227
+00:08:34,000 --> 00:08:35,000
+to do the work.
+
+228
+00:08:35,000 --> 00:08:37,000
+And then actually perform the work itself.
+
+229
+00:08:37,000 --> 00:08:38,000
+So this guy is all set here.
+
+230
+00:08:38,000 --> 00:08:41,000
+So, let's go back to our main program now.
+
+231
+00:08:41,000 --> 00:08:43,000
+And so, what we can do here is,
+
+232
+00:08:43,000 --> 00:08:45,000
+inside of our main program,
+
+233
+00:08:45,000 --> 00:08:46,000
+we can go ahead and create
+
+234
+00:08:46,000 --> 00:08:48,000
+an instance of our calculate helper.
+
+235
+00:08:48,000 --> 00:08:51,000
+Let's just go ahead and call it helper.
+
+236
+00:08:51,000 --> 00:08:52,000
+So, we have that.
+
+237
+00:08:52,000 --> 00:08:54,000
+So what we can do is just do a for each
+
+238
+00:08:54,000 --> 00:08:56,000
+for each statement in our statements array.
+
+239
+00:08:56,000 --> 00:08:59,000
+And then inside of there, we'll take our helper
+
+240
+00:08:59,000 --> 00:09:01,000
+and we'll say, process
+
+241
+00:09:01,000 --> 00:09:03,000
+and we'll give it a statement.
+
+242
+00:09:03,000 --> 00:09:06,000
+So, that'll then go through, do all the work
+
+243
+00:09:06,000 --> 00:09:08,000
+to take apart the string and perform the operation.
+
+244
+00:09:08,000 --> 00:09:11,000
+So, the question is, how do we get the output out?
+
+245
+00:09:11,000 --> 00:09:13,000
+Now, it'd be really nice if we could just simply write out
+
+246
+00:09:13,000 --> 00:09:14,000
+the helper at this point.
+
+247
+00:09:14,000 --> 00:09:16,000
+In fact, let's go ahead and do that.
+
+248
+00:09:16,000 --> 00:09:18,000
+So we use our system.out.print line
+
+249
+00:09:18,000 --> 00:09:20,000
+and let's go ahead and just put our helper inside of there.
+
+250
+00:09:20,000 --> 00:09:22,000
+All right, so the idea here then is we'll just loop
+
+251
+00:09:22,000 --> 00:09:23,000
+through each of those statements,
+
+252
+00:09:23,000 --> 00:09:25,000
+tell the helper to process them,
+
+253
+00:09:25,000 --> 00:09:27,000
+and just ask the helper to write it out.
+
+254
+00:09:27,000 --> 00:09:29,000
+So let's go ahead and run this and let's see what we get.
+
+255
+00:09:29,000 --> 00:09:31,000
+And if you take a look at our output,
+
+256
+00:09:31,000 --> 00:09:33,000
+it's not really what we were looking for.
+
+257
+00:09:33,000 --> 00:09:35,000
+But, if we notice this, we actually can recognize this
+
+258
+00:09:35,000 --> 00:09:38,000
+from something we talked about earlier in this module.
+
+259
+00:09:38,000 --> 00:09:40,000
+Notice that we're seeing the class name
+
+260
+00:09:40,000 --> 00:09:42,000
+that symbol
+
+261
+00:09:42,000 --> 00:09:44,000
+and then what looks like a hashcode.
+
+262
+00:09:44,000 --> 00:09:46,000
+Well, that tells us that it's actually calling the helper's
+
+263
+00:09:46,000 --> 00:09:48,000
+toString method.
+
+264
+00:09:48,000 --> 00:09:49,000
+Now, we haven't overridden the toString method,
+
+265
+00:09:49,000 --> 00:09:51,000
+because we're seeing the results of toString
+
+266
+00:09:51,000 --> 00:09:53,000
+as it's implemented in the object class,
+
+267
+00:09:53,000 --> 00:09:54,000
+but that does tell us that
+
+268
+00:09:54,000 --> 00:09:56,000
+if we implement toString appropriately,
+
+269
+00:09:56,000 --> 00:09:59,000
+we should be able to control what gets written out here.
+
+270
+00:09:59,000 --> 00:59:00,000
+And that's what we'll talk about in the next clip.
+

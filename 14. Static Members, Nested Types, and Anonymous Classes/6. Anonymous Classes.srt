@@ -1,0 +1,368 @@
+1
+00:00:02,000 --> 00:00:05,000
+Java provides the ability to create anonymous classes.
+
+2
+00:00:05,000 --> 00:00:08,000
+With anonymous classes, rather than use the class keyword
+
+3
+00:00:08,000 --> 00:00:11,000
+to go ahead and give a class a name,
+
+4
+00:00:11,000 --> 00:00:13,000
+to give its declaration then later go off and create it,
+
+5
+00:00:13,000 --> 00:00:17,000
+with anonymous classes, we're able to declare our class
+
+6
+00:00:17,000 --> 00:00:20,000
+as part of the class's creation.
+
+7
+00:00:20,000 --> 00:00:22,000
+And what they're useful for are cases
+
+8
+00:00:22,000 --> 00:00:23,000
+where you want to implement an interface
+
+9
+00:00:23,000 --> 00:00:27,000
+or extend a particular class generally to provide
+
+10
+00:00:27,000 --> 00:00:29,000
+some specific solution, something you're not generally
+
+11
+00:00:29,000 --> 00:00:31,000
+going to use throughout your application, but to solve
+
+12
+00:00:31,000 --> 00:00:33,000
+a particular problem.
+
+13
+00:00:33,000 --> 00:00:36,000
+Now anonymous classes are inner classes.
+
+14
+00:00:36,000 --> 00:00:39,000
+So that means that your anonymous classes
+
+15
+00:00:39,000 --> 00:00:42,000
+have access to the instance members
+
+16
+00:00:42,000 --> 00:00:45,000
+of the enclosing class.
+
+17
+00:00:45,000 --> 00:00:48,000
+We create an anonymous class as if we're constructing
+
+18
+00:00:48,000 --> 00:00:51,000
+an instance of the interface or base class
+
+19
+00:00:51,000 --> 00:00:52,000
+that we want to extend.
+
+20
+00:00:52,000 --> 00:00:54,000
+But what we do then as part of that creation process
+
+21
+00:00:54,000 --> 00:00:58,000
+is we go ahead and follow it with the opening
+
+22
+00:00:58,000 --> 00:01:00,000
+and closing brackets and then provide
+
+23
+00:01:00,000 --> 00:01:02,000
+our class implementation right there
+
+24
+00:01:02,000 --> 00:01:04,000
+where we're creating it.
+
+25
+00:01:04,000 --> 00:01:06,000
+Now to see how this works, let's take a look
+
+26
+00:01:06,000 --> 00:01:08,000
+at our flight class again.
+
+27
+00:01:08,000 --> 00:01:10,000
+And again, we're going to look at our
+
+28
+00:01:10,000 --> 00:01:12,000
+iterable implementation.
+
+29
+00:01:12,000 --> 00:01:16,000
+Now in our last clip, we actually used an inner class
+
+30
+00:01:16,000 --> 00:01:17,000
+to provide the iterator implementation.
+
+31
+00:01:17,000 --> 00:01:19,000
+Alright, so we had the flight iterator class
+
+32
+00:01:19,000 --> 00:01:22,000
+and then inside of our iterator method
+
+33
+00:01:22,000 --> 00:01:24,000
+we actually go ahead and create an instance of that class.
+
+34
+00:01:24,000 --> 00:01:27,000
+Well that flight iterator class is not used anywhere else
+
+35
+00:01:27,000 --> 00:01:31,000
+in our program except within this one method iterator.
+
+36
+00:01:31,000 --> 00:01:33,000
+So this is actually a great chance for us to use
+
+37
+00:01:33,000 --> 00:01:36,000
+an anonymous class to kind of further make our code
+
+38
+00:01:36,000 --> 00:01:37,000
+a little bit more concise.
+
+39
+00:01:37,000 --> 00:01:38,000
+So what I'm going to do is go ahead
+
+40
+00:01:38,000 --> 00:01:40,000
+and take the flight iterator out of my code here.
+
+41
+00:01:40,000 --> 00:01:42,000
+So I'm getting rid of the declaration as well as
+
+42
+00:01:42,000 --> 00:01:44,000
+the creation of it.
+
+43
+00:01:44,000 --> 00:01:46,000
+Then here inside of our iterator method,
+
+44
+00:01:46,000 --> 00:01:48,000
+we're going to go ahead and move that closing bracket down
+
+45
+00:01:48,000 --> 00:01:50,000
+so we have a little bit more room
+
+46
+00:01:50,000 --> 00:01:51,000
+and we're going to start out very similar
+
+47
+00:01:51,000 --> 00:01:53,000
+to what we did before.
+
+48
+00:01:53,000 --> 00:01:55,000
+We're going to go ahead and have our return statement
+
+49
+00:01:55,000 --> 00:01:58,000
+and call them new, cause we're about to create a class.
+
+50
+00:01:58,000 --> 00:02:01,000
+But normally we would follow new with an existing class
+
+51
+00:02:01,000 --> 00:02:02,000
+we've already declared and we want to create.
+
+52
+00:02:02,000 --> 00:02:04,000
+But in this case, we're going to go ahead
+
+53
+00:02:04,000 --> 00:02:06,000
+and put the interface name there.
+
+54
+00:02:06,000 --> 00:02:07,000
+You notice that the interface name
+
+55
+00:02:07,000 --> 00:02:09,000
+has the opening and closing parens there
+
+56
+00:02:09,000 --> 00:02:10,000
+cause we're calling a constructor.
+
+57
+00:02:10,000 --> 00:02:12,000
+Now because we're implementing an interface,
+
+58
+00:02:12,000 --> 00:02:14,000
+we got a constructor we can call
+
+59
+00:02:14,000 --> 00:02:16,000
+as the no argument constructor.
+
+60
+00:02:16,000 --> 00:02:18,000
+But if we were extending a base class
+
+61
+00:02:18,000 --> 00:02:21,000
+we could use any constructor provided by that base class.
+
+62
+00:02:21,000 --> 00:02:23,000
+But here, rather than just end statement
+
+63
+00:02:23,000 --> 00:02:25,000
+we're going to go ahead and put in our opening
+
+64
+00:02:25,000 --> 00:02:26,000
+and closing brackets.
+
+65
+00:02:26,000 --> 00:02:29,000
+And it's inside these brackets or where we're going
+
+66
+00:02:29,000 --> 00:02:31,000
+to go ahead and implement our class.
+
+67
+00:02:31,000 --> 00:02:33,000
+So basically we've done this iterator several times now
+
+68
+00:02:33,000 --> 00:02:37,000
+so we know that we need to have a field for the index
+
+69
+00:02:37,000 --> 00:02:39,000
+to keep track of our location.
+
+70
+00:02:39,000 --> 00:02:41,000
+We'll go ahead and provide our has next method.
+
+71
+00:02:41,000 --> 00:02:43,000
+Now in our has next, we're going to check
+
+72
+00:02:43,000 --> 00:02:44,000
+our index location.
+
+73
+00:02:44,000 --> 00:02:48,000
+We're using the field inside of our anonymous class.
+
+74
+00:02:48,000 --> 00:02:50,000
+And we're going to go ahead and check that against
+
+75
+00:02:50,000 --> 00:02:52,000
+the combined length of the crew and roster.
+
+76
+00:02:52,000 --> 00:02:54,000
+Remember again, that our anonymous class
+
+77
+00:02:54,000 --> 00:02:57,000
+is an inner class, so it has access to
+
+78
+00:02:57,000 --> 00:02:59,000
+the members of the containing class,
+
+79
+00:02:59,000 --> 00:03:01,000
+cause again this instance is associated
+
+80
+00:03:01,000 --> 00:03:05,000
+with the instance of our enclosing class flight.
+
+81
+00:03:05,000 --> 00:03:07,000
+Then we'll go ahead as well and implement our next method,
+
+82
+00:03:07,000 --> 00:03:09,000
+just as we did previously.
+
+83
+00:03:09,000 --> 00:03:10,000
+And that's it.
+
+84
+00:03:10,000 --> 00:03:12,000
+We now have our anonymous class.
+
+85
+00:03:12,000 --> 00:03:14,000
+So we're actually implementing our iterator interface
+
+86
+00:03:14,000 --> 00:03:17,000
+right here as part of the creation.
+
+87
+00:03:17,000 --> 00:03:19,000
+So anonymous classes allow us to avoid the need
+
+88
+00:03:19,000 --> 00:03:22,000
+to go off and declare these bunch of classes
+
+89
+00:03:22,000 --> 00:03:24,000
+and give them names that we're only using in one place.
+
+90
+00:03:24,000 --> 00:03:27,000
+Instead, right here where we need it,
+
+91
+00:03:27,000 --> 00:03:29,000
+we take care of the entire job of declaring the class
+
+92
+00:03:29,000 --> 00:59:00,000
+and creating it.
+

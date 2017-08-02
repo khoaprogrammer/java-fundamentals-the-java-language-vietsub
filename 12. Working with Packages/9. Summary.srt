@@ -1,0 +1,152 @@
+1
+00:00:02,000 --> 00:00:03,000
+To wrap up, remember that basically
+
+2
+00:00:03,000 --> 00:00:06,000
+a package is a group of related types.
+
+3
+00:00:06,000 --> 00:00:08,000
+We put types into a package
+
+4
+00:00:08,000 --> 00:00:10,000
+by just simply putting a package declaration
+
+5
+00:00:10,000 --> 00:00:11,000
+inside of their source file.
+
+6
+00:00:11,000 --> 00:00:13,000
+But remember that that package declaration
+
+7
+00:00:13,000 --> 00:00:16,000
+must occur before any type declarations do
+
+8
+00:00:16,000 --> 00:00:19,000
+and although a package is a group related types
+
+9
+00:00:19,000 --> 00:00:20,000
+that grouping of being a package
+
+10
+00:00:20,000 --> 00:00:22,000
+provides a number of capabilities
+
+11
+00:00:22,000 --> 00:00:24,000
+or a number of features.
+
+12
+00:00:24,000 --> 00:00:26,000
+First of all, packages act as a name space
+
+13
+00:00:26,000 --> 00:00:30,000
+because types are qualified by their package name.
+
+14
+00:00:30,000 --> 00:00:32,000
+That avoids naming collisions because
+
+15
+00:00:32,000 --> 00:00:34,000
+it gives us fully qualified names
+
+16
+00:00:34,000 --> 00:00:35,000
+but typing those fully qualified names
+
+17
+00:00:35,000 --> 00:00:37,000
+all the time is cumbersome.
+
+18
+00:00:37,000 --> 00:00:39,000
+So we use the import statement
+
+19
+00:00:39,000 --> 00:00:41,000
+to match names to qualified names.
+
+20
+00:00:41,000 --> 00:00:43,000
+Packages serve as an access boundary.
+
+21
+00:00:43,000 --> 00:00:45,000
+So we can have types and members
+
+22
+00:00:45,000 --> 00:00:47,000
+that are visible inside of the package
+
+23
+00:00:47,000 --> 00:00:48,000
+but not outside of the package
+
+24
+00:00:48,000 --> 00:00:50,000
+so they can provide support for
+
+25
+00:00:50,000 --> 00:00:52,000
+the capabilities of that package
+
+26
+00:00:52,000 --> 00:00:54,000
+without being directly usable on their own.
+
+27
+00:00:54,000 --> 00:00:57,000
+Packages serve as simplified distribution.
+
+28
+00:00:57,000 --> 00:00:59,000
+Remember that types inside of a package
+
+29
+00:00:59,000 --> 00:01:01,000
+are organized hierarchically which is nice
+
+30
+00:01:01,000 --> 00:01:03,000
+but to go one step further than that,
+
+31
+00:01:03,000 --> 00:01:04,000
+simple organization that we have
+
+32
+00:01:04,000 --> 00:01:07,000
+archive files organize JAR files
+
+33
+00:01:07,000 --> 00:01:09,000
+which allow us to take that package hierarchy
+
+34
+00:01:09,000 --> 00:01:12,000
+and put it into a single file.
+
+35
+00:01:12,000 --> 00:01:13,000
+Remember that archive files can also
+
+36
+00:01:13,000 --> 00:01:15,000
+have a manifest which then provides
+
+37
+00:01:15,000 --> 00:01:17,000
+descriptive information about what's going on
+
+38
+00:01:17,000 --> 00:59:00,000
+inside that archive file.
+

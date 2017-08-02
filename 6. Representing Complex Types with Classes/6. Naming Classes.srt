@@ -1,0 +1,108 @@
+1
+00:00:02,000 --> 00:00:04,000
+This is a great time for us to just take a minute and look
+
+2
+00:00:04,000 --> 00:00:08,000
+at the rules and conventions for creating class names.
+
+3
+00:00:08,000 --> 00:00:12,000
+Now class names have the same rules as variable names
+
+4
+00:00:12,000 --> 00:00:14,000
+in terms of what characters are allowed.
+
+5
+00:00:14,000 --> 00:00:18,000
+And they actually even follow most of the same conventions.
+
+6
+00:00:18,000 --> 00:00:20,000
+They still use only letters and numbers,
+
+7
+00:00:20,000 --> 00:00:22,000
+the first character is always a letter,
+
+8
+00:00:22,000 --> 00:00:25,000
+but one of the key differences in conventions is they
+
+9
+00:00:25,000 --> 00:00:28,000
+follow a naming pattern called Pascal Case which says that
+
+10
+00:00:28,000 --> 00:00:31,000
+the first letter of every word including the first word
+
+11
+00:00:31,000 --> 00:00:35,000
+is upper case with all the rest being lower case.
+
+12
+00:00:35,000 --> 00:00:38,000
+So if we have a class name like BankAccount,
+
+13
+00:00:38,000 --> 00:00:40,000
+both the B in bank and the A in account
+
+14
+00:00:40,000 --> 00:00:42,000
+are both capital.
+
+15
+00:00:42,000 --> 00:00:43,000
+And if that was a variable name,
+
+16
+00:00:43,000 --> 00:00:45,000
+the B would have been lower case.
+
+17
+00:00:45,000 --> 00:00:47,000
+What we want to do is that when we're naming
+
+18
+00:00:47,000 --> 00:00:50,000
+our classes, we want to use descriptive nouns.
+
+19
+00:00:50,000 --> 00:00:53,000
+So we want to say things like a class called Person.
+
+20
+00:00:53,000 --> 00:00:56,000
+Or class TrainingVideo.
+
+21
+00:00:56,000 --> 00:00:59,000
+In general, we want to avoid abbreviations.
+
+22
+00:00:59,000 --> 00:01:01,000
+We want to use full words.
+
+23
+00:01:01,000 --> 00:01:04,000
+Now the caveat to that would be any scenario where
+
+24
+00:01:04,000 --> 00:01:07,000
+the abbreviation tends to be more widely used
+
+25
+00:01:07,000 --> 00:01:08,000
+than the word itself.
+
+26
+00:01:08,000 --> 00:01:11,000
+Like, people rarely say "Uniform Resource Locator".
+
+27
+00:01:11,000 --> 00:59:00,000
+Using "URL" is much more common.
+

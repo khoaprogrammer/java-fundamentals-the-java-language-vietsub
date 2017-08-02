@@ -1,0 +1,552 @@
+1
+00:00:02,000 --> 00:00:05,000
+Let's revisit our CalcEngine demo and now we'll actually
+
+2
+00:00:05,000 --> 00:00:08,000
+add arrays in a loop so that rather than processing one
+
+3
+00:00:08,000 --> 00:00:11,000
+value at a time, you can process multiple values.
+
+4
+00:00:11,000 --> 00:00:13,000
+We'll also use a switch statement to take that complex
+
+5
+00:00:13,000 --> 00:00:17,000
+if else we have in there and make it much cleaner.
+
+6
+00:00:17,000 --> 00:00:20,000
+To update our program to process multiple values at a
+
+7
+00:00:20,000 --> 00:00:22,000
+time, what we'll do is we'll take each of these four
+
+8
+00:00:22,000 --> 00:00:25,000
+declarations at the top and convert them into arrays.
+
+9
+00:00:25,000 --> 00:00:28,000
+So we'll take the first one, so our first one there, val1,
+
+10
+00:00:28,000 --> 00:00:31,000
+let's make that a double array, and instead of calling it
+
+11
+00:00:31,000 --> 00:00:35,000
+val1, we'll call it leftVals, and then we'll initialize it
+
+12
+00:00:35,000 --> 00:00:39,000
+with say four values, so we have that.
+
+13
+00:00:39,000 --> 00:00:41,000
+So now what we'll do is we'll replace val2 with something
+
+14
+00:00:41,000 --> 00:00:44,000
+called rightVals and we'll initialize it with the same
+
+15
+00:00:44,000 --> 00:00:47,000
+number of values, and now we'll have opCode, instead of
+
+16
+00:00:47,000 --> 00:00:52,000
+calling it opCode, we'll call it opCodes, so this will be a char array.
+
+17
+00:00:52,000 --> 00:00:55,000
+So now we have each of those initialized with four values,
+
+18
+00:00:55,000 --> 00:00:57,000
+and of course we want to store those in our result,
+
+19
+00:00:57,000 --> 00:00:59,000
+and we'll do that as an array, so we'll make our result
+
+20
+00:00:59,000 --> 00:01:01,000
+a double array as well.
+
+21
+00:01:01,000 --> 00:01:04,000
+In this case, I'm calling it results, plural, because it can hold multiples.
+
+22
+00:01:04,000 --> 00:01:07,000
+Now I don't want to initialize this one with a value, right?
+
+23
+00:01:07,000 --> 00:01:09,000
+I want to initialize it with space to hold the different
+
+24
+00:01:09,000 --> 00:01:13,000
+results, so what I'll do is use the new and say double,
+
+25
+00:01:13,000 --> 00:01:16,000
+and when I put the size, I can set it as a fixed size of
+
+26
+00:01:16,000 --> 00:01:19,000
+four, but really I want it to kind of be the same size
+
+27
+00:01:19,000 --> 00:01:23,000
+as opCodes is, so what I'll do is I'll use opCodes.length
+
+28
+00:01:23,000 --> 00:01:26,000
+and that now sets me up with the results being the same
+
+29
+00:01:26,000 --> 00:01:30,000
+size as opCodes, and what we have here is these four
+
+30
+00:01:30,000 --> 00:01:33,000
+arrays are what we call parallel arrays and that idea
+
+31
+00:01:33,000 --> 00:01:36,000
+is that when you set up multiple arrays where the first
+
+32
+00:01:36,000 --> 00:01:38,000
+value in each one works together, the second value in each
+
+33
+00:01:38,000 --> 00:01:42,000
+one works together and so forth, right, so we'll have 100
+
+34
+00:01:42,000 --> 00:01:45,000
+from leftVals, we use with 50 from rightVals, we'll use the
+
+35
+00:01:45,000 --> 00:01:49,000
+d from opCodes, then store that in the very first position
+
+36
+00:01:49,000 --> 00:01:51,000
+in our results array.
+
+37
+00:01:51,000 --> 00:01:53,000
+So I'm just going to comment that out, these other ones
+
+38
+00:01:53,000 --> 00:01:55,000
+here, the ones we're not using anymore.
+
+39
+00:01:55,000 --> 00:01:58,000
+Okay, so they're all gone, now what I want to do is loop
+
+40
+00:01:58,000 --> 00:02:00,000
+through these values and use them, right?
+
+41
+00:02:00,000 --> 00:02:03,000
+So because I'm using the same position from each one
+
+42
+00:02:03,000 --> 00:02:05,000
+of these, I'm going to use a for loop where I actually
+
+43
+00:02:05,000 --> 00:02:08,000
+increment an index, and I use that same index for each one
+
+44
+00:02:08,000 --> 00:02:10,000
+of the arrays, so we're going to set up a for.
+
+45
+00:02:10,000 --> 00:02:13,000
+I'll just say int i equals zero.
+
+46
+00:02:13,000 --> 00:02:18,000
+I'll run while i is less than opCodes.length
+
+47
+00:02:18,000 --> 00:02:21,000
+and then I'll want to increment i each time.
+
+48
+00:02:21,000 --> 00:02:23,000
+I want to include the whole if statement under here, so I'm
+
+49
+00:02:23,000 --> 00:02:27,000
+going to go ahead and put brackets around that.
+
+50
+00:02:27,000 --> 00:02:29,000
+Now I need to go through and update each one of these,
+
+51
+00:02:29,000 --> 00:02:35,000
+so instead of saying opCode, I'm going to use opCodes sub i.
+
+52
+00:02:35,000 --> 00:02:39,000
+So we compare that against a, and then of course result
+
+53
+00:02:39,000 --> 00:02:43,000
+will be results sub i, and that's going to equal
+
+54
+00:02:43,000 --> 00:02:49,000
+leftVals sub i plus rightVals sub i.
+
+55
+00:02:49,000 --> 00:02:52,000
+I'm going to do the same thing for the opCode of s.
+
+56
+00:02:52,000 --> 00:02:55,000
+Now when we get to d for the divide, initially that's the
+
+57
+00:02:55,000 --> 00:02:57,000
+same, right?
+
+58
+00:02:57,000 --> 00:03:00,000
+opCode sub i, but now we just want to make sure that we
+
+59
+00:03:00,000 --> 00:03:03,000
+change everything we need to, because we actually check val2
+
+60
+00:03:03,000 --> 00:03:05,000
+as well as use it, so we want to make sure we make val2
+
+61
+00:03:05,000 --> 00:03:09,000
+under rightVals sub i throughout this whole thing, and of
+
+62
+00:03:09,000 --> 00:03:13,000
+val1 is leftVals, and of course our result is results.
+
+63
+00:03:13,000 --> 00:03:17,000
+So now we have our results sub i equals rightVals sub i
+
+64
+00:03:17,000 --> 00:03:20,000
+not equal to zero then it's leftVals sub i divided by
+
+65
+00:03:20,000 --> 00:03:23,000
+rightVals sub i, otherwise it's zero.
+
+66
+00:03:23,000 --> 00:03:25,000
+Then we get down here to our opCode m, it's going to be
+
+67
+00:03:25,000 --> 00:03:29,000
+just like it was with a and s and then the last thing is
+
+68
+00:03:29,000 --> 00:03:33,000
+just to make sure that our else statement uses results sub i.
+
+69
+00:03:33,000 --> 00:03:36,000
+All right, so now we have our for loop here set up to go
+
+70
+00:03:36,000 --> 00:03:38,000
+through each one of the arrays, execute the operation,
+
+71
+00:03:38,000 --> 00:03:42,000
+store the value in results, so now that we've done that,
+
+72
+00:03:42,000 --> 00:03:45,000
+let's go ahead and set up another loop to print out the results.
+
+73
+00:03:45,000 --> 00:03:47,000
+Now in this case, what I want to do is just go through
+
+74
+00:03:47,000 --> 00:03:50,000
+that results array, and I'm using just that one array
+
+75
+00:03:50,000 --> 00:03:52,000
+in this case, so this is a great time to use the for each
+
+76
+00:03:52,000 --> 00:03:57,000
+statement, so I'll just say for double the result colon,
+
+77
+00:03:57,000 --> 00:04:01,000
+and then I'll just say results and I can update this
+
+78
+00:04:01,000 --> 00:04:04,000
+print statement down here to use the result.
+
+79
+00:04:04,000 --> 00:04:07,000
+If I want to get fancy, I can go ahead and make this guy
+
+80
+00:04:07,000 --> 00:04:10,000
+a block statement.
+
+81
+00:04:10,000 --> 00:04:14,000
+And maybe I'll print out something like result equals.
+
+82
+00:04:14,000 --> 00:04:16,000
+All right, so we have that all set, so let's go ahead and
+
+83
+00:04:16,000 --> 00:04:19,000
+run it, make sure it works.
+
+84
+00:04:19,000 --> 00:04:21,000
+And we go through and we get our values out, right?
+
+85
+00:04:21,000 --> 00:04:25,000
+And so we've got our values of 2.0, 117, 208, and 33.
+
+86
+00:04:25,000 --> 00:04:28,000
+If I go up here, 100 divided by 50 is two,
+
+87
+00:04:28,000 --> 00:04:32,000
+25 added to 92 is 117,
+
+88
+00:04:32,000 --> 00:04:37,000
+225 minus 17 is 208 and 11 times 3 is 33.
+
+89
+00:04:37,000 --> 00:04:39,000
+So it works just fine.
+
+90
+00:04:39,000 --> 00:04:41,000
+So now let's go in here and take a look where we have this
+
+91
+00:04:41,000 --> 00:04:44,000
+if statement, we have this big if else here.
+
+92
+00:04:44,000 --> 00:04:47,000
+This is a perfect example of a good time to use the switch statement.
+
+93
+00:04:47,000 --> 00:04:50,000
+If we're checking opCodes sub i each time each time,
+
+94
+00:04:50,000 --> 00:04:53,000
+exactly what switch is meant for.
+
+95
+00:04:53,000 --> 00:04:57,000
+And what I'm going to switch on is opCodes sub i.
+
+96
+00:04:57,000 --> 00:04:59,000
+We're going to put brackets at the end of the switch.
+
+97
+00:04:59,000 --> 00:05:03,000
+I'm going to put it down here at the end of this else.
+
+98
+00:05:03,000 --> 00:05:05,000
+We got a lot of errors showing up here, but we'll go ahead
+
+99
+00:05:05,000 --> 00:05:06,000
+and clean that up.
+
+100
+00:05:06,000 --> 00:05:08,000
+So what I want to do here now is that in each one of these
+
+101
+00:05:08,000 --> 00:05:10,000
+ifs, that becomes a case statement, right?
+
+102
+00:05:10,000 --> 00:05:13,000
+So here for a, I'm just going to make this case.
+
+103
+00:05:13,000 --> 00:05:15,000
+Jump to the end and take that last parenthesis,
+
+104
+00:05:15,000 --> 00:05:17,000
+make that a colon.
+
+105
+00:05:17,000 --> 00:05:20,000
+Do the same thing for s,
+
+106
+00:05:20,000 --> 00:05:23,000
+as well as d and m.
+
+107
+00:05:23,000 --> 00:05:25,000
+And then where we have our else here, we're going to go
+
+108
+00:05:25,000 --> 00:05:28,000
+ahead and make that the default.
+
+109
+00:05:28,000 --> 00:05:30,000
+And we end up with an extra bracket here because that's
+
+110
+00:05:30,000 --> 00:05:36,000
+left over from the old else block that was here, so we'll take that off.
+
+111
+00:05:36,000 --> 00:05:39,000
+So now we have this set up to use a switch statement,
+
+112
+00:05:39,000 --> 00:05:42,000
+so we come through and check opCodes sub i,
+
+113
+00:05:42,000 --> 00:05:44,000
+and we say, case, well if it's a, do the add,
+
+114
+00:05:44,000 --> 00:05:48,000
+case s, do subtract, d is divide, of course m is multiply.
+
+115
+00:05:48,000 --> 00:05:50,000
+If they don't match up, we print out our error message
+
+116
+00:05:50,000 --> 00:05:52,000
+and set result to zero.
+
+117
+00:05:52,000 --> 00:05:54,000
+Let's go ahead and run this.
+
+118
+00:05:54,000 --> 00:05:57,000
+Notice what happens, we see that error message invalid
+
+119
+00:05:57,000 --> 00:06:01,000
+opCode print out each time and result is set to zero each time.
+
+120
+00:06:01,000 --> 00:06:04,000
+That's because we're falling through our case statements.
+
+121
+00:06:04,000 --> 00:06:07,000
+Remember that once there's a match, it then runs all the
+
+122
+00:06:07,000 --> 00:06:10,000
+statements after it, so in the case of when a matched, it
+
+123
+00:06:10,000 --> 00:06:13,000
+ran the proper instruction of adding them but then it
+
+124
+00:06:13,000 --> 00:06:15,000
+dropped down to the s and ran the subtraction, dropped
+
+125
+00:06:15,000 --> 00:06:17,000
+down to the d, ran the divide, dropped down to the m, ran
+
+126
+00:06:17,000 --> 00:06:20,000
+the multiply and then dropped down to the default, print
+
+127
+00:06:20,000 --> 00:06:22,000
+the error message, so what you do here is you go to each
+
+128
+00:06:22,000 --> 00:06:30,000
+one of these, and add a break statement.
+
+129
+00:06:30,000 --> 00:06:33,000
+So we now have our break statement for all the cases, and
+
+130
+00:06:33,000 --> 00:06:35,000
+scroll down, let's go ahead from just a good style stand
+
+131
+00:06:35,000 --> 00:06:38,000
+point and add a break to the default as well.
+
+132
+00:06:38,000 --> 00:06:41,000
+So now when we go ahead and run this, we get
+
+133
+00:06:41,000 --> 00:06:43,000
+the right answers again, because the break made sure we
+
+134
+00:06:43,000 --> 00:06:48,000
+only ran the code we wanted to run and then broke out of the switch statement.
+
+135
+00:06:48,000 --> 00:06:50,000
+And so now we have our application enhanced quite a bit
+
+136
+00:06:50,000 --> 00:06:52,000
+here: we can process multiple values, it's much more
+
+137
+00:06:52,000 --> 00:06:55,000
+readable with the case statement, so we're definitely moving
+
+138
+00:06:55,000 --> 00:59:00,000
+forward and making this a much richer application.
+

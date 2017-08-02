@@ -1,0 +1,888 @@
+1
+00:00:02,000 --> 00:00:06,000
+In Java, an interface is a type that defines a contract.
+
+2
+00:00:06,000 --> 00:00:08,000
+The key difference between an interface
+
+3
+00:00:08,000 --> 00:00:11,000
+and a class is that interfaces do not
+
+4
+00:00:11,000 --> 00:00:13,000
+provide any implementation,
+
+5
+00:00:13,000 --> 00:00:16,000
+they simply provide the contract.
+
+6
+00:00:16,000 --> 00:00:18,000
+Classes that implement an interface,
+
+7
+00:00:18,000 --> 00:00:22,000
+indicating that a class conforms to the contract.
+
+8
+00:00:22,000 --> 00:00:23,000
+The key thing is that
+
+9
+00:00:23,000 --> 00:00:24,000
+by implementing an interface,
+
+10
+00:00:24,000 --> 00:00:27,000
+it doesn't limit other aspects of the class.
+
+11
+00:00:27,000 --> 00:00:29,000
+The class can do whatever it needs to,
+
+12
+00:00:29,000 --> 00:00:31,000
+in a general sense, as long as
+
+13
+00:00:31,000 --> 00:00:33,000
+when it's implementing features of the interface,
+
+14
+00:00:33,000 --> 00:00:36,000
+it conforms to the contract defined by the interface.
+
+15
+00:00:36,000 --> 00:00:39,000
+The easiest way to see this is with an example.
+
+16
+00:00:39,000 --> 00:00:40,000
+So let's take one of the built-in
+
+17
+00:00:40,000 --> 00:00:42,000
+interfaces called Comparable.
+
+18
+00:00:42,000 --> 00:00:44,000
+The Comparable interface is used
+
+19
+00:00:44,000 --> 00:00:47,000
+for determining relative order, how does
+
+20
+00:00:47,000 --> 00:00:50,000
+one instance of a class compare to another instance?
+
+21
+00:00:50,000 --> 00:00:53,000
+And so it has one method called compareTo,
+
+22
+00:00:53,000 --> 00:00:56,000
+and basically, inside that compareTo,
+
+23
+00:00:56,000 --> 00:00:58,000
+it's passed in another instance.
+
+24
+00:00:58,000 --> 00:01:00,000
+And the return value of compareTo
+
+25
+00:01:00,000 --> 00:01:02,000
+indicates how the current instance
+
+26
+00:01:02,000 --> 00:01:05,000
+compares to, in sequence,
+
+27
+00:01:05,000 --> 00:01:07,000
+to the other instance that was passed in.
+
+28
+00:01:07,000 --> 00:01:10,000
+So if compareTo returns a negative value,
+
+29
+00:01:10,000 --> 00:01:12,000
+it says, well, the current instance should come
+
+30
+00:01:12,000 --> 00:01:14,000
+before the one that was passed into it.
+
+31
+00:01:14,000 --> 00:01:16,000
+If we return a positive value,
+
+32
+00:01:16,000 --> 00:01:18,000
+it says the current instance should come
+
+33
+00:01:18,000 --> 00:01:19,000
+after the one that was passed to it.
+
+34
+00:01:19,000 --> 00:01:22,000
+If they're actually equal, it returns zero.
+
+35
+00:01:22,000 --> 00:01:24,000
+Let's look at our Passenger class.
+
+36
+00:01:24,000 --> 00:01:26,000
+Now, our Passenger class has been used
+
+37
+00:01:26,000 --> 00:01:28,000
+for a lot of things throughout this course.
+
+38
+00:01:28,000 --> 00:01:29,000
+Let's say we want to add the concept
+
+39
+00:01:29,000 --> 00:01:31,000
+of, like, a frequent flyer program
+
+40
+00:01:31,000 --> 00:01:33,000
+so that we can give people premiums.
+
+41
+00:01:33,000 --> 00:01:36,000
+So we'll have a concept of a member level.
+
+42
+00:01:36,000 --> 00:01:39,000
+So the highest level is level three,
+
+43
+00:01:39,000 --> 00:01:40,000
+the lowest level is level one.
+
+44
+00:01:40,000 --> 00:01:41,000
+You might think of this as, like,
+
+45
+00:01:41,000 --> 00:01:43,000
+level one might be like a silver member,
+
+46
+00:01:43,000 --> 00:01:44,000
+two might be a gold member,
+
+47
+00:01:44,000 --> 00:01:46,000
+and three might be like a platinum member.
+
+48
+00:01:46,000 --> 00:01:48,000
+So any premiums we hand out
+
+49
+00:01:48,000 --> 00:01:49,000
+we want to give to the level three folks
+
+50
+00:01:49,000 --> 00:01:51,000
+before we give them to the level two,
+
+51
+00:01:51,000 --> 00:01:52,000
+before the level one.
+
+52
+00:01:52,000 --> 00:01:54,000
+We also want to keep track of how long
+
+53
+00:01:54,000 --> 00:01:55,000
+someone has been a member.
+
+54
+00:01:55,000 --> 00:01:57,000
+So what we'd like to be able to do
+
+55
+00:01:57,000 --> 00:01:59,000
+is compare two Passenger instances
+
+56
+00:01:59,000 --> 00:02:01,000
+based on this idea of a frequent flyer program
+
+57
+00:02:01,000 --> 00:02:03,000
+and have the people who have
+
+58
+00:02:03,000 --> 00:02:05,000
+the highest priority come first,
+
+59
+00:02:05,000 --> 00:02:07,000
+people who are lower come later.
+
+60
+00:02:07,000 --> 00:02:08,000
+So what we'll do is we'll go ahead
+
+61
+00:02:08,000 --> 00:02:10,000
+and add the implements keyword
+
+62
+00:02:10,000 --> 00:02:12,000
+and then the Comparable interface.
+
+63
+00:02:12,000 --> 00:02:14,000
+We're going to say that our Passenger class
+
+64
+00:02:14,000 --> 00:02:16,000
+implements the Comparable interface,
+
+65
+00:02:16,000 --> 00:02:19,000
+or conforms to the Comparable contract.
+
+66
+00:02:19,000 --> 00:02:21,000
+So we'll have that one method, compareTo.
+
+67
+00:02:21,000 --> 00:02:25,000
+It accepts a reference to another instance.
+
+68
+00:02:25,000 --> 00:02:27,000
+Array as defined to accept an object.
+
+69
+00:02:27,000 --> 00:02:29,000
+So one of the first things we'll want to do
+
+70
+00:02:29,000 --> 00:02:30,000
+is go ahead and cast that object
+
+71
+00:02:30,000 --> 00:02:32,000
+into an instance of Passenger,
+
+72
+00:02:32,000 --> 00:02:33,000
+and then we want to kind of
+
+73
+00:02:33,000 --> 00:02:35,000
+go through the test we have to do
+
+74
+00:02:35,000 --> 00:02:37,000
+to determine who should come first
+
+75
+00:02:37,000 --> 00:02:38,000
+and who should come after.
+
+76
+00:02:38,000 --> 00:02:41,000
+So first I can see, well, if our member level
+
+77
+00:02:41,000 --> 00:02:43,000
+is higher than the one that's passed in,
+
+78
+00:02:43,000 --> 00:02:45,000
+we return a minus one, saying that
+
+79
+00:02:45,000 --> 00:02:48,000
+we should come before that one.
+
+80
+00:02:48,000 --> 00:02:49,000
+So if we are a level three,
+
+81
+00:02:49,000 --> 00:02:51,000
+and the one passed in is a level two,
+
+82
+00:02:51,000 --> 00:02:53,000
+we should come first, we'll return minus one.
+
+83
+00:02:53,000 --> 00:02:55,000
+On the other hand, if we're something
+
+84
+00:02:55,000 --> 00:02:58,000
+like a level one, and they're a level two,
+
+85
+00:02:58,000 --> 00:03:00,000
+we'll return a positive one, say that
+
+86
+00:03:00,000 --> 00:03:02,000
+we should come after them.
+
+87
+00:03:02,000 --> 00:03:03,000
+But now what if it's a tie?
+
+88
+00:03:03,000 --> 00:03:05,000
+Well, you figure that if an airplane
+
+89
+00:03:05,000 --> 00:03:06,000
+might have 200 passengers,
+
+90
+00:03:06,000 --> 00:03:08,000
+there's only three levels of membership,
+
+91
+00:03:08,000 --> 00:03:11,000
+there's a high probability that there are ties.
+
+92
+00:03:11,000 --> 00:03:13,000
+So what we'll do is that, in the case of a tie,
+
+93
+00:03:13,000 --> 00:03:15,000
+we'll check how long they've been a member.
+
+94
+00:03:15,000 --> 00:03:17,000
+So put an else block here,
+
+95
+00:03:17,000 --> 00:03:19,000
+and then we'll say that if our number of days
+
+96
+00:03:19,000 --> 00:03:22,000
+are greater than the one passed in,
+
+97
+00:03:22,000 --> 00:03:23,000
+again, we'll return minus one,
+
+98
+00:03:23,000 --> 00:03:25,000
+saying that we come before they do.
+
+99
+00:03:25,000 --> 00:03:27,000
+Then we'll say, well, if we're less than them,
+
+100
+00:03:27,000 --> 00:03:29,000
+return a positive value, we come after.
+
+101
+00:03:29,000 --> 00:03:31,000
+And then if they're the same level member
+
+102
+00:03:31,000 --> 00:03:33,000
+and theyve been in for the same number of days,
+
+103
+00:03:33,000 --> 00:03:36,000
+that's actually a tie, we'll return zero.
+
+104
+00:03:36,000 --> 00:03:38,000
+So now the value of implementing this interface
+
+105
+00:03:38,000 --> 00:03:40,000
+is that we can take advantage of features
+
+106
+00:03:40,000 --> 00:03:43,000
+that know how to work with the comparable contract.
+
+107
+00:03:43,000 --> 00:03:44,000
+So let's put together some code here.
+
+108
+00:03:44,000 --> 00:03:46,000
+So we'll declare an instance of Passenger,
+
+109
+00:03:46,000 --> 00:03:47,000
+we'll name Passenger bob.
+
+110
+00:03:47,000 --> 00:03:50,000
+We'll say that he is a level one member,
+
+111
+00:03:50,000 --> 00:03:51,000
+and he's been in for 180 days,
+
+112
+00:03:51,000 --> 00:03:53,000
+so he's like a silver member,
+
+113
+00:03:53,000 --> 00:03:54,000
+and he's been around for six months.
+
+114
+00:03:54,000 --> 00:03:56,000
+We'll have another member, Jane.
+
+115
+00:03:56,000 --> 00:03:58,000
+Jane is also a level one member,
+
+116
+00:03:58,000 --> 00:04:00,000
+she's been in for 90 days.
+
+117
+00:04:00,000 --> 00:04:02,000
+Then we'll have Steve, who's a level two member,
+
+118
+00:04:02,000 --> 00:04:03,000
+like a gold member, and he's been
+
+119
+00:04:03,000 --> 00:04:05,000
+in for 180 days, or about six months.
+
+120
+00:04:05,000 --> 00:04:07,000
+And then finally we'll have Lisa,
+
+121
+00:04:07,000 --> 00:04:08,000
+who's a level three member,
+
+122
+00:04:08,000 --> 00:04:10,000
+so maybe like a platinum member,
+
+123
+00:04:10,000 --> 00:04:12,000
+she's been in for 730 days or about two years.
+
+124
+00:04:12,000 --> 00:04:15,000
+What we'll do then is declare a Passenger array,
+
+125
+00:04:15,000 --> 00:04:17,000
+and then load that array up
+
+126
+00:04:17,000 --> 00:04:19,000
+with Bob, Jane, Steve, and Lisa.
+
+127
+00:04:19,000 --> 00:04:21,000
+We can then use a built-in method
+
+128
+00:04:21,000 --> 00:04:23,000
+called Arrays.sort
+
+129
+00:04:23,000 --> 00:04:25,000
+and pass in passengers.
+
+130
+00:04:25,000 --> 00:04:27,000
+Because we conform
+
+131
+00:04:27,000 --> 00:04:28,000
+to the comparable contract,
+
+132
+00:04:28,000 --> 00:04:30,000
+that sort method can now go through
+
+133
+00:04:30,000 --> 00:04:32,000
+and do an efficient sort
+
+134
+00:04:32,000 --> 00:04:34,000
+and order these based on the rules
+
+135
+00:04:34,000 --> 00:04:35,000
+of our Comparable implementation.
+
+136
+00:04:35,000 --> 00:04:37,000
+So after we return from sort,
+
+137
+00:04:37,000 --> 00:04:39,000
+the first member of passengers
+
+138
+00:04:39,000 --> 00:04:40,000
+is going to be Lisa,
+
+139
+00:04:40,000 --> 00:04:41,000
+the one with the highest status,
+
+140
+00:04:41,000 --> 00:04:43,000
+the level three status, like our platinum status.
+
+141
+00:04:43,000 --> 00:04:47,000
+Then it would be Steve, who has the next highest level,
+
+142
+00:04:47,000 --> 00:04:49,000
+then we have Bob,
+
+143
+00:04:49,000 --> 00:04:51,000
+because even though Bob and Jane
+
+144
+00:04:51,000 --> 00:04:52,000
+tie on the level, Bob's been
+
+145
+00:04:52,000 --> 00:04:55,000
+a member longer, at 180 days
+
+146
+00:04:55,000 --> 00:04:57,000
+and then finally Jane.
+
+147
+00:04:57,000 --> 00:05:00,000
+So now, simply by implementing that comparable interface,
+
+148
+00:05:00,000 --> 00:05:02,000
+and conforming to that contract,
+
+149
+00:05:02,000 --> 00:05:03,000
+we're able to take advantage
+
+150
+00:05:03,000 --> 00:05:05,000
+of the efficient sort capabilities
+
+151
+00:05:05,000 --> 00:05:06,000
+provided by Java.
+
+152
+00:05:06,000 --> 00:05:08,000
+Let's look at another example.
+
+153
+00:05:08,000 --> 00:05:10,000
+So we have this Flight class
+
+154
+00:05:10,000 --> 00:05:12,000
+we've been working with throughout the course,
+
+155
+00:05:12,000 --> 00:05:13,000
+and let's say we're going to have our flights
+
+156
+00:05:13,000 --> 00:05:15,000
+start tracking the time that they fly.
+
+157
+00:05:15,000 --> 00:05:16,000
+And for simplicity, we'll just track
+
+158
+00:05:16,000 --> 00:05:19,000
+that time as minutes past midnight.
+
+159
+00:05:19,000 --> 00:05:20,000
+All right, so a flight takes off
+
+160
+00:05:20,000 --> 00:05:23,000
+at 12:15, then it would have a flightTime of 15.
+
+161
+00:05:23,000 --> 00:05:25,000
+A flight takes off at 1:30 am,
+
+162
+00:05:25,000 --> 00:05:27,000
+it would have a flightTime of 90,
+
+163
+00:05:27,000 --> 00:05:29,000
+right, 90 minutes past midnight.
+
+164
+00:05:29,000 --> 00:05:30,000
+And we want to be able to sort these flights
+
+165
+00:05:30,000 --> 00:05:32,000
+based on the time they take off.
+
+166
+00:05:32,000 --> 00:05:34,000
+So what we'll do is we'll implement
+
+167
+00:05:34,000 --> 00:05:36,000
+that Comparable interface
+
+168
+00:05:36,000 --> 00:05:38,000
+and we'll come in our compareTo.
+
+169
+00:05:38,000 --> 00:05:40,000
+Now, in this case, we're going to order them by time.
+
+170
+00:05:40,000 --> 00:05:42,000
+So we'll first, of course, want
+
+171
+00:05:42,000 --> 00:05:45,000
+to cast that object that's passed in to a flight.
+
+172
+00:05:45,000 --> 00:05:47,000
+Then we can say, well, if our flightTime
+
+173
+00:05:47,000 --> 00:05:49,000
+becomes before the passed in flightTime,
+
+174
+00:05:49,000 --> 00:05:52,000
+return minus one, say that we should be sorted first.
+
+175
+00:05:52,000 --> 00:05:54,000
+If ours comes after, we return one,
+
+176
+00:05:54,000 --> 00:05:56,000
+saying that we should be sorted after.
+
+177
+00:05:56,000 --> 00:05:58,000
+And of course if there's a tie, then return zero.
+
+178
+00:05:58,000 --> 00:06:00,000
+But it's interesting, if we look at this,
+
+179
+00:06:00,000 --> 00:06:03,000
+if we look at the definition of the comparable interface,
+
+180
+00:06:03,000 --> 00:06:07,000
+it says a compareTo uses the sign to determine order.
+
+181
+00:06:07,000 --> 00:06:09,000
+It doesn't say it has to be minus one or positive one,
+
+182
+00:06:09,000 --> 00:06:11,000
+it simply says that negative says it should come first,
+
+183
+00:06:11,000 --> 00:06:12,000
+positive says it should come after.
+
+184
+00:06:12,000 --> 00:06:13,000
+Well, if we think about this,
+
+185
+00:06:13,000 --> 00:06:17,000
+if I have a flightTime of, say, 15, or 12:15,
+
+186
+00:06:17,000 --> 00:06:20,000
+and I compare that to another flightTime of 45,
+
+187
+00:06:20,000 --> 00:06:23,000
+well, if I subtract 45 from 15, I'll get minus 30.
+
+188
+00:06:23,000 --> 00:06:25,000
+All right, so that would still be negative,
+
+189
+00:06:25,000 --> 00:06:26,000
+saying, I should come before.
+
+190
+00:06:26,000 --> 00:06:28,000
+All right, so I can actually simply take
+
+191
+00:06:28,000 --> 00:06:30,000
+all this code we have here with these comparisons
+
+192
+00:06:30,000 --> 00:06:33,000
+and boil it down to some simple arithmetic.
+
+193
+00:06:33,000 --> 00:06:35,000
+If I simply subtract the passed
+
+194
+00:06:35,000 --> 00:06:37,000
+in flightTime from my time,
+
+195
+00:06:37,000 --> 00:06:39,000
+if I'm before, the value will be negative,
+
+196
+00:06:39,000 --> 00:06:40,000
+so I'll be sorted before.
+
+197
+00:06:40,000 --> 00:06:42,000
+If I am after, the value will be positive,
+
+198
+00:06:42,000 --> 00:06:43,000
+I'll be sorted after.
+
+199
+00:06:43,000 --> 00:06:46,000
+So that's a very simple implementation of compareTo.
+
+200
+00:06:46,000 --> 00:06:48,000
+So, again, I can do that sorting idea.
+
+201
+00:06:48,000 --> 00:06:51,000
+So I have a flight, say, lax045.
+
+202
+00:06:51,000 --> 00:06:53,000
+It takes off 45 minutes past midnight.
+
+203
+00:06:53,000 --> 00:06:55,000
+I have another flight, slc015,
+
+204
+00:06:55,000 --> 00:06:57,000
+that takes off 15 minutes past midnight.
+
+205
+00:06:57,000 --> 00:06:59,000
+And finally New York's 30-30,
+
+206
+00:06:59,000 --> 00:07:02,000
+that takes off 30 minutes past midnight.
+
+207
+00:07:02,000 --> 00:07:04,000
+I take the array, put those guys inside there,
+
+208
+00:07:04,000 --> 00:07:08,000
+and sort it, I'll now get again that sorting ability.
+
+209
+00:07:08,000 --> 00:07:10,000
+All right, the 12:15 one will come first.
+
+210
+00:07:10,000 --> 00:07:12,000
+12:30 will come second,
+
+211
+00:07:12,000 --> 00:07:14,000
+and 12:45 will come after.
+
+212
+00:07:14,000 --> 00:07:15,000
+And see, the key thing there is that
+
+213
+00:07:15,000 --> 00:07:17,000
+Flight has a really, really simple
+
+214
+00:07:17,000 --> 00:07:20,000
+implementation of Comparable,
+
+215
+00:07:20,000 --> 00:07:22,000
+Passenger had a much more involved implementation,
+
+216
+00:07:22,000 --> 00:07:24,000
+but simply by conforming to that contract,
+
+217
+00:07:24,000 --> 00:07:26,000
+we are now able to take advantage
+
+218
+00:07:26,000 --> 00:07:28,000
+of the very same features
+
+219
+00:07:28,000 --> 00:07:29,000
+and get the very similar results
+
+220
+00:07:29,000 --> 00:07:31,000
+while still having the ability to define
+
+221
+00:07:31,000 --> 00:07:33,000
+the right way to conform to that contract
+
+222
+00:07:33,000 --> 00:59:00,000
+within the features of our type.
+

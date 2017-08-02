@@ -1,0 +1,52 @@
+1
+00:00:02,000 --> 00:00:04,000
+Welcome to the next module in our Java Fundamentals course
+
+2
+00:00:04,000 --> 00:00:06,000
+on the Java language.
+
+3
+00:00:06,000 --> 00:00:07,000
+In this module, we're going to take a look at
+
+4
+00:00:07,000 --> 00:00:10,000
+conditional logic, looping, and arrays.
+
+5
+00:00:10,000 --> 00:00:13,000
+My name is Jim Wilson.
+
+6
+00:00:13,000 --> 00:00:15,000
+We've got a jam packed module here.
+
+7
+00:00:15,000 --> 00:00:17,000
+We're going to talk about a lot of great stuff.
+
+8
+00:00:17,000 --> 00:00:19,000
+We're going to start out looking at the various aspects of
+
+9
+00:00:19,000 --> 00:00:21,000
+conditional logic in Java.
+
+10
+00:00:21,000 --> 00:00:24,000
+Then we're going to look at the basic looping capabilities.
+
+11
+00:00:24,000 --> 00:00:26,000
+We'll take a look at arrays,
+
+12
+00:00:26,000 --> 00:00:29,000
+something called the for-each loop,
+
+13
+00:00:29,000 --> 00:59:00,000
+and then we'll finish up with the switch statement.
+

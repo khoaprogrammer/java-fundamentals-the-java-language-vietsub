@@ -1,0 +1,416 @@
+1
+00:00:01,000 --> 00:00:04,000
+Earlier in the course, we talked about the char type,
+
+2
+00:00:04,000 --> 00:00:07,000
+which allowed us to work with individual characters.
+
+3
+00:00:07,000 --> 00:00:10,000
+In practice, we tend to work with sequences of characters
+
+4
+00:00:10,000 --> 00:00:12,000
+more than individual characters.
+
+5
+00:00:12,000 --> 00:00:14,000
+And that's where the string class comes in.
+
+6
+00:00:14,000 --> 00:00:16,000
+It stores a sequence of Unicode characters.
+
+7
+00:00:16,000 --> 00:00:19,000
+It stores them using the UTF-16 encoding,
+
+8
+00:00:19,000 --> 00:00:21,000
+which basically means that, the Java String class
+
+9
+00:00:21,000 --> 00:00:23,000
+can store pretty much any character
+
+10
+00:00:23,000 --> 00:00:25,000
+you're likely to ever want to work with.
+
+11
+00:00:25,000 --> 00:00:27,000
+Working with strings is really straightforward.
+
+12
+00:00:27,000 --> 00:00:29,000
+Literal strings are enclosed in double quotes.
+
+13
+00:00:29,000 --> 00:00:32,000
+So, let's say we want to have a variable called name
+
+14
+00:00:32,000 --> 00:00:33,000
+and assign it a literal string.
+
+15
+00:00:33,000 --> 00:00:35,000
+We simply declare it as a string
+
+16
+00:00:35,000 --> 00:00:39,000
+and assign it to little string Jim enclosed in quotes.
+
+17
+00:00:39,000 --> 00:00:40,000
+We can easily combine string values
+
+18
+00:00:40,000 --> 00:00:43,000
+using the plus or plus equals.
+
+19
+00:00:43,000 --> 00:00:46,000
+Plus combines two strings and gives you back a new string.
+
+20
+00:00:46,000 --> 00:00:48,000
+Plus equals adds a string onto the value
+
+21
+00:00:48,000 --> 00:00:50,000
+of an existing string.
+
+22
+00:00:50,000 --> 00:00:51,000
+All right, so if I want to do something
+
+23
+00:00:51,000 --> 00:00:53,000
+like print out "Hi Jim",
+
+24
+00:00:53,000 --> 00:00:55,000
+I can use our print line method,
+
+25
+00:00:55,000 --> 00:00:56,000
+put the little string "Hi"
+
+26
+00:00:56,000 --> 00:00:59,000
+and then add a plus sign and name after that
+
+27
+00:00:59,000 --> 00:01:03,000
+and that will print out that value, "Hi Jim".
+
+28
+00:01:03,000 --> 00:01:04,000
+Now, one thing to be aware of is that
+
+29
+00:01:04,000 --> 00:01:06,000
+string objects are immutable.
+
+30
+00:01:06,000 --> 00:01:08,000
+And what that means is that
+
+31
+00:01:08,000 --> 00:01:10,000
+once a string object is created,
+
+32
+00:01:10,000 --> 00:01:11,000
+it can never be changed.
+
+33
+00:01:11,000 --> 00:01:13,000
+So, anything that changes that value
+
+34
+00:01:13,000 --> 00:01:15,000
+requires that a new instance
+
+35
+00:01:15,000 --> 00:01:17,000
+of the string object be created.
+
+36
+00:01:17,000 --> 00:01:19,000
+So, let's see what that looks like.
+
+37
+00:01:19,000 --> 00:01:21,000
+Let's say I declare a variable called greeting
+
+38
+00:01:21,000 --> 00:01:23,000
+and assign it to literal "Hello".
+
+39
+00:01:23,000 --> 00:01:25,000
+So, of course, I've got my variable
+
+40
+00:01:25,000 --> 00:01:27,000
+that a string is allocated out in memory
+
+41
+00:01:27,000 --> 00:01:28,000
+holding the value Hello.
+
+42
+00:01:28,000 --> 00:01:31,000
+Of course, the variable greeting then references it.
+
+43
+00:01:31,000 --> 00:01:33,000
+But then if I do something as simple as greeting
+
+44
+00:01:33,000 --> 00:01:35,000
+plus equals space.
+
+45
+00:01:35,000 --> 00:01:39,000
+Now, all I want to is add a space onto the world "Hello".
+
+46
+00:01:39,000 --> 00:01:41,000
+In order for that to happen,
+
+47
+00:01:41,000 --> 00:01:42,000
+a whole new string object has to be created holding
+
+48
+00:01:42,000 --> 00:01:46,000
+all the existing values, the "hello", plus the space.
+
+49
+00:01:46,000 --> 00:01:51,000
+And then greeting is repointed to that new instance.
+
+50
+00:01:51,000 --> 00:01:54,000
+So, it will feel like just a space was added onto the end,
+
+51
+00:01:54,000 --> 00:01:56,000
+but actually a whole lot more is going on.
+
+52
+00:01:56,000 --> 00:01:59,000
+So, if I then now say greeting plus equals world,
+
+53
+00:01:59,000 --> 00:02:00,000
+again it allocates out another object
+
+54
+00:02:00,000 --> 00:02:04,000
+holding the entire string and repoints greeting to that.
+
+55
+00:02:04,000 --> 00:02:06,000
+So we want to be aware of this idea
+
+56
+00:02:06,000 --> 00:02:07,000
+of strings being immutable
+
+57
+00:02:07,000 --> 00:02:10,000
+because we can end up doing things really inefficiently.
+
+58
+00:02:10,000 --> 00:02:12,000
+Now, later in this module,
+
+59
+00:02:12,000 --> 00:02:14,000
+we'll talk about how we can use other mechanisms
+
+60
+00:02:14,000 --> 00:02:18,000
+to work with a string situation like this more effectively.
+
+61
+00:02:18,000 --> 00:02:21,000
+Now the string class has a number of methods on it.
+
+62
+00:02:21,000 --> 00:02:23,000
+We're not going to talk about all of them,
+
+63
+00:02:23,000 --> 00:02:25,000
+but I just want to point out some of the highlights here.
+
+64
+00:02:25,000 --> 00:02:27,000
+One of the methods we commonly use is the length method,
+
+65
+00:02:27,000 --> 00:02:30,000
+which gives us back the length of the string.
+
+66
+00:02:30,000 --> 00:02:32,000
+How many characters are in that string.
+
+67
+00:02:32,000 --> 00:02:33,000
+Very often we want to convert
+
+68
+00:02:33,000 --> 00:02:35,000
+non-string values in the strings.
+
+69
+00:02:35,000 --> 00:02:37,000
+Like we have, maybe, the integer value 100.
+
+70
+00:02:37,000 --> 00:02:40,000
+If we want to get back to characters one, zero, zero,
+
+71
+00:02:40,000 --> 00:02:42,000
+the string method valueOf will do that.
+
+72
+00:02:42,000 --> 00:02:44,000
+The string class provides methods
+
+73
+00:02:44,000 --> 00:02:46,000
+for creating a new string from existing strings.
+
+74
+00:02:46,000 --> 00:02:49,000
+Concat combine two string values to create a new string.
+
+75
+00:02:49,000 --> 00:02:51,000
+Basically the same as the plus operator.
+
+76
+00:02:51,000 --> 00:02:54,000
+Replace, toLowerCase, toUpperCase and trim,
+
+77
+00:02:54,000 --> 00:02:56,000
+create a new string based on modifying values
+
+78
+00:02:56,000 --> 00:02:58,000
+of an existing string.
+
+79
+00:02:58,000 --> 00:03:00,000
+The split method is useful for cases
+
+80
+00:03:00,000 --> 00:03:01,000
+where you have a delimited string,
+
+81
+00:03:01,000 --> 00:03:03,000
+like a list of common delimited values.
+
+82
+00:03:03,000 --> 00:03:05,000
+It'll give you an array of strings back
+
+83
+00:03:05,000 --> 00:03:09,000
+of the individual values inside that original string.
+
+84
+00:03:09,000 --> 00:03:10,000
+We can do string formatting.
+
+85
+00:03:10,000 --> 00:03:13,000
+We can extract a substring from existing string.
+
+86
+00:03:13,000 --> 00:03:16,000
+We can check for the presence of a substring
+
+87
+00:03:16,000 --> 00:03:18,000
+in an existing string.
+
+88
+00:03:18,000 --> 00:03:20,000
+And then, of course, we can do comparisons.
+
+89
+00:03:20,000 --> 00:03:23,000
+CompareTo and compareToIgnoreCase.
+
+90
+00:03:23,000 --> 00:03:25,000
+Check to see if one string is greater than, equal to,
+
+91
+00:03:25,000 --> 00:03:27,000
+or less than another string,
+
+92
+00:03:27,000 --> 00:03:29,000
+based on the Unicode character sequences.
+
+93
+00:03:29,000 --> 00:03:33,000
+IsEmpty tells us whether we have a zero link string.
+
+94
+00:03:33,000 --> 00:03:34,000
+Then equals and equalsIgnoreCase
+
+95
+00:03:34,000 --> 00:03:36,000
+obviously check for a equality.
+
+96
+00:03:36,000 --> 00:03:38,000
+Equals checks to see do we have the exact same
+
+97
+00:03:38,000 --> 00:03:40,000
+character sequence in two strings.
+
+98
+00:03:40,000 --> 00:03:42,000
+EqualsIgnoreCase does the same thing,
+
+99
+00:03:42,000 --> 00:03:44,000
+but ignoring the case of course.
+
+100
+00:03:44,000 --> 00:03:47,000
+The thing is, equals actually raises some interesting issues
+
+101
+00:03:47,000 --> 00:03:48,000
+that we need to talk about,
+
+102
+00:03:48,000 --> 00:03:50,000
+which we'll talk about in the next clip.
+
+103
+00:03:50,000 --> 00:03:53,000
+To get the full documentation on the string class,
+
+104
+00:03:53,000 --> 00:59:00,000
+just check out that URL I have onscreen.
+
